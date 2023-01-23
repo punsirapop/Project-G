@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: No19_1026-1041-3450_AjNatasha.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: kmutt.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Database file #1: string.bib
+Database file #2: projectg.bib
+Warning--I didn't find a database entry for ""
+Warning--empty journal in gomez2022academic
+Warning--empty year in kmuttobe
+Warning--empty year in reginelo
+Warning--empty year in isfetaddie
+Warning--empty year in michiganpilot
+Warning--empty year in mobygamesomega
+You've used 25 entries,
+            2177 wiz_defined-function locations,
+            899 strings with 11517 characters,
+and the built_in function-call counts, 6786 in all, are:
+= -- 691
+> -- 263
+< -- 4
++ -- 110
+- -- 82
+* -- 451
+:= -- 1157
+add.period$ -- 26
+call.type$ -- 25
+change.case$ -- 90
+chr.to.int$ -- 0
+cite$ -- 31
+duplicate$ -- 243
+empty$ -- 588
+format.name$ -- 82
+if$ -- 1441
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 9
+newline$ -- 128
+num.names$ -- 51
+pop$ -- 175
+preamble$ -- 1
+purify$ -- 90
+quote$ -- 0
+skip$ -- 191
+stack$ -- 0
+substring$ -- 289
+swap$ -- 48
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 98
+warning$ -- 6
+while$ -- 65
+width$ -- 27
+write$ -- 295
+(There were 7 warnings)
