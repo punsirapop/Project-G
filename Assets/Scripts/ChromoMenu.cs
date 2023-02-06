@@ -4,9 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*
+ * Control Chromosome list tab
+ */
 public class ChromoMenu : MonoBehaviour
 {
+    // Prefab for button
     [SerializeField] GameObject preset;
+    // Place to store generated buttons
     [SerializeField] Transform parent;
 
 
@@ -27,6 +32,13 @@ public class ChromoMenu : MonoBehaviour
         OnValueChange(null);
     }
 
+    /*
+     * Update buttons when the chromosome list changes
+     * 
+     * Input
+     *      Actually doesn't need one but the event requires one
+     *      So actually just a place holder, don't have to care
+     */
     void OnValueChange(ChromosomeSC c)
     {
         foreach (Transform item in parent)

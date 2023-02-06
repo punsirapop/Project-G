@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 /*
  * Control a single chromosome on the farm
+ * Carry attributes of a mech
  */
 public class ChromosomeController : MonoBehaviour, IPointerDownHandler
 {
-    public ChromosomeSC mySC;
+    // Chromosome of this mech
+    public ChromosomeSC MySC;
     public static event Action<ChromosomeSC> OnSelectChromo;
 
     SpriteRenderer myRenderer;
@@ -22,11 +24,13 @@ public class ChromosomeController : MonoBehaviour, IPointerDownHandler
 
     public void FixedUpdate()
     {
-        myRenderer.color = new Color32((byte)mySC.Body[0], (byte)mySC.Body[1], (byte)mySC.Body[2], 255);
+        // Change color to match the chromosome
+        myRenderer.color = new Color32((byte)MySC.Body[0], (byte)MySC.Body[1], (byte)MySC.Body[2], 255);
     }
 
+    // Trigger when clicked
     public void OnPointerDown(PointerEventData data)
     {
-        OnSelectChromo?.Invoke(mySC);
+        OnSelectChromo?.Invoke(MySC);
     }
 }

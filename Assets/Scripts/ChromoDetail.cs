@@ -5,11 +5,17 @@ using TMPro;
 using System.Linq;
 using UnityEngine.UI;
 
+/*
+ * Control Chromosome detail tab
+ */
 public class ChromoDetail : MonoBehaviour
 {
     public static ChromoDetail Instance;
 
+    // List of textboxes
     [SerializeField] TextMeshProUGUI[] Displays;
+    // Delete button
+    // ***** For debug purposes *****
     [SerializeField] Button DeleteButton;
 
     private void Awake()

@@ -41,9 +41,11 @@ public class ChromosomeSC : ScriptableObject
 
     private void Awake()
     {
+        // set id
         ID = IDCounter;
         IDCounter++;
 
+        // init stuffs
         head = Random.Range(0, 20);
         body = new int[3];
         for (int i = 0; i < 3; i++)  body[i] = Random.Range(0, 256);
@@ -107,6 +109,7 @@ public class ChromosomeSC : ScriptableObject
     }
 
     // Get properties' limit
+    // Might move to another file
     public List<int> GetMutateCap()
     {
         List<int> c = new List<int>();
