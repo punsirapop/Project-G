@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 
+/*
+ * Debugger
+ * Nothing special
+ */
 public class Debugger : MonoBehaviour
 {
     [SerializeField] int mode;

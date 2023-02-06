@@ -6,10 +6,15 @@ using UnityEngine;
 
 /*
  * Store various miscellanous functions
+ * Still don't know how to categorize them
+ * - AddChromo
+ * - DelChromo
  */
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
+    // Store every chr. the player possesses
+    // 0: Habitat, 1-3: Farms
     public static List<List<ChromosomeSC>> Chromosomes;
     public static int CurrentFarm = 1;
 
@@ -19,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         if(Instance == null) Instance = this;
+        
         Chromosomes = new List<List<ChromosomeSC>>();
         for (int i = 0; i < 4; i++)
         {
@@ -26,16 +32,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    // Add new random chromosome to the current space
     public void AddChromo()
     {
-        List<int> c = new List<int> ();
-        for (int i = 0; i < 17; i++) c.Add(0);
         ChromosomeSC chromosome = ScriptableObject.CreateInstance<ChromosomeSC>();
-        // chromosome.SetChromosome(c);
         Chromosomes[CurrentFarm].Add(chromosome);
         OnAddChromosome?.Invoke(chromosome);
     }
 
+    // Delete a chromosome from the current space
     public void DelChromo(ChromosomeSC c)
     {
         Chromosomes[CurrentFarm].Remove(c);
