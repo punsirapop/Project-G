@@ -5,12 +5,21 @@ using TMPro;
 
 public class GenotypeManager : MonoBehaviour
 {
+    public static GenotypeManager Instance;
+
     [SerializeField] TextMeshProUGUI BitCountText;
     private int _BitCount;
+    private BitBlock[] _BitBlocks;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
+
     void Start()
     {
+        // Get reference to all available BitBlock in the panel
+        _BitBlocks = GetComponentsInChildren<BitBlock>();
         _BitCount = 0;
     }
 
@@ -29,5 +38,14 @@ public class GenotypeManager : MonoBehaviour
     {
         _BitCount = _BitCount - 1;
         _UpdateValue();
+    }
+
+    // Set item for all enabled BitBlock
+    public void SetItemOnBits(string itemName)
+    {
+        foreach (BitBlock bitBlock in _BitBlocks)
+        {
+            bitBlock.SetItem(itemName);
+        }
     }
 }
