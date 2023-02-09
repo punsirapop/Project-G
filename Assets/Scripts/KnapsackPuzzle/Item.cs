@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, IDragHandler
 {
-    private string _Name;
-    public string Name => _Name;
+    //private string _Name;
+    public string Name;
     [SerializeField] TextMeshProUGUI NameLabel;
 
-    // Start is called before the first frame update
     void Start()
     {
-        _Name = "A";
-        NameLabel.text = _Name;
+        // Display the name of item
+        NameLabel.text = Name;
     }
 
-    void OnClick()
+    // Make the item draggable
+    public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Clicked");
+        this.transform.position = eventData.position;
     }
 }

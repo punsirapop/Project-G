@@ -23,6 +23,7 @@ public class GenotypeManager : MonoBehaviour
         _BitCount = 0;
     }
 
+    #region Temp Function to test the button
     private void _UpdateValue()
     {
         BitCountText.text = _BitCount.ToString();
@@ -39,13 +40,23 @@ public class GenotypeManager : MonoBehaviour
         _BitCount = _BitCount - 1;
         _UpdateValue();
     }
+    #endregion
 
-    // Set item for all enabled BitBlock
+    // Set item on all enabled BitBlock
     public void SetItemOnBits(string itemName)
     {
         foreach (BitBlock bitBlock in _BitBlocks)
         {
             bitBlock.SetItem(itemName);
+        }
+    }
+
+    // Set knapsack on all enabled BitBlock
+    public void SetKnapsackOnBits(string knapsackName)
+    {
+        foreach (BitBlock bitBlock in _BitBlocks)
+        {
+            bitBlock.SetKnapsack(knapsackName);
         }
     }
 }

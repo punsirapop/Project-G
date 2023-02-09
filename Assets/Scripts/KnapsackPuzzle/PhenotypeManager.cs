@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PhenotypeManager : MonoBehaviour
 {
-    //public static event Action<GameObject> OnClickObject;
     private Item[] _Items;
+    private Knapsack[] _Knapsacks;
 
     void Start()
     {
@@ -14,13 +14,18 @@ public class PhenotypeManager : MonoBehaviour
         _Items = GetComponentsInChildren<Item>();
         foreach (Item item in _Items)
         {
-            // Add this item to enabled BitBlock (s) when click on this item
+            // Add this item to enabled BitBlock(s) when click on this item
             Button button = item.GetComponent<Button>();
             button.onClick.AddListener(() => GenotypeManager.Instance.SetItemOnBits(item.Name));
         }
-    }
 
-    void Update()
-    { 
+        // Get reference to all available knapsack in the panel
+        _Knapsacks = GetComponentsInChildren<Knapsack>();
+        foreach (Knapsack knapsack in _Knapsacks)
+        {
+            // Add this knapsack to enabled BitBlock(s) when click on this knapsack
+            Button button = knapsack.GetComponent<Button>();
+            button.onClick.AddListener(() => GenotypeManager.Instance.SetKnapsackOnBits(knapsack.Name));
+        }
     }
 }

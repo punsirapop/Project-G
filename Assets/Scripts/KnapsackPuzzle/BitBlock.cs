@@ -12,21 +12,19 @@ public class BitBlock : MonoBehaviour
     private string _ItemName;
     private string _KnapsackName;
 
-    // Variable for enable object assigning to the BitBlock
-    private bool _EnableSetItem;
-    private bool _EnableSetKnapsack;
-
     // Reference to UI components corresponding to the statuses
     [SerializeField] Toggle BitToggle;
-    [SerializeField] Button Item;
-    [SerializeField] Button Knapsack;
+    [SerializeField] Toggle ItemToggle;
+    [SerializeField] Toggle KnapsackToggle;
 
-    // Start is called before the first frame update
+    // Set default value of the BitBlock and visually represent it
     void Start()
     {
-        _EnableSetItem = false;
-        _EnableSetKnapsack = false;
+        _ItemName = "-";
+        _KnapsackName = "-";
         UpdateBit();
+        UpdateItem();
+        UpdateKnapsack();
     }
 
     // Update value of the bit and display it visually
@@ -34,22 +32,41 @@ public class BitBlock : MonoBehaviour
     {
         _BitValue = BitToggle.isOn ? 1 : 0;
         BitToggle.GetComponentInChildren<Text>().text = _BitValue.ToString();
-        Debug.Log("_BitValue = " + _BitValue.ToString());
-    }
-
-    // Toggle on to enable item setting
-    public void ToggleSetItem()
-    {
-        _EnableSetItem = !_EnableSetItem;
     }
 
     // Set item of BitBlock to clicked item on Phenotype panel
     public void SetItem(string itemName)
     {
-        if(_EnableSetItem)
+        if (ItemToggle.isOn)
         {
-            Item.GetComponentInChildren<TextMeshProUGUI>().text = itemName;
-            _EnableSetItem = false;
+            _ItemName = itemName;
+            ItemToggle.isOn = false;
+            UpdateItem();
         }
+    }
+
+    // Update item name and display it visually
+    public void UpdateItem()
+    {
+        string displayItem = ItemToggle.isOn ? "?" : _ItemName;
+        ItemToggle.GetComponentInChildren<Text>().text = displayItem;
+    }
+
+    // Set knapsack of BitBlock to clicked knapsack on Phenotype panel
+    public void SetKnapsack(string knapsackName)
+    {
+        if (KnapsackToggle.isOn)
+        {
+            _KnapsackName = knapsackName;
+            KnapsackToggle.isOn = false;
+            UpdateKnapsack();
+        }
+    }
+
+    // Update item name and display it visually
+    public void UpdateKnapsack()
+    {
+        string displayKnapsack = KnapsackToggle.isOn ? "?" : _KnapsackName;
+        KnapsackToggle.GetComponentInChildren<Text>().text = displayKnapsack;
     }
 }
