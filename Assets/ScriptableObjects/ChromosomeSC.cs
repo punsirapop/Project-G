@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Linq;
 using UnityEngine;
 
 /* 
@@ -127,5 +128,73 @@ public class ChromosomeSC : ScriptableObject
         }
 
         return c;
+    }
+
+    public float GetFitness(List<int> pref)
+    {
+        float fitness = 0;
+
+        // Head
+        fitness += (pref[0] == head) ? 100 : 0;
+        // Body
+        switch (pref[1])
+        {
+            case -1:
+                break;
+            // Red
+            case 0:
+                fitness += (CalcMe(body[0], 0, 255) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 255, 0)) / 3;
+                break;
+            // Green
+            case 1:
+                fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 0, 255) + CalcMe(body[2], 255, 0)) / 3;
+                break;
+            // Blue
+            case 2:
+                fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 0, 255)) / 3;
+                break;
+            // White
+            case 3:
+                fitness += (CalcMe(body[0], 0, 255) + CalcMe(body[1], 0, 255) + CalcMe(body[2], 0, 255)) / 3;
+                break;
+            // Black
+            case 4:
+                fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 255, 0)) / 3;
+                break;
+        }
+        // Acc
+        fitness += (pref[2] == acc) ? 100 : 0;
+        // Combat
+        int sum = 0;
+        switch (pref[3])
+        {
+            case -1:
+                sum = 0;
+                break;
+            case 0:
+                sum = atk.Sum();
+                break;
+            case 1:
+                sum = def.Sum();
+                break;
+            case 2:
+                sum = hp.Sum();
+                break;
+            case 3:
+                sum = spd.Sum();
+                break;
+        }
+        fitness += CalcMe(sum, 0, cap * 3) / 3;
+
+        return fitness;
+    }
+
+    private float CalcMe(int me, int min, int max)
+    {
+        float result = 0;
+
+        result = (me - min) * 100 / (max - min);
+
+        return result;
     }
 }

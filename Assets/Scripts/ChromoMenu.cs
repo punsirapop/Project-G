@@ -12,7 +12,7 @@ public class ChromoMenu : MonoBehaviour
     // Prefab for button
     [SerializeField] GameObject preset;
     // Place to store generated buttons
-    [SerializeField] Transform parent;
+    [SerializeField] RectTransform parent;
 
 
     private void Awake()
