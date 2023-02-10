@@ -30,7 +30,7 @@ public class GeneticFunc : MonoBehaviour
      * Output
      *      list of parents' indexes
      */
-    public List<int> SelectParent(int popCount, int eliteCount)
+    public List<int> SelectParentU(int popCount, int eliteCount)
     {
         List<int> result = new List<int>();
         while ( result.Count < popCount - eliteCount - (popCount - eliteCount) % 2 )
@@ -122,29 +122,62 @@ public class GeneticFunc : MonoBehaviour
      * Output
      *      list of parents' indexes
      */
-    public List<int> SelectParentU(List<float> fv, int eliteCount, int mode)
+    public List<ChromosomeSC> SelectParent(Dictionary<ChromosomeSC, float> fv, int eliteCount, int mode, int k)
     {
-        List<int> result = new List<int>();
-
-        switch (mode)
+        List<ChromosomeSC> result = new List<ChromosomeSC>();
+        while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
         {
-            // random
-            case 0:
-                while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
-                {
-                    int r = Random.Range(0, fv.Count);
-                    result.Add(r);
-                }
-                break;
-            // tournament-based
-            case 1:
-                break;
-            // roulette
-            case 2:
-                break;
-            // rank-based
-            case 3:
-                break;
+            switch (mode)
+            {
+                // random
+                case 0:
+                    int r1 = Random.Range(0, fv.Count);
+                    result.Add(fv.ElementAt(r1).Key);
+                    break;
+                // tournament-based
+                case 1:
+                    Dictionary<ChromosomeSC, float> tmp1 = new Dictionary<ChromosomeSC, float>();
+                    for (int i = 0; i < k; i++)
+                    {
+                        int r2 = 0;
+                        do r2 = Random.Range(0, fv.Count);
+                        while (tmp1.ContainsKey(fv.ElementAt(r2).Key));
+                        tmp1.Add(fv.ElementAt(r2).Key, fv.ElementAt(r2).Value);
+                    }
+                    result.Add(tmp1.OrderBy(x => x.Value).First().Key);
+                    break;
+                // roulette
+                case 2:
+                    float r3 = Random.Range(0, fv.Values.Sum());
+                    int index = 0;
+                    float u = fv.First().Value;
+                    while(u < r3)
+                    {
+                        index++;
+                        u += fv.ElementAt(index).Value;
+                    }
+                    result.Add(fv.ElementAt(index).Key);
+                    break;
+                // rank-based
+                case 3:
+                    Dictionary<ChromosomeSC, float> tmp2 = new Dictionary<ChromosomeSC, float>
+                        (fv.OrderBy(x => x.Value));
+                    for (int i = 0; i < tmp2.Count; i++)
+                    {
+                        tmp2[tmp2.ElementAt(i).Key] = i;
+                    }
+                    float r4 = Random.Range(0, fv.Values.Sum());
+                    int index2 = 0;
+                    float u2 = fv.First().Value;
+                    while (u2 < r4)
+                    {
+                        index2++;
+                        u2 += fv.ElementAt(index2).Value;
+                    }
+                    result.Add(fv.ElementAt(index2).Key);
+                    break;
+            }
+
         }
 
         return result;

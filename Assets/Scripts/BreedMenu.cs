@@ -15,7 +15,14 @@ public class BreedMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI CurrentPop;
     [SerializeField] TextMeshProUGUI CurrentGen;
 
+    // Random-Tournament-Roulette-Rank
     [SerializeField] TMP_Dropdown TypeParentSelect;
+    // For tournament
+    [SerializeField] TextMeshProUGUI KTitle;
+    [SerializeField] TextMeshProUGUI KDisplay;
+    [SerializeField] Slider KSelect;
+    [SerializeField] GameObject KHolder;
+    // Single-Two-Uniform
     [SerializeField] TMP_Dropdown TypeCrossover;
     [SerializeField] Slider GenerationSelect;
     [SerializeField] TextMeshProUGUI GenerationDisplay;
@@ -24,7 +31,6 @@ public class BreedMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI MutationDisplay;
 
     [SerializeField] TextMeshProUGUI TotalPrice;
-
     [SerializeField] Button BreedBtn;
     #endregion
     #region fitness tab
@@ -35,9 +41,11 @@ public class BreedMenu : MonoBehaviour
 
     [SerializeField] Slider HeadSelect;
     [SerializeField] TextMeshProUGUI HeadDisplay;
+    // R-G-B-W-B
     [SerializeField] TMP_Dropdown Body;
     [SerializeField] Slider AccSelect;
     [SerializeField] TextMeshProUGUI AccDisplay;
+    // Atk-Def-Hp-Spd
     [SerializeField] TMP_Dropdown Combat;
     #endregion
     // List storing elite chromosomes
@@ -59,7 +67,13 @@ public class BreedMenu : MonoBehaviour
     {
         // Update displays
         CurrentPop.text = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count().ToString();
-        CurrentGen.text = FarmManager.Instance.CurrentGen.ToString();
+        CurrentGen.text = FarmManager.Instance.CurrentGen[PlayerManager.CurrentFarm - 1].ToString();
+        KTitle.gameObject.SetActive(TypeParentSelect.value == 1);
+        KHolder.gameObject.SetActive(TypeParentSelect.value == 1);
+        KDisplay.text = KSelect.value.ToString();
+        KSelect.minValue = 1;
+        KSelect.maxValue = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count();
+        KSelect.maxValue = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count();
         GenerationDisplay.text = GenerationSelect.value.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
         Elitism.text = (elites.Count > 0) ? string.Join(", ", elites.Select(x => x.ID)) : "None";
@@ -73,7 +87,8 @@ public class BreedMenu : MonoBehaviour
 
         HeadDisplay.text = HeadSelect.value.ToString();
         AccDisplay.text = AccSelect.value.ToString();
-        BreedBtn.interactable = (PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count() - elites.Count) % 2 == 0;
+        BreedBtn.interactable = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count() > 0 &&
+            (PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count() - elites.Count) % 2 == 0;
         // Yep, all of this
     }
 
@@ -90,6 +105,18 @@ public class BreedMenu : MonoBehaviour
         }
     }
 
+    private List<int> CurrentPref()
+    {
+        List<int> list = new List<int>();
+
+        list.Add(EnableMe[0].isOn ? (int)HeadSelect.value : -1);
+        list.Add(EnableMe[1].isOn ? Body.value : -1);
+        list.Add(EnableMe[2].isOn ? (int)AccSelect.value : -1);
+        list.Add(EnableMe[3].isOn ? Combat.value : -1);
+
+        return list;
+    }
+
     /*
      * Initiate breeding process
      * 
@@ -103,17 +130,18 @@ public class BreedMenu : MonoBehaviour
         for (int g = 0; g < GenerationSelect.value; g++)
         {
             List<ChromosomeSC> candidates = PlayerManager.Chromosomes[PlayerManager.CurrentFarm];
-            List<ChromosomeSC> parents = new List<ChromosomeSC>();
+            
 
             // ------- get fitness here -------
-            // ------- select parents according to chosen type -------
-            // get parents' indexes
-            List<int> p = GeneticFunc.Instance.SelectParent(candidates.Count, elites.Count);
-            // add them to the list
-            for (int i = 0; i < candidates.Count - elites.Count; i++)
+            Dictionary<ChromosomeSC, float> fv = new Dictionary<ChromosomeSC, float>();
+            foreach (ChromosomeSC c in candidates)
             {
-                parents.Add(candidates[p[i]]);
+                fv.Add(c, c.GetFitness(CurrentPref()));
             }
+            // ------- select parents according to chosen type -------
+            // get parents
+            List<ChromosomeSC> parents = new List<ChromosomeSC>
+                (GeneticFunc.Instance.SelectParent(fv, elites.Count, TypeParentSelect.value, (int)KSelect.value));
             Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------
@@ -162,7 +190,7 @@ public class BreedMenu : MonoBehaviour
                     [PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count - 1]);
                 children[children.Count - 1].SetChromosome(item);
             }
-
+                
             // Debug.Log("Children Count: " + children.Count);
         
             FarmManager.Instance.IncreaseGen(1);
