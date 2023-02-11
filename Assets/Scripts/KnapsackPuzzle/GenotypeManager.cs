@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GenotypeManager : MonoBehaviour
 {
     public static GenotypeManager Instance;
 
-    [SerializeField] TextMeshProUGUI BitCountText;
-    private int _BitCount;
+    [SerializeField] TextMeshProUGUI RowCount;
+
+    // Reference to the holder UI and prefab
+    [SerializeField] Transform BitHolder;
+    [SerializeField] GameObject BitBlockPrefab;
+    // Reference to actual BitBlock
     private BitBlock[] _BitBlocks;
+    // Variable indicating the number of row of BitBlock
+    private bool _IsTwoRow;
 
     private void Awake()
     {
@@ -18,29 +25,45 @@ public class GenotypeManager : MonoBehaviour
 
     void Start()
     {
-        // Get reference to all available BitBlock in the panel
+        _IsTwoRow = false;
+        UpdateRowCount();
+        _InstantiateBitBlocks(10);
+    }
+
+    // Instantiate BitBlock according to given amount of bit
+    private void _InstantiateBitBlocks(int amount)
+    {
+        // Destroy all previous object in the holder
+        foreach (Transform child in BitHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        // Instantiate BitBlock in the holder
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject newBitBlock = Instantiate(BitBlockPrefab);
+            newBitBlock.transform.SetParent(BitHolder);
+        }
+        // Keep reference to the BitBlock
         _BitBlocks = GetComponentsInChildren<BitBlock>();
-        _BitCount = 0;
+        // Enable setting item/knapsack on BitBlock when click object on phenotype panel
+        PhenotypeManager.Instance.EnableObjectSetting();
     }
 
-    #region Temp Function to test the button
-    private void _UpdateValue()
+    // Update the number of row on the UI
+    public void UpdateRowCount()
     {
-        BitCountText.text = _BitCount.ToString();
+        RowCount.text = _IsTwoRow ? "2" : "1";
     }
 
-    public void AddBit()
+    // Toggle between 1 and 2 row of BitBlock
+    public void ToggleRow()
     {
-        _BitCount = _BitCount + 1;
-        _UpdateValue();
+        _IsTwoRow = !_IsTwoRow;
+        UpdateRowCount();
+        int amount = _IsTwoRow ? 20 : 10;
+        _InstantiateBitBlocks(amount);
     }
-
-    public void RemoveBit()
-    {
-        _BitCount = _BitCount - 1;
-        _UpdateValue();
-    }
-    #endregion
 
     // Set item on all enabled BitBlock
     public void SetItemOnBits(string itemName)
