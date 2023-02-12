@@ -27,17 +27,23 @@ public class GenotypeManager : MonoBehaviour
     {
         _IsTwoRow = false;
         UpdateRowCount();
-        _InstantiateBitBlocks(10);
+        _InstantiateBitBlocks();
+    }
+
+    public void ResetObject()
+    {
+        _InstantiateBitBlocks();
     }
 
     // Instantiate BitBlock according to given amount of bit
-    private void _InstantiateBitBlocks(int amount)
+    private void _InstantiateBitBlocks()
     {
         // Destroy all previous object in the holder
         foreach (Transform child in BitHolder)
         {
             Destroy(child.gameObject);
         }
+        int amount = _IsTwoRow ? 20 : 10;
         // Instantiate BitBlock in the holder
         for (int i = 0; i < amount; i++)
         {
@@ -61,8 +67,7 @@ public class GenotypeManager : MonoBehaviour
     {
         _IsTwoRow = !_IsTwoRow;
         UpdateRowCount();
-        int amount = _IsTwoRow ? 20 : 10;
-        _InstantiateBitBlocks(amount);
+        ResetObject();
     }
 
     // Set item on all enabled BitBlock

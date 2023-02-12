@@ -27,10 +27,10 @@ public class PhenotypeManager : MonoBehaviour
     {
         _ItemPreset = 1;
         _KnapsackPreset = 1;
-        _ResetObject();
+        ResetObject();
     }
 
-    private void _ResetObject()
+    public void ResetObject()
     {
         _InstantiateKnapsacks();
         _InstantiateItems();
@@ -67,7 +67,7 @@ public class PhenotypeManager : MonoBehaviour
         {
             _KnapsackPreset = 1;
         }
-        _ResetObject();
+        ResetObject();
     }
 
     // Change the Knapsack preset to the previous
@@ -78,7 +78,7 @@ public class PhenotypeManager : MonoBehaviour
         {
             _KnapsackPreset = 4;
         }
-        _ResetObject();
+        ResetObject();
     }
 
     // Instantiate Knapsack according to the preset
@@ -90,12 +90,35 @@ public class PhenotypeManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         // Temp instantiate prodedure /////////////////////////////////////////////////////////////
-        int amount = _KnapsackPreset < 3 ? 1 : 2;
-        // Instantiate Knapsack in the holder
-        for (int i = 0; i < amount; i++)
+        if (_KnapsackPreset == 1)
         {
             GameObject newKnapsack = Instantiate(KnapsackPrefab);
             newKnapsack.transform.SetParent(KnapsackHolder);
+            newKnapsack.GetComponent<Knapsack>().SetKnapsack("K1", 100, 0);
+        }
+        else if (_KnapsackPreset == 2)
+        {
+            GameObject newKnapsack = Instantiate(KnapsackPrefab);
+            newKnapsack.transform.SetParent(KnapsackHolder);
+            newKnapsack.GetComponent<Knapsack>().SetKnapsack("K1", 100, 100);
+        }
+        else if (_KnapsackPreset == 3)
+        {
+            GameObject newKnapsack1 = Instantiate(KnapsackPrefab);
+            newKnapsack1.transform.SetParent(KnapsackHolder);
+            newKnapsack1.GetComponent<Knapsack>().SetKnapsack("K1", 100, 0);
+            GameObject newKnapsack2 = Instantiate(KnapsackPrefab);
+            newKnapsack2.transform.SetParent(KnapsackHolder);
+            newKnapsack2.GetComponent<Knapsack>().SetKnapsack("K2", 100, 0);
+        }
+        else if (_KnapsackPreset == 4)
+        {
+            GameObject newKnapsack1 = Instantiate(KnapsackPrefab);
+            newKnapsack1.transform.SetParent(KnapsackHolder);
+            newKnapsack1.GetComponent<Knapsack>().SetKnapsack("K1", 100, 100);
+            GameObject newKnapsack2 = Instantiate(KnapsackPrefab);
+            newKnapsack2.transform.SetParent(KnapsackHolder);
+            newKnapsack2.GetComponent<Knapsack>().SetKnapsack("K2", 100, 100);
         }
         ///////////////////////////////////////////////////////////////////////////////////////////
         // Keep reference to the Knapsack
@@ -112,7 +135,7 @@ public class PhenotypeManager : MonoBehaviour
         {
             _ItemPreset = 1;
         }
-        _ResetObject();
+        ResetObject();
     }
 
     // Change the Item preset to the previous
@@ -123,7 +146,7 @@ public class PhenotypeManager : MonoBehaviour
         {
             _ItemPreset = 2;
         }
-        _ResetObject();
+        ResetObject();
     }
 
     // Instantiate Item according to the preset
@@ -135,12 +158,23 @@ public class PhenotypeManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         // Temp instantiate prodedure /////////////////////////////////////////////////////////////
-        int amount = _ItemPreset;
-        // Instantiate Item in the holder
-        for (int i = 0; i < amount*5; i++)
+        if (_ItemPreset == 1)
         {
-            GameObject newItem = Instantiate(ItemPrefab);
-            newItem.transform.SetParent(ItemHolder);
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject newItem = Instantiate(ItemPrefab);
+                newItem.transform.SetParent(ItemHolder);
+                newItem.GetComponent<Item>().SetItem("I" + (i+1).ToString(), 20, 20, 0);
+            }
+        }
+        if (_ItemPreset == 2)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject newItem = Instantiate(ItemPrefab);
+                newItem.transform.SetParent(ItemHolder);
+                newItem.GetComponent<Item>().SetItem("I" + (i+1).ToString(), 20, 20, 20);
+            }
         }
         ///////////////////////////////////////////////////////////////////////////////////////////
         // Keep reference to the Item
