@@ -11,7 +11,7 @@ using UnityEngine;
  * Randomized when generated but can be adjusted later
  */
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Stat")]
-public class ChromosomeSC : ScriptableObject
+public class ChromosomeSO : ScriptableObject
 {
     public static int IDCounter = 0;
     public int ID;
@@ -189,6 +189,7 @@ public class ChromosomeSC : ScriptableObject
         return fitness;
     }
 
+    // Transform any range into 0-100 format
     private float CalcMe(int me, int min, int max)
     {
         float result = 0;

@@ -6,7 +6,7 @@ using UnityEngine;
 /*
  * Control over farms and their panels
  */
-public class FarmManager : MonoBehaviour
+public class FarmManager : PlayerManager
 {
     public static FarmManager Instance;
 
@@ -54,7 +54,7 @@ public class FarmManager : MonoBehaviour
      * Input
      *      c: chromosome scriptable object
      */
-    private void AddMech(ChromosomeSC c)
+    private void AddMech(ChromosomeSO c)
     {
         Vector2 spawnPoint = new Vector2(UnityEngine.Random.Range(border[0].position.x, border[1].position.x),
             UnityEngine.Random.Range(border[0].position.y, border[1].position.y));
@@ -70,7 +70,7 @@ public class FarmManager : MonoBehaviour
      * Input
      *      c: chromosome scriptable object
      */
-    private void DelMech(ChromosomeSC c)
+    private void DelMech(ChromosomeSO c)
     {
         GameObject m = mechs.Find(x => x.GetComponent<ChromosomeController>().MySC == c);
         mechs.Remove(m);

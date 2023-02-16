@@ -8,7 +8,7 @@ using UnityEngine.UI;
  * Control most of the breeding stuffs
  * From menu display to updating results
  */
-public class BreedMenu : MonoBehaviour
+public class BreedMenu : PlayerManager
 {
     // Stuffs to display such as textboxes, sliders, dropdowns, buttons
     #region breeding tab
@@ -49,12 +49,12 @@ public class BreedMenu : MonoBehaviour
     [SerializeField] TMP_Dropdown Combat;
     #endregion
     // List storing elite chromosomes
-    List<ChromosomeSC> elites;
+    List<ChromosomeSO> elites;
     int breedPrice = 500;
 
     private void Awake()
     {
-        elites = new List<ChromosomeSC>();
+        elites = new List<ChromosomeSO>();
         ChromosomeController.OnSelectChromo += EliteMe;
     }
 
@@ -66,14 +66,14 @@ public class BreedMenu : MonoBehaviour
     private void Update()
     {
         // Update displays
-        CurrentPop.text = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count().ToString();
-        CurrentGen.text = FarmManager.Instance.CurrentGen[PlayerManager.CurrentFarm - 1].ToString();
+        CurrentPop.text = Chromosomes[CurrentFarm].Count().ToString();
+        CurrentGen.text = FarmManager.Instance.CurrentGen[CurrentFarm - 1].ToString();
         KTitle.gameObject.SetActive(TypeParentSelect.value == 1);
         KHolder.gameObject.SetActive(TypeParentSelect.value == 1);
         KDisplay.text = KSelect.value.ToString();
         KSelect.minValue = 1;
-        KSelect.maxValue = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count();
-        KSelect.maxValue = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count();
+        KSelect.maxValue = Chromosomes[CurrentFarm].Count();
+        KSelect.maxValue = Chromosomes[CurrentFarm].Count();
         GenerationDisplay.text = GenerationSelect.value.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
         Elitism.text = (elites.Count > 0) ? string.Join(", ", elites.Select(x => x.ID)) : "None";
@@ -87,13 +87,13 @@ public class BreedMenu : MonoBehaviour
 
         HeadDisplay.text = HeadSelect.value.ToString();
         AccDisplay.text = AccSelect.value.ToString();
-        BreedBtn.interactable = PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count() > 0 &&
-            (PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count() - elites.Count) % 2 == 0;
+        BreedBtn.interactable = Chromosomes[CurrentFarm].Count() > 0 &&
+            (Chromosomes[CurrentFarm].Count() - elites.Count) % 2 == 0;
         // Yep, all of this
     }
 
     // Elite/unelite clicked chromosome
-    private void EliteMe(ChromosomeSC c)
+    private void EliteMe(ChromosomeSO c)
     {
         if (!elites.Contains(c))
         {
@@ -105,6 +105,12 @@ public class BreedMenu : MonoBehaviour
         }
     }
 
+    /*
+     * Get current fitness preferences
+     * 
+     * Output
+     *      list of preferred values (default = -1)
+     */
     private List<int> CurrentPref()
     {
         List<int> list = new List<int>();
@@ -120,7 +126,7 @@ public class BreedMenu : MonoBehaviour
     /*
      * Initiate breeding process
      * 
-     * Get Fitness <-- Under development
+     * Get Fitness
      * Select Parents
      * Crossover
      * Mutate
@@ -129,25 +135,24 @@ public class BreedMenu : MonoBehaviour
     {
         for (int g = 0; g < GenerationSelect.value; g++)
         {
-            List<ChromosomeSC> candidates = PlayerManager.Chromosomes[PlayerManager.CurrentFarm];
+            List<ChromosomeSO> candidates = Chromosomes[CurrentFarm];
             
 
-            // ------- get fitness here -------
-            Dictionary<ChromosomeSC, float> fv = new Dictionary<ChromosomeSC, float>();
-            foreach (ChromosomeSC c in candidates)
+            // ------- get fitness -------
+            Dictionary<ChromosomeSO, float> fv = new Dictionary<ChromosomeSO, float>();
+            foreach (ChromosomeSO c in candidates)
             {
                 fv.Add(c, c.GetFitness(CurrentPref()));
             }
             // ------- select parents according to chosen type -------
-            // get parents
-            List<ChromosomeSC> parents = new List<ChromosomeSC>
+            List<ChromosomeSO> parents = new List<ChromosomeSO>
                 (GeneticFunc.Instance.SelectParent(fv, elites.Count, TypeParentSelect.value, (int)KSelect.value));
             Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------
             List<List<int>> parentsEncoded = new List<List<int>>();
             // encode dem parents and add to list
-            foreach (ChromosomeSC c in parents)
+            foreach (ChromosomeSO c in parents)
             {
                 parentsEncoded.Add(c.GetChromosome());
                 // Debug.Log(string.Join("-", parentsEncoded[parentsEncoded.Count-1]));
@@ -168,7 +173,7 @@ public class BreedMenu : MonoBehaviour
             }
 
             // ------- clear farm -------
-            List<ChromosomeSC> deleteMe = new List<ChromosomeSC>(PlayerManager.Chromosomes[PlayerManager.CurrentFarm]);
+            List<ChromosomeSO> deleteMe = new List<ChromosomeSO>(Chromosomes[CurrentFarm]);
             // keep those elites to the next generation
             foreach (var item in elites)
             {
@@ -177,17 +182,17 @@ public class BreedMenu : MonoBehaviour
             // clear old population
             foreach (var item in deleteMe)
             {
-                PlayerManager.Instance.DelChromo(item);
+                DelChromo(item);
             }
-            Debug.Log("Parents Count: " + PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count);
+            Debug.Log("Parents Count: " + Chromosomes[CurrentFarm].Count);
 
             // ------- create new chromosomes -------
-            List<ChromosomeSC> children = new List<ChromosomeSC>();
+            List<ChromosomeSO> children = new List<ChromosomeSO>();
             foreach (var item in parentsEncoded)
             {
-                PlayerManager.Instance.AddChromo();
-                children.Add(PlayerManager.Chromosomes[PlayerManager.CurrentFarm]
-                    [PlayerManager.Chromosomes[PlayerManager.CurrentFarm].Count - 1]);
+                AddChromo();
+                children.Add(Chromosomes[CurrentFarm]
+                    [Chromosomes[CurrentFarm].Count - 1]);
                 children[children.Count - 1].SetChromosome(item);
             }
                 

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /*
  * Control Chromosome detail tab
  */
-public class ChromoDetail : MonoBehaviour
+public class ChromoDetail : PlayerManager
 {
     public static ChromoDetail Instance;
 
@@ -23,7 +23,7 @@ public class ChromoDetail : MonoBehaviour
         if(Instance == null) Instance = this;
     }
 
-    public void SetDisplay(ChromosomeSC c)
+    public void SetDisplay(ChromosomeSO c)
     {
         Displays[0].text = c.ID.ToString();
         Displays[1].text = c.Head.ToString();
@@ -36,6 +36,6 @@ public class ChromoDetail : MonoBehaviour
         Displays[8].text = string.Join("-", c.GetChromosome());
         DeleteButton.onClick.RemoveAllListeners();
         DeleteButton.onClick.AddListener(() => FarmManager.Instance.OpenPanel(2));
-        DeleteButton.onClick.AddListener(() => PlayerManager.Instance.DelChromo(c));
+        DeleteButton.onClick.AddListener(() => DelChromo(c));
     }
 }
