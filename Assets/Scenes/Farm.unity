@@ -2370,8 +2370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4eb4c85f93b67428a4f41090feff17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentPop: {fileID: 808793096}
-  CurrentGen: {fileID: 1308774618}
+  CurrentPopDisplay: {fileID: 808793096}
+  CurrentGenDisplay: {fileID: 1308774618}
   TypeParentSelect: {fileID: 2024257858}
   KTitle: {fileID: 744575900}
   KDisplay: {fileID: 1868919052}

@@ -12,8 +12,8 @@ public class BreedMenu : PlayerManager
 {
     // Stuffs to display such as textboxes, sliders, dropdowns, buttons
     #region breeding tab
-    [SerializeField] TextMeshProUGUI CurrentPop;
-    [SerializeField] TextMeshProUGUI CurrentGen;
+    [SerializeField] TextMeshProUGUI CurrentPopDisplay;
+    [SerializeField] TextMeshProUGUI CurrentGenDisplay;
 
     // Random-Tournament-Roulette-Rank
     [SerializeField] TMP_Dropdown TypeParentSelect;
@@ -66,14 +66,14 @@ public class BreedMenu : PlayerManager
     private void Update()
     {
         // Update displays
-        CurrentPop.text = Chromosomes[CurrentFarm].Count().ToString();
-        CurrentGen.text = FarmManager.Instance.CurrentGen[CurrentFarm - 1].ToString();
+        CurrentPopDisplay.text = Chromosomes[CurrentPlace].Count().ToString();
+        CurrentGenDisplay.text = CurrentGen[CurrentPlace - 1].ToString();
         KTitle.gameObject.SetActive(TypeParentSelect.value == 1);
         KHolder.gameObject.SetActive(TypeParentSelect.value == 1);
         KDisplay.text = KSelect.value.ToString();
         KSelect.minValue = 1;
-        KSelect.maxValue = Chromosomes[CurrentFarm].Count();
-        KSelect.maxValue = Chromosomes[CurrentFarm].Count();
+        KSelect.maxValue = Chromosomes[CurrentPlace].Count();
+        KSelect.maxValue = Chromosomes[CurrentPlace].Count();
         GenerationDisplay.text = GenerationSelect.value.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
         Elitism.text = (elites.Count > 0) ? string.Join(", ", elites.Select(x => x.ID)) : "None";
@@ -87,8 +87,8 @@ public class BreedMenu : PlayerManager
 
         HeadDisplay.text = HeadSelect.value.ToString();
         AccDisplay.text = AccSelect.value.ToString();
-        BreedBtn.interactable = Chromosomes[CurrentFarm].Count() > 0 &&
-            (Chromosomes[CurrentFarm].Count() - elites.Count) % 2 == 0;
+        BreedBtn.interactable = Chromosomes[CurrentPlace].Count() > 0 &&
+            (Chromosomes[CurrentPlace].Count() - elites.Count) % 2 == 0;
         // Yep, all of this
     }
 
@@ -135,7 +135,7 @@ public class BreedMenu : PlayerManager
     {
         for (int g = 0; g < GenerationSelect.value; g++)
         {
-            List<ChromosomeSO> candidates = Chromosomes[CurrentFarm];
+            List<ChromosomeSO> candidates = Chromosomes[CurrentPlace];
             
 
             // ------- get fitness -------
@@ -173,7 +173,7 @@ public class BreedMenu : PlayerManager
             }
 
             // ------- clear farm -------
-            List<ChromosomeSO> deleteMe = new List<ChromosomeSO>(Chromosomes[CurrentFarm]);
+            List<ChromosomeSO> deleteMe = new List<ChromosomeSO>(Chromosomes[CurrentPlace]);
             // keep those elites to the next generation
             foreach (var item in elites)
             {
@@ -184,23 +184,22 @@ public class BreedMenu : PlayerManager
             {
                 DelChromo(item);
             }
-            Debug.Log("Parents Count: " + Chromosomes[CurrentFarm].Count);
+            Debug.Log("Parents Count: " + Chromosomes[CurrentPlace].Count);
 
             // ------- create new chromosomes -------
             List<ChromosomeSO> children = new List<ChromosomeSO>();
             foreach (var item in parentsEncoded)
             {
                 AddChromo();
-                children.Add(Chromosomes[CurrentFarm]
-                    [Chromosomes[CurrentFarm].Count - 1]);
+                children.Add(Chromosomes[CurrentPlace]
+                    [Chromosomes[CurrentPlace].Count - 1]);
                 children[children.Count - 1].SetChromosome(item);
             }
                 
             // Debug.Log("Children Count: " + children.Count);
-        
-            FarmManager.Instance.IncreaseGen(1);
         }
 
+        CurrentGen[CurrentPlace - 1] += (int)GenerationSelect.value;
         elites.Clear();
     }
 }

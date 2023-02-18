@@ -16,9 +16,4 @@ public class SaveManagerTitle : SaveManager
     {
         LoadBtn.interactable = SaveReady();
     }
-
-    public void StartGame()
-    {
-        
-    }
 }

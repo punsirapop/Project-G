@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneMng : MonoBehaviour
 {
+    [SerializeField] GameObject[] overlays;
     public void ChangeScene(int index)
     {
         SceneManager.LoadScene(index);
@@ -13,5 +14,22 @@ public class SceneMng : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void ToggleOverlay(int index)
+    {
+        switch (overlays[index].activeSelf)
+        {
+            case true:
+                overlays[index].SetActive(false);
+                break;
+            case false:
+                foreach (var item in overlays)
+                {
+                    item.SetActive(false);
+                }
+                overlays[index].SetActive(true);
+                break;
+        }
     }
 }

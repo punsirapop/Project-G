@@ -45,7 +45,7 @@ public class ChromoMenu : PlayerManager
         {
             Destroy(item.gameObject);
         }
-        foreach (var item in Chromosomes[PlayerManager.CurrentFarm])
+        foreach (var item in Chromosomes[PlayerManager.CurrentPlace])
         {
             GameObject me = Instantiate(preset, parent);
             me.GetComponent<Button>().onClick.AddListener(() => FarmManager.Instance.OpenPanel(3));

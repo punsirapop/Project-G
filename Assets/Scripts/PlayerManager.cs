@@ -17,7 +17,9 @@ public class PlayerManager : MonoBehaviour
     // Store every chr. the player possesses
     // 0: Habitat, 1-3: Farms
     public static List<List<ChromosomeSO>> Chromosomes;
-    public static int CurrentFarm = 1;
+    // List storing current breeding generation for each farm
+    public static List<int> CurrentGen;
+    public static int CurrentPlace = 1;
 
     public static event Action<ChromosomeSO> OnAddChromosome;
     public static event Action<ChromosomeSO> OnRemoveChromosome;
@@ -33,20 +35,28 @@ public class PlayerManager : MonoBehaviour
                 Chromosomes.Add(new List<ChromosomeSO>());
             }
         }
+        if(CurrentGen == null)
+        {
+            CurrentGen = new List<int>();
+            for (int i = 0; i < 3; i++)
+            {
+                CurrentGen.Add(0);
+            }
+        }
     }
 
     // Add new random chromosome to the current space
     public void AddChromo()
     {
         ChromosomeSO chromosome = ScriptableObject.CreateInstance<ChromosomeSO>();
-        Chromosomes[CurrentFarm].Add(chromosome);
+        Chromosomes[CurrentPlace].Add(chromosome);
         OnAddChromosome?.Invoke(chromosome);
     }
 
     // Delete a chromosome from the current space
     public void DelChromo(ChromosomeSO c)
     {
-        Chromosomes[CurrentFarm].Remove(c);
+        Chromosomes[CurrentPlace].Remove(c);
         OnRemoveChromosome?.Invoke(c);
     }
 }
