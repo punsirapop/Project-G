@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ChromoMenu : MonoBehaviour
+/*
+ * Control Chromosome list tab
+ */
+public class ChromoMenu : PlayerManager
 {
+    // Prefab for button
     [SerializeField] GameObject preset;
-    [SerializeField] Transform parent;
+    // Place to store generated buttons
+    [SerializeField] RectTransform parent;
 
 
     private void Awake()
@@ -27,13 +32,20 @@ public class ChromoMenu : MonoBehaviour
         OnValueChange(null);
     }
 
-    void OnValueChange(ChromosomeSC c)
+    /*
+     * Update buttons when the chromosome list changes
+     * 
+     * Input
+     *      Actually doesn't need one but the event requires one
+     *      So actually just a place holder, don't have to care
+     */
+    void OnValueChange(ChromosomeSO c)
     {
         foreach (Transform item in parent)
         {
             Destroy(item.gameObject);
         }
-        foreach (var item in PlayerManager.Chromosomes[PlayerManager.CurrentFarm])
+        foreach (var item in Chromosomes[PlayerManager.CurrentPlace])
         {
             GameObject me = Instantiate(preset, parent);
             me.GetComponent<Button>().onClick.AddListener(() => FarmManager.Instance.OpenPanel(3));
