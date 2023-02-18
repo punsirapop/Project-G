@@ -23,6 +23,18 @@ public class Knapsack : MonoBehaviour
 
     [SerializeField] ItemHolder Holder;
 
+    public void SetKnapsack(KnapsackSO knapsackSO)
+    {
+        _Name = knapsackSO.Name;
+        _Weight1Limit = knapsackSO.Weight1Limit;
+        _Weight2Limit = knapsackSO.Weight2Limit;
+        if (_Weight2Limit <= 0)
+        {
+            _Weight2Bar.SetActive(false);
+        }
+        _RenderInfo();
+    }
+
     public void SetKnapsack(string name, int w1, int w2)
     {
         _Name = name;

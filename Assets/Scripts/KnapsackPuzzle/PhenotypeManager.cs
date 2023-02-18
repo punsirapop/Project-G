@@ -8,11 +8,12 @@ public class PhenotypeManager : MonoBehaviour
     public static PhenotypeManager Instance;
 
     // Reference to the holder UI and prefab
-    [SerializeField] Transform ItemHolder;
-    [SerializeField] Transform KnapsackHolder;
-    [SerializeField] GameObject ItemPrefab;
-    [SerializeField] GameObject KnapsackPrefab;
-    // Reference to actual Item and Knapsack
+    [SerializeField] private Transform _ItemHolder;
+    [SerializeField] private Transform _KnapsackHolder;
+    [SerializeField] private GameObject _ItemPrefab;
+    [SerializeField] private GameObject _KnapsackPrefab;
+    // Reference to actual Item and Knapsack Configuration
+    [SerializeField] private FactoryConfig _FactoryConf;
     private int _ItemPreset;
     private int _KnapsackPreset;
     private Item[] _Items;
@@ -85,42 +86,37 @@ public class PhenotypeManager : MonoBehaviour
     private void _InstantiateKnapsacks()
     {
         // Destroy all previous object in the holder
-        foreach (Transform child in KnapsackHolder)
+        foreach (Transform child in _KnapsackHolder)
         {
             Destroy(child.gameObject);
         }
-        // Temp instantiate prodedure /////////////////////////////////////////////////////////////
-        if (_KnapsackPreset == 1)
+        // Set the preset as same as the configuration in the factory
+        KnapsackSO[] knapsackPreset;
+        switch(_KnapsackPreset)
         {
-            GameObject newKnapsack = Instantiate(KnapsackPrefab);
-            newKnapsack.transform.SetParent(KnapsackHolder);
-            newKnapsack.GetComponent<Knapsack>().SetKnapsack("K1", 100, 0);
+            default:
+                knapsackPreset = _FactoryConf.Factory1Knapsacks;
+                break;
+            case 1:
+                knapsackPreset = _FactoryConf.Factory1Knapsacks;
+                break;
+            case 2:
+                knapsackPreset = _FactoryConf.Factory2Knapsacks;
+                break;
+            case 3:
+                knapsackPreset = _FactoryConf.Factory3Knapsacks;
+                break;
+            case 4:
+                knapsackPreset = _FactoryConf.Factory4Knapsacks;
+                break;
         }
-        else if (_KnapsackPreset == 2)
-        {
-            GameObject newKnapsack = Instantiate(KnapsackPrefab);
-            newKnapsack.transform.SetParent(KnapsackHolder);
-            newKnapsack.GetComponent<Knapsack>().SetKnapsack("K1", 100, 100);
+        // Create actual Knapsack object in the game
+        foreach(KnapsackSO knapsack in knapsackPreset)
+            {
+            GameObject newKnapsack = Instantiate(_KnapsackPrefab);
+            newKnapsack.transform.SetParent(_KnapsackHolder);
+            newKnapsack.GetComponent<Knapsack>().SetKnapsack(knapsack);
         }
-        else if (_KnapsackPreset == 3)
-        {
-            GameObject newKnapsack1 = Instantiate(KnapsackPrefab);
-            newKnapsack1.transform.SetParent(KnapsackHolder);
-            newKnapsack1.GetComponent<Knapsack>().SetKnapsack("K1", 100, 0);
-            GameObject newKnapsack2 = Instantiate(KnapsackPrefab);
-            newKnapsack2.transform.SetParent(KnapsackHolder);
-            newKnapsack2.GetComponent<Knapsack>().SetKnapsack("K2", 100, 0);
-        }
-        else if (_KnapsackPreset == 4)
-        {
-            GameObject newKnapsack1 = Instantiate(KnapsackPrefab);
-            newKnapsack1.transform.SetParent(KnapsackHolder);
-            newKnapsack1.GetComponent<Knapsack>().SetKnapsack("K1", 100, 100);
-            GameObject newKnapsack2 = Instantiate(KnapsackPrefab);
-            newKnapsack2.transform.SetParent(KnapsackHolder);
-            newKnapsack2.GetComponent<Knapsack>().SetKnapsack("K2", 100, 100);
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////
         // Keep reference to the Knapsack
         _Knapsacks = GetComponentsInChildren<Knapsack>();
     }
@@ -153,30 +149,31 @@ public class PhenotypeManager : MonoBehaviour
     private void _InstantiateItems()
     {
         // Destroy all previous object in the holder
-        foreach (Transform child in ItemHolder)
+        foreach (Transform child in _ItemHolder)
         {
             Destroy(child.gameObject);
         }
-        // Temp instantiate prodedure /////////////////////////////////////////////////////////////
-        if (_ItemPreset == 1)
+        // Set the preset as same as the configuration in the factory
+        ItemSO[] itemPreset;
+        switch (_ItemPreset)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                GameObject newItem = Instantiate(ItemPrefab);
-                newItem.transform.SetParent(ItemHolder);
-                newItem.GetComponent<Item>().SetItem("I" + (i+1).ToString(), 20, 20, 0);
-            }
+            default:
+                itemPreset = _FactoryConf.Set1Items;
+                break;
+            case 1:
+                itemPreset = _FactoryConf.Set1Items;
+                break;
+            case 2:
+                itemPreset = _FactoryConf.Set2Items;
+                break;
         }
-        if (_ItemPreset == 2)
+        // Create actual Item object in the game
+        foreach (ItemSO item in itemPreset)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                GameObject newItem = Instantiate(ItemPrefab);
-                newItem.transform.SetParent(ItemHolder);
-                newItem.GetComponent<Item>().SetItem("I" + (i+1).ToString(), 20, 20, 20);
-            }
+            GameObject newItem = Instantiate(_ItemPrefab);
+            newItem.transform.SetParent(_ItemHolder);
+            newItem.GetComponent<Item>().SetItem(item);
         }
-        ///////////////////////////////////////////////////////////////////////////////////////////
         // Keep reference to the Item
         _Items = GetComponentsInChildren<Item>();
     }

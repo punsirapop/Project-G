@@ -1345,10 +1345,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a929a4d950d9f24a975e453d0040541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemHolder: {fileID: 726609121}
-  KnapsackHolder: {fileID: 176033032}
-  ItemPrefab: {fileID: 6526735398264803354, guid: 460d967a56c16ff4a882e68a76218662, type: 3}
-  KnapsackPrefab: {fileID: 1587860556660792491, guid: 13c8b08ecac0cee47961b0d16e388006, type: 3}
+  _ItemHolder: {fileID: 726609121}
+  _KnapsackHolder: {fileID: 176033032}
+  _ItemPrefab: {fileID: 6526735398264803354, guid: 460d967a56c16ff4a882e68a76218662, type: 3}
+  _KnapsackPrefab: {fileID: 1587860556660792491, guid: 13c8b08ecac0cee47961b0d16e388006, type: 3}
+  _FactoryConf: {fileID: 11400000, guid: b90bb03a0eee571428f7ac0727ebb6be, type: 2}
 --- !u!1 &1011228026
 GameObject:
   m_ObjectHideFlags: 0

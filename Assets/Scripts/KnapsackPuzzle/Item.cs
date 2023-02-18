@@ -36,6 +36,16 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _RenderInfo();
     }
 
+    // Set the information of the item
+    public void SetItem(ItemSO itemSO)
+    {
+        _Name = itemSO.Name;
+        _Value = itemSO.Value;
+        _Weight1 = itemSO.Weight1;
+        _Weight2 = itemSO.Weight2;
+        _RenderInfo();
+    }
+
     // Set the parent where it's supposed to drop on
     public void SetParentReturnTo(Transform newParent)
     {
