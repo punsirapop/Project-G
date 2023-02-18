@@ -2430,6 +2430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b0119223f0f3f46b90f6d06081133a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlays: []
 --- !u!1 &351161982
 GameObject:
   m_ObjectHideFlags: 0
