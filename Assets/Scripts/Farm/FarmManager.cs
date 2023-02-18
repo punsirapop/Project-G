@@ -6,7 +6,7 @@ using UnityEngine;
 /*
  * Control over farms and their panels
  */
-public class FarmManager : MonoBehaviour
+public class FarmManager : PlayerManager
 {
     public static FarmManager Instance;
 
@@ -23,20 +23,11 @@ public class FarmManager : MonoBehaviour
     // List storing every mech gameObjects for easy access
     List<GameObject> mechs;
 
-    // List storing current breeding generation for each farm
-    List<int> currentGen;
-    public List<int> CurrentGen => currentGen;
-
     private void Awake()
     {
         if(Instance == null) Instance = this;
 
         mechs = new List<GameObject>();
-        currentGen = new List<int>();
-        for (int i = 0; i < 3; i++)
-        {
-            currentGen.Add(0);
-        }
 
         PlayerManager.OnAddChromosome += AddMech;
         PlayerManager.OnRemoveChromosome += DelMech;
@@ -54,11 +45,11 @@ public class FarmManager : MonoBehaviour
      * Input
      *      c: chromosome scriptable object
      */
-    private void AddMech(ChromosomeSC c)
+    private void AddMech(ChromosomeSO c)
     {
         Vector2 spawnPoint = new Vector2(UnityEngine.Random.Range(border[0].position.x, border[1].position.x),
             UnityEngine.Random.Range(border[0].position.y, border[1].position.y));
-        GameObject mech = Instantiate(preset, spawnPoint, Quaternion.identity, holders[PlayerManager.CurrentFarm - 1]);
+        GameObject mech = Instantiate(preset, spawnPoint, Quaternion.identity, holders[PlayerManager.CurrentPlace - 1]);
         mechs.Add(mech);
         mech.GetComponent<ChromosomeController>().MySC = c;
         mech.SetActive(true);
@@ -70,7 +61,7 @@ public class FarmManager : MonoBehaviour
      * Input
      *      c: chromosome scriptable object
      */
-    private void DelMech(ChromosomeSC c)
+    private void DelMech(ChromosomeSO c)
     {
         GameObject m = mechs.Find(x => x.GetComponent<ChromosomeController>().MySC == c);
         mechs.Remove(m);
@@ -94,16 +85,5 @@ public class FarmManager : MonoBehaviour
             item.SetActive(false);
         }
         panels[i].SetActive(true);
-    }
-
-    /*
-     * Change generation of current farm
-     * 
-     * Input
-     *      g: amount to change
-     */
-    public void IncreaseGen(int g)
-    {
-        currentGen[PlayerManager.CurrentFarm - 1] += g;
     }
 }

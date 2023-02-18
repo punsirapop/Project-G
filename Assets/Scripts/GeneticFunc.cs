@@ -122,9 +122,9 @@ public class GeneticFunc : MonoBehaviour
      * Output
      *      list of parents' indexes
      */
-    public List<ChromosomeSC> SelectParent(Dictionary<ChromosomeSC, float> fv, int eliteCount, int mode, int k)
+    public List<ChromosomeSO> SelectParent(Dictionary<ChromosomeSO, float> fv, int eliteCount, int mode, int k)
     {
-        List<ChromosomeSC> result = new List<ChromosomeSC>();
+        List<ChromosomeSO> result = new List<ChromosomeSO>();
         while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
         {
             switch (mode)
@@ -136,7 +136,7 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // tournament-based
                 case 1:
-                    Dictionary<ChromosomeSC, float> tmp1 = new Dictionary<ChromosomeSC, float>();
+                    Dictionary<ChromosomeSO, float> tmp1 = new Dictionary<ChromosomeSO, float>();
                     for (int i = 0; i < k; i++)
                     {
                         int r2 = 0;
@@ -160,7 +160,7 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // rank-based
                 case 3:
-                    Dictionary<ChromosomeSC, float> tmp2 = new Dictionary<ChromosomeSC, float>
+                    Dictionary<ChromosomeSO, float> tmp2 = new Dictionary<ChromosomeSO, float>
                         (fv.OrderBy(x => x.Value));
                     for (int i = 0; i < tmp2.Count; i++)
                     {
