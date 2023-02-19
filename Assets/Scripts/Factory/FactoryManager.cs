@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,46 +8,48 @@ public class FactoryManager : MonoBehaviour
 {
     // Index for current factory. The index vary from 0 to 3
     private int _CurrentFactory;
+    [SerializeField] private FactorySO[] _FactoriesData;
 
-    // All sprites for different factory
-    [SerializeField] private Sprite[] _Floors;
-    [SerializeField] private Sprite[] _Conveyors;
-    [SerializeField] private Sprite[] _Borders;
-
-    // Current sprite renderer of each part of factory
+    // Current sprite renderer
     [SerializeField] private SpriteRenderer _FloorRenderer;
     [SerializeField] private SpriteRenderer _ConveyorRenderer;
     [SerializeField] private SpriteRenderer _BorderRenderer;
 
-    // Panels in factory: Info, Breed, ChromoMenu
+    #region Panels
+    // Panels in factory: Info, Produce, ChromoMenu
     [SerializeField] private Button[] _PanelButtons;
     [SerializeField] private GameObject[] _Panels;
+
+    // Text in each panel
+    [SerializeField] private TextMeshProUGUI[] _InfoTexts;
+    #endregion
 
     void Start()
     {
         _CurrentFactory = 0;
         _RenderSprite();
-        OpenPanel(0);
+        _ResetPanels();
     }
 
-    // Temp function to change the factory ////////////////////////////////////////////////////////
+    #region Temp function to change the factory #############################################################
     public void AddCurrent()
     {
         _CurrentFactory = _CurrentFactory + 1;
-        if (_CurrentFactory >= _Floors.Length)
+        if (_CurrentFactory >= _FactoriesData.Length)
         {
             _CurrentFactory = 0;
         }
         _RenderSprite();
+        _ResetPanels();
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////
+    #endregion ########################################################################################
 
     // Render the weapon holder sprite for each factory
     private void _RenderSprite()
     {
-        _FloorRenderer.sprite = _Floors[_CurrentFactory];
-        _ConveyorRenderer.sprite = _Conveyors[_CurrentFactory];
-        _BorderRenderer.sprite = _Borders[_CurrentFactory];
+        _FloorRenderer.sprite = _FactoriesData[_CurrentFactory].Floor;
+        _ConveyorRenderer.sprite = _FactoriesData[_CurrentFactory].Conveyor;
+        _BorderRenderer.sprite = _FactoriesData[_CurrentFactory].Border;
     }
 
     // Change panel
@@ -62,5 +65,13 @@ public class FactoryManager : MonoBehaviour
             panel.SetActive(false);
         }
         _Panels[i].SetActive(true);
+    }
+
+    // Reset data to each panel according to the FactorySO
+    private void _ResetPanels()
+    {
+        _InfoTexts[0].text = _FactoriesData[_CurrentFactory].Name;
+        _InfoTexts[1].text = _FactoriesData[_CurrentFactory].Problem;
+        OpenPanel(0);
     }
 }
