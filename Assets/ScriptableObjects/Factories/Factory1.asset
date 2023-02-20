@@ -22,3 +22,16 @@ MonoBehaviour:
   _Floor: {fileID: 21300000, guid: eaf2bffa0920b274cbc73331d6a6669a, type: 3}
   _Conveyor: {fileID: 21300000, guid: 4beaf4a6b5bfc1a43a8875d55561ec2b, type: 3}
   _Border: {fileID: 21300000, guid: 58cb6da6a3183c24391705c676d6c4d5, type: 3}
+  _Knapsacks:
+  - {fileID: 11400000, guid: 132bd9f252037d745bb5a2978dd9597f, type: 2}
+  _Items:
+  - {fileID: 11400000, guid: f8a229ac6260ab344ae372a7273f0cec, type: 2}
+  - {fileID: 11400000, guid: 73b04bf60813a6d4a87f51825160bb8b, type: 2}
+  - {fileID: 11400000, guid: 96dec68978029654f990b462b0e7c373, type: 2}
+  - {fileID: 11400000, guid: 78265836c619d2647ad655ee8e5634be, type: 2}
+  - {fileID: 11400000, guid: d3d663833662a8943828c62e0a87f283, type: 2}
+  - {fileID: 11400000, guid: bfebffec4286dad4b8671db6eaa04636, type: 2}
+  - {fileID: 11400000, guid: aae37803aac5b134e9b208b7d532d33a, type: 2}
+  - {fileID: 11400000, guid: dcecfd20afa66ed419f7c9bda47466f0, type: 2}
+  - {fileID: 11400000, guid: 118b9a31743a03a45a09a0a935112f90, type: 2}
+  - {fileID: 11400000, guid: d522dd26c6432b64e809a3db315bd20f, type: 2}

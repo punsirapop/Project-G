@@ -22,4 +22,12 @@ public class FactorySO : ScriptableObject
     public Sprite Conveyor => _Conveyor;
     [SerializeField] private Sprite _Border;
     public Sprite Border => _Border;
+
+    // Knapsack and items preset
+    [SerializeField] private KnapsackSO[] _Knapsacks;
+    public KnapsackSO[] Knapsacks => _Knapsacks;
+    [SerializeField] private ItemSO[] _Items;
+    public ItemSO[] Items => _Items;
+
+
 }
