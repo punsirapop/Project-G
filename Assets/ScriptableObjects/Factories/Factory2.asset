@@ -16,6 +16,8 @@ MonoBehaviour:
   _Problem: This should be a Scouter for Snipe/Pierce
   _Generation: 0
   _Status: IDLE
+  _WeaponPrefix: SC
+  _WeaponIdFormat: 000
   _Floor: {fileID: 21300000, guid: bd38f85026904654894dc5cf46457abe, type: 3}
   _Conveyor: {fileID: 21300000, guid: 39947b0b6a51059478e7a22418d401a7, type: 3}
   _Border: {fileID: 21300000, guid: 729a22744bd0ba24a97709cc9b110666, type: 3}
@@ -32,3 +34,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e24fdd0705516e348999ecc8892c7262, type: 2}
   - {fileID: 11400000, guid: af8e347f3831e044795478d6d858de1c, type: 2}
   - {fileID: 11400000, guid: 0ac9df2688b0f2f4cb140db9af2fb924, type: 2}
+  _ChromoDatabase: {fileID: 11400000, guid: e479ac6f760acbd4ab425faeb3c2480f, type: 2}
+  _PopulationCount: 10

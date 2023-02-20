@@ -16,6 +16,8 @@ MonoBehaviour:
   _Problem: This should be a Grenade Launcher for AOE heal/ AOE damage
   _Generation: 0
   _Status: IDLE
+  _WeaponPrefix: GL
+  _WeaponIdFormat: 000
   _Floor: {fileID: 21300000, guid: 14977638b0939ac4491a61928676a6ca, type: 3}
   _Conveyor: {fileID: 21300000, guid: d363c177a3790ec43b4baf7895277756, type: 3}
   _Border: {fileID: 21300000, guid: d60282bc9dda9ea429714317b60c7ac2, type: 3}
@@ -33,3 +35,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e24fdd0705516e348999ecc8892c7262, type: 2}
   - {fileID: 11400000, guid: af8e347f3831e044795478d6d858de1c, type: 2}
   - {fileID: 11400000, guid: 0ac9df2688b0f2f4cb140db9af2fb924, type: 2}
+  _ChromoDatabase: {fileID: 11400000, guid: 7e3db59a14e5dad428dcf9742e3bcc2e, type: 2}
+  _PopulationCount: 10

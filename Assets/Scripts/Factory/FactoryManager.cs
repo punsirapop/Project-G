@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class FactoryManager : MonoBehaviour
 {
+    public static FactoryManager Instance;
+
     // Index for current factory. The index vary from 0 to 3
     private int _CurrentFactory;
     [SerializeField] private FactorySO[] _FactoriesData;
@@ -23,6 +25,11 @@ public class FactoryManager : MonoBehaviour
     // Text in each panel
     [SerializeField] private TextMeshProUGUI[] _InfoTexts;
     #endregion
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
 
     void Start()
     {
@@ -73,5 +80,11 @@ public class FactoryManager : MonoBehaviour
         _InfoTexts[0].text = _FactoriesData[_CurrentFactory].Name;
         _InfoTexts[1].text = _FactoriesData[_CurrentFactory].Problem;
         OpenPanel(0);
+    }
+
+    // Return all WeaponChromosome of current factory, just a wrapper function for FactorySO
+    public WeaponChromosome[] GetAllWeapon()
+    {
+        return _FactoriesData[_CurrentFactory].GetAllWeapon();
     }
 }

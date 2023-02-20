@@ -16,6 +16,8 @@ MonoBehaviour:
   _Problem: This should be a Dart for Sleep/Poison
   _Generation: 0
   _Status: IDLE
+  _WeaponPrefix: DA
+  _WeaponIdFormat: 000
   _Floor: {fileID: 21300000, guid: 358727e37bc4e5048ba6b628827ae816, type: 3}
   _Conveyor: {fileID: 21300000, guid: 9b92435787d9a9649b643ced15dff5b4, type: 3}
   _Border: {fileID: 21300000, guid: 88594a51bc611294d809e990ae4ebce7, type: 3}
@@ -33,3 +35,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dcecfd20afa66ed419f7c9bda47466f0, type: 2}
   - {fileID: 11400000, guid: 118b9a31743a03a45a09a0a935112f90, type: 2}
   - {fileID: 11400000, guid: d522dd26c6432b64e809a3db315bd20f, type: 2}
+  _ChromoDatabase: {fileID: 11400000, guid: 3b3a56896edf6c646aed36a01163625d, type: 2}
+  _PopulationCount: 10
