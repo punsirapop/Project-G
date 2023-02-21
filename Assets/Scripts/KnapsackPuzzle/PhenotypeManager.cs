@@ -12,10 +12,10 @@ public class PhenotypeManager : MonoBehaviour
     [SerializeField] private Transform _KnapsackHolder;
     [SerializeField] private GameObject _ItemPrefab;
     [SerializeField] private GameObject _KnapsackPrefab;
-    // Reference to actual Item and Knapsack Configuration
-    [SerializeField] private FactoryConfig _FactoryConf;
-    private int _ItemPreset;
-    private int _KnapsackPreset;
+    // Reference to actual Item and Knapsack
+    private FactorySO[] _FactoriesData;
+    private int _ItemPresetIndex;
+    private int _KnapsackPresetIndex;
     private Item[] _Items;
     private Knapsack[] _Knapsacks;
 
@@ -26,8 +26,9 @@ public class PhenotypeManager : MonoBehaviour
 
     void Start()
     {
-        _ItemPreset = 1;
-        _KnapsackPreset = 1;
+        _ItemPresetIndex = 0;
+        _KnapsackPresetIndex = 0;
+        _FactoriesData = KnapsackPuzzleManager.Instance.FactoriesData;
         ResetObject();
     }
 
@@ -60,29 +61,22 @@ public class PhenotypeManager : MonoBehaviour
     }
 
     #region Knapsack Instantiation ################################################################
-    // Change the Knapsack preset to the nex
-    public void NextKnapsackPreset()
+    // Change the Knapsack preset
+    public void ChangeKnapsackPreset(int amount)
     {
-        _KnapsackPreset++;
-        if(_KnapsackPreset > 4)
+        _KnapsackPresetIndex += amount;
+        if (_KnapsackPresetIndex > _FactoriesData.Length - 1)
         {
-            _KnapsackPreset = 1;
+            _KnapsackPresetIndex = 0;
+        }
+        else if (_KnapsackPresetIndex < 0)
+        {
+            _KnapsackPresetIndex = _FactoriesData.Length - 1;
         }
         ResetObject();
     }
 
-    // Change the Knapsack preset to the previous
-    public void PreviousKnapsackPreset()
-    {
-        _KnapsackPreset--;
-        if (_KnapsackPreset < 1)
-        {
-            _KnapsackPreset = 4;
-        }
-        ResetObject();
-    }
-
-    // Instantiate Knapsack according to the preset
+    // Instantiate Knapsack according to the preset index
     private void _InstantiateKnapsacks()
     {
         // Destroy all previous object in the holder
@@ -91,25 +85,7 @@ public class PhenotypeManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         // Set the preset as same as the configuration in the factory
-        KnapsackSO[] knapsackPreset;
-        switch(_KnapsackPreset)
-        {
-            default:
-                knapsackPreset = _FactoryConf.Factory1Knapsacks;
-                break;
-            case 1:
-                knapsackPreset = _FactoryConf.Factory1Knapsacks;
-                break;
-            case 2:
-                knapsackPreset = _FactoryConf.Factory2Knapsacks;
-                break;
-            case 3:
-                knapsackPreset = _FactoryConf.Factory3Knapsacks;
-                break;
-            case 4:
-                knapsackPreset = _FactoryConf.Factory4Knapsacks;
-                break;
-        }
+        KnapsackSO[] knapsackPreset = _FactoriesData[_KnapsackPresetIndex].Knapsacks;
         // Create actual Knapsack object in the game
         foreach(KnapsackSO knapsack in knapsackPreset)
             {
@@ -123,24 +99,17 @@ public class PhenotypeManager : MonoBehaviour
     #endregion
 
     #region Item Instantiation ####################################################################
-    // Change the Item preset to the nex
-    public void NextItemPreset()
+    // Change the Item preset
+    public void ChangeItemsPreset(int amount)
     {
-        _ItemPreset++;
-        if (_ItemPreset > 2)
+        _ItemPresetIndex += amount;
+        if (_ItemPresetIndex > _FactoriesData.Length - 1)
         {
-            _ItemPreset = 1;
+            _ItemPresetIndex = 0;
         }
-        ResetObject();
-    }
-
-    // Change the Item preset to the previous
-    public void PreviousItemPreset()
-    {
-        _ItemPreset--;
-        if (_ItemPreset < 1)
+        else if (_ItemPresetIndex < 0)
         {
-            _ItemPreset = 2;
+            _ItemPresetIndex = _FactoriesData.Length - 1;
         }
         ResetObject();
     }
@@ -154,19 +123,7 @@ public class PhenotypeManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         // Set the preset as same as the configuration in the factory
-        ItemSO[] itemPreset;
-        switch (_ItemPreset)
-        {
-            default:
-                itemPreset = _FactoryConf.Set1Items;
-                break;
-            case 1:
-                itemPreset = _FactoryConf.Set1Items;
-                break;
-            case 2:
-                itemPreset = _FactoryConf.Set2Items;
-                break;
-        }
+        ItemSO[] itemPreset = _FactoriesData[_ItemPresetIndex].Items;
         // Create actual Item object in the game
         foreach (ItemSO item in itemPreset)
         {
