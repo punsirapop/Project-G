@@ -5,6 +5,8 @@ using UnityEngine;
 public class WeaponChromosome
 {
     // Simple class that hold information of each weapon chromosome
+    public Sprite Image;
+    public Sprite BigImage;
     public string Name;
     public string Bitstring;
     public int Fitness;

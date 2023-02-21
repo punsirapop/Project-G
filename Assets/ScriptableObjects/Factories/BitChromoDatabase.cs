@@ -52,34 +52,45 @@ public class BitChromoDatabase : ScriptableObject
         // Create empty array of type BitChromosome with size of populactionCount
         _Population = new BitChromosome[populationCount];
         // Make 1 bit at pickIndex to be 1, representing picking only one item
-        int pickIndex1 = 0;
-        int pickIndex2 = 1;
+        int pickIndex = 0;
+        int pickBitstring = 1;
         // Loop over number of fixed population
         for (int popIndex = 0; popIndex < _Population.Length; popIndex++)
         {
             // Create actual BitChromosome instance
             _Population[popIndex] = new BitChromosome();
             BitChromosome chromosome = _Population[popIndex];
-            // Assign bit to first section (first knapsack)
             chromosome.Bitstring1 = new int[_ChromoLength];
-            chromosome.Bitstring1[pickIndex1] = 1;
-            pickIndex1++;
-            if (pickIndex1 >= 10)
+            if (_ChromoDimension == 2)
             {
-                pickIndex1 = 0;
+                chromosome.Bitstring2 = new int[_ChromoLength];
             }
-            // Skip setting bitstring2 if it's not a 2 dimension chromosome
-            if (_ChromoDimension != 2)
+            // Assign bit to corresponding section
+            if (pickBitstring == 1)
             {
-                continue;
+                chromosome.Bitstring1[pickIndex] = 1;
+                pickIndex++;
+                if (pickIndex >= _ChromoLength)
+                {
+                    pickIndex = 0;
+                    if (_ChromoDimension == 2)
+                    {
+                        pickBitstring = 2;
+                    }
+                }
             }
-            // Assign bit to second section
-            chromosome.Bitstring2 = new int[_ChromoLength];
-            chromosome.Bitstring2[pickIndex2] = 1;
-            pickIndex2++;
-            if (pickIndex2 >= 10)
+            else if (pickBitstring == 2)
             {
-                pickIndex2 = 0;
+                chromosome.Bitstring2[pickIndex] = 1;
+                pickIndex++;
+                if (pickIndex >= _ChromoLength)
+                {
+                    pickIndex = 0;
+                    if (_ChromoDimension == 2)
+                    {
+                        pickBitstring = 1;
+                    }
+                }
             }
         }
     }

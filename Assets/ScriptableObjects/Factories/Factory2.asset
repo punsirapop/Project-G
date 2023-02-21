@@ -21,6 +21,18 @@ MonoBehaviour:
   _Floor: {fileID: 21300000, guid: bd38f85026904654894dc5cf46457abe, type: 3}
   _Conveyor: {fileID: 21300000, guid: 39947b0b6a51059478e7a22418d401a7, type: 3}
   _Border: {fileID: 21300000, guid: 729a22744bd0ba24a97709cc9b110666, type: 3}
+  _WeaponImages:
+  - {fileID: 21300000, guid: 8d0c44954cb8c1f4281a1a2b26a34029, type: 3}
+  - {fileID: 21300000, guid: 987b4eb0d066a7041be9354511934acd, type: 3}
+  - {fileID: 21300000, guid: 8647f436193ce3441b7e65ec62621082, type: 3}
+  - {fileID: 21300000, guid: b676bc3bff945084b8c1975c83135d26, type: 3}
+  - {fileID: 21300000, guid: c0444cfa08034b84091cbc60c8ade62a, type: 3}
+  _WeaponBigImages:
+  - {fileID: 21300000, guid: 96a764c7cb8f115499b9d3d1eec25d6f, type: 3}
+  - {fileID: 21300000, guid: e280751df211b204b92809cb37e51551, type: 3}
+  - {fileID: 21300000, guid: d686839b94b700343afc924126040f37, type: 3}
+  - {fileID: 21300000, guid: 7a9c2136542572f46a658772b0bb0ff4, type: 3}
+  - {fileID: 21300000, guid: 2598bda9e0f696f4f95f6629ea5a352f, type: 3}
   _Knapsacks:
   - {fileID: 11400000, guid: 9d8143eaf46b47641a08e7d9831572de, type: 2}
   _Items:
@@ -34,5 +46,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e24fdd0705516e348999ecc8892c7262, type: 2}
   - {fileID: 11400000, guid: af8e347f3831e044795478d6d858de1c, type: 2}
   - {fileID: 11400000, guid: 0ac9df2688b0f2f4cb140db9af2fb924, type: 2}
+  _MaxFitness: 10
   _ChromoDatabase: {fileID: 11400000, guid: e479ac6f760acbd4ab425faeb3c2480f, type: 2}
-  _PopulationCount: 10
+  _PopulationCount: 25

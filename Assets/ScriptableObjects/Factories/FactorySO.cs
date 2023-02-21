@@ -24,12 +24,19 @@ public class FactorySO : ScriptableObject
     public Sprite Conveyor => _Conveyor;
     [SerializeField] private Sprite _Border;
     public Sprite Border => _Border;
+    [SerializeField] private Sprite[] _WeaponImages;
+
+    [SerializeField] private Sprite[] _WeaponBigImages;
+
 
     // Knapsack and items preset
     [SerializeField] private KnapsackSO[] _Knapsacks;
     public KnapsackSO[] Knapsacks => _Knapsacks;
     [SerializeField] private ItemSO[] _Items;
     public ItemSO[] Items => _Items;
+    [SerializeField] private int _MaxFitness;
+    public int MaxFitness => _MaxFitness;
+
 
     // Chromosome population database
     [SerializeField] private BitChromoDatabase _ChromoDatabase;
@@ -69,6 +76,15 @@ public class FactorySO : ScriptableObject
             // Evaluate the bitstring
             int[][] bitstring = _ChromoDatabase.GetBitstringAtIndex(i);
             int[] values = EvaluateChromosome(bitstring);
+            // Assign image proportionate to the fitness value
+            float fitnessLevel = (float) _MaxFitness / (float)_WeaponImages.Length;
+            int imageIndex = (int) ( (float) values[0] / fitnessLevel);
+            if (imageIndex >= _WeaponImages.Length)
+            {
+                imageIndex = _WeaponImages.Length - 1;
+            }
+            weaponChromosome.BigImage = _WeaponBigImages[imageIndex];
+            weaponChromosome.Image = _WeaponImages[imageIndex];
             // Assign the WeaponChromosome according to the values
             weaponChromosome.Name = _WeaponPrefix + (i + 1).ToString(_WeaponIdFormat);
             string chromoString = "";
