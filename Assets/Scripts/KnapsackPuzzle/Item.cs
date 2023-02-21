@@ -23,6 +23,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] TextMeshProUGUI WeightText;
 
     // Reference to the parent layout for dealing with drag and drop
+    private Transform _Mask;
     private Transform _ParentReturnTo;
 
     #region Data Feild Setter
@@ -44,6 +45,12 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _Weight1 = itemSO.Weight1;
         _Weight2 = itemSO.Weight2;
         _RenderInfo();
+    }
+
+    // Set the mask where the item is in
+    public void SetMask(Transform mask)
+    {
+        _Mask = mask;
     }
 
     // Set the parent where it's supposed to drop on
@@ -81,8 +88,8 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     // When start dragging, get this object out from its parent
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // Pop this item out of its parent, 2 step above to make this object be rendered on top of knapsack..
-        this.transform.SetParent(_ParentReturnTo.parent.parent);
+        // Pop this item out of its parent, put it in the mask
+        this.transform.SetParent(_Mask);
         // Make the parent ignore this object
         this.GetComponent<LayoutElement>().ignoreLayout = true;
         // Make other gameObject capture the raycasts (the mouse pointer)

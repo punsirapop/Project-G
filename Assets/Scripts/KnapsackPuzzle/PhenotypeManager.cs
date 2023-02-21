@@ -8,6 +8,7 @@ public class PhenotypeManager : MonoBehaviour
     public static PhenotypeManager Instance;
 
     // Reference to the holder UI and prefab
+    [SerializeField] private Transform _Mask;
     [SerializeField] private Transform _ItemHolder;
     [SerializeField] private Transform _KnapsackHolder;
     [SerializeField] private GameObject _ItemPrefab;
@@ -129,6 +130,7 @@ public class PhenotypeManager : MonoBehaviour
         {
             GameObject newItem = Instantiate(_ItemPrefab);
             newItem.transform.SetParent(_ItemHolder);
+            newItem.GetComponent<Item>().SetMask(_Mask);
             newItem.GetComponent<Item>().SetItem(item);
         }
         // Keep reference to the Item
