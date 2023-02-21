@@ -11,6 +11,12 @@ public class SceneMng : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    // Overloading ChangeScene for string parameter
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void ExitGame()
     {
         Application.Quit();

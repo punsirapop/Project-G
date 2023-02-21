@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     // List storing current breeding generation for each farm
     public static List<int> CurrentGen;
     public static int CurrentPlace = 1;
+    public static int CurrentFactory = 0;
 
     public static event Action<ChromosomeSO> OnAddChromosome;
     public static event Action<ChromosomeSO> OnRemoveChromosome;
@@ -43,6 +44,12 @@ public class PlayerManager : MonoBehaviour
                 CurrentGen.Add(0);
             }
         }
+    }
+
+    // Change current factory
+    public void SetCurrentFactory(int newFactory)
+    {
+        CurrentFactory = newFactory;
     }
 
     // Add new random chromosome to the current space
