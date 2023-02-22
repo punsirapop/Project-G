@@ -9,83 +9,143 @@ public class GenotypeManager : MonoBehaviour
 {
     public static GenotypeManager Instance;
 
-    [SerializeField] TextMeshProUGUI RowCount;
-
     // Reference to the holder UI and prefab
-    [SerializeField] Transform BitHolder;
-    [SerializeField] GameObject BitBlockPrefab;
+    [SerializeField] private Transform _BitHolder;
+    [SerializeField] private GameObject _BitBlockPrefab;
+    [SerializeField] private GameObject _GrayOutBackground;
+    [SerializeField] private Button[] _PresetButtons;
     // Reference to actual BitBlock
     private BitBlock[] _BitBlocks;
-    // Variable indicating the number of row of BitBlock
-    private bool _IsTwoRow;
+    // Necessary variables for generating the puzzle
+    private FactorySO[] _FactoriesData;
+    private int _BitblockPresetIndex;
+    private bool _Resettable;
+    private int[] _MapMask = new int[10];
 
-    private void Awake()
+    void Awake()
     {
         if (Instance == null) Instance = this;
     }
 
     void Start()
     {
-        _IsTwoRow = false;
-        UpdateRowCount();
-        _InstantiateBitBlocks();
-    }
-
-    public void ResetObject()
-    {
-        _InstantiateBitBlocks();
-    }
-
-    // Instantiate BitBlock according to given amount of bit
-    private void _InstantiateBitBlocks()
-    {
-        // Destroy all previous object in the holder
-        foreach (Transform child in BitHolder)
-        {
-            Destroy(child.gameObject);
-        }
-        int amount = _IsTwoRow ? 20 : 10;
-        // Instantiate BitBlock in the holder
-        for (int i = 0; i < amount; i++)
-        {
-            GameObject newBitBlock = Instantiate(BitBlockPrefab);
-            newBitBlock.transform.SetParent(BitHolder);
-        }
-        // Keep reference to the BitBlock
-        _BitBlocks = GetComponentsInChildren<BitBlock>();
-        // Enable setting item/knapsack on BitBlock when click object on phenotype panel
-        PhenotypeManager.Instance.EnableObjectSetting();
-    }
-
-    // Update the number of row on the UI
-    public void UpdateRowCount()
-    {
-        RowCount.text = _IsTwoRow ? "2" : "1";
-    }
-
-    // Toggle between 1 and 2 row of BitBlock
-    public void ToggleRow()
-    {
-        _IsTwoRow = !_IsTwoRow;
-        UpdateRowCount();
+        _FactoriesData = KnapsackPuzzleManager.Instance.FactoriesData;
+        _BitblockPresetIndex = 0;
+        _Resettable = true;
+        _GrayOutBackground.SetActive(false);
         ResetObject();
     }
 
-    // Set item on all enabled BitBlock
-    public void SetItemOnBits(string itemName)
+    #region Set and resetting values
+    // Set objects resettable indicate wheter the objects can be resetted when click CLEAR button on puzzle
+    public void SetResettable(bool resettable)
     {
-        foreach (BitBlock bitBlock in _BitBlocks)
+        _Resettable = resettable;
+        _GrayOutBackground.SetActive(!resettable);
+    }
+
+    // Reset object used when click CLEAR button on puzzle
+    public void ResetObject()
+    {
+        if (_Resettable)
         {
-            bitBlock.SetItem(itemName);
+            InstantiateBitBlocks(_BitblockPresetIndex);
+            PhenotypeManager.Instance.EnableSettingOnBitblock();
         }
     }
 
-    // Set knapsack on all enabled BitBlock
-    public void SetKnapsackOnBits(string knapsackName)
+    // Set enable/disable preset changing by enable/disable the buttons
+    public void SetPresetChangable(bool changable)
+    {
+        foreach (Button button in _PresetButtons)
+        {
+            button.interactable = changable;
+        }
+    }
+
+    // Change the preset of item and knapsack used for creating Bitblock
+    public void ChangePreset(int amount)
+    {
+        _BitblockPresetIndex += amount;
+        if (_BitblockPresetIndex > _FactoriesData.Length - 1)
+        {
+            _BitblockPresetIndex = 0;
+        }
+        else if (_BitblockPresetIndex < 0)
+        {
+            _BitblockPresetIndex = _FactoriesData.Length - 1;
+        }
+        ResetObject();
+    }
+
+    // Set item name on all enabled BitBlock
+    public void SetItemOnEnabledBits(string itemName)
     {
         foreach (BitBlock bitBlock in _BitBlocks)
         {
-            bitBlock.SetKnapsack(knapsackName);
+            bitBlock.SetItemIfEnabled(itemName);
         }
+    }
+
+    // Set knapsack name on all enabled BitBlock
+    public void SetKnapsackOnEnabledBits(string knapsackName)
+    {
+        foreach (BitBlock bitBlock in _BitBlocks)
+        {
+            bitBlock.SetKnapsackIfEnabled(knapsackName);
+        }
+    }
+    #endregion
+
+    // Create mask using for auto-generating mapping (item-knapsack) on the bitblock
+    public void CreateMapMask(int mapLenght, float mapRatio)
+    {
+        _MapMask = new int[mapLenght];
+        for (int i = 0; i < mapLenght; i++)
+        {
+            if (Random.Range(0f, 1f) <= mapRatio)
+            {
+                _MapMask[i] = 1;
+            }
+        }
+    }
+
+    // Instantiate BitBlock according to the preset and given bitstring (if any)
+    public void InstantiateBitBlocks(int presetIndex=-1, int[][] bitstring=null)
+    {
+        // Destroy all previous object in the holder
+        foreach (Transform child in _BitHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        // Selecting item and knapsack preset, random preset if generated with default parameter (presetIndex=-1)
+        _BitblockPresetIndex = (presetIndex != -1) ? presetIndex : Random.Range(0, _FactoriesData.Length);
+        KnapsackSO[] knapsackPreset = _FactoriesData[_BitblockPresetIndex].Knapsacks;
+        ItemSO[] itemPreset = _FactoriesData[_BitblockPresetIndex].Items;
+        bool hasBitstring = (bitstring != null);
+        // Create Bitblock from the preset
+        for (int kIndex = 0; kIndex < knapsackPreset.Length; kIndex++)
+        {
+            for (int iIndex = 0; iIndex < itemPreset.Length; iIndex++)
+            {
+                // Create actual Bitblock object in the game
+                GameObject newBitBlock = Instantiate(_BitBlockPrefab);
+                newBitBlock.transform.SetParent(_BitHolder);
+                // Set mapping for the bit where map mask is 1
+                if (_MapMask[iIndex] == 1)
+                {
+                    newBitBlock.GetComponent<BitBlock>().SetKnapsack(knapsackPreset[kIndex].Name);
+                    newBitBlock.GetComponent<BitBlock>().SetItem(itemPreset[iIndex].Name);
+                }
+                // Set the bit of Bitblock in case if there is bitstring
+                newBitBlock.GetComponent<BitBlock>().SetInteractable(!hasBitstring);
+                if (hasBitstring)
+                {
+                    newBitBlock.GetComponent<BitBlock>().SetBit(bitstring[kIndex][iIndex]);
+                }
+            }
+        }
+        // Keep reference to the BitBlock
+        _BitBlocks = GetComponentsInChildren<BitBlock>();
     }
 }

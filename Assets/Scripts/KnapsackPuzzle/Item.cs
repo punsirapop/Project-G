@@ -18,13 +18,14 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public int Weight2 => _Weight2;
 
     // UI element to display the information
-    [SerializeField] TextMeshProUGUI NameText;
-    [SerializeField] TextMeshProUGUI ValueText;
-    [SerializeField] TextMeshProUGUI WeightText;
+    [SerializeField] private TextMeshProUGUI _NameText;
+    [SerializeField] private TextMeshProUGUI _ValueText;
+    [SerializeField] private TextMeshProUGUI _WeightText;
 
     // Reference to the parent layout for dealing with drag and drop
     private Transform _Mask;
     private Transform _ParentReturnTo;
+    private bool _IsDraggable;
 
     #region Data Feild Setter
     // Set the information of the item
@@ -53,10 +54,16 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _Mask = mask;
     }
 
-    // Set the parent where it's supposed to drop on
+    // Set the parent where it's supposed to drop on (after it is dragged)
     public void SetParentReturnTo(Transform newParent)
     {
         _ParentReturnTo = newParent;
+    }
+
+    // Set draggable
+    public void SetDraggable(bool draggable)
+    {
+        _IsDraggable = draggable;
     }
     #endregion
 
@@ -64,6 +71,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         // Set the information to some default value
         SetItem("I", 99, 99, 99);
+        _IsDraggable = true;
     }
 
     void Start()
@@ -75,39 +83,50 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     // Render the information into the UI
     private void _RenderInfo()
     {
-        NameText.text = _Name;
-        ValueText.text = _Value.ToString();
+        _NameText.text = _Name;
+        _ValueText.text = _Value.ToString();
         string weight2Text = "";
         if (Weight2 > 0)
         {
             weight2Text = " | " + Weight2.ToString();
         }
-        WeightText.text = Weight1.ToString() + weight2Text;
+        _WeightText.text = Weight1.ToString() + weight2Text;
     }
 
+    #region Dragging behavior
     // When start dragging, get this object out from its parent
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // Pop this item out of its parent, put it in the mask
-        this.transform.SetParent(_Mask);
-        // Make the parent ignore this object
-        this.GetComponent<LayoutElement>().ignoreLayout = true;
-        // Make other gameObject capture the raycasts (the mouse pointer)
-        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        if (_IsDraggable)
+        {
+            // Pop this item out of its parent, put it in the mask
+            this.transform.SetParent(_Mask);
+            // Make the parent ignore this object
+            this.GetComponent<LayoutElement>().ignoreLayout = true;
+            // Make other gameObject capture the raycasts (the mouse pointer)
+            this.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        }
     }
 
     // While dragging, change position of this object to the same as the mouse pointer
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
+        if (_IsDraggable)
+        {
+            this.transform.position = eventData.position;
+        }
     }
 
     // When stop dragging, snap it back into the layout parent
     // Reversing everything in the OnBeginDrag()
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.transform.SetParent(_ParentReturnTo);
-        this.GetComponent<LayoutElement>().ignoreLayout = false;
-        this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        if (_IsDraggable)
+        {
+            this.transform.SetParent(_ParentReturnTo);
+            this.GetComponent<LayoutElement>().ignoreLayout = false;
+            this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
     }
+    #endregion
 }

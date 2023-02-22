@@ -13,55 +13,59 @@ public class PhenotypeManager : MonoBehaviour
     [SerializeField] private Transform _KnapsackHolder;
     [SerializeField] private GameObject _ItemPrefab;
     [SerializeField] private GameObject _KnapsackPrefab;
-    // Reference to actual Item and Knapsack
+    [SerializeField] private GameObject _GrayOutBackground;
+    [SerializeField] private Button[] _PresetButtons;
+    // Information about knapsack and item
     private FactorySO[] _FactoriesData;
-    private int _ItemPresetIndex;
+    private GameObject[] _Knapsacks;
     private int _KnapsackPresetIndex;
-    private Item[] _Items;
-    private Knapsack[] _Knapsacks;
+    private int _ItemPresetIndex;
+    // Variable indicates the objects can be resetted
+    private bool _Resettable;
 
-    private void Awake()
+    void Awake()
     {
         if (Instance == null) Instance = this;
     }
 
     void Start()
     {
-        _ItemPresetIndex = 0;
-        _KnapsackPresetIndex = 0;
         _FactoriesData = KnapsackPuzzleManager.Instance.FactoriesData;
+        _KnapsackPresetIndex = 0;
+        _ItemPresetIndex = 0;
+        _Resettable = true;
+        _GrayOutBackground.SetActive(false);
         ResetObject();
     }
 
+    #region Set and resetting values
+    // Set objects resettable indicate wheter the objects can be resetted when click CLEAR button on puzzle
+    public void SetResettable(bool resettable)
+    {
+        _Resettable = resettable;
+        _GrayOutBackground.SetActive(!resettable);
+    }
+
+    // Reset object when click CLEAR button on puzzle
     public void ResetObject()
     {
-        _InstantiateKnapsacks();
-        _InstantiateItems();
-        EnableObjectSetting();
+        if (_Resettable)
+        {
+            InstantiateKnapsacks(_KnapsackPresetIndex);
+            InstantiateItems(_ItemPresetIndex);
+            EnableSettingOnBitblock();
+        }
     }
 
-    // Make the objects can be assigned to the BitBlock when it's clicked by adding listener
-    public void EnableObjectSetting()
+    // Set enable/disable preset changing by enable/disable _PresetButtons
+    public void SetPresetChangable(bool changable)
     {
-        // Get reference to all available item in the panel
-        _Items = GetComponentsInChildren<Item>();
-        foreach (Item item in _Items)
+        foreach (Button button in _PresetButtons)
         {
-            // Add this item to enabled BitBlock(s) when click on this item
-            Button button = item.GetComponent<Button>();
-            button.onClick.AddListener(() => GenotypeManager.Instance.SetItemOnBits(item.Name));
-        }
-        // Get reference to all available knapsack in the panel
-        _Knapsacks = GetComponentsInChildren<Knapsack>();
-        foreach (Knapsack knapsack in _Knapsacks)
-        {
-            // Add this knapsack to enabled BitBlock(s) when click on this knapsack
-            Button button = knapsack.GetComponent<Button>();
-            button.onClick.AddListener(() => GenotypeManager.Instance.SetKnapsackOnBits(knapsack.Name));
+            button.interactable = changable;
         }
     }
 
-    #region Knapsack Instantiation ################################################################
     // Change the Knapsack preset
     public void ChangeKnapsackPreset(int amount)
     {
@@ -77,29 +81,6 @@ public class PhenotypeManager : MonoBehaviour
         ResetObject();
     }
 
-    // Instantiate Knapsack according to the preset index
-    private void _InstantiateKnapsacks()
-    {
-        // Destroy all previous object in the holder
-        foreach (Transform child in _KnapsackHolder)
-        {
-            Destroy(child.gameObject);
-        }
-        // Set the preset as same as the configuration in the factory
-        KnapsackSO[] knapsackPreset = _FactoriesData[_KnapsackPresetIndex].Knapsacks;
-        // Create actual Knapsack object in the game
-        foreach(KnapsackSO knapsack in knapsackPreset)
-            {
-            GameObject newKnapsack = Instantiate(_KnapsackPrefab);
-            newKnapsack.transform.SetParent(_KnapsackHolder);
-            newKnapsack.GetComponent<Knapsack>().SetKnapsack(knapsack);
-        }
-        // Keep reference to the Knapsack
-        _Knapsacks = GetComponentsInChildren<Knapsack>();
-    }
-    #endregion
-
-    #region Item Instantiation ####################################################################
     // Change the Item preset
     public void ChangeItemsPreset(int amount)
     {
@@ -114,9 +95,56 @@ public class PhenotypeManager : MonoBehaviour
         }
         ResetObject();
     }
+    #endregion
 
-    // Instantiate Item according to the preset
-    private void _InstantiateItems()
+    // Make the objects can be assigned to the BitBlock when it's clicked by adding listener
+    public void EnableSettingOnBitblock()
+    {
+        // Get reference to all available item in the panel
+        Item[] items = this.GetComponentsInChildren<Item>();
+        foreach (Item item in items)
+        {
+            // Add this item to enabled BitBlock(s) when click on this item
+            Button button = item.GetComponent<Button>();
+            button.onClick.AddListener(() => GenotypeManager.Instance.SetItemOnEnabledBits(item.Name));
+        }
+        // Get reference to all available knapsack in the panel
+        Knapsack[] knapsacks = this.GetComponentsInChildren<Knapsack>();
+        foreach (Knapsack knapsack in knapsacks)
+        {
+            // Add this knapsack to enabled BitBlock(s) when click on this knapsack
+            Button button = knapsack.GetComponent<Button>();
+            button.onClick.AddListener(() => GenotypeManager.Instance.SetKnapsackOnEnabledBits(knapsack.Name));
+        }
+
+    }
+
+    #region Knapsacks and Items Instantiation
+    // Instantiate Knapsack according to the preset index, random preset by default
+    public void InstantiateKnapsacks(int presetIndex=-1)
+    {
+        // Destroy all previous object in the holder
+        foreach (Transform child in _KnapsackHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        // Set the preset as same as the configuration in the factory
+        _KnapsackPresetIndex = (presetIndex != -1) ? presetIndex : Random.Range(0, _FactoriesData.Length);
+        KnapsackSO[] knapsackPreset = _FactoriesData[_KnapsackPresetIndex].Knapsacks;
+        // Create actual Knapsack object in the game
+        _Knapsacks = new GameObject[knapsackPreset.Length];
+        for (int i = 0; i < knapsackPreset.Length; i++)
+        {
+            GameObject newKnapsack = Instantiate(_KnapsackPrefab);
+            newKnapsack.transform.SetParent(_KnapsackHolder);
+            newKnapsack.GetComponent<Knapsack>().SetKnapsack(knapsackPreset[i]);
+            // Keep the reference to gameObject of Knapsack for instanitiate the Item on it later
+            _Knapsacks[i] = newKnapsack;
+        }
+    }
+
+    // Instantiate Item according to the preset, random preset by default
+    public void InstantiateItems(int presetIndex=-1, int[][] bitstring=null)
     {
         // Destroy all previous object in the holder
         foreach (Transform child in _ItemHolder)
@@ -124,17 +152,46 @@ public class PhenotypeManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         // Set the preset as same as the configuration in the factory
+        _ItemPresetIndex = (presetIndex != -1) ? presetIndex : Random.Range(0, _FactoriesData.Length);
         ItemSO[] itemPreset = _FactoriesData[_ItemPresetIndex].Items;
+        // Calculate place to put each item in
+        // itemPlace indicate where to place item in, 0 = outside knapsack, 1 = first knapsack, 2 = second knapsack ...
+        // note that the <new int[]> give all the value inside as 0 by default
+        int[] itemPlace = new int[itemPreset.Length];
+        bool hasBitstring = (bitstring != null);
+        if (hasBitstring)
+        {
+            for (int kIndex = 0; kIndex < bitstring.Length; kIndex++)
+            {
+                int[] section = bitstring[kIndex];
+                if (section == null)
+                {
+                    continue;
+                }
+                // Mark itemPlace using the kIndex (knapsack index) if the bit inside bitstring section is 1
+                for (int iIndex = 0; iIndex < section.Length; iIndex++)
+                {
+                    itemPlace[iIndex] += section[iIndex] * (kIndex + 1);
+                }
+            }
+        }
         // Create actual Item object in the game
-        foreach (ItemSO item in itemPreset)
+        for (int i = 0; i < itemPlace.Length; i++)
         {
             GameObject newItem = Instantiate(_ItemPrefab);
-            newItem.transform.SetParent(_ItemHolder);
+            int place = itemPlace[i];
+            if (place == 0)
+            {
+                newItem.transform.SetParent(_ItemHolder);
+            }
+            else
+            {
+                newItem.transform.SetParent(_Knapsacks[place - 1].GetComponent<Knapsack>().GetItemHolder());
+            }
             newItem.GetComponent<Item>().SetMask(_Mask);
-            newItem.GetComponent<Item>().SetItem(item);
+            newItem.GetComponent<Item>().SetItem(itemPreset[i]);
+            newItem.GetComponent<Item>().SetDraggable(!hasBitstring);
         }
-        // Keep reference to the Item
-        _Items = GetComponentsInChildren<Item>();
     }
     #endregion
 }

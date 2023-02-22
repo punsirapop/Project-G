@@ -21,8 +21,9 @@ public class Knapsack : MonoBehaviour
     [SerializeField] private GameObject _Weight1Bar;
     [SerializeField] private GameObject _Weight2Bar;
 
-    [SerializeField] ItemHolder Holder;
+    [SerializeField] private ItemHolder _Holder;
 
+    #region Data setter and getter
     public void SetKnapsack(KnapsackSO knapsackSO)
     {
         _Name = knapsackSO.Name;
@@ -47,6 +48,12 @@ public class Knapsack : MonoBehaviour
         _RenderInfo();
     }
 
+    public Transform GetItemHolder()
+    {
+        return _Holder.transform;
+    }
+    #endregion
+
     void Awake()
     {
         SetKnapsack("K1", 1000, 1000);
@@ -61,10 +68,10 @@ public class Knapsack : MonoBehaviour
 
     void Update()
     {
-        int[] properties = Holder.GetTotalProperties();
+        int[] properties = _Holder.GetTotalProperties();
         _TotalWeight1 = properties[1];
         _TotalWeight2 = properties[2];
-        if ((_TotalWeight1 > _Weight1Limit) | (_TotalWeight2 > _Weight2Limit))
+        if ((_TotalWeight1 > _Weight1Limit) || (_TotalWeight2 > _Weight2Limit))
         {
             _TotalValue = 0;
         }
@@ -79,6 +86,7 @@ public class Knapsack : MonoBehaviour
     // Render the information into the UI
     private void _RenderInfo()
     {
+        // Rendering text
         _NameText.text = _Name;
         _ValueText.text = _TotalValue.ToString();
         _Weight1Bar.transform.Find("WeightText").GetComponent<TextMeshProUGUI>().text = _TotalWeight1.ToString() + "/" + _Weight1Limit.ToString();
@@ -99,6 +107,7 @@ public class Knapsack : MonoBehaviour
         }
     }
 
+    #region Experimental function for gradually add the red color to the bar
     //// Render the information into the UI
     //private void _RenderInfo()
     //{
@@ -144,4 +153,5 @@ public class Knapsack : MonoBehaviour
     //        return new Color32(0, 255, 0, 255);
     //    }
     //}
+    #endregion
 }

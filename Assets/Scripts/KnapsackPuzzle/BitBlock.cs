@@ -9,8 +9,8 @@ public class BitBlock : MonoBehaviour
 {
     // Variable for keep track of the statuses
     private int _BitValue;
-    private string _ItemName;
-    private string _KnapsackName;
+    private string _ItemName = "-";
+    [SerializeField] private string _KnapsackName = "-";
 
     // Reference to UI components corresponding to the statuses
     [SerializeField] Toggle BitToggle;
@@ -20,11 +20,31 @@ public class BitBlock : MonoBehaviour
     // Set default value of the BitBlock and visually represent it
     void Start()
     {
-        _ItemName = "-";
-        _KnapsackName = "-";
+        //_ItemName = "-";
+        //_KnapsackName = "-";
         UpdateBit();
         UpdateItem();
         UpdateKnapsack();
+    }
+
+    public void SetInteractable(bool interactable)
+    {
+        BitToggle.interactable = interactable;
+        ItemToggle.interactable = interactable;
+        KnapsackToggle.interactable = interactable;
+    }
+
+    public void SetBit(int newBit)
+    {
+        if (newBit == 0)
+        {
+            BitToggle.isOn = false;
+        }
+        else
+        {
+            BitToggle.isOn = true;
+        }
+        UpdateBit();
     }
 
     // Update value of the bit and display it visually
@@ -34,8 +54,15 @@ public class BitBlock : MonoBehaviour
         BitToggle.GetComponentInChildren<Text>().text = _BitValue.ToString();
     }
 
-    // Set item of BitBlock to clicked item on Phenotype panel
     public void SetItem(string itemName)
+    {
+        _ItemName = itemName;
+        ItemToggle.isOn = false;
+        UpdateItem();
+    }
+
+    // Set item of BitBlock to clicked item on Phenotype panel
+    public void SetItemIfEnabled(string itemName)
     {
         if (ItemToggle.isOn)
         {
@@ -52,8 +79,15 @@ public class BitBlock : MonoBehaviour
         ItemToggle.GetComponentInChildren<Text>().text = displayItem;
     }
 
-    // Set knapsack of BitBlock to clicked knapsack on Phenotype panel
     public void SetKnapsack(string knapsackName)
+    {
+        _KnapsackName = knapsackName;
+        KnapsackToggle.isOn = false;
+        UpdateKnapsack();
+    }
+
+    // Set knapsack of BitBlock to clicked knapsack on Phenotype panel
+    public void SetKnapsackIfEnabled(string knapsackName)
     {
         if (KnapsackToggle.isOn)
         {

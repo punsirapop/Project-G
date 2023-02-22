@@ -365,9 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b118645432f8d364082bf2785646ba79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameText: {fileID: 6526735398162727023}
-  ValueText: {fileID: 2144937783492751632}
-  WeightText: {fileID: 5242041852527784756}
+  _NameText: {fileID: 6526735398162727023}
+  _ValueText: {fileID: 2144937783492751632}
+  _WeightText: {fileID: 5242041852527784756}
 --- !u!114 &6526735398264803345
 MonoBehaviour:
   m_ObjectHideFlags: 0

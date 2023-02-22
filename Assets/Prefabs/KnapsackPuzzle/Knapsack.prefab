@@ -388,7 +388,7 @@ MonoBehaviour:
   _ValueText: {fileID: 672947284334472012}
   _Weight1Bar: {fileID: 798433810171223623}
   _Weight2Bar: {fileID: 4092999450688055146}
-  Holder: {fileID: 1587860555066560927}
+  _Holder: {fileID: 1587860555066560927}
 --- !u!114 &1587860556660792528
 MonoBehaviour:
   m_ObjectHideFlags: 0
