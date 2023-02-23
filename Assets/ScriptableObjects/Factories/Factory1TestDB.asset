@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ca6c97e573a44e4eb03bbd3bc6d8fc0, type: 3}
-  m_Name: TestDB
+  m_Name: Factory1TestDB
   m_EditorClassIdentifier: 
   _ChromoDimension: 1
   _ChromoLength: 10

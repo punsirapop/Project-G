@@ -8,8 +8,8 @@ public class FactorySO : ScriptableObject
     // Informations
     [SerializeField] private string _Name;
     public string Name => _Name;
-    [SerializeField] [TextArea] private string _Problem;
-    public string Problem => _Problem;
+    [SerializeField] [TextArea] private string _Description;
+    public string Description => _Description;
     [SerializeField] private int _Generation;
     public int Generation => _Generation;
     [SerializeField] private string _Status;
@@ -87,21 +87,22 @@ public class FactorySO : ScriptableObject
             weaponChromosome.Image = _WeaponImages[imageIndex];
             // Assign the WeaponChromosome according to the values
             weaponChromosome.Name = _WeaponPrefix + (i + 1).ToString(_WeaponIdFormat);
-            string chromoString = "";
-            foreach (int[] section in bitstring)
-            {
-                if (section == null)
-                {
-                    continue;
-                }
-                foreach (int bit in section)
-                {
-                    chromoString = chromoString + bit.ToString();
-                }
-                chromoString += " | ";
-            }
-            char[] trimChar = { ' ', '|', ' ' };
-            weaponChromosome.Bitstring = chromoString.Trim(trimChar);
+            //string chromoString = "";
+            //foreach (int[] section in bitstring)
+            //{
+            //    if (section == null)
+            //    {
+            //        continue;
+            //    }
+            //    foreach (int bit in section)
+            //    {
+            //        chromoString = chromoString + bit.ToString();
+            //    }
+            //    chromoString += " | ";
+            //}
+            //char[] trimChar = { ' ', '|', ' ' };
+            //weaponChromosome.Bitstring = chromoString.Trim(trimChar);
+            weaponChromosome.Bitstring = bitstring;
             weaponChromosome.Fitness = values[0];
             weaponChromosome.Weight1 = values[1];
             weaponChromosome.Weight2 = values[2];

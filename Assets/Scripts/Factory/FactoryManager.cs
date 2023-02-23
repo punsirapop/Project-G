@@ -63,7 +63,7 @@ public class FactoryManager : MonoBehaviour
     private void _ResetPanels()
     {
         _InfoTexts[0].text = _FactoriesData[PlayerManager.CurrentFactory].Name;
-        _InfoTexts[1].text = _FactoriesData[PlayerManager.CurrentFactory].Problem;
+        _InfoTexts[1].text = _FactoriesData[PlayerManager.CurrentFactory].Description;
         OpenPanel(0);
     }
 
