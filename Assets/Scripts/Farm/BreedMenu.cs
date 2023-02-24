@@ -8,7 +8,7 @@ using UnityEngine.UI;
  * Control most of the breeding stuffs
  * From menu display to updating results
  */
-public class BreedMenu : PlayerManager
+public class BreedMenu : MonoBehaviour
 {
     // Stuffs to display such as textboxes, sliders, dropdowns, buttons
     #region breeding tab
@@ -49,12 +49,13 @@ public class BreedMenu : PlayerManager
     [SerializeField] TMP_Dropdown Combat;
     #endregion
     // List storing elite chromosomes
-    List<ChromosomeSO> elites;
+    FarmSO myFarm;
+    List<MechChromoSO> elites;
     int breedPrice = 500;
 
     private void Awake()
     {
-        elites = new List<ChromosomeSO>();
+        elites = new List<MechChromoSO>();
         ChromosomeController.OnSelectChromo += EliteMe;
     }
 
@@ -65,15 +66,15 @@ public class BreedMenu : PlayerManager
 
     private void Update()
     {
+        myFarm = FarmManager.Instance.FarmsData[PlayerManager.CurrentFarm];
         // Update displays
-        CurrentPopDisplay.text = Chromosomes[CurrentPlace].Count().ToString();
-        CurrentGenDisplay.text = CurrentGen[CurrentPlace - 1].ToString();
+        CurrentPopDisplay.text = myFarm.MechChromos.Count().ToString();
+        CurrentGenDisplay.text = myFarm.Generation.ToString();
         KTitle.gameObject.SetActive(TypeParentSelect.value == 1);
         KHolder.gameObject.SetActive(TypeParentSelect.value == 1);
         KDisplay.text = KSelect.value.ToString();
         KSelect.minValue = 1;
-        KSelect.maxValue = Chromosomes[CurrentPlace].Count();
-        KSelect.maxValue = Chromosomes[CurrentPlace].Count();
+        KSelect.maxValue = myFarm.MechChromos.Count();
         GenerationDisplay.text = GenerationSelect.value.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
         Elitism.text = (elites.Count > 0) ? string.Join(", ", elites.Select(x => x.ID)) : "None";
@@ -87,13 +88,13 @@ public class BreedMenu : PlayerManager
 
         HeadDisplay.text = HeadSelect.value.ToString();
         AccDisplay.text = AccSelect.value.ToString();
-        BreedBtn.interactable = Chromosomes[CurrentPlace].Count() > 0 &&
-            (Chromosomes[CurrentPlace].Count() - elites.Count) % 2 == 0;
+        BreedBtn.interactable = myFarm.MechChromos.Count() > 0 &&
+            (myFarm.MechChromos.Count() - elites.Count) % 2 == 0;
         // Yep, all of this
     }
 
     // Elite/unelite clicked chromosome
-    private void EliteMe(ChromosomeSO c)
+    private void EliteMe(MechChromoSO c)
     {
         if (!elites.Contains(c))
         {
@@ -135,24 +136,23 @@ public class BreedMenu : PlayerManager
     {
         for (int g = 0; g < GenerationSelect.value; g++)
         {
-            List<ChromosomeSO> candidates = Chromosomes[CurrentPlace];
-            
+            List<MechChromoSO> candidates = myFarm.MechChromos;
 
             // ------- get fitness -------
-            Dictionary<ChromosomeSO, float> fv = new Dictionary<ChromosomeSO, float>();
-            foreach (ChromosomeSO c in candidates)
+            Dictionary<MechChromoSO, float> fv = new Dictionary<MechChromoSO, float>();
+            foreach (MechChromoSO c in candidates)
             {
                 fv.Add(c, c.GetFitness(CurrentPref()));
             }
             // ------- select parents according to chosen type -------
-            List<ChromosomeSO> parents = new List<ChromosomeSO>
+            List<MechChromoSO> parents = new List<MechChromoSO>
                 (GeneticFunc.Instance.SelectParent(fv, elites.Count, TypeParentSelect.value, (int)KSelect.value));
             Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------
             List<List<int>> parentsEncoded = new List<List<int>>();
             // encode dem parents and add to list
-            foreach (ChromosomeSO c in parents)
+            foreach (MechChromoSO c in parents)
             {
                 parentsEncoded.Add(c.GetChromosome());
                 // Debug.Log(string.Join("-", parentsEncoded[parentsEncoded.Count-1]));
@@ -173,7 +173,7 @@ public class BreedMenu : PlayerManager
             }
 
             // ------- clear farm -------
-            List<ChromosomeSO> deleteMe = new List<ChromosomeSO>(Chromosomes[CurrentPlace]);
+            List<MechChromoSO> deleteMe = new List<MechChromoSO>(myFarm.MechChromos);
             // keep those elites to the next generation
             foreach (var item in elites)
             {
@@ -182,24 +182,23 @@ public class BreedMenu : PlayerManager
             // clear old population
             foreach (var item in deleteMe)
             {
-                DelChromo(item);
+                FarmManager.Instance.DelChromo(item);
             }
-            Debug.Log("Parents Count: " + Chromosomes[CurrentPlace].Count);
+            Debug.Log("Parents Count: " + myFarm.MechChromos.Count);
 
             // ------- create new chromosomes -------
-            List<ChromosomeSO> children = new List<ChromosomeSO>();
+            List<MechChromoSO> children = new List<MechChromoSO>();
             foreach (var item in parentsEncoded)
             {
-                AddChromo();
-                children.Add(Chromosomes[CurrentPlace]
-                    [Chromosomes[CurrentPlace].Count - 1]);
+                FarmManager.Instance.AddChromo();
+                children.Add(myFarm.MechChromos[myFarm.MechChromos.Count - 1]);
                 children[children.Count - 1].SetChromosome(item);
             }
                 
             // Debug.Log("Children Count: " + children.Count);
         }
 
-        CurrentGen[CurrentPlace - 1] += (int)GenerationSelect.value;
+        myFarm.AddGen((int)GenerationSelect.value);
         elites.Clear();
     }
 }

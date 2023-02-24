@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28562bba4310f3d40a41a7ed361044dc, type: 3}
-  m_Name: 87
+  m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
+  m_Name: Farm2
   m_EditorClassIdentifier: 
-  ID: 87
-  head: 1
-  body: e70000002700000092000000
-  acc: 7
-  cap: 4
-  atk: 010000000200000002000000
-  def: 030000000100000003000000
-  hp: 020000000100000001000000
-  spd: 010000000200000003000000
+  _Name: Farm 2
+  _Generation: 0
+  _Status: 0
+  _Floor: {fileID: 0}
+  _Border: {fileID: 0}
+  _MechChromos: []

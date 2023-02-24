@@ -12,8 +12,8 @@ public class PhenotypeManager : MonoBehaviour
     [SerializeField] private Transform _KnapsackHolder;
     [SerializeField] private GameObject _ItemPrefab;
     [SerializeField] private GameObject _KnapsackPrefab;
-    // Reference to actual Item and Knapsack Configuration
     [SerializeField] private FactoryConfig _FactoryConf;
+    // Reference to actual Item and Knapsack Configuration
     private int _ItemPreset;
     private int _KnapsackPreset;
     private Item[] _Items;

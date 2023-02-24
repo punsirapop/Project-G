@@ -12,8 +12,8 @@ using UnityEngine.UI;
 public class ChromosomeController : MonoBehaviour, IPointerDownHandler
 {
     // Chromosome of this mech
-    public ChromosomeSO MySC;
-    public static event Action<ChromosomeSO> OnSelectChromo;
+    public MechChromoSO MySC;
+    public static event Action<MechChromoSO> OnSelectChromo;
 
     SpriteRenderer myRenderer;
 

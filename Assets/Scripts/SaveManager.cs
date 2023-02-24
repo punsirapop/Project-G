@@ -1,76 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-/*
-// Data saved
-public class SaveInspector
-{
-    public List<List<ChromosomeSO>> Chromosomes => PlayerManager.Chromosomes;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-}
-
-public class SaveFormat
-{
-    public List<List<ChromosomeSO>> Chromosomes = new List<List<ChromosomeSO>>();
-
-    public void SetUp(SaveInspector si)
-    {
-        Chromosomes = new List<List<ChromosomeSO>>(si.Chromosomes);
-    }
-
-    public void Update()
-    {
-        PlayerManager.Chromosomes = new List<List<ChromosomeSO>>(Chromosomes);
-    }
-}
-*/
-
-/*
-public class SaveHolder
-{
-    public List<string> Habitat;
-    public List<string> Farm1;
-    public List<string> Farm2;
-    public List<string> Farm3;
-
-    public void Save()
-    {
-        List<string> list = new List<string>();
-        for (int i = 0; i < 4; i++)
-        {
-            list.Clear();
-            foreach (var c in PlayerManager.Chromosomes[i])
-            {
-                list.Add(string.Join("-", c.GetChromosome()));
-            }
-
-            switch (i)
-            {
-                case 0:
-                    Habitat = list;
-                    break;
-                case 1:
-                    Farm1 = list;
-                    break;
-                case 2:
-                    Farm2 = list;
-                    break;
-                case 3:
-                    Farm3 = list;
-                    break;
-            }
-        }
-    }
-}
-*/
-
 public class SaveHolder
 {
     public struct SaveData
     {
-        public List<int> CurrentGen;
+        // public List<int> CurrentGen;
     }
 
     string defaultPath = Path.Combine("Assets", "ScriptableObjects", "Mechs");
@@ -79,7 +18,7 @@ public class SaveHolder
     {
         // ---------- Save normal data ----------
         SaveData saveData = new SaveData();
-        saveData.CurrentGen = new List<int>(PlayerManager.CurrentGen);
+        // saveData.CurrentGen = new List<int>(PlayerManager.CurrentGen);
 
         // ---------- Save objects ----------
         // Mechs
@@ -91,7 +30,7 @@ public class SaveHolder
             // create folder
             AssetDatabase.CreateFolder(defaultPath, i.ToString());
             // save new obj
-            foreach (var item in PlayerManager.Chromosomes[i])
+            foreach (var item in FarmManager.Instance.FarmsData[i].MechChromos)
             {
                 string savePath = Path.Combine(newPath, item.ID.ToString() + ".asset");
                 AssetDatabase.CreateAsset(item, savePath);
@@ -112,6 +51,8 @@ public class SaveHolder
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
+
+    public static event Action OnReset;
 
     SaveHolder saver = new SaveHolder();
     string path = "";
@@ -172,5 +113,11 @@ public class SaveManager : MonoBehaviour
         SaveHolder.SaveData loadData = JsonUtility.FromJson<SaveHolder.SaveData>(json);
         //data.Update();
         Debug.Log("Data Loaded");
+    }
+
+    public void ResetGame()
+    {
+        Debug.Log("PLS RESET");
+        OnReset?.Invoke();
     }
 }
