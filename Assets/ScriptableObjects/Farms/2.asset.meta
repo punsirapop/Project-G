@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ScriptableObjects/Farms/2.asset.meta
+guid: 1091518216244ad48a04112b841b0da9
+========
+guid: de8a5512012a0ab429eabf0b018305a2
+>>>>>>>> playground:Assets/ScriptableObjects/Farms/Farm 1.asset.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

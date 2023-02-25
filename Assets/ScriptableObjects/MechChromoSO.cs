@@ -11,9 +11,9 @@ using UnityEngine;
  * Randomized when generated but can be adjusted later
  */
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Stat")]
-public class ChromosomeSO : ScriptableObject
+public class MechChromoSO : ScriptableObject
 {
-    public static int IDCounter = 0;
+    public static int IDCounter;
     public int ID;
     // ---- Cosmetic ----
     // Head - 20 pcs
@@ -42,6 +42,7 @@ public class ChromosomeSO : ScriptableObject
 
     private void Awake()
     {
+        SaveManager.OnReset += ResetMe;
         // set id
         ID = IDCounter;
         IDCounter++;
@@ -62,11 +63,17 @@ public class ChromosomeSO : ScriptableObject
         for (int i = 0; i < spd.Length; i++) spd[i] = Random.Range(1, cap);
     }
 
-    // Set properties according to encoded chromosome
-    public void SetChromosome(List<int> encoded)
+    private void OnDestroy()
     {
-        if(encoded != null)
+        SaveManager.OnReset -= ResetMe;
+    }
+
+    // Set properties according to encoded chromosome
+    public void SetChromosome(List<List<int>> encodedHolder)
+    {
+        if(encodedHolder != null)
         {
+            List<int> encoded = encodedHolder[0];
             this.head = encoded[0];
             for (int i = 0; i < 3; i++) this.body[i] = encoded[1 + i];
             this.acc = encoded[4];
@@ -78,9 +85,10 @@ public class ChromosomeSO : ScriptableObject
     }
 
     // Encode properties into chromosome
-    public List<int> GetChromosome()
+    public List<List<int>> GetChromosome()
     {
         List<int> c = new List<int>();
+        List<List<int>> holder = new List<List<int>>();
 
         c.Add(head);
         foreach (int item in body)
@@ -105,8 +113,8 @@ public class ChromosomeSO : ScriptableObject
         {
             c.Add(item);
         }
-
-        return c;
+        holder.Add(c);
+        return holder;
     }
 
     // Get properties' limit
@@ -197,5 +205,10 @@ public class ChromosomeSO : ScriptableObject
         result = (me - min) * 100 / (max - min);
 
         return result;
+    }
+
+    private void ResetMe()
+    {
+        IDCounter = 0;
     }
 }

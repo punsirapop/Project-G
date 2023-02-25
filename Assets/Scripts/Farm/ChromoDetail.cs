@@ -23,7 +23,7 @@ public class ChromoDetail : PlayerManager
         if(Instance == null) Instance = this;
     }
 
-    public void SetDisplay(ChromosomeSO c)
+    public void SetDisplay(MechChromoSO c)
     {
         Displays[0].text = c.ID.ToString();
         Displays[1].text = c.Head.ToString();
@@ -33,9 +33,9 @@ public class ChromoDetail : PlayerManager
         Displays[5].text = c.Def.Sum().ToString();
         Displays[6].text = c.Hp.Sum().ToString();
         Displays[7].text = c.Spd.Sum().ToString();
-        Displays[8].text = string.Join("-", c.GetChromosome());
+        Displays[8].text = string.Join("-", c.GetChromosome().First());
         DeleteButton.onClick.RemoveAllListeners();
         DeleteButton.onClick.AddListener(() => FarmManager.Instance.OpenPanel(2));
-        DeleteButton.onClick.AddListener(() => DelChromo(c));
+        DeleteButton.onClick.AddListener(() => FarmManager.Instance.DelChromo(c));
     }
 }

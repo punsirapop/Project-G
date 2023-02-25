@@ -9,16 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<<< HEAD:Assets/ScriptableObjects/Factories/Factory2DB.asset
-  m_Script: {fileID: 11500000, guid: 3ca6c97e573a44e4eb03bbd3bc6d8fc0, type: 3}
-  m_Name: Factory2DB
+<<<<<<<< HEAD:Assets/ScriptableObjects/Farms/3.asset
+  m_Script: {fileID: 11500000, guid: 28562bba4310f3d40a41a7ed361044dc, type: 3}
+  m_Name: 3
   m_EditorClassIdentifier: 
-  _ChromoDimension: -1
-  _ChromoLength: 0
-  _Population: []
+  ID: 3
+  head: 14
+  body: 370000004e00000063000000
+  acc: 6
+  cap: 4
+  atk: 030000000200000002000000
+  def: 010000000300000001000000
+  hp: 030000000100000003000000
+  spd: 020000000100000003000000
 ========
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
-  m_Name: Habitat
+  m_Name: Farm 2
   m_EditorClassIdentifier: 
   _Name: 
   _Generation: 0
@@ -26,4 +32,4 @@ MonoBehaviour:
   _Floor: {fileID: 0}
   _Border: {fileID: 0}
   _MechChromos: []
->>>>>>>> playground:Assets/ScriptableObjects/Farms/Habitat.asset
+>>>>>>>> playground:Assets/ScriptableObjects/Farms/Farm 2.asset

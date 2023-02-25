@@ -20,93 +20,6 @@ public class GeneticFunc : MonoBehaviour
 
     // -------------- General --------------
 
-    /* 
-     * Create lists of parents
-     * 
-     * Input
-     *      popCount: population size
-     *      eliteCount: amount of elites
-     *      
-     * Output
-     *      list of parents' indexes
-     */
-    public List<int> SelectParentU(int popCount, int eliteCount)
-    {
-        List<int> result = new List<int>();
-        while ( result.Count < popCount - eliteCount - (popCount - eliteCount) % 2 )
-        {
-            int r = Random.Range(0, popCount);
-            result.Add(r);
-        }
-        return result;
-    }
-
-    /* 
-     * Crossover 2 lists
-     * 
-     * Input
-     *      a & b: lists to be crossed over
-     *      type: crossover type
-     *          0 - one-point
-     *          1 - two-point
-     *          2 - uniform
-     */
-    public void Crossover(List<int> a, List<int> b, int type)
-    {
-        // store temp data
-        List<int> temp = new List<int>(b);
-
-        if (type < 2)
-        {   // not uniform
-            Debug.Log("n-point crossover");
-            // set start & end points
-            int start = Random.Range(0, a.Count);
-            int end = (type == 1) ? Random.Range(start, a.Count) : a.Count - 1;
-            Debug.Log("Start: " + start + " End: " + end);
-            // swap intervals
-            for (int i = start; i <= end; i++)
-            {
-                b[i] = a[i];
-                a[i] = temp[i];
-            }
-        }
-        else
-        {   // uniform
-            Debug.Log("uniform crossover");
-            for (int i = 0; i < a.Count; i++)
-            {
-                if (Random.Range(0, 100) >= 50)
-                {
-                    b[i] = a[i];
-                    a[i] = temp[i];
-                }
-            }
-        }
-        Debug.Log("finished");
-    }
-
-    /* 
-     * Randomly mutate genes
-     * 
-     * Input
-     *      c: encoded chromosome to be mutated
-     *      statCap: list of maximum number for each gene
-     */
-    public void Mutate(List<int> c, List<int> statCap)
-    {
-        Debug.Log("IM MUTATING");
-
-        for (int i = 0; i < c.Count; i++)
-        {
-            if(Random.Range(0, 100) < 100 / c.Count)
-            {
-                c[i] = Random.Range(0, statCap[i]);
-                Debug.Log("I MUTATED AT " + i);
-            }
-        }
-    }
-
-    // -------------- Under Construction --------------
     /*
      * Create list of parents
      * 
@@ -122,9 +35,9 @@ public class GeneticFunc : MonoBehaviour
      * Output
      *      list of parents' indexes
      */
-    public List<ChromosomeSO> SelectParent(Dictionary<ChromosomeSO, float> fv, int eliteCount, int mode, int k)
+    public List<dynamic> SelectParent(Dictionary<dynamic, float> fv, int eliteCount, int mode, int k)
     {
-        List<ChromosomeSO> result = new List<ChromosomeSO>();
+        List<dynamic> result = new List<dynamic>();
         while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
         {
             switch (mode)
@@ -136,7 +49,7 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // tournament-based
                 case 1:
-                    Dictionary<ChromosomeSO, float> tmp1 = new Dictionary<ChromosomeSO, float>();
+                    Dictionary<dynamic, float> tmp1 = new Dictionary<dynamic, float>();
                     for (int i = 0; i < k; i++)
                     {
                         int r2 = 0;
@@ -151,7 +64,7 @@ public class GeneticFunc : MonoBehaviour
                     float r3 = Random.Range(0, fv.Values.Sum());
                     int index = 0;
                     float u = fv.First().Value;
-                    while(u < r3)
+                    while (u < r3)
                     {
                         index++;
                         u += fv.ElementAt(index).Value;
@@ -160,7 +73,7 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // rank-based
                 case 3:
-                    Dictionary<ChromosomeSO, float> tmp2 = new Dictionary<ChromosomeSO, float>
+                    Dictionary<dynamic, float> tmp2 = new Dictionary<dynamic, float>
                         (fv.OrderBy(x => x.Value));
                     for (int i = 0; i < tmp2.Count; i++)
                     {
@@ -177,9 +90,84 @@ public class GeneticFunc : MonoBehaviour
                     result.Add(fv.ElementAt(index2).Key);
                     break;
             }
-
         }
-
         return result;
     }
+
+    /* 
+     * Crossover 2 lists
+     * 
+     * Input
+     *      a & b: lists to be crossed over
+     *      type: crossover type
+     *          0 - one-point
+     *          1 - two-point
+     *          2 - uniform
+     */
+    public void Crossover(List<List<int>> a, List<List<int>> b, int type)
+    {
+        // store temp data
+        List<List<int>> temp = new List<List<int>>(b);
+
+        if (type < 2)
+        {   // not uniform
+            Debug.Log("n-point crossover");
+            // set start & end points
+            int start = Random.Range(0, a.Count);
+            int end = (type == 1) ? Random.Range(start, a.Count) : a.Count - 1;
+            Debug.Log("Start: " + start + " End: " + end);
+            // swap intervals
+            for (int i = start; i <= end; i++)
+            {
+                for (int j = 0; j < a.Count; j++)
+                {
+                    b[j][i] = a[j][i];
+                    a[j][i] = temp[j][i];
+                }
+            }
+        }
+        else
+        {   // uniform
+            Debug.Log("uniform crossover");
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (Random.Range(0, 100) >= 50)
+                {
+                    for (int j = 0; j < a.Count; j++)
+                    {
+                        b[j][i] = a[j][i];
+                        a[j][i] = temp[j][i];
+                    }
+                }
+            }
+        }
+        Debug.Log("finished");
+    }
+
+    /* 
+     * Randomly mutate genes
+     * 
+     * Input
+     *      c: encoded chromosome to be mutated
+     *      statCap: list of maximum number for each gene
+     */
+    public void Mutate(List<List<int>> c, List<int> statCap)
+    {
+        Debug.Log("IM MUTATING");
+
+        for (int i = 0; i < c.Count; i++)
+        {
+            if (Random.Range(0, 100) < 100 / c.Count)
+            {
+                int r = Random.Range(0, statCap[i]);
+                for (int j = 0; j < c.Count; j++)
+                {
+                    c[j][i] = r;
+                }
+                Debug.Log("I MUTATED AT " + i);
+            }
+        }
+    }
+
+    // -------------- Under Construction --------------
 }

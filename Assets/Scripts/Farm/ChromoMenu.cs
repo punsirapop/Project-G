@@ -7,7 +7,7 @@ using TMPro;
 /*
  * Control Chromosome list tab
  */
-public class ChromoMenu : PlayerManager
+public class ChromoMenu : MonoBehaviour
 {
     // Prefab for button
     [SerializeField] GameObject preset;
@@ -17,19 +17,17 @@ public class ChromoMenu : PlayerManager
 
     private void Awake()
     {
-        PlayerManager.OnAddChromosome += OnValueChange;
-        PlayerManager.OnRemoveChromosome += OnValueChange;
+        FarmManager.OnEditChromo += OnValueChange;
     }
 
     private void OnDestroy()
     {
-        PlayerManager.OnAddChromosome -= OnValueChange;
-        PlayerManager.OnRemoveChromosome -= OnValueChange;
+        FarmManager.OnEditChromo -= OnValueChange;
     }
 
     private void OnEnable()
     {
-        OnValueChange(null);
+        OnValueChange();
     }
 
     /*
@@ -39,13 +37,13 @@ public class ChromoMenu : PlayerManager
      *      Actually doesn't need one but the event requires one
      *      So actually just a place holder, don't have to care
      */
-    void OnValueChange(ChromosomeSO c)
+    void OnValueChange()
     {
         foreach (Transform item in parent)
         {
             Destroy(item.gameObject);
         }
-        foreach (var item in Chromosomes[PlayerManager.CurrentPlace])
+        foreach (var item in FarmManager.Instance.FarmsData[PlayerManager.CurrentFarm].MechChromos)
         {
             GameObject me = Instantiate(preset, parent);
             me.GetComponent<Button>().onClick.AddListener(() => FarmManager.Instance.OpenPanel(3));
