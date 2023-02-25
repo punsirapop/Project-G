@@ -18,7 +18,7 @@ public class FarmManager : MonoBehaviour
     // Transforms indicating display borders of the farm
     [SerializeField] Transform[] border;
     // Transforms storing generated mechs in each farm
-    [SerializeField] Transform[] holders;
+    [SerializeField] Transform holder;
     // Mech prefab
     [SerializeField] GameObject preset;
     // Game panels
@@ -67,7 +67,7 @@ public class FarmManager : MonoBehaviour
     {
         Vector2 spawnPoint = new Vector2(UnityEngine.Random.Range(border[0].position.x, border[1].position.x),
             UnityEngine.Random.Range(border[0].position.y, border[1].position.y));
-        GameObject mech = Instantiate(preset, spawnPoint, Quaternion.identity, holders[PlayerManager.CurrentFarm]);
+        GameObject mech = Instantiate(preset, spawnPoint, Quaternion.identity, holder);
         mechs.Add(mech);
         mech.GetComponent<ChromosomeController>().MySC = c;
         mech.SetActive(true);

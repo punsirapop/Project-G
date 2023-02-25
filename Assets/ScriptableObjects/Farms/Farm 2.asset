@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
-  m_Name: Farm3
+  m_Name: Farm 2
   m_EditorClassIdentifier: 
-  _Name: Farm 3
+  _Name: 
   _Generation: 0
   _Status: 0
   _Floor: {fileID: 0}
