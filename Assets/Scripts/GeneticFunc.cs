@@ -20,23 +20,76 @@ public class GeneticFunc : MonoBehaviour
 
     // -------------- General --------------
 
-    /* 
-     * Create lists of parents
+    /*
+     * Create list of parents
      * 
      * Input
-     *      popCount: population size
+     *      fv: population fitness val
      *      eliteCount: amount of elites
+     *      mode: selection mode
+     *          0 - Random
+     *          1 - Tournament-based
+     *          2 - Roulette Wheel
+     *          3 - Rank-based
      *      
      * Output
      *      list of parents' indexes
      */
-    public List<int> SelectParentU(int popCount, int eliteCount)
+    public List<dynamic> SelectParent(Dictionary<dynamic, float> fv, int eliteCount, int mode, int k)
     {
-        List<int> result = new List<int>();
-        while ( result.Count < popCount - eliteCount - (popCount - eliteCount) % 2 )
+        List<dynamic> result = new List<dynamic>();
+        while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
         {
-            int r = Random.Range(0, popCount);
-            result.Add(r);
+            switch (mode)
+            {
+                // random
+                case 0:
+                    int r1 = Random.Range(0, fv.Count);
+                    result.Add(fv.ElementAt(r1).Key);
+                    break;
+                // tournament-based
+                case 1:
+                    Dictionary<dynamic, float> tmp1 = new Dictionary<dynamic, float>();
+                    for (int i = 0; i < k; i++)
+                    {
+                        int r2 = 0;
+                        do r2 = Random.Range(0, fv.Count);
+                        while (tmp1.ContainsKey(fv.ElementAt(r2).Key));
+                        tmp1.Add(fv.ElementAt(r2).Key, fv.ElementAt(r2).Value);
+                    }
+                    result.Add(tmp1.OrderBy(x => x.Value).First().Key);
+                    break;
+                // roulette
+                case 2:
+                    float r3 = Random.Range(0, fv.Values.Sum());
+                    int index = 0;
+                    float u = fv.First().Value;
+                    while (u < r3)
+                    {
+                        index++;
+                        u += fv.ElementAt(index).Value;
+                    }
+                    result.Add(fv.ElementAt(index).Key);
+                    break;
+                // rank-based
+                case 3:
+                    Dictionary<dynamic, float> tmp2 = new Dictionary<dynamic, float>
+                        (fv.OrderBy(x => x.Value));
+                    for (int i = 0; i < tmp2.Count; i++)
+                    {
+                        tmp2[tmp2.ElementAt(i).Key] = i;
+                    }
+                    float r4 = Random.Range(0, fv.Values.Sum());
+                    int index2 = 0;
+                    float u2 = fv.First().Value;
+                    while (u2 < r4)
+                    {
+                        index2++;
+                        u2 += fv.ElementAt(index2).Value;
+                    }
+                    result.Add(fv.ElementAt(index2).Key);
+                    break;
+            }
         }
         return result;
     }
@@ -98,7 +151,7 @@ public class GeneticFunc : MonoBehaviour
 
         for (int i = 0; i < c.Count; i++)
         {
-            if(Random.Range(0, 100) < 100 / c.Count)
+            if (Random.Range(0, 100) < 100 / c.Count)
             {
                 c[i] = Random.Range(0, statCap[i]);
                 Debug.Log("I MUTATED AT " + i);
@@ -107,79 +160,4 @@ public class GeneticFunc : MonoBehaviour
     }
 
     // -------------- Under Construction --------------
-    /*
-     * Create list of parents
-     * 
-     * Input
-     *      fv: population fitness val
-     *      eliteCount: amount of elites
-     *      mode: selection mode
-     *          0 - Random
-     *          1 - Tournament-based
-     *          2 - Roulette Wheel
-     *          3 - Rank-based
-     *      
-     * Output
-     *      list of parents' indexes
-     */
-    public List<MechChromoSO> SelectParent(Dictionary<MechChromoSO, float> fv, int eliteCount, int mode, int k)
-    {
-        List<MechChromoSO> result = new List<MechChromoSO>();
-        while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
-        {
-            switch (mode)
-            {
-                // random
-                case 0:
-                    int r1 = Random.Range(0, fv.Count);
-                    result.Add(fv.ElementAt(r1).Key);
-                    break;
-                // tournament-based
-                case 1:
-                    Dictionary<MechChromoSO, float> tmp1 = new Dictionary<MechChromoSO, float>();
-                    for (int i = 0; i < k; i++)
-                    {
-                        int r2 = 0;
-                        do r2 = Random.Range(0, fv.Count);
-                        while (tmp1.ContainsKey(fv.ElementAt(r2).Key));
-                        tmp1.Add(fv.ElementAt(r2).Key, fv.ElementAt(r2).Value);
-                    }
-                    result.Add(tmp1.OrderBy(x => x.Value).First().Key);
-                    break;
-                // roulette
-                case 2:
-                    float r3 = Random.Range(0, fv.Values.Sum());
-                    int index = 0;
-                    float u = fv.First().Value;
-                    while(u < r3)
-                    {
-                        index++;
-                        u += fv.ElementAt(index).Value;
-                    }
-                    result.Add(fv.ElementAt(index).Key);
-                    break;
-                // rank-based
-                case 3:
-                    Dictionary<MechChromoSO, float> tmp2 = new Dictionary<MechChromoSO, float>
-                        (fv.OrderBy(x => x.Value));
-                    for (int i = 0; i < tmp2.Count; i++)
-                    {
-                        tmp2[tmp2.ElementAt(i).Key] = i;
-                    }
-                    float r4 = Random.Range(0, fv.Values.Sum());
-                    int index2 = 0;
-                    float u2 = fv.First().Value;
-                    while (u2 < r4)
-                    {
-                        index2++;
-                        u2 += fv.ElementAt(index2).Value;
-                    }
-                    result.Add(fv.ElementAt(index2).Key);
-                    break;
-            }
-
-        }
-
-        return result;
-    }
 }

@@ -69,7 +69,7 @@ public class FarmManager : MonoBehaviour
             UnityEngine.Random.Range(border[0].position.y, border[1].position.y));
         GameObject mech = Instantiate(preset, spawnPoint, Quaternion.identity, holder);
         mechs.Add(mech);
-        mech.GetComponent<ChromosomeController>().MySC = c;
+        mech.GetComponent<MechDisplayController>().MySO = c;
         mech.SetActive(true);
     }
 
@@ -81,7 +81,7 @@ public class FarmManager : MonoBehaviour
      */
     private void DelMech(MechChromoSO c)
     {
-        GameObject m = mechs.Find(x => x.GetComponent<ChromosomeController>().MySC == c);
+        GameObject m = mechs.Find(x => x.GetComponent<MechDisplayController>().MySO == c);
         mechs.Remove(m);
         Destroy(m);
     }

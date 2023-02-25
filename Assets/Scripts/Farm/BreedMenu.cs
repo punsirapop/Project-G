@@ -56,12 +56,12 @@ public class BreedMenu : MonoBehaviour
     private void Awake()
     {
         elites = new List<MechChromoSO>();
-        ChromosomeController.OnSelectChromo += EliteMe;
+        MechDisplayController.OnSelectChromo += EliteMe;
     }
 
     private void OnDestroy()
     {
-        ChromosomeController.OnSelectChromo -= EliteMe;
+        MechDisplayController.OnSelectChromo -= EliteMe;
     }
 
     private void Update()
@@ -139,13 +139,13 @@ public class BreedMenu : MonoBehaviour
             List<MechChromoSO> candidates = myFarm.MechChromos;
 
             // ------- get fitness -------
-            Dictionary<MechChromoSO, float> fv = new Dictionary<MechChromoSO, float>();
+            Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
             foreach (MechChromoSO c in candidates)
             {
                 fv.Add(c, c.GetFitness(CurrentPref()));
             }
             // ------- select parents according to chosen type -------
-            List<MechChromoSO> parents = new List<MechChromoSO>
+            List<dynamic> parents = new List<dynamic>
                 (GeneticFunc.Instance.SelectParent(fv, elites.Count, TypeParentSelect.value, (int)KSelect.value));
             Debug.Log("Parents Count: " + parents.Count);
 
