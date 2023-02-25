@@ -104,10 +104,10 @@ public class GeneticFunc : MonoBehaviour
      *          1 - two-point
      *          2 - uniform
      */
-    public void Crossover(List<int> a, List<int> b, int type)
+    public void Crossover(List<List<int>> a, List<List<int>> b, int type)
     {
         // store temp data
-        List<int> temp = new List<int>(b);
+        List<List<int>> temp = new List<List<int>>(b);
 
         if (type < 2)
         {   // not uniform
@@ -119,8 +119,11 @@ public class GeneticFunc : MonoBehaviour
             // swap intervals
             for (int i = start; i <= end; i++)
             {
-                b[i] = a[i];
-                a[i] = temp[i];
+                for (int j = 0; j < a.Count; j++)
+                {
+                    b[j][i] = a[j][i];
+                    a[j][i] = temp[j][i];
+                }
             }
         }
         else
@@ -130,8 +133,11 @@ public class GeneticFunc : MonoBehaviour
             {
                 if (Random.Range(0, 100) >= 50)
                 {
-                    b[i] = a[i];
-                    a[i] = temp[i];
+                    for (int j = 0; j < a.Count; j++)
+                    {
+                        b[j][i] = a[j][i];
+                        a[j][i] = temp[j][i];
+                    }
                 }
             }
         }
@@ -145,7 +151,7 @@ public class GeneticFunc : MonoBehaviour
      *      c: encoded chromosome to be mutated
      *      statCap: list of maximum number for each gene
      */
-    public void Mutate(List<int> c, List<int> statCap)
+    public void Mutate(List<List<int>> c, List<int> statCap)
     {
         Debug.Log("IM MUTATING");
 
@@ -153,7 +159,11 @@ public class GeneticFunc : MonoBehaviour
         {
             if (Random.Range(0, 100) < 100 / c.Count)
             {
-                c[i] = Random.Range(0, statCap[i]);
+                int r = Random.Range(0, statCap[i]);
+                for (int j = 0; j < c.Count; j++)
+                {
+                    c[j][i] = r;
+                }
                 Debug.Log("I MUTATED AT " + i);
             }
         }

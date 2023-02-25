@@ -69,10 +69,11 @@ public class MechChromoSO : ScriptableObject
     }
 
     // Set properties according to encoded chromosome
-    public void SetChromosome(List<int> encoded)
+    public void SetChromosome(List<List<int>> encodedHolder)
     {
-        if(encoded != null)
+        if(encodedHolder != null)
         {
+            List<int> encoded = encodedHolder[0];
             this.head = encoded[0];
             for (int i = 0; i < 3; i++) this.body[i] = encoded[1 + i];
             this.acc = encoded[4];
@@ -84,9 +85,10 @@ public class MechChromoSO : ScriptableObject
     }
 
     // Encode properties into chromosome
-    public List<int> GetChromosome()
+    public List<List<int>> GetChromosome()
     {
         List<int> c = new List<int>();
+        List<List<int>> holder = new List<List<int>>();
 
         c.Add(head);
         foreach (int item in body)
@@ -111,8 +113,8 @@ public class MechChromoSO : ScriptableObject
         {
             c.Add(item);
         }
-
-        return c;
+        holder.Add(c);
+        return holder;
     }
 
     // Get properties' limit

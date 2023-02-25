@@ -150,7 +150,7 @@ public class BreedMenu : MonoBehaviour
             Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------
-            List<List<int>> parentsEncoded = new List<List<int>>();
+            List<List<List<int>>> parentsEncoded = new List<List<List<int>>>();
             // encode dem parents and add to list
             foreach (MechChromoSO c in parents)
             {
