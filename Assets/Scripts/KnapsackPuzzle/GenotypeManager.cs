@@ -148,4 +148,29 @@ public class GenotypeManager : MonoBehaviour
         // Keep reference to the BitBlock
         _BitBlocks = GetComponentsInChildren<BitBlock>();
     }
+
+    // Function to transform the current bitstring and the mapping into string for the sake of answer checking
+    public new string ToString()
+    {
+        // Convert all Bitblock to string
+        string answer = "";
+        _BitBlocks = GetComponentsInChildren<BitBlock>();
+        foreach (BitBlock block in _BitBlocks)
+        {
+            answer += block.ItemName + "/" + block.KnapsackName + "/" + block.BitValue.ToString() + "_";
+        }
+        // Sort the string
+        answer = answer.Trim('_');
+        List<string> answerList = new List<string> { };
+        answerList.AddRange(answer.Split("_"));
+        answerList.Sort();
+        // Concat it back to string
+        string sortedAnswer = "";
+        foreach (string a in answerList)
+        {
+            sortedAnswer += a + "_";
+        }
+        sortedAnswer = sortedAnswer.Trim('_');
+        return sortedAnswer;
+    }
 }

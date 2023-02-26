@@ -83,6 +83,18 @@ public class Knapsack : MonoBehaviour
         _RenderInfo();
     }
 
+    public int GetDimension()
+    {
+        if (_Weight2Limit > 0)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
     // Render the information into the UI
     private void _RenderInfo()
     {

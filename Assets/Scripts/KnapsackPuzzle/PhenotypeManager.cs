@@ -121,7 +121,7 @@ public class PhenotypeManager : MonoBehaviour
 
     #region Knapsacks and Items Instantiation
     // Instantiate Knapsack according to the preset index, random preset by default
-    public void InstantiateKnapsacks(int presetIndex=-1)
+    public void InstantiateKnapsacks(int presetIndex = -1)
     {
         // Destroy all previous object in the holder
         foreach (Transform child in _KnapsackHolder)
@@ -144,7 +144,7 @@ public class PhenotypeManager : MonoBehaviour
     }
 
     // Instantiate Item according to the preset, random preset by default
-    public void InstantiateItems(int presetIndex=-1, int[][] bitstring=null)
+    public void InstantiateItems(int presetIndex = -1, int[][] bitstring = null)
     {
         // Destroy all previous object in the holder
         foreach (Transform child in _ItemHolder)
@@ -194,4 +194,66 @@ public class PhenotypeManager : MonoBehaviour
         }
     }
     #endregion
+
+    // Function to transform the current phenotype into string for the sake of answer checking
+    public new string ToString()
+    {
+        // Check if dimension of knapsack not match the items
+        int knapsackDimension = GetComponentInChildren<Knapsack>().GetDimension();
+        int itemDimension = GetComponentInChildren<Item>().GetDimension();
+        if (knapsackDimension != itemDimension)
+        {
+            return "dim";
+        }
+        // Create string from the phenotype
+        Knapsack[] knapsacks = GetComponentsInChildren<Knapsack>();
+        string answer = "";
+        foreach (Knapsack k in knapsacks)
+        {
+            if (k == null)
+            {
+                break;
+            }
+            Item[] itemsInKnapsack = k.GetComponentsInChildren<Item>();
+            Item[] items = this.GetComponentsInChildren<Item>();
+            foreach (Item i in items)
+            {
+                if (i == null)
+                {
+                    break;
+                }
+                // Check if the items is in the knapsack
+                bool isInKnapsack = false;
+                foreach (Item ik in itemsInKnapsack)
+                {
+                    if (i.Name == ik.Name)
+                    {
+                        isInKnapsack = true;
+                        break;
+                    }
+                }
+                if (isInKnapsack)
+                {
+                    answer += i.Name + "/" + k.Name + "/" + "1_";
+                }
+                else
+                {
+                    answer += i.Name + "/" + k.Name + "/" + "0_";
+                }
+            }
+        }
+        // Sort the string
+        answer = answer.Trim('_');
+        List<string> answerList = new List<string> { };
+        answerList.AddRange(answer.Split("_"));
+        answerList.Sort();
+        // Concat it back to string
+        string sortedAnswer = "";
+        foreach (string a in answerList)
+        {
+            sortedAnswer += a + "_";
+        }
+        sortedAnswer = sortedAnswer.Trim('_');
+        return sortedAnswer;
+    }
 }

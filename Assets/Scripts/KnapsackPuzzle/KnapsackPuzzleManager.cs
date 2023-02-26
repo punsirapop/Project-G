@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class KnapsackPuzzleManager : MonoBehaviour
@@ -9,12 +10,17 @@ public class KnapsackPuzzleManager : MonoBehaviour
     // Data of all factory
     [SerializeField] private FactorySO[] _FactoriesData;
     public FactorySO[] FactoriesData => _FactoriesData;
+    [SerializeField] private GameObject _Overlay;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
     }
 
+    private void Start()
+    {
+        _Overlay.SetActive(false);
+    }
 
     // Set Pheonotype and Genotype managers to suit the type of puzzle
     // isSolve and isEncode might be placed in PlayerManager which works as the inter-scence data holder later
@@ -107,4 +113,12 @@ public class KnapsackPuzzleManager : MonoBehaviour
         }
     }
 
+    public void SubmitAnswer()
+    {
+        string genoAnswer = GenotypeManager.Instance.ToString();
+        string phenoAnswer = PhenotypeManager.Instance.ToString();
+        bool isCorrect = (genoAnswer == phenoAnswer);
+        _Overlay.GetComponentInChildren<TextMeshProUGUI>().text = isCorrect ? "Correct" : "Wrong";
+        _Overlay.SetActive(true);
+    }
 }
