@@ -1053,7 +1053,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChangePlace
+        m_MethodName: SetCurrentFarm
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1964,6 +1964,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8b935c76c708b4798ecd492a22b54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savedFarms:
+  - {fileID: 11400000, guid: 232a7fc07eea12e45beaf2ed08b59732, type: 2}
+  - {fileID: 11400000, guid: 7a7935f7e8b0ca64ab5871209d34e618, type: 2}
+  - {fileID: 11400000, guid: 9d03b3700ef6d9847a5d243716004cd8, type: 2}
+  - {fileID: 11400000, guid: 4563b307ae462c54b9fb0437d9ad15df, type: 2}
 --- !u!114 &1046214081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,7 +2213,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChangePlace
+        m_MethodName: SetCurrentFarm
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3745,7 +3750,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChangePlace
+        m_MethodName: SetCurrentFarm
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

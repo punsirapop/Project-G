@@ -16,10 +16,6 @@ public class FarmSO : ScriptableObject
     // Sprites
     [SerializeField] private Sprite _Floor;
     public Sprite Floor => _Floor;
-    /*
-    [SerializeField] private Sprite _Conveyor;
-    public Sprite Conveyor => _Conveyor;
-    */
     [SerializeField] private Sprite _Border;
     public Sprite Border => _Border;
 
@@ -37,6 +33,26 @@ public class FarmSO : ScriptableObject
         SaveManager.OnReset -= ResetMe;
     }
 
+    // Reset this farm
+    private void ResetMe()
+    {
+        Debug.Log("RESET FROM FARM");
+        _Generation = 0;
+        _Status = 0;
+        _MechChromos = new List<MechChromoSO>();
+    }
+
+    // Set farm from value
+    public void SetMe(FarmSO f)
+    {
+        _Name = f.Name;
+        _Generation = f.Generation;
+        _Status = f.Status;
+        _Floor = f.Floor;
+        _Border = f.Border;
+        _MechChromos = new List<MechChromoSO>(f.MechChromos);
+    }
+
     // Add new random chromosome to the current space
     public void AddChromo(MechChromoSO c)
     {
@@ -52,13 +68,6 @@ public class FarmSO : ScriptableObject
     public void AddGen(int g)
     {
         _Generation += g;
-    }
-    private void ResetMe()
-    {
-        Debug.Log("RESET FROM FARM");
-        _Generation = 0;
-        _Status = 0;
-        _MechChromos = new List<MechChromoSO>();
     }
 }
 

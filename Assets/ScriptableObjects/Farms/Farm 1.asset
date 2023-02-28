@@ -9,20 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<<< HEAD:Assets/ScriptableObjects/Farms/2.asset
-  m_Script: {fileID: 11500000, guid: 28562bba4310f3d40a41a7ed361044dc, type: 3}
-  m_Name: 2
-  m_EditorClassIdentifier: 
-  ID: 2
-  head: 1
-  body: 5500000010000000ac000000
-  acc: 2
-  cap: 4
-  atk: 020000000100000001000000
-  def: 010000000300000001000000
-  hp: 030000000100000003000000
-  spd: 010000000300000001000000
-========
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 1
   m_EditorClassIdentifier: 
@@ -32,4 +18,3 @@ MonoBehaviour:
   _Floor: {fileID: 0}
   _Border: {fileID: 0}
   _MechChromos: []
->>>>>>>> playground:Assets/ScriptableObjects/Farms/Farm 1.asset

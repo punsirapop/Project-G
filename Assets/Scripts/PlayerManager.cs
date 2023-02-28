@@ -16,14 +16,19 @@ public class PlayerManager : MonoBehaviour
 
     private static int _CurrentFarm;
     public static int CurrentFarm => _CurrentFarm;
-
+    private static int _CurrentFactory;
+    public static int CurrentFactory => _CurrentFactory;
     private void Awake()
     {
         // if(Instance == null) Instance = this;
     }
 
-    public void ChangePlace(int i)
+    public void SetCurrentFactory(int index)
     {
-        _CurrentFarm = i;
+        _CurrentFactory = index;
+    }
+    public void SetCurrentFarm(int index)
+    {
+        _CurrentFarm = index;
     }
 }

@@ -9,14 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<<< HEAD:Assets/ScriptableObjects/Factories/Factory1DB.asset
-  m_Script: {fileID: 11500000, guid: 3ca6c97e573a44e4eb03bbd3bc6d8fc0, type: 3}
-  m_Name: Factory1DB
-  m_EditorClassIdentifier: 
-  _ChromoDimension: -1
-  _ChromoLength: 0
-  _Population: []
-========
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 3
   m_EditorClassIdentifier: 
@@ -26,4 +18,3 @@ MonoBehaviour:
   _Floor: {fileID: 0}
   _Border: {fileID: 0}
   _MechChromos: []
->>>>>>>> playground:Assets/ScriptableObjects/Farms/Farm 3.asset

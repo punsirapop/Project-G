@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/ScriptableObjects/Factories/Factory1TestDB.asset.meta
-guid: 871b1c8799940dc428766c852a002bae
-========
-guid: 363e42d9fe27a9c4ea291186f0058e17
->>>>>>>> playground:Assets/ScriptableObjects/Farms/Habitat.asset.meta
+guid: 876e4b200a9aa874aa5e1be139e3a758
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
-  m_Name: Farm 2
+  m_Name: SFarm 1
   m_EditorClassIdentifier: 
   _Name: 
   _Generation: 0
   _Status: 0
   _Floor: {fileID: 0}
   _Border: {fileID: 0}
-  _MechChromos: []
+  _MechChromos:
+  - {fileID: 11400000, guid: a9b42f2bd4dccbc4a8d6f283de2966a7, type: 2}
+  - {fileID: 11400000, guid: 4b25df751573a9143b943ba9a9c07045, type: 2}
