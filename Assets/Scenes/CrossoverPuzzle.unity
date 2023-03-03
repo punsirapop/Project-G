@@ -511,6 +511,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360076533}
   m_CullTransparentMesh: 1
+--- !u!1 &402242700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4791224344798984691, guid: da6f0b23b4c22204cb7b078aef06efa5, type: 3}
+  m_PrefabInstance: {fileID: 4791224344877054192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &423134321
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,10 +748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 108
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -763,7 +768,7 @@ Canvas:
   m_GameObject: {fileID: 498856112}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1280498994}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -972,6 +977,8 @@ MonoBehaviour:
   - {fileID: 431338703}
   - {fileID: 758417797}
   - {fileID: 1931829213}
+  _ChromoButtonHolder: {fileID: 1823068856}
+  _BitHolderHelperPrefab: {fileID: 0}
 --- !u!1 &562517378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,6 +3610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4791224344913223538, guid: da6f0b23b4c22204cb7b078aef06efa5, type: 3}
+      propertyPath: _BitHolder
+      value: 
+      objectReference: {fileID: 402242700}
     - target: {fileID: 4791224344990668998, guid: da6f0b23b4c22204cb7b078aef06efa5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

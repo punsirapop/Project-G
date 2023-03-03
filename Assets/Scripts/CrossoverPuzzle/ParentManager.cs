@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ParentManager : MonoBehaviour
 {
+    public static ParentManager Instance;
+
     [SerializeField] private GameObject ChromoButtonPrefab;
     [SerializeField] private Transform _ChromoButtonHolder;
     [SerializeField] private Color32[] _Colors;
     private ChromoButton[] _ChromoButtons;
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
 
     void Start()
     {
@@ -31,7 +37,7 @@ public class ParentManager : MonoBehaviour
 
     void Update()
     {
-        // Make sure that there are at most 2 button selected
+        // Make sure that there are at most 2 buttons selected
         _ChromoButtons = GetComponentsInChildren<ChromoButton>();
         // Count the number of selected button
         int selectCount = 0;
@@ -40,7 +46,7 @@ public class ParentManager : MonoBehaviour
             selectCount += chromoButton.isOn ? 1 : 0;
             chromoButton.SetInteractable(true);
         }
-        // Disable other if there are already 2 button selected
+        // Disable other if there are already 2 buttons selected
         if (selectCount < 2)
         {
             return;
@@ -63,4 +69,20 @@ public class ParentManager : MonoBehaviour
             }
         }
     }
+
+    public ChromoButton[] GetSelectedChromo()
+    {
+        _ChromoButtons = GetComponentsInChildren<ChromoButton>();
+        ChromoButton[] selectedChromoButtons = new ChromoButton[_ChromoButtons.Length];
+        int selectCount = 0;
+        foreach (ChromoButton chromoButton in _ChromoButtons)
+        {
+            if (chromoButton.isOn)
+            {
+                selectedChromoButtons[selectCount] = chromoButton;
+                selectCount++;
+            }
+        }
+        return selectedChromoButtons;
+    }    
 }
