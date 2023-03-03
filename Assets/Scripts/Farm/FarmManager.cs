@@ -2,7 +2,9 @@ using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 /*
  * Control over farms and their panels
  */
@@ -15,6 +17,9 @@ public class FarmManager : MonoBehaviour
     [SerializeField] private FarmSO[] _FarmsData;
     public FarmSO[] FarmsData => _FarmsData;
 
+    // Current sprite renderer
+    [SerializeField] private SpriteRenderer _FloorRenderer;
+
     // Transforms indicating display borders of the farm
     [SerializeField] Transform[] border;
     // Transforms storing generated mechs in each farm
@@ -23,7 +28,12 @@ public class FarmManager : MonoBehaviour
     [SerializeField] GameObject preset;
     // Game panels
     // BreedMenu, FitnessMenu, ChromoMenu, ChromoDetail
-    [SerializeField] GameObject[] panels;
+
+    #region Panels
+    // Panels in factory: Info, Produce, ChromoMenu
+    [SerializeField] private Button[] _PanelButtons;
+    [SerializeField] private GameObject[] _Panels;
+    #endregion
 
     // List storing every mech gameObjects for easy access
     List<GameObject> mechs;
@@ -37,6 +47,32 @@ public class FarmManager : MonoBehaviour
         {
             AddMech(item);
         }
+        _RenderSprite();
+    }
+
+    // Render the weapon holder sprite for each factory
+    private void _RenderSprite()
+    {
+        _FloorRenderer.sprite = _FarmsData[PlayerManager.CurrentFactory].Floor;
+    }
+
+    /*
+     * Open/change farm menu tab
+     * 
+     * Input
+     *      i: tab index
+     *      - Breeding Menu
+     *      - Fitness Menu
+     *      - Mech List
+     *      - Mech Details
+     */
+    public void OpenPanel(int i)
+    {
+        foreach (var item in _Panels)
+        {
+            item.SetActive(false);
+        }
+        _Panels[i].SetActive(true);
     }
 
     /*
@@ -86,22 +122,4 @@ public class FarmManager : MonoBehaviour
         Destroy(m);
     }
 
-    /*
-     * Open/change farm menu tab
-     * 
-     * Input
-     *      i: tab index
-     *      - Breeding Menu
-     *      - Fitness Menu
-     *      - Mech List
-     *      - Mech Details
-     */
-    public void OpenPanel(int i)
-    {
-        foreach (var item in panels)
-        {
-            item.SetActive(false);
-        }
-        panels[i].SetActive(true);
-    }
 }

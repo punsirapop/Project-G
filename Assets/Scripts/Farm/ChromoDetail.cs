@@ -33,7 +33,6 @@ public class ChromoDetail : PlayerManager
         Displays[5].text = c.Def.Sum().ToString();
         Displays[6].text = c.Hp.Sum().ToString();
         Displays[7].text = c.Spd.Sum().ToString();
-        Displays[8].text = string.Join("-", c.GetChromosome().First());
         DeleteButton.onClick.RemoveAllListeners();
         DeleteButton.onClick.AddListener(() => FarmManager.Instance.OpenPanel(2));
         DeleteButton.onClick.AddListener(() => FarmManager.Instance.DelChromo(c));

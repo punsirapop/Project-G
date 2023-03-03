@@ -15,6 +15,6 @@ MonoBehaviour:
   _Name: 
   _Generation: 0
   _Status: 0
-  _Floor: {fileID: 0}
+  _Floor: {fileID: 21300000, guid: 4c7de59fbe19e07419d96307a3e43d1c, type: 3}
   _Border: {fileID: 0}
   _MechChromos: []

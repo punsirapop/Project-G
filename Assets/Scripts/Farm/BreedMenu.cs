@@ -112,7 +112,7 @@ public class BreedMenu : MonoBehaviour
      * Output
      *      list of preferred values (default = -1)
      */
-    private List<int> CurrentPref()
+    public List<int> CurrentPref()
     {
         List<int> list = new List<int>();
 
@@ -122,6 +122,16 @@ public class BreedMenu : MonoBehaviour
         list.Add(EnableMe[3].isOn ? Combat.value : -1);
 
         return list;
+    }
+
+    public Dictionary<dynamic, float> GetFitnessDict()
+    {
+        Dictionary<dynamic, float> dict = new Dictionary<dynamic, float>();
+        foreach (MechChromoSO c in myFarm.MechChromos)
+        {
+            dict.Add(c, c.GetFitness(CurrentPref()));
+        }
+        return dict;
     }
 
     /*
@@ -136,14 +146,9 @@ public class BreedMenu : MonoBehaviour
     {
         for (int g = 0; g < GenerationSelect.value; g++)
         {
-            List<MechChromoSO> candidates = myFarm.MechChromos;
-
             // ------- get fitness -------
-            Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
-            foreach (MechChromoSO c in candidates)
-            {
-                fv.Add(c, c.GetFitness(CurrentPref()));
-            }
+            Dictionary<dynamic, float> fv = GetFitnessDict();
+
             // ------- select parents according to chosen type -------
             List<dynamic> parents = new List<dynamic>
                 (GeneticFunc.Instance.SelectParent(fv, elites.Count, TypeParentSelect.value, (int)KSelect.value));

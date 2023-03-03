@@ -20,7 +20,7 @@ public class SaveManagerTitle : SaveManager
         LoadBtn.interactable = SaveReady();
     }
 
-    public override void LoadFromFile()
+    public new void LoadFromFile()
     {
         // ---------- Load json ----------
         SetPaths();

@@ -11,9 +11,10 @@ public class ChromoMenu : MonoBehaviour
 {
     // Prefab for button
     [SerializeField] GameObject preset;
+    [SerializeField] ChromoDetail detailOverlay;
     // Place to store generated buttons
     [SerializeField] RectTransform parent;
-
+    [SerializeField] BreedMenu breedMenu;
 
     private void Awake()
     {
@@ -32,10 +33,6 @@ public class ChromoMenu : MonoBehaviour
 
     /*
      * Update buttons when the chromosome list changes
-     * 
-     * Input
-     *      Actually doesn't need one but the event requires one
-     *      So actually just a place holder, don't have to care
      */
     void OnValueChange()
     {
@@ -43,6 +40,9 @@ public class ChromoMenu : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+        // ------- get fitness -------
+        Dictionary<dynamic, float> fv = breedMenu.GetFitnessDict();
+
         foreach (var item in FarmManager.Instance.FarmsData[PlayerManager.CurrentFarm].MechChromos)
         {
             GameObject me = Instantiate(preset, parent);
