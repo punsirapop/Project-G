@@ -977,8 +977,8 @@ MonoBehaviour:
   - {fileID: 431338703}
   - {fileID: 758417797}
   - {fileID: 1931829213}
-  _ChromoButtonHolder: {fileID: 1823068856}
-  _BitHolderHelperPrefab: {fileID: 0}
+  _ChromoHolder: {fileID: 1823068856}
+  _BitHolderHelperPrefab: {fileID: 3393220044799109601, guid: 40cf430923b00464c8e36b92287d69a3, type: 3}
 --- !u!1 &562517378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,8 +2633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 0, y: -35}
+  m_SizeDelta: {x: 0, y: -70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823068857
 MonoBehaviour:

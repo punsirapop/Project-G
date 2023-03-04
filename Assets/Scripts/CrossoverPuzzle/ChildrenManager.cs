@@ -7,9 +7,16 @@ using UnityEngine.UI;
 public class ChildrenManager : MonoBehaviour
 {
     public static ChildrenManager Instance;
+
     [SerializeField] private GameObject[] _CrossoverPoints;
-    [SerializeField] private Transform _ChromoButtonHolder;
+    [SerializeField] private Transform _ChromoHolder;
     [SerializeField] private GameObject _BitHolderHelperPrefab;
+    private int[] _DraggedIndexes;
+
+    public void SetDraggedIndexes(int[] indexes)
+    {
+        _DraggedIndexes = indexes;
+    }
 
     void Awake()
     {
@@ -31,10 +38,10 @@ public class ChildrenManager : MonoBehaviour
         }
     }
 
+    // Add/remove ChromoButton
     public void UpdateChromoButton()
     {
-        // Add/remove ChromoButton
-        foreach (Transform child in _ChromoButtonHolder)
+        foreach (Transform child in _ChromoHolder)
         {
             Destroy(child.gameObject);
         }
@@ -45,10 +52,54 @@ public class ChildrenManager : MonoBehaviour
             {
                 break;
             }
-            Instantiate(chromoButton.GetBitHolder(), _ChromoButtonHolder).AddComponent<BitHolderHelper>();
+            Instantiate(chromoButton.GetBitHolder(), _ChromoHolder).AddComponent<BitHolderHelper>();
         }
     }
 
+    // Swapping part of object by creating new object corresponding to crossover points
+    // Hard-code it to perform on only a pair of object (2 chromosomes only)
+    public void UpdateSwapping()
+    {
+        // Destroy all current chromo
+        foreach (Transform child in _ChromoHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        // Create new chromo with proper bit content corresponding to crossover points
+        BitHolderHelper[] bitHolders = this.GetComponentsInChildren<BitHolderHelper>();
+        GameObject[] newChromo = new GameObject[bitHolders.Length];
+        for (int i = 0; i < bitHolders.Length; i++)
+        {
+            newChromo[i] = Instantiate(_BitHolderHelperPrefab, _ChromoHolder);
+        }
+        // Add proper bit content to new chromosome
+        for (int i = 0; i < bitHolders[0].BitLength; i++)
+        {
+            GameObject new1;
+            GameObject new2;
+            if ((i >= _DraggedIndexes[0]) && ((i <= _DraggedIndexes[1])))
+            {
+                new1 = Instantiate(bitHolders[1].GetBitObjectAtIndex(i), newChromo[0].transform);
+                new2 = Instantiate(bitHolders[0].GetBitObjectAtIndex(i), newChromo[1].transform);
+            }
+            else
+            {
+                new1 = Instantiate(bitHolders[0].GetBitObjectAtIndex(i), newChromo[0].transform);
+                new2 = Instantiate(bitHolders[1].GetBitObjectAtIndex(i), newChromo[1].transform);
+            }
+            new1.GetComponent<Image>().enabled = true;
+            new2.GetComponent<Image>().enabled = true;
+            new1.GetComponent<LayoutElement>().enabled = true;
+            new2.GetComponent<LayoutElement>().enabled = true;
+        }
+        // Add BitHolderHelper to new chromo
+        foreach (GameObject chromo in newChromo)
+        {
+            chromo.AddComponent<BitHolderHelper>();
+        }
+    }
+
+    // return the array of all selected crossover point indexes
     public int[] GetCrossoverPoints()
     {
         int selectedCount = 0;
@@ -67,12 +118,6 @@ public class ChildrenManager : MonoBehaviour
                 pointIndex++;
             }
         }
-        string t = "";
-        foreach (int i in crossoverPoints)
-        {
-            t += i.ToString() + ", ";
-        }
-        Debug.Log(t);
         return crossoverPoints;
     }
 }

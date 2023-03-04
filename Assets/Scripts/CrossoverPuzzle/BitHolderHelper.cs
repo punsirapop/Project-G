@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     private Transform[] _BitContent;
-    private int _ClickedBit;
-    private int _BeginBitIndex;
-    private int _EndBitIndex;
+    public int BitLength => _BitContent.Length;
     private int[] _CrossoverPoints;
+    private float _OriginYPosition;
+    private Transform[] _DraggedSection;
+
     void Start()
     {
+        _OriginYPosition = this.transform.position.y;
+        // Keep track of all bit in this chromosome
         int bitCount = 0;
         foreach (Transform t in this.transform)
         {
@@ -27,60 +30,91 @@ public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         }
     }
 
-    // When start dragging, get this object out from its parent
-    public void OnBeginDrag(PointerEventData eventData)
+    // Calculate which part of chromosome will be dragged according to mouse position and crossover points
+    private int[] _GetSectionIndexes()
     {
-        // Calculate which part of chromosome will be dragged
         _CrossoverPoints = ChildrenManager.Instance.GetCrossoverPoints();
-        _BeginBitIndex = 0;
-        _EndBitIndex = _BitContent.Length - 1;
-        Debug.Log("Bitcontent Length = " + _BitContent.Length.ToString());
+        int beginBitIndex = 0;
+        int endBitIndex = _BitContent.Length - 1;
         for (int i = 0; i < _BitContent.Length; i++)
         {
             if (RectTransformUtility.RectangleContainsScreenPoint(_BitContent[i].gameObject.GetComponent<RectTransform>(), Input.mousePosition))
             {
-                _ClickedBit = i;
                 foreach (int crossoverPoint in _CrossoverPoints)
                 {
                     if (i > crossoverPoint)
                     {
-                        _BeginBitIndex = crossoverPoint + 1;
+                        beginBitIndex = crossoverPoint + 1;
                     }
                     else if (i <= crossoverPoint)
                     {
-                        _EndBitIndex = crossoverPoint;
+                        endBitIndex = crossoverPoint;
                         break;
                     }
                 }
                 break;
             }
         }
-        Debug.Log("Begin= " + _BeginBitIndex.ToString());
-        Debug.Log("End= " + _BeginBitIndex.ToString());
-        // Make other gameObject capture the raycasts (the mouse pointer)
-        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
-        // Make the parent ignore this object
-        this.GetComponent<LayoutElement>().ignoreLayout = true;
+        return new int[] { beginBitIndex, endBitIndex };
     }
 
-    // While dragging, change position of this object to the same as the mouse pointer
-    public void OnDrag(PointerEventData eventData)
+    private Transform[] _GetClickedSection(int beginBitIndex, int endBitIndex)
     {
+        Transform[] draggedSection = new Transform[endBitIndex - beginBitIndex + 1];
+        // Calculate the actual dragged GameObjects
         for (int i = 0; i < _BitContent.Length; i++)
         {
-            if ((i >= _BeginBitIndex) && (i <= _EndBitIndex))
+            if ((i >= beginBitIndex) && (i <= endBitIndex))
             {
-                _BitContent[i].position = new Vector3(_BitContent[i].transform.position.x, eventData.position.y, 0);
+                draggedSection[i - beginBitIndex] = _BitContent[i];
             }
         }
-        //this.transform.position = new Vector3(this.transform.position.x, eventData.position.y, 0);
+        return draggedSection;
     }
 
-    // When stop dragging, snap it back into the layout parent
-    // Reversing everything in the OnBeginDrag()
+    // Return GameObject of the bit at index
+    public GameObject GetBitObjectAtIndex(int index)
+    {
+        return _BitContent[index].gameObject;
+    }
+
+    // Calculate the part to be dragged
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        // Record the origin position
+        _OriginYPosition = this.transform.position.y;
+        int[] sectionIndexes = _GetSectionIndexes();
+        _DraggedSection = _GetClickedSection(sectionIndexes[0], sectionIndexes[1]);
+        ChildrenManager.Instance.SetDraggedIndexes(sectionIndexes);
+        // Make other gameObject capture the raycasts (the mouse pointer)
+        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+    // While dragging, change position in y axis of the dragged section to the same as the mouse pointer
+    public void OnDrag(PointerEventData eventData)
+    {
+        foreach (Transform dragged in _DraggedSection)
+        {
+            dragged.position = new Vector3(dragged.transform.position.x, eventData.position.y, 0);
+        }
+    }
+
+    // OnDrop is called before end drag, swap content of bit if any of object detect the other object drop on 
+    public void OnDrop(PointerEventData eventData)
+    {
+        ChildrenManager.Instance.UpdateSwapping();
+    }
+
+    // When stop dragging, change its position back to the origin or swap its part with other chromosome
     public void OnEndDrag(PointerEventData eventData)
     {
+        // Align all bit content back in to the position before drag
+        foreach (Transform dragged in _BitContent)
+        {
+            dragged.position = new Vector3(dragged.transform.position.x, _OriginYPosition, 0);
+        }
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        //this.GetComponent<LayoutElement>().ignoreLayout = false;
     }
+
+    
 }
