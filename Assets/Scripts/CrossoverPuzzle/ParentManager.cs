@@ -7,8 +7,11 @@ public class ParentManager : MonoBehaviour
     public static ParentManager Instance;
 
     [SerializeField] private GameObject _ChromosomeRodTogglePrefab;
-    [SerializeField] private Transform _ChromoButtonHolder;
+    [SerializeField] private Transform _ChromosomeRodsHolder;
     [SerializeField] private Color32[] _Colors;
+    [SerializeField] private GameObject _DemonstrateText;
+    [SerializeField] private GameObject _WantedChildPanel;
+
     private ChromosomeRodToggle[] _ChromosomeRodToggles;
     void Awake()
     {
@@ -56,11 +59,11 @@ public class ParentManager : MonoBehaviour
     }
 
     // Create ChromosomeRodToggle correspond to the given puzzleType
-    // puzzleType: 0 = demonstrate, 1 = solve
+    // puzzleType: 0 = demonstrate, 1 = solve single point, 2 = solve two point
     public void InstaniateChromosomeRodToggles(int puzzleType = 0)
     {
         // Destroy all previous object in the holder
-        foreach (Transform child in _ChromoButtonHolder)
+        foreach (Transform child in _ChromosomeRodsHolder)
         {
             Destroy(child.gameObject);
         }
@@ -73,14 +76,17 @@ public class ParentManager : MonoBehaviour
                 _InstantiateRandomChromo();
                 break;
             case 1:
-                _InstantiateMechChromo();
+                _InstantiateMechChromo(0);
+                break;
+            case 2:
+                _InstantiateMechChromo(1);
                 break;
         }
     }
 
     private void _InstantiateRandomChromo()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 4; i++)
         {
             // Generate content in chromosome
             int[] content = new int[5];
@@ -91,29 +97,59 @@ public class ParentManager : MonoBehaviour
                 colors[j] = _Colors[i];
             }
             // Create the ChromosomeRodToggle
-            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromoButtonHolder);
+            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromosomeRodsHolder);
             newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(content, colors);
             newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
         }
+        _DemonstrateText.SetActive(true);
+        _WantedChildPanel.SetActive(false);
     }
 
-    private void _InstantiateMechChromo()
+    private void _InstantiateMechChromo(int crossoverType)
     {
-        for (int i = 0; i < 4; i++)
+        // Create wanted children
+        int[] child1 = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
+        int[] child2 = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
+        // Create possible parent using crossover
+        int[][] parents = new int[4][];
+        for (int parentCount = 0; parentCount < 4; parentCount += 2)
         {
-            ChromosomeSO newMech = ScriptableObject.CreateInstance<ChromosomeSO>();
-            int[] content = newMech.GetChromosome().ToArray()[..5];
-            Color32[] colors = new Color32[5];
-            // Assign base color
-            for (int j = 0; j < content.Length; j++)
-            {
-                colors[j] = Color.white;
-            }
-            // Create the ChromosomeRodToggle
-            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromoButtonHolder);
-            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(content, colors, true);
+            List<int> parent1 = new();
+            List<int> parent2 = new();
+            parent1.AddRange(child1);
+            parent2.AddRange(child2);
+            GeneticFunc.Instance.Crossover(parent1, parent2, crossoverType);
+            parents[0 + parentCount] = parent1.ToArray();
+            parents[1 + parentCount] = parent2.ToArray();
+        }
+        // Shuffle parent's order
+        for (int parentIndex = 0; parentIndex < parents.Length; parentIndex++)
+        {
+            // Swap this parent with another random parent
+            int randomIndex = Random.Range(0, parents.Length);
+            int[] thisParent = parents[parentIndex];
+            parents[parentIndex] = parents[randomIndex];
+            parents[randomIndex] = thisParent;
+        }
+        // Assign base color to all white
+        Color32[] baseColor = new Color32[child1.Length];
+        for (int i = 0; i < baseColor.Length; i++)
+        {
+            baseColor[i] = Color.white;
+        }
+        // Create the ChromosomeRodToggle of parent
+        foreach (int[] parent in parents)
+        {
+            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromosomeRodsHolder);
+            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(parent, baseColor, true);
             newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
         }
+        // Show one of the wanted children
+        _DemonstrateText.SetActive(false);
+        _WantedChildPanel.SetActive(true);
+        GameObject childChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _WantedChildPanel.transform);
+        childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(child1, baseColor, true);
+        childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
     }
 
 // Return all chromosomeRods that is selected
