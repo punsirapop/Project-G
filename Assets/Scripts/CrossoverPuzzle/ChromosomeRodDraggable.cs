@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     private Transform[] _BitContent;
-    public int BitLength => _BitContent.Length;
     private int[] _CrossoverPoints;
     private float _OriginYPosition;
     private Transform[] _DraggedSection;
@@ -15,6 +13,11 @@ public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     void Start()
     {
         _OriginYPosition = this.transform.position.y;
+        _GetBitContent();
+    }
+
+    private void _GetBitContent()
+    {
         // Keep track of all bit in this chromosome
         int bitCount = 0;
         foreach (Transform t in this.transform)
@@ -81,6 +84,8 @@ public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     // Calculate the part to be dragged
     public void OnBeginDrag(PointerEventData eventData)
     {
+        _OriginYPosition = this.transform.position.y;
+        _GetBitContent();
         // Record the origin position
         _OriginYPosition = this.transform.position.y;
         int[] sectionIndexes = _GetSectionIndexes();
@@ -115,6 +120,4 @@ public class BitHolderHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         }
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
-
-    
 }

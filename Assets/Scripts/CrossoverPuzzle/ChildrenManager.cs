@@ -39,20 +39,20 @@ public class ChildrenManager : MonoBehaviour
     }
 
     // Add/remove ChromoButton
-    public void UpdateChromoButton()
+    public void UpdateChromosomeRods()
     {
+        // Destroy all current chromosomeRods
         foreach (Transform child in _ChromoHolder)
         {
             Destroy(child.gameObject);
         }
-        ChromoButton[] selectedChromo = ParentManager.Instance.GetSelectedChromo();
-        foreach (ChromoButton chromoButton in selectedChromo)
+        // Create chromosomeRods that are selected in the parent panel
+        ChromosomeRod[] selectedRods = ParentManager.Instance.GetSelectedChromosomeRods();
+        foreach (ChromosomeRod selectedRod in selectedRods)
         {
-            if (chromoButton == null)
-            {
-                break;
-            }
-            Instantiate(chromoButton.GetBitHolder(), _ChromoHolder).AddComponent<BitHolderHelper>();
+            GameObject newRodObject = Instantiate(selectedRod.gameObject, _ChromoHolder);
+            newRodObject.AddComponent<CanvasGroup>();
+            newRodObject.AddComponent<ChromosomeRodDraggable>();
         }
     }
 
@@ -60,42 +60,27 @@ public class ChildrenManager : MonoBehaviour
     // Hard-code it to perform on only a pair of object (2 chromosomes only)
     public void UpdateSwapping()
     {
-        // Destroy all current chromo
-        foreach (Transform child in _ChromoHolder)
+        ChromosomeRod[] parents = this.GetComponentsInChildren<ChromosomeRod>();
+        int value0;
+        int value1;
+        Color32 color0;
+        Color32 color1;
+        // Swap the properties of chromosomeRods within crossover section
+        for (int i = _DraggedIndexes[0]; i <= _DraggedIndexes[1]; i++)
         {
-            Destroy(child.gameObject);
-        }
-        // Create new chromo with proper bit content corresponding to crossover points
-        BitHolderHelper[] bitHolders = this.GetComponentsInChildren<BitHolderHelper>();
-        GameObject[] newChromo = new GameObject[bitHolders.Length];
-        for (int i = 0; i < bitHolders.Length; i++)
-        {
-            newChromo[i] = Instantiate(_BitHolderHelperPrefab, _ChromoHolder);
-        }
-        // Add proper bit content to new chromosome
-        for (int i = 0; i < bitHolders[0].BitLength; i++)
-        {
-            GameObject new1;
-            GameObject new2;
-            if ((i >= _DraggedIndexes[0]) && ((i <= _DraggedIndexes[1])))
-            {
-                new1 = Instantiate(bitHolders[1].GetBitObjectAtIndex(i), newChromo[0].transform);
-                new2 = Instantiate(bitHolders[0].GetBitObjectAtIndex(i), newChromo[1].transform);
-            }
-            else
-            {
-                new1 = Instantiate(bitHolders[0].GetBitObjectAtIndex(i), newChromo[0].transform);
-                new2 = Instantiate(bitHolders[1].GetBitObjectAtIndex(i), newChromo[1].transform);
-            }
-            new1.GetComponent<Image>().enabled = true;
-            new2.GetComponent<Image>().enabled = true;
-            new1.GetComponent<LayoutElement>().enabled = true;
-            new2.GetComponent<LayoutElement>().enabled = true;
-        }
-        // Add BitHolderHelper to new chromo
-        foreach (GameObject chromo in newChromo)
-        {
-            chromo.AddComponent<BitHolderHelper>();
+            // Swap bit value
+            value0 = parents[0].GetValueAtIndex(i);
+            value1 = parents[1].GetValueAtIndex(i);
+            parents[0].SetValueAtIndex(i, value1);
+            parents[1].SetValueAtIndex(i, value0);
+            // Swap color
+            color0 = parents[0].GetColorAtIndex(i);
+            color1 = parents[1].GetColorAtIndex(i);
+            parents[0].SetColorAtIndex(i, color1);
+            parents[1].SetColorAtIndex(i, color0);
+            // Re-render the chromosomeRods
+            parents[0].RenderRod();
+            parents[1].RenderRod();
         }
     }
 

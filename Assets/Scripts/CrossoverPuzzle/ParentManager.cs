@@ -6,10 +6,10 @@ public class ParentManager : MonoBehaviour
 {
     public static ParentManager Instance;
 
-    [SerializeField] private GameObject ChromoButtonPrefab;
+    [SerializeField] private GameObject _ChromosomeRodTogglePrefab;
     [SerializeField] private Transform _ChromoButtonHolder;
     [SerializeField] private Color32[] _Colors;
-    private ChromoButton[] _ChromoButtons;
+    private ChromosomeRodToggle[] _ChromosomeRodToggles;
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -26,25 +26,27 @@ public class ParentManager : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             int[] content = new int[5];
+            Color32[] colors = new Color32[5];
             for (int j = 0; j < content.Length; j++)
             {
                 content[j] = Random.Range(0, 2);
+                colors[j] = _Colors[i];
             }
-            GameObject newChromoButton = Instantiate(ChromoButtonPrefab, _ChromoButtonHolder);
-            newChromoButton.GetComponent<ChromoButton>().SetChromoButton(content, _Colors[i]);
+            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromoButtonHolder);
+            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(content, colors);
         }
     }
 
     void Update()
     {
         // Make sure that there are at most 2 buttons selected
-        _ChromoButtons = GetComponentsInChildren<ChromoButton>();
+        _ChromosomeRodToggles = GetComponentsInChildren<ChromosomeRodToggle>();
         // Count the number of selected button
         int selectCount = 0;
-        foreach (ChromoButton chromoButton in _ChromoButtons)
+        foreach (ChromosomeRodToggle rodToggle in _ChromosomeRodToggles)
         {
-            selectCount += chromoButton.isOn ? 1 : 0;
-            chromoButton.SetInteractable(true);
+            selectCount += rodToggle.isOn ? 1 : 0;
+            rodToggle.SetInteractable(true);
         }
         // Disable other if there are already 2 buttons selected
         if (selectCount < 2)
@@ -52,37 +54,48 @@ public class ParentManager : MonoBehaviour
             return;
         }
         selectCount = 0;
-        foreach (ChromoButton chromoButton in _ChromoButtons)
+        foreach (ChromosomeRodToggle rodToggle in _ChromosomeRodToggles)
         {
-            if (!chromoButton.isOn)
+            if (!rodToggle.isOn)
             {
-                chromoButton.SetInteractable(false);
+                rodToggle.SetInteractable(false);
             }
             else
             {
                 if (selectCount >= 2)
                 {
-                    chromoButton.SetIsOn(false);
-                    chromoButton.SetInteractable(false);
+                    rodToggle.SetIsOn(false);
+                    rodToggle.SetInteractable(false);
                 }
                 selectCount++;
             }
         }
     }
 
-    public ChromoButton[] GetSelectedChromo()
+    // Return all chromosomeRods that is selected
+    public ChromosomeRod[] GetSelectedChromosomeRods()
     {
-        _ChromoButtons = GetComponentsInChildren<ChromoButton>();
-        ChromoButton[] selectedChromoButtons = new ChromoButton[_ChromoButtons.Length];
+        // Count the number of selected chromosomeRodToggle
+        _ChromosomeRodToggles = GetComponentsInChildren<ChromosomeRodToggle>();
         int selectCount = 0;
-        foreach (ChromoButton chromoButton in _ChromoButtons)
+        foreach (ChromosomeRodToggle rodToggle in _ChromosomeRodToggles)
         {
-            if (chromoButton.isOn)
+            if (rodToggle.isOn)
             {
-                selectedChromoButtons[selectCount] = chromoButton;
                 selectCount++;
             }
         }
-        return selectedChromoButtons;
+        // Create the array of selected chromosomeRod
+        ChromosomeRod[] selectedRods = new ChromosomeRod[selectCount];
+        selectCount = 0;
+        foreach (ChromosomeRodToggle rodToggle in _ChromosomeRodToggles)
+        {
+            if (rodToggle.isOn)
+            {
+                selectedRods[selectCount] = rodToggle.GetComponentInChildren<ChromosomeRod>();
+                selectCount++;
+            }
+        }
+        return selectedRods;
     }    
 }
