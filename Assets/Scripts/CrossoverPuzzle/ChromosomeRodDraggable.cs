@@ -75,12 +75,6 @@ public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHan
         return draggedSection;
     }
 
-    // Return GameObject of the bit at index
-    public GameObject GetBitObjectAtIndex(int index)
-    {
-        return _BitContent[index].gameObject;
-    }
-
     // Calculate the part to be dragged
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -104,13 +98,14 @@ public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHan
         }
     }
 
-    // OnDrop is called before end drag, swap content of bit if any of object detect the other object drop on 
+    // OnDrop() is called before OnEndDrag(), swap content of bit if another Draggable drop on this object
+    // Note that the dragged object is not the same object that call OnDrop()
     public void OnDrop(PointerEventData eventData)
     {
         ChildrenManager.Instance.UpdateSwapping();
     }
 
-    // When stop dragging, change its position back to the origin or swap its part with other chromosome
+    // When stop dragging, change its position back to the origin
     public void OnEndDrag(PointerEventData eventData)
     {
         // Align all bit content back in to the position before drag

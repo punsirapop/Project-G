@@ -1181,6 +1181,38 @@ MonoBehaviour:
     rgba: 4289855379
   - serializedVersion: 2
     rgba: 4293853086
+  _MechHeadSprites:
+  - {fileID: 21300000, guid: 13d9a02a00dec1245b040a67fd2317dc, type: 3}
+  - {fileID: 21300000, guid: 088dadc7f90480e46854cb0d780a408b, type: 3}
+  - {fileID: 21300000, guid: 071282d8cb7e68748903051997d358c4, type: 3}
+  - {fileID: 21300000, guid: 3c8a3363a2ba41043aac60192870870a, type: 3}
+  - {fileID: 21300000, guid: e60f04539b95ede46bc3f36c5732e4ce, type: 3}
+  - {fileID: 21300000, guid: 024dde2665832494d9544bd895539156, type: 3}
+  - {fileID: 21300000, guid: 9e50b39c324837f4bb3fb60c41535f06, type: 3}
+  - {fileID: 21300000, guid: 1a84ca730fec4584991dbe3af03526ff, type: 3}
+  - {fileID: 21300000, guid: e3541ac1e82de3a49847be0997bd8cfb, type: 3}
+  - {fileID: 21300000, guid: 31a47d293388f134fb6882c53b370e3f, type: 3}
+  - {fileID: 21300000, guid: d0a50a6687d040d4981a046a43bfb78f, type: 3}
+  - {fileID: 21300000, guid: 4d8f682755fcfa54da5a59c230dcb448, type: 3}
+  - {fileID: 21300000, guid: 07dead95cf3d3d84fa9954fbd3187a0d, type: 3}
+  - {fileID: 21300000, guid: 264545e5495bc10408b57f8159adcffc, type: 3}
+  - {fileID: 21300000, guid: f1af6b0392de0ed4c89a50cc28864726, type: 3}
+  - {fileID: 21300000, guid: a7af80aa0014d2f4f8a0af2af152abad, type: 3}
+  - {fileID: 21300000, guid: 9eadad9cc6a26a04889afec65c0c7530, type: 3}
+  - {fileID: 21300000, guid: 1907d4b8a8d5cb747aaf4842b3b81bca, type: 3}
+  - {fileID: 21300000, guid: bec1daa8530eef14482bec0082a0e706, type: 3}
+  - {fileID: 21300000, guid: cf4f5fd4027d08340a0bbec3b81995da, type: 3}
+  _MechAccSprites:
+  - {fileID: 21300000, guid: ecb42931cae1b5b40b1055f34d2027ec, type: 3}
+  - {fileID: 21300000, guid: b3976ab719d63014284aa31019389a37, type: 3}
+  - {fileID: 21300000, guid: 679b0779310892f4db53484a2ad75884, type: 3}
+  - {fileID: 21300000, guid: 9d3d6acf8b02ea64e92d7bd2d5be3ada, type: 3}
+  - {fileID: 21300000, guid: 6d9713ac433db8747a81b89c0ef4e09b, type: 3}
+  - {fileID: 21300000, guid: 03d6d752b928b0542a59436716ed5ad2, type: 3}
+  - {fileID: 21300000, guid: d0d2777668cb7e943a97514afdc3d1c6, type: 3}
+  - {fileID: 21300000, guid: 87c7a40811aa4dd49a7c4a8614847783, type: 3}
+  - {fileID: 21300000, guid: 093f150369e9dae4eb7a5f0ab7125c01, type: 3}
+  - {fileID: 21300000, guid: d5729970bcf7b4b4cb6e875dca4ef5bf, type: 3}
 --- !u!1 &723205881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,19 +3519,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4874059666186196416, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4874059666186196416, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4874059666186196416, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4874059666186196416, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4874059666949711896, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_Name

@@ -17,24 +17,7 @@ public class ParentManager : MonoBehaviour
 
     void Start()
     {
-        // Destroy all previous object in the holder
-        foreach (Transform child in _ChromoButtonHolder)
-        {
-            Destroy(child.gameObject);
-        }
-
-        for (int i = 0; i < 6; i++)
-        {
-            int[] content = new int[5];
-            Color32[] colors = new Color32[5];
-            for (int j = 0; j < content.Length; j++)
-            {
-                content[j] = Random.Range(0, 2);
-                colors[j] = _Colors[i];
-            }
-            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromoButtonHolder);
-            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(content, colors);
-        }
+        InstaniateChromosomeRodToggles(1);
     }
 
     void Update()
@@ -72,8 +55,69 @@ public class ParentManager : MonoBehaviour
         }
     }
 
-    // Return all chromosomeRods that is selected
-    public ChromosomeRod[] GetSelectedChromosomeRods()
+    // Create ChromosomeRodToggle correspond to the given puzzleType
+    // puzzleType: 0 = demonstrate, 1 = solve
+    public void InstaniateChromosomeRodToggles(int puzzleType = 0)
+    {
+        // Destroy all previous object in the holder
+        foreach (Transform child in _ChromoButtonHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        switch (puzzleType)
+        {
+            default:
+                _InstantiateRandomChromo();
+                break;
+            case 0:
+                _InstantiateRandomChromo();
+                break;
+            case 1:
+                _InstantiateMechChromo();
+                break;
+        }
+    }
+
+    private void _InstantiateRandomChromo()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            // Generate content in chromosome
+            int[] content = new int[5];
+            Color32[] colors = new Color32[5];
+            for (int j = 0; j < content.Length; j++)
+            {
+                content[j] = Random.Range(0, 2);
+                colors[j] = _Colors[i];
+            }
+            // Create the ChromosomeRodToggle
+            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromoButtonHolder);
+            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(content, colors);
+            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
+        }
+    }
+
+    private void _InstantiateMechChromo()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            ChromosomeSO newMech = ScriptableObject.CreateInstance<ChromosomeSO>();
+            int[] content = newMech.GetChromosome().ToArray()[..5];
+            Color32[] colors = new Color32[5];
+            // Assign base color
+            for (int j = 0; j < content.Length; j++)
+            {
+                colors[j] = Color.white;
+            }
+            // Create the ChromosomeRodToggle
+            GameObject newChromosomeRodToggle = Instantiate(_ChromosomeRodTogglePrefab, _ChromoButtonHolder);
+            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(content, colors, true);
+            newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
+        }
+    }
+
+// Return all chromosomeRods that is selected
+public ChromosomeRod[] GetSelectedChromosomeRods()
     {
         // Count the number of selected chromosomeRodToggle
         _ChromosomeRodToggles = GetComponentsInChildren<ChromosomeRodToggle>();
