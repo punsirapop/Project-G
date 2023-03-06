@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ParentManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ParentManager : MonoBehaviour
     [SerializeField] private GameObject _ChromosomeRodPrefab;
     [SerializeField] private Transform _ChromosomeRodsHolder;
     [SerializeField] private Color32[] _Colors;
-    [SerializeField] private GameObject _DescriptionPanel;
+    [SerializeField] private GameObject  _DemonstrateText;
     [SerializeField] private GameObject _WantedChildPanel;
 
     private ChromosomeRodToggle[] _ChromosomeRodToggles;
@@ -124,9 +125,9 @@ public class ParentManager : MonoBehaviour
             newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
         }
         // Set the explanation text
-        _DescriptionPanel.SetActive(true);
+        _DemonstrateText.SetActive(true);
         _WantedChildPanel.SetActive(false);
-        _DescriptionPanel.GetComponentsInChildren<TextMeshProUGUI>()[2].text = (crossovertype == 0) ? "Single-point" : "Two-point";
+        _DemonstrateText.GetComponentsInChildren<TextMeshProUGUI>()[1].text = (crossovertype == 0) ? "Single-point" : "Two-point";
     }
 
     // Instantiate possible parent chomosomes of mech according to crossoverType
@@ -171,17 +172,15 @@ public class ParentManager : MonoBehaviour
             newChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
         }
         // Destroy all previous children in the panel (if any)
-        foreach (Transform child in _WantedChildPanel.transform)
+        ChromosomeRod[] oldChildren = _WantedChildPanel.GetComponentsInChildren<ChromosomeRod>();
+        foreach (ChromosomeRod child in oldChildren)
         {
-            if (child.gameObject.GetComponent<ChromosomeRod>() != null)
-            {
-                Destroy(child.gameObject);
-            }
+            Destroy(child.gameObject);
         }
         // Show one of the wanted children
-        _DescriptionPanel.SetActive(false);
+        _DemonstrateText.SetActive(false);
         _WantedChildPanel.SetActive(true);
-        GameObject childChromosomeRodToggle = Instantiate(_ChromosomeRodPrefab, _WantedChildPanel.transform);
+        GameObject childChromosomeRodToggle = Instantiate(_ChromosomeRodPrefab, _WantedChildPanel.GetComponentInChildren<HorizontalLayoutGroup>().transform);
         childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(child1, baseColor, true);
         childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
     }
