@@ -85,6 +85,105 @@ public class GeneticFunc : MonoBehaviour
         Debug.Log("finished");
     }
 
+    public void Crossover2D(List<List<int>> a, List<List<int>> b, int type)
+    {
+        //// Logging input ////////////////////////////////////////
+        //string aText = "";
+        //foreach (List<int> aSection in a)
+        //{
+        //    foreach (int aBit in aSection)
+        //    {
+        //        aText += aBit.ToString() + "-";
+        //    }
+        //    aText = aText.Trim('-');
+        //    aText += "/";
+        //}
+        //aText = aText.Trim('/');
+        //string bText = "";
+        //foreach (List<int> bSection in b)
+        //{
+        //    foreach (int bBit in bSection)
+        //    {
+        //        bText += bBit.ToString() + "-";
+        //    }
+        //    bText = bText.Trim('-');
+        //    bText += "/";
+        //}
+        //bText = bText.Trim('/');
+        //Debug.Log("INPUT: a = " + aText + ", b = " + bText);
+        //////////////////////////////////////////////////////
+
+        // store temp data
+        //List<List<int>> temp = new List<List<int>>(b);
+        List<List<int>> temp = new List<List<int>>(b);
+        for (int i = 0; i < b.Count; i++)
+        {
+            temp[i] = new List<int>(b[i]);
+        }
+
+        if (type < 2)
+        {   // not uniform
+            Debug.Log("n-point crossover");
+            // set start & end points
+            int start = Random.Range(1, a[0].Count - type);
+            int end = (type == 1) ? Random.Range(start, a[0].Count) : a[0].Count - 1;
+            Debug.Log("Start: " + start + " End: " + end);
+            // swap intervals
+            for (int i = start; i <= end; i++)
+            {
+                for (int j = 0; j < a.Count; j++)
+                {
+                    //Debug.Log("BEFORE: a bit = " + a[j][i].ToString() + ", b bit = " + b[j][i]);
+                    b[j][i] = a[j][i];
+                    a[j][i] = temp[j][i];
+                    //Debug.Log("AFTER: a bit = " + a[j][i].ToString() + ", b bit = " + b[j][i]);
+                }
+            }
+        }
+        else
+        {   // uniform
+            Debug.Log("uniform crossover");
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (Random.Range(0, 100) >= 50)
+                {
+                    for (int j = 0; j < a.Count; j++)
+                    {
+                        b[j][i] = a[j][i];
+                        a[j][i] = temp[j][i];
+                    }
+                }
+            }
+        }
+        //Debug.Log("finished");
+
+        //// Logging output ////////////////////////////////////////
+        //aText = "";
+        //foreach (List<int> aSection in a)
+        //{
+        //    foreach (int aBit in aSection)
+        //    {
+        //        aText += aBit.ToString() + "-";
+        //    }
+        //    aText = aText.Trim('-');
+        //    aText += "/";
+        //}
+        //aText = aText.Trim('/');
+        //bText = "";
+        //foreach (List<int> bSection in b)
+        //{
+        //    foreach (int bBit in bSection)
+        //    {
+        //        bText += bBit.ToString() + "-";
+        //    }
+        //    bText = bText.Trim('-');
+        //    bText += "/";
+        //}
+        //bText = bText.Trim('/');
+        //Debug.Log("OUTPUT: a = " + aText + ", b = " + bText);
+        //////////////////////////////////////////////////////
+    }
+
     /* 
      * Randomly mutate genes
      * 

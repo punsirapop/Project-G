@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class CrossoverPuzzleManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static CrossoverPuzzleManager Instance;
+
+    private void Awake()
     {
-        
+        if (Instance == null) Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Set Parent and Children Manager to suit the type of puzzle
+    // puzzleType: 0 = demonstrate single point, 1 = demonstrate two point, 2 = solve single point, 3 = solve two point
+    public void SetPuzzle(int puzzleType)
     {
-        
+        ParentManager.Instance.InstaniateChromosomeRodToggles(puzzleType);
+        ParentManager.Instance.UnselectAllToggles();
+        ChildrenManager.Instance.SetPuzzle(puzzleType >= 2);
     }
 }

@@ -8,9 +8,9 @@ public class ChildrenManager : MonoBehaviour
 {
     public static ChildrenManager Instance;
 
-    [SerializeField] private GameObject[] _CrossoverPoints;
+    [SerializeField] private CrossoverPoint[] _CrossoverPoints;
     [SerializeField] private Transform _ChromoHolder;
-    [SerializeField] private GameObject _BitHolderHelperPrefab;
+    [SerializeField] private GameObject _CreatePointButton;
     private int[] _DraggedIndexes;
 
     public void SetDraggedIndexes(int[] indexes)
@@ -23,30 +23,15 @@ public class ChildrenManager : MonoBehaviour
         if (Instance == null) Instance = this;
     }
 
-    void Update()
-    {
-        // Coloring the crossover points
-        foreach (GameObject crossoverPoint in _CrossoverPoints)
-        {
-            bool isOn = crossoverPoint.GetComponent<Toggle>().isOn;
-            Image[] images = crossoverPoint.GetComponentsInChildren<Image>();
-            Color32 color = isOn ? new Color32(255, 255, 0, 255) : new Color32(255, 255, 255, 255);
-            foreach (Image image in images)
-            {
-                image.color = color;
-            }
-        }
-    }
-
-    // Add/remove ChromoButton
+    // Add/remove ChromosomeRod
     public void UpdateChromosomeRods()
     {
-        // Destroy all current chromosomeRods
+        // Destroy all current ChromosomeRods
         foreach (Transform child in _ChromoHolder)
         {
             Destroy(child.gameObject);
         }
-        // Create chromosomeRods that are selected in the parent panel
+        // Create ChromosomeRods that are selected in the parent panel
         ChromosomeRod[] selectedRods = ParentManager.Instance.GetSelectedChromosomeRods();
         foreach (ChromosomeRod selectedRod in selectedRods)
         {
@@ -84,25 +69,82 @@ public class ChildrenManager : MonoBehaviour
         }
     }
 
-    // return the array of all selected crossover point indexes
+    // Return the array of all selected crossover point indexes
     public int[] GetCrossoverPoints()
     {
         int selectedCount = 0;
-        foreach (GameObject crossoverPoint in _CrossoverPoints)
+        foreach (CrossoverPoint crossoverPoint in _CrossoverPoints)
         {
-            bool isOn = crossoverPoint.GetComponent<Toggle>().isOn;
-            selectedCount += isOn ? 1 : 0;
+            selectedCount += crossoverPoint.isOn ? 1 : 0;
         }
         int[] crossoverPoints = new int[selectedCount];
         int pointIndex = 0;
         for (int i = 0; i < _CrossoverPoints.Length; i++)
         {
-            if (_CrossoverPoints[i].GetComponent<Toggle>().isOn)
+            if (_CrossoverPoints[i].isOn)
             {
                 crossoverPoints[pointIndex] = i;
                 pointIndex++;
             }
         }
         return crossoverPoints;
+    }
+
+    // Set element on the panel depend on it's is solve level puzzle or not
+    public void SetPuzzle(bool isSolve)
+    {
+        // Enable random point button only if it IS NOT a solving puzzle
+        _CreatePointButton.SetActive(!isSolve);
+        foreach (CrossoverPoint crossoverPoint in _CrossoverPoints)
+        {
+            // The crossover points can be directly interactable only if it IS a solving puzzle
+            crossoverPoint.SetInteractable(isSolve);
+            // Set all point to off
+            crossoverPoint.SetIsOn(false);
+        }
+    }
+
+    // Randomly select one crossover point
+    public void SelectRandomCrossoverPoint()
+    {
+        // Calculate the number of selected crossover points
+        int selectedCount = 0;
+        foreach (CrossoverPoint crossoverPoint in _CrossoverPoints)
+        {
+            selectedCount += crossoverPoint.isOn ? 1 : 0;
+        }
+        // If all point have already been selected, do nothing
+        if (selectedCount >= _CrossoverPoints.Length)
+        {
+            return;
+        }
+        // Else, randomly select unselected point
+        else
+        {
+            // Random index among unselected points
+            int randomIndex = UnityEngine.Random.Range(0, _CrossoverPoints.Length - selectedCount);
+            int unselectedCount = 0;
+            foreach (CrossoverPoint crossoverPoint in _CrossoverPoints)
+            {
+                if (!crossoverPoint.isOn)
+                {
+                    if ((randomIndex == unselectedCount))
+                    {
+                        crossoverPoint.SetIsOn(true);
+                        break;
+                    }
+                    unselectedCount++;
+                }
+            }
+        }
+    }
+
+    // Unselect all crossover points
+    public void UnselectAllCrossoverPoints()
+    {
+        foreach (CrossoverPoint crossoverPoint in _CrossoverPoints)
+        {
+            crossoverPoint.SetIsOn(false);
+        }
     }
 }
