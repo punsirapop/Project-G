@@ -147,4 +147,22 @@ public class ChildrenManager : MonoBehaviour
             crossoverPoint.SetIsOn(false);
         }
     }
+
+    // Return the value of all bred children chromosome
+    public int[][] GetBredChildren()
+    {
+        ChromosomeRod[] bredChromosomeRods = this.GetComponentsInChildren<ChromosomeRod>();
+        int[][] bredChildren = new int[bredChromosomeRods.Length][];
+        for (int i = 0; i < bredChromosomeRods.Length; i++)
+        {
+            bredChildren[i] = bredChromosomeRods[i].GetChromosomeValue();
+        }
+        return bredChildren;
+    }
+
+    // Return the color of all bred children
+    public Color32[] GetBredChildColor()
+    {
+        return this.GetComponentsInChildren<ChromosomeRod>()[0].GetColorValue();
+    }
 }

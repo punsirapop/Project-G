@@ -28,6 +28,11 @@ public class ChromosomeRod : MonoBehaviour
         return _ChromosomeValue[valueIndex];
     }
 
+    public int[] GetChromosomeValue()
+    {
+        return _ChromosomeValue;
+    }
+
     public void SetValueAtIndex(int valueIndex, int newValue)
     {
         _ChromosomeValue[valueIndex] = newValue;
@@ -36,6 +41,11 @@ public class ChromosomeRod : MonoBehaviour
     public Color32 GetColorAtIndex(int colorIndex)
     {
         return _ChromosomeColor[colorIndex];
+    }
+
+    public Color32[] GetColorValue()
+    {
+        return _ChromosomeColor;
     }
 
     public void SetColorAtIndex(int colorIndex, Color32 newColor)

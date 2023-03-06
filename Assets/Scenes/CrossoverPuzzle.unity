@@ -674,19 +674,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
@@ -929,6 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439cfc2c86f12c14ab8a77afa47b283a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OverlayPrefab: {fileID: 1072422749628707577, guid: f405b3385516c0946b196757a24b0ba0, type: 3}
 --- !u!1 &525768271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,19 +1904,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
@@ -3617,19 +3618,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
@@ -3910,7 +3911,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1708333559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 498856118}
+        m_TargetAssemblyTypeName: CrossoverPuzzleManager, Assembly-CSharp
+        m_MethodName: SubmitAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1708333559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4791,19 +4804,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5794248617898490872, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed48fbd882431d46818b5f1b6dfeb25, type: 3}

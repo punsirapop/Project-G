@@ -14,6 +14,7 @@ public class ParentManager : MonoBehaviour
     [SerializeField] private Color32[] _Colors;
     [SerializeField] private GameObject  _DemonstrateText;
     [SerializeField] private GameObject _WantedChildPanel;
+    private int[] _WantedChild;
 
     private ChromosomeRodToggle[] _ChromosomeRodToggles;
     void Awake()
@@ -134,17 +135,26 @@ public class ParentManager : MonoBehaviour
     // crossoverType: 0 = single-point, 1 = two-point
     private void _InstantiateMechChromo(int crossoverType=0)
     {
-        // Create wanted children
-        int[] child1 = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
-        int[] child2 = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
-        // Create possible parent using crossover
+        // Create wanted child
+        _WantedChild = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
         int[][] parents = new int[4][];
-        for (int parentCount = 0; parentCount < 4; parentCount += 2)
+        for (int parentCount = 0; parentCount < parents.Length; parentCount += 2)
         {
+            // Create new random child with difference head and accessory
+            int[] randomChild = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
+            if (_WantedChild[0] == randomChild[0])
+            {
+                randomChild[0] += (randomChild[0] == 0) ? 1 : -1;
+            }
+            if (_WantedChild[4] == randomChild[4])
+            {
+                randomChild[4] += (randomChild[4] == 0) ? 1 : -1;
+            }
+            // Create possible parent using crossover
             List<List<int>> parent1 = new();
             List<List<int>> parent2 = new();
-            parent1.Add(new List<int>(child1));
-            parent2.Add(new List<int>(child2));
+            parent1.Add(new List<int>(_WantedChild));
+            parent2.Add(new List<int>(randomChild));
             GeneticFunc.Instance.Crossover2D(parent1, parent2, crossoverType);
             parents[0 + parentCount] = parent1[0].ToArray();
             parents[1 + parentCount] = parent2[0].ToArray();
@@ -159,7 +169,7 @@ public class ParentManager : MonoBehaviour
             parents[randomIndex] = thisParent;
         }
         // Assign base color to all white
-        Color32[] baseColor = new Color32[child1.Length];
+        Color32[] baseColor = new Color32[_WantedChild.Length];
         for (int i = 0; i < baseColor.Length; i++)
         {
             baseColor[i] = Color.white;
@@ -181,7 +191,7 @@ public class ParentManager : MonoBehaviour
         _DemonstrateText.SetActive(false);
         _WantedChildPanel.SetActive(true);
         GameObject childChromosomeRodToggle = Instantiate(_ChromosomeRodPrefab, _WantedChildPanel.GetComponentInChildren<HorizontalLayoutGroup>().transform);
-        childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(child1, baseColor, true);
+        childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().SetChromosome(_WantedChild, baseColor, true);
         childChromosomeRodToggle.GetComponentInChildren<ChromosomeRod>().RenderRod();
     }
     #endregion
@@ -221,5 +231,24 @@ public class ParentManager : MonoBehaviour
         {
             rodToggle.SetIsOn(false);
         }
+    }
+
+    // Return the chromosome of wanted children
+    public int[] GetWantedChild()
+    {
+        return _WantedChild;
+    }
+
+    // Return the type of selected chromosome rods
+    // return type: 0 = binary, 1 = integer
+    public int[] GetSelectedRodsType()
+    {
+        ChromosomeRod[] selectedRods = GetSelectedChromosomeRods();
+        int[] selectedTypes = new int[selectedRods.Length];
+        for (int i = 0; i < selectedRods.Length; i++)
+        {
+            selectedTypes[i] = (selectedRods[i].GetValueAtIndex(0) <= 1) ? 0 : 1;
+        }
+        return selectedTypes;
     }
 }
