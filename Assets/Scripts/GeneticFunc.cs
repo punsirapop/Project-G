@@ -113,7 +113,7 @@ public class GeneticFunc : MonoBehaviour
         {   // not uniform
             Debug.Log("n-point crossover");
             // set start & end points
-            int start = Random.Range(0, a.Count);
+            int start = Random.Range(1, a.Count - type);
             int end = (type == 1) ? Random.Range(start, a.Count) : a.Count - 1;
             Debug.Log("Start: " + start + " End: " + end);
             // swap intervals

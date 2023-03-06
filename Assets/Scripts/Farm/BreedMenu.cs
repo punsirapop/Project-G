@@ -74,7 +74,7 @@ public class BreedMenu : MonoBehaviour
         KHolder.gameObject.SetActive(TypeParentSelect.value == 1);
         KDisplay.text = KSelect.value.ToString();
         KSelect.minValue = 1;
-        KSelect.maxValue = myFarm.MechChromos.Count();
+        KSelect.maxValue = myFarm.MechChromos.Count() / 2;
         GenerationDisplay.text = GenerationSelect.value.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
         Elitism.text = (elites.Count > 0) ? string.Join(", ", elites.Select(x => x.ID)) : "None";

@@ -105,7 +105,7 @@ public class FarmManager : MonoBehaviour
             UnityEngine.Random.Range(border[0].position.y, border[1].position.y));
         GameObject mech = Instantiate(preset, spawnPoint, Quaternion.identity, holder);
         mechs.Add(mech);
-        mech.GetComponent<MechDisplayController>().MySO = c;
+        mech.GetComponent<MechDisplayController>().SetChromo(c);
         mech.SetActive(true);
     }
 

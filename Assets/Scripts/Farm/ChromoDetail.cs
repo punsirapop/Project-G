@@ -10,18 +10,11 @@ using UnityEngine.UI;
  */
 public class ChromoDetail : PlayerManager
 {
-    public static ChromoDetail Instance;
-
     // List of textboxes
     [SerializeField] TextMeshProUGUI[] Displays;
     // Delete button
     // ***** For debug purposes *****
     [SerializeField] Button DeleteButton;
-
-    private void Awake()
-    {
-        if(Instance == null) Instance = this;
-    }
 
     public void SetDisplay(MechChromoSO c)
     {
