@@ -33,6 +33,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8c105dbdc9451bc4590b45c997ea094e, type: 3}
   - {fileID: 21300000, guid: b272df7d31eda4847b8d83573801dbc7, type: 3}
   - {fileID: 21300000, guid: b7e10f0adda8e374aab9fc778b7ab6dd, type: 3}
+  _MainNormal: {fileID: 21300000, guid: ba61822b3210bc94aa09266792f13ac5, type: 3}
+  _MainBroken: {fileID: 21300000, guid: 7afd6021af2bab24588fe48e0489fee1, type: 3}
+  _Locker: {fileID: 21300000, guid: bdfe880390322144ca89cfeb99d56b2e, type: 3}
   _Knapsacks:
   - {fileID: 11400000, guid: efd27eb5ceb6e924e98e1a0ccd1b7b42, type: 2}
   - {fileID: 11400000, guid: d45f8ff6abb1acf4bad08edf90bb0d5d, type: 2}
