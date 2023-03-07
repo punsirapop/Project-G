@@ -11,7 +11,7 @@ using UnityEngine;
  * - AddChromo
  * - DelChromo
  */
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
     // public static PlayerManager Instance;
     // Store every chr. the player possesses
@@ -20,7 +20,11 @@ public class PlayerManager : MonoBehaviour
     // List storing current breeding generation for each farm
     public static List<int> CurrentGen;
     public static int CurrentPlace = 1;
-    public static int CurrentFactory = 0;
+    public static int CurrentFactoryIndex = 0;
+
+    public static FactorySO[] FactoryDatabase;
+    public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
+    [SerializeField] private FactorySO[] FactoryDatabaseHelper;
 
     public static event Action<ChromosomeSO> OnAddChromosome;
     public static event Action<ChromosomeSO> OnRemoveChromosome;
@@ -46,10 +50,24 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    // Change current factory
-    public void SetCurrentFactory(int newFactory)
+    // Assign factories data from serialized field on editor to the static variable
+    public void OnAfterDeserialize()
     {
-        CurrentFactory = newFactory;
+        FactoryDatabase = FactoryDatabaseHelper;
+    }
+
+    // Reflect the value back into editor
+    public void OnBeforeSerialize()
+    {
+        FactoryDatabaseHelper = FactoryDatabase;
+    }
+
+
+
+    // Change current factory
+    public void SetCurrentFactoryIndex(int newFactoryIndex)
+    {
+        CurrentFactoryIndex = newFactoryIndex;
     }
 
     // Add new random chromosome to the current space

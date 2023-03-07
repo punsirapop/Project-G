@@ -479,7 +479,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: SetCurrentFactory
+        m_MethodName: SetCurrentFactoryIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -895,7 +895,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: SetCurrentFactory
+        m_MethodName: SetCurrentFactoryIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1820,7 +1820,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: SetCurrentFactory
+        m_MethodName: SetCurrentFactoryIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1952,6 +1952,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9973bf9f378dba468ce7158873f5e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactoryDatabaseHelper:
+  - {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
+  - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
+  - {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
+  - {fileID: 11400000, guid: c9c6afc64fdbb6f42bb0d2bbfb96e979, type: 2}
 --- !u!1 &1076014476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2311,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046214081}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: SetCurrentFactory
+        m_MethodName: SetCurrentFactoryIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
