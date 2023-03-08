@@ -163,6 +163,11 @@ public class ChildrenManager : MonoBehaviour
     // Return the color of all bred children
     public Color32[] GetBredChildColor()
     {
+        // Return blank array when there is on bred children at all
+        if (GetComponentsInChildren<ChromosomeRod>().Length == 0)
+        {
+            return new Color32[0];
+        }    
         return this.GetComponentsInChildren<ChromosomeRod>()[0].GetColorValue();
     }
 }
