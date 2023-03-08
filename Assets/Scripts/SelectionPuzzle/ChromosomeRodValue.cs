@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ChromosomeRodValue : MonoBehaviour
 {
-    private int _Value;
-    private bool _IsPercentage;
+    [SerializeField] private int _Value;
+    [SerializeField] private bool _IsPercentage;
     [SerializeField] private TextMeshProUGUI _FitnessText;
 
     public void SetValue(int newValue, bool newIsPercentage = false)

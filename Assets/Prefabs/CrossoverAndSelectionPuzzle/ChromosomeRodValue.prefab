@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1365527241154503037}
   - component: {fileID: 7342931716800380614}
   m_Layer: 5
-  m_Name: ChromosomeRodFitness
+  m_Name: ChromosomeRodValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bde7f6f1c18ede4b9904ba0a0fc099d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Value: 0
+  _IsPercentage: 0
   _FitnessText: {fileID: 4836240811058777526}
 --- !u!1 &4634142826234592511
 GameObject:
@@ -401,12 +403,12 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -766,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357913883199191632, guid: 1611d671382466f409608980d398a2fe, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6357913883199191632, guid: 1611d671382466f409608980d398a2fe, type: 3}
       propertyPath: m_LocalPosition.x

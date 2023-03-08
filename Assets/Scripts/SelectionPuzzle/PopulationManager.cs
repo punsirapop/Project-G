@@ -4,11 +4,29 @@ using UnityEngine;
 
 public class PopulationManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _ChromosomeRodFitnessPrefab;
+    public static PopulationManager Instance;
+
+    [SerializeField] private GameObject _ChromosomeRodValuePrefab;
     [SerializeField] private Color32[] _Colors;
+    private GameObject[] _Population;
+    public GameObject[] Population => _Population;
+
+    [SerializeField] private Transform _ChromosomeHolder;
+
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
 
     void Start()
     {
+        // Destroy all object in this panel (if any)
+        foreach (Transform child in _ChromosomeHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        // Create new random population
+        _Population = new GameObject[6];
         for (int i = 0; i < 6; i++)
         {
             int[] newContent = new int[5];
@@ -19,10 +37,10 @@ public class PopulationManager : MonoBehaviour
                 newContent[j] = Random.Range(0, 2);
                 newColor[j] = _Colors[i];
             }
-            GameObject newRodFitness = Instantiate(_ChromosomeRodFitnessPrefab, this.transform);
-            newRodFitness.GetComponentInChildren<ChromosomeRod>().SetChromosome(newContent, newColor);
-            newRodFitness.GetComponentInChildren<ChromosomeRod>().RenderRod();
-            newRodFitness.GetComponentInChildren<ChromosomeRodValue>().SetValue(newFitness);
+            _Population[i] = Instantiate(_ChromosomeRodValuePrefab, _ChromosomeHolder);
+            _Population[i].GetComponentInChildren<ChromosomeRod>().SetChromosome(newContent, newColor);
+            _Population[i].GetComponentInChildren<ChromosomeRod>().RenderRod();
+            _Population[i].GetComponentInChildren<ChromosomeRodValue>().SetValue(newFitness);
         }
     }
 }
