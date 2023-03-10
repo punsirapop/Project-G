@@ -15,15 +15,20 @@ public class SelectedParentManager : MonoBehaviour
 
     void Start()
     {
-        // Destroy all object in this panel (if any)
-        foreach (Transform child in _ChromosomeHolder)
-        {
-            Destroy(child.gameObject);
-        }
+        ClearPanel();
     }
 
     public void AddSelectedChromosome(ChromosomeRod selectedChromosome)
     {
         Instantiate(selectedChromosome, _ChromosomeHolder);
+    }
+
+    public void ClearPanel()
+    {
+        // Destroy all object in this panel (if any)
+        foreach (Transform child in _ChromosomeHolder)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

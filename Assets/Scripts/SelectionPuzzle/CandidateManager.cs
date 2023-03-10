@@ -19,7 +19,6 @@ public class CandidateManager : MonoBehaviour
         PickBestInGroup,        // Clicking on the best fitness chromosome in the group (preferred operation of Tournament-based selection)
         PickNotBestInGroup,     // Clicking on the chromosome which is not the best fitness (not preferred)
         PickInChance,           // Clicking on the chromosome with calculated selected chance (not preferred)
-        PickInRank,             // Clicking on the chromosome with calculated rank (not preferred)
         SpinWheel,              // Clicking on the created wheel to random chromosome from the wheel (preferred for RW and RB selection)
     }
     // Preferred operation log for selecting 6 parents
@@ -30,6 +29,8 @@ public class CandidateManager : MonoBehaviour
     public List<Operation> OperationLog => _OperationLog;
     [SerializeField] private GameObject _ChromosomeHolder;
     [SerializeField] private GameObject _RouletteWheel;
+    private int _RankCounter;
+    public int RankCounter => _RankCounter;
     
     void Awake()
     {
@@ -38,23 +39,13 @@ public class CandidateManager : MonoBehaviour
 
     void Start()
     {
-        // Destroy all object in this panel (if any)
-        foreach (Transform child in _ChromosomeHolder.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        ClearPanel();
     }
 
     // Copy the number of chromosome from the population equal to the given candidateCount
     public void CreateGroup(int candidateCount)
     {
-        _ChromosomeHolder.SetActive(true);
-        _RouletteWheel.SetActive(false);
-        // Destroy all object in this panel (if any)
-        foreach (Transform child in _ChromosomeHolder.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        ClearPanel();
         // If the given number of candidate exceed the number of population, do nothing
         GameObject[] populationPool = PopulationManager.Instance.Population;
         if (candidateCount > populationPool.Length)
@@ -89,13 +80,7 @@ public class CandidateManager : MonoBehaviour
     // Create the chance to be selected of each chromosome
     public void CreateChance()
     {
-        _ChromosomeHolder.SetActive(true);
-        _RouletteWheel.SetActive(false);
-        // Destroy all object in this panel (if any)
-        foreach (Transform child in _ChromosomeHolder.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        ClearPanel();
         // If the given number of candidate exceed the number of population, do nothing
         GameObject[] population = PopulationManager.Instance.Population;
         // Calculate total fitness
@@ -119,14 +104,46 @@ public class CandidateManager : MonoBehaviour
     // Create Roulette Wheel using the fitness of each individual in population
     public void CreateWheel()
     {
-        ChromosomeRodValue[] currentRodValues = GetComponentsInChildren<ChromosomeRodValue>();
         _ChromosomeHolder.SetActive(false);
         _RouletteWheel.SetActive(true);
+        ChromosomeRodValue[] currentRodValues = GetComponentsInChildren<ChromosomeRodValue>(true);
         _RouletteWheel.GetComponent<RouletteWheel>().SetWheel(currentRodValues);
     }
 
+    // Add chromosome from the wheel to the SelectedParent panel
     public void AddParentFromWheel(int index)
     {
         SelectedParentManager.Instance.AddSelectedChromosome(GetComponentsInChildren<ChromosomeRod>(true)[index]);
+    }
+
+    // Copy all population and enable rank assignment
+    public void CreateRank()
+    {
+        ClearPanel();
+        GameObject[] population = PopulationManager.Instance.Population;
+        // Calculate the actual GameObject with the proportion percentage
+        foreach (GameObject individual in population)
+        {
+            GameObject newIndividual = Instantiate(individual, _ChromosomeHolder.transform);
+            ChromosomeRodValue newIndividualRodValue = newIndividual.GetComponent<ChromosomeRodValue>();
+            newIndividualRodValue.EnableRank();
+        }
+        _RankCounter = 1;
+    }
+
+    public void AddRank()
+    {
+        _RankCounter++;
+    }
+
+    public void ClearPanel()
+    {
+        // Destroy all object in this panel (if any)
+        foreach (Transform child in _ChromosomeHolder.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        _ChromosomeHolder.SetActive(true);
+        _RouletteWheel.SetActive(false);
     }
 }
