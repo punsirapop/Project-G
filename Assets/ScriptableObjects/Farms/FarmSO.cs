@@ -14,12 +14,10 @@ public class FarmSO : ScriptableObject
     public Status Status => _Status;
 
     // Sprites
-    [SerializeField] private Sprite _Floor;
-    public Sprite Floor => _Floor;
-    [SerializeField] private Sprite _Border;
-    public Sprite Border => _Border;
+    [SerializeField] private Sprite _BG;
+    public Sprite BG => _BG;
 
-    // Knapsack and items preset
+    // items
     [SerializeField] private List<MechChromoSO> _MechChromos;
     public List<MechChromoSO> MechChromos => _MechChromos;
 
@@ -48,8 +46,7 @@ public class FarmSO : ScriptableObject
         _Name = f.Name;
         _Generation = f.Generation;
         _Status = f.Status;
-        _Floor = f.Floor;
-        _Border = f.Border;
+        _BG = f.BG;
         _MechChromos = new List<MechChromoSO>(f.MechChromos);
     }
 

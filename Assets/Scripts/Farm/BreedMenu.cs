@@ -24,13 +24,14 @@ public class BreedMenu : MonoBehaviour
     [SerializeField] GameObject KHolder;
     // Single-Two-Uniform
     [SerializeField] TMP_Dropdown TypeCrossover;
-    [SerializeField] Slider GenerationSelect;
-    [SerializeField] TextMeshProUGUI GenerationDisplay;
-    [SerializeField] TextMeshProUGUI Elitism;
+    [SerializeField] Slider ElitismSelect;
+    [SerializeField] TextMeshProUGUI ElitismDisplay;
     [SerializeField] Slider MutationSelect;
     [SerializeField] TextMeshProUGUI MutationDisplay;
 
+    [SerializeField] TextMeshProUGUI GenerationDisplay;
     [SerializeField] TextMeshProUGUI TotalPrice;
+    [SerializeField] Button[] GenerationAdjustors;
     [SerializeField] Button BreedBtn;
     #endregion
     #region fitness tab
@@ -51,22 +52,18 @@ public class BreedMenu : MonoBehaviour
     // List storing elite chromosomes
     FarmSO myFarm;
     List<MechChromoSO> elites;
+    int breedGen;
     int breedPrice = 500;
 
     private void Awake()
     {
         elites = new List<MechChromoSO>();
-        MechDisplayController.OnSelectChromo += EliteMe;
-    }
-
-    private void OnDestroy()
-    {
-        MechDisplayController.OnSelectChromo -= EliteMe;
+        breedGen = 1;
+        myFarm = FarmManager.Instance.FarmsData[PlayerManager.CurrentFarm];
     }
 
     private void Update()
     {
-        myFarm = FarmManager.Instance.FarmsData[PlayerManager.CurrentFarm];
         // Update displays
         CurrentPopDisplay.text = myFarm.MechChromos.Count().ToString();
         CurrentGenDisplay.text = myFarm.Generation.ToString();
@@ -75,10 +72,10 @@ public class BreedMenu : MonoBehaviour
         KDisplay.text = KSelect.value.ToString();
         KSelect.minValue = 1;
         KSelect.maxValue = myFarm.MechChromos.Count() / 2;
-        GenerationDisplay.text = GenerationSelect.value.ToString();
+        GenerationDisplay.text = breedGen.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
-        Elitism.text = (elites.Count > 0) ? string.Join(", ", elites.Select(x => x.ID)) : "None";
-        TotalPrice.text = GenerationSelect.value * breedPrice + "G";
+        ElitismDisplay.text = ElitismSelect.value.ToString();
+        TotalPrice.text = breedGen * breedPrice + "G";
 
         for (int i = 0; i < EnableMe.Length; i++)
         {
@@ -90,20 +87,9 @@ public class BreedMenu : MonoBehaviour
         AccDisplay.text = AccSelect.value.ToString();
         BreedBtn.interactable = myFarm.MechChromos.Count() > 0 &&
             (myFarm.MechChromos.Count() - elites.Count) % 2 == 0;
+        GenerationAdjustors[0].interactable = breedGen < 10;
+        GenerationAdjustors[1].interactable = breedGen > 1;
         // Yep, all of this
-    }
-
-    // Elite/unelite clicked chromosome
-    private void EliteMe(MechChromoSO c)
-    {
-        if (!elites.Contains(c))
-        {
-            elites.Add(c);
-        }
-        else
-        {
-            elites.Remove(c);
-        }
     }
 
     /*
@@ -134,6 +120,11 @@ public class BreedMenu : MonoBehaviour
         return dict;
     }
 
+    public void AdjustGen(int i)
+    {
+        breedGen += i;
+    }
+
     /*
      * Initiate breeding process
      * 
@@ -144,10 +135,16 @@ public class BreedMenu : MonoBehaviour
      */
     public void BreedMe()
     {
-        for (int g = 0; g < GenerationSelect.value; g++)
+        for (int g = 0; g < breedGen; g++)
         {
             // ------- get fitness -------
             Dictionary<dynamic, float> fv = GetFitnessDict();
+
+            // ------- get elites -------
+            for (int i = 0; i < fv.Count * ElitismSelect.value / 100; i++)
+            {
+                elites.Add(fv.ElementAt(i).Key);
+            }
 
             // ------- select parents according to chosen type -------
             List<dynamic> parents = new List<dynamic>
@@ -203,7 +200,7 @@ public class BreedMenu : MonoBehaviour
             // Debug.Log("Children Count: " + children.Count);
         }
 
-        myFarm.AddGen((int)GenerationSelect.value);
+        myFarm.AddGen(breedGen);
         elites.Clear();
     }
 }

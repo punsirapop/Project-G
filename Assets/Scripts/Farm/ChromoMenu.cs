@@ -81,14 +81,14 @@ public class ChromoMenu : MonoBehaviour
                 fv = fv.OrderBy(x => x.name).ThenBy(x => x.fitness).ToList();
                 break;
         }
-        fv.Sort();
         // ------- display -------
-        foreach (var item in fvDict)
+        foreach (var item in fv)
         {
             GameObject me = Instantiate(preset, parent);
-            
-            me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.SetDisplay(item.Key));
-            me.GetComponentInChildren<TextMeshProUGUI>().text = "ID: " + item.Key.ID;
+            me.GetComponent<MechButton>().SetChromosome(item);
+            me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.SetDisplay(item.chromo));
+            me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.gameObject.SetActive(!detailOverlay.gameObject.activeSelf));
+            // me.GetComponentInChildren<TextMeshProUGUI>().text = "ID: " + item.name;
         }
     }
 }

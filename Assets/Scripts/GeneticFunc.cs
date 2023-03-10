@@ -108,12 +108,16 @@ public class GeneticFunc : MonoBehaviour
     {
         // store temp data
         List<List<int>> temp = new List<List<int>>(b);
+        for (int i = 0; i < b.Count; i++)
+        {
+            temp[i] = new List<int>(b[i]);
+        }
 
         if (type < 2)
         {   // not uniform
             Debug.Log("n-point crossover");
             // set start & end points
-            int start = Random.Range(1, a.Count - type);
+            int start = Random.Range(1, a[0].Count - type);
             int end = (type == 1) ? Random.Range(start, a.Count) : a.Count - 1;
             Debug.Log("Start: " + start + " End: " + end);
             // swap intervals

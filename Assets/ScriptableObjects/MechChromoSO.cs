@@ -13,6 +13,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Stat")]
 public class MechChromoSO : ScriptableObject
 {
+    public enum Rank { C, B, A, S }
     public static int IDCounter;
     public int ID;
     // ---- Cosmetic ----
@@ -136,6 +137,15 @@ public class MechChromoSO : ScriptableObject
         }
 
         return c;
+    }
+
+    public Rank GetRank()
+    {
+        int sum = atk.Sum() + def.Sum() + hp.Sum() + spd.Sum();
+        int index = Mathf.RoundToInt(sum / (cap * 4));
+        Rank rank = (Rank)index;
+
+        return rank;
     }
 
     public float GetFitness(List<int> pref)

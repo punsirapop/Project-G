@@ -9,22 +9,16 @@ using UnityEngine.UI;
 public class MechButton : MonoBehaviour
 {
     // MechChromoSO _Chromosome;
-    [SerializeField] MechDisplayController _Mech;
+    [SerializeField] MechCanvasDisplay _Mech;
     [SerializeField] TextMeshProUGUI _Name;
-    [SerializeField] Image[] _Images;
     [SerializeField] TextMeshProUGUI _Fitness;
 
     public void SetChromosome(ChromoMenu.OrderFormat c)
     {
         // _Chromosome = c.chromo;
         _Mech.SetChromo(c.chromo);
-        _Name.text = c.name;
-        _Fitness.text = c.fitness.ToString();
-
-        foreach (var pair in _Images.Zip(_Mech.myRenderer, (a, b) => Tuple.Create(a, b)))
-        {
-            pair.Item1.sprite = pair.Item2.sprite;
-        }
+        _Name.text = "ID: " + c.name;
+        _Fitness.text = Math.Round(c.fitness).ToString();
     }
 
     /*
