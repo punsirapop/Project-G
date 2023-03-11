@@ -10,6 +10,7 @@ public class PopulationManager : MonoBehaviour
     [SerializeField] private Color32[] _Colors;
     private GameObject[] _Population;
     public GameObject[] Population => _Population;
+    private int[] _InitialFitness;
 
     [SerializeField] private Transform _ChromosomeHolder;
 
@@ -27,6 +28,7 @@ public class PopulationManager : MonoBehaviour
         }
         // Create new random population
         _Population = new GameObject[6];
+        _InitialFitness = new int[6];
         for (int i = 0; i < 6; i++)
         {
             int[] newContent = new int[5];
@@ -41,6 +43,28 @@ public class PopulationManager : MonoBehaviour
             _Population[i].GetComponentInChildren<ChromosomeRod>().SetChromosome(newContent, newColor);
             _Population[i].GetComponentInChildren<ChromosomeRod>().RenderRod();
             _Population[i].GetComponentInChildren<ChromosomeRodValue>().SetValue(newFitness);
+            _InitialFitness[i] = newFitness;
+        }
+    }
+
+    // Set the population fitness to the given new fitness array
+    public void SetPopulationFitness(int[] newPopulationFitness)
+    {
+        if (newPopulationFitness.Length != _Population.Length)
+        {
+            return;
+        }
+        for (int i = 0; i < _Population.Length; i++)
+        {
+            _Population[i].GetComponentInChildren<ChromosomeRodValue>().SetValue(newPopulationFitness[i]);
+        }
+    }
+
+    public void ResetPopulationFitness()
+    {
+        for (int i = 0; i < _Population.Length; i++)
+        {
+            _Population[i].GetComponentInChildren<ChromosomeRodValue>().SetValue(_InitialFitness[i]);
         }
     }
 }

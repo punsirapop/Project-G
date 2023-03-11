@@ -40,6 +40,37 @@ public class CandidateManager : MonoBehaviour
     void Start()
     {
         ClearPanel();
+        ClearLog();
+    }
+
+    public void ClearPanel()
+    {
+        // Destroy all object in this panel (if any)
+        foreach (Transform child in _ChromosomeHolder.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        _ChromosomeHolder.SetActive(true);
+        _RouletteWheel.SetActive(false);
+    }
+
+    public void ClearLog()
+    {
+        _OperationLog.Clear();
+    }
+
+    // Add operation from the button only if the previous operation is not the same.
+    public void AddButtonOperationLog(Operation newOperation)
+    {
+        if (_OperationLog.Count == 0)
+        {
+            _OperationLog.Add(newOperation);
+        }
+        // Prevent the operation log is added twice in the case of player's mouse is double click
+        else if (_OperationLog[_OperationLog.Count - 1] != newOperation)
+        {
+            _OperationLog.Add(newOperation); ;
+        }
     }
 
     // Copy the number of chromosome from the population equal to the given candidateCount
@@ -62,8 +93,7 @@ public class CandidateManager : MonoBehaviour
                 int randomIndex = Random.Range(0, populationPool.Length);
                 // Instantiate the actual GameObject of the candidate
                 GameObject newIndividual = Instantiate(populationPool[randomIndex], _ChromosomeHolder.transform);
-                ChromosomeRod newIndividualRod = newIndividual.GetComponentInChildren<ChromosomeRod>();
-                newIndividual.AddComponent<Button>().onClick.AddListener(() => SelectedParentManager.Instance.AddSelectedChromosome(newIndividualRod));
+                newIndividual.AddComponent<Button>().onClick.AddListener(() => _AddParentFromGroup(newIndividual));
                 // Remove selected index from the pool
                 GameObject[] newPool = new GameObject[populationPool.Length - 1];
                 for (int i = 0; i < newPool.Length; i++)
@@ -74,7 +104,27 @@ public class CandidateManager : MonoBehaviour
             }
         }
         // Record the operation
-        _OperationLog.Add(Operation.Group);
+        AddButtonOperationLog(Operation.Group);
+    }
+
+    // Add clicked chromosome from group mode in the selected parent panel and record the operation
+    private void _AddParentFromGroup(GameObject clickedChromosome)
+    {
+        SelectedParentManager.Instance.AddSelectedChromosome(clickedChromosome.GetComponentInChildren<ChromosomeRod>());
+        ChromosomeRodValue[] currentRodValues = GetComponentsInChildren<ChromosomeRodValue>(true);
+        int bestFitnessValue = 0;
+        foreach (ChromosomeRodValue chromosome in currentRodValues)
+        {
+            bestFitnessValue = (chromosome.Value > bestFitnessValue) ? chromosome.Value : bestFitnessValue;
+        }
+        if (clickedChromosome.GetComponent<ChromosomeRodValue>().Value == bestFitnessValue)
+        {
+            _OperationLog.Add(Operation.PickBestInGroup);
+        }
+        else
+        {
+            _OperationLog.Add(Operation.PickNotBestInGroup);
+        }
     }
 
     // Create the chance to be selected of each chromosome
@@ -93,12 +143,22 @@ public class CandidateManager : MonoBehaviour
         foreach (GameObject individual in population)
         {
             GameObject newIndividual = Instantiate(individual, _ChromosomeHolder.transform);
-            ChromosomeRod newIndividualRod = newIndividual.GetComponentInChildren<ChromosomeRod>();
+            newIndividual.AddComponent<Button>().onClick.AddListener(() => _AddParentFromChance(newIndividual));
+
             ChromosomeRodValue newIndividualRodValue = newIndividual.GetComponent<ChromosomeRodValue>();
-            newIndividual.AddComponent<Button>().onClick.AddListener(() => SelectedParentManager.Instance.AddSelectedChromosome(newIndividualRod));
             float percentage = (float)newIndividualRodValue.Value / (float)totalFitness * 100f;
             newIndividualRodValue.SetValue(percentage);
         }
+        // Record the operation
+        AddButtonOperationLog(Operation.Chance);
+    }
+
+    // Add clicked chromosome from chance mode in the selected parent panel
+    // This is not the preferred operation for any parent selection method
+    private void _AddParentFromChance(GameObject clickedChromosome)
+    {
+        SelectedParentManager.Instance.AddSelectedChromosome(clickedChromosome.GetComponentInChildren<ChromosomeRod>());
+        _OperationLog.Add(Operation.PickInChance);
     }
 
     // Create Roulette Wheel using the fitness of each individual in population
@@ -108,12 +168,16 @@ public class CandidateManager : MonoBehaviour
         _RouletteWheel.SetActive(true);
         ChromosomeRodValue[] currentRodValues = GetComponentsInChildren<ChromosomeRodValue>(true);
         _RouletteWheel.GetComponent<RouletteWheel>().SetWheel(currentRodValues);
+        // Record the operation
+        AddButtonOperationLog(Operation.Wheel);
     }
 
     // Add chromosome from the wheel to the SelectedParent panel
     public void AddParentFromWheel(int index)
     {
         SelectedParentManager.Instance.AddSelectedChromosome(GetComponentsInChildren<ChromosomeRod>(true)[index]);
+        // Record the operation
+        _OperationLog.Add(Operation.SpinWheel);
     }
 
     // Copy all population and enable rank assignment
@@ -129,6 +193,8 @@ public class CandidateManager : MonoBehaviour
             newIndividualRodValue.EnableRank();
         }
         _RankCounter = 1;
+        // Record the operation
+        AddButtonOperationLog(Operation.Rank);
     }
 
     public void AddRank()
@@ -136,14 +202,17 @@ public class CandidateManager : MonoBehaviour
         _RankCounter++;
     }
 
-    public void ClearPanel()
+    // Assign reverse rank to as the population fitness
+    public void AssignReverseRankAsFitness()
     {
-        // Destroy all object in this panel (if any)
-        foreach (Transform child in _ChromosomeHolder.transform)
+        ChromosomeRodValue[] currentCandidates = GetComponentsInChildren<ChromosomeRodValue>();
+        int[] newPopulationFitness = new int[currentCandidates.Length];
+        for (int i = 0; i < newPopulationFitness.Length; i++)
         {
-            Destroy(child.gameObject);
+            newPopulationFitness[i] = _RankCounter - currentCandidates[i].Value;
         }
-        _ChromosomeHolder.SetActive(true);
-        _RouletteWheel.SetActive(false);
+        PopulationManager.Instance.SetPopulationFitness(newPopulationFitness);
+        // Record the operation
+        AddButtonOperationLog(Operation.ReverseFitness);
     }
 }
