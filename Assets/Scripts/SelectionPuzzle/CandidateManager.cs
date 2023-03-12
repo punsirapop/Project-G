@@ -8,23 +8,42 @@ public class CandidateManager : MonoBehaviour
     public static CandidateManager Instance;
 
     // Enumeration specify how the parent chromosomes are selected
-    public enum Operation { 
+    public enum Operation {
+        None,                   // Type to return when there is no operation in the log, use as a null for Operation
         // Batch operation that apply on the number of chromosomes
         Group,                  // Clicking on the Group button
         Chance,                 // Clicking on the Chance button
         Rank,                   // Clicking on the Rank button
         Wheel,                  // Clicking on the Wheel button
-        ReverseFitness,         // Clicking on the ~Fitness button
+        InverseFitness,         // Clicking on the ~Fitness button
         // Single operation that apply on the single individual chromosome; This generate the parent in the selected parent panel
         PickBestInGroup,        // Clicking on the best fitness chromosome in the group (preferred operation of Tournament-based selection)
         PickNotBestInGroup,     // Clicking on the chromosome which is not the best fitness (not preferred)
         PickInChance,           // Clicking on the chromosome with calculated selected chance (not preferred)
         SpinWheel,              // Clicking on the created wheel to random chromosome from the wheel (preferred for RW and RB selection)
+        SetAllRank              // All the chromosome in candidate panel are already be assigned with the rank
     }
-    // Preferred operation log for selecting 6 parents
+    // Preferred operation log for selecting 6 parents, this will be checked by SelectionPuzzleManager
     // TB: {Group, PickBestInGroup, Group, PickBestInGroup, Group, PickBestInGroup, Group, PickBestInGroup, Group, PickBestInGroup, Group, PickBestInGroup}
+    private List<Operation> _TournamentOperations = new List<Operation>
+    {
+        Operation.Group, Operation.PickBestInGroup, Operation.Group, Operation.PickBestInGroup, Operation.Group, Operation.PickBestInGroup,
+        Operation.Group, Operation.PickBestInGroup, Operation.Group, Operation.PickBestInGroup, Operation.Group, Operation.PickBestInGroup
+    };
+    public List<Operation> TournamentOperations => _TournamentOperations;
     // RW: {Chance, Wheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel}
-    // RB: {Rank, ReverseFitness, Chance, Wheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel}
+    private List<Operation> _RouletteWheelOperations = new List<Operation>
+    {
+        Operation.Chance, Operation.Wheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel
+    };
+    public List<Operation> RouletteWheelOperations => _RouletteWheelOperations;
+    // RB: {Rank, SetAllRank, InverseFitness, Chance, Wheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel, SpinWheel}
+    private List<Operation> _RankOperations = new List<Operation>
+    {
+        Operation.Rank, Operation.SetAllRank, Operation.InverseFitness,
+        Operation.Chance, Operation.Wheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel, Operation.SpinWheel
+    };
+    public List<Operation> RankOperations => _RankOperations;
     [SerializeField] private List<Operation> _OperationLog;
     public List<Operation> OperationLog => _OperationLog;
     [SerializeField] private GameObject _ChromosomeHolder;
@@ -57,6 +76,18 @@ public class CandidateManager : MonoBehaviour
     public void ClearLog()
     {
         _OperationLog.Clear();
+    }
+
+    public Operation GetLastOperation()
+    {
+        if (_OperationLog.Count == 0)
+        {
+            return Operation.None;
+        }
+        else
+        {
+            return _OperationLog[_OperationLog.Count - 1];
+        }
     }
 
     // Add operation from the button only if the previous operation is not the same.
@@ -200,10 +231,15 @@ public class CandidateManager : MonoBehaviour
     public void AddRank()
     {
         _RankCounter++;
+        if (_RankCounter > GetComponentsInChildren<ChromosomeRodValue>().Length)
+        {
+            _OperationLog.Add(Operation.SetAllRank);
+            SelectionButtonManager.Instance.SetButtons();
+        }
     }
 
     // Assign reverse rank to as the population fitness
-    public void AssignReverseRankAsFitness()
+    public void AssignInverseRankAsFitness()
     {
         ChromosomeRodValue[] currentCandidates = GetComponentsInChildren<ChromosomeRodValue>();
         int[] newPopulationFitness = new int[currentCandidates.Length];
@@ -213,6 +249,6 @@ public class CandidateManager : MonoBehaviour
         }
         PopulationManager.Instance.SetPopulationFitness(newPopulationFitness);
         // Record the operation
-        AddButtonOperationLog(Operation.ReverseFitness);
+        AddButtonOperationLog(Operation.InverseFitness);
     }
 }

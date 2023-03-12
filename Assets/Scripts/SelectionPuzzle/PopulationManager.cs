@@ -21,6 +21,11 @@ public class PopulationManager : MonoBehaviour
 
     void Start()
     {
+        CreatePopulation();
+    }
+
+    public void CreatePopulation()
+    {
         // Destroy all object in this panel (if any)
         foreach (Transform child in _ChromosomeHolder)
         {

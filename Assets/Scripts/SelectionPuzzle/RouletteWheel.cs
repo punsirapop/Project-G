@@ -29,7 +29,7 @@ public class RouletteWheel : MonoBehaviour
             _SpinnableWheel.Rotate(0, 0, _SpinSpeed * Time.deltaTime);
             _SpinSpeed += _SpinAccerelation * Time.deltaTime;
         }
-        if (_SpinSpeed < 0)
+        if (_IsSpinning && _SpinSpeed <= 0)
         {
             // Stop the spinning and precisely snap it to the rotation it should be
             _SpinSpeed = 0;
