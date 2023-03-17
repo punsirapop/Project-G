@@ -12,7 +12,7 @@ public class ChromoMenu : MonoBehaviour
 {
     public struct OrderFormat
     {
-        public string name;
+        public int name;
         public MechChromoSO chromo;
         public float fitness;
     }
@@ -21,9 +21,11 @@ public class ChromoMenu : MonoBehaviour
     [SerializeField] ChromoDetail detailOverlay;
     // Place to store generated buttons
     [SerializeField] RectTransform parent;
-    [SerializeField] BreedMenu breedMenu;
+    [SerializeField] FitnessMenu fitnessMenu;
     [SerializeField] Toggle _ToggleSortByFitness;
     [SerializeField] Toggle _ToggleSortDescending;
+
+    GameObject selecting;
 
     private void Awake()
     {
@@ -54,13 +56,13 @@ public class ChromoMenu : MonoBehaviour
             Destroy(item.gameObject);
         }
         // ------- get fitness -------
-        Dictionary<dynamic, float> fvDict = breedMenu.GetFitnessDict();
+        Dictionary<dynamic, float> fvDict = fitnessMenu.GetFitnessDict();
         List<OrderFormat> fv = new List<OrderFormat>();
         foreach (var item in fvDict)
         {
             MechChromoSO c = item.Key;
             OrderFormat of = new OrderFormat();
-            of.name = c.ID.ToString();
+            of.name = c.ID;
             of.chromo = c;
             of.fitness = item.Value;
             fv.Add(of);
@@ -86,8 +88,10 @@ public class ChromoMenu : MonoBehaviour
         {
             GameObject me = Instantiate(preset, parent);
             me.GetComponent<MechButton>().SetChromosome(item);
+            me.GetComponent<Button>().onClick.AddListener(() =>
+                detailOverlay.gameObject.SetActive(!(detailOverlay.gameObject.activeSelf && selecting == me)));
             me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.SetDisplay(item.chromo));
-            me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.gameObject.SetActive(!detailOverlay.gameObject.activeSelf));
+            me.GetComponent<Button>().onClick.AddListener(() => selecting = me);
             // me.GetComponentInChildren<TextMeshProUGUI>().text = "ID: " + item.name;
         }
     }

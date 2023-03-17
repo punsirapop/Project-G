@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using UnityEngine;
+using static FitnessMenu;
 
 /* 
  * Scriptable object for a chromosome
@@ -49,7 +50,7 @@ public class MechChromoSO : ScriptableObject
         IDCounter++;
 
         // init stuffs
-        head = Random.Range(0, 20);
+        head = UnityEngine.Random.Range(0, 20);
         body = new int[3];
         for (int i = 0; i < 3; i++)  body[i] = Random.Range(0, 256);
         acc = Random.Range(0, 10);
@@ -147,8 +148,70 @@ public class MechChromoSO : ScriptableObject
 
         return rank;
     }
+    public float GetFitness(List<System.Tuple<Properties, int>> fv)
+    {
+        float fitness = 0;
+        foreach (var item in fv)
+        {
+            switch (item.Item1)
+            {
+                case Properties.Head:
+                    fitness += (item.Item2 == head) ? 100 : 0;
+                    break;
+                case Properties.Body:
+                    switch (item.Item2)
+                    {
+                        // Red
+                        case 0:
+                            fitness += (CalcMe(body[0], 0, 255) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 255, 0)) / 3;
+                            break;
+                        // Green
+                        case 1:
+                            fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 0, 255) + CalcMe(body[2], 255, 0)) / 3;
+                            break;
+                        // Blue
+                        case 2:
+                            fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 0, 255)) / 3;
+                            break;
+                        // White
+                        case 3:
+                            fitness += (CalcMe(body[0], 0, 255) + CalcMe(body[1], 0, 255) + CalcMe(body[2], 0, 255)) / 3;
+                            break;
+                        // Black
+                        case 4:
+                            fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 255, 0)) / 3;
+                            break;
+                    }
+                    break;
+                case Properties.Acc:
+                    fitness += (item.Item2 == acc) ? 100 : 0;
+                    break;
+                case Properties.Com:
+                    int sum = 0;
+                    switch (item.Item2)
+                    {
+                        case 0:
+                            sum = atk.Sum();
+                            break;
+                        case 1:
+                            sum = def.Sum();
+                            break;
+                        case 2:
+                            sum = hp.Sum();
+                            break;
+                        case 3:
+                            sum = spd.Sum();
+                            break;
+                    }
+                    fitness += CalcMe(sum, 0, cap * 3) / 3;
+                    break;
+            }
+        }
+        return fitness;
+    }
 
-    public float GetFitness(List<int> pref)
+    /*
+    public float GetFitness2(List<int> pref)
     {
         float fitness = 0;
 
@@ -206,6 +269,7 @@ public class MechChromoSO : ScriptableObject
 
         return fitness;
     }
+    */
 
     // Transform any range into 0-100 format
     private float CalcMe(int me, int min, int max)

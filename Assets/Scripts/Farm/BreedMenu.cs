@@ -34,21 +34,8 @@ public class BreedMenu : MonoBehaviour
     [SerializeField] Button[] GenerationAdjustors;
     [SerializeField] Button BreedBtn;
     #endregion
-    #region fitness tab
-    // Head/Body/Acc/Combat
-    [SerializeField] Toggle[] EnableMe;
-    [SerializeField] GameObject[] Titles;
-    [SerializeField] GameObject[] Holders;
-
-    [SerializeField] Slider HeadSelect;
-    [SerializeField] TextMeshProUGUI HeadDisplay;
-    // R-G-B-W-B
-    [SerializeField] TMP_Dropdown Body;
-    [SerializeField] Slider AccSelect;
-    [SerializeField] TextMeshProUGUI AccDisplay;
-    // Atk-Def-Hp-Spd
-    [SerializeField] TMP_Dropdown Combat;
-    #endregion
+    [SerializeField] FitnessMenu fitnessMenu;
+    
     // List storing elite chromosomes
     FarmSO myFarm;
     List<MechChromoSO> elites;
@@ -76,48 +63,14 @@ public class BreedMenu : MonoBehaviour
         MutationDisplay.text = MutationSelect.value.ToString();
         ElitismDisplay.text = ElitismSelect.value.ToString();
         TotalPrice.text = breedGen * breedPrice + "G";
-
-        for (int i = 0; i < EnableMe.Length; i++)
-        {
-            Titles[i].SetActive(EnableMe[i].isOn);
-            Holders[i].SetActive(EnableMe[i].isOn);
-        }
-
-        HeadDisplay.text = HeadSelect.value.ToString();
-        AccDisplay.text = AccSelect.value.ToString();
+        /*
         BreedBtn.interactable = myFarm.MechChromos.Count() > 0 &&
             (myFarm.MechChromos.Count() - elites.Count) % 2 == 0;
+        */
         GenerationAdjustors[0].interactable = breedGen < 10;
         GenerationAdjustors[1].interactable = breedGen > 1;
+
         // Yep, all of this
-    }
-
-    /*
-     * Get current fitness preferences
-     * 
-     * Output
-     *      list of preferred values (default = -1)
-     */
-    public List<int> CurrentPref()
-    {
-        List<int> list = new List<int>();
-
-        list.Add(EnableMe[0].isOn ? (int)HeadSelect.value : -1);
-        list.Add(EnableMe[1].isOn ? Body.value : -1);
-        list.Add(EnableMe[2].isOn ? (int)AccSelect.value : -1);
-        list.Add(EnableMe[3].isOn ? Combat.value : -1);
-
-        return list;
-    }
-
-    public Dictionary<dynamic, float> GetFitnessDict()
-    {
-        Dictionary<dynamic, float> dict = new Dictionary<dynamic, float>();
-        foreach (MechChromoSO c in myFarm.MechChromos)
-        {
-            dict.Add(c, c.GetFitness(CurrentPref()));
-        }
-        return dict;
     }
 
     public void AdjustGen(int i)
@@ -138,18 +91,19 @@ public class BreedMenu : MonoBehaviour
         for (int g = 0; g < breedGen; g++)
         {
             // ------- get fitness -------
-            Dictionary<dynamic, float> fv = GetFitnessDict();
+            Dictionary<dynamic, float> fv = fitnessMenu.GetFitnessDict();
 
             // ------- get elites -------
-            for (int i = 0; i < fv.Count * ElitismSelect.value / 100; i++)
+            for (int i = 0; i < Mathf.RoundToInt(fv.Count * ElitismSelect.value / 100); i++)
             {
                 elites.Add(fv.ElementAt(i).Key);
             }
+            if ((fv.Count - elites.Count) % 2 != 0) elites.Remove(elites.Last());
 
             // ------- select parents according to chosen type -------
             List<dynamic> parents = new List<dynamic>
                 (GeneticFunc.Instance.SelectParent(fv, elites.Count, TypeParentSelect.value, (int)KSelect.value));
-            Debug.Log("Parents Count: " + parents.Count);
+            // Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------
             List<List<List<int>>> parentsEncoded = new List<List<List<int>>>();
@@ -165,7 +119,7 @@ public class BreedMenu : MonoBehaviour
                 GeneticFunc.Instance.Crossover(parentsEncoded[i], parentsEncoded[i+1], TypeCrossover.value);
                 // Debug.Log(string.Join("-", parentsEncoded[i]));
             }
-            Debug.Log("Finished CrossingOver " + parentsEncoded.Count);
+            // Debug.Log("Finished CrossingOver " + parentsEncoded.Count);
 
             // ------- mutate -------
             for (int i = 0; i < parents.Count; i++)
@@ -186,15 +140,16 @@ public class BreedMenu : MonoBehaviour
             {
                 FarmManager.Instance.DelChromo(item);
             }
-            Debug.Log("Parents Count: " + myFarm.MechChromos.Count);
+            // Debug.Log("Parents Count: " + myFarm.MechChromos.Count);
 
             // ------- create new chromosomes -------
             List<MechChromoSO> children = new List<MechChromoSO>();
             foreach (var item in parentsEncoded)
             {
                 FarmManager.Instance.AddChromo();
-                children.Add(myFarm.MechChromos[myFarm.MechChromos.Count - 1]);
-                children[children.Count - 1].SetChromosome(item);
+                children.Add(myFarm.MechChromos.Last());
+                children.Last().SetChromosome(item);
+                FarmManager.Instance.mechs.Last().GetComponent<MechDisplay>().SetChromo(children.Last());
             }
                 
             // Debug.Log("Children Count: " + children.Count);

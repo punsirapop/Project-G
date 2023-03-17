@@ -36,7 +36,7 @@ public class FarmManager : MonoBehaviour
     #endregion
 
     // List storing every mech gameObjects for easy access
-    List<GameObject> mechs;
+    public List<GameObject> mechs;
 
     private void Awake()
     {
