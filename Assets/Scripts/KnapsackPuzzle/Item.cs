@@ -67,6 +67,18 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     #endregion
 
+    public int GetDimension()
+    {
+        if (_Weight2 > 0)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
     void Awake()
     {
         // Set the information to some default value

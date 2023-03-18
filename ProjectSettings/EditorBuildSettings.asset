@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KnapsackPuzzle.unity
     guid: 1098141da8c447b44af18ac17e95c54f
+  - enabled: 1
+    path: Assets/Scenes/CrossoverPuzzle.unity
+    guid: 65951c10af0127941915f776572b8c08
   m_configObjects: {}

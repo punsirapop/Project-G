@@ -9,8 +9,11 @@ public class BitBlock : MonoBehaviour
 {
     // Variable for keep track of the statuses
     private int _BitValue;
+    public int BitValue => _BitValue;
     private string _ItemName = "-";
-    [SerializeField] private string _KnapsackName = "-";
+    public string ItemName => _ItemName;
+    private string _KnapsackName = "-";
+    public string KnapsackName => _KnapsackName;
 
     // Reference to UI components corresponding to the statuses
     [SerializeField] Toggle BitToggle;

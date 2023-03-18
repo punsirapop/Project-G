@@ -8,9 +8,6 @@ public class FactoryManager : MonoBehaviour
 {
     public static FactoryManager Instance;
 
-    // Data of all factory
-    [SerializeField] private FactorySO[] _FactoriesData;
-
     // Current sprite renderer
     [SerializeField] private SpriteRenderer _FloorRenderer;
     [SerializeField] private SpriteRenderer _ConveyorRenderer;
@@ -25,7 +22,7 @@ public class FactoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] _InfoTexts;
     #endregion
 
-    private void Awake()
+    void Awake()
     {
         if (Instance == null) Instance = this;
     }
@@ -39,9 +36,9 @@ public class FactoryManager : MonoBehaviour
     // Render the weapon holder sprite for each factory
     private void _RenderSprite()
     {
-        _FloorRenderer.sprite = _FactoriesData[PlayerManager.CurrentFactory].Floor;
-        _ConveyorRenderer.sprite = _FactoriesData[PlayerManager.CurrentFactory].Conveyor;
-        _BorderRenderer.sprite = _FactoriesData[PlayerManager.CurrentFactory].Border;
+        _FloorRenderer.sprite = PlayerManager.CurrentFactoryDatabase.Floor;
+        _ConveyorRenderer.sprite = PlayerManager.CurrentFactoryDatabase.Conveyor;
+        _BorderRenderer.sprite = PlayerManager.CurrentFactoryDatabase.Border;
     }
 
     // Change panel
@@ -62,14 +59,14 @@ public class FactoryManager : MonoBehaviour
     // Reset data to each panel according to the FactorySO
     private void _ResetPanels()
     {
-        _InfoTexts[0].text = _FactoriesData[PlayerManager.CurrentFactory].Name;
-        _InfoTexts[1].text = _FactoriesData[PlayerManager.CurrentFactory].Description;
+        _InfoTexts[0].text = PlayerManager.CurrentFactoryDatabase.Name;
+        _InfoTexts[1].text = PlayerManager.CurrentFactoryDatabase.Description;
         OpenPanel(0);
     }
 
     // Return all WeaponChromosome of current factory, just a wrapper function for FactorySO
     public WeaponChromosome[] GetAllWeapon()
     {
-        return _FactoriesData[PlayerManager.CurrentFactory].GetAllWeapon();
+        return PlayerManager.CurrentFactoryDatabase.GetAllWeapon();
     }
 }
