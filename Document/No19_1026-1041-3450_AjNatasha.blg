@@ -7,52 +7,51 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 Database file #1: string.bib
 Database file #2: projectg.bib
-Warning--I didn't find a database entry for ""
 Warning--empty journal in gomez2022academic
 Warning--empty year in kmuttobe
 Warning--empty year in reginelo
 Warning--empty year in isfetaddie
 Warning--empty year in michiganpilot
 Warning--empty year in mobygamesomega
-You've used 25 entries,
+You've used 27 entries,
             2177 wiz_defined-function locations,
-            899 strings with 11517 characters,
-and the built_in function-call counts, 6786 in all, are:
-= -- 691
-> -- 263
+            909 strings with 11947 characters,
+and the built_in function-call counts, 7216 in all, are:
+= -- 737
+> -- 277
 < -- 4
-+ -- 110
-- -- 82
-* -- 451
-:= -- 1157
-add.period$ -- 26
-call.type$ -- 25
-change.case$ -- 90
++ -- 116
+- -- 86
+* -- 473
+:= -- 1233
+add.period$ -- 28
+call.type$ -- 27
+change.case$ -- 96
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 243
-empty$ -- 588
-format.name$ -- 82
-if$ -- 1441
+cite$ -- 33
+duplicate$ -- 257
+empty$ -- 628
+format.name$ -- 86
+if$ -- 1533
 int.to.chr$ -- 0
-int.to.str$ -- 25
+int.to.str$ -- 27
 missing$ -- 9
-newline$ -- 128
-num.names$ -- 51
-pop$ -- 175
+newline$ -- 138
+num.names$ -- 55
+pop$ -- 189
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 96
 quote$ -- 0
-skip$ -- 191
+skip$ -- 205
 stack$ -- 0
-substring$ -- 289
-swap$ -- 48
+substring$ -- 299
+swap$ -- 50
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
+type$ -- 106
 warning$ -- 6
-while$ -- 65
-width$ -- 27
-write$ -- 295
-(There were 7 warnings)
+while$ -- 69
+width$ -- 29
+write$ -- 319
+(There were 6 warnings)

@@ -373,15 +373,15 @@ We will list the task breakdown in a form of the product backlog. This also incl
 \hline
 \rowcolor[HTML]{EFEFEF} 
 \multicolumn{1}{|c|}{\cellcolor[HTML]{EFEFEF}ID} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}Story}                           & \begin{tabular}[c]{@{}c@{}}Effort Estimate\\ (Man-Half-Days)\end{tabular} & Priority \\ \hline
-\multicolumn{1}{|c|}{1}                          & Developers need to do project documents.                                     & 24                                                                        & 1        \\ \hline
+\multicolumn{1}{|c|}{1}                          & Developers need to do project documents.                                     & 36                                                                        & 1        \\ \hline
 \multicolumn{1}{|c|}{2}                          & Players can learn about the Genetic Algorithm.                               & 36                                                                        & 2        \\ \hline
-\multicolumn{1}{|c|}{3}                          & Players can apply knowledge to solve real-world problems.                    & 36                                                                        & 3        \\ \hline
-\multicolumn{1}{|l|}{4}                          & Players can breed their monsters.                                            & 24                                                                        & 4        \\ \hline
-\multicolumn{1}{|l|}{5}                          & Players have mandatory goals for playing a game.                             & 16                                                                        & 5        \\ \hline
-\multicolumn{1}{|l|}{6}                          & Players have other activities to spend their time during the breeding phase. & 36                                                                        & 6        \\ \hline
-\multicolumn{1}{|l|}{7}                          & Developers integrate all the systems.                                        & 24                                                                        & 7        \\ \hline
-\multicolumn{1}{|l|}{8}                          & Developers add more aesthetics to the game.                                  & 12                                                                        & 8        \\ \hline
-\multicolumn{1}{|l|}{9}                          & Developers assure quality.                                                   & 32                                                                        & 9        \\ \hline
+\multicolumn{1}{|c|}{3}                          & Players can apply knowledge to solve real-world problems.                    & 32                                                                        & 3        \\ \hline
+\multicolumn{1}{|l|}{4}                          & Players can breed their monsters.                                            & 20                                                                        & 4        \\ \hline
+\multicolumn{1}{|l|}{5}                          & Players have mandatory goals for playing a game.                             & 12                                                                        & 5        \\ \hline
+\multicolumn{1}{|l|}{6}                          & Players have other activities to spend their time during the breeding phase. & 32                                                                        & 6        \\ \hline
+\multicolumn{1}{|l|}{7}                          & Developers integrate all the systems.                                        & 20                                                                        & 7        \\ \hline
+\multicolumn{1}{|l|}{8}                          & Developers add more aesthetics to the game.                                  & 32                                                                        & 8        \\ \hline
+\multicolumn{1}{|l|}{9}                          & Developers assure quality.                                                   & 20                                                                        & 9        \\ \hline
 \multicolumn{2}{|l|}{Total}                                                                                                     & 240                                                                       &          \\ \hline
 \end{tabular}
 \end{table}
@@ -390,13 +390,15 @@ We will list the task breakdown in a form of the product backlog. This also incl
 \subsection{Draft Schedule}
 The draft schedule of the Sprints will be shown as follows.
 
-\begin{figure}[!h]\centering
+\begin{minipage}[c]{\textwidth}\centering
 \includegraphics[width=16cm]{figure/intro-gantt-chart.png}
-\caption{Draft Schedule of the Project}
+\captionof{figure}{Draft Schedule of the Project}
 \label{fig:intro-gantt-chart}
-\end{figure}
+\end{minipage}
 
+\hspace{2em}The goal of the Sprints in the first semester focus on the design. The first Sprint is for research and designing the educational content. The second and the third Sprint are for designing the game systems. And the fourth, which is the last Sprint of the first semester focuses on finalizing the design and document.
 
+\hspace{2em}The Sprints in the second semester focus on the implementation. The fifth Sprint is designated for prototyping. The sixth and the seventh Sprint are for developing each system in the game. The eighth Sprint is planned for integrating the game. And the ninth Sprint which is supposed to be the last is for testing the full game and finalizing the document of the project.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%  Literature Review %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -818,6 +820,14 @@ The real-world problem involving our project is the knapsack problem and its var
 %\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Usability Testing}
+\hspace{2em}Usability testing aims to understand how users interact with the product and find issues in existing products \cite{nick2021usability}. The information gathered from the test can be used to improve the design or current development. In general, the usability testing questions are divided into 3 sets which are screening, in-test and post-test.
+
+\hspace{2em}The screening question indicates whether the participants represent the target group. The data from this type of question includes both demographic and personal experiences. The in-test question aims to find insight into user behaviors such as the reason behind the user's certain actions. The insight from this section usually be generated during the user's interaction with the product. The post-test question aims to gather the user's additional feedback. The opinion gathered from this section can be useful for product improvement.
+
+\hspace{2em}With the reason for the benefit-cost ratio, the recommended test user size is 5 \cite{jakob2012usability}. With this size of the test user, almost all usability problems will be found while the effort of performing the test is not too high.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Languages and Technologies}
 We will use multiple programs and platforms to complete this project, including Unity, the game engine of choice, visual studio, the code editor compatible with Unity, C\#, the programming language for Unity, GitHub, the version control platform, and Figma, for model creation.
 
@@ -832,6 +842,8 @@ We will use multiple programs and platforms to complete this project, including 
 	GitHub is a code hosting platform for version control and collaboration through git repositories. Users can edit codes without harming the main project by creating a new branch to work. After committing changes, a branch can be merged back to the main branch by creating a pull request to let other collaborators review the code before pulling it into the master branch.
 	\item Figma \\
 	Figma is a web-based app for designing and working with graphics. It has the ability to design all kinds of graphics, including websites, mobile app interfaces, prototyping designs, etc. The fact that Figma is available on multiple platforms containing various sets of designing tools available to use and collaboration features for team projects \cite{daniel2022} makes it to be one of the most widely-used graphic tools.
+	\item Aseprite \\
+	Aseprite is a pixel art tool for creating pixel art images and 2D animations. It offers various tools for creating 2D art, such as shading, pixel-perfect strokes, tiled mode, and filled and contour options. Additionally, it provides animation tools, including a real-time animation preview feature that helps users create pixel art or animation. It allows users to create multiple layers of art, separating the usage of layers for still images and frames for animations. This makes it easier to have art with multiple layers and create animations by specifying a specific layer in each frame.
 \end{enumerate}
 
 
@@ -999,7 +1011,7 @@ Applying the OBE concept, the education module is designed according to the tria
 	\label{fig:design-learnmat-natselect1}
 	\end{minipage}
 
-	Figure~\ref{fig:design-learnmat-natselect1} is an example of the material we have already prepared for Natural Selection, one of the basic biology concepts the Genetic Algorithm is based on. The material in the figure includes the image on the center and description about natural selection at the bottom. The full learning materials are in Appendix ~\ref{appendix:learning-material}.
+	Figure~\ref{fig:design-learnmat-natselect1} is an example of the material we have already prepared for Natural Selection, one of the basic biology concepts the Genetic Algorithm is based on. The material in the figure includes the image on the center and description about natural selection at the bottom. The full learning materials are in Appendix. %~\ref{appendix:learning-material}.
 
 %	\begin{minipage}[c]{\textwidth}\centering
 %	\includegraphics[width=12cm]{figure/design-learnmat-natselect2.png}
@@ -1020,64 +1032,68 @@ Applying the OBE concept, the education module is designed according to the tria
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Game Design Theory Application}
-Game Design Theories used for designing the game of the project are as follows: 
+%Game Design Theories used for designing the game of the project are as follows: 
+%
+%\begin{itemize}
+%\item Natural Funativity \\
+%The game we designed mainly consists of three of the categories from Natural Funativity by Noah Falstein. The categories we used will be listed as follows:
+%\begin{enumerate}
+%	\item Physical Fun \\
+%	We design the game to make players solve the puzzles by making the players move and click their mouse and use hand-eye coordination to solve the puzzles.
+%	\item Social Fun \\
+%	We design the game to have a story and interaction between the 
+%players and nonplayer characters (NPC).
+%	\item Mental Fun \\
+%	We design the game to make players solve the puzzles from the lesson and manage farms and factories with money and resources in order to progress through the game.
+%\end{enumerate}
+\hspace{2em}The game we designed mainly focuses on Mental Fun categories of Natural Funativity by Noah Falstein. We design the game to make players solve the puzzles from the lesson and manage farms and factories with money and resources in order to progress through the game.
 
-\begin{itemize}
-\item Natural Funativity \\
-The game we designed mainly consists of three of the categories from Natural Funativity by Noah Falstein. The categories we used will be listed as follows:
-\begin{enumerate}
-	\item Physical Fun \\
-	We design the game to make players solve the puzzles by making the players move and click their mouse and use hand-eye coordination to solve the puzzles.
-	\item Social Fun \\
-	We design the game to have a story and interaction between the 
-players and nonplayer characters (NPC).
-	\item Mental Fun \\
-	We design the game to make players solve the puzzles from the lesson and manage farms and factories with money and resources in order to progress through the game.
-\end{enumerate}
 
-\item Maslow’s Hierarchy of Needs \\
-The Hierarchy of Needs we used for the game design will be listed as follows:
-\begin{enumerate}
-	\item Physiological Needs \\
-	The players need to use money and resource to breed stronger monsters in order for them to survive the battle inside the battle arena.
-	\item Safety Needs \\
-	The players can improve the battle status of their monsters by breeding them to create a new generation of monsters and the players can improve the status of the weapon from the factories by creating a new generation of weapons.
-	\item Love and Belonging Needs \\
-	The player can interact and talk to the nonplayer character in the game story that we have designed. The player can have a connection and feel more engaged in the story.
-	\item Esteem Needs \\
-	The game will assign rank and reward for the success of the quest completion by the quality or closeness of the requested item and sent the item. The players can feel accomplished when getting high ranking and feel accomplished when finishing the game after meeting the requirements of all weapons from the factories.
-	\item Cognitive Needs \\
-	The game was designed to teach players about genetic algorithms and how to solve the problem with this knowledge.
-	\item Aesthetic Needs \\
-	The game will have a beautiful aesthetic with music to make it more pleasing to play for the players. The higher the ranking for completing the quest the more beautiful the rank is and the more powerful the weapon is the more elaborate and better it looks.
-	\item Self-Actualization Needs \\
-	The game was designed to be open to the players' play style by not limiting how the players manage the farm, factories, money, and resources. The players can choose how to spend their resources and how to obtain them by themselves.
-	\item Transcendence Needs \\
-	When the players developed their own technique on how to play the game, the player can share their knowledge with their peers by talking, video capturing, etc.
-\end{enumerate}
+%\item Maslow’s Hierarchy of Needs \\
+%The Hierarchy of Needs we used for the game design will be listed as follows:
+%\begin{enumerate}
+%	\item Physiological Needs \\
+%	The players need to use money and resource to breed stronger monsters in order for them to survive the battle inside the battle arena.
+%	\item Safety Needs \\
+%	The players can improve the battle status of their monsters by breeding them to create a new generation of monsters and the players can improve the status of the weapon from the factories by creating a new generation of weapons.
+%	\item Love and Belonging Needs \\
+%	The player can interact and talk to the nonplayer character in the game story that we have designed. The player can have a connection and feel more engaged in the story.
+%	\item Esteem Needs \\
+%	The game will assign rank and reward for the success of the quest completion by the quality or closeness of the requested item and sent the item. The players can feel accomplished when getting high ranking and feel accomplished when finishing the game after meeting the requirements of all weapons from the factories.
+%	\item Cognitive Needs \\
+%	The game was designed to teach players about genetic algorithms and how to solve the problem with this knowledge.
+%	\item Aesthetic Needs \\
+%	The game will have a beautiful aesthetic with music to make it more pleasing to play for the players. The higher the ranking for completing the quest the more beautiful the rank is and the more powerful the weapon is the more elaborate and better it looks.
+%	\item Self-Actualization Needs \\
+%	The game was designed to be open to the players' play style by not limiting how the players manage the farm, factories, money, and resources. The players can choose how to spend their resources and how to obtain them by themselves.
+%	\item Transcendence Needs \\
+%	When the players developed their own technique on how to play the game, the player can share their knowledge with their peers by talking, video capturing, etc.
+%\end{enumerate}
+\hspace{2em}The game we designed caters to the needs of the players following Maslow's Hierarchy of Needs to make players feel fulfilled and have answers to their needs when playing the game. The first need is Physiological Needs where the players must obtain resources to breed stronger monsters to survive the battle inside the arena. Next is the Safety Needs where the players can improve the status of their monsters and weapons by creating new generations. For the Esteem Needs of the players we design the game to assign rank and rewards for completing quests based on the quality of the requested item to help fulfill the players when they get high rank and reward when completing the quest or win the battle in the battle arena. For the Cognitive Needs, The game was designed to teach players about genetic algorithms and how to solve the problem with this knowledge. The game's Aesthetic Needs are met through its music and visually appealing rewards with higher rankings and more powerful weapons resulting in more elaborate and appealing rewards. Lastly, the game design caters to the Self-Actualization Needs of the players by allowing them to manage their farm, factories, money, and resources according to their preferred playstyle and choose how to spend their resources and how to obtain them by themselves. The game design's hierarchy of needs is well-thought-out, providing players with an immersive and satisfying experience.
 
-\item Eight Kinds of “Fun” \\
-The kind of fun that the game we design provided will be listed as follows:
-\begin{enumerate}
-	\item Sensation - Game as sense-pleasure \\
-	The game will have a sci-fi theme aesthetic to its visual, characters, music, and sound effect from the players' interactions.
-	\item Fantasy - Game as make-believe \\
-	The game will have its own story, world, and characters to help the players feel immersed in the game we designed. The player will have a role to take and objectives to accomplish in the story.
-	\item Narrative - Game as drama \\
-	The players will take the role of the owner of a weapon company in the future. The world will be invaded by aliens and the government orders every weapon company to create a set of ultimate weapons.
-	\item Challenge - Game as obstacle course \\
-	In order for the players to manage and upgrade their farms and factories, they need to complete the quest which will be harder when the game progresses or battle in the arena which will have more difficult opponents over time.
-	\item Fellowship - Game as social framework \\
-	The game is a single-player game but the players can interact and talk to nonplayer characters in the story and from the lesson.
-	\item Discovery - Game as uncharted territory \\
-	The players can unlock more weapon factories to make different kinds of weapons with different effects when used in the battle arena.
-	\item Expression - Game as self-discovery \\
-	The players are free to spend their money and resources and can choose how to obtain more money by completing quests or battles in the battle arena.
-	\item Submission - Game as pastime \\
-	The player can choose to not send their monster to the arena and play the game by completing the quest and managing the farm and factories.
-\end{enumerate}
-
-\end{itemize}
+%\item Eight Kinds of “Fun” \\
+%The kind of fun that the game we design provided will be listed as follows:
+%\begin{enumerate}
+%	\item Sensation - Game as sense-pleasure \\
+%	The game will have a sci-fi theme aesthetic to its visual, characters, music, and sound effect from the players' interactions.
+%	\item Fantasy - Game as make-believe \\
+%	The game will have its own story, world, and characters to help the players feel immersed in the game we designed. The player will have a role to take and objectives to accomplish in the story.
+%	\item Narrative - Game as drama \\
+%	The players will take the role of the owner of a weapon company in the future. The world will be invaded by aliens and the government orders every weapon company to create a set of ultimate weapons.
+%	\item Challenge - Game as obstacle course \\
+%	In order for the players to manage and upgrade their farms and factories, they need to complete the quest which will be harder when the game progresses or battle in the arena which will have more difficult opponents over time.
+%	\item Fellowship - Game as social framework \\
+%	The game is a single-player game but the players can interact and talk to nonplayer characters in the story and from the lesson.
+%	\item Discovery - Game as uncharted territory \\
+%	The players can unlock more weapon factories to make different kinds of weapons with different effects when used in the battle arena.
+%	\item Expression - Game as self-discovery \\
+%	The players are free to spend their money and resources and can choose how to obtain more money by completing quests or battles in the battle arena.
+%	\item Submission - Game as pastime \\
+%	The player can choose to not send their monster to the arena and play the game by completing the quest and managing the farm and factories.
+%\end{enumerate}
+%
+%\end{itemize}
+\hspace{2em}The game we design aims to provide different kinds of fun that cater to the players' preferences. The first kind of fun is Sensation, where the game's sci-fi and fantasy theme aesthetic stimulates the senses through visuals, character design, music, and sound effects from the players' interactions. The second kind of fun is Fantasy, where the game's story, world, and characters help the players feel immersed in the game and give them a role to play with objectives to accomplish in the story. The third kind of fun is Challenge, where players must complete quests and battle opponents in the arena to obtain the resources to upgrade their farms and factories. As the game progresses, the quests and opponents become more difficult, providing a sense of accomplishment upon completion. Lastly, the game design provides Expression, where the players can freely manage their money and resources, and choose the combination of weapons and monsters for the battle arena that suits their playstyle. The game design's various kinds of fun make the game engaging and enjoyable for all types of players.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Game Overview}
@@ -1103,7 +1119,7 @@ This topic involves game concepts overall and every main system in detail with d
 \end{minipage}
 
 
-As the game continues, the facilities would break down within the time limit of 3 to 5 days. When the facilities break down, they can’t generate new generations and can’t be accessed until fixed. The player will be asked to fix the facilities through puzzle-solving. This is where the player applies their knowledge and is assessed educationally. Figure~\ref{fig:design-puzzle-crossover} shows an example of the interface of the puzzle the player needs to solve to fix the facility. The full gameplay of all the puzzle material can be found in Appendix ~\ref{appendix:puzzle-storyboard}.
+As the game continues, the facilities would break down within the time limit of 3 to 5 days. When the facilities break down, they can’t generate new generations and can’t be accessed until fixed. The player will be asked to fix the facilities through puzzle-solving. This is where the player applies their knowledge and is assessed educationally. Figure~\ref{fig:design-puzzle-crossover} shows an example of the interface of the puzzle the player needs to solve to fix the facility. The full gameplay of all the puzzle material can be found in Appendix. %~\ref{appendix:puzzle-storyboard}.
 
 
 As the game continues, the facilities would break down. The player will be asked to fix the facilities through puzzle-solving. This is where the player applies their knowledge and is assessed educationally. Figure~\ref{fig:design-puzzle-crossover} shows an example of the puzzle the player needs to solve to fix the facility.
@@ -1114,7 +1130,7 @@ As the game continues, the facilities would break down. The player will be asked
 \label{fig:design-puzzle-crossover}
 \end{minipage}
 
-Besides the puzzle gameplay involving the research lab, monster farm and weapon factory, the player can go to the city to receive the quest, buy a new monster or the weapon chromosome, and battle in the arena using their own monster. Figure~\ref{fig:design-city} shows an example of the city interface; the players can click on the “Quest” island to go to the quest board scene in Figure~\ref{fig:design-questboard-interface-accept}, click on the “Shop” island to go to the shop scene in Figure~\ref{fig:design-shop-main-inteface} or click on the “Arena” island to go to the arena scene and start the battle in Figure~\ref{fig:design-arena-battle} .
+Besides the puzzle gameplay involving the research lab, monster farm and weapon factory, the player can go to the city to receive the quest, buy a new monster or the weapon chromosome, and battle in the arena using their own monster. Figure~\ref{fig:design-city} shows an example of the city interface; the players can click on the “Quest” island to go to the quest board scene in Figure~\ref{fig:design-questboard-interface-accept}, click on the “Shop” island to go to the shop scene in Figure~\ref{fig:design-shop-monster} or click on the “Arena” island to go to the arena scene and start the battle in Figure~\ref{fig:design-arena-battle} .
 
 \begin{minipage}[c]{\textwidth}\centering
 \fbox{\includegraphics[width=12cm]{figure/design-city.png}}
@@ -1211,8 +1227,8 @@ Farm   & Unlock Requirement                                               \\ \hl
 %
 Farm 1 &
   \begin{tabular}[c]{@{}l@{}}Complete Research\\ - On the Origin of Species\\ - The Genetic\\ - The Flow of Genetic Algorithm\\ - Random Selection\\ - Single-point Crossover\\ - Elitism\\ - Boundary Mutation\\ Money\end{tabular} \\ \hline
-Farm 2 & \begin{tabular}[c]{@{}l@{}}Unlock Factory 3\\ Money\end{tabular} \\ \hline
-Farm 3 & \begin{tabular}[c]{@{}l@{}}Unlock Factory 5\\ Money\end{tabular} \\ \hline
+Farm 2 & \begin{tabular}[c]{@{}l@{}}Unlock Factory 2\\ Money\end{tabular} \\ \hline
+Farm 3 & \begin{tabular}[c]{@{}l@{}}Unlock Factory 3\\ Money\end{tabular} \\ \hline
 \end{longtable}
 
 	The player must meet the requirements on the Table~\ref{tbl:farm-unlock-requirements} to unlock more Farms.
@@ -1234,7 +1250,6 @@ Factory 1                            & \begin{tabular}[c]{@{}l@{}}Unlock Farm 1\
 Factory 2 & \begin{tabular}[c]{@{}l@{}}Unlock Factory 1\\ Complete Research\\ - Tournament-based Selection\\ - Flip Bit Mutation\\ Money\end{tabular}                      \\ \hline
 Factory 3 & \begin{tabular}[c]{@{}l@{}}Unlock Factory 2\\ Complete Research\\ - Multiple 0/1 MKP\\ - Roulette Wheel Selection\\ - Two-point Crossover\\ Money\end{tabular} \\ \hline
 Factory 4                            & \begin{tabular}[c]{@{}l@{}}Unlock Factory 3\\ Complete Research\\ - Rank-based Selection\\ - Uniform Crossover\\ Money\end{tabular} \\ \hline
-Factory 5                            & \begin{tabular}[c]{@{}l@{}}Unlock Factory 4\\ Money\end{tabular}                                                                    \\ \hline
 \end{longtable}
 
 	The player must meet the requirements on the Table~\ref{tbl:factory-unlock-requirement} to unlock more factories. The factory can enhance monsters' battle status and make them stronger in battle.
@@ -1263,20 +1278,21 @@ Factory 5                            & \begin{tabular}[c]{@{}l@{}}Unlock Factory
 	In Figure~\ref{fig:design-questboard-interface-accept}, the players can choose the quest they want to accept. The quest board will provide details of the quest including the appearance of the requested monster and time limit of the quest. If the players accept and in Figure~\ref{fig:design-questboard-interface-submit}, the players can submit their monster to complete the quest.
 
 	\item Shop System \\
-	After submitting quests, the population of monsters and weapons will decrease, and players could buy new ones from the shop to regain the population. The shop will refresh weekly with a new batch of randomized products for players to buy with money. The example of the designed interface of the shop system includes Figure~\ref{fig:design-shop-main-inteface} as the main shop page, Figure~\ref{fig:design-shop-weapon} as a weapon shop page, and Figure~\ref{fig:design-shop-monster} as a monster shop page. Note that both the weapon shop page and monster shop page can be accessed via the main shop page. \\
-	\begin{minipage}[c]{\textwidth}\centering
-	\fbox{\includegraphics[width=12cm]{figure/design-shop-main-inteface.png}}
-	\captionof{figure}{Interface of Main Shop Page}
-	\label{fig:design-shop-main-inteface}
-	\end{minipage}
-	\begin{minipage}[c]{\textwidth}\centering
-	\fbox{\includegraphics[width=12cm]{figure/design-shop-weapon.png}}
-	\captionof{figure}{Interface of Weapon Shop Page}
-	\label{fig:design-shop-weapon}
-	\end{minipage}
+	After submitting quests, the population of monsters will decrease, and players could buy new ones from the shop to regain the population. The shop will refresh weekly with a new batch of randomized products for players to buy with money. The example of the designed interface of the shop page is shown as Figure~\ref{fig:design-shop-monster}. \\
+
+%	\begin{minipage}[c]{\textwidth}\centering
+%	\fbox{\includegraphics[width=12cm]{figure/design-shop-main-inteface.png}}
+%	\captionof{figure}{Interface of Main Shop Page}
+%	\label{fig:design-shop-main-inteface}
+%	\end{minipage}
+%	\begin{minipage}[c]{\textwidth}\centering
+%	\fbox{\includegraphics[width=12cm]{figure/design-shop-weapon.png}}
+%	\captionof{figure}{Interface of Weapon Shop Page}
+%	\label{fig:design-shop-weapon}
+%	\end{minipage}
 	\begin{minipage}[c]{\textwidth}\centering
 	\fbox{\includegraphics[width=12cm]{figure/design-shop-monster.png}}
-	\captionof{figure}{Interface of Monster Shop Page}
+	\captionof{figure}{Interface of the Shop Page}
 	\label{fig:design-shop-monster}
 	\end{minipage}
 
@@ -1303,54 +1319,14 @@ In this topic, we will describe how we progress the game and what the structure 
 	In this game, players have four years to develop the most powerful weapons to defend the earth. As the game progresses, players will have to manufacture weapons in their respective factories for the government to use. \\
 	In the beginning, players will start with a brand new company, so they have to unlock new facilities (monster farms and weapon factories) by themselves. To do that, they must satisfy specific requirements, such as learning corresponding lessons about the genetic algorithm and real-world problems, having enough resources, and passing missions. \\
 	When players finish a lesson, they must take an exam to check their understanding of that topic, and they might have to retake that lesson if they don't pass. Players can order each facility to manufacture new generations of its corresponding product.
-Maintaining factories requires money, so players also have to gather those by fulfilling requests from others or battling in the arena. To finish a request, they have to submit products from their company, resulting in a reduction in the overall population, which can be solved by buying new ones from the shop. \\
-	After breeding the most powerful weapon possible of that factory, an apex, the government will buy every product of that factory, resetting everything. If players can submit apexes from every factory before the four years time limit reaches, they win the game.
+Maintaining factories requires money, so players also have to gather those by fulfilling requests from others or battling in the arena. To finish a request, they have to submit products from their company, resulting in a reduction in the overall population, which can be solved by buying new ones from the shop.\\
+	After the number of generations of weapons produced meets a certain number, the government will buy all the products from that factory, resetting everything. If players can submit weapons from every factory before the four years time limit reaches, they win the game.
 
 	\item Mission Structure \\
 	There are two types of missions in this game, main quest and side quest. Main quests will help players progress the game, and side quests will provide players with money and resources to maintain their facilities. \\
 	Players are given one main quest at a time as a guideline to tell players what they could do next, such as unlocking new facilities, learning new topics, or gaining some specific resources. \\
 	Side quests are requests from various sources ordering products from players' companies. The reward quality depends on how the submitted product resembles the requirement of that order. If players cannot finish the request within a time limit, that side quest will fail, and players will receive a penalty in money.
-
-	\item Puzzle/Test Structure \\
-	The game will use puzzles and tests to evaluate the players about the knowledge and understanding of the lessons as in the assessment Table~\ref{tbl:rubric} and use it as exercises to help players apply their knowledge after learning them.
-	\begin{itemize}
-		
-		\item Puzzle/Test Appearance \\
-		The players will encounter puzzle in 2 different situations as following:
-		\begin{enumerate}
-			\item After the players finish learning the lesson from the research lab, The players will have a button to solve the puzzle to complete the lesson.
-			\item When the farms or factories break down, the players will have to solve the puzzle to fix and continue to use it.
-		\end{enumerate}
-		
-		\item Type of Puzzle/Test \\
-		The puzzle/test that the players will encounter will have 3 types of puzzle/test as following: 
-		\begin{enumerate}
-			\item Questions Test \\
-			\begin{minipage}[c]{\textwidth}\centering
-			\fbox{\includegraphics[width=9cm]{figure/design-puzzle-question.png}}
-			\captionof{figure}{The Example of Questions Test Scene}
-			\label{fig:design-puzzle-question}
-			\end{minipage}
-			In Figure~\ref{fig:design-puzzle-question}, the players will have to choose the answer from the question. This type of test is for  testing the players about how they explain, classify, or identify the lessons they have learned.
-
-			\item Demonstration \\
-			\begin{minipage}[c]{\textwidth}\centering
-			\fbox{\includegraphics[width=9cm]{figure/design-puzzle-demonstration.png}}
-			\captionof{figure}{The Example of Demonstration Puzzle}
-			\label{fig:design-puzzle-demonstration}
-			\end{minipage}
-			In Figure~\ref{fig:design-puzzle-demonstration}, the puzzle/test is an open space where the learner is free to choose what process to perform and free to decide when to perform it. The puzzle will record the process the players perform to evaluate the players’ understanding.
-
-			\item Problem Solving \\
-			\begin{minipage}[c]{\textwidth}\centering
-			\fbox{\includegraphics[width=9cm]{figure/design-puzzle-problem-solving.png}}
-			\captionof{figure}{The Example of Problem Solving Puzzle}
-			\label{fig:design-puzzle-problem-solving}
-			\end{minipage}
-			In Figure~\ref{fig:design-puzzle-problem-solving}, the players will have to perform the action to solve the problem from the question or situation. The player is free to decide what method they will use and how the procedures perform. Designing this way, the puzzle would be able to assess the true learning level of the player \cite{eberly2022why}.
-		\end{enumerate}
-	\end{itemize}
-\end{enumerate}
+	\end{enumerate}
 
 \item Mechanics \\
 Besides the mechanics described in the system detail section, the summary of the action the player can perform in our game will be described.
@@ -1371,6 +1347,119 @@ Besides the mechanics described in the system detail section, the summary of the
 \item Replaying and Saving \\
 According to the calendar system, the game will save when players end the day and move on to the next day. Players can exit the game freely, but the game will start from the beginning of the day after the saving occurs.
 \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Development}
+This phase of work aims to develop the learning materials and the learning activities. Such activities in the context of the educational game are precisely the puzzle gameplay that we will use as learning and assessment activities. The following content will describe the learning material, the structure of the puzzle, and prototyping and usability testing.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Learning material}
+From the expected outcome, we break it down and list the topic of the learning content as we mentioned in the research lab system. For each topic, the image and description text is created. Figure~\ref{fig:develop-learning-material-SPC} is an example of the learning material we created for the single-point crossover. Please note that the material will be adapted to suit the game dialogue later, and all the learning materials are provided in the Appendix. %~\ref{appendix:learning-material}.
+
+\begin{figure}[!h]\centering
+\fbox{\includegraphics[width=14cm]{figure/develop-learning-material-SPC.png}}
+\caption{Learning Material for Single-point Crossover.}
+\label{fig:develop-learning-material-SPC}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Puzzle structure}
+The puzzle will be used as an assessment activity for the demonstration and solving level of learning of the criteria in the rubric Table~\ref{tbl:rubric}. These puzzles not only will be used as an assessment but also will be used as an exercise that helps the player maintain and verify their knowledge. \\
+The players will encounter puzzles in 2 different situations. The first situation is right after the players finish learning the lesson from the research lab. The players are required to solve the puzzle to complete the lesson and unlock the new corresponding facility. This will be treated as the first assessment. Another situation is when the farms or factories break down. Players will have to solve the puzzle to fix and continue to use it. This can be interpreted as an exercise and also be calculated as a re-assessment. \\
+The puzzle the player will encounter can be classified into 3 types as follows: \\
+\begin{enumerate}
+	\item Questions  \\
+	\begin{minipage}[c]{\textwidth}\centering
+	\fbox{\includegraphics[width=9cm]{figure/design-puzzle-question.png}}
+	\captionof{figure}{The Example of Question Scene}
+	\label{fig:design-puzzle-question}
+	\end{minipage}
+	In Figure~\ref{fig:design-puzzle-question}, the players will have to choose the answer from the question. This type of test is for testing the players on how they explain, classify, or identify the lessons they have learned.
+
+	\item Demonstration Puzzle  \\
+	\begin{minipage}[c]{\textwidth}\centering
+	\fbox{\includegraphics[width=9cm]{figure/design-puzzle-demonstration.png}}
+	\captionof{figure}{The Example of Demonstration Puzzle}
+	\label{fig:design-puzzle-demonstration}
+	\end{minipage}
+	This type of puzzle is an open space where the player can operate the objects on the screen to show off their skill. The result of the puzzle will be used as evidence to evaluate the players’ learning level for such criteria. The example of a knapsack decoding demonstration puzzle is shown in Figure~\ref{fig:design-puzzle-demonstration}, the player is required to drag and drop the item into the knapsack above to make the phenotype match the given genotype below.
+
+	\item Problem Solving \\
+	\begin{minipage}[c]{\textwidth}\centering
+	\fbox{\includegraphics[width=9cm]{figure/design-puzzle-problem-solving.png}}
+	\captionof{figure}{The Example of Problem Solving Puzzle}
+	\label{fig:design-puzzle-problem-solving}
+	\end{minipage}
+	To solve the problem, the learner must choose the method of how they can solve the problem and then perform that method to solve it \cite{eberly2022why}. This type of puzzle is very similar to the demonstration puzzle with the extra step of choosing the method. The example of a knapsack solving puzzle is shown in Figure~\ref{fig:design-puzzle-problem-solving}, the extra step of choosing the method is represented as a knapsack and items set selection. The player must click on the button on the right-hand side to choose the correct knapsack and item set. Then perform the drag and drop procedure just like what they must do in the demonstration puzzle to this problem-solving puzzle.
+\end{enumerate}
+
+The learning and assessment activity that involves the demonstration and problem-solving level of learning includes the knapsack problem formulation, the parent selection, and the crossover. The detail of the action the player should perform in these puzzles to pass the assessment is described in Table~\ref{tbl:activity-to-achieve-puzzle} below.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}{|l|l|l|}
+\caption{Activity to Achieve the Learning Level of each Criteria}
+\label{tbl:activity-to-achieve-puzzle}\\
+\hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Rubric Criteria \\ (Topic)\end{tabular}} &
+  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Activity to Achieve \\ Demonstration Level\end{tabular}} &
+  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Activity to Achieve \\ Problem-solving Level\end{tabular}} \\ \hline
+\endhead
+%
+\begin{tabular}[c]{@{}l@{}}Knapsack \\ Problem \\ Formulation\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}- For problem decoding, drag and \\ drop the item(s) into the knapsack(s)\\ to make the phenotype match the \\ given genotype.\\ - For problem encoding, point and \\ click the bitstring to make the \\ genotype matches the given \\ phenotype.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}- For problem decoding, choose \\ the correct item(s) and knapsack(s) set. \\ Then perform the action like\\ the demonstration level.\\ - For problem encoding, choose \\ the correct bitstring format. \\ Then perform the action like \\ the demonstration level.\end{tabular} \\ \hline
+Parent Selection &
+  \begin{tabular}[c]{@{}l@{}}For the given parent selection method \\ and operation buttons, point and click \\ the operation buttons in the correct \\ order until the number of selected \\ parent meet the number of the current \\ population.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Give the player the description rather \\ than the exact name of the parent \\ selection method with all operation \\ buttons (unnecessary operation buttons \\ included). The player must choose what \\ selection method the description means \\ and perform the action using only \\ the necessary operation.\end{tabular} \\ \hline
+Crossover &
+  \begin{tabular}[c]{@{}l@{}}For the given crossover type and \\ the set of chromosomes, the player \\ must pick any pair of chromosomes \\ with the same bitstring format. \\ Then create a random crossover \\ point(s) to suit said crossover type, \\ and drag and drop the proper section \\ of chromosome to complete \\ the crossover.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}For the given set of parent chromosomes \\ and the wanted child chromosome, \\ the player must pick the proper pair of \\ parents. Then select the necessary \\ crossover point(s), and drag and drop \\ the proper section of the chromosome \\ to make them match the wanted child \\ chromosome.\end{tabular} \\ \hline
+\end{longtable}
+
+%\item Puzzle/Test Structure \\
+%	The game will use puzzles and tests to evaluate the players about the knowledge and understanding of the lessons as in the assessment Table~\ref{tbl:rubric} and use it as exercises to help players apply their knowledge after learning them.
+%	\begin{itemize}
+%		
+%		\item Puzzle/Test Appearance \\
+%		The players will encounter puzzle in 2 different situations as following:
+%		\begin{enumerate}
+%			\item After the players finish learning the lesson from the research lab, The players will have a button to solve the puzzle to complete the lesson.
+%			\item When the farms or factories break down, the players will have to solve the puzzle to fix and continue to use it.
+%		\end{enumerate}
+%		
+%		\item Type of Puzzle/Test \\
+%		The puzzle/test that the players will encounter will have 3 types of puzzle/test as following: 
+%		\begin{enumerate}
+%			\item Questions Test \\
+%			\begin{minipage}[c]{\textwidth}\centering
+%			\fbox{\includegraphics[width=9cm]{figure/design-puzzle-question.png}}
+%			\captionof{figure}{The Example of Questions Test Scene}
+%			\label{fig:design-puzzle-question}
+%			\end{minipage}
+%			In Figure~\ref{fig:design-puzzle-question}, the players will have to choose the answer from the question. This type of test is for  testing the players about how they explain, classify, or identify the lessons they have learned.
+%
+%			\item Demonstration \\
+%			\begin{minipage}[c]{\textwidth}\centering
+%			\fbox{\includegraphics[width=9cm]{figure/design-puzzle-demonstration.png}}
+%			\captionof{figure}{The Example of Demonstration Puzzle}
+%			\label{fig:design-puzzle-demonstration}
+%			\end{minipage}
+%			In Figure~\ref{fig:design-puzzle-demonstration}, the puzzle/test is an open space where the learner is free to choose what process to perform and free to decide when to perform it. The puzzle will record the process the players perform to evaluate the players’ understanding.
+%
+%			\item Problem Solving \\
+%			\begin{minipage}[c]{\textwidth}\centering
+%			\fbox{\includegraphics[width=9cm]{figure/design-puzzle-problem-solving.png}}
+%			\captionof{figure}{The Example of Problem Solving Puzzle}
+%			\label{fig:design-puzzle-problem-solving}
+%			\end{minipage}
+%			In Figure~\ref{fig:design-puzzle-problem-solving}, the players will have to perform the action to solve the problem from the question or situation. The player is free to decide what method they will use and how the procedures perform. Designing this way, the puzzle would be able to assess the true learning level of the player \cite{eberly2022why}.
+%		\end{enumerate}
+%	\end{itemize}
+%\end{enumerate}
 
 %Explain the design (how you plan to implement your work) of your project. Adjust the section titles below to suit the types of your work. Detailed physical design like circuits and source codes should be placed in the appendix.
 %
@@ -1407,51 +1496,181 @@ According to the calendar system, the game will save when players end the day an
 %
 %\section{GUI Design}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prototyping and usability testing}
+For typical education design using the ADDIE model, the developed contents may be used in the education simulation to test the feasibility of the project. As an educational game, we decide to conduct usability testing instead since it's more suitable for the game and we can't directly perform the learning simulation. \\
+Since we haven't developed the actual working software yet in this phase, we choose to develop the simple wireframe prototype, a series of mock-up screens simulating the working software, for testing purposes. Then we record the prototype as a video together with the narration of how things work. \\
+After the prototyping is done, we decide to conduct the test on a small group of the target user which is the student that currently studies in the field of computer engineering. The data we want from this test is mainly opinions about our current design. So, we sent the video of the prototype to the tester and request them to answer the post-test question about their opinion on the design. The six questions in total with the possible answer will be shown in Table~\ref{tbl:usability-test-questionaire}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}{|l|l|}
+\caption{The Questionnaire for Usability Testing}
+\label{tbl:usability-test-questionaire}\\
+\hline
+\multicolumn{1}{|c|}{Question}                                                                                   & \multicolumn{1}{c|}{Possible Answer}          \\ \hline
+\endhead
+%
+Have you ever studied Genetic Algorithms?                                                                        & Yes/No                                        \\ \hline
+What do you think about this design?                                                                             & Score from 1 (Terrible) to 5 (Excellent)      \\ \hline
+What do you think about the user interface?                                                                      & Score from 1 (Hard to Use) to 5 (Easy to Use) \\ \hline
+\begin{tabular}[c]{@{}l@{}}What do you think about the complexity of \\ the gameplay?\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Score from 1 (Too Complicated) to 5 \\ (Too Simple)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}If you notice any issue that makes this game \\ terrible, what is it?\end{tabular}    & Short text                                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}If you could change one thing in this game, \\ what would it be and why?\end{tabular} & Short text                                    \\ \hline
+\end{longtable}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% Experiments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\chapter{Implementation Results}
-\chapter{Preliminary Results}
-In this chapter, we will introduce the changing in our project. The problem and its solution will be described.
+\chapter{Implementation Results}
+In this chapter, according to the ADDIE model, we will introduce our work in the implementation phase of our project. This includes the result of usability testing, the software implementation result, and the problem and its solution.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Problems and Solution in Term 1}
-During the operation in term 1, we encountered and solved several problem. There are three main problems that has a high impact and cause the major change on the project including project planning, workload management, and educational game development framework. All these problems will be described in details as follows.
+\section{Usability Testing Result}
+We conduct usability testing using the information we already mentioned in the development phase in chapter 3. The test takes place in the first week of February 2023, which is in the first sprint of semester 2. The summary of the responses from 13 testers will be described.
 
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}{|l|l|}
+\caption{The Summary Response to Usability Questionnaire}
+\label{tbl:usability-test-summary-response}\\
+\hline
+\multicolumn{1}{|c|}{Question} &
+  \multicolumn{1}{c|}{Response} \\ \hline
+\endhead
+%
+Have you ever studied Genetic Algorithms? &
+  8 Yes, 5 No \\ \hline
+What do you think about this design? &
+  \begin{tabular}[c]{@{}l@{}}An average score is equal to 4.0\\ (Close to excellent)\end{tabular} \\ \hline
+What do you think about the user interface? &
+  \begin{tabular}[c]{@{}l@{}}An average score is equal to 4.2 \\ (Close to easy to use)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}What do you think about the complexity of \\ the gameplay?\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}An average score is equal to 2.2 \\ (Close to too complicated)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}If you notice any issue that makes this game \\ terrible, what is it?\end{tabular} &
+  Optional short text answer \\ \hline
+\begin{tabular}[c]{@{}l@{}}If you could change one thing in this game, \\ what would it be and why?\end{tabular} &
+  Optional short text answer \\ \hline
+\end{longtable}
+
+From the responses in Table~\ref{tbl:usability-test-summary-response} above, the overall design and the user interface have no serious problems. For the complexity of the game, the tester's overall opinion indicates that they think the gameplay is a bit too complicated. However, we think such an opinion is acceptable because our game is an educational game with puzzle gameplay which may require a portion of learning before clearly understanding the puzzle. The other 2 question is optional short-answer questions which turn out that there is some improvement suggestion and question about some specific game mechanic but still have no severe problems. So, we continue the implementation with no major change in the design. Please note that the full version of the response can be reviewed in Appendix. %~\ref{appendix:usability-test-responses}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implementation Result}
+After we begin the software implementation for 2 Sprints, all demonstration and problem-solving puzzles that are used as learning and assessment activities are finished along with the great progression of other crucial systems related to such puzzles. The portion of the weapon factory, monster farm, main game page, and saving system is workable but not completely done. Most of the art assets also be created along with said systems. \\
+Figure~\ref{fig:implement-puzzle-knapsack} is the screenshot of the working game scene of the knapsack problem decoding puzzle. The screenshot of the parent selection puzzle is shown in Figure~\ref{fig:implement-puzzle-selection}. And the screenshot of the crossover puzzle also represents in Figure~\ref{fig:implement-puzzle-crossover}.  \\
+
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-puzzle-knapsack.png}
+\captionof{figure}{Screenshot of Knapsack Decoding Puzzle}
+\label{fig:implement-puzzle-knapsack}
+\end{minipage}
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-puzzle-selection.png}
+\captionof{figure}{Screenshot of Tournament-based Selection Puzzle}
+\label{fig:implement-puzzle-selection}
+\end{minipage}
+
+\pagebreak
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-puzzle-crossover.png}
+\captionof{figure}{Screenshot of Single-point Crossover Puzzle}
+\label{fig:implement-puzzle-crossover}
+\end{minipage}
+
+Note that both the demonstration and problem-solving levels of each puzzle type can be assessed using the same puzzle scene with some different settings. And our implemented game scene can set and check the conditions to suit the criteria we already mentioned in the development phase in chapter 3.\\
+These screenshots below (Figure~\ref{fig:implement-mainpage} to Figure~\ref{fig:implement-calendar}) are from the main menu, weapon factory, mech farm, and calendar. As explained in the last chapter, the main menu will be used as a hub to access other parts of the game, such as factories and farms in the middle, city and calendar from the sides. Farms and factories will control their respective populations, from storing to breeding new generations, which players can adjust some parameters as they will. Apart from displaying the date and event within that day, the calendar will let the player end their day or skip to future days, which also results in saving the game in the process.
+
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-mainpage.png}
+\captionof{figure}{Screenshot of Main Menu}
+\label{fig:implement-mainpage}
+\end{minipage}
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-factory.png}
+\captionof{figure}{Screenshot of Weapon Factory}
+\label{fig:implement-factory}
+\end{minipage}
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-farm.png}
+\captionof{figure}{Screenshot of Mech Farm}
+\label{fig:implement-farm}
+\end{minipage}
+\begin{minipage}[c]{\textwidth}\centering
+\includegraphics[width=14cm]{figure/implement-calendar.png}
+\captionof{figure}{Screenshot of Calendar}
+\label{fig:implement-calendar}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problems and Solution}
+During the operation, we encountered and solved several problems. Two main problems that cause a high impact on the project are the educational game development framework and workload management. All these problems will be described in detail as follows.
 \begin{enumerate}
-	\item Project Planning Problem \\
-	After using the waterfall model for some time, we found that it was difficult to arrange any plans due to a lack of educational game development experience. As a result, we could not make detailed plans, and the work continued derailing. \\
-	Therefore, we decided to switch to a more flexible development process, which is Scrum. With its agile value, the workflow becomes more versatile, and we can recheck and adjust the work process or any component freely.
-
-	\item Workload Management Problem \\
-	First of all, we created a product backlog by listing the requirements of the project based on the objectives of players and developers by adjusting some topics from the waterfall model and adding new subjects from various viewpoints. \\
-	\begin{minipage}[c]{\textwidth}\centering
-	\fbox{\includegraphics[width=12cm]{figure/result-burndown-sprint1.png}}
-	\captionof{figure}{Sprint 1 Burndown Chart}
-	\label{fig:result-burndown-sprint1}
-	\end{minipage}
-	In the first sprint, we added too many scopes, causing the workload to become too overwhelming as in Figure~\ref{fig:result-burndown-sprint1}. Consequently, we finished only some of the workloads and left it to the next sprint. Moreover, with the newly added group member, we decided to change the project scope and introduce five new real-world problems into the project. \\
-	\begin{minipage}[c]{\textwidth}\centering
-	\fbox{\includegraphics[width=12cm]{figure/result-burndown-sprint2.png}}
-	\captionof{figure}{Sprint 2 Burndown Chart}
-	\label{fig:result-burndown-sprint2}
-	\end{minipage}
-	The second sprint was improved from the last one, as we had one more member to work with and less workload picked for the sprint. However, we were ordered to deliver a new proposal and presentation for the new scope of work, resulting in an increased workload around the middle of the sprint as in Figure~\ref{fig:result-burndown-sprint2}. \\
-	\begin{minipage}[c]{\textwidth}\centering
-	\fbox{\includegraphics[width=12cm]{figure/result-burndown-sprint3.png}}
-	\captionof{figure}{Sprint 3 Burndown Chart}
-	\label{fig:result-burndown-sprint3}
-	\end{minipage}
-	Due to multiple unfinished works from the last two sprints, most of the workload in this sprint was to finish those leftover works. Nevertheless, we have communicated with the project advisors, suggesting decreasing the project scope to an acceptable amount. \\
-	While we want to downsize the scope of the project to focus on one problem instead of multiple, it should also preserve diversity as a whole. After some consideration, we discarded all but one real-world problem, the knapsack problem, and added more variants of that problem instead; as it has multiple variances for us to use, it is also popular and easy to demonstrate in the real world. \\
-	Adjusting the scope also forces us to redesign a vast fraction of the education section, which results in a lot of increasing workload, as is in Figure~\ref{fig:result-burndown-sprint3}. Note that the burndown chart in Figure~\ref{fig:result-burndown-sprint3} is most updated on 23 November 2022.
-
 	\item Educational Game Development Framework Problem \\
 	In the first two sprints, we designed the game by prioritizing educational topics over game elements via lecture-based learning; making it harder to design the gameplay and adapt those predesigned lectures into the game. \\
 	In a lecture in the game design class (CPE467), we learned about educational game development frameworks, which are OBE and ADDIE models, so we decided to use them in our project. As a result, we could design the educational section of the game better than last time and integrate them into the gameplay more seamlessly by prioritizing which outcomes learners should have instead of what to teach them. Regardless, designing every lecture from the beginning delayed the overall design progress.
 
+	\item Workload Management Problem \\
+	During the operation in the first semester, there were several changes in the scope of the project. We handled the changes at the very beginning of the project by revising the project proposal due to the increment of the project members. We also had to adjust and perform a vast fraction of redesigning after that because of developing framework changes. We solve these problems by continually monitoring and adjusting the remaining backlog to suit the limited time. Even if we try to redesign only the work in the necessary part and keep others the same to reduce the extra work as much as possible, we end up with extra work of around 17 man-half-day, stalling the overall progression of the project for the equivalent amount. \\
+	After finishing three out of five sprints in the second semester, we found that there was a misestimated workload of the knapsack puzzle development, which we didn't include in the backlog in the first place. There is also an underestimated work of documentation, developing the art asset, working breeding system, and saving system since we lack experience in game development. We tackle these misestimated workloads by revising and re-allocating all the initial backlog estimations. We decide to speed up the pacing of software development, increase the initial workload estimation for the product story about documentation and adding aesthetics and decrease the workload for the story about quality assurance since we refactor a portion of the working software along with the development. A total workload of 16 man-half-day is recorded separately as extra work to reflect the authentic project progress. Figure~\ref{fig:result-burndown-project} shows the current burndown chart of the project, which signals we might have to conduct an extra sprint if necessary. \\
+	\begin{minipage}[c]{\textwidth}\centering
+	\fbox{\includegraphics[width=14cm]{figure/result-burndown-project.png}}
+	\captionof{figure}{Project Burndown Chart}
+	\label{fig:result-burndown-project}
+	\end{minipage}
 \end{enumerate}
+
+
+%% problem and solution in Term 1 that be revised already in term 2 midterm report
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{ Problems and Solution in Term 1}
+%During the operation in term 1, we encountered and solved several problem. There are three main problems that has a high impact and cause the major change on the project including project planning, workload management, and educational game development framework. All these problems will be described in details as follows.
+%
+%\begin{enumerate}
+%	\item Project Planning Problem \\
+%	After using the waterfall model for some time, we found that it was difficult to arrange any plans due to a lack of educational game development experience. As a result, we could not make detailed plans, and the work continued derailing. \\
+%	Therefore, we decided to switch to a more flexible development process, which is Scrum. With its agile value, the workflow becomes more versatile, and we can recheck and adjust the work process or any component freely.
+%
+%	\item Workload Management Problem \\
+%	First of all, we created a product backlog by listing the requirements of the project based on the objectives of players and developers by adjusting some topics from the waterfall model and adding new subjects from various viewpoints. \\
+%	\begin{minipage}[c]{\textwidth}\centering
+%	\fbox{\includegraphics[width=12cm]{figure/result-burndown-sprint1.png}}
+%	\captionof{figure}{Sprint 1 Burndown Chart}
+%	\label{fig:result-burndown-sprint1}
+%	\end{minipage}
+%	In the first sprint, we added too many scopes, causing the workload to become too overwhelming as in Figure~\ref{fig:result-burndown-sprint1}. Consequently, we finished only some of the workloads and left it to the next sprint. Moreover, with the newly added group member, we decided to change the project scope and introduce five new real-world problems into the project. \\
+%	\begin{minipage}[c]{\textwidth}\centering
+%	\fbox{\includegraphics[width=12cm]{figure/result-burndown-sprint2.png}}
+%	\captionof{figure}{Sprint 2 Burndown Chart}
+%	\label{fig:result-burndown-sprint2}
+%	\end{minipage}
+%	The second sprint was improved from the last one, as we had one more member to work with and less workload picked for the sprint. However, we were ordered to deliver a new proposal and presentation for the new scope of work, resulting in an increased workload around the middle of the sprint as in Figure~\ref{fig:result-burndown-sprint2}. \\
+%	\begin{minipage}[c]{\textwidth}\centering
+%	\fbox{\includegraphics[width=12cm]{figure/result-burndown-sprint3.png}}
+%	\captionof{figure}{Sprint 3 Burndown Chart}
+%	\label{fig:result-burndown-sprint3}
+%	\end{minipage}
+%	Due to multiple unfinished works from the last two sprints, most of the workload in this sprint was to finish those leftover works. Nevertheless, we have communicated with the project advisors, suggesting decreasing the project scope to an acceptable amount. \\
+%	While we want to downsize the scope of the project to focus on one problem instead of multiple, it should also preserve diversity as a whole. After some consideration, we discarded all but one real-world problem, the knapsack problem, and added more variants of that problem instead; as it has multiple variances for us to use, it is also popular and easy to demonstrate in the real world. \\
+%	Adjusting the scope also forces us to redesign a vast fraction of the education section, which results in a lot of increasing workload, as is in Figure~\ref{fig:result-burndown-sprint3}. Note that the burndown chart in Figure~\ref{fig:result-burndown-sprint3} is most updated on 23 November 2022.
+%
+%	\item Educational Game Development Framework Problem \\
+%	In the first two sprints, we designed the game by prioritizing educational topics over game elements via lecture-based learning; making it harder to design the gameplay and adapt those predesigned lectures into the game. \\
+%	In a lecture in the game design class (CPE467), we learned about educational game development frameworks, which are OBE and ADDIE models, so we decided to use them in our project. As a result, we could design the educational section of the game better than last time and integrate them into the gameplay more seamlessly by prioritizing which outcomes learners should have instead of what to teach them. Regardless, designing every lecture from the beginning delayed the overall design progress.
+%
+%\end{enumerate}
 
 
 %You can title this chapter as \textbf{Preliminary Results} or \textbf{Work Progress} for the progress reports. Present implementation or experimental results here and discuss them.
@@ -1511,7 +1730,8 @@ This appendix shows the overall storyboard of the game. The description will be 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix{Learning Material}
-\noindent{\large\bf Learning Material in Research Lab} \label{appendix:learning-material} \\
+\noindent{\large\bf Learning Material in Research Lab}  \\
+\label{appendix:learning-material}
 This appendix shows the learning material design which will be adapted and used in the Research Lab System. Some of the work might need more revision later since there is a change in the scope during the operation. The learning material will be grouped into a topic as we described in the system details under the game overview section.
 
 \begin{itemize}
@@ -1564,7 +1784,8 @@ This appendix shows the learning material design which will be adapted and used 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix{Puzzles }
-\noindent{\large\bf Puzzle Storyboard} \label{appendix:puzzle-storyboard} \\
+\noindent{\large\bf Puzzle Storyboard}  \\
+\label{appendix:puzzle-storyboard}
 This appendix shows the storyboard of the puzzle in a manner of the sequence of user interface (UI). The demonstration puzzle and problem-solving puzzle are included. Each type of puzzle can also be divided into the parent selection and the crossover. Note that the puzzle related to the real-world problem of encoding and decoding is in the progress of revision due to the change in the project's scope.
 
 \begin{itemize}
@@ -1742,6 +1963,21 @@ Sprites of every monster in this game consist of three parts, head, body, and ac
 \end{enumerate}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix{Usability Test Responses }
+\noindent{\large\bf Usability Test Responses}\\
+\label{appendix:usability-test-responses} 
+There are six questions in total in the usability test questionnaire. After conducting the usability test in the first week of February 2023, 13 testers responded to the questionnaire. The response to each question in the questionnaire will be listed.
+
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response1.png}} \caption{Response to the question 1} \end{figure}
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response2.png}} \caption{Response to the question 2} \end{figure}
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response3.png}} \caption{Response to the question 3} \end{figure}
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response4_1.png}} \caption{Response to the question 4} \label{fig:usability-test-response-4} \end{figure}
+Figure~\ref{fig:usability-test-response-4} shows the raw response to the question. We created the choice for this question using a score of 1 representing too simple to a score of 5 representing too complicated. Since we prefer the response to be too simple over too complicated, we rearrange by reversing the score to make the higher score the more preferable option like the other question, resulting in Figure~\ref{fig:usability-test-response-4-rearranged}.
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response4_2.png}} \caption{Response to the question 4 after rearrangement} \label{fig:usability-test-response-4-rearranged} \end{figure}
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response5.png}} \caption{Response to the question 5} \end{figure}
+\begin{figure}[!h]\centering \fbox{\includegraphics[width=14cm]{appendix-e-figure/usability_test_response6.png}} \caption{Response to the question 6} \end{figure}
 
 %\appendix{First appendix title}
 %\noindent{\large\bf Put appropriate topic here} \\
