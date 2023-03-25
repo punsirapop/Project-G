@@ -50,6 +50,8 @@ public class CandidateManager : MonoBehaviour
     [SerializeField] private GameObject _RouletteWheel;
     private int _RankCounter;
     public int RankCounter => _RankCounter;
+    private int[] _AssignedRank;
+    public int[] AssignedRank => _AssignedRank;
     
     void Awake()
     {
@@ -231,10 +233,17 @@ public class CandidateManager : MonoBehaviour
     public void AddRank()
     {
         _RankCounter++;
-        if (_RankCounter > GetComponentsInChildren<ChromosomeRodValue>().Length)
+        ChromosomeRodValue[] rods = GetComponentsInChildren<ChromosomeRodValue>();
+        if (_RankCounter > rods.Length)
         {
             _OperationLog.Add(Operation.SetAllRank);
             SelectionButtonManager.Instance.SetButtons();
+            // Keep track of the assigned rank
+            _AssignedRank = new int[rods.Length];
+            for (int i = 0; i < rods.Length; i++)
+            {
+                _AssignedRank[i] = rods[i].Value;
+            }
         }
     }
 

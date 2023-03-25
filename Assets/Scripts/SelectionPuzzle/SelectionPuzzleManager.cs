@@ -57,26 +57,33 @@ public class SelectionPuzzleManager : MonoBehaviour
         // Tournament demon and solve
         if (_PuzzleType % 3 == 0)
         {
-            correctOperations = CandidateManager.Instance.TournamentOperations;
             //feedbackText += "Check for tournament";
+            correctOperations = CandidateManager.Instance.TournamentOperations;
         }
         // Roulette wheel demon and solve
         else if (_PuzzleType % 3 == 1)
         {
-            correctOperations = CandidateManager.Instance.RouletteWheelOperations;
             //feedbackText += "Check for roulette";
+            correctOperations = CandidateManager.Instance.RouletteWheelOperations;
         }
         // Rank demon and solve
         else
         {
-            correctOperations = CandidateManager.Instance.RankOperations;
             //feedbackText += "Check for rank";
+            correctOperations = CandidateManager.Instance.RankOperations;
+            int[] properRank = PopulationManager.Instance.GetProperRank();
+            int[] assignedRank = CandidateManager.Instance.AssignedRank;
+            isCorrect = _IsArrayEqual(properRank, assignedRank);
+            if (!isCorrect)
+            {
+                Debug.Log("Wrong ranking");
+            }
         }
         // Checking wheter the player play as preferred operations
         if (playerOperations.Count != correctOperations.Count)
         {
-            isCorrect = false;
             //feedbackText += "\nLenght not match";
+            isCorrect = false;
         }
         else
         {
@@ -84,8 +91,8 @@ public class SelectionPuzzleManager : MonoBehaviour
             {
                 if (playerOperations[i] != correctOperations[i])
                 {
-                    isCorrect = false;
                     //feedbackText += "\nOperation " + i.ToString() + " not match";
+                    isCorrect = false;
                 }
             }
         }
@@ -93,5 +100,21 @@ public class SelectionPuzzleManager : MonoBehaviour
         feedbackText += isCorrect ? "Correct" : "Wrong";
         GameObject overlay = Instantiate(_OverlayPrefab, this.transform);
         overlay.GetComponent<PuzzleFeedbackOverlay>().SetFeedBack(isCorrect, feedbackText);
+    }
+
+    private bool _IsArrayEqual(int[] array1, int[] array2)
+    {
+        if (array1.Length != array2.Length)
+        {
+            return false;
+        }
+        for (int i = 0; i < array1.Length; i++)
+        {
+            if (array1[i] != array2[i])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
