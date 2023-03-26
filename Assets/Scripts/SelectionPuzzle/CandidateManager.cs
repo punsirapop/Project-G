@@ -102,7 +102,21 @@ public class CandidateManager : MonoBehaviour
         // Prevent the operation log is added twice in the case of player's mouse is double click
         else if (_OperationLog[_OperationLog.Count - 1] != newOperation)
         {
-            _OperationLog.Add(newOperation); ;
+            // Make Group, Chance, and Rank are interchangeable with each other since they reset all chromosome in candidate panel
+            if ((newOperation == Operation.Group) ||
+                (newOperation == Operation.Chance) ||
+                (newOperation == Operation.Rank))
+            {
+                if ((_OperationLog[_OperationLog.Count - 1] == Operation.Group) ||
+                    (_OperationLog[_OperationLog.Count - 1] == Operation.Chance) ||
+                    (_OperationLog[_OperationLog.Count - 1] == Operation.Rank))
+                {
+                    // Replace last operation with the new one
+                    _OperationLog[_OperationLog.Count - 1] = newOperation;
+                    return;
+                }
+            }
+            _OperationLog.Add(newOperation);
         }
     }
 
