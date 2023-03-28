@@ -34,10 +34,12 @@ public class SaveManagerTitle : SaveManager
         LoadJson(loadData);
 
         // ---------- Load scriptable objects ----------
+        /*
         for (int i = 0; i < savedFarms.Length; i++)
         {
             loadTargets[i].SetMe(savedFarms[i]);
         }
+        */
         Debug.Log("Data Loaded");
     }
 }

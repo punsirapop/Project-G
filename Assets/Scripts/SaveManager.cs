@@ -18,10 +18,11 @@ public class SaveManager : MonoBehaviour
     {
         // public List<int> mechCurrentGen;
         // public int mechCurrentID;
+        public int Days;
     }
 
     // SOs to save farms info
-    [SerializeField] protected FarmSO[] savedFarms;
+    // [SerializeField] protected FarmSO[] savedFarms;
 
     // json save path
     string path = "";
@@ -53,17 +54,20 @@ public class SaveManager : MonoBehaviour
         SaveData saveData = new SaveData();
         // saveData.mechCurrentGen = new List<int>(FarmManager.CurrentGen);
         // saveData.mechCurrentID = FarmManager.CurrentID;
+        saveData.Days = PlayerManager.CurrentDate.ToDay();
 
         return saveData;
     }
 
     // set data from saved json to game
-    public void LoadJson(SaveData s)
+    public virtual void LoadJson(SaveData s)
     {
         /*
         FarmManager.CurrentGen = new List<int>(s.mechCurrentGen);
         FarmManager.CurrentID = s.mechCurrentID;
         */
+        PlayerManager.CurrentDate.AddDay(s.Days);
+        Debug.Log("Data loaded");
     }
 
     // save file
@@ -82,13 +86,15 @@ public class SaveManager : MonoBehaviour
         streamWriter.Close();
 
         // ---------- Save scriptable objects ----------
+        /*
         for (int i = 0; i < savedFarms.Length; i++)
         {
-            savedFarms[i].SetMe(FarmManager.Instance.FarmsData[i]);
+            savedFarms[i].SetMe(PlayerManager.FarmDatabase[i]);
         }
+        */
         // ---------- Save objects ----------
         // Mechs
-        MechChromoSO[] loaded = FarmManager.Instance.FarmsData.SelectMany(x => x.MechChromos).ToArray();
+        MechChromoSO[] loaded = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToArray();
         MechChromoSO[] saved = Resources.LoadAll<MechChromoSO>(mechResourcePath);
         Debug.Log("LOADED: " + loaded.Count() + " SAVED: " + saved.Length);
         Debug.Log("UNSAVED: " + loaded.Except(saved).Count() + " UNLOADED: " + saved.Except(loaded).Count());
@@ -122,11 +128,13 @@ public class SaveManager : MonoBehaviour
         LoadJson(loadData);
 
         // ---------- Load scriptable objects ----------
+        /*
         for (int i = 0; i < savedFarms.Length; i++)
         {
-            FarmManager.Instance.FarmsData[i].SetMe(savedFarms[i]);
+            PlayerManager.FarmDatabase[i].SetMe(savedFarms[i]);
         }
         Debug.Log("Data Loaded");
+        */
     }
 
     // trigger reset event

@@ -115,11 +115,11 @@ public class GeneticFunc : MonoBehaviour
 
         if (type < 2)
         {   // not uniform
-            Debug.Log("n-point crossover");
+            // Debug.Log("n-point crossover");
             // set start & end points
             int start = Random.Range(1, a[0].Count - type);
             int end = (type == 1) ? Random.Range(start, a.Count) : a.Count - 1;
-            Debug.Log("Start: " + start + " End: " + end);
+            // Debug.Log("Start: " + start + " End: " + end);
             // swap intervals
             for (int i = start; i <= end; i++)
             {
@@ -132,7 +132,7 @@ public class GeneticFunc : MonoBehaviour
         }
         else
         {   // uniform
-            Debug.Log("uniform crossover");
+            // Debug.Log("uniform crossover");
             for (int i = 0; i < a.Count; i++)
             {
                 if (Random.Range(0, 100) >= 50)
@@ -145,7 +145,7 @@ public class GeneticFunc : MonoBehaviour
                 }
             }
         }
-        Debug.Log("finished");
+        // Debug.Log("finished");
     }
 
     /* 
@@ -157,7 +157,7 @@ public class GeneticFunc : MonoBehaviour
      */
     public void Mutate(List<List<int>> c, List<int> statCap)
     {
-        Debug.Log("IM MUTATING");
+        // Debug.Log("IM MUTATING");
 
         for (int i = 0; i < c.Count; i++)
         {
@@ -168,7 +168,7 @@ public class GeneticFunc : MonoBehaviour
                 {
                     c[j][i] = r;
                 }
-                Debug.Log("I MUTATED AT " + i);
+                // Debug.Log("I MUTATED AT " + i);
             }
         }
     }

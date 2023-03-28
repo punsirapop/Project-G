@@ -1,0 +1,165 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
+public class TimeManager : MonoBehaviour
+{
+    public struct Date
+    {
+        public int year;
+        public int month;
+        public int day;
+
+        public void InitDate()
+        {
+            year = 2700;
+            month = 1;
+            day = 1;
+        }
+
+        public Date AddDay(int d)
+        {
+            int carryOver = (day + d) / 28;
+            int addDay = (day + d) % 28;
+            day = addDay;
+            AddMonth(carryOver);
+
+            if (day == 0)
+            {
+                day = 28;
+                month--;
+            }
+
+            return this;
+        }
+
+        public Date AddMonth(int m)
+        {
+            int carryOver = (month + m) / 12;
+            int addMonth = (month + m) % 12;
+            month = addMonth;
+            AddYear(carryOver);
+
+            if (month == 0)
+            {
+                month = 12;
+                year--;
+            }
+
+            return this;
+        }
+
+        public Date AddYear(int y)
+        {
+            year += y;
+
+            return this;
+        }
+
+        public int ToDay()
+        {
+            return day + month * 28 + year * 12 * 28;
+        }
+
+        public int CompareDate(Date d)
+        {
+            int a = ToDay();
+            int b = d.ToDay();
+            return a - b;
+        }
+
+        public string ShowDate()
+        {
+            return String.Join("/", String.Format("{0:00}", day), String.Format("{0:00}", month), year);
+        }
+
+        public Date DupeDate()
+        {
+            Date d = new Date();
+            d.day = day;
+            d.month = month;
+            d.year = year;
+            return d;
+        }
+    }
+
+    public static event Action<Date> OnChangeDate;
+
+    Date _SkipDate;
+
+    // [SerializeField] TextMeshProUGUI _SkipDayDis;
+    // [SerializeField] TextMeshProUGUI _SkipDayLabel;
+    // [SerializeField] Button[] _SkipDayAdjustors;
+
+    [SerializeField] Transform _CellHolder;
+    [SerializeField] GameObject _CellPrefab;
+    [SerializeField] GameObject[] _Buttons;
+    [SerializeField] TextMeshProUGUI _SkipLabel;
+
+    private void Awake()
+    {
+        ResetSkip();
+        ResetDateSelection();
+
+        LoadCells(PlayerManager.CurrentDate);
+    }
+
+    private void LoadCells(Date d)
+    {
+        for (int i = 1; i < 29; i++)
+        {
+            Date date = d.DupeDate();
+            date.day = i;
+            Instantiate(_CellPrefab, _CellHolder).GetComponent<CalendarCell>().SetCell(date);
+        }
+    }
+
+    private void Update()
+    {
+        // _SkipDayDis.text = _SkipDay.ToString();
+        // _SkipDayLabel.text = (_SkipDay > 1) ? "Skipping\n\nDays" : "Skipping\n\nDay";
+        // _SkipDayAdjustors[0].interactable = _SkipDay < 10;
+        // _SkipDayAdjustors[1].interactable = _SkipDay > 1;
+    }
+
+    public void ChangeDateSelection(Date d)
+    {
+        foreach (var item in _Buttons)
+        {
+            item.SetActive(false);
+        }
+        if (d.CompareDate(PlayerManager.CurrentDate) < 1)
+        {
+            _Buttons[0].SetActive(true);
+            ResetSkip();
+        }
+        else
+        {
+            _Buttons[1].SetActive(true);
+            int i = d.CompareDate(PlayerManager.CurrentDate);
+            _SkipLabel.text = String.Join(" ", "Skipping", i, (i > 1) ? "days" : "day");
+            _SkipDate = d.DupeDate();
+        }
+    }
+
+    public void ResetDateSelection()
+    {
+        CalendarCell.SelectedDate = default(Date);
+    }
+
+    public void ResetSkip()
+    {
+        _SkipDate = PlayerManager.CurrentDate.DupeDate();
+        _SkipDate.AddDay(1);
+    }
+
+    public void SkipDay()
+    {
+        OnChangeDate?.Invoke(_SkipDate);
+        _SkipDate.AddDay(1);
+        CalendarCell.SelectedDate = default(Date);
+    }
+}

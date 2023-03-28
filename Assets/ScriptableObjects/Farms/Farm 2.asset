@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 2
   m_EditorClassIdentifier: 
-  _Name: 
-  _Generation: 0
+  _Name: Farm2
+  _Generation: 1
   _Status: 0
   _BG: {fileID: 21300000, guid: 2664c5b7bcf290e43afe661583d9f570, type: 3}
-  _MechChromos: []
+  _MainNormal: {fileID: 21300000, guid: db5ca562aeeb9824b912b071b9a4602f, type: 3}
+  _MainBroken: {fileID: 21300000, guid: 3618ed30f17fac34083142b4a374d64c, type: 3}
+  _Locker: {fileID: 21300000, guid: 702b4ad46a65da1448f976814a98d87f, type: 3}
+  _MechChromos:
+  - {fileID: 11400000, guid: 07164d00f3050a44980b7ff7d5a81349, type: 2}
+  - {fileID: 11400000, guid: 3423651f51c602d4fa5f73c455b70a73, type: 2}
+  - {fileID: 11400000, guid: 7bfe1576e6b7479469da1633ddaa2449, type: 2}
+  - {fileID: 11400000, guid: c81f4ae2e2021c442be2da16918f0f4e, type: 2}

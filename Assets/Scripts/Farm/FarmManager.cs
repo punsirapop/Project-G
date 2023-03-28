@@ -8,17 +8,16 @@ using TMPro;
 /*
  * Control over farms and their panels
  */
-public class FarmManager : MonoBehaviour
+public class FarmManager : FarmMngFunc
 {
     public static FarmManager Instance;
 
-    public static event Action OnEditChromo;
-
-    [SerializeField] private FarmSO[] _FarmsData;
-    public FarmSO[] FarmsData => _FarmsData;
+    // [SerializeField] private FarmSO[] _FarmsData;
+    // public FarmSO[] FarmsData => _FarmsData;
 
     // Current sprite renderer
     [SerializeField] private SpriteRenderer _BGRenderer;
+    [SerializeField] private Image _GaugeRenderer;
 
     // Transforms indicating display borders of the farm
     [SerializeField] Transform[] border;
@@ -26,34 +25,65 @@ public class FarmManager : MonoBehaviour
     [SerializeField] Transform holder;
     // Mech prefab
     [SerializeField] GameObject preset;
-    // Game panels
-    // BreedMenu, FitnessMenu, ChromoMenu, ChromoDetail
 
-    #region Panels
-    // Panels in factory: Info, Produce, ChromoMenu
-    [SerializeField] private Button[] _PanelButtons;
-    [SerializeField] private GameObject[] _Panels;
-    #endregion
+    // Panels in farm: Fitness, Breed, ChromoList
+    [SerializeField] Button[] _PanelButtons;
+    [SerializeField] GameObject[] _Panels;
+
+    [SerializeField] GameObject[] statusDisplays;
+    [SerializeField] TextMeshProUGUI breedingGenDisplay;
 
     // List storing every mech gameObjects for easy access
     public List<GameObject> mechs;
 
     private void Awake()
     {
-        if(Instance == null) Instance = this;
+        FarmSO.OnFarmChangeStatus += OnChangeStatus;
+        // Init stuffs
+        if (Instance == null) Instance = this;
 
         mechs = new List<GameObject>();
-        foreach (var item in FarmsData[PlayerManager.CurrentFarm].MechChromos)
+        if(PlayerManager.CurrentFarmDatabase.MechChromos.Count > 0)
         {
-            AddMech(item);
+            foreach (var item in PlayerManager.CurrentFarmDatabase.MechChromos)
+            {
+                AddMech(item);
+            }
         }
-        _RenderSprite();
+        _BGRenderer.sprite = PlayerManager.CurrentFarmDatabase.BG;
+        _GaugeRenderer.fillAmount = PlayerManager.CurrentFarmDatabase.BreedGuage / 100;
+
+        OnChangeStatus(PlayerManager.CurrentFarmDatabase, PlayerManager.CurrentFarmDatabase.Status);
     }
 
-    // Render the weapon holder sprite for each factory
-    private void _RenderSprite()
+    private void OnDestroy()
     {
-        _BGRenderer.sprite = _FarmsData[PlayerManager.CurrentFarm].BG;
+        FarmSO.OnFarmChangeStatus -= OnChangeStatus;
+    }
+
+    private void OnChangeStatus(FarmSO f, Status s)
+    {
+        if (f == PlayerManager.CurrentFarmDatabase)
+        {
+            foreach (var item in statusDisplays) item.SetActive(false);
+            if (f.Condition > 0) statusDisplays[(int)s].SetActive(true);
+            else statusDisplays[2].SetActive(true);
+            // Change behavior depending on status
+            switch (s)
+            {
+                case Status.IDLE:
+                    // Activate interactables
+                    breedingGenDisplay.text = "";
+                    break;
+                case Status.BREEDING:
+                    // Deactivate interactables
+                    breedingGenDisplay.text = "GEN: " + PlayerManager.CurrentFarmDatabase.BreedGen + "/" +
+                        PlayerManager.CurrentFarmDatabase.BreedInfo.BreedGen;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     /*
@@ -61,10 +91,9 @@ public class FarmManager : MonoBehaviour
      * 
      * Input
      *      i: tab index
-     *      - Breeding Menu
      *      - Fitness Menu
+     *      - Breeding Menu
      *      - Mech List
-     *      - Mech Details
      */
     public void OpenPanel(int i)
     {
@@ -81,24 +110,6 @@ public class FarmManager : MonoBehaviour
      * Input
      *      c: chromosome scriptable object
      */
-
-    // Add new random chromosome to the current space
-    public void AddChromo()
-    {
-        MechChromoSO c = (MechChromoSO)ScriptableObject.CreateInstance("MechChromoSO");
-        _FarmsData[PlayerManager.CurrentFarm].AddChromo(c);
-        AddMech(c);
-        OnEditChromo?.Invoke();
-    }
-
-    // Delete a chromosome from the current space
-    public void DelChromo(MechChromoSO c)
-    {
-        _FarmsData[PlayerManager.CurrentFarm].DelChromo(c);
-        DelMech(c);
-        OnEditChromo?.Invoke();
-    }
-
     private void AddMech(MechChromoSO c)
     {
         Vector2 spawnPoint = new Vector2(UnityEngine.Random.Range(border[0].position.x, border[1].position.x),

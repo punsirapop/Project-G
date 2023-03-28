@@ -56,43 +56,46 @@ public class ChromoMenu : MonoBehaviour
             Destroy(item.gameObject);
         }
         // ------- get fitness -------
-        Dictionary<dynamic, float> fvDict = fitnessMenu.GetFitnessDict();
-        List<OrderFormat> fv = new List<OrderFormat>();
-        foreach (var item in fvDict)
+        if (PlayerManager.CurrentFarmDatabase.MechChromos.Count > 0)
         {
-            MechChromoSO c = item.Key;
-            OrderFormat of = new OrderFormat();
-            of.name = c.ID;
-            of.chromo = c;
-            of.fitness = item.Value;
-            fv.Add(of);
-        }
-        // ------- sort -------
-        switch (_ToggleSortByFitness.isOn, _ToggleSortDescending.isOn)
-        {
-            case (true, true):
-                fv = fv.OrderByDescending(x => x.fitness).ThenByDescending(x => x.name).ToList();
-                break;
-            case (true, false):
-                fv = fv.OrderBy(x => x.fitness).ThenBy(x => x.name).ToList();
-                break;
-            case (false, true):
-                fv = fv.OrderByDescending(x => x.name).ThenByDescending(x => x.fitness).ToList();
-                break;
-            case (false, false):
-                fv = fv.OrderBy(x => x.name).ThenBy(x => x.fitness).ToList();
-                break;
-        }
-        // ------- display -------
-        foreach (var item in fv)
-        {
-            GameObject me = Instantiate(preset, parent);
-            me.GetComponent<MechButton>().SetChromosome(item);
-            me.GetComponent<Button>().onClick.AddListener(() =>
-                detailOverlay.gameObject.SetActive(!(detailOverlay.gameObject.activeSelf && selecting == me)));
-            me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.SetDisplay(item.chromo));
-            me.GetComponent<Button>().onClick.AddListener(() => selecting = me);
-            // me.GetComponentInChildren<TextMeshProUGUI>().text = "ID: " + item.name;
+            Dictionary<dynamic, float> fvDict = fitnessMenu.GetFitnessDict();
+            List<OrderFormat> fv = new List<OrderFormat>();
+            foreach (var item in fvDict)
+            {
+                MechChromoSO c = item.Key;
+                OrderFormat of = new OrderFormat();
+                of.name = c.ID;
+                of.chromo = c;
+                of.fitness = item.Value;
+                fv.Add(of);
+            }
+            // ------- sort -------
+            switch (_ToggleSortByFitness.isOn, _ToggleSortDescending.isOn)
+            {
+                case (true, true):
+                    fv = fv.OrderByDescending(x => x.fitness).ThenByDescending(x => x.name).ToList();
+                    break;
+                case (true, false):
+                    fv = fv.OrderBy(x => x.fitness).ThenBy(x => x.name).ToList();
+                    break;
+                case (false, true):
+                    fv = fv.OrderByDescending(x => x.name).ThenByDescending(x => x.fitness).ToList();
+                    break;
+                case (false, false):
+                    fv = fv.OrderBy(x => x.name).ThenBy(x => x.fitness).ToList();
+                    break;
+            }
+            // ------- display -------
+            foreach (var item in fv)
+            {
+                GameObject me = Instantiate(preset, parent);
+                me.GetComponent<MechButton>().SetChromosome(item);
+                me.GetComponent<Button>().onClick.AddListener(() =>
+                    detailOverlay.gameObject.SetActive(!(detailOverlay.gameObject.activeSelf && selecting == me)));
+                me.GetComponent<Button>().onClick.AddListener(() => detailOverlay.SetDisplay(item.chromo));
+                me.GetComponent<Button>().onClick.AddListener(() => selecting = me);
+                // me.GetComponentInChildren<TextMeshProUGUI>().text = "ID: " + item.name;
+            }
         }
     }
 }
