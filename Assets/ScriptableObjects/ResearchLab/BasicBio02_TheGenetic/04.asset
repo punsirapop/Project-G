@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
+  m_Name: 04
+  m_EditorClassIdentifier: 
+  _Header: Crossing Over
+  _Image: {fileID: 21300000, guid: da1b04d95578e4141aef20ff46eca99c, type: 3}
+  _Description: In sexual reproduction, children inherit genetic information from
+    their parents. The process called Crossover occurs when a pair of parent's chromosomes
+    are lined up. Then the genetic information in the same partitions of each parent
+    can be switched across. The result is children that have genetic information
+    from both parents.
