@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Header: Natural Selection
   _Image: {fileID: 21300000, guid: 3e5d3dfc877524f439def8659f789fe1, type: 3}
-  _Description: Natural selection state that the one with more suitable traits for
-    its environment survives. For example, a herd of salamanders living in a green
-    forest. The one with a color closer to the forest has more success rate of hiding
-    from the predator. So, it survives more than other types.
+  _Description: Natural selection state that the one with <b>more suitable traits</b>
+    for its environment survives. For example, a herd of salamanders living in a
+    green forest. The one with a color closer to the forest has more success rate
+    of hiding from the predator. So, it survives more than other types.

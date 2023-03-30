@@ -16,5 +16,5 @@ MonoBehaviour:
   _Image: {fileID: 21300000, guid: 769a7410d3113cd4fab3cf948d8d3f0f, type: 3}
   _Description: After several generations, the living thing with the fittest trait
     for the environment will have a higher proportion of the population. Keep in
-    mind that the green salamander survives just because it has the fittest color,
-    not because it is the strongest.
+    mind that the green salamander survives <b>just because it has the fittest color,
+    not because it is the strongest.</b>

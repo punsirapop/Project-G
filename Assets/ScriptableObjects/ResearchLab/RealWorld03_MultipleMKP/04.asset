@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
   m_Name: 04
   m_EditorClassIdentifier: 
-  _Header: Natural Selection
-  _Image: {fileID: 21300000, guid: f18d712eb247fc94c8b472995623aa7b, type: 3}
-  _Description: The second idea is a mechanic of evolution, <b>natural selection</b>.
-    The genetics of living things can change over time. So there are so many types
-    even if it is the same species. But the survival chance of each type is not equal.
+  _Header: Multiple Knapsack Problem
+  _Image: {fileID: 21300000, guid: 11f3ba04666fa6646bf26d825e987be8, type: 3}
+  _Description: The full chromosome for the solution to the multiple knapsack problem
+    is a 2-dimension array that wraps all the bit strings together. The first array
+    is for the first knapsack, the second array is for the second array, and so on.

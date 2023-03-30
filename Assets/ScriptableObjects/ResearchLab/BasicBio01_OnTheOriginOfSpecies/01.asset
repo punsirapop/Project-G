@@ -15,6 +15,6 @@ MonoBehaviour:
   _Header: Charles Darwin
   _Image: {fileID: 21300000, guid: 1ee5d0dcc7f3d894bb76b1a9256eac0c, type: 3}
   _Description: "The theories describing how the living thing survives and develops
-    over time were proposed by Charles Darwin, a British naturalist. He proposed
-    the book called \u201COn the Origin of Species\u201D which introduced two main
-    ideas: Evolution and Natural Selection."
+    over time were proposed by <b>Charles Darwin</b>, a British naturalist. He proposed
+    the book called <b>\u201COn the Origin of Species\u201D</b> which introduced
+    two main ideas: <b>Evolution</b> and <b>Natural Selection</b>."

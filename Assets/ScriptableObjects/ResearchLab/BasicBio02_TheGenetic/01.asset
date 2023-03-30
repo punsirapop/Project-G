@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Header: Chromosome & Gene
   _Image: {fileID: 21300000, guid: 6ad77bc2d936aa44bb7a0b12b5c0bbb3, type: 3}
-  _Description: 'Each organism contains a set of genetic information which will determine
-    characteristics of that organism. Those information may varies among the population.
+  _Description: 'Each organism contains a set of <b>genetic information</b> which
+    will determine characteristics of that organism. Those information may varies
+    among the population.
 
 
-    For
-    example, these plants are the same species, but with the variant genetic information,
-    their appearances may differ.
+    For example, these plants are the same species, but
+    with the variant genetic information, their appearances may differ.
 
-    In this case, plant A is taller and has more
-    fruits than plant B. The fruit A is yellow and round, but fruit B is green and
-    rough.'
+    In this
+    case, plant A is taller and has more fruits than plant B. The fruit A is yellow
+    and round, but fruit B is green and rough.'

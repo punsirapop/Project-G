@@ -15,7 +15,7 @@ MonoBehaviour:
   _Header: Crossing Over
   _Image: {fileID: 21300000, guid: da1b04d95578e4141aef20ff46eca99c, type: 3}
   _Description: In sexual reproduction, children inherit genetic information from
-    their parents. The process called Crossover occurs when a pair of parent's chromosomes
-    are lined up. Then the genetic information in the same partitions of each parent
-    can be switched across. The result is children that have genetic information
-    from both parents.
+    their parents. The process called <b>Crossover</b> occurs when a pair of parent's
+    chromosomes are lined up. Then the genetic information in the same partitions
+    of each parent can be switched across. The result is children that have genetic
+    information from both parents.

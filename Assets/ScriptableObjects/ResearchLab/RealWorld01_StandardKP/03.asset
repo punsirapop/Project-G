@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
-  m_Name: 02
+  m_Name: 03
   m_EditorClassIdentifier: 
-  _Header: Chromosome & Gene
-  _Image: {fileID: 21300000, guid: 829e6e4eb868cee439bbba18d20ae4eb, type: 3}
-  _Description: The genetic information is stored in <b>chromosomes</b>, and each
-    chromosome consists of multiple <b>genes</b>. A gene will determine single characteristic
-    of that organism.
+  _Header: Standard Knapsack Problem
+  _Image: {fileID: 21300000, guid: 45249f4b943c7994e80a34e60d1725d2, type: 3}
+  _Description: 'The fitness of the chromosome of this problem is simply <b>a summation
+    of the value of the picked items</b>. '

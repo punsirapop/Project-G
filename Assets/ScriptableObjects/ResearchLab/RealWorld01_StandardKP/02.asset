@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
   m_Name: 02
   m_EditorClassIdentifier: 
-  _Header: Chromosome & Gene
-  _Image: {fileID: 21300000, guid: 829e6e4eb868cee439bbba18d20ae4eb, type: 3}
-  _Description: The genetic information is stored in <b>chromosomes</b>, and each
-    chromosome consists of multiple <b>genes</b>. A gene will determine single characteristic
-    of that organism.
+  _Header: Standard Knapsack Problem
+  _Image: {fileID: 21300000, guid: 825df4b46d02ad14c82ae68ac61b34ed, type: 3}
+  _Description: The solution for the Knapsack problem can be represented using binary
+    bit string which consist of only 0 or 1. <b>The picked items are encoded using
+    binary 1</b>, and the non-picked items are encoded using binary 0.

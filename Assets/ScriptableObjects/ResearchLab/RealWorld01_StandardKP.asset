@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
+  m_Name: RealWorld01_StandardKP
+  m_EditorClassIdentifier: 
+  _Header: Standard Knapsack Problem
+  _Contents:
+  - {fileID: 11400000, guid: a85f32052a962274894ae2a2c64d56e5, type: 2}
+  - {fileID: 11400000, guid: ff59c008074c1b34dba10ebbf294097c, type: 2}
+  - {fileID: 11400000, guid: 130c0490759873c468c0b28efb47be46, type: 2}
+  - {fileID: 11400000, guid: 91e480cbf2169c54e9099ae7a56f8a81, type: 2}
+  - {fileID: 11400000, guid: 928a0f527bc4e474cb6d3595aef62605, type: 2}

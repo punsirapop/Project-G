@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Header: Evolution
   _Image: {fileID: 21300000, guid: 89bd3b0de7b61454d80db604b5a0e8e0, type: 3}
-  _Description: Evolution is a process in which the genetics of living things gradually
-    change over time. The differences in genetics result in different species.
+  _Description: <b>Evolution</b> is a process in which the genetics of living things
+    gradually <b>change over time</b>. The differences in genetics result in different
+    species.

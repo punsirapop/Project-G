@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Header: Phenotype & Genotype
   _Image: {fileID: 21300000, guid: 65b4bdbef06ae20499fb4f4c0b36bb10, type: 3}
-  _Description: 'The physical appearance of the organism is known as the phenotype.
-    On the contrary, the genetic information in the gene is known as genotype.
+  _Description: 'The physical appearance of the organism is known as the <b>phenotype</b>.
+    On the contrary, the genetic information in the gene is known as <b>genotype</b>.
 
 
     This

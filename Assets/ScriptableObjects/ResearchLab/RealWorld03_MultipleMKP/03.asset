@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
-  m_Name: 02
+  m_Name: 03
   m_EditorClassIdentifier: 
-  _Header: Chromosome & Gene
-  _Image: {fileID: 21300000, guid: 829e6e4eb868cee439bbba18d20ae4eb, type: 3}
-  _Description: The genetic information is stored in <b>chromosomes</b>, and each
-    chromosome consists of multiple <b>genes</b>. A gene will determine single characteristic
-    of that organism.
+  _Header: Multiple Knapsack Problem
+  _Image: {fileID: 21300000, guid: ff7f446c2ceb1584b956d39b1b8f2f81, type: 3}
+  _Description: The next knapsack is encoded into another set of the bit string,
+    <b>indicating the picking of the item for that knapsack</b>.

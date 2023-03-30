@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Header: Evolution
   _Image: {fileID: 21300000, guid: cd9ba5b56694fc340953f2e8ed9ecab1, type: 3}
-  _Description: He also proposed that the new specie inherit some traits from its
-    previous specie. And all species share a common ancestor.
+  _Description: He also proposed that the new specie <b>inherit</b> some traits from
+    its previous specie. And all species share a common ancestor.
