@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
+  m_Name: GA01_TheFlowOfGeneticAlgorithm
+  m_EditorClassIdentifier: 
+  _Header: The Flow of Genetic Algorithm
+  _Contents:
+  - {fileID: 11400000, guid: 9331e70ab44b25b448f05112ef038b23, type: 2}
+  - {fileID: 11400000, guid: 3d761735bc2172f4aa86e1d5e52cda6a, type: 2}
+  - {fileID: 11400000, guid: a307a898941c0e24b84325a08e5497a6, type: 2}
