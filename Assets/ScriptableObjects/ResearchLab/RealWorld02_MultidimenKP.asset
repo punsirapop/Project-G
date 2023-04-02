@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: RealWorld02_MultidimenKP
   m_EditorClassIdentifier: 
-  _Header: Multidimensional Knapsack Problem
+  _Header: Multidimensional Knapsack
   _Contents:
   - {fileID: 11400000, guid: e918757a193ce554dbc6a846352786f4, type: 2}
   - {fileID: 11400000, guid: ff23366f6db1a74469cf664362874819, type: 2}

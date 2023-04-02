@@ -21,9 +21,12 @@ public class ResearchLabManager : MonoBehaviour
     [SerializeField] private ChapterButton[] _ChapterButtons;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    [SerializeField] private ContentChapterSO[] _Chapters;
+    [SerializeField] private ContentChapterSO[] _BasicBioChapters;
+    [SerializeField] private ContentChapterSO[] _GeneticAlgoChapters;
+    [SerializeField] private ContentChapterSO[] _KnapsackChapters;
     private ContentChapterSO _CurrentChapterSO;
     private int _CurrentPage;
+    private int _CurrentTab;
 
     void Awake()
     {
@@ -32,19 +35,7 @@ public class ResearchLabManager : MonoBehaviour
 
     private void Start()
     {
-        // Destory all previous child object
-        foreach (Transform child in _ChapterButtonHolder)
-        {
-            Destroy(child.gameObject);
-        }
-        // Spawn all chapter button
-        foreach (ContentChapterSO contentChapter in _Chapters)
-        {
-            GameObject newChapterButton = Instantiate(_ChapterButtonPrefab, _ChapterButtonHolder);
-            newChapterButton.GetComponent<ChapterButton>().SetChapter(contentChapter);
-        }
-        DeselectChapterButtons();
-        GetComponentInChildren<ChapterButton>().GetComponent<Button>().onClick.Invoke();
+        SetCurrentTab(0);
         _RefreshPage();
     }
 
@@ -76,7 +67,6 @@ public class ResearchLabManager : MonoBehaviour
     public void SetCurrentChapter(ContentChapterSO newContentChapter)
     {
         _CurrentChapterSO = newContentChapter;
-        Debug.Log("Set current chapter to " + newContentChapter.Header);
         _CurrentPage = 0;
         _SetPageButtons();
         _RefreshPage();
@@ -91,6 +81,61 @@ public class ResearchLabManager : MonoBehaviour
         _NextPageButton.GetComponent<Image>().color = (_CurrentPage < maxPage) ? Color.green : Color.white;
         _NextPageButton.GetComponent<Button>().interactable = (_CurrentPage < maxPage) ? true : false;
     }
+
+    // Set current tab
+    public void SetCurrentTab(int newTab)
+    {
+        _CurrentTab = newTab;
+        _SetTabButtons();
+        // Destory all previous child object
+        foreach (Transform child in _ChapterButtonHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        // Change current ChapterButtons to the corresponding chapters in the tab
+        ContentChapterSO[] currentChapters = _BasicBioChapters;
+        if (_CurrentTab == 1)
+        {
+            currentChapters = _GeneticAlgoChapters;
+        }
+        else if (_CurrentTab == 2)
+        {
+            currentChapters = _KnapsackChapters;
+        }
+        // Spawn all chapter button
+        bool firstButtonInvoked = false;
+        foreach (ContentChapterSO contentChapter in currentChapters)
+        {
+            GameObject newChapterButton = Instantiate(_ChapterButtonPrefab, _ChapterButtonHolder);
+            newChapterButton.GetComponent<ChapterButton>().SetChapter(contentChapter);
+            // Trigger the onClick of first new created button
+            // Don't use GetComponentInChildren<ChapterButton>() because the destroyed objects are not immediately destroyed
+            // They just be marked to be destroyed and Unity actually destroy them after this SetCurrentTab() end
+            // So if we use said method it will trigger the first button in the previous tab instead
+            if (!firstButtonInvoked)
+            {
+                newChapterButton.GetComponent<ChapterButton>().GetComponent<Button>().onClick.Invoke();
+                firstButtonInvoked = true;
+            }
+        }
+    }
+
+    // Set tab button to proper color
+    private void _SetTabButtons()
+    {
+        for (int i = 0; i < _TabButtons.Length; i++)
+        {
+            if (i == _CurrentTab)
+            {
+                _TabButtons[i].GetComponent<Button>().interactable = false;
+            }
+            else
+            {
+                _TabButtons[i].GetComponent<Button>().interactable = true;
+            }
+        }
+    }
+
     // Deselect all chapter buttons
     public void DeselectChapterButtons()
     {

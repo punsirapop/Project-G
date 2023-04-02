@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: RealWorld01_StandardKP
   m_EditorClassIdentifier: 
-  _Header: Standard Knapsack Problem
+  _Header: Standard Knapsack
   _Contents:
   - {fileID: 11400000, guid: a85f32052a962274894ae2a2c64d56e5, type: 2}
   - {fileID: 11400000, guid: ff59c008074c1b34dba10ebbf294097c, type: 2}
