@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad394ba06c72a244bea598226a6bb62, type: 3}
+  m_Name: GAGroup02_Selection
+  m_EditorClassIdentifier: 
+  _Header: Parent Selection
+  _ContentChapters:
+  - {fileID: 11400000, guid: faee487e5574dad4c930d5c2f98a5773, type: 2}
+  - {fileID: 11400000, guid: f82a7c89f3691684b91139c653082cb3, type: 2}
+  - {fileID: 11400000, guid: 7ac3ce4d6c5e67641adde888d7ab4944, type: 2}
+  - {fileID: 11400000, guid: 1a8eb748a7f0bed4ba6758198beaa36e, type: 2}

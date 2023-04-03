@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chapter Topic
+  m_text: Chapter Group Topic
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
   m_sharedMaterial: {fileID: -8466067231644031343, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
@@ -148,9 +148,9 @@ GameObject:
   - component: {fileID: 4479872440661567395}
   - component: {fileID: 4479872440661567394}
   - component: {fileID: 4479872440661567397}
-  - component: {fileID: 4479872440661567398}
+  - component: {fileID: 9149477670778534826}
   m_Layer: 5
-  m_Name: ChapterButton
+  m_Name: ChapterGroupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &4479872440661567398
+--- !u!114 &9149477670778534826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4479872440661567392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24af86d28aa5db24193c90f6de52bc55, type: 3}
+  m_Script: {fileID: 11500000, guid: acff66433b344d0428cd0f55e3045f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _ButtonText: {fileID: 4479872440167380169}

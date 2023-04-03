@@ -9,7 +9,9 @@ public class ResearchLabManager : MonoBehaviour
     public static ResearchLabManager Instance;
 
     [SerializeField] private GameObject _ChapterButtonPrefab;
-    [SerializeField] private Transform _ChapterButtonHolder;
+    [SerializeField] private GameObject _ChapterButtonGroupPrefab;
+    [SerializeField] private GameObject _ChapterButtonHolder;
+    [SerializeField] private GameObject _OverlayForChapterGroup;
     // UI element for displaying one page of content
     [SerializeField] private TextMeshProUGUI _ContentPageHeader;
     [SerializeField] private Image _ContentPageImage;
@@ -21,9 +23,9 @@ public class ResearchLabManager : MonoBehaviour
     [SerializeField] private ChapterButton[] _ChapterButtons;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    [SerializeField] private ContentChapterSO[] _BasicBioChapters;
-    [SerializeField] private ContentChapterSO[] _GeneticAlgoChapters;
-    [SerializeField] private ContentChapterSO[] _KnapsackChapters;
+    [SerializeField] private ContentChapterGroupSO[] _BasicBioChapters;
+    [SerializeField] private ContentChapterGroupSO[] _GeneticAlgoChapters;
+    [SerializeField] private ContentChapterGroupSO[] _KnapsackChapters;
     private ContentChapterSO _CurrentChapterSO;
     private int _CurrentPage;
     private int _CurrentTab;
@@ -83,35 +85,73 @@ public class ResearchLabManager : MonoBehaviour
     }
 
     // Set current tab
-    public void SetCurrentTab(int newTab)
+    public void SetCurrentTab(int newTab=-1)
     {
-        _CurrentTab = newTab;
+        _ChapterButtonHolder.SetActive(true);
+        _OverlayForChapterGroup.SetActive(false);
+        if (newTab >= 0)
+        {
+            _CurrentTab = newTab;
+        }        
         _SetTabButtons();
         // Destory all previous child object
-        foreach (Transform child in _ChapterButtonHolder)
+        foreach (Transform child in _ChapterButtonHolder.transform)
         {
             Destroy(child.gameObject);
         }
         // Change current ChapterButtons to the corresponding chapters in the tab
-        ContentChapterSO[] currentChapters = _BasicBioChapters;
+        ContentChapterGroupSO[] currentChapterGroup = _BasicBioChapters;
         if (_CurrentTab == 1)
         {
-            currentChapters = _GeneticAlgoChapters;
+            currentChapterGroup = _GeneticAlgoChapters;
         }
         else if (_CurrentTab == 2)
         {
-            currentChapters = _KnapsackChapters;
+            currentChapterGroup = _KnapsackChapters;
         }
         // Spawn all chapter button
         bool firstButtonInvoked = false;
-        foreach (ContentChapterSO contentChapter in currentChapters)
+        foreach (ContentChapterGroupSO contentChapterGroup in currentChapterGroup)
         {
-            GameObject newChapterButton = Instantiate(_ChapterButtonPrefab, _ChapterButtonHolder);
+            // If there is only one chapter in the group, spawn the content chapter button
+            if (contentChapterGroup.ContentChapters.Length == 1)
+            {
+                GameObject newChapterButton = Instantiate(_ChapterButtonPrefab, _ChapterButtonHolder.transform);
+                newChapterButton.GetComponent<ChapterButton>().SetChapter(contentChapterGroup.ContentChapters[0]);
+                // Trigger the onClick of first new created button
+                // Don't use GetComponentInChildren<ChapterButton>() because the destroyed objects are not immediately destroyed
+                // They just be marked to be destroyed and Unity actually destroy them after this SetCurrentTab() end
+                // So if we use said method it will trigger the first button in the previous tab instead
+                if (!firstButtonInvoked)
+                {
+                    newChapterButton.GetComponent<ChapterButton>().GetComponent<Button>().onClick.Invoke();
+                    firstButtonInvoked = true;
+                }
+            }
+            // If there is more than one chapter in the group, spawn the content chapter group button instead
+            else
+            {
+                GameObject newChapterGroupButton = Instantiate(_ChapterButtonGroupPrefab, _ChapterButtonHolder.transform);
+                newChapterGroupButton.GetComponent<ChapterGroupButton>().SetChapterGroup(contentChapterGroup);
+            }
+        }
+    }
+
+    public void ClickChapterGroup(ContentChapterGroupSO clickedGroup)
+    {
+        _ChapterButtonHolder.SetActive(false);
+        _OverlayForChapterGroup.SetActive(true);
+        // Destory all previous child object
+        foreach (Transform child in _OverlayForChapterGroup.GetComponentsInChildren<Transform>()[1].transform)
+        {
+            Destroy(child.gameObject);
+        }
+        // Spawn all chapter button
+        bool firstButtonInvoked = false;
+        foreach (ContentChapterSO contentChapter in clickedGroup.ContentChapters)
+        {
+            GameObject newChapterButton = Instantiate(_ChapterButtonPrefab, _OverlayForChapterGroup.GetComponentsInChildren<Transform>()[1].transform);
             newChapterButton.GetComponent<ChapterButton>().SetChapter(contentChapter);
-            // Trigger the onClick of first new created button
-            // Don't use GetComponentInChildren<ChapterButton>() because the destroyed objects are not immediately destroyed
-            // They just be marked to be destroyed and Unity actually destroy them after this SetCurrentTab() end
-            // So if we use said method it will trigger the first button in the previous tab instead
             if (!firstButtonInvoked)
             {
                 newChapterButton.GetComponent<ChapterButton>().GetComponent<Button>().onClick.Invoke();
@@ -139,7 +179,7 @@ public class ResearchLabManager : MonoBehaviour
     // Deselect all chapter buttons
     public void DeselectChapterButtons()
     {
-        _ChapterButtons = _ChapterButtonHolder.GetComponentsInChildren<ChapterButton>();
+        _ChapterButtons = GetComponentsInChildren<ChapterButton>();
         foreach (ChapterButton chapterButton in _ChapterButtons)
         {
             chapterButton.SetIsSelected(false);
