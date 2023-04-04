@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
+  m_Name: 08
+  m_EditorClassIdentifier: 
+  _Header: Crossover
+  _Image: {fileID: 21300000, guid: 133ed5af490d73e418691884388f304e, type: 3}
+  _Description: Crossover is the process where a pair of parent chromosomes <b>exchange
+    part of their information</b> to produce a new pair of offspring. The difference
+    between a crossover in the algorithm and a crossover in the living organism is
+    that the algorithm replaces a pair of parents with a pair of produced offspring.
+    So, the size of the population remains the same.
