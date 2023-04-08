@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  _Sentences:
+  - Speaker: 1
+    SentenceContent: Hello~
+    Illustration: {fileID: 0}
+  - Speaker: 1
+    SentenceContent: Look closely at this picture.
+    Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
+  - Speaker: 1
+    SentenceContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+      at nibh fermentum, mattis enim ut, tincidunt augue. Nulla eu dolor luctus,
+      suscipit dolor dignissim, ultrices leo. Vivamus at laoreet arcu. Duis convallis
+      leo non nulla maximus facilisis. Nulla pharetra ex vitae justo sollicitudin
+      venenatis. Phasellus tempor ligula eget ante tincidunt, molestie faucibus nisl
+      laoreet. Integer accumsan eu eros in mollis. Vivamus quis porta mauris, eu
+      rutrum est. Aenean tincidunt vel massa in vestibulum.
+    Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
+  - Speaker: 1
+    SentenceContent: Got it?
+    Illustration: {fileID: 0}
+  - Speaker: 0
+    SentenceContent: What the...
+    Illustration: {fileID: 0}
+  - Speaker: 2
+    SentenceContent: Hee Hee
+    Illustration: {fileID: 0}
