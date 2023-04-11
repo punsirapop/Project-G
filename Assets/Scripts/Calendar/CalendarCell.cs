@@ -26,6 +26,8 @@ public class CalendarCell : MonoBehaviour
     {
         MyDate = d;
         _DateDisplay.text = MyDate.day.ToString();
+        _Indicators[0].SetActive(false);
+        _Indicators[2].SetActive(false);
         switch (MyDate.CompareDate(PlayerManager.CurrentDate))
         {
             case < 0:

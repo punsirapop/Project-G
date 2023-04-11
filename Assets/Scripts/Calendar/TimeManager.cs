@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Pool;
 
 public class TimeManager : MonoBehaviour
 {
@@ -88,6 +89,8 @@ public class TimeManager : MonoBehaviour
 
     public static event Action<Date> OnChangeDate;
 
+    ObjectPool<GameObject> _Pool;
+    Date _MyDate;
     Date _SkipDate;
 
     // [SerializeField] TextMeshProUGUI _SkipDayDis;
@@ -96,24 +99,52 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] Transform _CellHolder;
     [SerializeField] GameObject _CellPrefab;
-    [SerializeField] GameObject[] _Buttons;
+    [SerializeField] GameObject[] _SkipButtons;
+    [SerializeField] GameObject[] _MonthButtons;
     [SerializeField] TextMeshProUGUI _SkipLabel;
+    [SerializeField] TextMeshProUGUI[] _DateLabel;
 
     private void Awake()
     {
         ResetSkip();
         ResetDateSelection();
 
-        LoadCells(PlayerManager.CurrentDate);
+        _MyDate = PlayerManager.CurrentDate.DupeDate();
+
+        _DateLabel[0].text = _MyDate.month.ToString();
+        _DateLabel[1].text = _MyDate.year.ToString();
+
+        _Pool = new ObjectPool<GameObject>(
+            () => Instantiate(_CellPrefab, _CellHolder),
+            mech =>
+            {
+                mech.SetActive(true);
+                mech.transform.SetAsLastSibling();
+            },
+            mech =>
+            {
+                mech.SetActive(false);
+            },
+            mech => Destroy(mech),
+            false, 28, 28
+            );
+
+        _MonthButtons[0].SetActive(_MyDate.month > 1);
+        _MonthButtons[1].SetActive(_MyDate.month < 12);
+        LoadCells(_MyDate);
     }
 
     private void LoadCells(Date d)
     {
+        foreach (Transform item in _CellHolder)
+        {
+            _Pool.Release(item.gameObject);
+        }
         for (int i = 1; i < 29; i++)
         {
             Date date = d.DupeDate();
             date.day = i;
-            Instantiate(_CellPrefab, _CellHolder).GetComponent<CalendarCell>().SetCell(date);
+            _Pool.Get().GetComponent<CalendarCell>().SetCell(date);
         }
     }
 
@@ -125,29 +156,45 @@ public class TimeManager : MonoBehaviour
         // _SkipDayAdjustors[1].interactable = _SkipDay > 1;
     }
 
+    public void AdjustMonth(bool fwd)
+    {
+        _MyDate.AddMonth(fwd ? 1 : -1);
+        _DateLabel[0].text = _MyDate.month.ToString();
+        LoadCells(_MyDate);
+        _MonthButtons[0].SetActive(_MyDate.month > 1);
+        _MonthButtons[1].SetActive(_MyDate.month < 12);
+    }
+
     public void ChangeDateSelection(Date d)
     {
-        foreach (var item in _Buttons)
+        foreach (var item in _SkipButtons)
         {
             item.SetActive(false);
         }
         if (d.CompareDate(PlayerManager.CurrentDate) < 1)
         {
-            _Buttons[0].SetActive(true);
+            _SkipButtons[0].SetActive(true);
             ResetSkip();
         }
         else
         {
-            _Buttons[1].SetActive(true);
+            _SkipButtons[1].SetActive(true);
             int i = d.CompareDate(PlayerManager.CurrentDate);
             _SkipLabel.text = String.Join(" ", "Skipping", i, (i > 1) ? "days" : "day");
             _SkipDate = d.DupeDate();
         }
     }
 
+    public void ResetCalendar()
+    {
+        _MyDate = PlayerManager.CurrentDate.DupeDate();
+        LoadCells(_MyDate);
+    }
+
     public void ResetDateSelection()
     {
         CalendarCell.SelectedDate = default(Date);
+        ChangeDateSelection(CalendarCell.SelectedDate);
     }
 
     public void ResetSkip()
