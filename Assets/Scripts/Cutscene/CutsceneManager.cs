@@ -17,7 +17,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private Image _IllustrationImage;
     // Variable related to dialogue data
     [SerializeField] private DialogueSO _CurrentDialogueSO;
-    private DialogueSO.Sentence _CurrentSentence => _CurrentDialogueSO.Sentences[_CurrentSentenceIndex];
+    private DialogueElement.Sentence _CurrentSentence => _CurrentDialogueSO.Elements[_CurrentSentenceIndex].SentenceData;
     private int _CurrentSentenceIndex;
 
     void Start()
@@ -42,13 +42,13 @@ public class CutsceneManager : MonoBehaviour
             _IllustrationImage.gameObject.SetActive(false);
         }
         // Set sprite, name, and color of speaker
-        DialogueSO.Speaker speaker = _CurrentSentence.Speaker;
-        _CharacterImage.color = (speaker == DialogueSO.Speaker.Player) ? Color.gray : Color.white;
-        if (speaker == DialogueSO.Speaker.NPCNormalFace)
+        DialogueElement.Speaker speaker = _CurrentSentence.Speaker;
+        _CharacterImage.color = (speaker == DialogueElement.Speaker.Player) ? Color.gray : Color.white;
+        if (speaker == DialogueElement.Speaker.NPCNormalFace)
         {
             _CharacterImage.sprite = _CharacterNormalFace;
         }
-        else if (speaker == DialogueSO.Speaker.NPCExpressionless)
+        else if (speaker == DialogueElement.Speaker.NPCExpressionless)
         {
             _CharacterImage.sprite = _CharacterExpressionless;
         }
@@ -68,7 +68,7 @@ public class CutsceneManager : MonoBehaviour
         }
         // Move on next sentence
         _CurrentSentenceIndex++;
-        if (_CurrentSentenceIndex < _CurrentDialogueSO.Sentences.Length)
+        if (_CurrentSentenceIndex < _CurrentDialogueSO.Elements.Length)
         {
             DisplaySentence();
         }
