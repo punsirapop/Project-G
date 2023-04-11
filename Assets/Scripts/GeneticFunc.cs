@@ -61,6 +61,24 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // roulette
                 case 2:
+                    Dictionary<float, List<dynamic>> fvNew = fv.GroupBy(kv => kv.Value)
+                        .ToDictionary(g => g.Key, g => g.Select(kv => kv.Key).ToList());
+                    List<float> f = new List<float>();
+                    foreach (var item in fvNew)
+                    {
+                        f.Add(item.Key * item.Value.Count);
+                    }
+                    float r3 = Random.Range(0, f.Sum());
+                    int index = 0;
+                    float u = f[index];
+                    while (u < r3)
+                    {
+                        index++;
+                        u += f[index];
+                    }
+                    int r4 = Random.Range(0, fvNew.ElementAt(index).Value.Count);
+                    result.Add(fvNew.ElementAt(index).Value[r4]);
+                    /*
                     float r3 = Random.Range(0, fv.Values.Sum());
                     int index = 0;
                     float u = fv.First().Value;
@@ -70,6 +88,7 @@ public class GeneticFunc : MonoBehaviour
                         u += fv.ElementAt(index).Value;
                     }
                     result.Add(fv.ElementAt(index).Key);
+                    */
                     break;
                 // rank-based
                 case 3:
@@ -79,15 +98,15 @@ public class GeneticFunc : MonoBehaviour
                     {
                         tmp2[tmp2.ElementAt(i).Key] = i;
                     }
-                    float r4 = Random.Range(0, fv.Values.Sum());
+                    float r5 = Random.Range(0, tmp2.Values.Sum());
                     int index2 = 0;
-                    float u2 = fv.First().Value;
-                    while (u2 < r4)
+                    float u2 = 0;
+                    while (u2 < r5)
                     {
                         index2++;
-                        u2 += fv.ElementAt(index2).Value;
+                        u2 += tmp2.ElementAt(index2).Key;
                     }
-                    result.Add(fv.ElementAt(index2).Key);
+                    result.Add(tmp2.ElementAt(index2).Key);
                     break;
             }
         }

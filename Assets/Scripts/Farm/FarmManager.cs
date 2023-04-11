@@ -27,7 +27,6 @@ public class FarmManager : FarmMngFunc
     [SerializeField] GameObject preset;
 
     // Panels in farm: Fitness, Breed, ChromoList
-    [SerializeField] Button[] _PanelButtons;
     [SerializeField] GameObject[] _Panels;
 
     [SerializeField] GameObject[] statusDisplays;
@@ -53,7 +52,9 @@ public class FarmManager : FarmMngFunc
         _BGRenderer.sprite = PlayerManager.CurrentFarmDatabase.BG;
         _GaugeRenderer.fillAmount = PlayerManager.CurrentFarmDatabase.BreedGuage / 100;
 
+        OpenPanel(0);
         OnChangeStatus(PlayerManager.CurrentFarmDatabase, PlayerManager.CurrentFarmDatabase.Status);
+        OpenPanel(1);
     }
 
     private void OnDestroy()
@@ -63,6 +64,7 @@ public class FarmManager : FarmMngFunc
 
     private void OnChangeStatus(FarmSO f, Status s)
     {
+        Debug.Log("INVOKED FROM FARMMNG");
         if (f == PlayerManager.CurrentFarmDatabase)
         {
             foreach (var item in statusDisplays) item.SetActive(false);
@@ -78,7 +80,7 @@ public class FarmManager : FarmMngFunc
                 case Status.BREEDING:
                     // Deactivate interactables
                     breedingGenDisplay.text = "GEN: " + PlayerManager.CurrentFarmDatabase.BreedGen + "/" +
-                        PlayerManager.CurrentFarmDatabase.BreedInfo.BreedGen;
+                        PlayerManager.CurrentFarmDatabase.BreedPref.BreedGen;
                     break;
                 default:
                     break;

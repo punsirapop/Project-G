@@ -15,19 +15,30 @@ public class FitnessMenu : MonoBehaviour
     // head, body-line, body-color, acc
     // [SerializeField] public Image[] myRenderer;
 
-    FarmSO myFarm => PlayerManager.CurrentFarmDatabase;
+    protected virtual FarmSO myFarm => PlayerManager.CurrentFarmDatabase;
     // Color[] bodyColor = {Color.red, Color.green, Color.blue, Color.white, Color.black};
     // Color inactive = new Color(.5f, .5f, .5f, .5f);
 
     private void Awake()
     {
-        FarmSO.OnFarmChangeStatus += OnChangeStatus;
-        OnChangeStatus(myFarm, myFarm.Status);
+        // FarmSO.OnFarmChangeStatus += OnChangeStatus;
+        // OnChangeStatus(myFarm, myFarm.Status);
+        SetFitnessAdjustor();
+    }
+
+    private void OnEnable()
+    {
+        SetFitnessAdjustor();
+    }
+
+    private void OnDisable()
+    {
+        myFarm.SetFitnessPref(GetFitnessPref());
     }
 
     private void OnDestroy()
     {
-        FarmSO.OnFarmChangeStatus -= OnChangeStatus;
+        // FarmSO.OnFarmChangeStatus -= OnChangeStatus;
     }
 
     private void Update()
@@ -36,6 +47,7 @@ public class FitnessMenu : MonoBehaviour
             Selectors.Where(x => x.gameObject.activeSelf).Count() < 5 : false;
     }
 
+    /*
     private void OnChangeStatus(FarmSO f, Status s)
     {
         if (f == myFarm)
@@ -56,6 +68,7 @@ public class FitnessMenu : MonoBehaviour
             }
         }
     }
+    */
 
     private void SetFitnessAdjustor()
     {
@@ -63,7 +76,8 @@ public class FitnessMenu : MonoBehaviour
         {
             item.Deactivate();
         }
-        foreach (var item in myFarm.BreedInfo.CurrentPref.Zip(Selectors, (a, b) => Tuple.Create(a, b)))
+        var Temp = (myFarm.Status == Status.BREEDING) ? myFarm.BreedInfo.CurrentPref : myFarm.FitnessPref;
+        foreach (var item in Temp.Zip(Selectors, (a, b) => Tuple.Create(a, b)))
         {
             OpenSelector();
             item.Item2.SetValue(item.Item1);
@@ -76,7 +90,7 @@ public class FitnessMenu : MonoBehaviour
      * Output
      *      list of preferred values (default = -1)
      */
-    public List<Tuple<Properties, int>> CurrentPref()
+    public List<Tuple<Properties, int>> GetFitnessPref()
     {
         List<Tuple<Properties, int>> a = new List<Tuple<Properties, int>>();
         foreach (var item in Selectors)
@@ -96,7 +110,7 @@ public class FitnessMenu : MonoBehaviour
         Dictionary<dynamic, float> dict = new Dictionary<dynamic, float>();
         foreach (MechChromoSO c in myFarm.MechChromos)
         {
-            dict.Add(c, c.GetFitness(CurrentPref()));
+            dict.Add(c, c.GetFitness(GetFitnessPref()));
         }
         return dict;
     }

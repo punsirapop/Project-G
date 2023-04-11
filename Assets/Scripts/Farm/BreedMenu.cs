@@ -49,12 +49,28 @@ public class BreedMenu : MonoBehaviour
         FarmSO.OnFarmChangeStatus += OnChangeStatus;
         // elites = new List<MechChromoSO>();
         breedGen = 1;
+        if (myFarm.BreedPref.Equals(default(BreedPref)))
+        myFarm.SetBreedPref(new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
+            (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen));
         OnChangeStatus(myFarm, myFarm.Status);
+    }
+
+    private void OnDestroy()
+    {
+        FarmSO.OnFarmChangeStatus -= OnChangeStatus;
+    }
+
+    private void OnEnable()
+    {
+        SetDisplay();
     }
 
     private void OnDisable()
     {
-        FarmSO.OnFarmChangeStatus -= OnChangeStatus;
+        BreedPref b = new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
+            (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen);
+        b.Print();
+        myFarm.SetBreedPref(b);
     }
 
     private void Update()
@@ -65,7 +81,7 @@ public class BreedMenu : MonoBehaviour
         KTitle.gameObject.SetActive(TypeParentSelect.value == 1);
         KHolder.gameObject.SetActive(TypeParentSelect.value == 1);
         KDisplay.text = KSelect.value.ToString();
-        KSelect.minValue = 1;
+        KSelect.minValue = (myFarm.MechChromos.Count() > 0) ? 1 : 0;
         KSelect.maxValue = myFarm.MechChromos.Count() / 2;
         GenerationDisplay.text = breedGen.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
@@ -81,6 +97,7 @@ public class BreedMenu : MonoBehaviour
 
     private void OnChangeStatus(FarmSO f, Status s)
     {
+        Debug.Log("INVOKED FROM BREEDMENU");
         if (f == myFarm)
         {
             // Change behavior depending on status
@@ -105,7 +122,6 @@ public class BreedMenu : MonoBehaviour
                     MutationSelect.interactable = false;
                     foreach (var item in GenerationAdjustors) item.interactable = false;
                     // BreedBtn.interactable = false;
-                    SetDisplay();
                     break;
                 default:
                     break;
@@ -115,12 +131,14 @@ public class BreedMenu : MonoBehaviour
 
     private void SetDisplay()
     {
-        TypeParentSelect.value = myFarm.BreedInfo.TypeParentSelect;
-        TypeCrossover.value = myFarm.BreedInfo.TypeCrossover;
-        KSelect.value = myFarm.BreedInfo.KSelect;
-        ElitismSelect.value = myFarm.BreedInfo.ElitismRate;
-        MutationSelect.value = myFarm.BreedInfo.MutationRate;
-        breedGen = myFarm.BreedInfo.BreedGen;
+        Debug.Log("Setting display");
+        myFarm.BreedPref.Print();
+        TypeParentSelect.value = myFarm.BreedPref.TypeParentSelect;
+        TypeCrossover.value = myFarm.BreedPref.TypeCrossover;
+        KSelect.value = myFarm.BreedPref.KSelect;
+        ElitismSelect.value = myFarm.BreedPref.ElitismRate;
+        MutationSelect.value = myFarm.BreedPref.MutationRate;
+        breedGen = myFarm.BreedPref.BreedGen;
     }
 
     public void AdjustGen(int i)
@@ -132,21 +150,19 @@ public class BreedMenu : MonoBehaviour
     public void SetBreedRequest()
     {
         Dictionary<dynamic, float> fv = fitnessMenu.GetFitnessDict();
-        BreedInfo breedInfo = new BreedInfo(myFarm, breedGen, fitnessMenu.CurrentPref(), (int)ElitismSelect.value,
+        BreedPref b = new BreedPref(breedGen, (int)ElitismSelect.value,
             TypeParentSelect.value, (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value);
+        b.Print();
+        myFarm.SetBreedPref(b);
+        myFarm.BreedPref.Print();
+        BreedInfo breedInfo = new BreedInfo(myFarm, fitnessMenu.GetFitnessPref());
         myFarm.SetBreedRequest(breedInfo);
         Debug.Log("Setting breed req for " + breedInfo.MyFarm.Name);
         myFarm.SetStatus(Status.BREEDING);
     }
 
-    [Serializable] public struct BreedInfo
+    public struct BreedPref
     {
-        FarmSO myFarm;
-        public FarmSO MyFarm => myFarm;
-        int breedGen;
-        public int BreedGen => breedGen;
-        List<Tuple<Properties, int>> currentPref;
-        public List<Tuple<Properties, int>> CurrentPref => currentPref;
         int elitismRate;
         public int ElitismRate => elitismRate;
         int typeParentSelect;
@@ -157,18 +173,48 @@ public class BreedMenu : MonoBehaviour
         public int TypeCrossover => typeCrossover;
         int mutationRate;
         public int MutationRate => mutationRate;
+        int breedGen;
+        public int BreedGen => breedGen;
 
-        public BreedInfo (FarmSO MyFarm, int BreedGen, List<Tuple<Properties, int>> CurrentPref, int ElitismRate,
-            int TypeParentSelect, int KSelect, int TypeCrossover, int MutationRate)
+        public BreedPref(int ElitismRate, int TypeParentSelect, int KSelect,
+            int TypeCrossover,int MutationRate, int BreedGen)
         {
-            myFarm = MyFarm;
-            breedGen = BreedGen;
-            currentPref = CurrentPref;
             elitismRate = ElitismRate;
             typeParentSelect = TypeParentSelect;
             kSelect = KSelect;
             typeCrossover = TypeCrossover;
             mutationRate = MutationRate;
+            breedGen = BreedGen;
+        }
+
+        public BreedPref Copy()
+        {
+            return new BreedPref(ElitismRate, TypeParentSelect, KSelect,
+                TypeCrossover, MutationRate, BreedGen);
+        }
+
+        public void Print()
+        {
+            Debug.Log("--- My breed pref ---");
+            Debug.Log("elitismRate = " + elitismRate);
+            Debug.Log("parent = " + typeParentSelect);
+            Debug.Log("crossover = " + typeCrossover);
+            Debug.Log("mutation = " + mutationRate);
+            Debug.Log("breedGen = " + breedGen);
+        }
+    }
+
+    public struct BreedInfo
+    {
+        FarmSO myFarm;
+        public FarmSO MyFarm => myFarm;
+        List<Tuple<Properties, int>> currentPref;
+        public List<Tuple<Properties, int>> CurrentPref => currentPref;
+
+        public BreedInfo (FarmSO MyFarm, List<Tuple<Properties, int>> CurrentPref)
+        {
+            myFarm = MyFarm;
+            currentPref = CurrentPref;
         }
 
         /*
@@ -191,7 +237,7 @@ public class BreedMenu : MonoBehaviour
             }
 
             // ------- get elites -------
-            for (int i = 0; i < Mathf.RoundToInt(fv.Count * elitismRate / 100); i++)
+            for (int i = 0; i < Mathf.RoundToInt(fv.Count * myFarm.BreedPref.ElitismRate / 100); i++)
             {
                 elites.Add(fv.ElementAt(i).Key);
             }
@@ -203,7 +249,7 @@ public class BreedMenu : MonoBehaviour
 
             // ------- select parents according to chosen type -------
             List<dynamic> parents = new List<dynamic>
-                (GeneticFunc.Instance.SelectParent(fv, elites.Count, typeParentSelect, kSelect));
+                (GeneticFunc.Instance.SelectParent(fv, elites.Count, MyFarm.BreedPref.TypeParentSelect, MyFarm.BreedPref.KSelect));
             // Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------
@@ -217,7 +263,7 @@ public class BreedMenu : MonoBehaviour
             // crossover each pair ex: 0-1, 2-3, ...
             for (int i = 0; i < parentsEncoded.Count - (parentsEncoded.Count % 2); i += 2)
             {
-                GeneticFunc.Instance.Crossover(parentsEncoded[i], parentsEncoded[i + 1], typeCrossover);
+                GeneticFunc.Instance.Crossover(parentsEncoded[i], parentsEncoded[i + 1], MyFarm.BreedPref.TypeCrossover);
                 // Debug.Log(string.Join("-", parentsEncoded[i]));
             }
             // Debug.Log("Finished CrossingOver " + parentsEncoded.Count);
@@ -225,7 +271,7 @@ public class BreedMenu : MonoBehaviour
             // ------- mutate -------
             for (int i = 0; i < parents.Count; i++)
             {
-                if (UnityEngine.Random.Range(0, 100) < mutationRate)
+                if (UnityEngine.Random.Range(0, 100) < MyFarm.BreedPref.MutationRate)
                     GeneticFunc.Instance.Mutate(parentsEncoded[i], parents[i].GetMutateCap());
             }
             

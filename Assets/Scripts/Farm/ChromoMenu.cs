@@ -27,18 +27,21 @@ public class ChromoMenu : MonoBehaviour
 
     GameObject selecting;
 
-    private void Awake()
+    protected virtual FarmSO _MyFarm => PlayerManager.CurrentFarmDatabase;
+
+    protected virtual void Awake()
     {
         FarmManager.OnEditChromo += OnValueChange;
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         FarmManager.OnEditChromo -= OnValueChange;
     }
 
     private void OnEnable()
     {
+        detailOverlay.gameObject.SetActive(false);
         OnValueChange();
     }
 
@@ -56,7 +59,7 @@ public class ChromoMenu : MonoBehaviour
             Destroy(item.gameObject);
         }
         // ------- get fitness -------
-        if (PlayerManager.CurrentFarmDatabase.MechChromos.Count > 0)
+        if (_MyFarm.MechChromos.Count > 0)
         {
             Dictionary<dynamic, float> fvDict = fitnessMenu.GetFitnessDict();
             List<OrderFormat> fv = new List<OrderFormat>();

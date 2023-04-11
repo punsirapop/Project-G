@@ -380,11 +380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0005f8492a2e9742be2ed28be51bf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savedFarms:
-  - {fileID: 11400000, guid: 232a7fc07eea12e45beaf2ed08b59732, type: 2}
-  - {fileID: 11400000, guid: 7a7935f7e8b0ca64ab5871209d34e618, type: 2}
-  - {fileID: 11400000, guid: 9d03b3700ef6d9847a5d243716004cd8, type: 2}
-  - {fileID: 11400000, guid: 4563b307ae462c54b9fb0437d9ad15df, type: 2}
   loadTargets:
   - {fileID: 11400000, guid: 876e4b200a9aa874aa5e1be139e3a758, type: 2}
   - {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
@@ -741,7 +736,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 882581370}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

@@ -32,12 +32,13 @@ public class FitnessSelector : MonoBehaviour
 
     FarmSO myFarm => PlayerManager.CurrentFarmDatabase;
 
-    private void OnEnable()
+    private void Awake()
     {
         FarmSO.OnFarmChangeStatus += OnChangeStatus;
         OnChangeStatus(myFarm, myFarm.Status);
     }
-    private void OnDisable()
+
+    private void OnDestroy()
     {
         FarmSO.OnFarmChangeStatus -= OnChangeStatus;
     }
@@ -45,19 +46,19 @@ public class FitnessSelector : MonoBehaviour
     private void Update()
     {
         // set type and val to be used
-        Type = (FitnessMenu.Properties)Selector.value - 1;
+        Type = (Properties)Selector.value - 1;
         switch (Type)
         {
-            case FitnessMenu.Properties.Head:
+            case Properties.Head:
                 Value = (int)HeadAdjustor.value;
                 break;
-            case FitnessMenu.Properties.Body:
+            case Properties.Body:
                 Value = BodyAdjustor.value;
                 break;
-            case FitnessMenu.Properties.Acc:
+            case Properties.Acc:
                 Value = (int)AccAdjustor.value;
                 break;
-            case FitnessMenu.Properties.Com:
+            case Properties.Com:
                 Value = CombatAdjustor.value;
                 break;
             default:
@@ -77,6 +78,7 @@ public class FitnessSelector : MonoBehaviour
 
     private void OnChangeStatus(FarmSO f, Status s)
     {
+        Debug.Log("INVOKED FROM FITNESSMENU");
         if (f == myFarm)
         {
             // Change behavior depending on status
@@ -163,16 +165,16 @@ public class FitnessSelector : MonoBehaviour
         Selector.value = (int)Type + 1;
         switch (Type)
         {
-            case FitnessMenu.Properties.Head:
+            case Properties.Head:
                 HeadAdjustor.value = Value;
                 break;
-            case FitnessMenu.Properties.Body:
+            case Properties.Body:
                 BodyAdjustor.value = Value;
                 break;
-            case FitnessMenu.Properties.Acc:
+            case Properties.Acc:
                 AccAdjustor.value = Value;
                 break;
-            case FitnessMenu.Properties.Com:
+            case Properties.Com:
                 CombatAdjustor.value = Value;
                 break;
             default:

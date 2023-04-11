@@ -13,10 +13,14 @@ public class FarmMngFunc : MonoBehaviour
     // Add new random chromosome to the current space
     public void AddChromo(FarmSO f)
     {
-        MechChromoSO c = (MechChromoSO)ScriptableObject.CreateInstance("MechChromoSO");
-        f.AddChromo(c);
-        // AddMech(c);
-        OnEditChromo?.Invoke();
+        for (int i = 0; i < 10; i++)
+        {
+            MechChromoSO c = (MechChromoSO)ScriptableObject.CreateInstance("MechChromoSO");
+            f.AddChromo(c);
+            // AddMech(c);
+            OnEditChromo?.Invoke();
+
+        }
     }
 
     // Delete a chromosome from the current space

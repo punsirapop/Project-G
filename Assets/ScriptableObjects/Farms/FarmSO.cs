@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static FitnessMenu;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Farm")]
 public class FarmSO : ScriptableObject
@@ -19,6 +20,12 @@ public class FarmSO : ScriptableObject
     public Status Status => _Status;
     private int _Condition;
     public int Condition => _Condition;
+
+    // Prev Farm Display
+    BreedMenu.BreedPref _BreedPref;
+    public BreedMenu.BreedPref BreedPref => _BreedPref;
+    List<Tuple<Properties, int>> _FitnessPref;
+    public List<Tuple<Properties, int>> FitnessPref => _FitnessPref;
 
     // Breeding Request
     BreedMenu.BreedInfo _BreedInfo;
@@ -70,6 +77,8 @@ public class FarmSO : ScriptableObject
         _GuagePerDay = 100;
         _BreedGen = 0;
         _DaysBeforeBreak = 0;
+        _BreedPref = new BreedMenu.BreedPref();
+        _FitnessPref = new List<Tuple<Properties, int>>();
         _MechChromos = new List<MechChromoSO>();
     }
 
@@ -110,13 +119,24 @@ public class FarmSO : ScriptableObject
     public void SetStatus(Status s)
     {
         _Status = s;
+        Debug.Log("INVOKERR");
         OnFarmChangeStatus?.Invoke(this, Status);
+    }
+
+    public void SetFitnessPref(List<Tuple<Properties, int>> p)
+    {
+        _FitnessPref = p;
+    }
+
+    public void SetBreedPref(BreedMenu.BreedPref b)
+    {
+        _BreedPref = b.Copy();
     }
 
     public void SetBreedRequest(BreedMenu.BreedInfo b)
     {
         TimeManager.Date targetDate = new TimeManager.Date();
-        targetDate.AddDay(PlayerManager.CurrentDate.ToDay() + b.BreedGen);
+        targetDate.AddDay(PlayerManager.CurrentDate.ToDay() + b.MyFarm.BreedPref.BreedGen);
         _BreedInfo = b;
     }
 
@@ -125,7 +145,7 @@ public class FarmSO : ScriptableObject
         _BreedGuage += GuagePerDay * Condition / 4;
         Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
 
-        while (BreedGuage >= 100 && BreedInfo.BreedGen > 0)
+        while (BreedGuage >= 100 && BreedInfo.MyFarm.BreedPref.BreedGen > 0)
         {
             BreedInfo.BreedMe();
             Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
@@ -137,9 +157,10 @@ public class FarmSO : ScriptableObject
 
         _DaysBeforeBreak++;
         BreakingBad();
-        if (BreedGen >= BreedInfo.BreedGen)
+        if (BreedGen >= BreedInfo.MyFarm.BreedPref.BreedGen)
         {
             SetBreedRequest(new BreedMenu.BreedInfo());
+            _BreedGen = 0;
             _BreedGuage = 0;
             SetStatus(Status.IDLE);
         }
@@ -158,7 +179,7 @@ public class FarmSO : ScriptableObject
 
     public void Fixed()
     {
-        _Condition++;
+        if (_Condition < 4) _Condition++;
         // SetStatus(BreedInfo.Equals(default(BreedMenu.BreedInfo)) ? Status.IDLE : Status.BREEDING);
     }
 }

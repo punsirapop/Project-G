@@ -14,6 +14,7 @@ public class ChromoDetail : PlayerManager
     // List of textboxes
     [SerializeField] TextMeshProUGUI[] Displays;
     [SerializeField] MechCanvasDisplay Icon;
+    [SerializeField] Button SwitchButton;
     // Delete button
     // ***** For debug purposes *****
     // [SerializeField] Button DeleteButton;

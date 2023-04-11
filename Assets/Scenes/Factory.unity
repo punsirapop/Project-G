@@ -1831,7 +1831,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 926516436}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -7053,11 +7053,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efa8985eecd0dc478ab36215dac3f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FactoriesData:
-  - {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
-  - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
-  - {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
-  - {fileID: 11400000, guid: c9c6afc64fdbb6f42bb0d2bbfb96e979, type: 2}
   _FloorRenderer: {fileID: 651084348}
   _ConveyorRenderer: {fileID: 1690197427}
   _BorderRenderer: {fileID: 1496658122}
