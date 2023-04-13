@@ -11,6 +11,8 @@ public class DialogueElement
         Player,
         NPCNormalFace,
         NPCExpressionless,
+        NPCHappy,
+        NPCNervous
     }
 
     // Class for the individual sentence
@@ -27,7 +29,7 @@ public class DialogueElement
     public class Choice
     {
         [TextArea(1, 5)] public string SentenceContent;
-        public Sentence[] ReponseSentences;
+        public Sentence[] ReponseData;
     }
 
     public bool IsChoices;

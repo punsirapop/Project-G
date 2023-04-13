@@ -16,25 +16,100 @@ MonoBehaviour:
   - IsChoices: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Hello
+      SentenceContent: Hello!
       Illustration: {fileID: 0}
+    Choices: []
+  - IsChoices: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: What is this picture?
+      Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices: []
   - IsChoices: 1
     SentenceData:
-      Speaker: 0
-      SentenceContent: CAPYBARA
-      Illustration: {fileID: 0}
+      Speaker: 1
+      SentenceContent: What is this picture?
+      Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices:
-    - SentenceContent: 
-      ReponseSentences:
-      - Speaker: 0
-        SentenceContent: 
+    - SentenceContent: Main Game Page
+      ReponseData:
+      - Speaker: 3
+        SentenceContent: Exactly!
         Illustration: {fileID: 0}
-    - SentenceContent: 
-      ReponseSentences: []
+    - SentenceContent: Capybara?
+      ReponseData:
+      - Speaker: 4
+        SentenceContent: What the...
+        Illustration: {fileID: 0}
+      - Speaker: 0
+        SentenceContent: What?
+        Illustration: {fileID: 0}
+      - Speaker: 2
+        SentenceContent: It's Main Game Page...
+        Illustration: {fileID: 0}
   - IsChoices: 0
     SentenceData:
-      Speaker: 2
-      SentenceContent: capybara?
+      Speaker: 1
+      SentenceContent: Anyway what do you wanna do?
       Illustration: {fileID: 0}
-    Choices: []
+    Choices:
+    - SentenceContent: Main Game Page
+      ReponseData:
+      - Speaker: 3
+        SentenceContent: Exactly!
+        Illustration: {fileID: 0}
+    - SentenceContent: Capybara?
+      ReponseData:
+      - Speaker: 4
+        SentenceContent: What the...
+        Illustration: {fileID: 0}
+      - Speaker: 0
+        SentenceContent: What?
+        Illustration: {fileID: 0}
+      - Speaker: 2
+        SentenceContent: It's Main Game Page...
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    SentenceData:
+      Speaker: 1
+      SentenceContent: Anyway what do you wanna do?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+    - SentenceContent: Sleep
+      ReponseData: []
+    - SentenceContent: Sleep
+      ReponseData: []
+  - IsChoices: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Good Idea!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+    - SentenceContent: Sleep
+      ReponseData: []
+    - SentenceContent: Sleep
+      ReponseData: []
+  - IsChoices: 1
+    SentenceData:
+      Speaker: 0
+      SentenceContent: C U then. Bye!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: See you then. Bye!
+      ReponseData: []
+  - IsChoices: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: Bye~
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+    - SentenceContent: Sleep
+      ReponseData: []
+    - SentenceContent: Sleep
+      ReponseData: []
