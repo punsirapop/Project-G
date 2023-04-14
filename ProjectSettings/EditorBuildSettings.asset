@@ -26,10 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Calendar.unity
     guid: 40c8632dded584f40b704cc7404335a9
-  - enabled: 0
-    path: Assets/Scenes/Habitat.unity
-    guid: 35414f79cbe92a6429a46585ea730b97
   - enabled: 1
     path: Assets/Scenes/Habitat.unity
     guid: 7d5d7f90b0fd82f40acf7b3c8c2a4a0a
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: d1b013c0a7eb17c469e8ef98bbfca0f5
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: 066ecd1690ee3b04280537bbd360f047
   m_configObjects: {}

@@ -150,16 +150,5 @@ public class HMechDisplay : MechCanvasDisplay, IPointerDownHandler,
                 _Indicators[1].SetActive(true);
                 break;
         }
-        /*
-        foreach (var item in _Indicators)
-        {
-            item.SetActive(false);
-        }
-        if (mode > 0)
-        {
-            _Indicators[mode - 1].SetActive(true);
-        }
-        _IsSelected = mode == 1;
-        */
     }
 }

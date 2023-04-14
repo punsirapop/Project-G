@@ -18,7 +18,7 @@ public class MechCanvasDisplay : MonoBehaviour
     [SerializeField] public Image[] myRenderer;
 
     // Set sprites to match chromo
-    public void SetChromo(MechChromoSO c)
+    public virtual void SetChromo(MechChromoSO c)
     {
         MySO = c;
         myRenderer[0].sprite = Resources.Load<Sprite>

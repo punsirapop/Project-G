@@ -12,12 +12,16 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     [SerializeField] Sprite[] _CartImages;
     [SerializeField] HStorageManager[] _Storages;
 
+    int _WhereDidITakeIt;
     float _InitVal;
-    List<MechChromoSO> _CartChromo;
+
+    static List<MechChromoSO> _CartChromo;
+    public static List<MechChromoSO> CartChromo => _CartChromo;
 
     private void Awake()
     {
         _CartChromo = new List<MechChromoSO>();
+        _WhereDidITakeIt = -1;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -28,16 +32,23 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             _CartHandle.sprite = _CartImages[1];
             _CartChromo.AddRange(_Storages[(int)_CartSlider.value].Selected.
                 Select(x => x.GetComponent<MechCanvasDisplay>().MySO));
+            _WhereDidITakeIt = (int)_CartSlider.value;
+            /*
             foreach (var item in _CartChromo)
             {
                 PlayerManager.FarmDatabase[(int)_CartSlider.value].DelChromo(item);
             }
+            */
             _Storages[(int)_CartSlider.value].Selected.Clear();
             _Storages[(int)_CartSlider.value].OnValueChange();
         }
         else if (_CartChromo.Count > 0)
         {
             _CartHandle.sprite = _CartImages[0];
+            foreach (var item in _CartChromo)
+            {
+                PlayerManager.FarmDatabase[_WhereDidITakeIt].DelChromo(item);
+            }
             foreach (var item in _CartChromo)
             {
                 PlayerManager.FarmDatabase[(int)_CartSlider.value].AddChromo(item);
