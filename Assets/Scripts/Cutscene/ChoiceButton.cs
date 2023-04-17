@@ -14,11 +14,7 @@ public class ChoiceButton : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(() =>
         {
             Debug.Log("Choose choice: " + choiceData.SentenceContent);
-            //CutsceneManager.Instance.EndChoices();
-            //CutsceneManager.Instance.DisplayNextElement();
             CutsceneManager.Instance.SelectChoice(choiceData.ReponseData);
-            //CutsceneManager.Instance.DisplayNextChoiceResponse();
-            //CutsceneManager.Instance.DisplayNextElement();
         });
     }
 }

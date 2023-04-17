@@ -110,7 +110,7 @@ public class CutsceneManager : MonoBehaviour
         _IsWaitingChoiceSelect = true;
     }
 
-    // Set the response of the choice
+    // Set the response of the choice to display
     public void SelectChoice(DialogueElement.Sentence[] newChoiceResponse)
     {
         _ChoiceResponses = newChoiceResponse;
@@ -121,6 +121,7 @@ public class CutsceneManager : MonoBehaviour
         DisplayNextChoiceResponse();
     }
 
+    // Display the next sentence in choice' response
     public void DisplayNextChoiceResponse()
     {
         _CurrentChoiceResponseIndex++;
@@ -140,6 +141,7 @@ public class CutsceneManager : MonoBehaviour
         _IsChoiceResponseDisplaying = false;
     }
 
+    // The function to show next dialogue element, triggered when click on dialougue box UI
     public void DisplayNextElement()
     {
         // If the choice is now displayed and the player doesn't select yet, do nothing
@@ -155,7 +157,7 @@ public class CutsceneManager : MonoBehaviour
             DisplayNextChoiceResponse();
             return;
         }
-        // If current dialogue is sentence and not complete yet, complete the sentence
+        // If current dialogue element is sentence and not complete yet, complete the sentence
         if (!CurrentDialogue.IsChoices &&
             _SentenceText.text != CurrentDialogue.SentenceData.SentenceContent)
         {
@@ -167,7 +169,7 @@ public class CutsceneManager : MonoBehaviour
         _CurrentSentenceIndex++;
         if (_CurrentSentenceIndex >= _CurrentDialogueSO.Elements.Length)
         {
-            Debug.Log("End of dialogue, should able to invoke some custom function");
+            Debug.Log("End of dialogue, trigger OnDialogueEnd of DialogueSO.");
             // Keep index within the array to prevent ArrayIndexOuTOfBound in unexpected situation
             _CurrentSentenceIndex = _CurrentDialogueSO.Elements.Length - 1;
             return;
@@ -184,6 +186,4 @@ public class CutsceneManager : MonoBehaviour
             DisplaySentence(CurrentDialogue.SentenceData);
         }
     }
-
-    
 }
