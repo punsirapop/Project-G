@@ -11,15 +11,14 @@ public class FarmMngFunc : MonoBehaviour
     public static event Action OnEditChromo;
 
     // Add new random chromosome to the current space
-    public void AddChromo(FarmSO f)
+    public void AddChromo(FarmSO f, int amount)
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < amount; i++)
         {
             MechChromoSO c = (MechChromoSO)ScriptableObject.CreateInstance("MechChromoSO");
             f.AddChromo(c);
             // AddMech(c);
             OnEditChromo?.Invoke();
-
         }
     }
 

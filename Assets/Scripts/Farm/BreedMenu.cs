@@ -150,8 +150,8 @@ public class BreedMenu : MonoBehaviour
     public void SetBreedRequest()
     {
         Dictionary<dynamic, float> fv = fitnessMenu.GetFitnessDict();
-        BreedPref b = new BreedPref(breedGen, (int)ElitismSelect.value,
-            TypeParentSelect.value, (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value);
+        BreedPref b = new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
+            (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen);
         b.Print();
         myFarm.SetBreedPref(b);
         myFarm.BreedPref.Print();
@@ -195,7 +195,7 @@ public class BreedMenu : MonoBehaviour
 
         public void Print()
         {
-            Debug.Log("--- My breed pref ---");
+            Debug.Log("--------------- My breed pref ---------------");
             Debug.Log("elitismRate = " + elitismRate);
             Debug.Log("parent = " + typeParentSelect);
             Debug.Log("crossover = " + typeCrossover);
@@ -211,10 +211,10 @@ public class BreedMenu : MonoBehaviour
         List<Tuple<Properties, int>> currentPref;
         public List<Tuple<Properties, int>> CurrentPref => currentPref;
 
-        public BreedInfo (FarmSO MyFarm, List<Tuple<Properties, int>> CurrentPref)
+        public BreedInfo (FarmSO ThisFarm, List<Tuple<Properties, int>> ThisCurrentPref)
         {
-            myFarm = MyFarm;
-            currentPref = CurrentPref;
+            myFarm = ThisFarm;
+            currentPref = ThisCurrentPref;
         }
 
         /*
@@ -260,6 +260,7 @@ public class BreedMenu : MonoBehaviour
                 parentsEncoded.Add(c.GetChromosome());
                 // Debug.Log(string.Join("-", parentsEncoded[parentsEncoded.Count-1]));
             }
+
             // crossover each pair ex: 0-1, 2-3, ...
             for (int i = 0; i < parentsEncoded.Count - (parentsEncoded.Count % 2); i += 2)
             {
@@ -274,7 +275,10 @@ public class BreedMenu : MonoBehaviour
                 if (UnityEngine.Random.Range(0, 100) < MyFarm.BreedPref.MutationRate)
                     GeneticFunc.Instance.Mutate(parentsEncoded[i], parents[i].GetMutateCap());
             }
-            
+
+            // Debug.Log("Mechs to add: " + parentsEncoded.Count);
+            // Debug.Log("0 Mechs in farm: " + myFarm.MechChromos.Count);
+
             // ------- clear farm -------
             List<MechChromoSO> deleteMe = new List<MechChromoSO>(myFarm.MechChromos);
             // keep those elites to the next generation
@@ -282,23 +286,25 @@ public class BreedMenu : MonoBehaviour
             {
                 deleteMe.Remove(item);
             }
-            
+
             // clear old population
             foreach (var item in deleteMe)
             {
                 FarmManager.Instance.DelChromo(MyFarm, item);
             }
-            // Debug.Log("Parents Count: " + myFarm.MechChromos.Count);
+            // Debug.Log("1 Mechs in farm: " + myFarm.MechChromos.Count);
 
             // ------- create new chromosomes -------
             List<MechChromoSO> children = new List<MechChromoSO>();
             foreach (var item in parentsEncoded)
             {
-                FarmManager.Instance.AddChromo(MyFarm);
+                FarmManager.Instance.AddChromo(MyFarm, 1);
                 children.Add(myFarm.MechChromos.Last());
                 children.Last().SetChromosome(item);
+
                 // FarmManager.Instance.mechs.Last().GetComponent<MechDisplay>().SetChromo(children.Last());
             }
+            // Debug.Log("2 Mechs in farm: " + myFarm.MechChromos.Count);
 
             // Debug.Log("Children Count: " + children.Count);
         }

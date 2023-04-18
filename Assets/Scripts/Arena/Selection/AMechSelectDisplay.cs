@@ -2,13 +2,18 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class AMechSelectDisplay : MechCanvasDisplay
+public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
 {
     [SerializeField] GameObject[] _Indicators;
     [SerializeField] TextMeshProUGUI[] _Stats;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        AllyManager.Instance.Selecting(MySO);
+    }
 
     public override void SetChromo(MechChromoSO c)
     {
@@ -20,10 +25,19 @@ public class AMechSelectDisplay : MechCanvasDisplay
         _Stats[3].text = c.Spd.Sum().ToString();
     }
 
+    public void AdjustingTeam()
+    {
+        if (AllyManager.Instance.Buttons[AllyManager.Instance.CurrentSelection].MySO == MySO)
+            AdjustIndicators(2);
+        else if (AllyManager.Instance.AllyTeam.Contains(MySO))
+            AdjustIndicators(1);
+        else AdjustIndicators(0);
+    }
+
     /*
-     * 0 - clear
+     * 0 - none
      * 1 - select
-     * 2 - select batch
+     * 2 - alr in team
      */
     public void AdjustIndicators(int mode)
     {

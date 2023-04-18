@@ -65,9 +65,9 @@ public class FarmMain : FarmMngFunc
     }
 
     // ------- DEBUG -------
-    public void AddChromo()
+    public void AddChromo(int amount)
     {
-        AddChromo(PlayerManager.FarmDatabase[_FarmIndex]);
+        AddChromo(PlayerManager.FarmDatabase[_FarmIndex], amount);
     }
 
     public void FixFarm()

@@ -7086,10 +7086,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 954026226}
     m_Modifications:
-    - target: {fileID: 2666253339859089158, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.699997
-      objectReference: {fileID: 0}
     - target: {fileID: 3283400104967738848, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7178,8 +7174,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farm1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3283400104967738853, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
 --- !u!224 &3750215406638822127 stripped
 RectTransform:

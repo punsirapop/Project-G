@@ -30,8 +30,7 @@ public class MechChromoSO : ScriptableObject
 
     // ---- Combat ----
     // max stat to generate
-    [SerializeField] private int cap = 4;
-    public int Cap => cap;
+    public static int Cap;
 
     [SerializeField] private int[] atk;
     public int[] Atk => atk;
@@ -50,24 +49,31 @@ public class MechChromoSO : ScriptableObject
         IDCounter++;
 
         // init stuffs
-        head = UnityEngine.Random.Range(0, 20);
+        head = Random.Range(0, 20);
         body = new int[3];
         for (int i = 0; i < 3; i++)  body[i] = Random.Range(0, 256);
         acc = Random.Range(0, 10);
 
-        atk = new int[3];
-        def = new int[3];
-        hp = new int[3];
-        spd = new int[3];
-        for (int i = 0; i < atk.Length; i++) atk[i] = Random.Range(1, cap);
-        for (int i = 0; i < def.Length; i++) def[i] = Random.Range(1, cap);
-        for (int i = 0; i < hp.Length; i++) hp[i] = Random.Range(1, cap);
-        for (int i = 0; i < spd.Length; i++) spd[i] = Random.Range(1, cap);
+        Cap = Cap == 0 ? 4 : Cap;
+
+        SetRandomStat(Cap);
     }
 
     private void OnDestroy()
     {
         SaveManager.OnReset -= ResetMe;
+    }
+
+    public void SetRandomStat(int c)
+    {
+        atk = new int[3];
+        def = new int[3];
+        hp = new int[3];
+        spd = new int[3];
+        for (int i = 0; i < atk.Length; i++) atk[i] = Random.Range(1, c);
+        for (int i = 0; i < def.Length; i++) def[i] = Random.Range(1, c);
+        for (int i = 0; i < hp.Length; i++) hp[i] = Random.Range(1, c);
+        for (int i = 0; i < spd.Length; i++) spd[i] = Random.Range(1, c);
     }
 
     // Set properties according to encoded chromosome
@@ -134,7 +140,7 @@ public class MechChromoSO : ScriptableObject
 
         for (int i = 0; i < 12; i++)
         {
-            c.Add(cap);
+            c.Add(Cap);
         }
 
         return c;
@@ -143,7 +149,7 @@ public class MechChromoSO : ScriptableObject
     public Rank GetRank()
     {
         int sum = atk.Sum() + def.Sum() + hp.Sum() + spd.Sum();
-        int index = Mathf.RoundToInt(sum / (cap * 4));
+        int index = Mathf.RoundToInt(sum / (Cap * 4));
         Rank rank = (Rank)index;
 
         return rank;
@@ -203,7 +209,7 @@ public class MechChromoSO : ScriptableObject
                             sum = spd.Sum();
                             break;
                     }
-                    fitness += CalcMe(sum, 0, cap * 3) / 3;
+                    fitness += CalcMe(sum, 0, Cap * 3) / 3;
                     break;
             }
         }

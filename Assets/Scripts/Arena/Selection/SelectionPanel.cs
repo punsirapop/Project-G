@@ -6,14 +6,15 @@ using UnityEngine.UI;
 
 public class SelectionPanel : MonoBehaviour
 {
+    [SerializeField] protected Transform _ContentStorage;
+
     [SerializeField] Image _Panel;
     [SerializeField] Sprite[] _Bgs;
-    [SerializeField] Transform _ContentStorage;
     [SerializeField] GameObject _ItemPrefab;
     // [SerializeField] Dropdown _Pref;
 
     protected int _CurrentPanel;
-    protected ObjectPool<GameObject> _Pool;
+    protected static ObjectPool<GameObject> _Pool;
 
     protected virtual void Start()
     {

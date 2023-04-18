@@ -135,25 +135,29 @@ public class FarmSO : ScriptableObject
 
     public void SetBreedRequest(BreedMenu.BreedInfo b)
     {
-        TimeManager.Date targetDate = new TimeManager.Date();
-        targetDate.AddDay(PlayerManager.CurrentDate.ToDay() + b.MyFarm.BreedPref.BreedGen);
+        if (!b.Equals(default(BreedMenu.BreedInfo)))
+        {
+            TimeManager.Date targetDate = new TimeManager.Date();
+            targetDate.AddDay(PlayerManager.CurrentDate.ToDay() + b.MyFarm.BreedPref.BreedGen);
+        }
+
         _BreedInfo = b;
     }
 
     public void FillBreedGuage()
     {
         _BreedGuage += GuagePerDay * Condition / 4;
-        Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
+        // Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
 
         while (BreedGuage >= 100 && BreedInfo.MyFarm.BreedPref.BreedGen > 0)
         {
             BreedInfo.BreedMe();
-            Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
+            // Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
             _BreedGen++;
             _Generation++;
             _BreedGuage -= 100;
         }
-        Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
+        // Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
 
         _DaysBeforeBreak++;
         BreakingBad();

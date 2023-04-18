@@ -42,11 +42,20 @@ public class FarmManager : FarmMngFunc
         if (Instance == null) Instance = this;
 
         mechs = new List<GameObject>();
+        // Spawn mechs in the farm up to 20 mechs
         if(PlayerManager.CurrentFarmDatabase.MechChromos.Count > 0)
         {
-            foreach (var item in PlayerManager.CurrentFarmDatabase.MechChromos)
+            List<int> spawnIndex = new List<int>();
+            for (int i = 0; i < MathF.Min(PlayerManager.CurrentFarmDatabase.MechChromos.Count, 20); i++)
             {
-                AddMech(item);
+                int r = -1;
+                do
+                {
+                    r = UnityEngine.Random.Range(0, PlayerManager.CurrentFarmDatabase.MechChromos.Count);
+                }
+                while (spawnIndex.Contains(r));
+                spawnIndex.Add(r);
+                AddMech(PlayerManager.CurrentFarmDatabase.MechChromos[r]);
             }
         }
         _BGRenderer.sprite = PlayerManager.CurrentFarmDatabase.BG;
