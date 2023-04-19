@@ -10,32 +10,33 @@ using UnityEngine.UI;
  */
 public class ChromoDetail : PlayerManager
 {
-    public static ChromoDetail Instance;
-
+    public MechChromoSO currentDisplay;
     // List of textboxes
     [SerializeField] TextMeshProUGUI[] Displays;
+    [SerializeField] MechCanvasDisplay Icon;
+    [SerializeField] Button SwitchButton;
     // Delete button
     // ***** For debug purposes *****
-    [SerializeField] Button DeleteButton;
+    // [SerializeField] Button DeleteButton;
 
-    private void Awake()
+    public void SetDisplay(MechChromoSO c)
     {
-        if(Instance == null) Instance = this;
-    }
-
-    public void SetDisplay(ChromosomeSO c)
-    {
-        Displays[0].text = c.ID.ToString();
+        currentDisplay = c;
+        Displays[0].text = "ID: " + c.ID.ToString();
         Displays[1].text = c.Head.ToString();
         Displays[2].text = string.Join("-", c.Body);
         Displays[3].text = c.Acc.ToString();
-        Displays[4].text = c.Atk.Sum().ToString();
-        Displays[5].text = c.Def.Sum().ToString();
-        Displays[6].text = c.Hp.Sum().ToString();
-        Displays[7].text = c.Spd.Sum().ToString();
-        Displays[8].text = string.Join("-", c.GetChromosome());
+        Displays[4].text = string.Join("\t", "Atk: " + c.Atk.Sum().ToString(),
+            "Def: " + c.Def.Sum().ToString(), "Hp: " + c.Hp.Sum().ToString(),
+            "Spd: " + c.Spd.Sum().ToString(), "Rank: " + c.GetRank());
+        Displays[5].text = string.Join("-", c.GetChromosome()[0].Take(5)) + "\n"
+            + string.Join("-", c.GetChromosome()[0].Skip(5));
+        Icon.SetChromo(c);
+
+        /*
         DeleteButton.onClick.RemoveAllListeners();
         DeleteButton.onClick.AddListener(() => FarmManager.Instance.OpenPanel(2));
-        DeleteButton.onClick.AddListener(() => DelChromo(c));
+        DeleteButton.onClick.AddListener(() => FarmManager.Instance.DelChromo(c));
+        */
     }
 }

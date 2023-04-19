@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
+  m_Name: 03_MutationFlipBit
+  m_EditorClassIdentifier: 
+  _Header: Flip Bit Mutation
+  _Image: {fileID: 21300000, guid: 5fd2aa3d554ecd94ca029537b559c897, type: 3}
+  _Description: Bit flip mutation will randomly select the small number of chromosomes
+    to mutate from the population. Every bit in the selected chromosome will be flipped
+    just like the way the bit flip mutation does. Change 0 to 1, and change 1 to
+    0.
