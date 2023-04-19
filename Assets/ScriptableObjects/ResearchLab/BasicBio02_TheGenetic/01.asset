@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
+  m_Name: 01
+  m_EditorClassIdentifier: 
+  _Header: Chromosome & Gene
+  _Image: {fileID: 21300000, guid: 6ad77bc2d936aa44bb7a0b12b5c0bbb3, type: 3}
+  _Description: 'Each organism contains a set of <b>genetic information</b> which
+    will determine characteristics of that organism. Those information may varies
+    among the population.
+
+
+    For example, these plants are the same species, but
+    with the variant genetic information, their appearances may differ.
+
+    In this
+    case, plant A is taller and has more fruits than plant B. The fruit A is yellow
+    and round, but fruit B is green and rough.'

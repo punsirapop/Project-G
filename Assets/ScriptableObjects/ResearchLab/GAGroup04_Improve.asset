@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad394ba06c72a244bea598226a6bb62, type: 3}
+  m_Name: GAGroup04_Improve
+  m_EditorClassIdentifier: 
+  _Header: Improvement Techniques
+  _ContentChapters:
+  - {fileID: 11400000, guid: b3b24e8c199381741be1eb322dcdd5c1, type: 2}
+  - {fileID: 11400000, guid: a17f5dc6107a22447af87aa31573b0df, type: 2}
+  - {fileID: 11400000, guid: aec80f520641d4b418f0ac30d0e522b5, type: 2}
+  - {fileID: 11400000, guid: 2f6e857d2e886fa4ebe9f948d984ba67, type: 2}
