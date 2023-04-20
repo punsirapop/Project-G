@@ -39,4 +39,20 @@ public class WeaponChromosome
         toReturn += ", W2:" + Weight2.ToString();
         return toReturn;
     }
+
+    public List<List<int>> GetChromosomeAsList()
+    {
+        List<int> c = new List<int>();
+        List<List<int>> holder = new List<List<int>>();
+        foreach (int[] arr in Bitstring)
+        {
+            if (arr == null)
+            {
+                break;
+            }
+            List<int> list = new List<int>(arr);
+            holder.Add(list);
+        }
+        return holder;
+    }
 }

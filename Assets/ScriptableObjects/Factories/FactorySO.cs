@@ -10,12 +10,27 @@ public class FactorySO : ScriptableObject
     public string Name => _Name;
     [SerializeField] [TextArea] private string _Description;
     public string Description => _Description;
-    [SerializeField] private int _Generation;
-    public int Generation => _Generation;
-    [SerializeField] private string _Status;
-    public string Status => _Status;
     [SerializeField] private string _WeaponPrefix;
     [SerializeField] private string _WeaponIdFormat;
+    [SerializeField] private int _Generation;
+    public int Generation => _Generation;
+    [SerializeField] private Status _Status;
+    public Status Status => _Status;
+    // If Condition remain 0, the facility completely broken
+    private int _Condition;
+    public int Condition => _Condition;
+
+    // Breeding Request
+    FactoryProduction.BreedPref _BreedPref;
+    public FactoryProduction.BreedPref BreedPref => _BreedPref;
+    FactoryProduction.BreedInfo _BreedInfo;
+    public FactoryProduction.BreedInfo BreedInfo => _BreedInfo;
+    private float _BreedGuage;
+    public float BreedGuage => _BreedGuage;
+    private float _GuagePerDay;
+    public float GuagePerDay => _GuagePerDay;
+    private int _BreedGen;
+    public int BreedGen => _BreedGen;
 
     // Interior Sprites
     [SerializeField] private Sprite _Floor;
@@ -50,10 +65,60 @@ public class FactorySO : ScriptableObject
     [SerializeField] private int _PopulationCount;
     public int PopulationCount => _PopulationCount;
 
-    // Populate database in case if it's not populated yet
-    private void _PopulateDatabaseIfNot()
+    #region Getter, Setter, Reset
+    public void SetStatus(Status newStatus)
     {
-        if (!_ChromoDatabase.IsValid(_Knapsacks.Length, _Items.Length, _PopulationCount))
+        _Status = newStatus;
+    }
+
+    public void SetBreedPref(FactoryProduction.BreedPref newBreedPref)
+    {
+        _BreedPref = newBreedPref.Copy();
+    }
+
+    public void SetBreedRequest(FactoryProduction.BreedInfo newBreedInfo)
+    {
+        if (!newBreedInfo.Equals(default(FactoryProduction.BreedInfo)))
+        {
+            TimeManager.Date targetDate = new TimeManager.Date();
+            targetDate.AddDay(PlayerManager.CurrentDate.ToDay() + newBreedInfo.MyFactory.BreedPref.BreedGen);
+        }
+
+        _BreedInfo = newBreedInfo;
+    }
+
+    public void SetBitChromoDatabase(int[][][] newBitstringArray)
+    {
+        _ChromoDatabase.SetDatabase(newBitstringArray);
+    }
+
+    private void OnEnable()
+    {
+        SaveManager.OnReset += Reset;
+    }
+
+    private void OnDestroy()
+    {
+        SaveManager.OnReset -= Reset;
+    }
+
+    public void Reset()
+    {
+        _Generation = 0;
+        _Status = Status.IDLE;
+        _Condition = 4;
+        _BreedGuage = 0;
+        _GuagePerDay = 100;
+        _BreedGen = 0;
+        _PopulateDatabaseIfNot(true);
+    }
+    #endregion
+
+    // Populate database in case if it's not populated yet
+    private void _PopulateDatabaseIfNot(bool forcePopulate=false)
+    {
+        if (!_ChromoDatabase.IsValid(_Knapsacks.Length, _Items.Length, _PopulationCount) ||
+            forcePopulate)
         {
             _ChromoDatabase.SetChromoDimension(_Knapsacks.Length);
             _ChromoDatabase.SetChromoLength(_Items.Length);
@@ -166,5 +231,42 @@ public class FactorySO : ScriptableObject
         }
         int[] returnValue = { fitness, weight1, weight2 };
         return returnValue;
+    }
+
+    public void FillBreedGuage()
+    {
+        _BreedGuage += _GuagePerDay * _Condition / 4;
+
+        while (_BreedGuage >= 100 && _BreedInfo.MyFactory.BreedPref.BreedGen > 0)
+        {
+            BreedInfo.Produce();
+            _BreedGen++;
+            _Generation++;
+            _BreedGuage -= 100;
+        }
+        BreakingBad();
+        if (BreedGen >= BreedInfo.MyFactory.BreedPref.BreedGen)
+        {
+            SetBreedRequest(new FactoryProduction.BreedInfo());
+            _BreedGen = 0;
+            _BreedGuage = 0;
+            SetStatus(Status.IDLE);
+        }
+    }
+
+    public void BreakingBad()
+    {
+        // if (UnityEngine.Random.Range(0, 5) < GenBeforeBreak && Condition > 0)
+        if (Condition > 0)
+        {
+            _Condition--;
+        }
+        // if (Condition == 0 && Status != Status.BROKEN) SetStatus(Status.BROKEN);
+    }
+
+    public void Fixed()
+    {
+        if (_Condition < 4) _Condition++;
+        // SetStatus(BreedInfo.Equals(default(BreedMenu.BreedInfo)) ? Status.IDLE : Status.BREEDING);
     }
 }

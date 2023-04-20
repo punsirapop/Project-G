@@ -17,10 +17,10 @@ MonoBehaviour:
     an armor! Forging the armor using all metal makes it tougher but also too heavy.
     Selecting some metal to make the armor tough enough while the weight is not too
     much can be solved using the Standard Knapsack Problem (SKP).
-  _Generation: 0
-  _Status: IDLE
   _WeaponPrefix: AR
   _WeaponIdFormat: 000
+  _Generation: 2
+  _Status: 0
   _Floor: {fileID: 21300000, guid: eaf2bffa0920b274cbc73331d6a6669a, type: 3}
   _Conveyor: {fileID: 21300000, guid: 4beaf4a6b5bfc1a43a8875d55561ec2b, type: 3}
   _Border: {fileID: 21300000, guid: 58cb6da6a3183c24391705c676d6c4d5, type: 3}
@@ -53,5 +53,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 118b9a31743a03a45a09a0a935112f90, type: 2}
   - {fileID: 11400000, guid: d522dd26c6432b64e809a3db315bd20f, type: 2}
   _MaxFitness: 50
-  _ChromoDatabase: {fileID: 11400000, guid: 27e525fed51306f4f9bf8702d3490a74, type: 2}
+  _ChromoDatabase: {fileID: 11400000, guid: 2255dfa68b4b0b147b5f217e41edd2e8, type: 2}
   _PopulationCount: 100
