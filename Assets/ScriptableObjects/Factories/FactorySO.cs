@@ -5,19 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Factory")]
 public class FactorySO : ScriptableObject
 {
-    // Informations
+    [Header("Factory information")]
+    // Factory informations
+    [SerializeField] private int _FactoryIndex;
     [SerializeField] private string _Name;
     public string Name => _Name;
-    [SerializeField] [TextArea] private string _Description;
+    [SerializeField] [TextArea(3, 10)] private string _Description;
     public string Description => _Description;
-    [SerializeField] private string _WeaponPrefix;
-    [SerializeField] private string _WeaponIdFormat;
     [SerializeField] private int _Generation;
     public int Generation => _Generation;
     [SerializeField] private Status _Status;
     public Status Status => _Status;
-    // If Condition remain 0, the facility completely broken
-    private int _Condition;
+    private int _Condition; // If Condition remain 0, the facility completely broken
     public int Condition => _Condition;
 
     // Breeding Request
@@ -39,9 +38,6 @@ public class FactorySO : ScriptableObject
     public Sprite Conveyor => _Conveyor;
     [SerializeField] private Sprite _Border;
     public Sprite Border => _Border;
-    [SerializeField] private Sprite[] _WeaponImages;
-
-    [SerializeField] private Sprite[] _WeaponBigImages;
 
     // Exterior Sprites
     [SerializeField] private Sprite _MainNormal;
@@ -51,6 +47,8 @@ public class FactorySO : ScriptableObject
     [SerializeField] private Sprite _Locker;
     public Sprite Locker => _Locker;
 
+    [Space(10)]
+    [Header("Knapsack problem information")]
     // Knapsack and items preset
     [SerializeField] private KnapsackSO[] _Knapsacks;
     public KnapsackSO[] Knapsacks => _Knapsacks;
@@ -59,11 +57,34 @@ public class FactorySO : ScriptableObject
     [SerializeField] private int _MaxFitness;
     public int MaxFitness => _MaxFitness;
 
-
     // Chromosome population database
     [SerializeField] private BitChromoDatabase _ChromoDatabase;
     [SerializeField] private int _PopulationCount;
     public int PopulationCount => _PopulationCount;
+
+    [Space(10)]
+    [Header("Weapon information")]
+    // Weapon information
+    [SerializeField] private string _WeaponPrefix;
+    [SerializeField] private string _WeaponIdFormat;
+    [SerializeField] private WeaponMode _ProducedWeaponMode1;
+    [SerializeField] private WeaponMode _ProducedWeaponMode2;
+    [SerializeField] private float _MinCooldownSeconds;
+    [SerializeField] private float _MaxCooldownSeconds;
+    [SerializeField] private WeaponRankInfo[] _WeaponRankConfigDesc;
+
+    [System.Serializable]
+    public struct WeaponRankInfo
+    {
+        public WeaponRank Rank;
+        public int MinFitness;
+        public Sprite Image;
+        public Sprite BigImage;
+        public int BonusAtk;
+        public int BonusDef;
+        public int BonusHp;
+        public int BonusSpd;
+    }
 
     #region Getter, Setter, Reset
     public void SetStatus(Status newStatus)
@@ -139,45 +160,46 @@ public class FactorySO : ScriptableObject
         _PopulateDatabaseIfNot();
         // Create empty array of type WeaponChromosome
         WeaponChromosome[] allWeapon = new WeaponChromosome[_PopulationCount];
-        int idLength = _PopulationCount.ToString().Length;
         for (int i = 0; i < _PopulationCount; i++)
         {
-            // Create actual instance of WeaponChromosome
-            allWeapon[i] = new WeaponChromosome();
-            WeaponChromosome weaponChromosome = allWeapon[i];
-            // Evaluate the bitstring
-            int[][] bitstring = _ChromoDatabase.GetBitstringAtIndex(i);
-            int[] values = EvaluateChromosome(bitstring);
-            // Assign image proportionate to the fitness value
-            float fitnessLevel = (float) _MaxFitness / (float)_WeaponImages.Length;
-            int imageIndex = (int) ( (float) values[0] / fitnessLevel);
-            if (imageIndex >= _WeaponImages.Length)
+            // Get and evaluate the bitstring
+            int[][] bitstringAtIndex = _ChromoDatabase.GetBitstringAtIndex(i);
+            int[] values = EvaluateChromosome(bitstringAtIndex);
+            // Calculate the rank of weapon
+            WeaponRankInfo rankInfo = _WeaponRankConfigDesc[_WeaponRankConfigDesc.Length - 1];
+            foreach (WeaponRankInfo info in _WeaponRankConfigDesc)
             {
-                imageIndex = _WeaponImages.Length - 1;
+                if (values[0] >= info.MinFitness)
+                {
+                    rankInfo = info;
+                    break;
+                }
             }
-            weaponChromosome.BigImage = _WeaponBigImages[imageIndex];
-            weaponChromosome.Image = _WeaponImages[imageIndex];
-            // Assign the WeaponChromosome according to the values
-            weaponChromosome.Name = _WeaponPrefix + (i + 1).ToString(_WeaponIdFormat);
-            //string chromoString = "";
-            //foreach (int[] section in bitstring)
-            //{
-            //    if (section == null)
-            //    {
-            //        continue;
-            //    }
-            //    foreach (int bit in section)
-            //    {
-            //        chromoString = chromoString + bit.ToString();
-            //    }
-            //    chromoString += " | ";
-            //}
-            //char[] trimChar = { ' ', '|', ' ' };
-            //weaponChromosome.Bitstring = chromoString.Trim(trimChar);
-            weaponChromosome.Bitstring = bitstring;
-            weaponChromosome.Fitness = values[0];
-            weaponChromosome.Weight1 = values[1];
-            weaponChromosome.Weight2 = values[2];
+            // Calculate the cooldown proportionate to the fitness
+            float eff = (float)values[0] / (float)_MaxFitness;
+            float maxCooldownDelta = _MaxCooldownSeconds - _MinCooldownSeconds;
+            float cooldownSeconds = _MaxCooldownSeconds - (eff * maxCooldownDelta);
+            // Create actual instance of WeaponChromosome
+            allWeapon[i] = new WeaponChromosome(
+                fromFactory: _FactoryIndex,
+                mode1: _ProducedWeaponMode1,
+                mode2: _ProducedWeaponMode2,
+                isMode1Active: true,    // Set to mode 1 as default
+                rank: rankInfo.Rank,
+                image: rankInfo.Image,
+                bigImage: rankInfo.BigImage,
+                name: _WeaponPrefix + (i + 1).ToString(_WeaponIdFormat),
+                bitstring: bitstringAtIndex,
+                fitness: values[0],
+                weight1: values[1],
+                weight2: values[2],
+                efficiency: eff,
+                cooldown: cooldownSeconds,
+                atk: rankInfo.BonusAtk,
+                def: rankInfo.BonusDef,
+                hp: rankInfo.BonusHp,
+                spd: rankInfo.BonusSpd
+                ) ;
         }
         return allWeapon;
     }
