@@ -27,6 +27,12 @@ public class CutsceneManager : MonoBehaviour
     private bool _IsWaitingChoiceSelect;
     private DialogueElement.Sentence[] _ChoiceResponses;
     private int _CurrentChoiceResponseIndex;
+    //the choices answer
+    [SerializeField] private int[] _ChoiceAnswers;
+    [SerializeField] private int _PassScore;
+    private int _CurrentAnswerIndex;
+    //Collect the choices input
+    private int score;
 
     void Awake()
     {
@@ -39,6 +45,8 @@ public class CutsceneManager : MonoBehaviour
         _IsChoiceResponseDisplaying = false;
         _IsWaitingChoiceSelect = false;
         DisplaySentence(CurrentDialogue.SentenceData);
+        score = 0;
+        _CurrentAnswerIndex = 0;
     }
 
     public void DisplaySentence(DialogueElement.Sentence currentSentence)
@@ -111,9 +119,17 @@ public class CutsceneManager : MonoBehaviour
     }
 
     // Set the response of the choice to display
-    public void SelectChoice(DialogueElement.Sentence[] newChoiceResponse)
+    //Old ** public void SelectChoice(DialogueElement.Sentence[] newChoiceResponse)
+    public void SelectChoice(DialogueElement.Choice ChoiceResponse)
     {
-        _ChoiceResponses = newChoiceResponse;
+        if(_CurrentAnswerIndex < _ChoiceAnswers.Length && ChoiceResponse.number != 0){
+            if(ChoiceResponse.number == _ChoiceAnswers[_CurrentAnswerIndex]){
+                score++;
+                _CurrentAnswerIndex++;
+                Debug.Log("Score : " + score.ToString());
+            }
+        }
+        _ChoiceResponses = ChoiceResponse.ReponseData;
         _CurrentChoiceResponseIndex = -1;
         _IsChoiceResponseDisplaying = true;
         _IsWaitingChoiceSelect = false;
@@ -158,7 +174,7 @@ public class CutsceneManager : MonoBehaviour
             return;
         }
         // If current dialogue element is sentence and not complete yet, complete the sentence
-        if (!CurrentDialogue.IsChoices &&
+        if (!CurrentDialogue.IsChoices && !CurrentDialogue.IsChecker &&
             _SentenceText.text != CurrentDialogue.SentenceData.SentenceContent)
         {
             _SentenceText.text = CurrentDialogue.SentenceData.SentenceContent;
@@ -179,6 +195,17 @@ public class CutsceneManager : MonoBehaviour
         if (CurrentDialogue.IsChoices)
         {
             SpawnChoices(CurrentDialogue.Choices);
+        }
+        // If it's a checker and not a choice, display sentence + score
+        else if (CurrentDialogue.IsChecker)
+        {
+            if(score >= _PassScore){
+                CurrentDialogue.CheckerAnswer.Pass.SentenceContent = CurrentDialogue.CheckerAnswer.Pass.SentenceContent.Replace(("[score]"),score.ToString());
+                DisplaySentence(CurrentDialogue.CheckerAnswer.Pass);
+            } else {
+                CurrentDialogue.CheckerAnswer.Fail.SentenceContent = CurrentDialogue.CheckerAnswer.Fail.SentenceContent.Replace(("[score]"),score.ToString());
+                DisplaySentence(CurrentDialogue.CheckerAnswer.Fail);
+            }
         }
         // If it's a sentence, display sentence
         else

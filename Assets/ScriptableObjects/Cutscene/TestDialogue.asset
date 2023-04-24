@@ -12,52 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
-  _OnDialogueEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
   _Elements:
   - IsChoices: 0
+    IsChecker: 1
     SentenceData:
       Speaker: 1
       SentenceContent: Hello!
       Illustration: {fileID: 0}
     Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
       Speaker: 1
       SentenceContent: What is this picture?
       Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 1
+    IsChecker: 0
     SentenceData:
       Speaker: 1
       SentenceContent: What is this picture?
       Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices:
     - SentenceContent: Main Game Page
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData:
       - Speaker: 3
         SentenceContent: Exactly!
         Illustration: {fileID: 0}
+      number: 1
     - SentenceContent: Capybara?
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData:
       - Speaker: 4
         SentenceContent: What the...
@@ -68,24 +69,30 @@ MonoBehaviour:
       - Speaker: 2
         SentenceContent: It's Main Game Page...
         Illustration: {fileID: 0}
+      number: 2
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
       Speaker: 1
       SentenceContent: Anyway what do you wanna do?
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Main Game Page
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData:
       - Speaker: 3
         SentenceContent: Exactly!
         Illustration: {fileID: 0}
+      number: 0
     - SentenceContent: Capybara?
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData:
       - Speaker: 4
         SentenceContent: What the...
@@ -96,77 +103,157 @@ MonoBehaviour:
       - Speaker: 2
         SentenceContent: It's Main Game Page...
         Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 1
+    IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Anyway what do you wanna do?
+      SentenceContent: awsasdasdasd
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 1
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 2
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
       Speaker: 3
       SentenceContent: Good Idea!
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: 'Your Result is . . . . . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 2
+      SentenceContent: Your Result is . . .
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 3
+        SentenceContent: You Pass, Your score is 2
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 4
+        SentenceContent: You Fail, Your score is 0
+        Illustration: {fileID: 0}
   - IsChoices: 1
+    IsChecker: 0
     SentenceData:
       Speaker: 0
       SentenceContent: C U then. Bye!
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: See you then. Bye!
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 1
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
       Speaker: 1
       SentenceContent: Bye~
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

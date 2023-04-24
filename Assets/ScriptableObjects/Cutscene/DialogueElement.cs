@@ -30,9 +30,22 @@ public class DialogueElement
     {
         [TextArea(1, 5)] public string SentenceContent;
         public Sentence[] ReponseData;
+        //Choice number
+        public int number;
+    }
+
+    // Class for the checker respond
+    [System.Serializable]
+    public class Checker
+    {
+        public Sentence Pass;
+        public Sentence Fail;
     }
 
     public bool IsChoices;
+    //For check the score
+    public bool IsChecker;
     public Sentence SentenceData;
     public Choice[] Choices;
+    public Checker CheckerAnswer;
 }

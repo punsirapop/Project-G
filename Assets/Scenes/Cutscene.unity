@@ -977,6 +977,8 @@ MonoBehaviour:
   _ChoiceButtonPrefab: {fileID: 79307694335491951, guid: 837b8bbefa007ca47814494fb50d2c93, type: 3}
   _CurrentDialogueSO: {fileID: 11400000, guid: 61445812af0e30647bc2678901426198, type: 2}
   _TypeDelaySeconds: 0.05
+  _ChoiceAnswers: 010000000100000001000000
+  _PassScore: 2
 --- !u!1 &1782990877
 GameObject:
   m_ObjectHideFlags: 0
