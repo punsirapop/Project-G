@@ -15,6 +15,7 @@ MonoBehaviour:
   _Name: Farm3
   _Generation: 0
   _Status: 0
+  _BrokeChance: 0.2
   _BG: {fileID: 21300000, guid: 853466ec1a67c3f489f5cc9b3ab5bf3e, type: 3}
   _MainNormal: {fileID: 21300000, guid: 178a5bb1e1557ee4e951540674c07326, type: 3}
   _MainBroken: {fileID: 21300000, guid: aea11a16f87b929458d0cf03d0547bb2, type: 3}

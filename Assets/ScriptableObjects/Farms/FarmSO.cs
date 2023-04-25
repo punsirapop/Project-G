@@ -20,6 +20,7 @@ public class FarmSO : ScriptableObject
     public Status Status => _Status;
     private int _Condition;
     public int Condition => _Condition;
+    [SerializeField] private float _BrokeChance;
 
     // Prev Farm Display
     BreedMenu.BreedPref _BreedPref;
@@ -160,7 +161,10 @@ public class FarmSO : ScriptableObject
         // Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
 
         _DaysBeforeBreak++;
-        BreakingBad();
+        if (UnityEngine.Random.Range(0f, 1f) < _BrokeChance)
+        {
+            BreakingBad();
+        }
         if (BreedGen >= BreedInfo.MyFarm.BreedPref.BreedGen)
         {
             SetBreedRequest(new BreedMenu.BreedInfo());

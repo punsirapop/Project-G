@@ -145,7 +145,6 @@ public class SaveManager : MonoBehaviour
         MechChromoSO[] deleteMe = Resources.LoadAll<MechChromoSO>("Mechs");
         foreach (MechChromoSO mechChromoSO in deleteMe)
             AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(mechChromoSO));
-
         OnReset?.Invoke();
     }
 }

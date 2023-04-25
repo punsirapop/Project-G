@@ -8,6 +8,7 @@ public class FactorySO : ScriptableObject
     [Header("Factory information")]
     // Factory informations
     [SerializeField] private int _FactoryIndex;
+    public int FactoryIndex => _FactoryIndex;
     [SerializeField] private string _Name;
     public string Name => _Name;
     [SerializeField] [TextArea(3, 10)] private string _Description;
@@ -18,6 +19,14 @@ public class FactorySO : ScriptableObject
     public Status Status => _Status;
     private int _Condition; // If Condition remain 0, the facility completely broken
     public int Condition => _Condition;
+    [SerializeField] private float _BrokeChance;
+
+    // Locking information
+    [SerializeField] private FactorySO _RequiredUnlockFactory;
+    [SerializeField] private FarmSO _RequiredUnlockFarm;
+    //[SerializeField] private GameObject[] _RequiredResearchChapters;
+    [SerializeField] private LockableStatus _LockStatus;
+    public LockableStatus LockStatus => _LockStatus;
 
     // Breeding Request
     FactoryProduction.BreedPref _BreedPref;
@@ -113,6 +122,11 @@ public class FactorySO : ScriptableObject
         _ChromoDatabase.SetDatabase(newBitstringArray);
     }
 
+    public void SetLockStatus(LockableStatus newStatus)
+    {
+        _LockStatus = newStatus;
+    }
+
     private void OnEnable()
     {
         SaveManager.OnReset += Reset;
@@ -128,10 +142,23 @@ public class FactorySO : ScriptableObject
         _Generation = 0;
         _Status = Status.IDLE;
         _Condition = 4;
+        // TEMP set first factory to unlock, and second to unlockable
+        if (_FactoryIndex == 0)
+        {
+            _LockStatus = LockableStatus.Unlock;
+        }
+        else if (_FactoryIndex == 1)
+        {
+            _LockStatus = LockableStatus.Unlockable;
+        }
+        else
+        {
+            _LockStatus = LockableStatus.Lock;
+        }
         _BreedGuage = 0;
         _GuagePerDay = 100;
         _BreedGen = 0;
-        _PopulateDatabaseIfNot(true);
+        _PopulateDatabaseIfNot(forcePopulate: true);
     }
     #endregion
 
@@ -266,7 +293,10 @@ public class FactorySO : ScriptableObject
             _Generation++;
             _BreedGuage -= 100;
         }
-        BreakingBad();
+        if (Random.Range(0f, 1f) < _BrokeChance)
+        {
+            BreakingBad();
+        }
         if (BreedGen >= BreedInfo.MyFactory.BreedPref.BreedGen)
         {
             SetBreedRequest(new FactoryProduction.BreedInfo());
@@ -290,5 +320,36 @@ public class FactorySO : ScriptableObject
     {
         if (_Condition < 4) _Condition++;
         // SetStatus(BreedInfo.Equals(default(BreedMenu.BreedInfo)) ? Status.IDLE : Status.BREEDING);
+    }
+
+    // Change locking status from lock to unlockable when condition satisfy
+    public void ValidateUnlockCondition()
+    {
+        if (_LockStatus == LockableStatus.Unlock)
+        {
+            return;
+        }
+        bool isConditionSatisfy = true;
+        if (_RequiredUnlockFactory != null)
+        {
+            if (_RequiredUnlockFactory.LockStatus != LockableStatus.Unlock)
+            {
+                isConditionSatisfy = false;
+            }
+        }
+        if (_RequiredUnlockFarm)
+        {
+            
+        }
+        //[SerializeField] private GameObject[] _RequiredResearchChapters;
+
+        if (isConditionSatisfy)
+        {
+            _LockStatus = LockableStatus.Unlockable;
+            if (MainPageManager.Instance != null)
+            {
+                MainPageManager.Instance.RenderFacilities();
+            }
+        }
     }
 }

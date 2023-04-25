@@ -14,6 +14,8 @@ public class FarmMain : FarmMngFunc
     // Actual UI element object
     [SerializeField] private GameObject _MainBackground;
     [SerializeField] private GameObject _MainLightBoard;
+    [SerializeField] private GameObject _FixButton;
+
 
     // Factory information, this should be managed by PlayerManager and/or FactorySO later
     private int _FarmIndex;
@@ -29,11 +31,17 @@ public class FarmMain : FarmMngFunc
     {
         // for debug purposes
         int lights = 0;
+        bool fixable = false;
         foreach (var item in _MainLightBoard.GetComponentsInChildren<Image>())
         {
+            if (lights >= PlayerManager.FarmDatabase[_FarmIndex].Condition)
+            {
+                fixable = true;
+            }
             item.color = (lights < PlayerManager.FarmDatabase[_FarmIndex].Condition) ? Color.green : Color.red;
             lights++;
         }
+        _FixButton.SetActive(fixable);
     }
 
     public void SetFarm(int newFarmIndex, FarmSO newFarmSO)
@@ -73,5 +81,11 @@ public class FarmMain : FarmMngFunc
     public void FixFarm()
     {
         PlayerManager.FarmDatabase[_FarmIndex].Fixed();
+    }
+
+    public void OnFixButtonClick()
+    {
+        PlayerManager.Instance.SetFacilityToFix(PlayerManager.FacilityType.Farm, _FarmIndex);
+        MainPageManager.Instance.DisplayFixChoice();
     }
 }
