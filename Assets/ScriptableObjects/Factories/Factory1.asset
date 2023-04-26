@@ -12,30 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory1
   m_EditorClassIdentifier: 
+  _FactoryIndex: 0
   _Name: Factory 1
   _Description: To win the fight is to remain alive! And to remain alive is to have
-    an armor! Forging the armor using all metal makes it tougher but also too heavy.
+    armor! Forging the armor using all metal makes it tougher but also too heavy.
     Selecting some metal to make the armor tough enough while the weight is not too
-    much can be solved using the Standard Knapsack Problem (SKP).
-  _Generation: 0
-  _Status: IDLE
-  _WeaponPrefix: AR
-  _WeaponIdFormat: 000
+    much can be solved using the idea of the Standard Knapsack Problem.
+  _Generation: 2
+  _Status: 0
   _Floor: {fileID: 21300000, guid: eaf2bffa0920b274cbc73331d6a6669a, type: 3}
   _Conveyor: {fileID: 21300000, guid: 4beaf4a6b5bfc1a43a8875d55561ec2b, type: 3}
   _Border: {fileID: 21300000, guid: 58cb6da6a3183c24391705c676d6c4d5, type: 3}
-  _WeaponImages:
-  - {fileID: 21300000, guid: d258bde6e6faa5b4f97df291cc53e7c9, type: 3}
-  - {fileID: 21300000, guid: 9c6806d7c687bf340bae959c39fb20fe, type: 3}
-  - {fileID: 21300000, guid: 4961ad6376a32dd479af40fc176f8320, type: 3}
-  - {fileID: 21300000, guid: 22b433d757af135448f67f7965528cd6, type: 3}
-  - {fileID: 21300000, guid: 317f2f1d153ec664499844a0d3d8eb30, type: 3}
-  _WeaponBigImages:
-  - {fileID: 21300000, guid: bf07afb883a279145bd679ffd11b7a70, type: 3}
-  - {fileID: 21300000, guid: db087e135b76ff2489b64ca973f7c0bf, type: 3}
-  - {fileID: 21300000, guid: df76f61c5d215884fae9c948ea9dd352, type: 3}
-  - {fileID: 21300000, guid: 270b92c1847fccc44bcffd6f6196e1a3, type: 3}
-  - {fileID: 21300000, guid: 05350fbbc704ebe45bf3e477ca87bd0c, type: 3}
   _MainNormal: {fileID: 21300000, guid: 4e998f959a269dd45b0aa0593d1a9555, type: 3}
   _MainBroken: {fileID: 21300000, guid: 4cfe3787b3af22349ad8e789c77a8754, type: 3}
   _Locker: {fileID: 21300000, guid: f91c8540883b00a4baf854b8426dc062, type: 3}
@@ -53,5 +40,52 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 118b9a31743a03a45a09a0a935112f90, type: 2}
   - {fileID: 11400000, guid: d522dd26c6432b64e809a3db315bd20f, type: 2}
   _MaxFitness: 50
-  _ChromoDatabase: {fileID: 11400000, guid: 27e525fed51306f4f9bf8702d3490a74, type: 2}
+  _ChromoDatabase: {fileID: 11400000, guid: 2255dfa68b4b0b147b5f217e41edd2e8, type: 2}
   _PopulationCount: 100
+  _WeaponPrefix: AR
+  _WeaponIdFormat: 000
+  _ProducedWeaponMode1: 0
+  _ProducedWeaponMode2: 1
+  _MinCooldownSeconds: 5
+  _MaxCooldownSeconds: 10
+  _WeaponRankConfigDesc:
+  - Rank: 0
+    MinFitness: 40
+    Image: {fileID: 21300000, guid: 317f2f1d153ec664499844a0d3d8eb30, type: 3}
+    BigImage: {fileID: 21300000, guid: 05350fbbc704ebe45bf3e477ca87bd0c, type: 3}
+    BonusAtk: 0
+    BonusDef: 5
+    BonusHp: 5
+    BonusSpd: 0
+  - Rank: 1
+    MinFitness: 30
+    Image: {fileID: 21300000, guid: 22b433d757af135448f67f7965528cd6, type: 3}
+    BigImage: {fileID: 21300000, guid: 270b92c1847fccc44bcffd6f6196e1a3, type: 3}
+    BonusAtk: 0
+    BonusDef: 4
+    BonusHp: 4
+    BonusSpd: 0
+  - Rank: 2
+    MinFitness: 20
+    Image: {fileID: 21300000, guid: 4961ad6376a32dd479af40fc176f8320, type: 3}
+    BigImage: {fileID: 21300000, guid: df76f61c5d215884fae9c948ea9dd352, type: 3}
+    BonusAtk: 0
+    BonusDef: 3
+    BonusHp: 3
+    BonusSpd: 0
+  - Rank: 3
+    MinFitness: 10
+    Image: {fileID: 21300000, guid: 9c6806d7c687bf340bae959c39fb20fe, type: 3}
+    BigImage: {fileID: 21300000, guid: db087e135b76ff2489b64ca973f7c0bf, type: 3}
+    BonusAtk: 0
+    BonusDef: 2
+    BonusHp: 2
+    BonusSpd: 0
+  - Rank: 4
+    MinFitness: 0
+    Image: {fileID: 21300000, guid: d258bde6e6faa5b4f97df291cc53e7c9, type: 3}
+    BigImage: {fileID: 21300000, guid: bf07afb883a279145bd679ffd11b7a70, type: 3}
+    BonusAtk: 0
+    BonusDef: 1
+    BonusHp: 1
+    BonusSpd: 0

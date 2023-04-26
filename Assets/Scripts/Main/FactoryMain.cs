@@ -25,6 +25,16 @@ public class FactoryMain : MonoBehaviour
         _MainLightBoard.GetComponent<Button>().onClick.AddListener(() => EnterKnapsackPuzzle());
     }
 
+    void Update()
+    {
+        int lights = 0;
+        foreach (var item in _MainLightBoard.GetComponentsInChildren<Image>())
+        {
+            item.color = (lights < PlayerManager.FactoryDatabase[_FactoryIndex].Condition) ? Color.green : Color.red;
+            lights++;
+        }
+    }
+
     public void SetFactory(int newFactoryIndex, FactorySO newFactorySO)
     {
         _FactoryIndex = newFactoryIndex;
@@ -42,5 +52,10 @@ public class FactoryMain : MonoBehaviour
     private void EnterKnapsackPuzzle()
     {
         this.GetComponent<SceneMng>().ChangeScene("KnapsackPuzzle");
+    }
+
+    public void Fix()
+    {
+        PlayerManager.FactoryDatabase[_FactoryIndex].Fixed();
     }
 }

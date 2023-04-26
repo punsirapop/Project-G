@@ -60,6 +60,13 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             {
                 if (item.Status == Status.BREEDING) item.FillBreedGuage();
             }
+            foreach (var factory in FactoryDatabase)
+            {
+                if (factory.Status == Status.BREEDING)
+                {
+                    factory.FillBreedGuage();
+                }
+            }
         }
 
         CurrentDate = d.DupeDate();

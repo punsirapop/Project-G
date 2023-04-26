@@ -6,19 +6,32 @@ using UnityEngine.UI;
 
 public class WeaponChromoMenu : MonoBehaviour
 {
-    // Prefab for button
+    [Header("Panel Information")]
     [SerializeField] private GameObject _WeaponButtonPrefab;
-    // Place to store generated buttons
     [SerializeField] private RectTransform _SpawnButtonArea;
     [SerializeField] private Toggle _ToggleSortByFitness;
     [SerializeField] private Toggle _ToggleSortDescending;
+    // Overlay for displaying 1 weapon information
+    [Space(10)]
+    [Header("Overlay Information")]
     [SerializeField] private GameObject _BigWeaponOverlay;
     [SerializeField] private TextMeshProUGUI _OverlayName;
     [SerializeField] private Image _OverlayImage;
-    [SerializeField] private TextMeshProUGUI _OverlayBitstring;
-    [SerializeField] private TextMeshProUGUI _OverlayFitness;
-    [SerializeField] private TextMeshProUGUI _OverlayWeight1;
-    [SerializeField] private GameObject _OverlayWeight2;
+    [Header("Chromosome")]
+    [SerializeField] private TextMeshProUGUI _Bitstring;
+    [SerializeField] private TextMeshProUGUI _Fitness;
+    [SerializeField] private TextMeshProUGUI _Weight1;
+    [SerializeField] private GameObject _Weight2;
+    [Header("Bonus Stat")]
+    [SerializeField] private TextMeshProUGUI _Rank;
+    [SerializeField] private GameObject _Atk;
+    [SerializeField] private GameObject _Def;
+    [SerializeField] private GameObject _Hp;
+    [SerializeField] private GameObject _Spd;
+    [Header("Skill")]
+    [SerializeField] private TextMeshProUGUI _Mode1;
+    [SerializeField] private TextMeshProUGUI _Mode2;
+    [SerializeField] private TextMeshProUGUI _Cooldown;
     private WeaponChromosome _OverlayChromosome;
 
 
@@ -29,10 +42,6 @@ public class WeaponChromoMenu : MonoBehaviour
     }
 
     // Re-generate all buttons in panels
-    // sortBy:  0 = by name ascending
-    //          1 = by name descending
-    //          2 = by fitness descending
-    //          3 = by fitness ascending
     public void ResetPanel()
     {
         foreach (Transform item in _SpawnButtonArea)
@@ -106,18 +115,32 @@ public class WeaponChromoMenu : MonoBehaviour
         // Assign this chromosome properties on UI
         _OverlayName.text = chromosome.Name;
         _OverlayImage.sprite = chromosome.BigImage;
-        _OverlayBitstring.text = bitstring.Trim('\\', 'n');
-        _OverlayFitness.text = chromosome.Fitness.ToString();
-        _OverlayWeight1.text = chromosome.Weight1.ToString();
+        _Bitstring.text = bitstring.Trim('\\', 'n');
+        _Fitness.text = chromosome.Fitness.ToString();
+        _Weight1.text = chromosome.Weight1.ToString();
         // Show weight2 only if it has a weight2
         if (chromosome.Weight2 == -1)
         {
-            _OverlayWeight2.SetActive(false);
+            _Weight2.SetActive(false);
         }
         else
         {
-            _OverlayWeight2.SetActive(true);
-            _OverlayWeight2.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.Weight2.ToString();
+            _Weight2.SetActive(true);
+            _Weight2.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.Weight2.ToString();
         }
+        // Assign weapon rank and bonus stat
+        _Rank.text = chromosome.Rank.ToString();
+        _Atk.SetActive(chromosome.BonusStat.Atk > 0);
+        _Atk.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.BonusStat.Atk.ToString();
+        _Def.SetActive(chromosome.BonusStat.Def > 0);
+        _Def.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.BonusStat.Def.ToString();
+        _Hp.SetActive(chromosome.BonusStat.Hp > 0);
+        _Hp.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.BonusStat.Hp.ToString();
+        _Spd.SetActive(chromosome.BonusStat.Spd > 0);
+        _Spd.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.BonusStat.Spd.ToString();
+        // Assign weapon skill (mode) and cooldown
+        _Mode1.text = chromosome.Mode1.ToString() + " by doing something with the efficiency of " + chromosome.Efficiency.ToString("F2");
+        _Mode2.text = chromosome.Mode2.ToString() + " by doing something with the efficiency of " + chromosome.Efficiency.ToString("F2");
+        _Cooldown.text = chromosome.Cooldown.ToString("F1");
     }
 }

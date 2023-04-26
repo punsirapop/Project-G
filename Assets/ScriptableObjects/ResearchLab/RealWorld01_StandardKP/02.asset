@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b5a68b2a114cd488e5bc9df9bf8f22, type: 3}
+  m_Name: 02
+  m_EditorClassIdentifier: 
+  _Header: Standard Knapsack Problem
+  _Image: {fileID: 21300000, guid: 825df4b46d02ad14c82ae68ac61b34ed, type: 3}
+  _Description: The solution for the Knapsack problem can be represented using binary
+    bit string which consist of only 0 or 1. <b>The picked items are encoded using
+    binary 1</b>, and the non-picked items are encoded using binary 0.

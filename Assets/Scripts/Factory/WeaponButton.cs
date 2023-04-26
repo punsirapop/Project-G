@@ -22,11 +22,13 @@ public class WeaponButton : MonoBehaviour
     public void Print()
     {
         string info = "";
-        info += "Name: " + _Chromosome.Name;
-        info += " , Bitstring: " + _Chromosome.Bitstring + "\n";
-        info += "F = " + _Chromosome.Fitness.ToString();
-        info += " , W1 = " + _Chromosome.Weight1.ToString();
-        info += " , W2 = " + _Chromosome.Weight2.ToString();
+        //info += "Name: " + _Chromosome.Name;
+        //info += " , Bitstring: " + _Chromosome.Bitstring + "\n";
+        //info += "F = " + _Chromosome.Fitness.ToString();
+        //info += " , W1 = " + _Chromosome.Weight1.ToString();
+        //info += " , W2 = " + _Chromosome.Weight2.ToString();
+        info += "Eff = " + _Chromosome.Efficiency.ToString() + "\n";
+        info += "Eff formatted = " + _Chromosome.Efficiency.ToString("F2");
         Debug.Log(info);
     }
 }
