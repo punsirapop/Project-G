@@ -15,3 +15,5 @@ MonoBehaviour:
   _Header: Two-point Crossover
   _Contents:
   - {fileID: 11400000, guid: 0bdc575bdac432b44a380f587c17adfe, type: 2}
+  _LockStatus: 1
+  _RequiredMoney: 200

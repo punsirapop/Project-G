@@ -15,3 +15,5 @@ MonoBehaviour:
   _Header: Elitism
   _Contents:
   - {fileID: 11400000, guid: e122cfe01a1c86748845bb3a13bc0089, type: 2}
+  _LockStatus: 1
+  _RequiredMoney: 100

@@ -59,6 +59,7 @@ public class FactoryMain : MonoBehaviour
         RenderSprites();
     }
 
+    // Render the sprites according to LockStatus
     public void RenderSprites()
     {
         _Locked.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Lock);
@@ -66,16 +67,19 @@ public class FactoryMain : MonoBehaviour
         _Unlocked.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Unlock);
     }
 
+    // Unlock the Unlockable FactorySO
     public void UnlockFactory()
     {
-        PlayerManager.FactoryDatabase[_FactoryIndex].SetLockStatus(LockableStatus.Unlock);
+        PlayerManager.FactoryDatabase[_FactoryIndex].UnlockFactory();
         GetComponent<Animator>().Play("UnlockFactory");
     }
 
-    // Wrap function for validate unlocking condition, triggered at the end of UnlockFactory animation
-    public void ValidateUnlocking()
+    // Wrap function for validate unlocking and render UI, triggered at the end of UnlockFactory animation
+    public void OnUnlockAnimationEnd()
     {
-        PlayerManager.Instance.ValidateUnlocking();
+        GetComponent<Animator>().enabled = false;
+        PlayerManager.ValidateUnlocking();
+        MainPageManager.Instance.RenderFacilities();
     }
 
     public void EnterFactory()

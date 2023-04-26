@@ -15,3 +15,5 @@ MonoBehaviour:
   _Header: Boundary Mutation
   _Contents:
   - {fileID: 11400000, guid: 74301249ef451904488c18743f9b93f8, type: 2}
+  _LockStatus: 1
+  _RequiredMoney: 200

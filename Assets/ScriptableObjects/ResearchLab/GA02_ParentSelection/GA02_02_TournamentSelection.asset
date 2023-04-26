@@ -16,3 +16,5 @@ MonoBehaviour:
   _Contents:
   - {fileID: 11400000, guid: bc685fa2f9bd7094e9d1a356f9a06f16, type: 2}
   - {fileID: 11400000, guid: a00189d3aeb11ce41ba43d3f4973514d, type: 2}
+  _LockStatus: 1
+  _RequiredMoney: 200

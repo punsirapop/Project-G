@@ -22,11 +22,11 @@ public class FactorySO : ScriptableObject
     [SerializeField] private float _BrokeChance;
 
     // Locking information
-    [SerializeField] private FactorySO _RequiredUnlockFactory;
-    [SerializeField] private FarmSO _RequiredUnlockFarm;
-    //[SerializeField] private GameObject[] _RequiredResearchChapters;
     [SerializeField] private LockableStatus _LockStatus;
     public LockableStatus LockStatus => _LockStatus;
+    [SerializeField] private FactorySO _RequiredUnlockFactory;
+    [SerializeField] private FarmSO _RequiredUnlockFarm;
+    [SerializeField] private GameObject[] _RequiredResearchChapters;
 
     // Breeding Request
     FactoryProduction.BreedPref _BreedPref;
@@ -122,11 +122,6 @@ public class FactorySO : ScriptableObject
         _ChromoDatabase.SetDatabase(newBitstringArray);
     }
 
-    public void SetLockStatus(LockableStatus newStatus)
-    {
-        _LockStatus = newStatus;
-    }
-
     private void OnEnable()
     {
         SaveManager.OnReset += Reset;
@@ -184,6 +179,11 @@ public class FactorySO : ScriptableObject
     // Return all weapon in database and its evaluated values
     public WeaponChromosome[] GetAllWeapon()
     {
+        // If the factory isn't unlocked yet, return empty array
+        if (_LockStatus != LockableStatus.Unlock)
+        {
+            return new WeaponChromosome[0];
+        }
         _PopulateDatabaseIfNot();
         // Create empty array of type WeaponChromosome
         WeaponChromosome[] allWeapon = new WeaponChromosome[_PopulationCount];
@@ -323,33 +323,53 @@ public class FactorySO : ScriptableObject
     }
 
     // Change locking status from lock to unlockable when condition satisfy
-    public void ValidateUnlockCondition()
+    public void ValidateUnlockRequirement()
     {
+        // If it's already Unlock, do nothing
         if (_LockStatus == LockableStatus.Unlock)
         {
             return;
         }
-        bool isConditionSatisfy = true;
+        bool isRequirementSatisfy = true;
+        // Validate required facilities
         if (_RequiredUnlockFactory != null)
         {
             if (_RequiredUnlockFactory.LockStatus != LockableStatus.Unlock)
             {
-                isConditionSatisfy = false;
+                isRequirementSatisfy = false;
             }
         }
-        if (_RequiredUnlockFarm)
+        if (_RequiredUnlockFarm != null)
         {
-            
+            // WIP
         }
-        //[SerializeField] private GameObject[] _RequiredResearchChapters;
+        // Validate research chapter
+        foreach (GameObject chapter in _RequiredResearchChapters)
+        {
+            if (chapter == null)
+            {
+                break;
+            }
+            // WIP
+        }
+        // Validate money
+        // WIP
 
-        if (isConditionSatisfy)
+        // If the requirements satisfy, set it as Unlockable
+        if (isRequirementSatisfy)
         {
             _LockStatus = LockableStatus.Unlockable;
-            if (MainPageManager.Instance != null)
-            {
-                MainPageManager.Instance.RenderFacilities();
-            }
         }
+        // Else, Lock the SO
+        else
+        {
+            _LockStatus = LockableStatus.Lock;
+        }
+    }
+
+    public void UnlockFactory()
+    {
+        // spend money WIP
+        _LockStatus = LockableStatus.Unlock;
     }
 }

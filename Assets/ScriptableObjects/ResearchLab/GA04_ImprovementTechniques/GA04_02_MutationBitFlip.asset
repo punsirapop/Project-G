@@ -15,3 +15,5 @@ MonoBehaviour:
   _Header: Bit Flip Mutation
   _Contents:
   - {fileID: 11400000, guid: 047d7b38c6b2be6499370e38b3af8231, type: 2}
+  _LockStatus: 1
+  _RequiredMoney: 200

@@ -18,6 +18,13 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static Date CurrentDate;
     public static int MechStatCap;
 
+    // Resources
+    public static int Money { get; private set; }
+
+    // ChapterSO for validation purpose
+    public static ContentChapterSO[] ContentChapterDatabase;
+    [SerializeField] private ContentChapterSO[] ContentChapterDatabaseHelper;
+
     // Facilities
     public static int CurrentFactoryIndex = 0;
     public static int CurrentFarmIndex = 1;
@@ -48,9 +55,27 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         SolveKnapsack
     }
 
+    // Assign factories data from serialized field on editor to the static variable
+    public void OnAfterDeserialize()
+    {
+        ContentChapterDatabase = ContentChapterDatabaseHelper;
+        FactoryDatabase = FactoryDatabaseHelper;
+        FarmDatabase = FarmDatabaseHelper;
+    }
+
+    // Reflect the value back into editor
+    public void OnBeforeSerialize()
+    {
+        ContentChapterDatabaseHelper = ContentChapterDatabase;
+        FactoryDatabaseHelper = FactoryDatabase;
+        FarmDatabaseHelper = FarmDatabase;
+    }
+
     private void Awake()
     {
         TimeManager.OnChangeDate += OnChangeDate;
+        SaveManager.OnReset += ResetMoney;
+        SaveManager.OnReset += ValidateUnlocking;
 
         if (Instance == null)
         {
@@ -91,20 +116,42 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         CurrentDate = d.DupeDate();
     }
 
-    // Assign factories data from serialized field on editor to the static variable
-    public void OnAfterDeserialize()
+    #region Money
+    public void ResetMoney()
     {
-        FactoryDatabase = FactoryDatabaseHelper;
-        FarmDatabase = FarmDatabaseHelper;
+        Money = 1000;   // Hard-code initial amount of Money
     }
 
-    // Reflect the value back into editor
-    public void OnBeforeSerialize()
+    // Deduct Money and return true if Money is enough. Otherwise, do nothing and return false
+    public static bool SpendMoneyIfEnought(int deductAmount)
     {
-        FactoryDatabaseHelper = FactoryDatabase;
-        FarmDatabaseHelper = FarmDatabase;
+        if (deductAmount <= Money)
+        {
+            Money -= deductAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
+    // Gain money and return true if success, Otherwise, do nothing and return false
+    public static bool GainMoneyIfValid(int gainAmount)
+    {
+        if (gainAmount >= 0)
+        {
+            Money += gainAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    #endregion
+
+    #region Facility Navigation
     // Change current factory
     public void SetCurrentFactoryIndex(int newFactoryIndex)
     {
@@ -135,13 +182,19 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             FarmDatabase[FacilityToFixIndex].Fixed();
         }
     }
+    #endregion
 
     // Validate locking status of all SO
-    public void ValidateUnlocking()
+    public static void ValidateUnlocking()
     {
+        Debug.Log("PlayerManager.ValidateUnlocking()");
+        foreach (ContentChapterSO chapter in ContentChapterDatabase)
+        {
+            chapter.ValidateUnlockRequirement();
+        }
         foreach (FactorySO factory in FactoryDatabase)
         {
-            factory.ValidateUnlockCondition();
+            factory.ValidateUnlockRequirement();
         }
     }
 }

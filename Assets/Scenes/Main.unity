@@ -3696,6 +3696,7 @@ MonoBehaviour:
   _FarmsMainPrefab: {fileID: 3283400104967738851, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
   _FixChoicesOverlay: {fileID: 1040913270}
   _DateDisplay: {fileID: 1005857031}
+  _MoneyDisplay: {fileID: 1852030507}
 --- !u!1 &1049503415
 GameObject:
   m_ObjectHideFlags: 0

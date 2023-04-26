@@ -18,6 +18,9 @@ public class MainPageManager : MonoBehaviour
     // Date
     [SerializeField] private TextMeshProUGUI _DateDisplay;
 
+    // Money
+    [SerializeField] private TextMeshProUGUI _MoneyDisplay;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -33,6 +36,7 @@ public class MainPageManager : MonoBehaviour
     private void Update()
     {
         _DateDisplay.text = PlayerManager.CurrentDate.ShowDate();
+        _MoneyDisplay.text = PlayerManager.Money.ToString();
     }
 
     // Render facilities

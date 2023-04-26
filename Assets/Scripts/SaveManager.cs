@@ -19,6 +19,7 @@ public class SaveManager : MonoBehaviour
         // public List<int> mechCurrentGen;
         // public int mechCurrentID;
         public int Days;
+        public int Money;
     }
 
     // SOs to save farms info
@@ -55,6 +56,7 @@ public class SaveManager : MonoBehaviour
         // saveData.mechCurrentGen = new List<int>(FarmManager.CurrentGen);
         // saveData.mechCurrentID = FarmManager.CurrentID;
         saveData.Days = PlayerManager.CurrentDate.ToDay();
+        saveData.Money = PlayerManager.Money;
 
         return saveData;
     }
