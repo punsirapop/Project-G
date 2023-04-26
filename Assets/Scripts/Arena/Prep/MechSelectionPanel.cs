@@ -72,13 +72,13 @@ public class MechSelectionPanel : SelectionPanel
         List<MechChromoSO> list = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToList();
         Dictionary<dynamic, List<float>> fvDict = GetFitnessDict(list);
         fvDict = fvDict.OrderByDescending(x => x.Value[0]).ToDictionary(x => x.Key, x => x.Value);
-        int tmp = AllyManager.Instance.CurrentSelection;
+        int tmp = AllySelectionManager.Instance.CurrentSelection;
         for (int i = 0; i < 3; i++)
         {
-            AllyManager.Instance.CurrentSelection = i;
-            AllyManager.Instance.Selecting(fvDict.Skip(i).First().Key);
+            AllySelectionManager.Instance.CurrentSelection = i;
+            AllySelectionManager.Instance.Selecting(fvDict.Skip(i).First().Key);
         }
-        AllyManager.Instance.CurrentSelection = tmp;
+        AllySelectionManager.Instance.CurrentSelection = tmp;
         // _ContentStorage.BroadcastMessage("AdjustingTeam", SendMessageOptions.DontRequireReceiver);
     }
 }

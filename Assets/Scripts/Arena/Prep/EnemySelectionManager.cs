@@ -5,8 +5,10 @@ using System.Linq;
 using UnityEngine;
 using static FitnessMenu;
 
-public class EnemyManager : MonoBehaviour
+public class EnemySelectionManager : MonoBehaviour
 {
+    public static EnemySelectionManager Instance;
+
     [SerializeField] MechCanvasDisplay[] _MechIcons;
     [SerializeField] AMechDisplay[] _MechBars;
     [SerializeField] ArenaMechDisplay[] _MechLineUp;
@@ -14,7 +16,17 @@ public class EnemyManager : MonoBehaviour
     List<MechChromoSO> _EnemyPool;
     List<List<MechChromoSO>> _EnemyParties;
 
+    MechChromoSO[] _EnemyTeam => _MechBars.Select(x => x.MySO).ToArray();
+    public MechChromoSO[] EnemyTeam => _EnemyTeam;
+
     private void Start()
+    {
+        if (Instance == null) Instance = this;
+
+        CreateNewEnemies();
+    }
+
+    public void CreateNewEnemies()
     {
         _EnemyPool = new List<MechChromoSO>();
         _EnemyParties = new List<List<MechChromoSO>>();
@@ -59,6 +71,7 @@ public class EnemyManager : MonoBehaviour
         {
             item.Item1.SetChromo(item.Item2);
         }
+
     }
 
     /*

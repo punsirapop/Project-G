@@ -12,7 +12,7 @@ public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AllyManager.Instance.Selecting(MySO);
+        AllySelectionManager.Instance.Selecting(MySO);
     }
 
     public override void SetChromo(MechChromoSO c)
@@ -27,9 +27,9 @@ public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
 
     public void AdjustingTeam()
     {
-        if (AllyManager.Instance.Buttons[AllyManager.Instance.CurrentSelection].MySO == MySO)
+        if (AllySelectionManager.Instance.Buttons[AllySelectionManager.Instance.CurrentSelection].MySO == MySO)
             AdjustIndicators(2);
-        else if (AllyManager.Instance.AllyTeam.Contains(MySO))
+        else if (AllySelectionManager.Instance.AllyTeam.Contains(MySO))
             AdjustIndicators(1);
         else AdjustIndicators(0);
     }

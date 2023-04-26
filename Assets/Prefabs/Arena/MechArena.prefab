@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 3584002426213630595}
   - component: {fileID: 474619340648343067}
   - component: {fileID: 3365191131432940673}
+  - component: {fileID: -2348340505369288093}
   m_Layer: 0
   m_Name: MechArena
   m_TagString: Untagged
@@ -356,7 +357,31 @@ MonoBehaviour:
   - {fileID: 4157074535394814681}
   - {fileID: 2769620569609232041}
   - {fileID: 6602694431736173847}
+  IsAlly: 0
+  Index: 0
   _Me: {fileID: 4822425833679155531}
+  _BulletPrefab: {fileID: 8690776782689158470, guid: 48cea1265bb15b144b475b244be038b5, type: 3}
+--- !u!50 &-2348340505369288093
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822425833679155531}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5736518346795568468
 GameObject:
   m_ObjectHideFlags: 0

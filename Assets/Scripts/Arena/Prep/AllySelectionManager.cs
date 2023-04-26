@@ -5,9 +5,9 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AllyManager : MonoBehaviour
+public class AllySelectionManager : MonoBehaviour
 {
-    public static AllyManager Instance;
+    public static AllySelectionManager Instance;
     public static event Action OnTeamChange;
 
     public int CurrentSelection;
