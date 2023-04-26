@@ -19,6 +19,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject _ChoiceButtonPrefab;
     // Variable related to dialogue data
     [SerializeField] private DialogueSO _CurrentDialogueSO;
+    /////////////////////////////////////////////////////////////////////// Maybe change
     private DialogueElement CurrentDialogue => _CurrentDialogueSO.Elements[_CurrentSentenceIndex];
     private int _CurrentSentenceIndex;
     [SerializeField] private float _TypeDelaySeconds;
@@ -28,11 +29,12 @@ public class CutsceneManager : MonoBehaviour
     private DialogueElement.Sentence[] _ChoiceResponses;
     private int _CurrentChoiceResponseIndex;
     //the choices answer
-    [SerializeField] private int[] _ChoiceAnswers;
+    private int[] _ChoiceAnswers => _CurrentDialogueSO.ChoiceAnswers;
     [SerializeField] private int _PassScore;
     private int _CurrentAnswerIndex;
     //Collect the choices input
     private int _Score;
+    private DialogueElement.Sentence _Temp;
 
     void Awake()
     {
@@ -199,15 +201,16 @@ public class CutsceneManager : MonoBehaviour
         // If it's a checker and not a choice, display sentence + _Score        
         else if (CurrentDialogue.IsChecker)
         {
-           DialogueElement.Sentence temp;
             if(_Score >= _PassScore){
-                temp = CurrentDialogue.CheckerAnswer.Pass;
-                temp.SentenceContent = temp.SentenceContent.Replace(("[score]"),_Score.ToString());
-                DisplaySentence(temp);
+                _Temp = CurrentDialogue.CheckerAnswer.Pass;
+                _Temp.SentenceContent = string.Copy(CurrentDialogue.CheckerAnswer.Pass.SentenceContent.Replace(("[score]"),_Score.ToString()));
+                DisplaySentence(_Temp);
+                _Temp.SentenceContent = string.Copy(CurrentDialogue.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
             } else {
-                temp = CurrentDialogue.CheckerAnswer.Fail;
-               temp.SentenceContent = temp.SentenceContent.Replace(("[score]"),_Score.ToString());
-                DisplaySentence(temp);
+                _Temp = CurrentDialogue.CheckerAnswer.Fail;
+                _Temp.SentenceContent = string.Copy(CurrentDialogue.CheckerAnswer.Fail.SentenceContent.Replace(("[score]"),_Score.ToString()));
+                DisplaySentence(_Temp);
+                _Temp.SentenceContent = string.Copy(CurrentDialogue.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
             }
         }
         // If it's a sentence, display sentence

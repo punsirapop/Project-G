@@ -4,6 +4,10 @@ using UnityEngine;
 [CustomPropertyDrawer(typeof(DialogueElement))]
 public class DialogueElementDrawer : PropertyDrawer
 {
+    private string[] _boolOptions = new string[] { "False", "True" };
+
+    private string[] _dataTypeOptions = new string[] { "Sentence", "Choice", "Checker" };
+
     // Override the OnGUI method to customize the inspector for DialogueElement
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
@@ -16,35 +20,34 @@ public class DialogueElementDrawer : PropertyDrawer
         SerializedProperty choices = property.FindPropertyRelative("Choices");
         SerializedProperty checker = property.FindPropertyRelative("CheckerAnswer");
 
-        // Draw the IsChoices property first
-        Rect isChoicesRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        EditorGUI.PropertyField(isChoicesRect, isChoices);
+        // Draw the data type dropdown first
+        Rect dataTypeRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
+        int dataTypeIndex = isChoices.boolValue ? 1 : isChecker.boolValue ? 2 : 0;
+        dataTypeIndex = EditorGUI.Popup(dataTypeRect, "Data Type", dataTypeIndex, _dataTypeOptions);
+        isChoices.boolValue = dataTypeIndex == 1;
+        isChecker.boolValue = dataTypeIndex == 2;
 
-        // Draw the IsChecker property first - copy IsChoice
-        Rect isCheckerRect = new Rect(position.x, isChoicesRect.yMax + EditorGUIUtility.standardVerticalSpacing,
-                                      position.width, EditorGUIUtility.singleLineHeight);
-        EditorGUI.PropertyField(isCheckerRect, isChecker);
+        // Draw the SentenceData property if "Sentence" is chosen
+        if (!isChoices.boolValue && !isChecker.boolValue)
+        {
+            Rect sentenceDataRect = new Rect(position.x, dataTypeRect.yMax + EditorGUIUtility.standardVerticalSpacing,
+                                        position.width, EditorGUI.GetPropertyHeight(sentenceData));
+            EditorGUI.PropertyField(sentenceDataRect, sentenceData, true);
+        }
 
-        // If IsChoices is true, only show the Choices property
+        // Draw the Choices property if IsChoices is true
         if (isChoices.boolValue)
         {
-            Rect choicesRect = new Rect(position.x, isCheckerRect.yMax + EditorGUIUtility.standardVerticalSpacing,
+            Rect choicesRect = new Rect(position.x, dataTypeRect.yMax + EditorGUIUtility.standardVerticalSpacing,
                                         position.width, EditorGUI.GetPropertyHeight(choices));
             EditorGUI.PropertyField(choicesRect, choices, true);
         }
-        // If IsChecker is true and Is Choice is false, only show the Checker property
+        // Draw the Checker property if IsChecker is true
         else if (isChecker.boolValue)
         {
-            Rect checkerRect = new Rect(position.x, isCheckerRect.yMax + EditorGUIUtility.standardVerticalSpacing,
+            Rect checkerRect = new Rect(position.x, dataTypeRect.yMax + EditorGUIUtility.standardVerticalSpacing,
                                         position.width, EditorGUI.GetPropertyHeight(checker));
             EditorGUI.PropertyField(checkerRect, checker, true);
-        }
-        // If IsChoices and IsChecker is false, only show the SentenceData property
-        else
-        {
-            Rect sentenceDataRect = new Rect(position.x, isCheckerRect.yMax + EditorGUIUtility.standardVerticalSpacing,
-                                             position.width, EditorGUI.GetPropertyHeight(sentenceData));
-            EditorGUI.PropertyField(sentenceDataRect, sentenceData, true);
         }
 
         EditorGUI.EndProperty();
@@ -61,6 +64,11 @@ public class DialogueElementDrawer : PropertyDrawer
 
         float height = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
 
+        if (!isChoices.boolValue && !isChecker.boolValue)
+        {
+            height += EditorGUI.GetPropertyHeight(sentenceData) + EditorGUIUtility.standardVerticalSpacing;
+        }
+        
         if (isChoices.boolValue)
         {
             height += EditorGUI.GetPropertyHeight(choices) + EditorGUI.GetPropertyHeight(isChecker) + EditorGUIUtility.standardVerticalSpacing;
@@ -68,10 +76,6 @@ public class DialogueElementDrawer : PropertyDrawer
         else if (isChecker.boolValue)
         {
             height += EditorGUI.GetPropertyHeight(checker) + EditorGUI.GetPropertyHeight(isChecker) + EditorGUIUtility.standardVerticalSpacing;
-        }
-        else
-        {
-            height += EditorGUI.GetPropertyHeight(sentenceData) + EditorGUI.GetPropertyHeight(isChecker) + EditorGUIUtility.standardVerticalSpacing;
         }
 
         return height;

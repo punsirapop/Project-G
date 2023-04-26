@@ -8,7 +8,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Dialogue")]
 public class DialogueSO : ScriptableObject
 {
-    [SerializeField] private int[] _ChoiceAnswers;
+    [SerializeField] public int[] ChoiceAnswers;
     [SerializeField] private DialogueElement[] _Elements;
     public DialogueElement[] Elements => _Elements;
 }
