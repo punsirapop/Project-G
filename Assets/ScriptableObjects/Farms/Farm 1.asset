@@ -12,22 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 1
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 1000
+  _RequiredObjects: []
   _Name: Farm1
-  _Generation: 10
+  _Generation: 0
   _Status: 0
   _BrokeChance: 0.2
   _BG: {fileID: 21300000, guid: 4c7de59fbe19e07419d96307a3e43d1c, type: 3}
   _MainNormal: {fileID: 21300000, guid: e26270fc5da3ca44bb2b66ef958c5582, type: 3}
   _MainBroken: {fileID: 21300000, guid: b88dd47aa9ec78945b61b736c8f61c4d, type: 3}
   _Locker: {fileID: 21300000, guid: fb877ff4c795eb6468e7f3de754f3b80, type: 3}
-  _MechChromos:
-  - {fileID: 11400000, guid: 860a771f93f407a4081fccc2927188ad, type: 2}
-  - {fileID: 11400000, guid: fe74e7dee93bbb6429af5d324bfb2d1a, type: 2}
-  - {fileID: 11400000, guid: fc6d2227e93172c4e9bf849a50fe0174, type: 2}
-  - {fileID: 11400000, guid: 2bc6181db1d82894aaa0fb80e7830407, type: 2}
-  - {fileID: 11400000, guid: 0cd7d4e35489343419602972fc1a66b8, type: 2}
-  - {fileID: 11400000, guid: c8e2241d4acb81248b2695a0a4a2d127, type: 2}
-  - {fileID: 11400000, guid: f9bcf35f40a5f61429d139fd14437071, type: 2}
-  - {fileID: 11400000, guid: 984ced30d256dce4794605b9e80994db, type: 2}
-  - {fileID: 11400000, guid: 757be08330943214d860aa885a0c67a5, type: 2}
-  - {fileID: 11400000, guid: 5f9fd423aec41104a9c14eb88eec65e8, type: 2}
+  _MechChromos: []

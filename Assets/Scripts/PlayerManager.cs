@@ -195,6 +195,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             factory.ValidateUnlockRequirement();
         }
+        foreach (FarmSO farm in FarmDatabase)
+        {
+            farm.ValidateUnlockRequirement();
+        }
     }
 
     // TEMP function for start the game with the least restriction
@@ -208,6 +212,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         foreach (FactorySO factory in FactoryDatabase)
         {
             factory.ForceUnlock();
+        }
+        foreach (FarmSO farm in FarmDatabase)
+        {
+            farm.ForceUnlock();
         }
         ValidateUnlocking();
     }

@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FarmMain : FarmMngFunc
-{ 
+{
+    // Game object of sprite group of each state
+    [SerializeField] private GameObject _Locked;
+    [SerializeField] private GameObject _Unlockable;
+    [SerializeField] private GameObject _Unlocked;
+
     // Sprite of this factory in main game page
     [SerializeField] private Sprite _MainLocked;
     private Sprite _MainNormal;
@@ -15,15 +20,19 @@ public class FarmMain : FarmMngFunc
     [SerializeField] private GameObject _MainBackground;
     [SerializeField] private GameObject _MainLightBoard;
     [SerializeField] private GameObject _FixButton;
+    [SerializeField] private GameObject _UnlockableLockerUI;
+    [SerializeField] private GameObject _LockedLockerUI;
 
-
-    // Factory information, this should be managed by PlayerManager and/or FactorySO later
+    // Farm information
     private int _FarmIndex;
+    public FarmSO FarmDatabase => PlayerManager.FarmDatabase[_FarmIndex];
 
     void Start()
     {
         _MainBackground.GetComponent<Image>().sprite = _MainNormal;
-        _MainBackground.GetComponent<Button>().onClick.AddListener(() => EnterFarm());
+        _UnlockableLockerUI.GetComponent<Image>().sprite = _Locker;
+        _LockedLockerUI.GetComponent<Image>().sprite = _Locker;
+        //_MainBackground.GetComponent<Button>().onClick.AddListener(() => EnterFarm());
         // _MainLightBoard.GetComponent<Button>().onClick.AddListener(() => EnterKnapsackPuzzle());
     }
 
@@ -50,7 +59,7 @@ public class FarmMain : FarmMngFunc
         _MainNormal = newFarmSO.MainNormal;
         _MainBroken = newFarmSO.MainBroken;
         _Locker = newFarmSO.Locker;
-
+        RenderSprites();
         /*
         int lights = 0;
         foreach (var item in _MainLightBoard.GetComponentsInChildren<Image>())
@@ -61,31 +70,62 @@ public class FarmMain : FarmMngFunc
         */
     }
 
-    private void EnterFarm()
+    // Render the sprites according to LockStatus
+    public void RenderSprites()
+    {
+        _Locked.SetActive(PlayerManager.FarmDatabase[_FarmIndex].LockStatus == LockableStatus.Lock);
+        _Unlockable.SetActive(PlayerManager.FarmDatabase[_FarmIndex].LockStatus == LockableStatus.Unlockable);
+        _Unlocked.SetActive(PlayerManager.FarmDatabase[_FarmIndex].LockStatus == LockableStatus.Unlock);
+    }
+
+    public void EnterFarm()
     {
         PlayerManager.CurrentFarmIndex = _FarmIndex;
         this.GetComponent<SceneMng>().ChangeScene("Farm");
     }
 
-    private void EnterKnapsackPuzzle()
+    #region Lock and Unlocking
+    // Display overlay for Locked factory
+    public void DisplayLockOverlay()
     {
-        this.GetComponent<SceneMng>().ChangeScene("KnapsackPuzzle");
+        MainPageManager.Instance.DisplayUnlockOverlay(this);
     }
 
-    // ------- DEBUG -------
-    public void AddChromo(int amount)
+    // Unlock the Unlockable FactorySO
+    public void UnlockFarm()
     {
-        AddChromo(PlayerManager.FarmDatabase[_FarmIndex], amount);
+        PlayerManager.FarmDatabase[_FarmIndex].Unlock();
+        GetComponent<Animator>().Play("UnlockFarm");
     }
 
-    public void FixFarm()
+    // Wrap function for validate unlocking and render UI, triggered at the end of UnlockFactory animation
+    public void OnUnlockAnimationEnd()
     {
-        PlayerManager.FarmDatabase[_FarmIndex].Fixed();
+        GetComponent<Animator>().enabled = false;
+        PlayerManager.ValidateUnlocking();
+        MainPageManager.Instance.RenderFacilities();
     }
+    #endregion
 
     public void OnFixButtonClick()
     {
         PlayerManager.Instance.SetFacilityToFix(PlayerManager.FacilityType.Farm, _FarmIndex);
         MainPageManager.Instance.DisplayFixChoice();
     }
+    // ------- DEBUG -------
+    public void AddChromo(int amount)
+    {
+        AddChromo(PlayerManager.FarmDatabase[_FarmIndex], amount);
+    }
+
+    //public void FixFarm()
+    //{
+    //    PlayerManager.FarmDatabase[_FarmIndex].Fixed();
+    //}
+
+    //public void OnFixButtonClick()
+    //{
+    //    PlayerManager.Instance.SetFacilityToFix(PlayerManager.FacilityType.Farm, _FarmIndex);
+    //    MainPageManager.Instance.DisplayFixChoice();
+    //}
 }

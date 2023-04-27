@@ -11,16 +11,16 @@ public class MainUnlockOverlay : MonoBehaviour
     [SerializeField] private Transform _RequirementHolder;
     [SerializeField] private GameObject _UnlockRequirementPrefab;
 
-    public void SetOverlay(FactorySO clickedFactory)
+    public void SetOverlay(LockableObject clickedFacility)
     {
-        _CloseOverlayButton.SetActive(clickedFactory.LockStatus == LockableStatus.Lock);
-        _ConfirmationButtons.SetActive(clickedFactory.LockStatus == LockableStatus.Unlockable);
-        FacilityName.text = clickedFactory.Name;
+        _CloseOverlayButton.SetActive(clickedFacility.LockStatus == LockableStatus.Lock);
+        _ConfirmationButtons.SetActive(clickedFacility.LockStatus == LockableStatus.Unlockable);
+        FacilityName.text = clickedFacility.GetLockableObjectName();
         foreach (Transform child in _RequirementHolder)
         {
             Destroy(child.gameObject);
         }
-        foreach (UnlockRequirementData unlockRequirementData in clickedFactory.GetUnlockRequirements())
+        foreach (UnlockRequirementData unlockRequirementData in clickedFacility.GetUnlockRequirements())
         {
             GameObject newUnlockRequirement = Instantiate(_UnlockRequirementPrefab, _RequirementHolder);
             newUnlockRequirement.GetComponent<UnlockRequirementUI>().SetUnlockRequirement(unlockRequirementData, Color.black);

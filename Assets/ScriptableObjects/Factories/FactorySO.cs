@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Factory")]
-public class FactorySO : ScriptableObject
+public class FactorySO : LockableObject
 {
     [Header("Factory information")]
     // Factory informations
@@ -20,15 +20,6 @@ public class FactorySO : ScriptableObject
     private int _Condition; // If Condition remain 0, the facility completely broken
     public int Condition => _Condition;
     [SerializeField] private float _BrokeChance;
-
-    // Locking information
-    [Header("Locking information")]
-    [SerializeField] private LockableStatus _LockStatus;
-    public LockableStatus LockStatus => _LockStatus;
-    [SerializeField] private int _RequiredMoney;
-    [SerializeField] private FactorySO _RequiredFactory;
-    [SerializeField] private FarmSO _RequiredFarm;
-    [SerializeField] private ContentChapterSO[] _RequiredChapters;
 
     // Breeding Request
     FactoryProduction.BreedPref _BreedPref;
@@ -99,6 +90,14 @@ public class FactorySO : ScriptableObject
     }
 
     #region Getter, Setter, Reset
+    public override string GetRequirementPrefix()
+    {
+        return "Build";
+    }
+    public override string GetLockableObjectName()
+    {
+        return _Name;
+    }
     public void SetStatus(Status newStatus)
     {
         _Status = newStatus;
@@ -314,125 +313,6 @@ public class FactorySO : ScriptableObject
     {
         if (_Condition < 4) _Condition++;
         // SetStatus(BreedInfo.Equals(default(BreedMenu.BreedInfo)) ? Status.IDLE : Status.BREEDING);
-    }
-    #endregion
-
-    #region Locking and Unlocking
-    // Change locking status from lock to unlockable when condition satisfy
-    public void ValidateUnlockRequirement()
-    {
-        // If it's already Unlock, do nothing
-        if (_LockStatus == LockableStatus.Unlock)
-        {
-            return;
-        }
-        bool isRequirementSatisfy = true;
-        // Validate required facilities
-        if (_RequiredFactory != null)
-        {
-            if (_RequiredFactory.LockStatus != LockableStatus.Unlock)
-            {
-                isRequirementSatisfy = false;
-            }
-        }
-        if (_RequiredFarm != null)
-        {
-            // WIP
-        }
-        // Validate research chapter
-        foreach (ContentChapterSO chapter in _RequiredChapters)
-        {
-            if (chapter == null)
-            {
-                break;
-            }
-            if (chapter.LockStatus != LockableStatus.Unlock)
-            {
-                isRequirementSatisfy = false;
-            }
-        }
-        // Validate money
-        if (_RequiredMoney > PlayerManager.Money)
-        {
-            isRequirementSatisfy = false;
-        }
-
-        // If the requirements satisfy, set it as Unlockable
-        if (isRequirementSatisfy)
-        {
-            _LockStatus = LockableStatus.Unlockable;
-        }
-        // Else, Lock the SO
-        else
-        {
-            _LockStatus = LockableStatus.Lock;
-        }
-    }
-
-    // Return all unlock requirements of this Factory in a form of array
-    public UnlockRequirementData[] GetUnlockRequirements()
-    {
-        // Initiate array of all requirements
-        int requirementCount = 1;                                   // MoneyRequirement
-        requirementCount += (_RequiredFactory != null) ? 1 : 0;     // Factory requirement
-        requirementCount += (_RequiredFarm != null) ? 1 : 0;        // Farm requirement
-        requirementCount += _RequiredChapters.Length;               // Research Chapter requirement
-        UnlockRequirementData[] unlockRequirements = new UnlockRequirementData[requirementCount];
-        int generatedRequirementCount = 0;
-        // Generate UnlockRequirementData
-        // Factory requirement
-        if (_RequiredFactory != null)
-        {
-            unlockRequirements[generatedRequirementCount] = new UnlockRequirementData(
-                _RequiredFactory.LockStatus == LockableStatus.Unlock,
-                "Unlock factory",
-                _RequiredFactory.Name
-                );
-            generatedRequirementCount++;
-        }
-        // Farm requirement
-        //if (_RequiredFarm != null)
-        //{
-        //    unlockRequirements[generatedRequirementCount] = new UnlockRequirementData(
-        //        _RequiredFarm.LockStatus == LockableStatus.Unlock,
-        //        "Unlock farm",
-        //        _RequiredFarm.Name
-        //        );
-        //    generatedRequirementCount++;
-        //}
-        // Chapter
-        int chapterIndex;
-        for (chapterIndex = 0; chapterIndex < _RequiredChapters.Length; chapterIndex++)
-        {
-            unlockRequirements[generatedRequirementCount + chapterIndex] = new UnlockRequirementData(
-                _RequiredChapters[chapterIndex].LockStatus == LockableStatus.Unlock,
-                "Unlock research",
-                _RequiredChapters[chapterIndex].Header
-                );
-        }
-        // Money requirement
-        unlockRequirements[generatedRequirementCount + chapterIndex] = new UnlockRequirementData(
-            _RequiredMoney <= PlayerManager.Money,
-            "Money",
-            PlayerManager.Money.ToString() + "/" + _RequiredMoney.ToString()
-            );
-        return unlockRequirements;
-    }
-
-    // Consume resource and unlock Factory
-    public void UnlockFactory()
-    {
-        bool isTransactionSuccess = PlayerManager.SpendMoneyIfEnought(_RequiredMoney);
-        if (isTransactionSuccess)
-        {
-            _LockStatus = LockableStatus.Unlock;
-        }
-    }
-
-    // TEMP function for force unlocking
-    public void ForceUnlock()
-    {
-        _LockStatus = LockableStatus.Unlock;
     }
     #endregion
 }

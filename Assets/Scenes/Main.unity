@@ -5049,7 +5049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1137880652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6964,7 +6964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlock
+  m_text: Build
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
   m_sharedMaterial: {fileID: -8466067231644031343, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
@@ -8634,7 +8634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1890209328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10071,7 +10071,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1046214082}
         m_TargetAssemblyTypeName: MainPageManager, Assembly-CSharp
-        m_MethodName: UnlockFactory
+        m_MethodName: UnlockFacility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

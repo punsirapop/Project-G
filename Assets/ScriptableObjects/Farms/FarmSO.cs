@@ -6,7 +6,7 @@ using UnityEngine;
 using static FitnessMenu;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Farm")]
-public class FarmSO : ScriptableObject
+public class FarmSO : LockableObject
 {
     // Invoke when changing state
     public static event Action<FarmSO, Status> OnFarmChangeStatus;
@@ -73,6 +73,7 @@ public class FarmSO : ScriptableObject
         _Generation = 0;
         _Status = 0;
         _Condition = 4;
+        _LockStatus = LockableStatus.Lock;
         _BreedInfo = new BreedMenu.BreedInfo();
         _BreedGuage = 0;
         _GuagePerDay = 100;
@@ -81,6 +82,15 @@ public class FarmSO : ScriptableObject
         _BreedPref = new BreedMenu.BreedPref();
         _FitnessPref = new List<Tuple<Properties, int>>();
         _MechChromos = new List<MechChromoSO>();
+    }
+
+    public override string GetRequirementPrefix()
+    {
+        return "Build";
+    }
+    public override string GetLockableObjectName()
+    {
+        return _Name;
     }
 
     /*

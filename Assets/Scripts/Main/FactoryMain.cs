@@ -23,7 +23,7 @@ public class FactoryMain : MonoBehaviour
     [SerializeField] private GameObject _UnlockableLockerUI;
     [SerializeField] private GameObject _LockedLockerUI;
 
-    // Factory information, this should be managed by PlayerManager and/or FactorySO later
+    // Factory information
     private int _FactoryIndex;
     public FactorySO FactoryDatabase => PlayerManager.FactoryDatabase[_FactoryIndex];
 
@@ -67,7 +67,13 @@ public class FactoryMain : MonoBehaviour
         _Unlockable.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Unlockable);
         _Unlocked.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Unlock);
     }
+    public void EnterFactory()
+    {
+        PlayerManager.CurrentFactoryIndex = _FactoryIndex;
+        this.GetComponent<SceneMng>().ChangeScene("Factory");
+    }
 
+    #region Lock and Unlocking
     // Display overlay for Locked factory
     public void DisplayLockOverlay()
     {
@@ -77,7 +83,7 @@ public class FactoryMain : MonoBehaviour
     // Unlock the Unlockable FactorySO
     public void UnlockFactory()
     {
-        PlayerManager.FactoryDatabase[_FactoryIndex].UnlockFactory();
+        PlayerManager.FactoryDatabase[_FactoryIndex].Unlock();
         GetComponent<Animator>().Play("UnlockFactory");
     }
 
@@ -88,12 +94,7 @@ public class FactoryMain : MonoBehaviour
         PlayerManager.ValidateUnlocking();
         MainPageManager.Instance.RenderFacilities();
     }
-
-    public void EnterFactory()
-    {
-        PlayerManager.CurrentFactoryIndex = _FactoryIndex;
-        this.GetComponent<SceneMng>().ChangeScene("Factory");
-    }
+    #endregion
 
     public void OnFixButtonClick()
     {

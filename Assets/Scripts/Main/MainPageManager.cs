@@ -15,7 +15,9 @@ public class MainPageManager : MonoBehaviour
     [SerializeField] private GameObject _FarmsMainPrefab;
 
     // Overlay
+    private PlayerManager.FacilityType facilityTypeToUnlock;
     private FactoryMain _CurrentFactoryMain;
+    private FarmMain _CurrentFarmMain;
     [SerializeField] private GameObject _UnlockOverlay;
     [SerializeField] private GameObject _FixChoicesOverlay;
 
@@ -75,17 +77,34 @@ public class MainPageManager : MonoBehaviour
     }
 
     // Display a facility unlock overlay when the facility isn't unlocked
-    public void DisplayUnlockOverlay(FactoryMain factoryMain)
+    public void DisplayUnlockOverlay(FactoryMain clickedFactory)
     {
-        _CurrentFactoryMain = factoryMain;
-        _UnlockOverlay.GetComponent<MainUnlockOverlay>().SetOverlay(factoryMain.FactoryDatabase);
+        facilityTypeToUnlock = PlayerManager.FacilityType.Factory;
+        _CurrentFactoryMain = clickedFactory;
+        _UnlockOverlay.GetComponent<MainUnlockOverlay>().SetOverlay(clickedFactory.FactoryDatabase);
+        _UnlockOverlay.SetActive(true);
+    }
+
+    // Overload method for FarmMain
+    public void DisplayUnlockOverlay(FarmMain clickedFarm)
+    {
+        facilityTypeToUnlock = PlayerManager.FacilityType.Farm;
+        _CurrentFarmMain = clickedFarm;
+        _UnlockOverlay.GetComponent<MainUnlockOverlay>().SetOverlay(clickedFarm.FarmDatabase);
         _UnlockOverlay.SetActive(true);
     }
 
     // Wrap function for unlocking factory, use for Unlock overlay
-    public void UnlockFactory()
+    public void UnlockFacility()
     {
-        _CurrentFactoryMain.UnlockFactory();
+        if (facilityTypeToUnlock == PlayerManager.FacilityType.Factory)
+        {
+            _CurrentFactoryMain.UnlockFactory();
+        }
+        else if (facilityTypeToUnlock == PlayerManager.FacilityType.Farm)
+        {
+            _CurrentFarmMain.UnlockFarm();
+        }
     }
 
     // Display a facility fix choices overlay, transition to the puzzles

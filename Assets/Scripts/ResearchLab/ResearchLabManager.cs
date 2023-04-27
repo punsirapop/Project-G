@@ -231,7 +231,7 @@ public class ResearchLabManager : MonoBehaviour
 
     public void UnlockCurrentChapter()
     {
-        _CurrentChapterSO.UnlockChapter();
+        _CurrentChapterSO.Unlock();
         PlayerManager.ValidateUnlocking();
         _RefreshPage();
     }

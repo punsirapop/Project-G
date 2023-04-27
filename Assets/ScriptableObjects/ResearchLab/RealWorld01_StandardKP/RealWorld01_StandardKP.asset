@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: RealWorld01_StandardKP
   m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 200
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
   _Header: Standard Knapsack
   _Contents:
   - {fileID: 11400000, guid: a85f32052a962274894ae2a2c64d56e5, type: 2}
@@ -19,7 +23,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 130c0490759873c468c0b28efb47be46, type: 2}
   - {fileID: 11400000, guid: 91e480cbf2169c54e9099ae7a56f8a81, type: 2}
   - {fileID: 11400000, guid: 928a0f527bc4e474cb6d3595aef62605, type: 2}
-  _LockStatus: 1
-  _RequiredMoney: 100
-  _RequiredChapters:
-  - {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
