@@ -22,9 +22,13 @@ MonoBehaviour:
   _Generation: 0
   _Status: 0
   _BrokeChance: 0.2
-  _RequiredUnlockFactory: {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
-  _RequiredUnlockFarm: {fileID: 0}
-  _LockStatus: 0
+  _LockStatus: 1
+  _RequiredMoney: 4000
+  _RequiredFactory: {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
+  _RequiredFarm: {fileID: 0}
+  _RequiredChapters:
+  - {fileID: 11400000, guid: 1a8eb748a7f0bed4ba6758198beaa36e, type: 2}
+  - {fileID: 11400000, guid: 288229fb98053124392413ec025b209e, type: 2}
   _Floor: {fileID: 21300000, guid: 14977638b0939ac4491a61928676a6ca, type: 3}
   _Conveyor: {fileID: 21300000, guid: d363c177a3790ec43b4baf7895277756, type: 3}
   _Border: {fileID: 21300000, guid: d60282bc9dda9ea429714317b60c7ac2, type: 3}

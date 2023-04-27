@@ -25,6 +25,7 @@ public class FactoryMain : MonoBehaviour
 
     // Factory information, this should be managed by PlayerManager and/or FactorySO later
     private int _FactoryIndex;
+    public FactorySO FactoryDatabase => PlayerManager.FactoryDatabase[_FactoryIndex];
 
     void Start()
     {
@@ -65,6 +66,12 @@ public class FactoryMain : MonoBehaviour
         _Locked.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Lock);
         _Unlockable.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Unlockable);
         _Unlocked.SetActive(PlayerManager.FactoryDatabase[_FactoryIndex].LockStatus == LockableStatus.Unlock);
+    }
+
+    // Display overlay for Locked factory
+    public void DisplayLockOverlay()
+    {
+        MainPageManager.Instance.DisplayUnlockOverlay(this);
     }
 
     // Unlock the Unlockable FactorySO

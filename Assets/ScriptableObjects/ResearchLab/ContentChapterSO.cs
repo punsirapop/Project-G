@@ -15,6 +15,7 @@ public class ContentChapterSO : ScriptableObject
     [SerializeField] private LockableStatus _LockStatus;
     public LockableStatus LockStatus => _LockStatus;
     [SerializeField] private int _RequiredMoney;
+    [SerializeField] private ContentChapterSO[] _RequiredChapters;
     //[SerializeField] private Quest _RequiredQuest;
 
     private void OnEnable()
@@ -43,8 +44,19 @@ public class ContentChapterSO : ScriptableObject
     // Return array of unlock requirements
     public UnlockRequirementData[] GetUnlockRequirements()
     {
-        UnlockRequirementData[] unlockRequirements = new UnlockRequirementData[1];
-        unlockRequirements[0] = new UnlockRequirementData(
+        UnlockRequirementData[] unlockRequirements = new UnlockRequirementData[_RequiredChapters.Length + 1];
+        int i;
+        // Chapter requirement
+        for (i = 0; i < _RequiredChapters.Length; i++)
+        {
+            unlockRequirements[i] = new UnlockRequirementData(
+                _RequiredChapters[i].LockStatus == LockableStatus.Unlock,
+                "Unlock research",
+                _RequiredChapters[i].Header
+                );
+        }
+        // Money requirement
+        unlockRequirements[i] = new UnlockRequirementData(
             _RequiredMoney <= PlayerManager.Money,
             "Money",
             PlayerManager.Money.ToString() + "/" + _RequiredMoney.ToString()
@@ -66,6 +78,14 @@ public class ContentChapterSO : ScriptableObject
         {
             isRequirementSatisfy = false;
         }
+        // Validate for Chapter
+        foreach (ContentChapterSO chapter in _RequiredChapters)
+        {
+            if (chapter.LockStatus != LockableStatus.Unlock)
+            {
+                isRequirementSatisfy = false;
+            }
+        }
         // If the requirements satisfy, set it as Unlockable
         if (isRequirementSatisfy)
         {
@@ -78,6 +98,7 @@ public class ContentChapterSO : ScriptableObject
         }
     }
 
+    // Consume resource and unlock Chapter
     public void UnlockChapter()
     {
         bool isTransactionSuccess = PlayerManager.SpendMoneyIfEnought(_RequiredMoney);
@@ -85,5 +106,11 @@ public class ContentChapterSO : ScriptableObject
         {
             _LockStatus = LockableStatus.Unlock;
         }
+    }
+
+    // TEMP function for force unlocking
+    public void ForceUnlock()
+    {
+        _LockStatus = LockableStatus.Unlock;
     }
 }

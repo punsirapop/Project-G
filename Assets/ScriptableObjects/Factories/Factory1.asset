@@ -18,12 +18,16 @@ MonoBehaviour:
     armor! Forging the armor using all metal makes it tougher but also too heavy.
     Selecting some metal to make the armor tough enough while the weight is not too
     much can be solved using the idea of the Standard Knapsack Problem.
-  _Generation: 9
-  _Status: 1
+  _Generation: 0
+  _Status: 0
   _BrokeChance: 0.2
-  _RequiredUnlockFactory: {fileID: 0}
-  _RequiredUnlockFarm: {fileID: 0}
   _LockStatus: 2
+  _RequiredMoney: 1000
+  _RequiredFactory: {fileID: 0}
+  _RequiredFarm: {fileID: 0}
+  _RequiredChapters:
+  - {fileID: 11400000, guid: 10d7da827372de34791e1bf445730efb, type: 2}
+  - {fileID: 11400000, guid: a17f5dc6107a22447af87aa31573b0df, type: 2}
   _Floor: {fileID: 21300000, guid: eaf2bffa0920b274cbc73331d6a6669a, type: 3}
   _Conveyor: {fileID: 21300000, guid: 4beaf4a6b5bfc1a43a8875d55561ec2b, type: 3}
   _Border: {fileID: 21300000, guid: 58cb6da6a3183c24391705c676d6c4d5, type: 3}

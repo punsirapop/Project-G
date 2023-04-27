@@ -13,6 +13,10 @@ public class MainPageManager : MonoBehaviour
     [SerializeField] private Transform _FarmsArea;
     [SerializeField] private GameObject _FactoryMainPrefab;
     [SerializeField] private GameObject _FarmsMainPrefab;
+
+    // Overlay
+    private FactoryMain _CurrentFactoryMain;
+    [SerializeField] private GameObject _UnlockOverlay;
     [SerializeField] private GameObject _FixChoicesOverlay;
 
     // Date
@@ -31,6 +35,8 @@ public class MainPageManager : MonoBehaviour
         RenderFacilities();
 
         if (PlayerManager.CurrentDate.Equals(default(Date))) PlayerManager.CurrentDate.InitDate();
+        _UnlockOverlay.SetActive(false);
+        _FixChoicesOverlay.SetActive(false);
     }
 
     private void Update()
@@ -68,6 +74,20 @@ public class MainPageManager : MonoBehaviour
         }
     }
 
+    // Display a facility unlock overlay when the facility isn't unlocked
+    public void DisplayUnlockOverlay(FactoryMain factoryMain)
+    {
+        _CurrentFactoryMain = factoryMain;
+        _UnlockOverlay.GetComponent<MainUnlockOverlay>().SetOverlay(factoryMain.FactoryDatabase);
+        _UnlockOverlay.SetActive(true);
+    }
+
+    // Wrap function for unlocking factory, use for Unlock overlay
+    public void UnlockFactory()
+    {
+        _CurrentFactoryMain.UnlockFactory();
+    }
+
     // Display a facility fix choices overlay, transition to the puzzles
     public void DisplayFixChoice()
     {
@@ -82,5 +102,13 @@ public class MainPageManager : MonoBehaviour
     public void FixFacility()
     {
         PlayerManager.Instance.FixFacility();
+    }
+
+    // tmp function to add money via main game page
+    public void GainHugeMoney()
+    {
+        PlayerManager.GainMoneyIfValid(1000);
+        PlayerManager.ValidateUnlocking();
+        RenderFacilities();
     }
 }

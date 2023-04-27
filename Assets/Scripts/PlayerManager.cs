@@ -119,7 +119,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     #region Money
     public void ResetMoney()
     {
-        Money = 1000;   // Hard-code initial amount of Money
+        Money = 3000;   // Hard-code initial amount of Money
     }
 
     // Deduct Money and return true if Money is enough. Otherwise, do nothing and return false
@@ -187,7 +187,6 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // Validate locking status of all SO
     public static void ValidateUnlocking()
     {
-        Debug.Log("PlayerManager.ValidateUnlocking()");
         foreach (ContentChapterSO chapter in ContentChapterDatabase)
         {
             chapter.ValidateUnlockRequirement();
@@ -196,5 +195,20 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             factory.ValidateUnlockRequirement();
         }
+    }
+
+    // TEMP function for start the game with the least restriction
+    public static void GMStart()
+    {
+        Money = 1000000;
+        foreach (ContentChapterSO chapter in ContentChapterDatabase)
+        {
+            chapter.ForceUnlock();
+        }
+        foreach (FactorySO factory in FactoryDatabase)
+        {
+            factory.ForceUnlock();
+        }
+        ValidateUnlocking();
     }
 }

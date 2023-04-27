@@ -25,3 +25,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 29d1849e545d53b4db669c256cf42c18, type: 2}
   _LockStatus: 2
   _RequiredMoney: 100
+  _RequiredChapters:
+  - {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
+  - {fileID: 11400000, guid: 5a79dfd865074aa40aa9a1e2cb5cbf1e, type: 2}
