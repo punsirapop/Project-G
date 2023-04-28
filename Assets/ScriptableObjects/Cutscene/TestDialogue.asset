@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
   ChoiceAnswers: 0100000001000000
+  PassScore: 2
+  ChangeScene: Main
   _Elements:
   - IsChoices: 0
     IsChecker: 0

@@ -943,6 +943,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
   - {fileID: 11400000, guid: 4f8d915d5ed36574d8144bc947902028, type: 2}
   - {fileID: 11400000, guid: dde4abd4c56c85d41a13a1e94df28626, type: 2}
+  DialogueDatabaseHelper:
+  - {fileID: 11400000, guid: 61445812af0e30647bc2678901426198, type: 2}
+  - {fileID: 11400000, guid: e7f5c778c2e5e7e40b4f8bcb4289a958, type: 2}
+  - {fileID: 11400000, guid: d79a51485ab8cbf498ee3eb3b128037f, type: 2}
 --- !u!4 &1421103299
 Transform:
   m_ObjectHideFlags: 0

@@ -41,4 +41,9 @@ public class MainPageManager : MonoBehaviour
     {
         _DateDisplay.text = PlayerManager.CurrentDate.ShowDate();
     }
+
+    public void SetCurrentDialogueIndex(int newIndex)
+    {
+        PlayerManager.Instance.SetCurrentDialogueIndex(newIndex);
+    }
 }

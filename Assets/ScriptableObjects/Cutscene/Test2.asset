@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
-  _ChoiceAnswers: 
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: Title
   _Elements:
-  - IsChoices: 1
+  - IsChoices: 0
     IsChecker: 0
     SentenceData:
       Speaker: 0
-      SentenceContent: 
+      SentenceContent: Byeasdopikasdpko
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: 
