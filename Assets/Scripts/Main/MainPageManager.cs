@@ -130,4 +130,9 @@ public class MainPageManager : MonoBehaviour
         PlayerManager.ValidateUnlocking();
         RenderFacilities();
     }
+
+    public void SetCurrentDialogueIndex(int newIndex)
+    {
+        PlayerManager.Instance.SetCurrentDialogueIndex(newIndex);
+    }
 }

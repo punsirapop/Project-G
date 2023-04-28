@@ -13,8 +13,8 @@ public class ChoiceButton : MonoBehaviour
         _ChoiceText.text = choiceData.SentenceContent;
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            Debug.Log("Choose choice: " + choiceData.SentenceContent);
-            CutsceneManager.Instance.SelectChoice(choiceData.ReponseData);
+            Debug.Log("Choose choice: " + choiceData.SentenceContent+" "+choiceData.number);
+            CutsceneManager.Instance.SelectChoice(choiceData);
         });
     }
 }

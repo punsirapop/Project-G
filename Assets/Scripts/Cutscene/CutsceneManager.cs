@@ -18,8 +18,8 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private Transform _ChoicesHolder;
     [SerializeField] private GameObject _ChoiceButtonPrefab;
     // Variable related to dialogue data
-    [SerializeField] private DialogueSO _CurrentDialogueSO;
-    private DialogueElement CurrentDialogue => _CurrentDialogueSO.Elements[_CurrentSentenceIndex];
+    private DialogueElement _CurrentDialogueElement => PlayerManager.CurrentDialogueDatabase.Elements[_CurrentSentenceIndex];
+    private DialogueSO _CurrentDialogueSO => PlayerManager.CurrentDialogueDatabase;
     private int _CurrentSentenceIndex;
     [SerializeField] private float _TypeDelaySeconds;
     // Variable related to choice' response
@@ -27,6 +27,15 @@ public class CutsceneManager : MonoBehaviour
     private bool _IsWaitingChoiceSelect;
     private DialogueElement.Sentence[] _ChoiceResponses;
     private int _CurrentChoiceResponseIndex;
+    //the choices answer
+    private int[] _ChoiceAnswers => PlayerManager.CurrentDialogueDatabase.ChoiceAnswers;
+    private int _PassScore => PlayerManager.CurrentDialogueDatabase.PassScore;
+    private int _CurrentAnswerIndex;
+    //Collect the choices input
+    private int _Score;
+    private DialogueElement.Sentence _Temp;
+    public GameObject Holder;
+    private SceneMng SceneManager;
 
     void Awake()
     {
@@ -38,7 +47,10 @@ public class CutsceneManager : MonoBehaviour
         _CurrentSentenceIndex = 0;
         _IsChoiceResponseDisplaying = false;
         _IsWaitingChoiceSelect = false;
-        DisplaySentence(CurrentDialogue.SentenceData);
+        DisplaySentence(_CurrentDialogueElement.SentenceData);
+        _Score= 0;
+        _CurrentAnswerIndex = 0;
+        SceneManager = Holder.GetComponent<SceneMng>();
     }
 
     public void DisplaySentence(DialogueElement.Sentence currentSentence)
@@ -111,9 +123,17 @@ public class CutsceneManager : MonoBehaviour
     }
 
     // Set the response of the choice to display
-    public void SelectChoice(DialogueElement.Sentence[] newChoiceResponse)
+    //Old ** public void SelectChoice(DialogueElement.Sentence[] newChoiceResponse)
+    public void SelectChoice(DialogueElement.Choice ChoiceResponse)
     {
-        _ChoiceResponses = newChoiceResponse;
+        if(_CurrentAnswerIndex < _ChoiceAnswers.Length && ChoiceResponse.number != 0){
+            if(ChoiceResponse.number == _ChoiceAnswers[_CurrentAnswerIndex]){
+                _Score++;
+                _CurrentAnswerIndex++;
+                Debug.Log("_Score: " + _Score.ToString());
+            }
+        }
+        _ChoiceResponses = ChoiceResponse.ReponseData;
         _CurrentChoiceResponseIndex = -1;
         _IsChoiceResponseDisplaying = true;
         _IsWaitingChoiceSelect = false;
@@ -158,10 +178,10 @@ public class CutsceneManager : MonoBehaviour
             return;
         }
         // If current dialogue element is sentence and not complete yet, complete the sentence
-        if (!CurrentDialogue.IsChoices &&
-            _SentenceText.text != CurrentDialogue.SentenceData.SentenceContent)
+        if (!_CurrentDialogueElement.IsChoices && !_CurrentDialogueElement.IsChecker &&
+            _SentenceText.text != _CurrentDialogueElement.SentenceData.SentenceContent)
         {
-            _SentenceText.text = CurrentDialogue.SentenceData.SentenceContent;
+            _SentenceText.text = _CurrentDialogueElement.SentenceData.SentenceContent;
             StopAllCoroutines();
             return;
         }
@@ -172,18 +192,34 @@ public class CutsceneManager : MonoBehaviour
             Debug.Log("End of dialogue, trigger OnDialogueEnd of DialogueSO.");
             // Keep index within the array to prevent ArrayIndexOuTOfBound in unexpected situation
             _CurrentSentenceIndex = _CurrentDialogueSO.Elements.Length - 1;
-            return;
+            // Change scene after end the dialogue
+            SceneManager.ChangeScene(_CurrentDialogueSO.ChangeScene);
         }
         // Display element
         // If it's a choice, spawn a choice overlay
-        if (CurrentDialogue.IsChoices)
+        if (_CurrentDialogueElement.IsChoices)
         {
-            SpawnChoices(CurrentDialogue.Choices);
+            SpawnChoices(_CurrentDialogueElement.Choices);
+        }
+        // If it's a checker and not a choice, display sentence + _Score        
+        else if (_CurrentDialogueElement.IsChecker)
+        {
+            if(_Score >= _PassScore){
+                _Temp = _CurrentDialogueElement.CheckerAnswer.Pass;
+                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(("[score]"),_Score.ToString()));
+                DisplaySentence(_Temp);
+                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
+            } else {
+                _Temp = _CurrentDialogueElement.CheckerAnswer.Fail;
+                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Fail.SentenceContent.Replace(("[score]"),_Score.ToString()));
+                DisplaySentence(_Temp);
+                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
+            }
         }
         // If it's a sentence, display sentence
         else
         {
-            DisplaySentence(CurrentDialogue.SentenceData);
+            DisplaySentence(_CurrentDialogueElement.SentenceData);
         }
     }
 }
