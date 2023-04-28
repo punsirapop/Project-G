@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory2
   m_EditorClassIdentifier: 
-  _LockStatus: 0
+  _LockStatus: 2
   _RequiredMoney: 2000
   _RequiredObjects:
   - {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
@@ -25,8 +25,10 @@ MonoBehaviour:
     that point using the scouter? A good scouter should be small and lightweight.
     And making a scouter under so many limitations can be solved using the idea of
     the Multidimensional Knapsack Problem.
-  _Generation: 0
+  _Generation: 10
   _Status: 0
+  _BreedCostPerUnit: 10
+  _DiscountRatePerGen: 0.1
   _BrokeChance: 0.2
   _Floor: {fileID: 21300000, guid: bd38f85026904654894dc5cf46457abe, type: 3}
   _Conveyor: {fileID: 21300000, guid: 39947b0b6a51059478e7a22418d401a7, type: 3}

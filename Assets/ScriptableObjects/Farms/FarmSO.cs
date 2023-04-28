@@ -18,6 +18,10 @@ public class FarmSO : LockableObject
     public int Generation => _Generation;
     [SerializeField] private Status _Status;
     public Status Status => _Status;
+    [SerializeField] private int _BreedCostPerUnit;
+    public int BreedCostPerUnit => _BreedCostPerUnit;
+    [SerializeField] private float _DiscountRatePerGen;
+    public float DiscountRatePerGen => _DiscountRatePerGen;
     private int _Condition;
     public int Condition => _Condition;
     [SerializeField] private float _BrokeChance;
@@ -55,6 +59,7 @@ public class FarmSO : LockableObject
     // items
     [SerializeField] private List<MechChromoSO> _MechChromos;
     public List<MechChromoSO> MechChromos => _MechChromos;
+    public int PopulationCount => _MechChromos.Count;
 
     private void OnEnable()
     {
