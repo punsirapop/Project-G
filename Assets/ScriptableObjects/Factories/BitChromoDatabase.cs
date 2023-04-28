@@ -47,6 +47,41 @@ public class BitChromoDatabase : ScriptableObject
         _ChromoLength = chromoLength;
     }
 
+    public void SetDatabase(int[][][] newBitstringArray, bool isShuffle=true)
+    {
+        if (_Population.Length != newBitstringArray.Length)
+        {
+            Debug.Log("Cannot set new database, length not equal");
+            return;
+        }
+
+        // Use Fisher-Yates shuffle algorithm to shuffle the element
+        if (isShuffle)
+        {
+            int[][] arrayToShuffle = newBitstringArray[0];
+            // Shuffle the last element to any random element
+            System.Random rng = new System.Random();
+            int n = newBitstringArray.Length;
+            // Loop from the last element to first element
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int[][] temp = newBitstringArray[k];
+                newBitstringArray[k] = newBitstringArray[n];
+                newBitstringArray[n] = temp;
+            }
+        }
+
+        for (int i = 0; i < newBitstringArray.Length; i++)
+        {
+            BitChromosome newChromo = new BitChromosome();
+            newChromo.Bitstring1 = newBitstringArray[i][0];
+            newChromo.Bitstring2 = newBitstringArray[i][1];
+            _Population[i] = newChromo;
+        }
+    }
+
     public void Populate(int populationCount)
     {
         // Create empty array of type BitChromosome with size of populactionCount

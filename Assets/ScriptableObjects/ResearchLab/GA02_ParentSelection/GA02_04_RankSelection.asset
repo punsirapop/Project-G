@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: GA02_04_RankSelection
   m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 300
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
+  - {fileID: 11400000, guid: 7ac3ce4d6c5e67641adde888d7ab4944, type: 2}
   _Header: Rank-based Selection
   _Contents:
   - {fileID: 11400000, guid: cba527ff055365d4f9d0a41856ee61e6, type: 2}

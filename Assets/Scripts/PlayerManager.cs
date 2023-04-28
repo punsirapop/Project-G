@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using static TimeManager;
 
 /*
  * Store various miscellanous functions
@@ -13,75 +13,210 @@ using UnityEngine;
  */
 public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
-    // public static PlayerManager Instance;
-    // Store every chr. the player possesses
-    // 0: Habitat, 1-3: Farms
-    public static List<List<ChromosomeSO>> Chromosomes;
-    // List storing current breeding generation for each farm
-    public static List<int> CurrentGen;
-    public static int CurrentPlace = 1;
+    public static PlayerManager Instance;
+
+    public static Date CurrentDate;
+    public static int MechStatCap;
+
+    // Resources
+    public static int Money { get; private set; }
+
+    // ChapterSO for validation purpose
+    public static ContentChapterSO[] ContentChapterDatabase;
+    [SerializeField] private ContentChapterSO[] ContentChapterDatabaseHelper;
+
+    // Facilities
     public static int CurrentFactoryIndex = 0;
-
+    public static int CurrentFarmIndex = 1;
     public static FactorySO[] FactoryDatabase;
+    public static FarmSO[] FarmDatabase;
     public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
+    public static FarmSO CurrentFarmDatabase => FarmDatabase[CurrentFarmIndex];
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
+    [SerializeField] private FarmSO[] FarmDatabaseHelper;
 
-    public static event Action<ChromosomeSO> OnAddChromosome;
-    public static event Action<ChromosomeSO> OnRemoveChromosome;
+    // Puzzle
+    public static FacilityType FacilityToFix;
+    public static int FacilityToFixIndex;
 
-    private void Awake()
+    public enum FacilityType
     {
-        // if(Instance == null) Instance = this;
-        if(Chromosomes == null)
-        {
-            Chromosomes = new List<List<ChromosomeSO>>();
-            for (int i = 0; i < 4; i++)
-            {
-                Chromosomes.Add(new List<ChromosomeSO>());
-            }
-        }
-        if(CurrentGen == null)
-        {
-            CurrentGen = new List<int>();
-            for (int i = 0; i < 3; i++)
-            {
-                CurrentGen.Add(0);
-            }
-        }
+        Factory,
+        Farm
+    }
+
+    public enum PuzzleType
+    {
+        DemonCrossover,
+        SolveCrossover,
+        DemonSelection,
+        SolveSelection,
+        DemonKnapsack,
+        SolveKnapsack
     }
 
     // Assign factories data from serialized field on editor to the static variable
     public void OnAfterDeserialize()
     {
+        ContentChapterDatabase = ContentChapterDatabaseHelper;
         FactoryDatabase = FactoryDatabaseHelper;
+        FarmDatabase = FarmDatabaseHelper;
     }
 
     // Reflect the value back into editor
     public void OnBeforeSerialize()
     {
+        ContentChapterDatabaseHelper = ContentChapterDatabase;
         FactoryDatabaseHelper = FactoryDatabase;
+        FarmDatabaseHelper = FarmDatabase;
     }
 
+    private void Awake()
+    {
+        TimeManager.OnChangeDate += OnChangeDate;
+        SaveManager.OnReset += ResetMoney;
+        SaveManager.OnReset += ValidateUnlocking;
 
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Debug.Log("FOUND DUPE");
+            Destroy(Instance.gameObject);
+        }
+    }
 
+    private void OnDestroy()
+    {
+        TimeManager.OnChangeDate -= OnChangeDate;
+    }
+
+    public static void OnChangeDate(Date d)
+    {
+        int day = d.CompareDate(CurrentDate);
+        Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
+        for (int i = 0; i < day; i++)
+        {
+            foreach (var item in FarmDatabase)
+            {
+                if (item.Status == Status.BREEDING) item.FillBreedGuage();
+            }
+            foreach (var factory in FactoryDatabase)
+            {
+                if (factory.Status == Status.BREEDING)
+                {
+                    factory.FillBreedGuage();
+                }
+            }
+        }
+
+        CurrentDate = d.DupeDate();
+    }
+
+    #region Money
+    public void ResetMoney()
+    {
+        Money = 3000;   // Hard-code initial amount of Money
+    }
+
+    // Deduct Money and return true if Money is enough. Otherwise, do nothing and return false
+    public static bool SpendMoneyIfEnought(int deductAmount)
+    {
+        if (deductAmount <= Money)
+        {
+            Money -= deductAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    // Gain money and return true if success, Otherwise, do nothing and return false
+    public static bool GainMoneyIfValid(int gainAmount)
+    {
+        if (gainAmount >= 0)
+        {
+            Money += gainAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    #endregion
+
+    #region Facility Navigation
     // Change current factory
     public void SetCurrentFactoryIndex(int newFactoryIndex)
     {
         CurrentFactoryIndex = newFactoryIndex;
     }
 
-    // Add new random chromosome to the current space
-    public void AddChromo()
+    public void SetCurrentFarmIndex(int index)
     {
-        ChromosomeSO chromosome = ScriptableObject.CreateInstance<ChromosomeSO>();
-        Chromosomes[CurrentPlace].Add(chromosome);
-        OnAddChromosome?.Invoke(chromosome);
+        CurrentFarmIndex = index;
     }
 
-    // Delete a chromosome from the current space
-    public void DelChromo(ChromosomeSO c)
+    // Set facility to fix be fixed after the puzzle is done
+    public void SetFacilityToFix(FacilityType facilityType, int facilityIndex)
     {
-        Chromosomes[CurrentPlace].Remove(c);
-        OnRemoveChromosome?.Invoke(c);
+        FacilityToFix = facilityType;
+        FacilityToFixIndex = facilityIndex;
+    }
+
+    // Fix the facility
+    public void FixFacility()
+    {
+        if (FacilityToFix == FacilityType.Factory)
+        {
+            FactoryDatabase[FacilityToFixIndex].Fixed();
+        }
+        else if (FacilityToFix == FacilityType.Farm)
+        {
+            FarmDatabase[FacilityToFixIndex].Fixed();
+        }
+    }
+    #endregion
+
+    // Validate locking status of all SO
+    public static void ValidateUnlocking()
+    {
+        foreach (ContentChapterSO chapter in ContentChapterDatabase)
+        {
+            chapter.ValidateUnlockRequirement();
+        }
+        foreach (FactorySO factory in FactoryDatabase)
+        {
+            factory.ValidateUnlockRequirement();
+        }
+        foreach (FarmSO farm in FarmDatabase)
+        {
+            farm.ValidateUnlockRequirement();
+        }
+    }
+
+    // TEMP function for start the game with the least restriction
+    public static void GMStart()
+    {
+        Money = 1000000;
+        foreach (ContentChapterSO chapter in ContentChapterDatabase)
+        {
+            chapter.ForceUnlock();
+        }
+        foreach (FactorySO factory in FactoryDatabase)
+        {
+            factory.ForceUnlock();
+        }
+        foreach (FarmSO farm in FarmDatabase)
+        {
+            farm.ForceUnlock();
+        }
+        ValidateUnlocking();
     }
 }

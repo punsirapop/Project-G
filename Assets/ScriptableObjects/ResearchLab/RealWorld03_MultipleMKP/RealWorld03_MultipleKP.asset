@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: RealWorld03_MultipleKP
   m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 300
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 10d7da827372de34791e1bf445730efb, type: 2}
   _Header: Multiple Knapsack
   _Contents:
   - {fileID: 11400000, guid: b8397d995155c5c4bbe3bd24c38148a8, type: 2}

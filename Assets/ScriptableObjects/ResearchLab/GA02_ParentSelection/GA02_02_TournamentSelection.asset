@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: GA02_02_TournamentSelection
   m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 200
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
   _Header: Tournament-based Selection
   _Contents:
   - {fileID: 11400000, guid: bc685fa2f9bd7094e9d1a356f9a06f16, type: 2}

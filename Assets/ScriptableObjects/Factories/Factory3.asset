@@ -12,27 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory3
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 3000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
+  - {fileID: 11400000, guid: ef8dcb9712d838946b620007ab0a52ed, type: 2}
+  - {fileID: 11400000, guid: 7ac3ce4d6c5e67641adde888d7ab4944, type: 2}
+  - {fileID: 11400000, guid: 3e4ec64eac504ef41b7a88ae11f88751, type: 2}
+  _FactoryIndex: 2
   _Name: Factory 3
-  _Description: This should be a Dart for Sleep/Poison
+  _Description: Only buffing your allies with a great weapon may not be enough anymore.
+    It's time to give the enemy some debuff! What about a sleep and poison dart?
+    Sound good, right? Creating a good driving force and a strong tip is the key
+    to making a perfect dart. Balancing two parts like this can be achieved using
+    the idea of the Multiple Knapsack Problem.
   _Generation: 0
-  _Status: IDLE
-  _WeaponPrefix: DA
-  _WeaponIdFormat: 000
+  _Status: 0
+  _BreedCostPerUnit: 10
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.2
   _Floor: {fileID: 21300000, guid: 358727e37bc4e5048ba6b628827ae816, type: 3}
   _Conveyor: {fileID: 21300000, guid: 9b92435787d9a9649b643ced15dff5b4, type: 3}
   _Border: {fileID: 21300000, guid: 88594a51bc611294d809e990ae4ebce7, type: 3}
-  _WeaponImages:
-  - {fileID: 21300000, guid: 6260baa3bfe2fd545b49160e53d4f774, type: 3}
-  - {fileID: 21300000, guid: 23f158b9b3387ee4eb7f5afd84d6aaba, type: 3}
-  - {fileID: 21300000, guid: 88041a0458084564185d2ff9097d8afa, type: 3}
-  - {fileID: 21300000, guid: 85381b32b4d751b4e81454516816ee99, type: 3}
-  - {fileID: 21300000, guid: 071e2023619d9164cab1894e737b0ad5, type: 3}
-  _WeaponBigImages:
-  - {fileID: 21300000, guid: 424ae79611f068d4d8768875b19c3a0a, type: 3}
-  - {fileID: 21300000, guid: cd982a21ec2c0544483e24e49e8f6671, type: 3}
-  - {fileID: 21300000, guid: 80de99e0ce114684a8fa13c8966043dc, type: 3}
-  - {fileID: 21300000, guid: d9d27c397407de54195ce0dd79e1ff89, type: 3}
-  - {fileID: 21300000, guid: ffa1a02f62907a342974d5fd5df18cbe, type: 3}
   _MainNormal: {fileID: 21300000, guid: 1f572ee7091c64f4fb3c6a713a78a1b0, type: 3}
   _MainBroken: {fileID: 21300000, guid: 3d9682ac82f4bd045b4e923ec3d621c9, type: 3}
   _Locker: {fileID: 21300000, guid: dee0b547225b61c4aa71d5482568dd8b, type: 3}
@@ -53,3 +54,50 @@ MonoBehaviour:
   _MaxFitness: 50
   _ChromoDatabase: {fileID: 11400000, guid: 3b3a56896edf6c646aed36a01163625d, type: 2}
   _PopulationCount: 100
+  _WeaponPrefix: DA
+  _WeaponIdFormat: 000
+  _ProducedWeaponMode1: 4
+  _ProducedWeaponMode2: 5
+  _MinCooldownSeconds: 5
+  _MaxCooldownSeconds: 10
+  _WeaponRankConfigDesc:
+  - Rank: 0
+    MinFitness: 40
+    Image: {fileID: 21300000, guid: 071e2023619d9164cab1894e737b0ad5, type: 3}
+    BigImage: {fileID: 21300000, guid: ffa1a02f62907a342974d5fd5df18cbe, type: 3}
+    BonusAtk: 0
+    BonusDef: 5
+    BonusHp: 0
+    BonusSpd: 5
+  - Rank: 1
+    MinFitness: 30
+    Image: {fileID: 21300000, guid: 85381b32b4d751b4e81454516816ee99, type: 3}
+    BigImage: {fileID: 21300000, guid: d9d27c397407de54195ce0dd79e1ff89, type: 3}
+    BonusAtk: 0
+    BonusDef: 4
+    BonusHp: 0
+    BonusSpd: 4
+  - Rank: 2
+    MinFitness: 20
+    Image: {fileID: 21300000, guid: 88041a0458084564185d2ff9097d8afa, type: 3}
+    BigImage: {fileID: 21300000, guid: 80de99e0ce114684a8fa13c8966043dc, type: 3}
+    BonusAtk: 0
+    BonusDef: 3
+    BonusHp: 0
+    BonusSpd: 3
+  - Rank: 3
+    MinFitness: 10
+    Image: {fileID: 21300000, guid: 23f158b9b3387ee4eb7f5afd84d6aaba, type: 3}
+    BigImage: {fileID: 21300000, guid: cd982a21ec2c0544483e24e49e8f6671, type: 3}
+    BonusAtk: 0
+    BonusDef: 2
+    BonusHp: 0
+    BonusSpd: 2
+  - Rank: 4
+    MinFitness: 0
+    Image: {fileID: 21300000, guid: 6260baa3bfe2fd545b49160e53d4f774, type: 3}
+    BigImage: {fileID: 21300000, guid: 424ae79611f068d4d8768875b19c3a0a, type: 3}
+    BonusAtk: 0
+    BonusDef: 1
+    BonusHp: 0
+    BonusSpd: 1

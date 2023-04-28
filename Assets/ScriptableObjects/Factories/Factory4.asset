@@ -12,27 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory4
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 4000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
+  - {fileID: 11400000, guid: 1a8eb748a7f0bed4ba6758198beaa36e, type: 2}
+  - {fileID: 11400000, guid: 288229fb98053124392413ec025b209e, type: 2}
+  _FactoryIndex: 3
   _Name: Factory 4
-  _Description: This should be a Grenade Launcher for AOE heal/ AOE damage
+  _Description: The war is a story of all, not individuals. Bombing the enemies and
+    healing all allies is the easiest way to win the war. Composing grenades is about
+    balancing the explosive power and a strong shell. But keep in mind that it should
+    be lightweight and portable. The ultimate weapon comes with the ultimate problems,
+    so using the idea of the Multiple Multidimensional Knapsack Problem to beat it.
   _Generation: 0
-  _Status: IDLE
-  _WeaponPrefix: GL
-  _WeaponIdFormat: 000
+  _Status: 0
+  _BreedCostPerUnit: 10
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.2
   _Floor: {fileID: 21300000, guid: 14977638b0939ac4491a61928676a6ca, type: 3}
   _Conveyor: {fileID: 21300000, guid: d363c177a3790ec43b4baf7895277756, type: 3}
   _Border: {fileID: 21300000, guid: d60282bc9dda9ea429714317b60c7ac2, type: 3}
-  _WeaponImages:
-  - {fileID: 21300000, guid: 7b3cc3921fd88f44282c17c17b83cb3f, type: 3}
-  - {fileID: 21300000, guid: 1cac04597d4aa764c85e046df068c936, type: 3}
-  - {fileID: 21300000, guid: 18b618ea50320c346863450e07c119be, type: 3}
-  - {fileID: 21300000, guid: 62dcd47ccccb8164f8c4509aeaa1793d, type: 3}
-  - {fileID: 21300000, guid: 510e8c1fa4a8aa04484b2ecd9b709895, type: 3}
-  _WeaponBigImages:
-  - {fileID: 21300000, guid: 9e6410a2d5a3cc848b7ed1e203006d6e, type: 3}
-  - {fileID: 21300000, guid: 72b9155ec26de364eac6656d205e3757, type: 3}
-  - {fileID: 21300000, guid: 8c105dbdc9451bc4590b45c997ea094e, type: 3}
-  - {fileID: 21300000, guid: b272df7d31eda4847b8d83573801dbc7, type: 3}
-  - {fileID: 21300000, guid: b7e10f0adda8e374aab9fc778b7ab6dd, type: 3}
   _MainNormal: {fileID: 21300000, guid: ba61822b3210bc94aa09266792f13ac5, type: 3}
   _MainBroken: {fileID: 21300000, guid: 7afd6021af2bab24588fe48e0489fee1, type: 3}
   _Locker: {fileID: 21300000, guid: bdfe880390322144ca89cfeb99d56b2e, type: 3}
@@ -53,3 +53,50 @@ MonoBehaviour:
   _MaxFitness: 50
   _ChromoDatabase: {fileID: 11400000, guid: 7e3db59a14e5dad428dcf9742e3bcc2e, type: 2}
   _PopulationCount: 100
+  _WeaponPrefix: GL
+  _WeaponIdFormat: 000
+  _ProducedWeaponMode1: 6
+  _ProducedWeaponMode2: 7
+  _MinCooldownSeconds: 5
+  _MaxCooldownSeconds: 10
+  _WeaponRankConfigDesc:
+  - Rank: 0
+    MinFitness: 40
+    Image: {fileID: 21300000, guid: 510e8c1fa4a8aa04484b2ecd9b709895, type: 3}
+    BigImage: {fileID: 21300000, guid: b7e10f0adda8e374aab9fc778b7ab6dd, type: 3}
+    BonusAtk: 5
+    BonusDef: 0
+    BonusHp: 5
+    BonusSpd: 0
+  - Rank: 1
+    MinFitness: 30
+    Image: {fileID: 21300000, guid: 62dcd47ccccb8164f8c4509aeaa1793d, type: 3}
+    BigImage: {fileID: 21300000, guid: b272df7d31eda4847b8d83573801dbc7, type: 3}
+    BonusAtk: 4
+    BonusDef: 0
+    BonusHp: 4
+    BonusSpd: 0
+  - Rank: 2
+    MinFitness: 20
+    Image: {fileID: 21300000, guid: 18b618ea50320c346863450e07c119be, type: 3}
+    BigImage: {fileID: 21300000, guid: 8c105dbdc9451bc4590b45c997ea094e, type: 3}
+    BonusAtk: 3
+    BonusDef: 0
+    BonusHp: 3
+    BonusSpd: 0
+  - Rank: 3
+    MinFitness: 10
+    Image: {fileID: 21300000, guid: 1cac04597d4aa764c85e046df068c936, type: 3}
+    BigImage: {fileID: 21300000, guid: 72b9155ec26de364eac6656d205e3757, type: 3}
+    BonusAtk: 2
+    BonusDef: 0
+    BonusHp: 2
+    BonusSpd: 0
+  - Rank: 4
+    MinFitness: 0
+    Image: {fileID: 21300000, guid: 7b3cc3921fd88f44282c17c17b83cb3f, type: 3}
+    BigImage: {fileID: 21300000, guid: 9e6410a2d5a3cc848b7ed1e203006d6e, type: 3}
+    BonusAtk: 1
+    BonusDef: 0
+    BonusHp: 1
+    BonusSpd: 0

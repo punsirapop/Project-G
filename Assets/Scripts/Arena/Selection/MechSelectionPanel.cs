@@ -1,0 +1,84 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using TMPro;
+using static ChromoMenu;
+using static FitnessMenu;
+
+public class MechSelectionPanel : SelectionPanel
+{
+    [SerializeField] TMP_Dropdown _Pref;
+
+    FarmSO _MyFarm => PlayerManager.FarmDatabase[_CurrentPanel];
+
+    protected override void Start()
+    {
+        base.Start();
+        OpenPanel(0);
+    }
+
+    private Dictionary<dynamic, List<float>> GetFitnessDict(List<MechChromoSO> m)
+    {
+        List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
+        var dict = new Dictionary<dynamic, List<float>>();
+
+        for (int i = 0; i < 4; i++) fv.Add(Tuple.Create(Properties.Com, i));
+
+        foreach (MechChromoSO c in m)
+        {
+            List<float> list = new List<float>();
+            list.Add(c.GetFitness(fv));
+            if(_Pref.value > 0)
+            {
+                list.Add(c.GetFitness(new List<Tuple<Properties, int>>()
+                { Tuple.Create(Properties.Com, _Pref.value - 1) }));
+            }
+            dict.Add(c, list);
+        }
+
+        return dict;
+    }
+
+    public override void UpdateValue()
+    {
+        base.UpdateValue();
+
+        if (_MyFarm.MechChromos.Count > 0)
+        {
+            Dictionary<dynamic, List<float>> fvDict = GetFitnessDict(_MyFarm.MechChromos);
+            // ------- sort -------
+            fvDict = fvDict.OrderByDescending(x => x.Value[0]).
+                ToDictionary(x => x.Key, x => x.Value);
+            if(_Pref.value > 0)
+            fvDict = fvDict.OrderByDescending(x => x.Value[1]).
+                ToDictionary(x => x.Key, x => x.Value);
+            // fv = fv.OrderByDescending(x => x.fitness).ThenBy(x => x.name).ToList();
+
+            // ------- display -------
+            foreach (var item in fvDict)
+            {
+                GameObject m = _Pool.Get();
+                m.GetComponent<MechCanvasDisplay>().SetChromo(item.Key);
+            }
+            _ContentStorage.BroadcastMessage("AdjustingTeam", SendMessageOptions.DontRequireReceiver);
+
+        }
+    }
+
+    public void AutoSelect()
+    {
+        List<MechChromoSO> list = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToList();
+        Dictionary<dynamic, List<float>> fvDict = GetFitnessDict(list);
+        fvDict = fvDict.OrderByDescending(x => x.Value[0]).ToDictionary(x => x.Key, x => x.Value);
+        int tmp = AllyManager.Instance.CurrentSelection;
+        for (int i = 0; i < 3; i++)
+        {
+            AllyManager.Instance.CurrentSelection = i;
+            AllyManager.Instance.Selecting(fvDict.Skip(i).First().Key);
+        }
+        AllyManager.Instance.CurrentSelection = tmp;
+        // _ContentStorage.BroadcastMessage("AdjustingTeam", SendMessageOptions.DontRequireReceiver);
+    }
+}

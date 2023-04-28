@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -136,12 +137,12 @@ public class ParentManager : MonoBehaviour
     private void _InstantiateMechChromo(int crossoverType=0)
     {
         // Create wanted child
-        _WantedChild = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
+        _WantedChild = ScriptableObject.CreateInstance<MechChromoSO>().GetChromosome()[0].ToArray()[..5];
         int[][] parents = new int[4][];
         for (int parentCount = 0; parentCount < parents.Length; parentCount += 2)
         {
             // Create new random child with difference head and accessory
-            int[] randomChild = ScriptableObject.CreateInstance<ChromosomeSO>().GetChromosome().ToArray()[..5];
+            int[] randomChild = ScriptableObject.CreateInstance<MechChromoSO>().GetChromosome()[0].ToArray()[..5];
             if (_WantedChild[0] == randomChild[0])
             {
                 randomChild[0] += (randomChild[0] == 0) ? 1 : -1;
@@ -155,7 +156,7 @@ public class ParentManager : MonoBehaviour
             List<List<int>> parent2 = new();
             parent1.Add(new List<int>(_WantedChild));
             parent2.Add(new List<int>(randomChild));
-            GeneticFunc.Instance.Crossover2D(parent1, parent2, crossoverType);
+            GeneticFunc.Instance.Crossover(parent1, parent2, crossoverType);
             parents[0 + parentCount] = parent1[0].ToArray();
             parents[1 + parentCount] = parent2[0].ToArray();
         }
