@@ -13,7 +13,8 @@ public class FactoryProduction : MonoBehaviour
     [SerializeField] private GameObject[] _Adjustors;
     [SerializeField] private TextMeshProUGUI _BreedGenText;
     [SerializeField] private TextMeshProUGUI _CostText;
-    [SerializeField] private Button[] _BreedButtons;
+    [SerializeField] private Button[] _AddBreedGenButtons;
+    [SerializeField] private Button _BreedButton;
     // Information
     private int _BreedGen;
     private FactorySO _CurrentFactory => PlayerManager.CurrentFactoryDatabase;
@@ -38,7 +39,8 @@ public class FactoryProduction : MonoBehaviour
 
     void Start()
     {
-        RenderPanel();
+        AddBreedGen(0);
+        RenderPanelFromPref();
     }
 
     void Update()
@@ -47,23 +49,40 @@ public class FactoryProduction : MonoBehaviour
         {
             adjustor.GetComponentInChildren<TextMeshProUGUI>().text = adjustor.GetComponentInChildren<Slider>().value.ToString();
         }
+    }
+
+    public void AddBreedGen(int amount)
+    {
+        _BreedGen += amount;
+        if (_BreedGen <= 1)
+        {
+            _BreedGen = 1;
+        }
+        else if (_BreedGen >= 10)
+        {
+            _BreedGen = 10;
+        }
+        _RenderBreedButtons();
         _BreedGenText.text = _BreedGen.ToString();
-        _CostText.text = (_BreedGen * 1000).ToString();
-
+        _CostText.text = PlayerManager.Money.ToString() + "/" + _CalculateBreedCost().ToString();
     }
 
-    public void IncreaseBreedGen()
+    private void _RenderBreedButtons()
     {
-        _BreedGen++;
+        _AddBreedGenButtons[0].interactable = true;
+        _AddBreedGenButtons[1].interactable = true;
+        if (_BreedGen <= 1)
+        {
+            _AddBreedGenButtons[0].interactable = false;
+        }
+        else if (_BreedGen >= 10)
+        {
+            _AddBreedGenButtons[1].interactable = false;
+        }
+        _BreedButton.interactable = (_CalculateBreedCost() <= PlayerManager.Money);
     }
 
-    public void DecreaseBreedGen()
-    {
-        _BreedGen--;
-        _BreedGen = (_BreedGen < 1) ? 1 : _BreedGen;
-    }
-
-    public void RenderPanel()
+    public void RenderPanelFromPref()
     {
         CurrentPopDisplay.text = _CurrentFactory.PopulationCount.ToString();
         CurrentGenDisplay.text = _CurrentFactory.Generation.ToString();
@@ -73,24 +92,60 @@ public class FactoryProduction : MonoBehaviour
         _Adjustors[0].GetComponentInChildren<Slider>().value = _CurrentFactory.BreedPref.ElitismRate;
         _Adjustors[1].GetComponentInChildren<Slider>().value = _CurrentFactory.BreedPref.MutationRate;
         _BreedGen = _CurrentFactory.BreedPref.BreedGen;
+        _BreedGenText.text = _BreedGen.ToString();
+        _CostText.text = PlayerManager.Money.ToString() + "/" + _CalculateBreedCost().ToString();
         // All component are interactable only if it's in idle status
+        bool isIdle = (_CurrentFactory.Status == Status.IDLE) ? true : false;
         foreach (var dropdownSelector in _Types)
         {
-            dropdownSelector.interactable = (_CurrentFactory.Status == Status.IDLE) ? true : false;
+            dropdownSelector.interactable = isIdle;
         }
         foreach (var sliderAdjustor in _Adjustors)
         {
-            sliderAdjustor.GetComponentInChildren<Slider>().interactable = (_CurrentFactory.Status == Status.IDLE) ? true : false;
+            sliderAdjustor.GetComponentInChildren<Slider>().interactable = isIdle;
         }
-        foreach (Button button in _BreedButtons)
+        if (!isIdle)
         {
-            button.interactable = (_CurrentFactory.Status == Status.IDLE) ? true : false;
+            foreach (Button button in _AddBreedGenButtons)
+            {
+                button.interactable = false;
+            }
         }
+        else
+        {
+            _RenderBreedButtons();
+        }
+        _BreedButton.interactable = isIdle;
+    }
+
+    private int _CalculateBreedCost()
+    {
+        if (_BreedGen < 1)
+        {
+            return 0;
+        }
+        int breedCostPerGen = _CurrentFactory.PopulationCount * _CurrentFactory.BreedCostPerUnit;
+        int breedCost = breedCostPerGen;    // Cost for first generation (no discount)
+        // Sum cost for all gen (the more gen, the more discount)
+        for (int i = 1; i < _BreedGen; i++)
+        {
+            // Calculate discount
+            float discountRate = _CurrentFactory.DiscountRatePerGen * i;
+            discountRate = (discountRate > 0.9) ? 0.9f : discountRate;       // Hard-code maximum discount to 90%=
+            // Adding breed cost of this generation
+            breedCost += Mathf.RoundToInt(((float)breedCostPerGen * (1f - discountRate)));
+        }
+        return breedCost;
     }
 
     // Set BreedPref
     public void SetBreedRequest()
     {
+        bool isTransactionSuccess = PlayerManager.SpendMoneyIfEnought(_CalculateBreedCost());
+        if (!isTransactionSuccess)
+        {
+            return;
+        }
         // Set breed preferences
         BreedPref newBreedPref = new BreedPref(
             _Types[0].value, // Parent selection type
@@ -106,7 +161,7 @@ public class FactoryProduction : MonoBehaviour
         BreedInfo newBreedInfo = new BreedInfo(_CurrentFactory);
         _CurrentFactory.SetBreedRequest(newBreedInfo);
         _CurrentFactory.SetStatus(Status.BREEDING);
-        RenderPanel();
+        RenderPanelFromPref();
         FactoryManager.Instance.RenderStatusPanel();
     }
 

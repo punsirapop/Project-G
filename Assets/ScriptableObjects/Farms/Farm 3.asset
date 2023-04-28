@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 3
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 3000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
   _Name: Farm3
   _Generation: 0
   _Status: 0
+  _BreedCostPerUnit: 5
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.1
   _BG: {fileID: 21300000, guid: 853466ec1a67c3f489f5cc9b3ab5bf3e, type: 3}
   _MainNormal: {fileID: 21300000, guid: 178a5bb1e1557ee4e951540674c07326, type: 3}
   _MainBroken: {fileID: 21300000, guid: aea11a16f87b929458d0cf03d0547bb2, type: 3}

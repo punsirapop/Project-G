@@ -6,7 +6,7 @@ using UnityEngine;
 using static FitnessMenu;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Farm")]
-public class FarmSO : ScriptableObject
+public class FarmSO : LockableObject
 {
     // Invoke when changing state
     public static event Action<FarmSO, Status> OnFarmChangeStatus;
@@ -18,8 +18,13 @@ public class FarmSO : ScriptableObject
     public int Generation => _Generation;
     [SerializeField] private Status _Status;
     public Status Status => _Status;
+    [SerializeField] private int _BreedCostPerUnit;
+    public int BreedCostPerUnit => _BreedCostPerUnit;
+    [SerializeField] private float _DiscountRatePerGen;
+    public float DiscountRatePerGen => _DiscountRatePerGen;
     private int _Condition;
     public int Condition => _Condition;
+    [SerializeField] private float _BrokeChance;
 
     // Prev Farm Display
     BreedMenu.BreedPref _BreedPref;
@@ -54,6 +59,7 @@ public class FarmSO : ScriptableObject
     // items
     [SerializeField] private List<MechChromoSO> _MechChromos;
     public List<MechChromoSO> MechChromos => _MechChromos;
+    public int PopulationCount => _MechChromos.Count;
 
     private void OnEnable()
     {
@@ -72,6 +78,7 @@ public class FarmSO : ScriptableObject
         _Generation = 0;
         _Status = 0;
         _Condition = 4;
+        _LockStatus = LockableStatus.Lock;
         _BreedInfo = new BreedMenu.BreedInfo();
         _BreedGuage = 0;
         _GuagePerDay = 100;
@@ -80,6 +87,15 @@ public class FarmSO : ScriptableObject
         _BreedPref = new BreedMenu.BreedPref();
         _FitnessPref = new List<Tuple<Properties, int>>();
         _MechChromos = new List<MechChromoSO>();
+    }
+
+    public override string GetRequirementPrefix()
+    {
+        return "Build";
+    }
+    public override string GetLockableObjectName()
+    {
+        return _Name;
     }
 
     /*
@@ -160,7 +176,10 @@ public class FarmSO : ScriptableObject
         // Debug.Log(string.Join("-", PlayerManager.FarmDatabase.Select(x => x.MechChromos.Count)));
 
         _DaysBeforeBreak++;
-        BreakingBad();
+        if (UnityEngine.Random.Range(0f, 1f) < _BrokeChance)
+        {
+            BreakingBad();
+        }
         if (BreedGen >= BreedInfo.MyFarm.BreedPref.BreedGen)
         {
             SetBreedRequest(new BreedMenu.BreedInfo());
