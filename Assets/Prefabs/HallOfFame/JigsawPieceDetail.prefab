@@ -853,6 +853,7 @@ MonoBehaviour:
   _SuccessCountText: {fileID: 5789636742189086173}
   _FailCountText: {fileID: 6360638574265013217}
   _PieceNameText: {fileID: 859137302707444943}
+  _HowToObtainButton: {fileID: 4613037989623691566}
 --- !u!1 &8085141859383102502
 GameObject:
   m_ObjectHideFlags: 0

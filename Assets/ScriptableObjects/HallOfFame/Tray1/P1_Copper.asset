@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _LockStatus: 0
   _RequiredMoney: 0
-  _RequiredObjects: []
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
+  - {fileID: 11400000, guid: 5a79dfd865074aa40aa9a1e2cb5cbf1e, type: 2}
   _Name: Basic Bio
   _Level: 1
   _HowToObtain: 0

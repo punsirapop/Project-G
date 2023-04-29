@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _LockStatus: 0
   _RequiredMoney: 0
-  _RequiredObjects: []
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 7ac3ce4d6c5e67641adde888d7ab4944, type: 2}
   _Name: Roulette Wheel Selection
   _Level: 3
   _HowToObtain: 8

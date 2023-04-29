@@ -209,6 +209,53 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
         ValidateUnlocking();
     }
+
+    // Return a description string of the given PuzzleType
+    public static string DescribePuzzleType(PuzzleType puzzleType)
+    {
+        switch(puzzleType)
+        {
+            default:
+                return "Unknown puzzle type";
+            case PuzzleType.Dialogue:
+                return "Answer the questions";
+            // Crossover
+            case PuzzleType.CrossoverOnePointDemon:
+                return "Demonstrate Single-point Crossover";
+            case PuzzleType.CrossoverOnePointSolve:
+                return "Solve Single-point Crossover problem";
+            case PuzzleType.CrossoverTwoPointsDemon:
+                return "Demonstrate Two-point Crossover";
+            case PuzzleType.CrossoverTwoPointsSolve:
+                return "Solve Two-point Crossover problem";
+            // Selection
+            case PuzzleType.SelectionTournamentDemon:
+                return "Demonstrate Tournament-based Selection";
+            case PuzzleType.SelectionTournamentSolve:
+                return "Solve Tournament-based Selection problem";
+            case PuzzleType.SelectionRouletteDemon:
+                return "Demonstrate Roulette Wheel Selection";
+            case PuzzleType.SelectionRouletteSolve:
+                return "Solve Roulette Wheel Selection problem";
+            case PuzzleType.SelectionRankDemon:
+                return "Demonstrate Rank-based Selection";
+            case PuzzleType.SelectionRankSolve:
+                return "Solve Rank-based Selection problem";
+            // Knapsack
+            case PuzzleType.KnapsackStandardDemon:
+                return "Demonstrate Standard Knapsack encoding/decoding";
+            case PuzzleType.KnapsackStandardSolve:
+                return "Solve Standard Knapsack encoding/decoding problem";
+            case PuzzleType.KnapsackMultiDimenDemon:
+                return "Demonstrate Multidimensional Knapsack encoding/decoding";
+            case PuzzleType.KnapsackMultiDimenSolve:
+                return "Solve Multidimensional Knapsack encoding/decoding problem";
+            case PuzzleType.KnapsackMultipleDemon:
+                return "Demonstrate Multiple Knapsack encoding/decoding";
+            case PuzzleType.KnapsackMultipleSolve:
+                return "Solve Multiple Knapsack encoding/decoding problem";
+        }
+    }
 }
 
 public enum PuzzleType

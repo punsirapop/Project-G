@@ -66,7 +66,7 @@ public class LockableObject : ScriptableObject
     }
 
     // Return all unlock requirements of this Factory in a form of array
-    public List<UnlockRequirementData> GetUnlockRequirements()
+    public List<UnlockRequirementData> GetUnlockRequirements(bool includeMoney=true)
     {
         List<UnlockRequirementData> unlockRequirements = new List<UnlockRequirementData>();
         // ObjectRequirement
@@ -84,14 +84,17 @@ public class LockableObject : ScriptableObject
                     )
                 );
         }
-        // Money requirement
-        unlockRequirements.Add(
-            new UnlockRequirementData(
-                _RequiredMoney <= PlayerManager.Money,
-                "Money",
-                PlayerManager.Money.ToString() + "/" + _RequiredMoney.ToString()
-                )
-            );
+        if (includeMoney)
+        {
+            // Money requirement
+            unlockRequirements.Add(
+                new UnlockRequirementData(
+                    _RequiredMoney <= PlayerManager.Money,
+                    "Money",
+                    PlayerManager.Money.ToString() + "/" + _RequiredMoney.ToString()
+                    )
+                );
+        }
         return unlockRequirements;
     }
 

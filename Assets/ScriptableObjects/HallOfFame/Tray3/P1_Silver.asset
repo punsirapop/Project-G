@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _LockStatus: 0
   _RequiredMoney: 0
-  _RequiredObjects: []
+  _RequiredObjects:
+  - {fileID: 11400000, guid: c9453497ee1dd5540a417f11e1168e51, type: 2}
   _Name: Single-point Crossover
   _Level: 2
   _HowToObtain: 1

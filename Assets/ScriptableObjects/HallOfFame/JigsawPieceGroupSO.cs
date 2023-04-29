@@ -11,7 +11,7 @@ public class JigsawPieceGroupSO : ScriptableObject
     public JigsawPieceSO[] JigsawPieces => _JigsawPieces;
     
     // Return the highest unlocked level of jigsaw piece
-    public JigsawLevel GetHighestUnlockedLevel()
+    public JigsawLevel GetHighestObtainedLevel()
     {
         JigsawLevel highestLevel = JigsawLevel.None;
         if (_JigsawPieces == null)
@@ -21,7 +21,8 @@ public class JigsawPieceGroupSO : ScriptableObject
         foreach (JigsawPieceSO piece in _JigsawPieces)
         {
             if ((piece.LockStatus == LockableStatus.Unlock) &&
-                (piece.Level > highestLevel))
+                (piece.Level > highestLevel) &&
+                (piece.SuccessCount > 0))
             {
                 highestLevel = piece.Level;
             }

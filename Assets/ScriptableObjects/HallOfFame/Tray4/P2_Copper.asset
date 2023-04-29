@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _LockStatus: 0
   _RequiredMoney: 0
-  _RequiredObjects: []
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 7be335ebabb605d42b2c9877ece83432, type: 2}
   _Name: Multidimensional Knapsack
   _Level: 1
   _HowToObtain: 0

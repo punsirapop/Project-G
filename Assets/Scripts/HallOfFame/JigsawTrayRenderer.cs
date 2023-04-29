@@ -43,7 +43,7 @@ public class JigsawTrayRenderer : MonoBehaviour
         for (int jigsawIndex = 0; jigsawIndex < jigsawGroups.Length; jigsawIndex++)
         {
             // Looping through all rank of this piece to calculate highest rank of this piece
-            JigsawLevel jigsawLevel = jigsawGroups[jigsawIndex].GetHighestUnlockedLevel();
+            JigsawLevel jigsawLevel = jigsawGroups[jigsawIndex].GetHighestObtainedLevel();
             jigsawRenderers[jigsawIndex].SetColor(jigsawLevel);
         }
     }
