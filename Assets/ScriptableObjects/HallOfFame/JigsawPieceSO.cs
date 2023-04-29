@@ -14,8 +14,8 @@ public class JigsawPieceSO : LockableObject
     [SerializeField] private PuzzleType _HowToObtain;
     public PuzzleType HowToObtain => _HowToObtain;
     [SerializeField] private DialogueSO _TestingDialogue;   // Dialogue to use in case if it's PuzzleType.Dialogue for _HowToObtain
-    //private int _SuccessCount;      // The number of success testing through _HowToObtain
-    //private int _FailCount;         // The number of fail testing through _HowToObtain
+    public int SuccessCount { get; private set; }           // The number of success testing through _HowToObtain
+    public int FailCount { get; private set; }              // The number of fail testing through _HowToObtain
 
     public override string GetRequirementPrefix()
     {
@@ -40,8 +40,8 @@ public class JigsawPieceSO : LockableObject
     public new void Reset()
     {
         base.Reset();
-        //_SuccessCount = 0;
-        //_FailCount = 0;
+        SuccessCount = 0;
+        FailCount = 0;
     }
 }
 

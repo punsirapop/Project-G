@@ -16,6 +16,6 @@ MonoBehaviour:
   _FrameSprite: {fileID: 21300000, guid: d9edd08cad6aa564a9186296829ea599, type: 3}
   _OverlaySprite: {fileID: 21300000, guid: 5994d2c91cdf43048b7ab52d4b395187, type: 3}
   _AllJigsawPieceGroup:
-  - {fileID: 11400000, guid: 2e37fe98d7ae5554b82f47552fe908e3, type: 2}
-  - {fileID: 11400000, guid: 6953dadc8da6aa04187589fd156e9250, type: 2}
-  - {fileID: 11400000, guid: 7bc8de6a4c292a14ba29d79534c2b6e4, type: 2}
+  - {fileID: 11400000, guid: a1870af97bc6fa04bbef34bed12b3939, type: 2}
+  - {fileID: 11400000, guid: 089af8bf11dc80b43943595b414be37d, type: 2}
+  - {fileID: 11400000, guid: fb9f9e5dec1da484f9572ab7833a7bf2, type: 2}

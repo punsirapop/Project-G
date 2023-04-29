@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27a556f9077b7b4ca9efcca0eb73a82, type: 3}
+  m_Name: PG1_StandardKP
+  m_EditorClassIdentifier: 
+  _Name: Standard Knapsack
+  _JigsawPieces:
+  - {fileID: 11400000, guid: ed8f3affaa0569643ae4b4413bde9ca8, type: 2}
+  - {fileID: 11400000, guid: 1387302a177ec8849a93922a842108cc, type: 2}
+  - {fileID: 11400000, guid: 25a09d9a4881794428dcccf4590610d6, type: 2}

@@ -7,7 +7,9 @@ public class PieceOverlayRenderer : MonoBehaviour
 {
     // One piece detail overlay
     [SerializeField] private GameObject _OnePieceOverlay;
-    [SerializeField] private TextMeshProUGUI _PieceNameText;
+    [SerializeField] private Transform _PieceDatailHolder;
+    [SerializeField] private GameObject _PieceDetailPrefab;
+    [SerializeField] private TextMeshProUGUI _PieceGroupNameText;
 
     private void Start()
     {
@@ -17,6 +19,16 @@ public class PieceOverlayRenderer : MonoBehaviour
     public void OnClickJigsawPiece(int pieceIndex)
     {
         _OnePieceOverlay.SetActive(true);
-        _PieceNameText.text = HallOfFameManager.Instance.CurrentJigsawTray.AllJigsawPieceGroup[pieceIndex].Name;
+        _PieceGroupNameText.text = HallOfFameManager.Instance.CurrentJigsawTray.AllJigsawPieceGroup[pieceIndex].Name;
+        // Refresh all piece detail
+        foreach (Transform child in _PieceDatailHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (JigsawPieceSO piece in HallOfFameManager.Instance.CurrentJigsawTray.AllJigsawPieceGroup[pieceIndex].JigsawPieces)
+        {
+            GameObject newPieceDetail = Instantiate(_PieceDetailPrefab, _PieceDatailHolder);
+            newPieceDetail.GetComponent<JigsawPieceDetail>().SetJigsawPiece(piece);
+        }
     }
 }

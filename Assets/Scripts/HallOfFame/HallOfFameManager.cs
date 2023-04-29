@@ -33,10 +33,8 @@ public class HallOfFameManager : MonoBehaviour
 
     private void Start()
     {
-        //_AllTrayHolder.SetActive(true);
-        //_OneTrayHolder.SetActive(false);
-        _AllTrayHolder.SetActive(false);
-        _OneTrayHolder.SetActive(true);
+        _AllTrayHolder.SetActive(true);
+        _OneTrayHolder.SetActive(false);
     }
 
     // Enter one tray mode
