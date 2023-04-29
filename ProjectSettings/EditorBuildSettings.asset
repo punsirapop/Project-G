@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ResearchLab.unity
     guid: cb90383b6138d14478ceae041d13ceca
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: c3ddd3978d395a449877c8d9e1810ee3
+  - enabled: 1
+    path: Assets/Scenes/HallOfFame.unity
+    guid: 1cf5f308886e1f2418d914523a3f75a4
   m_configObjects: {}

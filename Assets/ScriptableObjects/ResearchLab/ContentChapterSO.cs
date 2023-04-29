@@ -13,17 +13,12 @@ public class ContentChapterSO : LockableObject
 
     private void OnEnable()
     {
-        SaveManager.OnReset += Reset;
+        SaveManager.OnReset += base.Reset;
     }
 
     private void OnDestroy()
     {
-        SaveManager.OnReset -= Reset;
-    }
-
-    public void Reset()
-    {
-        _LockStatus = LockableStatus.Lock;
+        SaveManager.OnReset -= base.Reset;
     }
 
     public override string GetRequirementPrefix()

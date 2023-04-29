@@ -45,16 +45,6 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         Farm
     }
 
-    public enum PuzzleType
-    {
-        DemonCrossover,
-        SolveCrossover,
-        DemonSelection,
-        SolveSelection,
-        DemonKnapsack,
-        SolveKnapsack
-    }
-
     // Assign factories data from serialized field on editor to the static variable
     public void OnAfterDeserialize()
     {
@@ -219,4 +209,25 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
         ValidateUnlocking();
     }
+}
+
+public enum PuzzleType
+{
+    Dialogue,
+    CrossoverOnePointDemon,
+    CrossoverOnePointSolve,
+    CrossoverTwoPointsDemon,
+    CrossoverTwoPointsSolve,
+    SelectionTournamentDemon,
+    SelectionTournamentSolve,
+    SelectionRouletteDemon,
+    SelectionRouletteSolve,
+    SelectionRankDemon,
+    SelectionRankSolve,
+    KnapsackStandardDemon,
+    KnapsackStandardSolve,
+    KnapsackMultiDimenDemon,
+    KnapsackMultiDimenSolve,
+    KnapsackMultipleDemon,
+    KnapsackMultipleSolve
 }

@@ -75,10 +75,10 @@ public class FarmSO : LockableObject
     private void ResetMe()
     {
         Debug.Log("RESET FROM FARM");
+        base.Reset();
         _Generation = 0;
         _Status = 0;
         _Condition = 4;
-        _LockStatus = LockableStatus.Lock;
         _BreedInfo = new BreedMenu.BreedInfo();
         _BreedGuage = 0;
         _GuagePerDay = 100;

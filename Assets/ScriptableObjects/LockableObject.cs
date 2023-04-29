@@ -21,6 +21,11 @@ public class LockableObject : ScriptableObject
         return "Object Name";
     }
 
+    public void Reset()
+    {
+        _LockStatus = LockableStatus.Lock;
+    }
+
     // Change locking status from lock to unlockable when condition satisfy
     public void ValidateUnlockRequirement()
     {

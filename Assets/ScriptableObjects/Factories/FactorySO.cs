@@ -138,12 +138,12 @@ public class FactorySO : LockableObject
         SaveManager.OnReset -= Reset;
     }
 
-    public void Reset()
+    public new void Reset()
     {
+        base.Reset();
         _Generation = 0;
         _Status = Status.IDLE;
         _Condition = 4;
-        _LockStatus = LockableStatus.Lock;
         _BreedGuage = 0;
         _GuagePerDay = 100;
         _BreedGen = 0;
