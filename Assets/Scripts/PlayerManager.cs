@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     [SerializeField] private JigsawPieceSO[] JigsawPieceDatabaseHelper;
     public static JigsawPieceSO CurrentJigsawPiece;
     public static PuzzleType PuzzleToGenerate => CurrentJigsawPiece.HowToObtain;
+    public static bool IsSolveFixFactory;       // Special boolean for indicate whether factory is fixed in solve mode or not
 
     public enum FacilityType
     {

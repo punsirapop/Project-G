@@ -24,6 +24,7 @@ public class FactorySO : LockableObject
     private int _Condition; // If Condition remain 0, the facility completely broken
     public int Condition => _Condition;
     [SerializeField] private float _BrokeChance;
+    private bool _isEncode = false;  // Variable to help switching generate puzzle between decode and encode
 
     // Breeding Request
     FactoryProduction.BreedPref _BreedPref;
@@ -102,6 +103,14 @@ public class FactorySO : LockableObject
     {
         return _Name;
     }
+
+    // Return current value and flip it's value afterward
+    public bool GetIsEncode()
+    {
+        _isEncode = !_isEncode;
+        return !_isEncode;
+    }
+
     public void SetStatus(Status newStatus)
     {
         _Status = newStatus;
@@ -144,6 +153,7 @@ public class FactorySO : LockableObject
         _Generation = 0;
         _Status = Status.IDLE;
         _Condition = 4;
+        _isEncode = false;
         _BreedGuage = 0;
         _GuagePerDay = 100;
         _BreedGen = 0;
@@ -164,11 +174,29 @@ public class FactorySO : LockableObject
         }
     }
 
-    public int[][] GetRandomBitstring()
+    // Generate random valid bitstring
+    public int[][] GetRandomValidBitstring()
     {
-        _PopulateDatabaseIfNot();
-        int index = Random.Range(0, _PopulationCount);
-        return _ChromoDatabase.GetBitstringAtIndex(index);
+        int[][] randomBitstring = new int[_Knapsacks.Length][];
+        // Repeatly generate random bitstring until it's valid
+        int startBit1Count = (_Knapsacks.Length > 1) ? 4 : 6;
+        for (int bit1Count = startBit1Count; bit1Count > 0; bit1Count--)
+        {
+            randomBitstring = _ChromoDatabase.GenerateRandomBitstring(bit1Count);
+            if (EvaluateChromosome(randomBitstring)[0] > 0)
+            {
+                break;
+            }
+        }
+        return randomBitstring;
+    }
+
+    public int[][] GetBestBitstring()
+    {
+        //_PopulateDatabaseIfNot();
+        //int index = Random.Range(0, _PopulationCount);
+        //return _ChromoDatabase.GetBitstringAtIndex(index);
+        return null;
     }
 
     // Return all weapon in database and its evaluated values

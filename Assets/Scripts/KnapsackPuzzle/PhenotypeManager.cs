@@ -186,6 +186,7 @@ public class PhenotypeManager : MonoBehaviour
             }
             else
             {
+                Debug.Log("Place = " + place.ToString());
                 newItem.transform.SetParent(_Knapsacks[place - 1].GetComponent<Knapsack>().GetItemHolder());
             }
             newItem.GetComponent<Item>().SetMask(_Mask);
