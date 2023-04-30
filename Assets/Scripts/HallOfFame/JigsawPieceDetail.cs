@@ -19,6 +19,7 @@ public class JigsawPieceDetail : MonoBehaviour
         _HowToObtainButton.GetComponent<Button>().onClick.AddListener(() => PieceOverlayRenderer.Instance.OnClickHowToObtain(piece));
         bool isLock = (piece.LockStatus == LockableStatus.Lock);
         _HowToObtainButton.GetComponent<Image>().color = isLock ? Color.white : Color.green;
+        _HowToObtainButton.GetComponentInChildren<TextMeshProUGUI>().text = isLock ? "How to Unlock" : "How to Obtain";
         _HowToObtainButton.GetComponentInChildren<TextMeshProUGUI>().color = isLock ? Color.black : Color.white;
     }
 }

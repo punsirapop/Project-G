@@ -7,6 +7,7 @@ public class PieceOverlayRenderer : MonoBehaviour
 {
     public static PieceOverlayRenderer Instance;
 
+
     // One piece group detail overlay
     [Header("Piece Group Overlay")]
     [SerializeField] private GameObject _OnePieceGroupOverlay;
@@ -26,6 +27,7 @@ public class PieceOverlayRenderer : MonoBehaviour
     [SerializeField] private GameObject _OnePieceUnlockedOverlay;
     [SerializeField] private TextMeshProUGUI _UnlockedPieceNameText;
     [SerializeField] private TextMeshProUGUI _HowToObtainText;
+    private JigsawPieceSO _CurrentJigsawPiece;
 
     private void Awake()
     {
@@ -33,6 +35,13 @@ public class PieceOverlayRenderer : MonoBehaviour
     }
 
     private void Start()
+    {
+        _OnePieceGroupOverlay.SetActive(false);
+        _OnePieceLockedOverlay.SetActive(false);
+        _OnePieceUnlockedOverlay.SetActive(false);
+    }
+
+    private void OnEnable()
     {
         _OnePieceGroupOverlay.SetActive(false);
         _OnePieceLockedOverlay.SetActive(false);
@@ -78,9 +87,16 @@ public class PieceOverlayRenderer : MonoBehaviour
         // Else, show how to obtain
         else
         {
+            _CurrentJigsawPiece = piece;
             _OnePieceUnlockedOverlay.SetActive(true);
             _UnlockedPieceNameText.text = piece.GetLockableObjectName();
             _HowToObtainText.text = PlayerManager.DescribePuzzleType(piece.HowToObtain);
         }
+    }
+
+    // Method to invoke when click comfirm on HowToObtain overlay
+    public void OnClickConfirmObtain()
+    {
+        _CurrentJigsawPiece.GoToObtain();
     }
 }

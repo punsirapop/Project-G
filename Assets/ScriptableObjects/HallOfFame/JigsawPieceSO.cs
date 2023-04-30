@@ -43,6 +43,47 @@ public class JigsawPieceSO : LockableObject
         SuccessCount = 0;
         FailCount = 0;
     }
+    
+    public void GoToObtain()
+    {
+        SceneMng.SetAndChangePuzzleScene(this);
+    }
+
+    // Add SuccessCount/FailCount and return amount of count added
+    // return positive number means gaining, negative number means losing/fail to gain
+    public int[] AddProgressCount(bool isSuccess, int amount)
+    {
+        int[] amountAndMoney = new int[] { 0, 0 };
+        if ((LockStatus == LockableStatus.Lock) ||
+            (amount <= 0))
+        {
+            return amountAndMoney;
+        }
+        // Count progress
+        if (isSuccess)
+        {
+            SuccessCount += amount;
+            amountAndMoney[0] = amount;
+            bool isTransactionSuccess = PlayerManager.GainMoneyIfValid(_CalculateWorth(amount));
+            amountAndMoney[1] = isTransactionSuccess ? _CalculateWorth(amount) : 0;
+            base.ForceUnlock();
+        }
+        else
+        {
+            FailCount += amount;
+            amountAndMoney[0] = -amount;
+        }
+        return amountAndMoney;
+    }
+
+    private int _CalculateWorth(int pieceAmount)
+    {
+        int multiplier = 0;
+        if (_Level == JigsawLevel.Copper) multiplier = 10;
+        else if (_Level == JigsawLevel.Silver) multiplier = 20;
+        else if (_Level == JigsawLevel.Gold) multiplier = 30;
+        return multiplier * pieceAmount;
+    }
 }
 
 public enum JigsawLevel

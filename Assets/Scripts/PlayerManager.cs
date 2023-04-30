@@ -35,9 +35,16 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
     [SerializeField] private FarmSO[] FarmDatabaseHelper;
 
-    // Puzzle
+    // Facility fixing
+    public static bool FixingFacility = false;
     public static FacilityType FacilityToFix;
     public static int FacilityToFixIndex;
+
+    // Puzzle/JigsawPiece for HallOfFame
+    public static JigsawPieceSO[] JigsawPieceDatabase;
+    [SerializeField] private JigsawPieceSO[] JigsawPieceDatabaseHelper;
+    public static JigsawPieceSO CurrentJigsawPiece;
+    public static PuzzleType PuzzleToGenerate => CurrentJigsawPiece.HowToObtain;
 
     public enum FacilityType
     {
@@ -51,6 +58,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         ContentChapterDatabase = ContentChapterDatabaseHelper;
         FactoryDatabase = FactoryDatabaseHelper;
         FarmDatabase = FarmDatabaseHelper;
+        JigsawPieceDatabase = JigsawPieceDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -59,6 +67,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         ContentChapterDatabaseHelper = ContentChapterDatabase;
         FactoryDatabaseHelper = FactoryDatabase;
         FarmDatabaseHelper = FarmDatabase;
+        JigsawPieceDatabaseHelper = JigsawPieceDatabase;
     }
 
     private void Awake()
@@ -77,6 +86,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             Debug.Log("FOUND DUPE");
             Destroy(Instance.gameObject);
         }
+
+        FixingFacility = false;
     }
 
     private void OnDestroy()
@@ -141,7 +152,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     }
     #endregion
 
-    #region Facility Navigation
+    #region Facility Navigation and fixing
     // Change current factory
     public void SetCurrentFactoryIndex(int newFactoryIndex)
     {
@@ -153,16 +164,26 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         CurrentFarmIndex = index;
     }
 
-    // Set facility to fix be fixed after the puzzle is done
+    // Set facility to be fixed after the puzzle is done
     public void SetFacilityToFix(FacilityType facilityType, int facilityIndex)
     {
         FacilityToFix = facilityType;
         FacilityToFixIndex = facilityIndex;
     }
 
+    // Called when start fixing facility aka start playing puzzle
+    public void StartFixFacitity()
+    {
+        FixingFacility = true;
+    }
+
     // Fix the facility
     public void FixFacility()
     {
+        if (!FixingFacility)
+        {
+            return;
+        }
         if (FacilityToFix == FacilityType.Factory)
         {
             FactoryDatabase[FacilityToFixIndex].Fixed();
@@ -171,6 +192,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             FarmDatabase[FacilityToFixIndex].Fixed();
         }
+        FixingFacility = false;
     }
     #endregion
 
@@ -188,6 +210,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         foreach (FarmSO farm in FarmDatabase)
         {
             farm.ValidateUnlockRequirement();
+        }
+        foreach (JigsawPieceSO piece in JigsawPieceDatabase)
+        {
+            piece.ValidateUnlockRequirement();
         }
     }
 
@@ -210,10 +236,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         ValidateUnlocking();
     }
 
+    #region Puzzle
     // Return a description string of the given PuzzleType
     public static string DescribePuzzleType(PuzzleType puzzleType)
     {
-        switch(puzzleType)
+        switch (puzzleType)
         {
             default:
                 return "Unknown puzzle type";
@@ -223,39 +250,82 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             case PuzzleType.CrossoverOnePointDemon:
                 return "Demonstrate Single-point Crossover";
             case PuzzleType.CrossoverOnePointSolve:
-                return "Solve Single-point Crossover problem";
+                return "Solve Crossover problem";
             case PuzzleType.CrossoverTwoPointsDemon:
                 return "Demonstrate Two-point Crossover";
             case PuzzleType.CrossoverTwoPointsSolve:
-                return "Solve Two-point Crossover problem";
+                return "Solve Crossover problem";
             // Selection
             case PuzzleType.SelectionTournamentDemon:
                 return "Demonstrate Tournament-based Selection";
             case PuzzleType.SelectionTournamentSolve:
-                return "Solve Tournament-based Selection problem";
+                return "Solve Selection problem";
             case PuzzleType.SelectionRouletteDemon:
                 return "Demonstrate Roulette Wheel Selection";
             case PuzzleType.SelectionRouletteSolve:
-                return "Solve Roulette Wheel Selection problem";
+                return "Solve Selection problem";
             case PuzzleType.SelectionRankDemon:
                 return "Demonstrate Rank-based Selection";
             case PuzzleType.SelectionRankSolve:
-                return "Solve Rank-based Selection problem";
+                return "Solve Selection problem";
             // Knapsack
             case PuzzleType.KnapsackStandardDemon:
                 return "Demonstrate Standard Knapsack encoding/decoding";
             case PuzzleType.KnapsackStandardSolve:
-                return "Solve Standard Knapsack encoding/decoding problem";
+                return "Solve Knapsack encoding/decoding problem";
             case PuzzleType.KnapsackMultiDimenDemon:
                 return "Demonstrate Multidimensional Knapsack encoding/decoding";
             case PuzzleType.KnapsackMultiDimenSolve:
-                return "Solve Multidimensional Knapsack encoding/decoding problem";
+                return "Solve Knapsack encoding/decoding problem";
             case PuzzleType.KnapsackMultipleDemon:
                 return "Demonstrate Multiple Knapsack encoding/decoding";
             case PuzzleType.KnapsackMultipleSolve:
-                return "Solve Multiple Knapsack encoding/decoding problem";
+                return "Solve Knapsack encoding/decoding problem";
         }
     }
+
+    public static void SetCurrentJigsawPiece(JigsawPieceSO jigsawPiece)
+    {
+        CurrentJigsawPiece = jigsawPiece;
+    }
+
+    // Wrapper-method for count jigsaw's progress and return added amount
+    public static int[] CountJigsawPieceProgress(bool isSuccess)
+    {
+        return CurrentJigsawPiece.AddProgressCount(isSuccess, 1);
+    }
+
+    // Helper method for generate feedback string from JigsawPieceSO.AddProgressCount()
+    public static List<string> GenerateJigsawFeedback(int[] amountAndMoney)
+    {
+        List<string> feedbackTexts = new List<string>();
+        int amount = amountAndMoney[0];
+        int money = amountAndMoney[1];
+        string obtainSuffix = " x " + CurrentJigsawPiece.GetLockableObjectName();
+        // Feedback on jigsaw piece count
+        if (amount > 0)
+        {
+            feedbackTexts.Add("- Obtain: " + amount.ToString() + obtainSuffix);
+        }
+        else if (amount < 0)
+        {
+            feedbackTexts.Add("- Fail to obtain: " + (-amount).ToString() + obtainSuffix);
+        }
+        // Feedback on money
+        if (money > 0)
+        {
+            feedbackTexts.Add("- Gain money: " + money.ToString());
+        }
+        else if (money < 0)
+        {
+            feedbackTexts.Add("- Spend money: " + (-money).ToString());
+        }
+        return feedbackTexts;
+    }
+
+
+
+    #endregion
 }
 
 public enum PuzzleType

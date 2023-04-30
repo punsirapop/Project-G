@@ -6,14 +6,19 @@ using UnityEngine;
 public class SelectionPuzzleManager : MonoBehaviour
 {
     public static SelectionPuzzleManager Instance;
-    private int _PuzzleType;
+    private PuzzleType _PuzzleType;
     [SerializeField] private TextMeshProUGUI _InstructionText;
     [SerializeField] private GameObject _OverlayPrefab;
+
+    private void Start()
+    {
+        SetPuzzle(PlayerManager.PuzzleToGenerate);
+    }
 
     // Set puzzle scence corresponding to the puzzleType
     // puzzleType:  0 = demonstrate tournament-based, 1 = demonstrate roulette wheel, 2 = demonstrate rank-based
     //              3 = solve tournament-based, 4 = solve roulette wheel, 5 = solve solve rank-based
-    public void SetPuzzle(int puzzleType)
+    public void SetPuzzle(PuzzleType puzzleType)
     {
         _PuzzleType = puzzleType;
         PopulationManager.Instance.CreatePopulation();
@@ -22,27 +27,27 @@ public class SelectionPuzzleManager : MonoBehaviour
         SelectionButtonManager.Instance.SetButtons();
         SelectionButtonManager.Instance.LockButtons(puzzleType);
         SelectedParentManager.Instance.ClearPanel();
-        if (puzzleType == 0)
+        if (puzzleType == PuzzleType.SelectionTournamentDemon)
         {
             _InstructionText.text = "Please demonstrate the Tournament-based Selection.";
         }
-        else if (puzzleType == 1)
+        else if (puzzleType == PuzzleType.SelectionRouletteDemon)
         {
             _InstructionText.text = "Please demonstrate the Roulette Wheel Selection.";
         }
-        else if (puzzleType == 2)
+        else if (puzzleType == PuzzleType.SelectionRankDemon)
         {
             _InstructionText.text = "Please demonstrate the Rank-based Selection.";
         }
-        else if (puzzleType == 3)
+        else if (puzzleType == PuzzleType.SelectionTournamentSolve)
         {
             _InstructionText.text = "Please select the parent using the method that repeatedly divides the population into small groups.";
         }
-        else if (puzzleType == 4)
+        else if (puzzleType == PuzzleType.SelectionRouletteSolve)
         {
             _InstructionText.text = "Please select the parent using the method that the chance to be chosen directly depends on the current fitness value.";
         }
-        else if (puzzleType == 5)
+        else if (puzzleType == PuzzleType.SelectionRankSolve)
         {
             _InstructionText.text = "Please select the parent using the method that the chance to be chosen depends on the ranking of the chromosome's fitness value.";
         }
@@ -55,55 +60,104 @@ public class SelectionPuzzleManager : MonoBehaviour
         bool isCorrect = true;
         string feedbackText = "";
         // Tournament demon and solve
-        if (_PuzzleType % 3 == 0)
+        if ((_PuzzleType == PuzzleType.SelectionTournamentDemon) ||
+            (_PuzzleType == PuzzleType.SelectionTournamentSolve))
         {
-            //feedbackText += "Check for tournament";
             correctOperations = CandidateManager.Instance.TournamentOperations;
+            if (playerOperations.Contains(CandidateManager.Operation.PickNotBestInGroup))
+            {
+                isCorrect = false;
+                feedbackText += "\n- You pick a chromosome with not the best fitness value in a group.";
+            }
+            if (_IsPickTwiceInGroup(playerOperations))
+            {
+                isCorrect = false;
+                feedbackText += "\n- You pick the chromosome from the same group twice.";
+            }
         }
         // Roulette wheel demon and solve
-        else if (_PuzzleType % 3 == 1)
+        else if ((_PuzzleType == PuzzleType.SelectionRouletteDemon) ||
+            (_PuzzleType == PuzzleType.SelectionRouletteSolve))
         {
-            //feedbackText += "Check for roulette";
             correctOperations = CandidateManager.Instance.RouletteWheelOperations;
+            if (playerOperations.Contains(CandidateManager.Operation.PickInChance))
+            {
+                isCorrect = false;
+                feedbackText += "\n- You should create a wheel from chance, not directly pick it.";
+            }
         }
         // Rank demon and solve
         else
         {
-            //feedbackText += "Check for rank";
             correctOperations = CandidateManager.Instance.RankOperations;
             int[] properRank = PopulationManager.Instance.GetProperRank();
             int[] assignedRank = CandidateManager.Instance.AssignedRank;
-            isCorrect = _IsArrayEqual(properRank, assignedRank);
-            if (!isCorrect)
+            bool isRankCorrect = _IsArrayEqual(properRank, assignedRank);
+            if (!isRankCorrect)
             {
-                Debug.Log("Wrong ranking");
+                isCorrect = false;
+                feedbackText += "\n- Your chromosome ranking is wrong.";
+            }
+            if (playerOperations.Contains(CandidateManager.Operation.PickInChance))
+            {
+                isCorrect = false;
+                feedbackText += "\n- You should create a wheel from chance, not directly pick it.";
             }
         }
         // Checking wheter the player play as preferred operations
         if (playerOperations.Count != correctOperations.Count)
         {
-            //feedbackText += "\nLenght not match";
             isCorrect = false;
+            feedbackText += "\n- You may select more or fewer chromosomes than the current population.";
         }
-        else
+        else if (isCorrect)
         {
             for (int i = 0; i < playerOperations.Count; i++)
             {
                 if (playerOperations[i] != correctOperations[i])
                 {
-                    //feedbackText += "\nOperation " + i.ToString() + " not match";
                     isCorrect = false;
+                    feedbackText += "\n- You perform some steps wrongly.";
+                    break;
                 }
             }
         }
-        // Show feedback
-        feedbackText += isCorrect ? "Correct" : "Wrong";
+        // Show the name of selection type if they wrong in solving puzzle
+        if (!isCorrect)
+        {
+            if (_PuzzleType == PuzzleType.SelectionTournamentSolve)
+            {
+                feedbackText += "\n- You perform Tournament-based Selection wrongly.";
+            }
+            else if (_PuzzleType == PuzzleType.SelectionRouletteSolve)
+            {
+                feedbackText += "\n- You perform Roulette Wheel Selection wrongly.";
+            }
+            else if (_PuzzleType == PuzzleType.SelectionRankSolve)
+            {
+                feedbackText += "\n- You perform Rank-based Selection wrongly.";
+            }
+        }
+        // Result conclusion
+        int[] amountAndMoney = PlayerManager.CountJigsawPieceProgress(isCorrect);
+        foreach (string jigsawFeedback in PlayerManager.GenerateJigsawFeedback(amountAndMoney))
+        {
+            feedbackText += "\n" + jigsawFeedback;
+        }
         GameObject overlay = Instantiate(_OverlayPrefab, this.transform);
-        overlay.GetComponent<PuzzleFeedbackOverlay>().SetFeedBack(isCorrect, feedbackText);
+        overlay.GetComponent<PuzzleFeedbackOverlay>().SetFeedBack(
+            isPass: isCorrect,
+            headerText: isCorrect ? "Success" : "Fail",
+            feedbackText: feedbackText
+            );
     }
 
     private bool _IsArrayEqual(int[] array1, int[] array2)
     {
+        if ((array1 == null) || (array2 == null))
+        {
+            return false;
+        }
         if (array1.Length != array2.Length)
         {
             return false;
@@ -116,5 +170,34 @@ public class SelectionPuzzleManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    // Check whether there is 2 consequetive <pick in group operation> in the given list
+    private bool _IsPickTwiceInGroup(List<CandidateManager.Operation> playerOperations)
+    {
+        for (int i = 0; i < playerOperations.Count - 1; i++)
+        {
+            bool bestBest = (
+                (playerOperations[i] == CandidateManager.Operation.PickBestInGroup) &&
+                (playerOperations[i + 1] == CandidateManager.Operation.PickBestInGroup)
+                );
+           bool bestNot = (
+                (playerOperations[i] == CandidateManager.Operation.PickBestInGroup) &&
+                (playerOperations[i + 1] == CandidateManager.Operation.PickNotBestInGroup)
+                );
+            bool NotBest = (
+                (playerOperations[i] == CandidateManager.Operation.PickNotBestInGroup) &&
+                (playerOperations[i + 1] == CandidateManager.Operation.PickBestInGroup)
+                );
+            bool NotNot = (
+                (playerOperations[i] == CandidateManager.Operation.PickNotBestInGroup) &&
+                (playerOperations[i + 1] == CandidateManager.Operation.PickNotBestInGroup)
+                );
+            if (bestBest || bestNot || NotBest || NotNot)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
