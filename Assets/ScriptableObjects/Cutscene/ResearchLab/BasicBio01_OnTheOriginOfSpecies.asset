@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: Main
   _Elements:
   - IsChoices: 0
     IsChecker: 0

@@ -10,6 +10,7 @@ public class CutsceneManager : MonoBehaviour
 
     // UI element for display data
     [SerializeField] private TextMeshProUGUI _SpeakerName;
+    [SerializeField] private string _NPCName;
     [SerializeField] private TextMeshProUGUI _SentenceText;
     [SerializeField] private HorizontalLayoutGroup _CharacterLayout;
     [SerializeField] private Sprite[] _NPCFaceSprites;
@@ -74,20 +75,74 @@ public class CutsceneManager : MonoBehaviour
         _CharacterImage.color = (speaker == DialogueElement.Speaker.Player) ? Color.gray : Color.white;
         switch (speaker)
         {
-            case DialogueElement.Speaker.NPCNormalFace:
+            case DialogueElement.Speaker.NPCHandDown_EyeClose_MouthClose:
                 _CharacterImage.sprite = _NPCFaceSprites[0];
                 break;
-            case DialogueElement.Speaker.NPCExpressionless:
+            case DialogueElement.Speaker.NPCHandDown_EyeClose_MouthOpen:
                 _CharacterImage.sprite = _NPCFaceSprites[1];
                 break;
-            case DialogueElement.Speaker.NPCHappy:
+            case DialogueElement.Speaker.NPCHandDown_EyeOpen_MouthClose:
                 _CharacterImage.sprite = _NPCFaceSprites[2];
                 break;
-            case DialogueElement.Speaker.NPCNervous:
+            case DialogueElement.Speaker.NPCHandDown_EyeOpen_MouthOpen:
                 _CharacterImage.sprite = _NPCFaceSprites[3];
+                break;
+            case DialogueElement.Speaker.NPCHandDown_Happy:
+                _CharacterImage.sprite = _NPCFaceSprites[4];
+                break;
+            case DialogueElement.Speaker.NPCHandDown_Sad_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[5];
+                break;
+            case DialogueElement.Speaker.NPCHandDown_Sad_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[6];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_EyeClose_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[7];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_EyeClose_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[8];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_EyeOpen_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[9];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_EyeOpen_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[10];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_Happy:
+                _CharacterImage.sprite = _NPCFaceSprites[11];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_Sad_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[12];
+                break;
+            case DialogueElement.Speaker.NPC1Hand_Sad_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[13];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_EyeClose_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[14];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_EyeClose_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[15];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_EyeOpen_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[16];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_EyeOpen_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[17];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_Happy:
+                _CharacterImage.sprite = _NPCFaceSprites[18];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_Sad_MouthClose:
+                _CharacterImage.sprite = _NPCFaceSprites[19];
+                break;
+            case DialogueElement.Speaker.NPC2Hand_Sad_MouthOpen:
+                _CharacterImage.sprite = _NPCFaceSprites[20];
                 break;
         }
         _SpeakerName.text = speaker.ToString();
+        if(_SpeakerName.text != "Player"){
+            _SpeakerName.text = _NPCName;
+        }
         // Start sentence text displaying
         StartCoroutine(TypeSentence(currentSentence));
     }

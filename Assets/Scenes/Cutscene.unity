@@ -1009,13 +1009,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _SpeakerName: {fileID: 798564249}
+  _NPCName: CatBot
   _SentenceText: {fileID: 598740007}
   _CharacterLayout: {fileID: 2017726192}
   _NPCFaceSprites:
-  - {fileID: 21300000, guid: abcb17d07ef0b4241b8d4feabc38bf43, type: 3}
-  - {fileID: 21300000, guid: c089a317065a54942b9fd7bbc7d6390a, type: 3}
-  - {fileID: 21300000, guid: efe1329a868b4da43800c9b886634f7e, type: 3}
-  - {fileID: 21300000, guid: 87c9236b2b5e463469e241f2d5fc3475, type: 3}
+  - {fileID: 21300000, guid: b4190898be2f7ad40af7b9615570936e, type: 3}
+  - {fileID: 21300000, guid: 0cddae04cde3a3a41905faa06528b48e, type: 3}
+  - {fileID: 21300000, guid: aa4f34775d0566444987cf9997f3fe57, type: 3}
+  - {fileID: 21300000, guid: 653c4ec058df3214a8e81d324f9bbc5d, type: 3}
+  - {fileID: 21300000, guid: 16fd1f3fe5b6da446b07677628d7434e, type: 3}
+  - {fileID: 21300000, guid: db356874f7045e54ebb186c8f95f3642, type: 3}
+  - {fileID: 21300000, guid: 245aac8592c206d459ad7ba82f785db7, type: 3}
+  - {fileID: 21300000, guid: 2229b9ff5354a2345b802a18ecefe492, type: 3}
+  - {fileID: 21300000, guid: 0458562179257cb44a7a8aeabb18999e, type: 3}
+  - {fileID: 21300000, guid: 54d899e770731df40afcf2746dd7cd28, type: 3}
+  - {fileID: 21300000, guid: 2b7986176ca943d4d86b6066bed9d2e6, type: 3}
+  - {fileID: 21300000, guid: 839c01129c7387942aa31e38e1120e16, type: 3}
+  - {fileID: 21300000, guid: a13b597fbfbf86b4ca79bc00c5fe8bc8, type: 3}
+  - {fileID: 21300000, guid: afad871a3d811024b8705e5327fc8610, type: 3}
+  - {fileID: 21300000, guid: ec26f136128cf534b9e579d961dd0656, type: 3}
+  - {fileID: 21300000, guid: f3313f692da80274b9ccce9a36c100ea, type: 3}
+  - {fileID: 21300000, guid: e019fb5adda328c4384f377ecb5b8092, type: 3}
+  - {fileID: 21300000, guid: 3ee4b5e84a2f7a9449330b4bfb5ba615, type: 3}
+  - {fileID: 21300000, guid: cdeced73b6dfff24983a6f0eeb06f0ec, type: 3}
+  - {fileID: 21300000, guid: 1d13f08b9761c4346beba7098a21f394, type: 3}
+  - {fileID: 21300000, guid: e9651b520650778479cdf52508af3547, type: 3}
   _CharacterImage: {fileID: 1235548872}
   _IllustrationImage: {fileID: 301614417}
   _ChoicesHolder: {fileID: 2116388599}
