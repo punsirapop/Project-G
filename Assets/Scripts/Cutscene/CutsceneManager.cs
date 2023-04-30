@@ -36,6 +36,7 @@ public class CutsceneManager : MonoBehaviour
     private DialogueElement.Sentence _Temp;
     public GameObject Holder;
     private SceneMng SceneManager;
+    private int CharacterIndex;
 
     void Awake()
     {
@@ -94,11 +95,40 @@ public class CutsceneManager : MonoBehaviour
     // Function for gradually display the sentence text
     IEnumerator TypeSentence(DialogueElement.Sentence currentSentence)
     {
+        bool _InTag = false;
+        bool _InBoldTag = false;
         _SentenceText.text = "";
+        CharacterIndex = 0;
         // Type each character with some delay
         foreach (char c in currentSentence.SentenceContent.ToCharArray())
         {
-            _SentenceText.text += c;
+            CharacterIndex++;
+            if (c == '<')
+            {
+                if(!_InBoldTag)
+                {
+                    _InBoldTag = true;
+                }
+                else
+                {
+                    _InBoldTag = false;
+                }
+                _InTag = true;
+            }
+            else if (c == '>')
+            {
+                _InTag = false;
+            }
+            
+            if (!_InTag && c != '>')
+            {
+                _SentenceText.text += c;
+                 if (_InBoldTag)
+                {
+                    int lastCharacterIndex = _SentenceText.text.Length - 1;
+                    _SentenceText.text = _SentenceText.text.Substring(0, lastCharacterIndex) + "<b>" + _SentenceText.text[lastCharacterIndex] + "</b>";
+                }
+            }
             yield return new WaitForSeconds(_TypeDelaySeconds);
         }
     }
@@ -179,8 +209,9 @@ public class CutsceneManager : MonoBehaviour
         }
         // If current dialogue element is sentence and not complete yet, complete the sentence
         if (!_CurrentDialogueElement.IsChoices && !_CurrentDialogueElement.IsChecker &&
-            _SentenceText.text != _CurrentDialogueElement.SentenceData.SentenceContent)
+            CharacterIndex != _CurrentDialogueElement.SentenceData.SentenceContent.Length)
         {
+            CharacterIndex = _CurrentDialogueElement.SentenceData.SentenceContent.Length;
             _SentenceText.text = _CurrentDialogueElement.SentenceData.SentenceContent;
             StopAllCoroutines();
             return;

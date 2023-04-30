@@ -20,7 +20,7 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Hello!
+      SentenceContent: <b>Hello!</b> No bbbb1
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -36,7 +36,7 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: What is this picture?
+      SentenceContent: What is this picture? <b>Hello!</b> 123
       Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices: []
     CheckerAnswer:
@@ -86,7 +86,7 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Anyway what do you wanna do?
+      SentenceContent: Anyway what do you wanna do? <b>Hello!</b>
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Main Game Page
@@ -239,7 +239,9 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Bye~
+      SentenceContent: Its chromosome will dominate the later population and decrease
+        the diversity of the population which decreases the chance of discovering
+        other good chromosomes.
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
