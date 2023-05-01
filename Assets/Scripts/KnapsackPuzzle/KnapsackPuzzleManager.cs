@@ -11,6 +11,8 @@ public class KnapsackPuzzleManager : MonoBehaviour
     public FactorySO[] FactoriesData => PlayerManager.FactoryDatabase;
     [SerializeField] private GameObject _OverlayPrefab;
 
+    private bool _IsEncode;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -18,9 +20,10 @@ public class KnapsackPuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerManager.FixingFacility)
+        // Check for special case of fixing factory 4, which is the only puzzle scene that involve more than one JigsawPieceSO
+        if (PlayerManager.FixingFacility && (PlayerManager.FacilityToFixIndex == 3))
         {
-            SetPuzzle(PlayerManager.IsSolveFixFactory, PlayerManager.FacilityToFixIndex);
+            SetPuzzle(PlayerManager.PuzzleToGenerate);  // change this later
         }
         else
         {
@@ -50,7 +53,8 @@ public class KnapsackPuzzleManager : MonoBehaviour
         //}
         //Debug.Log(logText);
         // Encoding puzzle, set Phenotype, player interact with Genotype
-        if (FactoriesData[factoryIndex].GetIsEncode())
+        _IsEncode = FactoriesData[factoryIndex].GetIsEncode();
+        if (_IsEncode)
         {
             PhenotypeManager.Instance.InstantiateKnapsacks(factoryIndex);
             PhenotypeManager.Instance.InstantiateItems(factoryIndex, bitstring);
@@ -152,40 +156,50 @@ public class KnapsackPuzzleManager : MonoBehaviour
         }
     }
 
-    // Calculate factory index to get bitstring from
-    private int _CalculateFactoryIndex(PuzzleType puzzleType)
-    {
-        if ((puzzleType == PuzzleType.KnapsackStandardDemon) ||
-            puzzleType == PuzzleType.KnapsackStandardSolve)
-        {
-            return 0;   // First factory
-        }
-        else if ((puzzleType == PuzzleType.KnapsackMultiDimenDemon) ||
-            puzzleType == PuzzleType.KnapsackMultiDimenSolve)
-        {
-            return 1;   // Second factory
-        }
-        else if ((puzzleType == PuzzleType.KnapsackMultipleDemon) ||
-            puzzleType == PuzzleType.KnapsackMultipleSolve)
-        {
-            return 2;   // Third factory
-        }
-        else
-        {
-            // If there is nothing wrong, it shouldn't go into this else line...
-            return 3;
-        }
-    }
-
     public void SubmitAnswer()
     {
         string genoAnswer = GenotypeManager.Instance.ToString();
         string phenoAnswer = PhenotypeManager.Instance.ToString();
         bool isCorrect = (genoAnswer == phenoAnswer);
         string feedbackText = "";
+        if (phenoAnswer == "dim")
+        {
+            feedbackText += "\n- The dimension (number of weights) of the knapsack and item is not matched.";
+        }
+        else
+        {
+            if (genoAnswer.Length != phenoAnswer.Length)
+            {
+                feedbackText += "\n- The number of knapsacks does not match the length of the chromosome.";
+            }
+            else
+            {
+                string[] splitedGeno = genoAnswer.Split("_");
+                string[] splitedPheno = phenoAnswer.Split("_");
+                for (int i = 0; i < splitedGeno.Length; i++)
+                {
+                    string[] ItemKnapBitGeno = splitedGeno[i].Split("/");
+                    string[] ItemKnapBitPheno = splitedPheno[i].Split("/");
+                    if ((ItemKnapBitGeno[0] != ItemKnapBitPheno[0]) ||
+                    (ItemKnapBitGeno[1] != ItemKnapBitPheno[1]))
+                    {
+                        feedbackText += _IsEncode ? 
+                            "\n- The chromosome mapping is wrong." :
+                            "\n- You select the wrong preset.";
+                        break;
+                    }
+                    else if (ItemKnapBitGeno[2] != ItemKnapBitPheno[2])
+                    {
+                        feedbackText += _IsEncode ?
+                            "\n- Some bit value is wrong." :
+                            "\n- Some item placement is wrong.";
+                        break;
+                    }
+                }
+            }
+        }
         // Result conclusion
-        int[] amountAndMoney = PlayerManager.CountJigsawPieceProgress(isCorrect);
-        foreach (string jigsawFeedback in PlayerManager.GenerateJigsawFeedback(amountAndMoney))
+        foreach (string jigsawFeedback in PlayerManager.RecordPuzzleResult(isCorrect))
         {
             feedbackText += "\n" + jigsawFeedback;
         }

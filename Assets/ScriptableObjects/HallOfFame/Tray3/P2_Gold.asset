@@ -16,6 +16,7 @@ MonoBehaviour:
   _RequiredMoney: 0
   _RequiredObjects:
   - {fileID: 11400000, guid: 3e4ec64eac504ef41b7a88ae11f88751, type: 2}
+  - {fileID: 11400000, guid: 0efd9f2cd18e33e4fb94b401e3313d0e, type: 2}
   _Name: Two-point Crossover
   _Level: 3
   _HowToObtain: 4

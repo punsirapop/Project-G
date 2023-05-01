@@ -16,6 +16,7 @@ MonoBehaviour:
   _RequiredMoney: 0
   _RequiredObjects:
   - {fileID: 11400000, guid: 1a8eb748a7f0bed4ba6758198beaa36e, type: 2}
+  - {fileID: 11400000, guid: 92b30915f49eae4498ab81b50e89b1af, type: 2}
   _Name: Rank-based Selection
   _Level: 3
   _HowToObtain: 10

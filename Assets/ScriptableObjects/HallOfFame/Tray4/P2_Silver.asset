@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be9ac13eb3ae3f4394338e8cb6bea1d, type: 3}
   m_Name: P2_Silver
   m_EditorClassIdentifier: 
-  _LockStatus: 0
+  _LockStatus: 2
   _RequiredMoney: 0
   _RequiredObjects:
   - {fileID: 11400000, guid: 7be335ebabb605d42b2c9877ece83432, type: 2}
+  - {fileID: 11400000, guid: 43e214c91ebe7ff48ba5c5e55a66c986, type: 2}
   _Name: Multidimensional Knapsack
   _Level: 2
   _HowToObtain: 13

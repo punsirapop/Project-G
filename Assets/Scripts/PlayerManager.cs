@@ -168,23 +168,28 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // Set facility to be fixed after the puzzle is done
     public void SetFacilityToFix(FacilityType facilityType, int facilityIndex)
     {
+        FixingFacility = true;
         FacilityToFix = facilityType;
         FacilityToFixIndex = facilityIndex;
     }
 
-    // Called when start fixing facility aka start playing puzzle
-    public void StartFixFacitity()
+    // Get the facility to fix name
+    public static string GetFacilityToFixName()
     {
-        FixingFacility = true;
+        if (FacilityToFix == FacilityType.Factory)
+        {
+            return FactoryDatabase[FacilityToFixIndex].Name;
+        }
+        else if (FacilityToFix == FacilityType.Farm)
+        {
+            return FarmDatabase[FacilityToFixIndex].Name;
+        }
+        return "Invalid Facility";
     }
 
-    // Fix the facility
-    public void FixFacility()
+    // Fix the facility and return the name of fixed facility
+    public static void FixFacility()
     {
-        if (!FixingFacility)
-        {
-            return;
-        }
         if (FacilityToFix == FacilityType.Factory)
         {
             FactoryDatabase[FacilityToFixIndex].Fixed();
@@ -193,7 +198,6 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             FarmDatabase[FacilityToFixIndex].Fixed();
         }
-        FixingFacility = false;
     }
     #endregion
 
@@ -233,6 +237,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         foreach (FarmSO farm in FarmDatabase)
         {
             farm.ForceUnlock();
+        }
+        foreach (JigsawPieceSO piece in JigsawPieceDatabase)
+        {
+            piece.ForceUnlock();
         }
         ValidateUnlocking();
     }
@@ -290,20 +298,16 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         CurrentJigsawPiece = jigsawPiece;
     }
 
-    // Wrapper-method for count jigsaw's progress and return added amount
-    public static int[] CountJigsawPieceProgress(bool isSuccess)
+    public static List<string> RecordPuzzleResult(bool isSuccess)
     {
-        return CurrentJigsawPiece.AddProgressCount(isSuccess, 1);
-    }
-
-    // Helper method for generate feedback string from JigsawPieceSO.AddProgressCount()
-    public static List<string> GenerateJigsawFeedback(int[] amountAndMoney)
-    {
+        // Record progress in JigsawPieceSO
+        int[] amountAndMoney = CurrentJigsawPiece.AddProgressCount(isSuccess, 1);
+        // Generate feedback string from JigsawPieceSO.AddProgressCount()
         List<string> feedbackTexts = new List<string>();
         int amount = amountAndMoney[0];
         int money = amountAndMoney[1];
         string obtainSuffix = " x " + CurrentJigsawPiece.GetLockableObjectName();
-        // Feedback on jigsaw piece count
+        // Feedback on piece count
         if (amount > 0)
         {
             feedbackTexts.Add("- Obtain: " + amount.ToString() + obtainSuffix);
@@ -321,11 +325,26 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             feedbackTexts.Add("- Spend money: " + (-money).ToString());
         }
+        // Fix facility if it's in fixing mode
+        if (!FixingFacility)
+        {
+            return feedbackTexts;
+        }
+        FixingFacility = false;
+        string fixingFeedback = "";
+        if (isSuccess)
+        {
+            FixFacility();
+            fixingFeedback += "- Successfully fix: ";
+        }
+        else
+        {
+            fixingFeedback += "- Fail to fix: ";
+        }
+        fixingFeedback += GetFacilityToFixName();
+        feedbackTexts.Add(fixingFeedback);
         return feedbackTexts;
     }
-
-
-
     #endregion
 }
 

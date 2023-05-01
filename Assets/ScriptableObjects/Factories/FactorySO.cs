@@ -26,6 +26,10 @@ public class FactorySO : LockableObject
     [SerializeField] private float _BrokeChance;
     private bool _isEncode = false;  // Variable to help switching generate puzzle between decode and encode
 
+    // Fixing puzzle
+    [SerializeField] private JigsawPieceGroupSO[] _ObtainableJisawGroups;
+    public JigsawPieceGroupSO[] ObtainableJisawGroups => _ObtainableJisawGroups;
+
     // Breeding Request
     FactoryProduction.BreedPref _BreedPref;
     public FactoryProduction.BreedPref BreedPref => _BreedPref;
@@ -193,10 +197,10 @@ public class FactorySO : LockableObject
 
     public int[][] GetBestBitstring()
     {
-        //_PopulateDatabaseIfNot();
-        //int index = Random.Range(0, _PopulationCount);
-        //return _ChromoDatabase.GetBitstringAtIndex(index);
-        return null;
+        WeaponChromosome[] allWeapon = GetAllWeapon();
+        List<WeaponChromosome> allWeaponList = new List<WeaponChromosome>(allWeapon);
+        allWeaponList.Sort((a, b) => b.Fitness.CompareTo(a.Fitness));
+        return allWeaponList[0].Bitstring;
     }
 
     // Return all weapon in database and its evaluated values

@@ -139,8 +139,7 @@ public class SelectionPuzzleManager : MonoBehaviour
             }
         }
         // Result conclusion
-        int[] amountAndMoney = PlayerManager.CountJigsawPieceProgress(isCorrect);
-        foreach (string jigsawFeedback in PlayerManager.GenerateJigsawFeedback(amountAndMoney))
+        foreach (string jigsawFeedback in PlayerManager.RecordPuzzleResult(isCorrect))
         {
             feedbackText += "\n" + jigsawFeedback;
         }

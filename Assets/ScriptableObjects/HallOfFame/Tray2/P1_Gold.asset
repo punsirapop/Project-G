@@ -16,6 +16,7 @@ MonoBehaviour:
   _RequiredMoney: 0
   _RequiredObjects:
   - {fileID: 11400000, guid: f82a7c89f3691684b91139c653082cb3, type: 2}
+  - {fileID: 11400000, guid: c26f77e68a6bb864dbe183d5cb91ce09, type: 2}
   _Name: Tournament-based Selection
   _Level: 3
   _HowToObtain: 6

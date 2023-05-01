@@ -17,7 +17,7 @@ public class JigsawTrayRenderer : MonoBehaviour
     [SerializeField] private Image _OverlayImage;
     [SerializeField] private TextMeshProUGUI _TrayNameText;
 
-    public void Start()
+    private void OnEnable()
     {
         RenderSprites();
     }

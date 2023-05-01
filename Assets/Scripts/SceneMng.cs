@@ -80,6 +80,7 @@ public class SceneMng : MonoBehaviour
         PlayerManager.SetCurrentJigsawPiece(piece); 
         if (puzzleType == PuzzleType.Dialogue)
         {
+            piece.AddProgressCount(true, 1); // tmp get success count
             Debug.Log("It's some dialogue scene");
         }
         else if (crossoverTypes.Contains(puzzleType))

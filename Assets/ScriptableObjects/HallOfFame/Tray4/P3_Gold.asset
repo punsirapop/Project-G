@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be9ac13eb3ae3f4394338e8cb6bea1d, type: 3}
   m_Name: P3_Gold
   m_EditorClassIdentifier: 
-  _LockStatus: 0
+  _LockStatus: 2
   _RequiredMoney: 0
   _RequiredObjects:
   - {fileID: 11400000, guid: ef8dcb9712d838946b620007ab0a52ed, type: 2}
+  - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
   _Name: Multiple Knapsack
   _Level: 3
   _HowToObtain: 16

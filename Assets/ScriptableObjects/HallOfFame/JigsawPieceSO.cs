@@ -46,6 +46,7 @@ public class JigsawPieceSO : LockableObject
     
     public void GoToObtain()
     {
+        Debug.Log("Go to obtain: " + GetLockableObjectName());
         SceneMng.SetAndChangePuzzleScene(this);
     }
 
