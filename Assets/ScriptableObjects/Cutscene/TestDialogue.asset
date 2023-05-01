@@ -15,6 +15,7 @@ MonoBehaviour:
   ChoiceAnswers: 0100000001000000
   PassScore: 2
   ChangeScene: Main
+  SpeakerName: CatBot
   _Elements:
   - IsChoices: 0
     IsChecker: 0
