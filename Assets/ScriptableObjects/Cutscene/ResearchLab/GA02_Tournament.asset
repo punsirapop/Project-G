@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"Tournament-based Selection"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
       SentenceContent: This method begins with randomly selecting K chromosomes to
         be in the same group.
       Illustration: {fileID: 21300000, guid: 5d95d486fdb632e4db6ac2f37166803a, type: 3}
@@ -36,7 +52,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 10
       SentenceContent: Then pick one chromosome with the <b>best fitness value in
         that group</b> to be a parent.
       Illustration: {fileID: 21300000, guid: 5d95d486fdb632e4db6ac2f37166803a, type: 3}
@@ -53,7 +69,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: The process occurs repeatedly until the size of a population
         is equal to the previous.
       Illustration: {fileID: 21300000, guid: e0a40f0590ea59a4fb9240244745e3e2, type: 3}

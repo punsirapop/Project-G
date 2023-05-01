@@ -208,7 +208,6 @@ public class CutsceneManager : MonoBehaviour
     }
 
     // Set the response of the choice to display
-    //Old ** public void SelectChoice(DialogueElement.Sentence[] newChoiceResponse)
     public void SelectChoice(DialogueElement.Choice ChoiceResponse)
     {
         if(_CurrentAnswerIndex < _ChoiceAnswers.Length && ChoiceResponse.number != 0){

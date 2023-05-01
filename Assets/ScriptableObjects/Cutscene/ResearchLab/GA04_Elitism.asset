@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"Elitism"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
       SentenceContent: Elitism is a technique that helps <b>preserve the elite chromosomes
         with the highest fitness across generations</b> without any change.
       Illustration: {fileID: 21300000, guid: 6e45d61ab6548e44290977bb373d8f82, type: 3}
@@ -36,7 +52,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 9
       SentenceContent: For example, A and B are elite that are preserved.
       Illustration: {fileID: 21300000, guid: 6e45d61ab6548e44290977bb373d8f82, type: 3}
     Choices: []
@@ -52,7 +68,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: And other 4 chromosomes are selected from a whole 6 chromosomes
         and crossover to reproduce the new population.
       Illustration: {fileID: 21300000, guid: 6e45d61ab6548e44290977bb373d8f82, type: 3}
@@ -69,7 +85,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 5
       SentenceContent: It improves the performance of the algorithm by ensuring the
         best solution never be destroyed.
       Illustration: {fileID: 21300000, guid: 6e45d61ab6548e44290977bb373d8f82, type: 3}

@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: Main
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"On The Origin Of Species"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
       SentenceContent: The theories describing how the living thing survives and
         develops over time were proposed by <b>Charles Darwin</b>, a British naturalist.
       Illustration: {fileID: 21300000, guid: 1ee5d0dcc7f3d894bb76b1a9256eac0c, type: 3}
@@ -36,7 +52,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 2
       SentenceContent: "He proposed the book called <b>\u201COn the Origin of Species\u201D</b>
         which introduced two main ideas:"
       Illustration: {fileID: 21300000, guid: 1ee5d0dcc7f3d894bb76b1a9256eac0c, type: 3}
@@ -53,7 +69,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: <b>Evolution</b> and <b>Natural Selection</b>.
       Illustration: {fileID: 21300000, guid: 1ee5d0dcc7f3d894bb76b1a9256eac0c, type: 3}
     Choices: []
@@ -69,7 +85,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: '<b>Evolution</b> is a process in which the genetics of living
         things gradually <b>change over time</b>. '
       Illustration: {fileID: 21300000, guid: 89bd3b0de7b61454d80db604b5a0e8e0, type: 3}
@@ -86,7 +102,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 8
       SentenceContent: The differences in genetics result in different species.
       Illustration: {fileID: 21300000, guid: 89bd3b0de7b61454d80db604b5a0e8e0, type: 3}
     Choices: []
@@ -102,7 +118,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: He also proposed that the new specie <b>inherit</b> some traits
         from its previous specie.
       Illustration: {fileID: 21300000, guid: cd9ba5b56694fc340953f2e8ed9ecab1, type: 3}
@@ -119,7 +135,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: And all species share a common ancestor.
       Illustration: {fileID: 21300000, guid: cd9ba5b56694fc340953f2e8ed9ecab1, type: 3}
     Choices: []
@@ -135,7 +151,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 18
       SentenceContent: The second idea is a mechanic of evolution, <b>natural selection</b>.
       Illustration: {fileID: 21300000, guid: f18d712eb247fc94c8b472995623aa7b, type: 3}
     Choices: []
@@ -151,7 +167,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 2
       SentenceContent: The genetics of living things can change over time.
       Illustration: {fileID: 21300000, guid: f18d712eb247fc94c8b472995623aa7b, type: 3}
     Choices: []
@@ -167,7 +183,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: So there are so many types even if it is the same species.
       Illustration: {fileID: 21300000, guid: f18d712eb247fc94c8b472995623aa7b, type: 3}
     Choices: []
@@ -183,7 +199,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 9
       SentenceContent: But the survival chance of each type is not equal.
       Illustration: {fileID: 21300000, guid: f18d712eb247fc94c8b472995623aa7b, type: 3}
     Choices: []
@@ -199,7 +215,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: Natural selection state that the one with <b>more suitable
         traits</b> for its environment survives.
       Illustration: {fileID: 21300000, guid: 3e5d3dfc877524f439def8659f789fe1, type: 3}
@@ -216,7 +232,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 9
       SentenceContent: For example, a herd of salamanders living in a green forest.
       Illustration: {fileID: 21300000, guid: 3e5d3dfc877524f439def8659f789fe1, type: 3}
     Choices: []
@@ -232,7 +248,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: The one with a color closer to the forest has more success
         rate of hiding from the predator.
       Illustration: {fileID: 21300000, guid: 3e5d3dfc877524f439def8659f789fe1, type: 3}
@@ -249,7 +265,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 18
       SentenceContent: So, it survives more than other types.
       Illustration: {fileID: 21300000, guid: 3e5d3dfc877524f439def8659f789fe1, type: 3}
     Choices: []
@@ -265,7 +281,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 9
       SentenceContent: After several generations, the living thing with the fittest
         trait for the environment will have a higher proportion of the population.
       Illustration: {fileID: 21300000, guid: 769a7410d3113cd4fab3cf948d8d3f0f, type: 3}
@@ -282,7 +298,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: Keep in mind that the green salamander survives <b>just because
         it has the fittest color, not because it is the strongest.</b>
       Illustration: {fileID: 21300000, guid: 769a7410d3113cd4fab3cf948d8d3f0f, type: 3}

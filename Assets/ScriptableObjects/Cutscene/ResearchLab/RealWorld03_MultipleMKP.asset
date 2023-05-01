@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"Multiple Knapsack"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
       SentenceContent: The multiple knapsack problem is a knapsack problem where
         <b>we have more than one knapsack</b>.
       Illustration: {fileID: 21300000, guid: 086d4c72c6e95a443ac58c5e6498c2ec, type: 3}
@@ -36,7 +52,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 9
       SentenceContent: In this type of problem, we not only choose the item to pick
         but also choose the knapsack that item should be in.
       Illustration: {fileID: 21300000, guid: 086d4c72c6e95a443ac58c5e6498c2ec, type: 3}
@@ -53,7 +69,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 10
       SentenceContent: The chromosome encoding of the first knapsack is done just
         like before, use binary 1 for the item picked to be in the knapsack.
       Illustration: {fileID: 21300000, guid: 0e126a6496ca6be4d93169dc5d180ef1, type: 3}
@@ -70,7 +86,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: The next knapsack is encoded into another set of the bit string,
         <b>indicating the picking of the item for that knapsack</b>.
       Illustration: {fileID: 21300000, guid: ff7f446c2ceb1584b956d39b1b8f2f81, type: 3}
@@ -87,7 +103,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 3
       SentenceContent: The full chromosome for the solution to the multiple knapsack
         problem is a 2-dimension array that wraps all the bit strings together.
       Illustration: {fileID: 21300000, guid: 11f3ba04666fa6646bf26d825e987be8, type: 3}
@@ -104,7 +120,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: The first array is for the first knapsack, the second array
         is for the second array, and so on.
       Illustration: {fileID: 21300000, guid: 11f3ba04666fa6646bf26d825e987be8, type: 3}
@@ -121,7 +137,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 3
       SentenceContent: The fitness value of the chromosome is derived from the total
         worth of the items in all knapsacks.
       Illustration: {fileID: 21300000, guid: 41770005834125745963b58d65a68eba, type: 3}
@@ -138,7 +154,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 2
       SentenceContent: As always had been, if any of the knapsacks hold the total
         weight of items more than its capacity, the whole solution will be invalid
         and its fitness will be zero.

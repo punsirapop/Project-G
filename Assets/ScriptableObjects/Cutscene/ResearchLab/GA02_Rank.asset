@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"Rank - Based Selection"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
       SentenceContent: The Roulette Wheel selection may be suffered from a problem
         called premature convergence.
       Illustration: {fileID: 21300000, guid: 48b150bc7bd162942b9d797f4eac645c, type: 3}
@@ -36,7 +52,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 3
       SentenceContent: This occurs when there is a very high fitness chromosome among
         the low fitness population.
       Illustration: {fileID: 21300000, guid: 48b150bc7bd162942b9d797f4eac645c, type: 3}
@@ -53,7 +69,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: The one with high fitness will dominate the most area on the
         wheel.
       Illustration: {fileID: 21300000, guid: 48b150bc7bd162942b9d797f4eac645c, type: 3}
@@ -70,7 +86,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 10
       SentenceContent: Its chromosome will dominate the later population and decrease
         the diversity of the population which decreases the chance of discovering
         other good chromosomes.
@@ -88,7 +104,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: The method begins with ranking the chromosomes according to
         their fitness.
       Illustration: {fileID: 21300000, guid: 64ed8a77e4f1d854fb8454d718aa6f88, type: 3}
@@ -105,7 +121,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 1
       SentenceContent: Then <b>assign a new fitness value with the reversing rank</b>.
       Illustration: {fileID: 21300000, guid: 64ed8a77e4f1d854fb8454d718aa6f88, type: 3}
     Choices: []
@@ -121,7 +137,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: Finally, use this new fitness value to create the wheel and
         select the parent as the Roulette Wheel selection does.
       Illustration: {fileID: 21300000, guid: 64ed8a77e4f1d854fb8454d718aa6f88, type: 3}
@@ -138,7 +154,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 12
       SentenceContent: This method of assigning new fitness values is referred to
         as a linear rank-based selection.
       Illustration: {fileID: 21300000, guid: 64ed8a77e4f1d854fb8454d718aa6f88, type: 3}

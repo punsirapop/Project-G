@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"Random Selection"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
       SentenceContent: The simplest method of parent selection is <b>random selection</b>.
       Illustration: {fileID: 21300000, guid: c2a715274549ccf44b3de1c8c5d831b4, type: 3}
     Choices: []
@@ -35,7 +51,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 10
       SentenceContent: A new pair of parents are randomly selected until the number
         of selected chromosomes is equal to the number of chromosomes in the current
         population.
@@ -53,7 +69,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 5
       SentenceContent: Since it is just a random selection, the fitness value does
         not affect the chance of survival.
       Illustration: {fileID: 21300000, guid: c2a715274549ccf44b3de1c8c5d831b4, type: 3}

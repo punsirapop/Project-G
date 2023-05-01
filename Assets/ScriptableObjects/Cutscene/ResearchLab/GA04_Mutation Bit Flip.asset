@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
+  ChangeScene: title
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"Bit Flip Mutation"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
       SentenceContent: Bit flip mutation is one of the most basic mutations for the
         bit string chromosome.
       Illustration: {fileID: 21300000, guid: 6bdb9d762c7b22e40bae011c176a46bf, type: 3}
@@ -36,7 +52,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 5
       SentenceContent: For every chromosome, each bit will be randomly flipped.
       Illustration: {fileID: 21300000, guid: 6bdb9d762c7b22e40bae011c176a46bf, type: 3}
     Choices: []
@@ -52,7 +68,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 11
       SentenceContent: If it was 1 before, it will flip to 0.
       Illustration: {fileID: 21300000, guid: 6bdb9d762c7b22e40bae011c176a46bf, type: 3}
     Choices: []
@@ -68,7 +84,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 12
       SentenceContent: If it was 0 before, it will flip to 1.
       Illustration: {fileID: 21300000, guid: 6bdb9d762c7b22e40bae011c176a46bf, type: 3}
     Choices: []
