@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: GA01_TheFlowOfGeneticAlgorithm
   m_EditorClassIdentifier: 
-  _LockStatus: 0
+  _LockStatus: 1
   _RequiredMoney: 300
   _RequiredObjects:
   - {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
@@ -28,3 +28,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44bc4ce09f22f604d9c33d0ffaff7d2c, type: 2}
   - {fileID: 11400000, guid: 7d33decb3ae6ac146b2e53e2b5d0839d, type: 2}
   - {fileID: 11400000, guid: 29d1849e545d53b4db669c256cf42c18, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: dc60de300008078499872e8264912ec2, type: 2}

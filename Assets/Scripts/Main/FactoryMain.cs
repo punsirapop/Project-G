@@ -99,6 +99,6 @@ public class FactoryMain : MonoBehaviour
     public void OnFixButtonClick()
     {
         PlayerManager.Instance.SetFacilityToFix(PlayerManager.FacilityType.Factory, _FactoryIndex);
-        MainPageManager.Instance.DisplayFixChoice();
+        MainPageManager.Instance.DisplayFixChoice(PlayerManager.FactoryDatabase[_FactoryIndex]);
     }
 }

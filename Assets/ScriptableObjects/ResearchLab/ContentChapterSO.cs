@@ -10,20 +10,18 @@ public class ContentChapterSO : LockableObject
     public string Header => _Header;
     [SerializeField] private ContentPageSO[] _Contents;
     public ContentPageSO[] Contents => _Contents;
+    // Dialogue to show upon the first unlock
+    [SerializeField] private DialogueSO _TeachingDialogue;
+    public DialogueSO TeachingDialogue => _TeachingDialogue;
 
     private void OnEnable()
     {
-        SaveManager.OnReset += Reset;
+        SaveManager.OnReset += base.Reset;
     }
 
     private void OnDestroy()
     {
-        SaveManager.OnReset -= Reset;
-    }
-
-    public void Reset()
-    {
-        _LockStatus = LockableStatus.Lock;
+        SaveManager.OnReset -= base.Reset;
     }
 
     public override string GetRequirementPrefix()

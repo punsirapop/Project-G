@@ -233,6 +233,14 @@ public class ResearchLabManager : MonoBehaviour
     {
         _CurrentChapterSO.Unlock();
         PlayerManager.ValidateUnlocking();
-        _RefreshPage();
+        if (_CurrentChapterSO.TeachingDialogue != null)
+        {
+            PlayerManager.SetCurrentDialogue(_CurrentChapterSO.TeachingDialogue);
+            SceneMng.StaticChangeScene("Cutscene");
+        }
+        else
+        {
+            _RefreshPage();
+        }
     }
 }

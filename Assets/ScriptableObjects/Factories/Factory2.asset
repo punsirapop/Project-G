@@ -16,20 +16,22 @@ MonoBehaviour:
   _RequiredMoney: 2000
   _RequiredObjects:
   - {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
-  - {fileID: 11400000, guid: 7be335ebabb605d42b2c9877ece83432, type: 2}
-  - {fileID: 11400000, guid: f82a7c89f3691684b91139c653082cb3, type: 2}
-  - {fileID: 11400000, guid: aec80f520641d4b418f0ac30d0e522b5, type: 2}
+  - {fileID: 11400000, guid: 8eadf4947352b8f42b5987af72e436ce, type: 2}
+  - {fileID: 11400000, guid: c26f77e68a6bb864dbe183d5cb91ce09, type: 2}
   _FactoryIndex: 1
   _Name: Factory 2
   _Description: Even the strongest warrior has a weak point. Why don't you try spotting
     that point using the scouter? A good scouter should be small and lightweight.
     And making a scouter under so many limitations can be solved using the idea of
     the Multidimensional Knapsack Problem.
-  _Generation: 10
-  _Status: 0
+  _Generation: 0
+  _Status: 1
   _BreedCostPerUnit: 10
   _DiscountRatePerGen: 0.1
   _BrokeChance: 0.2
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: 5d489673b0e0bde43ba9d6d894a60813, type: 2}
+  - {fileID: 11400000, guid: a1870af97bc6fa04bbef34bed12b3939, type: 2}
   _Floor: {fileID: 21300000, guid: bd38f85026904654894dc5cf46457abe, type: 3}
   _Conveyor: {fileID: 21300000, guid: 39947b0b6a51059478e7a22418d401a7, type: 3}
   _Border: {fileID: 21300000, guid: 729a22744bd0ba24a97709cc9b110666, type: 3}

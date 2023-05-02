@@ -19,3 +19,4 @@ MonoBehaviour:
   _Header: Boundary Mutation
   _Contents:
   - {fileID: 11400000, guid: 74301249ef451904488c18743f9b93f8, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: cdeb560ac5ee2104d8540950d9427c92, type: 2}

@@ -19,3 +19,4 @@ MonoBehaviour:
   _Header: Uniform Crossover
   _Contents:
   - {fileID: 11400000, guid: 6fb6d8fe5c0e72c48b190bc9355da2e0, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: f3d9a55bdce2eae40962ec14e5f34ad4, type: 2}

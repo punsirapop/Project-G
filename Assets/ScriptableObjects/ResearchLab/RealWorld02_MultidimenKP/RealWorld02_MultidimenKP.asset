@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe901106b5220c348b98b1fab48663f6, type: 2}
   - {fileID: 11400000, guid: 6a0dbcaf0f3af8c45a71cda76846bc61, type: 2}
   - {fileID: 11400000, guid: 7c11276a9d17142449767f15d35ac368, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: a2b87fec623683443bd19790badebe74, type: 2}

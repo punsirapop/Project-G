@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be9ac13eb3ae3f4394338e8cb6bea1d, type: 3}
+  m_Name: P1_Silver
+  m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 0
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 10d7da827372de34791e1bf445730efb, type: 2}
+  - {fileID: 11400000, guid: ed8f3affaa0569643ae4b4413bde9ca8, type: 2}
+  _Name: Standard Knapsack
+  _Level: 2
+  _HowToObtain: 11
+  _TestingDialogue: {fileID: 0}

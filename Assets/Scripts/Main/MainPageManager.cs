@@ -94,7 +94,7 @@ public class MainPageManager : MonoBehaviour
         _UnlockOverlay.SetActive(true);
     }
 
-    // Wrap function for unlocking factory, use for Unlock overlay
+    // Wrap function for unlocking facilities, use for Unlock overlay
     public void UnlockFacility()
     {
         if (facilityTypeToUnlock == PlayerManager.FacilityType.Factory)
@@ -108,19 +108,14 @@ public class MainPageManager : MonoBehaviour
     }
 
     // Display a facility fix choices overlay, transition to the puzzles
-    public void DisplayFixChoice()
+    public void DisplayFixChoice(LockableObject clickedFacility)
     {
         // Random the proper puzzle type
         // WIP
 
         // Display the fix choice overlay
         _FixChoicesOverlay.SetActive(true);
-    }
-
-    // tmp function to test facility fixing
-    public void FixFacility()
-    {
-        PlayerManager.Instance.FixFacility();
+        _FixChoicesOverlay.GetComponent<FixChoiceOverlay>().SetFixChoice(clickedFacility);
     }
 
     // tmp function to add money via main game page
@@ -129,10 +124,5 @@ public class MainPageManager : MonoBehaviour
         PlayerManager.GainMoneyIfValid(1000);
         PlayerManager.ValidateUnlocking();
         RenderFacilities();
-    }
-
-    public void SetCurrentDialogueIndex(int newIndex)
-    {
-        PlayerManager.Instance.SetCurrentDialogueIndex(newIndex);
     }
 }

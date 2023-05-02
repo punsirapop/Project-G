@@ -19,3 +19,4 @@ MonoBehaviour:
   _Header: Flip Bit Mutation
   _Contents:
   - {fileID: 11400000, guid: 1b4d3fcf5cce2a744a4feaa542a59598, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: 462cdc378a4fa5b4f8271a36da4a11dc, type: 2}

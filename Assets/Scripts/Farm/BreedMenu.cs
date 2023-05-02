@@ -42,7 +42,6 @@ public class BreedMenu : MonoBehaviour
     FarmSO myFarm => PlayerManager.CurrentFarmDatabase;
     // List<MechChromoSO> elites;
     int breedGen;
-    int breedPrice = 500;
 
     private void Awake()
     {

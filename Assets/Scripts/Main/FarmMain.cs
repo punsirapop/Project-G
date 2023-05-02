@@ -110,7 +110,7 @@ public class FarmMain : FarmMngFunc
     public void OnFixButtonClick()
     {
         PlayerManager.Instance.SetFacilityToFix(PlayerManager.FacilityType.Farm, _FarmIndex);
-        MainPageManager.Instance.DisplayFixChoice();
+        MainPageManager.Instance.DisplayFixChoice(PlayerManager.FarmDatabase[_FarmIndex]);
     }
     // ------- DEBUG -------
     public void AddChromo(int amount)

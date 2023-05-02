@@ -25,7 +25,7 @@ public class ParentManager : MonoBehaviour
 
     void Start()
     {
-        InstaniateChromosomeRodToggles(0);
+        //InstaniateChromosomeRodToggles(PuzzleType.CrossoverOnePointDemon);
     }
 
     void Update()
@@ -65,8 +65,7 @@ public class ParentManager : MonoBehaviour
 
     #region ChromosomeRodToggles Instantiation
     // Create ChromosomeRodToggle correspond to the given puzzleType
-    // puzzleType: 0 = demonstrate single point, 1 = demonstrate two point, 2 = solve single point, 3 = solve two point
-    public void InstaniateChromosomeRodToggles(int puzzleType = 0)
+    public void InstaniateChromosomeRodToggles(PuzzleType puzzleType)
     {
         // Destroy all previous object in the holder
         foreach (Transform child in _ChromosomeRodsHolder)
@@ -78,16 +77,16 @@ public class ParentManager : MonoBehaviour
             default:
                 _InstantiateRandomChromo();
                 break;
-            case 0:
+            case PuzzleType.CrossoverOnePointDemon:
                 _InstantiateRandomChromo(0);
                 break;
-            case 1:
+            case PuzzleType.CrossoverTwoPointsDemon:
                 _InstantiateRandomChromo(1);
                 break;
-            case 2:
+            case PuzzleType.CrossoverOnePointSolve:
                 _InstantiateMechChromo(0);
                 break;
-            case 3:
+            case PuzzleType.CrossoverTwoPointsSolve:
                 _InstantiateMechChromo(1);
                 break;
         }

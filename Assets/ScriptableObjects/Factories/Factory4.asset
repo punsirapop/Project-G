@@ -16,8 +16,7 @@ MonoBehaviour:
   _RequiredMoney: 4000
   _RequiredObjects:
   - {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}
-  - {fileID: 11400000, guid: 1a8eb748a7f0bed4ba6758198beaa36e, type: 2}
-  - {fileID: 11400000, guid: 288229fb98053124392413ec025b209e, type: 2}
+  - {fileID: 11400000, guid: 92b30915f49eae4498ab81b50e89b1af, type: 2}
   _FactoryIndex: 3
   _Name: Factory 4
   _Description: The war is a story of all, not individuals. Bombing the enemies and
@@ -26,10 +25,14 @@ MonoBehaviour:
     be lightweight and portable. The ultimate weapon comes with the ultimate problems,
     so using the idea of the Multiple Multidimensional Knapsack Problem to beat it.
   _Generation: 0
-  _Status: 0
+  _Status: 1
   _BreedCostPerUnit: 10
   _DiscountRatePerGen: 0.1
   _BrokeChance: 0.2
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: 5d489673b0e0bde43ba9d6d894a60813, type: 2}
+  - {fileID: 11400000, guid: 7217bc967c26d1f4b81196f85054b891, type: 2}
+  - {fileID: 11400000, guid: fb9f9e5dec1da484f9572ab7833a7bf2, type: 2}
   _Floor: {fileID: 21300000, guid: 14977638b0939ac4491a61928676a6ca, type: 3}
   _Conveyor: {fileID: 21300000, guid: d363c177a3790ec43b4baf7895277756, type: 3}
   _Border: {fileID: 21300000, guid: d60282bc9dda9ea429714317b60c7ac2, type: 3}

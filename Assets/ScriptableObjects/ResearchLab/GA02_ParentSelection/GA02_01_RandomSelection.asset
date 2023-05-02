@@ -19,3 +19,4 @@ MonoBehaviour:
   _Header: Random Selection
   _Contents:
   - {fileID: 11400000, guid: 5d41cb344fbb01b49b3ccbbd792da23e, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: 8d3057cc0ab0c72428f30f141fa94ac6, type: 2}
