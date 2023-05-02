@@ -26,6 +26,10 @@ public class FarmSO : LockableObject
     public int Condition => _Condition;
     [SerializeField] private float _BrokeChance;
 
+    // Fixing puzzle
+    [SerializeField] private JigsawPieceGroupSO[] _ObtainableJisawGroups;
+    public JigsawPieceGroupSO[] ObtainableJisawGroups => _ObtainableJisawGroups;
+
     // Prev Farm Display
     BreedMenu.BreedPref _BreedPref;
     public BreedMenu.BreedPref BreedPref => _BreedPref;

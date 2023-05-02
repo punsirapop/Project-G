@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be9ac13eb3ae3f4394338e8cb6bea1d, type: 3}
   m_Name: P1_Copper
   m_EditorClassIdentifier: 
-  _LockStatus: 1
+  _LockStatus: 2
   _RequiredMoney: 0
   _RequiredObjects:
   - {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
@@ -20,4 +20,4 @@ MonoBehaviour:
   _Name: Basic Bio
   _Level: 1
   _HowToObtain: 0
-  _TestingDialogue: {fileID: 0}
+  _TestingDialogue: {fileID: 11400000, guid: e6959f74f041912498771ea393f40444, type: 2}

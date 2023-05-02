@@ -1038,6 +1038,7 @@ MonoBehaviour:
   _IllustrationImage: {fileID: 301614417}
   _ChoicesHolder: {fileID: 2116388599}
   _ChoiceButtonPrefab: {fileID: 79307694335491951, guid: 837b8bbefa007ca47814494fb50d2c93, type: 3}
+  _OverlayPrefab: {fileID: 1072422749628707577, guid: f405b3385516c0946b196757a24b0ba0, type: 3}
   _TypeDelaySeconds: 0.05
   Holder: {fileID: 1202416118}
 --- !u!1 &1782990877

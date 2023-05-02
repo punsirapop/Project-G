@@ -308,17 +308,22 @@ public class CutsceneManager : MonoBehaviour
         // If it's a checker and not a choice, display sentence + _Score        
         else if (_CurrentDialogueElement.IsChecker)
         {
-            if(_Score >= _PassScore){
-                _Temp = _CurrentDialogueElement.CheckerAnswer.Pass;
-                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(("[score]"),_Score.ToString()));
-                DisplaySentence(_Temp);
-                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
+            DialogueElement.Sentence sentenceToDisplay;
+            if (_Score >= _PassScore){
+                //_Temp = _CurrentDialogueElement.CheckerAnswer.Pass;
+                //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(("[score]"),_Score.ToString()));
+                //DisplaySentence(_Temp);
+                //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
+                sentenceToDisplay = _CurrentDialogueElement.CheckerAnswer.Pass.Copy();
             } else {
-                _Temp = _CurrentDialogueElement.CheckerAnswer.Fail;
-                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Fail.SentenceContent.Replace(("[score]"),_Score.ToString()));
-                DisplaySentence(_Temp);
-                _Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
+                //_Temp = _CurrentDialogueElement.CheckerAnswer.Fail;
+                //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Fail.SentenceContent.Replace(("[score]"),_Score.ToString()));
+                //DisplaySentence(_Temp);
+                //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
+                sentenceToDisplay = _CurrentDialogueElement.CheckerAnswer.Fail.Copy();
             }
+            sentenceToDisplay.SentenceContent = sentenceToDisplay.SentenceContent.Replace("[score]", _Score.ToString());
+            DisplaySentence(sentenceToDisplay);
         }
         // If it's a sentence, display sentence
         else

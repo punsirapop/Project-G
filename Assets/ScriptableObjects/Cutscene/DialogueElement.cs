@@ -39,6 +39,17 @@ public class DialogueElement
         public Speaker Speaker;
         [TextArea(1, 5)] public string SentenceContent;
         public Sprite Illustration;
+
+        public Sentence Copy()
+        {
+            Sentence newSentence = new Sentence
+            {
+                Speaker = Speaker,
+                SentenceContent = SentenceContent,
+                Illustration = Illustration
+            };
+            return newSentence;
+        }
     }
 
     // Class for the individual choice

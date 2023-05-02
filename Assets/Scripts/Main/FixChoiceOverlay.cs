@@ -46,16 +46,21 @@ public class FixChoiceOverlay : MonoBehaviour
         _ClearHolder(_DemonJigsawsHolder);
         _ClearHolder(_SolveJigsawsHolder);
         // Calculate obtainable jigsaw from such facility
-        JigsawPieceGroupSO[] jigsawGroups;
-        jigsawGroups = ((FactorySO)clickedFacility).ObtainableJisawGroups;
-        //if (PlayerManager.FacilityToFix == PlayerManager.FacilityType.Factory)
-        //{
-        //    jigsawGroups = ((FactorySO)clickedFacility).ObtainableJisawGroups;
-        //}
-        //else if (PlayerManager.FacilityToFix == PlayerManager.FacilityType.Farm)
-        //{
-        //    jigsawGroups = ((Farm)clickedFacility).ObtainableJisawGroups;
-        //}
+        JigsawPieceGroupSO[] jigsawGroups = null;
+        if (PlayerManager.FacilityToFix == PlayerManager.FacilityType.Factory)
+        {
+            jigsawGroups = ((FactorySO)clickedFacility).ObtainableJisawGroups;
+        }
+        else if (PlayerManager.FacilityToFix == PlayerManager.FacilityType.Farm)
+        {
+            jigsawGroups = ((FarmSO)clickedFacility).ObtainableJisawGroups;
+        }
+        // It should not null, but just in case
+        if (jigsawGroups == null)
+        {
+            this.gameObject.SetActive(false);
+            return;
+        }
         // Add only jigsaw that doesn't be locked to the generating list
         foreach (JigsawPieceGroupSO jigsawGroup in jigsawGroups)
         {
@@ -119,30 +124,6 @@ public class FixChoiceOverlay : MonoBehaviour
         {
             return;
         }
-        
-        
-        /////////////////////// temp forcing knapsack puzzle
-        List<PuzzleType> knapackTypes = new List<PuzzleType>
-        {
-            PuzzleType.KnapsackStandardDemon,
-            PuzzleType.KnapsackStandardSolve,
-            PuzzleType.KnapsackMultiDimenDemon,
-            PuzzleType.KnapsackMultiDimenSolve,
-            PuzzleType.KnapsackMultipleDemon,
-            PuzzleType.KnapsackMultipleSolve
-        };
-        foreach (JigsawPieceSO piece in obtainableJigsaws)
-        {
-            if (knapackTypes.Contains(piece.HowToObtain))
-            {
-                piece.GoToObtain();
-                return;
-            }
-        }
-        ////////////////////////////////////////////////////
-
-
-
         List<float> jigsawChance = new List<float>();
         foreach (JigsawPieceSO piece in obtainableJigsaws)
         {

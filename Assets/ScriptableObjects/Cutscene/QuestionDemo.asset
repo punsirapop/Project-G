@@ -1,0 +1,283 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: QuestionDemo
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 010000000200000003000000
+  PassScore: 2
+  ChangeScene: 
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 5
+      SentenceContent: Hi there! This is a demo for testing JigsawPieceSO gathering
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Fist of all, what is 1 + 1?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Fist of all, what is 1 + 1?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 2
+      ReponseData:
+      - Speaker: 1
+        SentenceContent: U think it's a normal base10, huh?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 10
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: WOW! How do you know that it's base2 number!?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 11
+      ReponseData:
+      - Speaker: 7
+        SentenceContent: You know... I didn't mean "+" like that...
+        Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 0
+      SentenceContent: ...
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 2
+      ReponseData:
+      - Speaker: 1
+        SentenceContent: U think it's a normal base10, huh?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 10
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: WOW! How do you know that it's base2 number!?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 11
+      ReponseData:
+      - Speaker: 7
+        SentenceContent: You know... I didn't mean "+" like that...
+        Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 12
+      SentenceContent: Just kidding! That first question didn't count!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 2
+      ReponseData:
+      - Speaker: 1
+        SentenceContent: U think it's a normal base10, huh?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 10
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: WOW! How do you know that it's base2 number!?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 11
+      ReponseData:
+      - Speaker: 7
+        SentenceContent: You know... I didn't mean "+" like that...
+        Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 5
+      SentenceContent: Let's speed-run this time
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 2
+      ReponseData:
+      - Speaker: 1
+        SentenceContent: U think it's a normal base10, huh?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 10
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: WOW! How do you know that it's base2 number!?
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: 11
+      ReponseData:
+      - Speaker: 7
+        SentenceContent: You know... I didn't mean "+" like that...
+        Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 5
+      SentenceContent: Let's speed-run this time
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Correct
+      ReponseData: []
+      number: 1
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 2
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 5
+      SentenceContent: Let's speed-run this time
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 1
+    - SentenceContent: Correct
+      ReponseData: []
+      number: 2
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 5
+      SentenceContent: Let's speed-run this time
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 1
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 2
+    - SentenceContent: Correct
+      ReponseData: []
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 5
+      SentenceContent: Let's speed-run this time
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 1
+    - SentenceContent: Wrong
+      ReponseData: []
+      number: 2
+    - SentenceContent: Correct
+      ReponseData: []
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 3... and that's PASS!!
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 6
+        SentenceContent: You got [score] out of 3... Such a failure...
+        Illustration: {fileID: 0}

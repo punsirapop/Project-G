@@ -26,6 +26,16 @@ MonoBehaviour:
   _BreedCostPerUnit: 5
   _DiscountRatePerGen: 0.1
   _BrokeChance: 0.1
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: ae9560d448e7dfe468cfd0b9a9b05515, type: 2}
+  - {fileID: 11400000, guid: 840ac150f75d4494d8c852da179f9fe0, type: 2}
+  - {fileID: 11400000, guid: df4ae9c208576e244b9e68788986f1d8, type: 2}
+  - {fileID: 11400000, guid: 992b470b634349f44ad50d60f19a6b23, type: 2}
+  - {fileID: 11400000, guid: a1870af97bc6fa04bbef34bed12b3939, type: 2}
+  - {fileID: 11400000, guid: 089af8bf11dc80b43943595b414be37d, type: 2}
+  - {fileID: 11400000, guid: fb9f9e5dec1da484f9572ab7833a7bf2, type: 2}
+  - {fileID: 11400000, guid: bc687239a9458a0498c87560d0ef5247, type: 2}
+  - {fileID: 11400000, guid: af51d53de15ecff4494d48ed359e4cce, type: 2}
   _BG: {fileID: 21300000, guid: 4c7de59fbe19e07419d96307a3e43d1c, type: 3}
   _MainNormal: {fileID: 21300000, guid: e26270fc5da3ca44bb2b66ef958c5582, type: 3}
   _MainBroken: {fileID: 21300000, guid: b88dd47aa9ec78945b61b736c8f61c4d, type: 3}
