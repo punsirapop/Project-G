@@ -35,7 +35,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static DialogueSO[] DialogueDatabase;//New*************************************
     public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
     public static FarmSO CurrentFarmDatabase => FarmDatabase[CurrentFarmIndex];
-    public static DialogueSO CurrentDialogueDatabase => DialogueDatabase[CurrentDialogueIndex];//New*************************************
+    //public static DialogueSO CurrentDialogueDatabase => DialogueDatabase[CurrentDialogueIndex];//New*************************************
+    public static DialogueSO CurrentDialogueDatabase;
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
     [SerializeField] private FarmSO[] FarmDatabaseHelper;
     [SerializeField] private DialogueSO[] DialogueDatabaseHelper;//New*************************************
@@ -446,6 +447,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         return feedbackTexts;
     }
     #endregion
+
+    public static void SetCurrentDialogue(DialogueSO newDialogue)
+    {
+        CurrentDialogueDatabase = newDialogue;
+    }
 }
 
 public enum PuzzleType

@@ -21,3 +21,4 @@ MonoBehaviour:
   _Contents:
   - {fileID: 11400000, guid: cba527ff055365d4f9d0a41856ee61e6, type: 2}
   - {fileID: 11400000, guid: 873ece7cb9b269f41bd76a0b044b8845, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: 0e042d331656cc645bcd4c461408e489, type: 2}

@@ -14,6 +14,7 @@ public class JigsawPieceSO : LockableObject
     [SerializeField] private PuzzleType _HowToObtain;
     public PuzzleType HowToObtain => _HowToObtain;
     [SerializeField] private DialogueSO _TestingDialogue;   // Dialogue to use in case if it's PuzzleType.Dialogue for _HowToObtain
+    public DialogueSO TestingDialogue => _TestingDialogue;
     public int SuccessCount { get; private set; }           // The number of success testing through _HowToObtain
     public int FailCount { get; private set; }              // The number of fail testing through _HowToObtain
 

@@ -18,6 +18,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private Image _IllustrationImage;
     [SerializeField] private Transform _ChoicesHolder;
     [SerializeField] private GameObject _ChoiceButtonPrefab;
+    [SerializeField] private GameObject _OverlayPrefab;
     // Variable related to dialogue data
     private DialogueElement _CurrentDialogueElement => PlayerManager.CurrentDialogueDatabase.Elements[_CurrentSentenceIndex];
     private DialogueSO _CurrentDialogueSO => PlayerManager.CurrentDialogueDatabase;
@@ -278,7 +279,25 @@ public class CutsceneManager : MonoBehaviour
             // Keep index within the array to prevent ArrayIndexOuTOfBound in unexpected situation
             _CurrentSentenceIndex = _CurrentDialogueSO.Elements.Length - 1;
             // Change scene after end the dialogue
-            SceneManager.ChangeScene(_CurrentDialogueSO.ChangeScene);
+            //SceneManager.ChangeScene(_CurrentDialogueSO.ChangeScene);
+
+            // Result conclusion for testing (gathering JigsawPieceSO)
+            string feedbackText = "";
+            if (_CurrentDialogueSO.ChoiceAnswers.Length > 0)
+            {
+                foreach (string jigsawFeedback in PlayerManager.RecordPuzzleResult(_Score >= _PassScore))
+                {
+                    feedbackText += "\n" + jigsawFeedback;
+                }
+                GameObject overlay = Instantiate(_OverlayPrefab, this.transform);
+                overlay.GetComponent<PuzzleFeedbackOverlay>().SetFeedBack(
+                    isPass: _Score >= _PassScore,
+                    headerText: _Score >= _PassScore ? "Success" : "Fail",
+                    feedbackText: feedbackText
+                    );
+                return;
+            }
+            SceneMng.ReturnToPreviousScene();
         }
         // Display element
         // If it's a choice, spawn a choice overlay

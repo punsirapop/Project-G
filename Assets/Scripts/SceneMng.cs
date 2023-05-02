@@ -17,12 +17,21 @@ public class SceneMng : MonoBehaviour
 
     public void ChangeScene(int index)
     {
+        SceneToReturn = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(index);
     }
 
     // Overloading ChangeScene for string parameter
     public void ChangeScene(string sceneName)
     {
+        SceneToReturn = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName);
+    }
+
+    // Static mehtod for changing scene
+    public static void StaticChangeScene(string sceneName)
+    {
+        SceneToReturn = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -80,8 +89,15 @@ public class SceneMng : MonoBehaviour
         PlayerManager.SetCurrentJigsawPiece(piece); 
         if (puzzleType == PuzzleType.Dialogue)
         {
-            piece.AddProgressCount(true, 1); // tmp get success count
-            Debug.Log("It's some dialogue scene");
+            if (piece.TestingDialogue == null)
+            {
+                piece.AddProgressCount(true, 1); // tmp get success count
+                return;
+            }
+            SceneToReturn = SceneManager.GetActiveScene().name;
+            PlayerManager.SetCurrentDialogue(piece.TestingDialogue);
+            SceneManager.LoadScene("Cutscene");
+            //Debug.Log("It's some dialogue scene");
         }
         else if (crossoverTypes.Contains(puzzleType))
         {

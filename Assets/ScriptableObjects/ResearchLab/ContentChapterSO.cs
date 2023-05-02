@@ -10,6 +10,9 @@ public class ContentChapterSO : LockableObject
     public string Header => _Header;
     [SerializeField] private ContentPageSO[] _Contents;
     public ContentPageSO[] Contents => _Contents;
+    // Dialogue to show upon the first unlock
+    [SerializeField] private DialogueSO _TeachingDialogue;
+    public DialogueSO TeachingDialogue => _TeachingDialogue;
 
     private void OnEnable()
     {

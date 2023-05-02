@@ -19,3 +19,4 @@ MonoBehaviour:
   _Header: Two-point Crossover
   _Contents:
   - {fileID: 11400000, guid: 0bdc575bdac432b44a380f587c17adfe, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: 78eee7a0cdf0e7343b64c88f2f8786a3, type: 2}

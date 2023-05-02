@@ -20,3 +20,4 @@ MonoBehaviour:
   _Contents:
   - {fileID: 11400000, guid: 52600c25c2fab89478244c287f4a5544, type: 2}
   - {fileID: 11400000, guid: dc444c75c68700e43aa2dca299ec4225, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: 169ff75d49b8ca74b9746dc985e5be40, type: 2}
