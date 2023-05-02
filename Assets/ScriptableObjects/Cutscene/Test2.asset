@@ -12,30 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
-  _OnDialogueEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: cc3034d299eee4540be18cf965916b7a, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: Title
   _Elements:
-  - IsChoices: 1
+  - IsChoices: 0
+    IsChecker: 0
     SentenceData:
       Speaker: 0
-      SentenceContent: 
+      SentenceContent: Byeasdopikasdpko
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: 
-      _OnDialogueEnd:
-        m_PersistentCalls:
-          m_Calls: []
       ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
     public static PlayerManager Instance;
 
+    public static int CurrentDialogueIndex = 0;
+
     public static Date CurrentDate;
     public static int MechStatCap;
 
@@ -30,10 +32,13 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int CurrentFarmIndex = 1;
     public static FactorySO[] FactoryDatabase;
     public static FarmSO[] FarmDatabase;
+    public static DialogueSO[] DialogueDatabase;//New*************************************
     public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
     public static FarmSO CurrentFarmDatabase => FarmDatabase[CurrentFarmIndex];
+    public static DialogueSO CurrentDialogueDatabase => DialogueDatabase[CurrentDialogueIndex];//New*************************************
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
     [SerializeField] private FarmSO[] FarmDatabaseHelper;
+    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;//New*************************************
 
     // Facility fixing
     public static bool FixingFacility = false;
@@ -65,6 +70,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         FarmDatabase = FarmDatabaseHelper;
         JigsawPieceDatabase = JigsawPieceDatabaseHelper;
         JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
+        DialogueDatabase = DialogueDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -75,6 +81,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         FarmDatabaseHelper = FarmDatabase;
         JigsawPieceDatabaseHelper = JigsawPieceDatabase;
         JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
+        DialogueDatabaseHelper = DialogueDatabase;
     }
 
     private void Awake()
@@ -169,6 +176,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public void SetCurrentFarmIndex(int index)
     {
         CurrentFarmIndex = index;
+    }
+
+    public void SetCurrentDialogueIndex(int newIndex)
+    {
+        CurrentDialogueIndex = newIndex;
     }
 
     // Set facility to be fixed after the puzzle is done

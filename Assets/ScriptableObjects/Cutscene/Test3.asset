@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: Test3
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 020000000200000002000000
+  PassScore: 1
+  ChangeScene: City
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: This is Test 3
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: This is Test 3
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Answer is 2
+      ReponseData:
+      - Speaker: 2
+        SentenceContent: Wah Wah Wah ....
+        Illustration: {fileID: 0}
+      number: 2
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Bye
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Answer is 2
+      ReponseData:
+      - Speaker: 2
+        SentenceContent: Wah Wah Wah ....
+        Illustration: {fileID: 0}
+      number: 2
+    CheckerAnswer:
+      Pass:
+        Speaker: 1
+        SentenceContent: Pass
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: Fail
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Bye
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Answer is 2
+      ReponseData:
+      - Speaker: 2
+        SentenceContent: Wah Wah Wah ....
+        Illustration: {fileID: 0}
+      number: 2
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

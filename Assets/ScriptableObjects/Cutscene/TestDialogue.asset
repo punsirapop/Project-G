@@ -12,20 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
+  ChoiceAnswers: 0100000001000000
+  PassScore: 2
+  ChangeScene: Main
   _Elements:
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: Hello!
+      Speaker: 18
+      SentenceContent: <b>Hello!</b> No bbbb1
       Illustration: {fileID: 0}
     Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: What is this picture?
+      Speaker: 11
+      SentenceContent: What is this picture? <b>Hello!</b> 123
       Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 1
+    IsChecker: 0
     SentenceData:
       Speaker: 1
       SentenceContent: What is this picture?
@@ -33,9 +57,44 @@ MonoBehaviour:
     Choices:
     - SentenceContent: Main Game Page
       ReponseData:
+      - Speaker: 19
+        SentenceContent: Exactly!
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Capybara?
+      ReponseData:
+      - Speaker: 6
+        SentenceContent: What the...
+        Illustration: {fileID: 0}
+      - Speaker: 7
+        SentenceContent: What?
+        Illustration: {fileID: 0}
+      - Speaker: 2
+        SentenceContent: It's Main Game Page...
+        Illustration: {fileID: 0}
+      number: 2
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: Anyway what do you wanna do? <b>Hello!</b>
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Main Game Page
+      ReponseData:
       - Speaker: 3
         SentenceContent: Exactly!
         Illustration: {fileID: 0}
+      number: 0
     - SentenceContent: Capybara?
       ReponseData:
       - Speaker: 4
@@ -47,53 +106,118 @@ MonoBehaviour:
       - Speaker: 2
         SentenceContent: It's Main Game Page...
         Illustration: {fileID: 0}
-  - IsChoices: 0
-    SentenceData:
-      Speaker: 1
-      SentenceContent: Anyway what do you wanna do?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Main Game Page
-      ReponseData:
-      - Speaker: 3
-        SentenceContent: Exactly!
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
         Illustration: {fileID: 0}
-    - SentenceContent: Capybara?
-      ReponseData:
-      - Speaker: 4
-        SentenceContent: What the...
-        Illustration: {fileID: 0}
-      - Speaker: 0
-        SentenceContent: What?
-        Illustration: {fileID: 0}
-      - Speaker: 2
-        SentenceContent: It's Main Game Page...
+      Fail:
+        Speaker: 0
+        SentenceContent: 
         Illustration: {fileID: 0}
   - IsChoices: 1
+    IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Anyway what do you wanna do?
+      SentenceContent: awsasdasdasd
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
       ReponseData: []
+      number: 1
     - SentenceContent: Sleep
       ReponseData: []
+      number: 2
     - SentenceContent: Sleep
       ReponseData: []
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
-      Speaker: 3
+      Speaker: 5
       SentenceContent: Good Idea!
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
       ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 'Your Result is . . . . . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 2
+      SentenceContent: Your Result is . . .
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    - SentenceContent: Sleep
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 18
+        SentenceContent: You Pass, Your score is [score]
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You Fail, Your score is [score]
+        Illustration: {fileID: 0}
   - IsChoices: 1
+    IsChecker: 0
     SentenceData:
       Speaker: 0
       SentenceContent: C U then. Bye!
@@ -101,15 +225,40 @@ MonoBehaviour:
     Choices:
     - SentenceContent: See you then. Bye!
       ReponseData: []
+      number: 1
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
   - IsChoices: 0
+    IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: Bye~
+      Speaker: 19
+      SentenceContent: Its chromosome will dominate the later population and decrease
+        the diversity of the population which decreases the chance of discovering
+        other good chromosomes.
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
       ReponseData: []
+      number: 0
     - SentenceContent: Sleep
       ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
