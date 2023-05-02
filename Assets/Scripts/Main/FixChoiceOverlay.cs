@@ -119,6 +119,30 @@ public class FixChoiceOverlay : MonoBehaviour
         {
             return;
         }
+        
+        
+        /////////////////////// temp forcing knapsack puzzle
+        List<PuzzleType> knapackTypes = new List<PuzzleType>
+        {
+            PuzzleType.KnapsackStandardDemon,
+            PuzzleType.KnapsackStandardSolve,
+            PuzzleType.KnapsackMultiDimenDemon,
+            PuzzleType.KnapsackMultiDimenSolve,
+            PuzzleType.KnapsackMultipleDemon,
+            PuzzleType.KnapsackMultipleSolve
+        };
+        foreach (JigsawPieceSO piece in obtainableJigsaws)
+        {
+            if (knapackTypes.Contains(piece.HowToObtain))
+            {
+                piece.GoToObtain();
+                return;
+            }
+        }
+        ////////////////////////////////////////////////////
+
+
+
         List<float> jigsawChance = new List<float>();
         foreach (JigsawPieceSO piece in obtainableJigsaws)
         {

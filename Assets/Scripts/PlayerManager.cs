@@ -39,13 +39,17 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static bool FixingFacility = false;
     public static FacilityType FacilityToFix;
     public static int FacilityToFixIndex;
+    // Special case of fixing the last factory,
+    // which is the only puzzle that involve more than one JigsawPieceSO
+    public static bool IsFixingLastFactory => (PlayerManager.FixingFacility && (PlayerManager.FacilityToFixIndex == 3));
+    public static JigsawPieceSO[] JigsawPieceForLastFactory;
+    [SerializeField] private JigsawPieceSO[] JigsawPieceForLastFactoryHelper;
 
     // Puzzle/JigsawPiece for HallOfFame
     public static JigsawPieceSO[] JigsawPieceDatabase;
     [SerializeField] private JigsawPieceSO[] JigsawPieceDatabaseHelper;
     public static JigsawPieceSO CurrentJigsawPiece;
     public static PuzzleType PuzzleToGenerate => CurrentJigsawPiece.HowToObtain;
-    public static bool IsSolveFixFactory;       // Special boolean for indicate whether factory is fixed in solve mode or not
 
     public enum FacilityType
     {
@@ -60,6 +64,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         FactoryDatabase = FactoryDatabaseHelper;
         FarmDatabase = FarmDatabaseHelper;
         JigsawPieceDatabase = JigsawPieceDatabaseHelper;
+        JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
     }
 
     // Reflect the value back into editor
@@ -69,6 +74,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         FactoryDatabaseHelper = FactoryDatabase;
         FarmDatabaseHelper = FarmDatabase;
         JigsawPieceDatabaseHelper = JigsawPieceDatabase;
+        JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
     }
 
     private void Awake()
@@ -298,6 +304,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         CurrentJigsawPiece = jigsawPiece;
     }
 
+    // Record and return result after completing puzzle
     public static List<string> RecordPuzzleResult(bool isSuccess)
     {
         // Record progress in JigsawPieceSO
@@ -324,6 +331,87 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         else if (money < 0)
         {
             feedbackTexts.Add("- Spend money: " + (-money).ToString());
+        }
+        // Fix facility if it's in fixing mode
+        if (!FixingFacility)
+        {
+            return feedbackTexts;
+        }
+        FixingFacility = false;
+        string fixingFeedback = "";
+        if (isSuccess)
+        {
+            FixFacility();
+            fixingFeedback += "- Successfully fix: ";
+        }
+        else
+        {
+            fixingFeedback += "- Fail to fix: ";
+        }
+        fixingFeedback += GetFacilityToFixName();
+        feedbackTexts.Add(fixingFeedback);
+        return feedbackTexts;
+    }
+
+    // Special case of RecordPuzzleResult for fixing the last factory
+    public static List<string> RecordPuzzleResultForLastFactory(bool isSuccess)
+    {
+        // Calculate the pieces to obtain
+        bool isSolve = (
+                (PlayerManager.PuzzleToGenerate == PuzzleType.KnapsackMultiDimenSolve) ||
+                (PlayerManager.PuzzleToGenerate == PuzzleType.KnapsackMultipleSolve)
+                );
+        List<JigsawPieceSO> jigsawToObtain = new List<JigsawPieceSO>();
+        foreach (JigsawPieceSO piece in JigsawPieceForLastFactory)
+        {
+            if (PuzzleToGenerate == PuzzleType.Dialogue)
+            {
+                jigsawToObtain.Add(CurrentJigsawPiece);
+                break;
+            }
+            else if(isSolve)
+            {
+                if ((piece.HowToObtain == PuzzleType.KnapsackMultiDimenSolve) ||
+                    (piece.HowToObtain == PuzzleType.KnapsackMultipleSolve))
+                {
+                    jigsawToObtain.Add(piece);
+                }
+            }
+            else
+            {
+                if ((piece.HowToObtain == PuzzleType.KnapsackMultiDimenDemon) ||
+                    (piece.HowToObtain == PuzzleType.KnapsackMultipleDemon))
+                {
+                    jigsawToObtain.Add(piece);
+                }
+            }
+        }
+        // Record progress and generate feedback from JigsawPieceSO
+        List<string> feedbackTexts = new List<string>();
+        int obtainMoney = 0;
+        foreach (JigsawPieceSO piece in jigsawToObtain)
+        {
+            int[] amountAndMoney = piece.AddProgressCount(isSuccess, 1);
+            int amount = amountAndMoney[0];
+            obtainMoney += amountAndMoney[1];
+            string obtainSuffix = " x " + piece.GetLockableObjectName();
+            if (amount > 0)
+            {
+                feedbackTexts.Add("- Obtain: " + amount.ToString() + obtainSuffix);
+            }
+            else if (amount < 0)
+            {
+                feedbackTexts.Add("- Fail to obtain: " + (-amount).ToString() + obtainSuffix);
+            }
+        }
+        // Feedback on money
+        if (obtainMoney > 0)
+        {
+            feedbackTexts.Add("- Gain money: " + obtainMoney.ToString());
+        }
+        else if (obtainMoney < 0)
+        {
+            feedbackTexts.Add("- Spend money: " + (-obtainMoney).ToString());
         }
         // Fix facility if it's in fixing mode
         if (!FixingFacility)

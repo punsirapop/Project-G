@@ -21,9 +21,14 @@ public class KnapsackPuzzleManager : MonoBehaviour
     private void Start()
     {
         // Check for special case of fixing factory 4, which is the only puzzle scene that involve more than one JigsawPieceSO
-        if (PlayerManager.FixingFacility && (PlayerManager.FacilityToFixIndex == 3))
+        if (PlayerManager.IsFixingLastFactory)
         {
-            SetPuzzle(PlayerManager.PuzzleToGenerate);  // change this later
+            bool isSolve = (
+                (PlayerManager.PuzzleToGenerate == PuzzleType.KnapsackMultiDimenSolve) ||
+                (PlayerManager.PuzzleToGenerate == PuzzleType.KnapsackMultipleSolve)
+                );
+            Debug.Log("Fixing for last factory");
+            SetPuzzle(isSolve, 3);  // change this later
         }
         else
         {
@@ -63,14 +68,14 @@ public class KnapsackPuzzleManager : MonoBehaviour
             // Solve
             if (isSolve)
             {
-                GenotypeManager.Instance.CreateMapMask(FactoriesData[factoryIndex].Items.Length, 0.7f);
+                GenotypeManager.Instance.CreateNotMapMask(factoryIndex, 3);
                 GenotypeManager.Instance.InstantiateBitBlocks();
                 GenotypeManager.Instance.SetPresetChangable(true);
             }
             // Demonstrate
             else
             {
-                GenotypeManager.Instance.CreateMapMask(FactoriesData[factoryIndex].Items.Length, 1f);
+                GenotypeManager.Instance.CreateNotMapMask(factoryIndex, 0);
                 GenotypeManager.Instance.InstantiateBitBlocks(factoryIndex);
                 GenotypeManager.Instance.SetPresetChangable(false);
             }
@@ -79,7 +84,7 @@ public class KnapsackPuzzleManager : MonoBehaviour
         // Decoding puzzle, set Genotype, player interact with Phenotype
         else
         {
-            GenotypeManager.Instance.CreateMapMask(FactoriesData[factoryIndex].Items.Length, 1f);
+            GenotypeManager.Instance.CreateNotMapMask(factoryIndex, 0);
             GenotypeManager.Instance.InstantiateBitBlocks(factoryIndex, bitstring);
             GenotypeManager.Instance.SetPresetChangable(false);
             GenotypeManager.Instance.SetResettable(false);
@@ -199,7 +204,8 @@ public class KnapsackPuzzleManager : MonoBehaviour
             }
         }
         // Result conclusion
-        foreach (string jigsawFeedback in PlayerManager.RecordPuzzleResult(isCorrect))
+        List<string> jigsawFeedbacks = PlayerManager.IsFixingLastFactory ? PlayerManager.RecordPuzzleResultForLastFactory(isCorrect) : PlayerManager.RecordPuzzleResult(isCorrect);
+        foreach (string jigsawFeedback in jigsawFeedbacks)
         {
             feedbackText += "\n" + jigsawFeedback;
         }

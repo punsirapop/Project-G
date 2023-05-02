@@ -195,12 +195,14 @@ public class FactorySO : LockableObject
         return randomBitstring;
     }
 
+    // Return one of the best bitstring
     public int[][] GetBestBitstring()
     {
         WeaponChromosome[] allWeapon = GetAllWeapon();
         List<WeaponChromosome> allWeaponList = new List<WeaponChromosome>(allWeapon);
         allWeaponList.Sort((a, b) => b.Fitness.CompareTo(a.Fitness));
-        return allWeaponList[0].Bitstring;
+        int index = Random.Range(0, 10);    // Random one of the best top-10 index
+        return allWeaponList[index].Bitstring;
     }
 
     // Return all weapon in database and its evaluated values
