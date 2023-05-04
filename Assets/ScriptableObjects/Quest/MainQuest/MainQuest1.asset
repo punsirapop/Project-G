@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c1af3e9bb064d418b0e9ebeefcf500, type: 3}
+  m_Name: MainQuest1
+  m_EditorClassIdentifier: 
+  _Name: Newcomer
+  _BriefDescription: The beginning of the hero.
+  _FullDescription: You are the chosen one! But not a qualified one... yet. Creating
+    a powerful robotic monster and a mighty weapon requires many skills. You should
+    prove yourself by obtaining your first qualification piece.
+  _QuestStatus: 4
+  _RequireObject: {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}
+  _DueDate:
+    year: 0
+    month: 0
+    day: 0
+  _RewardMoney: 200
+  _RewardMechs: []
+  _IntroDialogue: {fileID: 11400000, guid: 40c770a49e2d44f4893a0477a72d7848, type: 2}
+  _OutroDialogue: {fileID: 11400000, guid: 9d68baa50d2e53f49937f7c71fead05a, type: 2}

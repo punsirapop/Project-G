@@ -8,6 +8,7 @@ using UnityEngine.Pool;
 
 public class TimeManager : MonoBehaviour
 {
+    [System.Serializable]
     public struct Date
     {
         public int year;

@@ -69,6 +69,7 @@ public class JigsawPieceSO : LockableObject
             bool isTransactionSuccess = PlayerManager.GainMoneyIfValid(_CalculateWorth(amount));
             amountAndMoney[1] = isTransactionSuccess ? _CalculateWorth(amount) : 0;
             base.ForceUnlock();
+            PlayerManager.ValidateUnlocking();
         }
         else
         {

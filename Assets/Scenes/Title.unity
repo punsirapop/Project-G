@@ -2001,6 +2001,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
   - {fileID: 11400000, guid: 4f8d915d5ed36574d8144bc947902028, type: 2}
   - {fileID: 11400000, guid: dde4abd4c56c85d41a13a1e94df28626, type: 2}
+  DialogueDatabaseHelper: []
   JigsawPieceForLastFactoryHelper:
   - {fileID: 11400000, guid: 43e214c91ebe7ff48ba5c5e55a66c986, type: 2}
   - {fileID: 11400000, guid: ee0ab1a37799ee147bf1b5d50d227a8b, type: 2}
@@ -2032,6 +2033,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0a469f77fc85e842b42cbd565716c4a, type: 2}
   - {fileID: 11400000, guid: f24fa1eebf2d7794a8ac445d58733c31, type: 2}
   - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
+  _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
 --- !u!4 &1421103299
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c1af3e9bb064d418b0e9ebeefcf500, type: 3}
+  m_Name: Test1
+  m_EditorClassIdentifier: 
+  _Name: My First Quest!
+  _BriefDescription: Before saving world, you should know thing.
+  _FullDescription: Welcome to Project G! Here is the first quest for you as a world
+    saver. But before saving the world, you must know whatever it neccessary for
+    doing such mission. I don't have any idea now so just type something that tell
+    the player to start learning already.
+  _QuestStatus: 4
+  _RequireObject: {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
+  _DueDate:
+    year: 2700
+    month: 1
+    day: 11
+  _RewardMoney: 1111
+  _RewardMechs: []
+  _IntroDialogue: {fileID: 0}
+  _OutroDialogue: {fileID: 0}

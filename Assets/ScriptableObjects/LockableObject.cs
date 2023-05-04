@@ -76,13 +76,7 @@ public class LockableObject : ScriptableObject
             {
                 break;
             }
-            unlockRequirements.Add(
-                new UnlockRequirementData(
-                    requireObject.LockStatus == LockableStatus.Unlock,
-                    requireObject.GetRequirementPrefix(),
-                    requireObject.GetLockableObjectName()
-                    )
-                );
+            unlockRequirements.Add(requireObject.GetUnlockStatus());
         }
         if (includeMoney)
         {
@@ -96,6 +90,16 @@ public class LockableObject : ScriptableObject
                 );
         }
         return unlockRequirements;
+    }
+
+    // Return locking status of this object
+    public UnlockRequirementData GetUnlockStatus()
+    {
+        return new UnlockRequirementData(
+                    LockStatus == LockableStatus.Unlock,
+                    GetRequirementPrefix(),
+                    GetLockableObjectName()
+                    );
     }
 
     // Consume resource and unlock Factory

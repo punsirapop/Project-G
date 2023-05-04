@@ -57,6 +57,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static JigsawPieceSO CurrentJigsawPiece;
     public static PuzzleType PuzzleToGenerate => CurrentJigsawPiece.HowToObtain;
 
+    // Quest
+    public static MainQuestDatabaseSO MainQuestDatabase;
+    [SerializeField] private MainQuestDatabaseSO _MainQuestDatabaseHelper;
+
+
     public enum FacilityType
     {
         Factory,
@@ -72,6 +77,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         JigsawPieceDatabase = JigsawPieceDatabaseHelper;
         JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
         DialogueDatabase = DialogueDatabaseHelper;
+        MainQuestDatabase = _MainQuestDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -81,8 +87,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         FactoryDatabaseHelper = FactoryDatabase;
         FarmDatabaseHelper = FarmDatabase;
         JigsawPieceDatabaseHelper = JigsawPieceDatabase;
-        JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
+        JigsawPieceForLastFactoryHelper = JigsawPieceForLastFactory;
         DialogueDatabaseHelper = DialogueDatabase;
+        _MainQuestDatabaseHelper = MainQuestDatabase;
     }
 
     private void Awake()
@@ -223,6 +230,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // Validate locking status of all SO
     public static void ValidateUnlocking()
     {
+        Debug.Log("PlayerManager validating all unlockable object");
         foreach (ContentChapterSO chapter in ContentChapterDatabase)
         {
             chapter.ValidateUnlockRequirement();
@@ -239,6 +247,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             piece.ValidateUnlockRequirement();
         }
+        MainQuestDatabase.ValidateAllQuestStatus();
     }
 
     // TEMP function for start the game with the least restriction
