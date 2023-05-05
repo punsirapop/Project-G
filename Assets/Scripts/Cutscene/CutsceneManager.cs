@@ -10,7 +10,6 @@ public class CutsceneManager : MonoBehaviour
 
     // UI element for display data
     [SerializeField] private TextMeshProUGUI _SpeakerName;
-    [SerializeField] private string _NPCName;
     [SerializeField] private TextMeshProUGUI _SentenceText;
     [SerializeField] private HorizontalLayoutGroup _CharacterLayout;
     [SerializeField] private Sprite[] _NPCFaceSprites;
@@ -37,8 +36,8 @@ public class CutsceneManager : MonoBehaviour
     private int _Score;
     private DialogueElement.Sentence _Temp;
     public GameObject Holder;
-    private SceneMng SceneManager;
-    private int CharacterIndex;
+    private SceneMng _SceneManager;
+    private int _CharacterIndex;
 
     void Awake()
     {
@@ -53,7 +52,7 @@ public class CutsceneManager : MonoBehaviour
         DisplaySentence(_CurrentDialogueElement.SentenceData);
         _Score= 0;
         _CurrentAnswerIndex = 0;
-        SceneManager = Holder.GetComponent<SceneMng>();
+        _SceneManager = Holder.GetComponent<SceneMng>();
     }
 
     public void DisplaySentence(DialogueElement.Sentence currentSentence)
@@ -142,7 +141,7 @@ public class CutsceneManager : MonoBehaviour
         }
         _SpeakerName.text = speaker.ToString();
         if(_SpeakerName.text != "Player"){
-            _SpeakerName.text = _NPCName;
+            _SpeakerName.text = _CurrentDialogueSO.SpeakerName;
         }
         // Start sentence text displaying
         StartCoroutine(TypeSentence(currentSentence));
@@ -154,11 +153,11 @@ public class CutsceneManager : MonoBehaviour
         bool _InTag = false;
         bool _InBoldTag = false;
         _SentenceText.text = "";
-        CharacterIndex = 0;
+        _CharacterIndex = 0;
         // Type each character with some delay
         foreach (char c in currentSentence.SentenceContent.ToCharArray())
         {
-            CharacterIndex++;
+            _CharacterIndex++;
             if (c == '<')
             {
                 if(!_InBoldTag)
@@ -181,8 +180,8 @@ public class CutsceneManager : MonoBehaviour
                 _SentenceText.text += c;
                  if (_InBoldTag)
                 {
-                    int lastCharacterIndex = _SentenceText.text.Length - 1;
-                    _SentenceText.text = _SentenceText.text.Substring(0, lastCharacterIndex) + "<b>" + _SentenceText.text[lastCharacterIndex] + "</b>";
+                    int _lastCharacterIndex = _SentenceText.text.Length - 1;
+                    _SentenceText.text = _SentenceText.text.Substring(0, _lastCharacterIndex) + "<b>" + _SentenceText.text[_lastCharacterIndex] + "</b>";
                 }
             }
             yield return new WaitForSeconds(_TypeDelaySeconds);
@@ -264,9 +263,9 @@ public class CutsceneManager : MonoBehaviour
         }
         // If current dialogue element is sentence and not complete yet, complete the sentence
         if (!_CurrentDialogueElement.IsChoices && !_CurrentDialogueElement.IsChecker &&
-            CharacterIndex != _CurrentDialogueElement.SentenceData.SentenceContent.Length)
+            _CharacterIndex != _CurrentDialogueElement.SentenceData.SentenceContent.Length)
         {
-            CharacterIndex = _CurrentDialogueElement.SentenceData.SentenceContent.Length;
+            _CharacterIndex = _CurrentDialogueElement.SentenceData.SentenceContent.Length;
             _SentenceText.text = _CurrentDialogueElement.SentenceData.SentenceContent;
             StopAllCoroutines();
             return;
@@ -330,5 +329,10 @@ public class CutsceneManager : MonoBehaviour
         {
             DisplaySentence(_CurrentDialogueElement.SentenceData);
         }
+    }
+
+    public void skip()
+    {
+        _CurrentSentenceIndex = _CurrentDialogueSO.Elements.Length-1;
     }
 }
