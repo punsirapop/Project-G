@@ -2,31 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Quest")]
 public class QuestSO : ScriptableObject
 {
     // Quest information
-    [SerializeField] private string _Name;
+    [SerializeField] protected string _Name;
     public string Name => _Name;
-    [SerializeField] private string _BriefDescription;
+    [SerializeField] protected string _BriefDescription;
     public string BriefDescription => _BriefDescription;
-    [SerializeField] [TextArea(5, 10)] private string _FullDescription;
+    [SerializeField] [TextArea(5, 10)] protected string _FullDescription;
     public string FullDescription => _FullDescription;
-    [SerializeField] private Status _QuestStatus;
+    [SerializeField] protected Status _QuestStatus;
     public Status QuestStatus => _QuestStatus;
-    [SerializeField] private LockableObject _RequireObject;
-    public LockableObject RequireObject => _RequireObject;
-    [SerializeField] private TimeManager.Date _DueDate;
+    [SerializeField] protected TimeManager.Date _DueDate;
     public TimeManager.Date DueDate => _DueDate;
-    // Reward
-    [SerializeField] private int _RewardMoney;
-    public int RewardMoney => _RewardMoney;
-    [SerializeField] private MechChromoSO[] _RewardMechs;
-    public MechChromoSO[] RewardMechs => _RewardMechs;
     // Dialogue
-    [SerializeField] private DialogueSO _IntroDialogue;
+    [SerializeField] protected DialogueSO _IntroDialogue;
     public DialogueSO IntroDialogue => _IntroDialogue;
-    [SerializeField] private DialogueSO _OutroDialogue;
+    [SerializeField] protected DialogueSO _OutroDialogue;
     public DialogueSO OutroDialogue => _OutroDialogue;
 
     public enum Status
@@ -43,38 +35,18 @@ public class QuestSO : ScriptableObject
         _QuestStatus = newStatus;
     }
 
-    public void ValdiateStatus()
+    public virtual void ValdiateStatus()
     {
-        Debug.Log("Validating quest");
         if ((_QuestStatus != Status.InProgress) &&
             (_QuestStatus != Status.Completable))
         {
-            Debug.Log("Immediate return");
             return;
         }
-        // If required object is unlocked in time, it's completable
         // If time's out, it's expired
         if (IsTimeOut())
         {
             _QuestStatus = Status.Expired;
-        }
-        else
-        {
-            if (_RequireObject == null)
-            {
-                _QuestStatus = Status.Completable;
-                return;
-            }
-            if (_RequireObject.LockStatus == LockableStatus.Unlock)
-            {
-                Debug.Log("Quest is Completable");
-                _QuestStatus = Status.Completable;
-            }
-            else
-            {
-                Debug.Log("Quest is InProgress");
-                _QuestStatus = Status.InProgress;
-            }
+            return;
         }
     }
 
@@ -93,6 +65,32 @@ public class QuestSO : ScriptableObject
         else
         {
             return false;
+        }
+    }
+
+    // Receive the quest
+    public void ReceiveQuest()
+    {
+        // Change status and play dialogue
+        _QuestStatus = Status.InProgress;
+        PlayerManager.ValidateUnlocking();
+        if (IntroDialogue != null)
+        {
+            PlayerManager.SetCurrentDialogue(IntroDialogue);
+            SceneMng.StaticChangeScene("Cutscene");
+        }
+    }
+
+    // Complete the quest
+    public virtual void CompleteQuest()
+    {
+        // Change status and play dialogue
+        _QuestStatus = Status.Completed;
+        PlayerManager.ValidateUnlocking();
+        if (OutroDialogue != null)
+        {
+            PlayerManager.SetCurrentDialogue(OutroDialogue);
+            SceneMng.StaticChangeScene("Cutscene");
         }
     }
 }

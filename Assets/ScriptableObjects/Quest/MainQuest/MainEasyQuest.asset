@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd4759eb2e644a4d9aa0ae0ac5c9708, type: 3}
+  m_Name: MainEasyQuest
+  m_EditorClassIdentifier: 
+  _Name: Main Easy Quest
+  _BriefDescription: Easy quest that can be completed quickly
+  _FullDescription: Just place some long long description here. This quest just for
+    testing U know.
+  _QuestStatus: 4
+  _RequireObject: {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
+  _DueDate:
+    year: 0
+    month: 0
+    day: 0
+  _IntroDialogue: {fileID: 0}
+  _OutroDialogue: {fileID: 0}
+  _RewardMoney: 100
+  _RewardMechs:
+  - {fileID: 11400000, guid: 39dd342c9745de74bab3651415a772af, type: 2}
+  - {fileID: 11400000, guid: d12317c3f2cd3c34da28ed5c1efb1a9b, type: 2}
+  - {fileID: 11400000, guid: 4365df5564bc8a24f9e68e211f36bc16, type: 2}
+  - {fileID: 11400000, guid: ca64bf6e1cba36f4c9020ac875d55f47, type: 2}
+  - {fileID: 11400000, guid: 2242e5cd284e43d488eabfd423665e60, type: 2}
+  - {fileID: 11400000, guid: 6c5a8c427a9867243aaf03a85e8ad79c, type: 2}
+  - {fileID: 11400000, guid: 835acd85ddebae44287d74806929e22b, type: 2}
+  - {fileID: 11400000, guid: 086e9f1eb9d5e854b8670954123154dd, type: 2}
+  - {fileID: 11400000, guid: d4501cfe3686a1948b73f0019486ee6a, type: 2}
+  - {fileID: 11400000, guid: d04ff0ec47ed7e845aa454886c219495, type: 2}

@@ -9,8 +9,8 @@ public class QuestManager : MonoBehaviour
     public static QuestManager Instance;
 
     // Quest information
-    [SerializeField] private GameObject _UnlockRequirementPrefab;
-    private QuestSO _CurrentQuest;
+    //[SerializeField] private GameObject _UnlockRequirementPrefab;
+    private QuestSO _CurrentClickedQuest;
 
     // Actual UI element for quest list
     [Header("Quest List")]
@@ -22,12 +22,6 @@ public class QuestManager : MonoBehaviour
     // Actual UI element for one quest detail
     [Header("One Quest Detail")]
     [SerializeField] private GameObject _OneQuestDetailPanel;
-    [SerializeField] private TextMeshProUGUI _QuestNameText;
-    [SerializeField] private TextMeshProUGUI _BriefDesText;
-    [SerializeField] private TextMeshProUGUI _FullDesText;
-    [SerializeField] private Transform _ProgressHolder;
-    [SerializeField] private TextMeshProUGUI _RewardMoneyText;
-    [SerializeField] private TextMeshProUGUI _DueDateText;
     [SerializeField] private GameObject _ConfirmButton;
 
 
@@ -52,123 +46,89 @@ public class QuestManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         // Spawn current main quest
-        if (PlayerManager.MainQuestDatabase.GetCurrentQuest() != null)
+        MainQuestSO currentMainQuest = PlayerManager.MainQuestDatabase.GetCurrentQuest();
+        if (currentMainQuest != null)
         {
             GameObject newQuestDetailButton = Instantiate(_QuestDetailButtonPrefab, _QuestDetailButtonHolder);
-            newQuestDetailButton.GetComponent<QuestDetailButton>().SetQuestButton(PlayerManager.MainQuestDatabase.GetCurrentQuest());
+            newQuestDetailButton.GetComponent<QuestDetailButton>().SetQuestButton(currentMainQuest);
+            newQuestDetailButton.GetComponent<Button>().onClick.AddListener(() => QuestManager.Instance.OpenOneQuestDetail(currentMainQuest));
         }
-        ///////////////// looping through all side quests in the future////////////
-        //foreach (QuestSO quest in _CurrentQuests)
-        //{
-        //    GameObject newQuestDetailButton = Instantiate(_QuestDetailButtonPrefab, _QuestDetailButtonHolder);
-        //    newQuestDetailButton.GetComponent<QuestDetailButton>().SetQuestButton(quest);
-        //}
-        /////////////////////////////////////////////////////////////////////
+        // Spawn all side quest
+        foreach (QuestSO sideQuest in PlayerManager.SideQuestDatabase.GetAllAcquiredQuest())
+        {
+            GameObject newQuestDetailButton = Instantiate(_QuestDetailButtonPrefab, _QuestDetailButtonHolder);
+            newQuestDetailButton.GetComponent<QuestDetailButton>().SetQuestButton(sideQuest);
+            newQuestDetailButton.GetComponent<Button>().onClick.AddListener(() => QuestManager.Instance.OpenOneQuestDetail(sideQuest));
+        }
     }
 
+    // Show the detail of the clicked quest
     public void OpenOneQuestDetail(QuestSO clickedQuest)
     {
-        _CurrentQuest = clickedQuest;
+        _CurrentClickedQuest = clickedQuest;
         _QuestListPanel.SetActive(false);
         _OneQuestDetailPanel.SetActive(true);
-        _QuestNameText.text = clickedQuest.Name;
-        _BriefDesText.text = clickedQuest.BriefDescription;
-        _FullDesText.text = clickedQuest.FullDescription;
-        foreach (Transform child in _ProgressHolder)
-        {
-            Destroy(child.gameObject);
-        }
-        GameObject newProgress = Instantiate(_UnlockRequirementPrefab, _ProgressHolder);
-        newProgress.GetComponent<UnlockRequirementUI>().SetUnlockRequirement(clickedQuest.RequireObject.GetUnlockStatus(), Color.black, 24);
-        _RewardMoneyText.text = clickedQuest.RewardMoney.ToString();
-        // If there is no due date (all info is 0), show no date
-        if (clickedQuest.DueDate.ToDay() == 0)
-        {
-            _DueDateText.text = "-";
-            _DueDateText.color = Color.gray;
-        }
-        // Expired quest
-        else if (clickedQuest.QuestStatus == QuestSO.Status.Expired)
-        {
-            _DueDateText.text = clickedQuest.DueDate.ShowDate() + " (expired)";
-            _DueDateText.color = Color.red;
-        }
-        // Normal InProgress quest, show date with remaining time
-        else
-        {
-            int dayRemain = clickedQuest.DueDate.CompareDate(PlayerManager.CurrentDate);
-            string suffix = (dayRemain <= 1) ? " day left)" : " days left)";
-            _DueDateText.text = clickedQuest.DueDate.ShowDate() + " (" + dayRemain.ToString() + suffix;
-            _DueDateText.color = Color.black;
-        }
+        _OneQuestDetailPanel.GetComponent<QuestDetailOverlay>().SetOverlay(clickedQuest);
         // Set confirmation button according to the QuestStatus
         _ConfirmButton.GetComponent<Button>().interactable = true;
-        switch (clickedQuest.QuestStatus)
+        if (clickedQuest is MainQuestSO)
         {
-            default:
-                _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "-";
-                _ConfirmButton.GetComponent<Button>().interactable = false;
-                break;
-            case QuestSO.Status.Unacquired:
-                _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Recieve";
-                break;
-            case QuestSO.Status.InProgress:
-                _ConfirmButton.GetComponent<Button>().interactable = false;
-                _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "In Progress";
-                break;
-            case QuestSO.Status.Completable:
-                _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Complete";
-                break;
-            case QuestSO.Status.Expired:
-                _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Abandon";
-                break;
+            switch (clickedQuest.QuestStatus)
+            {
+                default:
+                    _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "-";
+                    _ConfirmButton.GetComponent<Button>().interactable = false;
+                    break;
+                case QuestSO.Status.Unacquired:
+                    _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Recieve";
+                    break;
+                case QuestSO.Status.InProgress:
+                    _ConfirmButton.GetComponent<Button>().interactable = false;
+                    _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "In Progress";
+                    break;
+                case QuestSO.Status.Completable:
+                    _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Complete";
+                    break;
+                case QuestSO.Status.Expired:
+                    _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Abandon";
+                    break;
+            }
+        }
+        else if (clickedQuest is SideQuestSO)
+        {
+            _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Go To Submission";
         }
     }
 
+    // Manipulate the quest upon clicking confirm button in one quest detail page
+    // Doing thing like receive, complete or abandom quest
     public void OnConfirmClick()
     {
-        switch (_CurrentQuest.QuestStatus)
+        if (_CurrentClickedQuest is MainQuestSO)
         {
-            // Recieving quest
-            case QuestSO.Status.Unacquired:
-                _CurrentQuest.SetStatus(QuestSO.Status.InProgress);
-                PlayerManager.ValidateUnlocking();
-                if (_CurrentQuest.IntroDialogue != null)
-                {
-                    PlayerManager.SetCurrentDialogue(_CurrentQuest.IntroDialogue);
-                    SceneMng.StaticChangeScene("Cutscene");
-                }
-                else
-                {
+            switch (_CurrentClickedQuest.QuestStatus)
+            {
+                // Recieving quest
+                case QuestSO.Status.Unacquired:
+                    _CurrentClickedQuest.ReceiveQuest();
                     OpenQuestOverlay();
-                }
-                break;
-            // Submit completable quest
-            case QuestSO.Status.Completable:
-                // Give reward
-                bool isTransactionSuccess = PlayerManager.GainMoneyIfValid(_CurrentQuest.RewardMoney);
-                if (!isTransactionSuccess)
-                {
-                    return;
-                }
-                // Give Mech here...
-                _CurrentQuest.SetStatus(QuestSO.Status.Completed);
-                PlayerManager.ValidateUnlocking();
-                if (_CurrentQuest.OutroDialogue != null)
-                {
-                    PlayerManager.SetCurrentDialogue(_CurrentQuest.OutroDialogue);
-                    SceneMng.StaticChangeScene("Cutscene");
-                }
-                else
-                {
+                    break;
+                // Submit completable quest
+                case QuestSO.Status.Completable:
+                    _CurrentClickedQuest.CompleteQuest();
                     OpenQuestOverlay();
-                }
-                break;
-            // Submit expired quest
-            case QuestSO.Status.Expired:
-                _CurrentQuest.SetStatus(QuestSO.Status.Completed);
-                PlayerManager.ValidateUnlocking();
-                break;
+                    break;
+                // Submit expired quest
+                case QuestSO.Status.Expired:
+                    _CurrentClickedQuest.SetStatus(QuestSO.Status.Completed);
+                    PlayerManager.ValidateUnlocking();
+                    break;
+            }
+        }
+        else if (_CurrentClickedQuest is SideQuestSO)
+        {
+            SideQuestSubmissionManager.SetCurrentQuest((SideQuestSO)_CurrentClickedQuest);
+            SceneMng.StaticChangeScene("SideQuestSubmission");
         }
     }
 }

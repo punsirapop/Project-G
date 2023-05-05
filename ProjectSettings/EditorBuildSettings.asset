@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HallOfFame.unity
     guid: 1cf5f308886e1f2418d914523a3f75a4
+  - enabled: 1
+    path: Assets/Scenes/QuestBoard.unity
+    guid: b9cba9de8fbdb914aad325ef7f05e9fa
+  - enabled: 1
+    path: Assets/Scenes/SideQuestSubmission.unity
+    guid: e35549915c5596a4e99d4f42d23ca844
   m_configObjects: {}

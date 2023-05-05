@@ -60,7 +60,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // Quest
     public static MainQuestDatabaseSO MainQuestDatabase;
     [SerializeField] private MainQuestDatabaseSO _MainQuestDatabaseHelper;
-
+    public static SideQuestDatabaseSO SideQuestDatabase;
+    [SerializeField] private SideQuestDatabaseSO _SideQuestDatabaseHelper;
 
     public enum FacilityType
     {
@@ -78,6 +79,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         JigsawPieceForLastFactory = JigsawPieceForLastFactoryHelper;
         DialogueDatabase = DialogueDatabaseHelper;
         MainQuestDatabase = _MainQuestDatabaseHelper;
+        SideQuestDatabase = _SideQuestDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -90,6 +92,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         JigsawPieceForLastFactoryHelper = JigsawPieceForLastFactory;
         DialogueDatabaseHelper = DialogueDatabase;
         _MainQuestDatabaseHelper = MainQuestDatabase;
+        _SideQuestDatabaseHelper = SideQuestDatabase;
     }
 
     private void Awake()
@@ -97,6 +100,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         TimeManager.OnChangeDate += OnChangeDate;
         SaveManager.OnReset += ResetMoney;
         SaveManager.OnReset += ValidateUnlocking;
+        SaveManager.OnReset += ResetDate;
 
         if (Instance == null)
         {
@@ -135,11 +139,36 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
                 }
             }
         }
+        // Generate new side quest(s) by skipped time
+        SideQuestDatabase.GenerateNewQuestByTime(CurrentDate, day);
 
         CurrentDate = d.DupeDate();
+
+        // Valdiate for checking expiration
+        MainQuestDatabase.ValidateAllQuestStatus();
+        SideQuestDatabase.ValidateAllQuestStatus();
+    }
+
+    public static void SetCurrentDate(TimeManager.Date newDate)
+    {
+        CurrentDate = newDate;
+    }
+
+    public void ResetDate()
+    {
+        CurrentDate = new TimeManager.Date();
     }
 
     #region Money
+    public static void SetMoney(int amount)
+    {
+        if (amount < 0)
+        {
+            return;
+        }
+        Money = amount;
+    }
+
     public void ResetMoney()
     {
         Money = 3000;   // Hard-code initial amount of Money
@@ -248,6 +277,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             piece.ValidateUnlockRequirement();
         }
         MainQuestDatabase.ValidateAllQuestStatus();
+        SideQuestDatabase.ValidateAllQuestStatus();
     }
 
     // TEMP function for start the game with the least restriction

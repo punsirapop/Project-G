@@ -66,6 +66,17 @@ public class TimeManager : MonoBehaviour
             return day + month * 28 + year * 12 * 28;
         }
 
+        public static Date FromDay(int days)
+        {
+            Date zeroDate = new Date()
+            {
+                day = 0,
+                month = 0,
+                year = 0
+            };
+            return zeroDate.AddDay(days);
+        }
+
         public int CompareDate(Date d)
         {
             int a = ToDay();

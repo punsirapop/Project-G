@@ -14,7 +14,21 @@ public class QuestDetailButton : MonoBehaviour
     {
         _QuestNameText.text = newQuest.Name;
         _QuestBriefDescriptionText.text = newQuest.BriefDescription;
-        _QuestStatusText.text = newQuest.QuestStatus.ToString();
-        GetComponent<Button>().onClick.AddListener(() => QuestManager.Instance.OpenOneQuestDetail(newQuest));
+        if (newQuest is MainQuestSO)
+        {
+            _QuestStatusText.text = newQuest.QuestStatus.ToString();
+        }
+        else if (newQuest is SideQuestSO)
+        {
+            if ((newQuest.QuestStatus == QuestSO.Status.Unacquired) ||
+                (newQuest.QuestStatus == QuestSO.Status.Expired))
+            {
+                _QuestStatusText.text = newQuest.QuestStatus.ToString();
+            }
+            else
+            {
+                _QuestStatusText.text = ((SideQuestSO)newQuest).GetDaysLeftText();
+            }
+        }
     }
 }

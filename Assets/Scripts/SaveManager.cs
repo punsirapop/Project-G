@@ -33,6 +33,8 @@ public class SaveManager : MonoBehaviour
     // object save path
     string mechAssetsPath = Path.Combine("Assets", "Resources", "Mechs");
     string mechResourcePath = "Mechs";
+    string sideQuestAssetsPath = Path.Combine("Assets", "Resources", "SideQuest");
+    string sideQuestResourcePath = "SideQuest";
 
     // check if path is ready to save
     protected bool SaveReady()
@@ -68,7 +70,8 @@ public class SaveManager : MonoBehaviour
         FarmManager.CurrentGen = new List<int>(s.mechCurrentGen);
         FarmManager.CurrentID = s.mechCurrentID;
         */
-        PlayerManager.CurrentDate.AddDay(s.Days);
+        PlayerManager.SetCurrentDate(TimeManager.Date.FromDay(s.Days));
+        PlayerManager.SetMoney(s.Money);
         Debug.Log("Data loaded");
     }
 
@@ -100,15 +103,26 @@ public class SaveManager : MonoBehaviour
         MechChromoSO[] saved = Resources.LoadAll<MechChromoSO>(mechResourcePath);
         Debug.Log("LOADED: " + loaded.Count() + " SAVED: " + saved.Length);
         Debug.Log("UNSAVED: " + loaded.Except(saved).Count() + " UNLOADED: " + saved.Except(loaded).Count());
+        // Side quest
+        SideQuestSO[] loadedSideQuest = PlayerManager.SideQuestDatabase.GetAllQuest().ToArray();
+        SideQuestSO[] savedSideQuest = Resources.LoadAll<SideQuestSO>(sideQuestResourcePath);
         // Save new items
         foreach (var item in loaded.Except(saved))
         {
             AssetDatabase.CreateAsset(item, Path.Combine(mechAssetsPath, item.ID.ToString() + ".asset"));
         }
+        foreach (var currentQuest in loadedSideQuest.Except(savedSideQuest))
+        {
+            AssetDatabase.CreateAsset(currentQuest, Path.Combine(sideQuestAssetsPath, currentQuest.ID.ToString() + ".asset"));
+        }
         // Delete unused items
         foreach (var item in saved.Except(loaded))
         {
             AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(item));
+        }
+        foreach (var oldQuest in savedSideQuest.Except(loadedSideQuest))
+        {
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(oldQuest));
         }
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
@@ -147,6 +161,10 @@ public class SaveManager : MonoBehaviour
         MechChromoSO[] deleteMe = Resources.LoadAll<MechChromoSO>("Mechs");
         foreach (MechChromoSO mechChromoSO in deleteMe)
             AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(mechChromoSO));
+        // Delete side quests
+        SideQuestSO[] oldSideQuests = Resources.LoadAll<SideQuestSO>(sideQuestResourcePath);
+        foreach (SideQuestSO quest in oldSideQuests)
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(quest));
         OnReset?.Invoke();
     }
 }

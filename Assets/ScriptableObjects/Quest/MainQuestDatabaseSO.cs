@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/MainQuestDatabase")]
+[CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/QuestMainDatabase")]
 public class MainQuestDatabaseSO : ScriptableObject
 {
-    [SerializeField] private QuestSO[] _MainQuests;
+    [SerializeField] private MainQuestSO[] _MainQuests;
     private int _CurrentQuestIndex;
 
     private void OnEnable()
@@ -27,7 +27,7 @@ public class MainQuestDatabaseSO : ScriptableObject
         }
     }
 
-    public QuestSO GetCurrentQuest()
+    public MainQuestSO GetCurrentQuest()
     {
         if (_CurrentQuestIndex > _MainQuests.Length - 1)
         {

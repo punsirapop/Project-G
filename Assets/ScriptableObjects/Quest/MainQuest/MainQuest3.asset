@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9c1af3e9bb064d418b0e9ebeefcf500, type: 3}
+  m_Script: {fileID: 11500000, guid: bfd4759eb2e644a4d9aa0ae0ac5c9708, type: 3}
   m_Name: MainQuest3
   m_EditorClassIdentifier: 
   _Name: Can I... pet that?
@@ -22,7 +22,7 @@ MonoBehaviour:
     year: 0
     month: 0
     day: 0
-  _RewardMoney: 1000
-  _RewardMechs: []
   _IntroDialogue: {fileID: 0}
   _OutroDialogue: {fileID: 0}
+  _RewardMoney: 1000
+  _RewardMechs: []
