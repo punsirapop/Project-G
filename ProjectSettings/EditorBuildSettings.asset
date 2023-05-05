@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SideQuestSubmission.unity
     guid: e35549915c5596a4e99d4f42d23ca844
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 25ca019b1d1da40448c374c6357677f8
   m_configObjects: {}
