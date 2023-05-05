@@ -35,27 +35,58 @@ public class SideQuestSO : QuestSO
         MaxRewardMoney = maxRewardMoney;
     }
 
-    // Gain reward and complete the quest
+
+    // Calculate expected reward from mech similarity
+    public int CalculateExpectedRewardMoney()
+    {
+        // If there is no selected mech, expect no reward
+        if (SideQuestSubmissionManager.Instance.SelectedMech == null)
+        {
+            return 0;
+        }
+        // If there is some selected mech, calculate reward
+        float similarityRate = SideQuestSubmissionManager.Instance.SimilarityRate;
+        // Hard-code the bound here...
+        float lowerBound = 0.5f;    // Rate at least for starting getting bonus money
+        float upperBound = 0.9f;    // Rate at most for getting max money
+        int rewardMoney;
+        if (similarityRate < lowerBound)
+        {
+            rewardMoney = MinRewardMoney;
+        }
+        else if (similarityRate >= upperBound)
+        {
+            rewardMoney = MaxRewardMoney;
+        }
+        else
+        {
+            float bonusRate = (similarityRate - lowerBound) / (upperBound - lowerBound);
+            int bonusMoney = Mathf.RoundToInt(((float)(MaxRewardMoney - MinRewardMoney)) * bonusRate);
+            rewardMoney = MinRewardMoney + bonusMoney;
+        }
+        return rewardMoney;
+    }
+
+    // Gain reward and complete the quest 
     public override void CompleteQuest()
     {
         // If it's expired quest, just abandon it and mark as completed
         if (_QuestStatus == Status.Expired)
         {
             base.CompleteQuest();
+            // May give some penalty like losing money around here...
             return;
         }
 
-        // Compare mech and calculate reward
-        // WIP
-
-        // Gain money reward
-        bool isTransactionSuccess = PlayerManager.GainMoneyIfValid(MaxRewardMoney);
+        // Gain money reward (move compare mech into SideQuesSubmissionManager or so)
+        int rewardMoney = CalculateExpectedRewardMoney();
+        bool isTransactionSuccess = PlayerManager.GainMoneyIfValid(rewardMoney);
         if (!isTransactionSuccess)
         {
             return;
         }
 
-        // Remove submitted mech from the habitat
+        // Remove submitted mech from the habitat (this should also be moved into SideQuesSubmissionManager or so I guess)
         // WIP
 
         base.CompleteQuest();
