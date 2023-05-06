@@ -15,12 +15,13 @@ MonoBehaviour:
   ChoiceAnswers: 010000000200000003000000
   PassScore: 2
   ChangeScene: 
+  SpeakerName: 
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
       Speaker: 5
-      SentenceContent: Hi there! This is a demo for testing JigsawPieceSO gathering
+      SentenceContent: Hi there! This ssssis a demo for testing JigsawPieceSO gathering
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

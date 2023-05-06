@@ -1,0 +1,562 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: C1Multiple Knapsack Problem
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 0300000001000000020000000300000003000000
+  PassScore: 3
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Hi there! This is a test for gathering Jigsaw Piece
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 5
+      SentenceContent: The topic for this test is . . .
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 16
+      SentenceContent: <b>Multiple Knapsack Problem !!!</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 0
+      SentenceContent: '> The Test is starting . . .'
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: Initiate <b>Test Mode</b> . . .
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 1. What is the Multiple Knapsack Problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 1. What is the Multiple Knapsack Problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A problem where we have to pack items into a bag while maximizing
+        its value.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A problem where we have to choose the knapsack to put an item
+        in.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A problem where we have to pack items into multiple bags while
+        maximizing their total value.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 2. How is the first knapsack encoded in the Multiple Knapsack
+        Problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A problem where we have to pack items into a bag while maximizing
+        its value.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A problem where we have to choose the knapsack to put an item
+        in.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A problem where we have to pack items into multiple bags while
+        maximizing their total value.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 1. How is the first knapsack encoded in the Multiple Knapsack
+        Problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Using a binary bit string representing the picking of each
+        item for that knapsack.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Using a set of integers representing the weight and value
+        of each item.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Using a set of integers representing the capacity and remaining
+        space of the knapsack.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 3. What happens if any of the knapsacks in the Multiple Knapsack
+        Problem holds the total weight of items more than its capacity?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The total weight of the items in that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value of that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The whole solution will be invalid and its fitness will be
+        zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 4. What happens if any of the knapsacks in the Multiple Knapsack
+        Problem holds the total weight of items more than its capacity?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Using a set of integers representing the weight and value
+        of each item.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Using a binary bit string representing the picking of each
+        item for that knapsack.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Using a set of integers representing the capacity and remaining
+        space of the knapsack.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 4. What is the fitness value of the chromosome in the Multiple
+        Knapsack Problem derived from?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Using a binary bit string representing the picking of each
+        item.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Using a set of integers representing the weight and value
+        of each item.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Using a set of integers representing the capacity and remaining
+        space of the knapsack.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 3. How is the second knapsack encoded in the Multiple Knapsack
+        Problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The total weight of the items in all knapsacks.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The total area of the items in all knapsacks.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The total worth of the items in all knapsacks.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 5. What happens if any of the knapsacks in the Multiple Knapsack
+        Problem holds the total weight of items more than its capacity?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The total weight of the items in all knapsacks.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The total area of the items in all knapsacks.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The total worth of the items in all knapsacks.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 4. What happens if any of the knapsacks in the Multiple Knapsack
+        Problem holds the total weight of items more than its capacity?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The total weight of the items in that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value of that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The whole solution will be invalid and its fitness will be
+        zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The total weight of the items in that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value of that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The whole solution will be invalid and its fitness will be
+        zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The total weight of the items in that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value of that knapsack will be reduced.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The whole solution will be invalid and its fitness will be
+        zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 5... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 5... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}

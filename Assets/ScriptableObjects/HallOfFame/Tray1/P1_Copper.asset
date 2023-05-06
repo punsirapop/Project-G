@@ -20,4 +20,4 @@ MonoBehaviour:
   _Name: Basic Bio
   _Level: 1
   _HowToObtain: 0
-  _TestingDialogue: {fileID: 11400000, guid: e6959f74f041912498771ea393f40444, type: 2}
+  _TestingDialogue: {fileID: 11400000, guid: d7f54aa77cda4be47a597f5d3d9295b2, type: 2}

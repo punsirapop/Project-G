@@ -19,4 +19,4 @@ MonoBehaviour:
   _Name: Standard Knapsack
   _Level: 1
   _HowToObtain: 0
-  _TestingDialogue: {fileID: 0}
+  _TestingDialogue: {fileID: 11400000, guid: 55b465913e17f964498418c0f48737bc, type: 2}
