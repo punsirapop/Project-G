@@ -12,14 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory1
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 1000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
+  - {fileID: 11400000, guid: 1387302a177ec8849a93922a842108cc, type: 2}
+  - {fileID: 11400000, guid: 0efd9f2cd18e33e4fb94b401e3313d0e, type: 2}
   _FactoryIndex: 0
   _Name: Factory 1
   _Description: To win the fight is to remain alive! And to remain alive is to have
     armor! Forging the armor using all metal makes it tougher but also too heavy.
     Selecting some metal to make the armor tough enough while the weight is not too
     much can be solved using the idea of the Standard Knapsack Problem.
-  _Generation: 2
-  _Status: 0
+  _Generation: 0
+  _Status: 1
+  _BreedCostPerUnit: 10
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.2
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: 712384d4fa5d8f04ba2859c552eea25b, type: 2}
+  - {fileID: 11400000, guid: af51d53de15ecff4494d48ed359e4cce, type: 2}
   _Floor: {fileID: 21300000, guid: eaf2bffa0920b274cbc73331d6a6669a, type: 3}
   _Conveyor: {fileID: 21300000, guid: 4beaf4a6b5bfc1a43a8875d55561ec2b, type: 3}
   _Border: {fileID: 21300000, guid: 58cb6da6a3183c24391705c676d6c4d5, type: 3}

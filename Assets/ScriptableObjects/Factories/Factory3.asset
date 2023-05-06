@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory3
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 3000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
+  - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
+  - {fileID: 11400000, guid: 9d3df141e00f14f40ab5d662c83315e0, type: 2}
   _FactoryIndex: 2
   _Name: Factory 3
   _Description: Only buffing your allies with a great weapon may not be enough anymore.
@@ -19,8 +25,14 @@ MonoBehaviour:
     Sound good, right? Creating a good driving force and a strong tip is the key
     to making a perfect dart. Balancing two parts like this can be achieved using
     the idea of the Multiple Knapsack Problem.
-  _Generation: 2
-  _Status: 0
+  _Generation: 0
+  _Status: 1
+  _BreedCostPerUnit: 10
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.2
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: 7217bc967c26d1f4b81196f85054b891, type: 2}
+  - {fileID: 11400000, guid: 089af8bf11dc80b43943595b414be37d, type: 2}
   _Floor: {fileID: 21300000, guid: 358727e37bc4e5048ba6b628827ae816, type: 3}
   _Conveyor: {fileID: 21300000, guid: 9b92435787d9a9649b643ced15dff5b4, type: 3}
   _Border: {fileID: 21300000, guid: 88594a51bc611294d809e990ae4ebce7, type: 3}

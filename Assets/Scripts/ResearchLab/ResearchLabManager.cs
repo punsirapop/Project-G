@@ -8,11 +8,19 @@ public class ResearchLabManager : MonoBehaviour
 {
     public static ResearchLabManager Instance;
 
+    // Prefab and holder for chapter button
     [SerializeField] private GameObject _ChapterButtonPrefab;
     [SerializeField] private GameObject _ChapterButtonGroupPrefab;
     [SerializeField] private GameObject _ChapterButtonHolder;
     [SerializeField] private GameObject _OverlayForChapterGroup;
+    // UI element for displaying page when it's not unlocked yet
+    [SerializeField] private GameObject _LockedPage;
+    [SerializeField] private Transform _UnlockRequirementsHolder;
+    [SerializeField] private GameObject _UnlockRequirementPrefab;
+    [SerializeField] private GameObject _UnlockablePage;
+    [SerializeField] private Transform _SatisfiedRequirementHolder;
     // UI element for displaying one page of content
+    [SerializeField] private GameObject _UnlockedPage;      // Parent of all elements in page
     [SerializeField] private TextMeshProUGUI _ContentPageHeader;
     [SerializeField] private Image _ContentPageImage;
     [SerializeField] private TextMeshProUGUI _ContentPageDescription;
@@ -22,7 +30,7 @@ public class ResearchLabManager : MonoBehaviour
     [SerializeField] private GameObject[] _TabButtons;
     [SerializeField] private ChapterButton[] _ChapterButtons;
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Hard-code 3 major category of content
     [SerializeField] private ContentChapterGroupSO[] _BasicBioChapters;
     [SerializeField] private ContentChapterGroupSO[] _GeneticAlgoChapters;
     [SerializeField] private ContentChapterGroupSO[] _KnapsackChapters;
@@ -44,9 +52,44 @@ public class ResearchLabManager : MonoBehaviour
     // Refresh the content on the current page
     private void _RefreshPage()
     {
-        _ContentPageHeader.text = _CurrentChapterSO.Contents[_CurrentPage].Header;
-        _ContentPageImage.sprite = _CurrentChapterSO.Contents[_CurrentPage].Image;
-        _ContentPageDescription.text = _CurrentChapterSO.Contents[_CurrentPage].Description;
+        _LockedPage.SetActive(_CurrentChapterSO.LockStatus == LockableStatus.Lock);
+        _UnlockablePage.SetActive(_CurrentChapterSO.LockStatus == LockableStatus.Unlockable);
+        _UnlockedPage.SetActive(_CurrentChapterSO.LockStatus == LockableStatus.Unlock);
+        // if it's Unlocked, refresh content
+        if (_CurrentChapterSO.LockStatus == LockableStatus.Unlock)
+        {
+            _ContentPageHeader.text = _CurrentChapterSO.Contents[_CurrentPage].Header;
+            _ContentPageImage.sprite = _CurrentChapterSO.Contents[_CurrentPage].Image;
+            _ContentPageDescription.text = _CurrentChapterSO.Contents[_CurrentPage].Description;
+        }
+        // If it's Unlockable, show unlock requirements and unlock button or something else
+        else if (_CurrentChapterSO.LockStatus == LockableStatus.Unlockable)
+        {
+            // Refresh all unlock requirements
+            foreach (Transform child in _SatisfiedRequirementHolder)
+            {
+                Destroy(child.gameObject);
+            }
+            foreach (UnlockRequirementData unlockRequirementData in _CurrentChapterSO.GetUnlockRequirements())
+            {
+                GameObject newUnlockRequirement = Instantiate(_UnlockRequirementPrefab, _SatisfiedRequirementHolder);
+                newUnlockRequirement.GetComponent<UnlockRequirementUI>().SetUnlockRequirement(unlockRequirementData, Color.black);
+            }
+        }
+        // If it's Locked (and by default), show unlock requirements
+        else
+        {
+            // Refresh all unlock requirements
+            foreach (Transform child in _UnlockRequirementsHolder)
+            {
+                Destroy(child.gameObject);
+            }
+            foreach (UnlockRequirementData unlockRequirementData in _CurrentChapterSO.GetUnlockRequirements())
+            {
+                GameObject newUnlockRequirement = Instantiate(_UnlockRequirementPrefab, _UnlockRequirementsHolder);
+                newUnlockRequirement.GetComponent<UnlockRequirementUI>().SetUnlockRequirement(unlockRequirementData, Color.white);
+            }
+        }
     }
 
     // Add the page of current chapter
@@ -183,6 +226,21 @@ public class ResearchLabManager : MonoBehaviour
         foreach (ChapterButton chapterButton in _ChapterButtons)
         {
             chapterButton.SetIsSelected(false);
+        }
+    }
+
+    public void UnlockCurrentChapter()
+    {
+        _CurrentChapterSO.Unlock();
+        PlayerManager.ValidateUnlocking();
+        if (_CurrentChapterSO.TeachingDialogue != null)
+        {
+            PlayerManager.SetCurrentDialogue(_CurrentChapterSO.TeachingDialogue);
+            SceneMng.StaticChangeScene("Cutscene");
+        }
+        else
+        {
+            _RefreshPage();
         }
     }
 }

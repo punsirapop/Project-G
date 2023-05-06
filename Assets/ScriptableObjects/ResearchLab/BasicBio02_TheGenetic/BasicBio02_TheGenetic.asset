@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: BasicBio02_TheGenetic
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 0
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
   _Header: The Genetic
   _Contents:
   - {fileID: 11400000, guid: b67caecede092df4b8922c273103de11, type: 2}
   - {fileID: 11400000, guid: cd6beb2c3df78054bb8531cbdc70f2f3, type: 2}
   - {fileID: 11400000, guid: ffa11830a60773046a24bae5193d68f3, type: 2}
   - {fileID: 11400000, guid: 08e87747e322a3c4084dc7d01d351698, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: fb33e8e16ee72c74587cb733055eb688, type: 2}

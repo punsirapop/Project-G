@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: GA03_03_UniformCrossover
   m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 100
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
   _Header: Uniform Crossover
   _Contents:
   - {fileID: 11400000, guid: 6fb6d8fe5c0e72c48b190bc9355da2e0, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: f3d9a55bdce2eae40962ec14e5f34ad4, type: 2}

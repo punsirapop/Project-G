@@ -1,0 +1,423 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: GA01_TheFlowOfGeneticAlgorithm
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: title
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: Let start the lesson of <b>"The Flow Of Genetic Algorithm"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: The <b>Genetic Algorithm</b> is the computer algorithm full
+        of biological-inspired processes mainly adapted from Darwin's theory.
+      Illustration: {fileID: 21300000, guid: 6d04068e00bffed45828ed3c2c51796e, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: The algorithm introduces a way to solve problems considered
+        hard or costly in terms of time and processing.
+      Illustration: {fileID: 21300000, guid: 6d04068e00bffed45828ed3c2c51796e, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: For clarity, the algorithm is used widely in an <b>optimization</b>
+        problems.
+      Illustration: {fileID: 21300000, guid: 1af671848ced23f4294888e4cc3108fa, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: It is about making things better.
+      Illustration: {fileID: 21300000, guid: 1af671848ced23f4294888e4cc3108fa, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: No right or wrong, the bad answer also be an answer.
+      Illustration: {fileID: 21300000, guid: 1af671848ced23f4294888e4cc3108fa, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: But using this algorithm, <b>optimal solutions</b> will be
+        found.
+      Illustration: {fileID: 21300000, guid: 1af671848ced23f4294888e4cc3108fa, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: This flow chart describes how the Genetic Algorithm works.
+      Illustration: {fileID: 21300000, guid: 39087d13c0de5cf4d9292960537378a7, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: To use the Genetic Algorithm, <b>the solution to the problem
+        (phenotype) must be encoded into the chromosome (genotype)</b>.
+      Illustration: {fileID: 21300000, guid: 436ade7e22a22cc409290a810ed954e3, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: Our mechanical monster appearance is represented using the
+        integer chromosome, indicating the type of head, color value, and the type
+        of accessory.
+      Illustration: {fileID: 21300000, guid: 436ade7e22a22cc409290a810ed954e3, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: If the size and diversity of the population are not enough,
+        the optimal solution might not be found.
+      Illustration: {fileID: 21300000, guid: fb7aeb55fde959c449cb303af47a68b2, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: So, the initial population of chromosomes is <b>randomly generated</b>.
+      Illustration: {fileID: 21300000, guid: fb7aeb55fde959c449cb303af47a68b2, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: The core of the natural selection theory is survival of the
+        fittest.
+      Illustration: {fileID: 21300000, guid: 52b355cae7236a447a091fcd54237997, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: The fitness of each chromosome in the population is calculated
+        using the <b>fitness function</b>.
+      Illustration: {fileID: 21300000, guid: 52b355cae7236a447a091fcd54237997, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: The fitness value from the function indicates how well each
+        chromosome suits the desired outcome.
+      Illustration: {fileID: 21300000, guid: 52b355cae7236a447a091fcd54237997, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: This is a step where the actual selection occurs.
+      Illustration: {fileID: 21300000, guid: 14e9d0f840606d34e9f2e850fb1b017a, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: If the algorithm decides that the population needs more evolution,
+        <b>the subset of chromosomes from a current population will be selected as
+        a parent</b> based on the fitness value.
+      Illustration: {fileID: 21300000, guid: 14e9d0f840606d34e9f2e850fb1b017a, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: Generally, the chromosome with more fitness value should have
+        more chance to be selected.
+      Illustration: {fileID: 21300000, guid: 14e9d0f840606d34e9f2e850fb1b017a, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Crossover is the process where a pair of parent chromosomes
+        <b>exchange part of their information</b> to produce a new pair of offspring.
+      Illustration: {fileID: 21300000, guid: 133ed5af490d73e418691884388f304e, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: The difference between a crossover in the algorithm and a
+        crossover in the living organism is that the algorithm replaces a pair of
+        parents with a pair of produced offspring.
+      Illustration: {fileID: 21300000, guid: 133ed5af490d73e418691884388f304e, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: So, the size of the population remains the same.
+      Illustration: {fileID: 21300000, guid: 133ed5af490d73e418691884388f304e, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: After a whole new population is produced, a small fraction
+        of the chromosome will mutate.
+      Illustration: {fileID: 21300000, guid: c409a038c723ed441940e6b373f2cd49, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: It is a technique of <b>changing some part of the information</b>
+        of an individual chromosome.
+      Illustration: {fileID: 21300000, guid: c409a038c723ed441940e6b373f2cd49, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: This step aims to increase the diversity to increase the chance
+        of discovering a new optimal solution.
+      Illustration: {fileID: 21300000, guid: c409a038c723ed441940e6b373f2cd49, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

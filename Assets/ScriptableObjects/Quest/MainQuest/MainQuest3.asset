@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd4759eb2e644a4d9aa0ae0ac5c9708, type: 3}
+  m_Name: MainQuest3
+  m_EditorClassIdentifier: 
+  _Name: Can I... pet that?
+  _BriefDescription: Build your first farm for your lovely(?) monster!
+  _FullDescription: Learn a lot. Test a lot. Build the farm. And breed a lot. That's
+    it.
+  _QuestStatus: 0
+  _RequireObject: {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
+  _DueDate:
+    year: 0
+    month: 0
+    day: 0
+  _IntroDialogue: {fileID: 0}
+  _OutroDialogue: {fileID: 0}
+  _RewardMoney: 1000
+  _RewardMechs: []
