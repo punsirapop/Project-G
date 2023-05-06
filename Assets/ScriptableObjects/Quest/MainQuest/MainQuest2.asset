@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Name: All-Go-Rhythm
   _BriefDescription: All you need to do is go with the algorithm.
-  _FullDescription: My head is hurt, and I don't want to type anything. Just do the
-    quest, please.
+  _FullDescription: The Genetic Algorithm is here! It's a powerful tool for improving
+    things and your only tool for creating a powerful monster. The algorithm may
+    sound scary, but all you need to do is go on with it.
   _QuestStatus: 0
-  _RequireObject: {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
   _DueDate:
     year: 0
     month: 0
     day: 0
-  _IntroDialogue: {fileID: 0}
-  _OutroDialogue: {fileID: 0}
+  _IntroDialogue: {fileID: 11400000, guid: 703f6ee3a37c52c41ab14dd085a0e38d, type: 2}
+  _OutroDialogue: {fileID: 11400000, guid: 4b908e0ea92a6ee4c9d7e71f6176519d, type: 2}
+  _RequireObject: {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
   _RewardMoney: 300
   _RewardMechs: []

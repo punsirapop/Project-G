@@ -32,6 +32,7 @@ public class MainQuestSO : QuestSO
 
         if (_RequireObject.LockStatus == LockableStatus.Unlock)
         {
+            Debug.Log(Name + " is now completable");
             _QuestStatus = Status.Completable;
         }
         else
@@ -54,6 +55,8 @@ public class MainQuestSO : QuestSO
         {
             PlayerManager.FarmDatabase[0].AddChromo(mech);
         }
+        // Make database wait for day before give new quest
+        MainQuestDatabaseSO.WaitForDay();
         base.CompleteQuest();
     }
 }

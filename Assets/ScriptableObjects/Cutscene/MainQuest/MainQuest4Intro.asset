@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
-  m_Name: MainQuest1Outro
+  m_Name: MainQuest4Intro
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
@@ -19,8 +19,25 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 5
-      SentenceContent: It seems my cat sight catch the right person.
+      Speaker: 19
+      SentenceContent: Congratulations!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: Now you know almost all the basics needed to build <b>the
+        farm</b>!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -36,8 +53,9 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: I will come back with a new quest after at least a day passed!
-      Illustration: {fileID: 0}
+      SentenceContent: The farm is where you can breed these monsters, into some
+        of your preferences.
+      Illustration: {fileID: 21300000, guid: 0b068ff2d4f965c42be666350d9ff8f1, type: 3}
     Choices: []
     CheckerAnswer:
       Pass:
@@ -52,9 +70,9 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: You can skip to any day by clicking the date at the top-middle
-        of the screen to enter the <b>Calendar</b>.
-      Illustration: {fileID: 0}
+      SentenceContent: It might be colorful. It might be powerful. Whatever you want
+        to do!
+      Illustration: {fileID: 21300000, guid: 0b068ff2d4f965c42be666350d9ff8f1, type: 3}
     Choices: []
     CheckerAnswer:
       Pass:
@@ -68,8 +86,9 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: Good job for today! Keep it up. See you tomorrow!
+      Speaker: 12
+      SentenceContent: After you research a bit extra, you can build the farm right
+        away!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

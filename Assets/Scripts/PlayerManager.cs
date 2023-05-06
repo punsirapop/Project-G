@@ -140,6 +140,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
         // Generate new side quest(s) by skipped time
         SideQuestDatabase.GenerateNewQuestByTime(CurrentDate, day);
+        MainQuestDatabase.PassDay();
 
         CurrentDate = d.DupeDate();
 

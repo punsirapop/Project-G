@@ -3089,6 +3089,7 @@ GameObject:
   - component: {fileID: 381078842}
   - component: {fileID: 381078841}
   - component: {fileID: 381078840}
+  - component: {fileID: 381078843}
   m_Layer: 5
   m_Name: Habitat
   m_TagString: Untagged
@@ -3211,6 +3212,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381078838}
   m_CullTransparentMesh: 1
+--- !u!114 &381078843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381078838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 370df5f0246b6a34fbe7134e1e166d82, type: 2}
+  _RequiredStatus: 4
 --- !u!1 &397158454
 GameObject:
   m_ObjectHideFlags: 0
@@ -7544,7 +7559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &941277773
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11178,6 +11193,7 @@ GameObject:
   - component: {fileID: 1307528153}
   - component: {fileID: 1307528152}
   - component: {fileID: 1307528151}
+  - component: {fileID: 1307528154}
   m_Layer: 5
   m_Name: Calendar
   m_TagString: Untagged
@@ -11300,6 +11316,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307528149}
   m_CullTransparentMesh: 1
+--- !u!114 &1307528154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307528149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 910a04a42a4dc5a44afa00e763567cbf, type: 2}
+  _RequiredStatus: 4
 --- !u!1 &1328791567
 GameObject:
   m_ObjectHideFlags: 0
@@ -14260,6 +14290,7 @@ GameObject:
   - component: {fileID: 1568964132}
   - component: {fileID: 1568964131}
   - component: {fileID: 1568964130}
+  - component: {fileID: 1568964133}
   m_Layer: 5
   m_Name: City
   m_TagString: Untagged
@@ -14382,6 +14413,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568964128}
   m_CullTransparentMesh: 1
+--- !u!114 &1568964133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568964128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 370df5f0246b6a34fbe7134e1e166d82, type: 2}
+  _RequiredStatus: 4
 --- !u!1 &1588809151
 GameObject:
   m_ObjectHideFlags: 0
@@ -15361,6 +15406,7 @@ GameObject:
   - component: {fileID: 1802923185}
   - component: {fileID: 1802923184}
   - component: {fileID: 1802923183}
+  - component: {fileID: 1802923186}
   m_Layer: 5
   m_Name: ResearchLab
   m_TagString: Untagged
@@ -15483,6 +15529,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802923181}
   m_CullTransparentMesh: 1
+--- !u!114 &1802923186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802923181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 910a04a42a4dc5a44afa00e763567cbf, type: 2}
+  _RequiredStatus: 1
 --- !u!1 &1804171333
 GameObject:
   m_ObjectHideFlags: 0

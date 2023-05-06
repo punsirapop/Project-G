@@ -17,13 +17,13 @@ MonoBehaviour:
   _FullDescription: Just place some long long description here. This quest just for
     testing U know.
   _QuestStatus: 4
-  _RequireObject: {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
   _DueDate:
     year: 0
     month: 0
     day: 0
-  _IntroDialogue: {fileID: 0}
+  _IntroDialogue: {fileID: 11400000, guid: 40c770a49e2d44f4893a0477a72d7848, type: 2}
   _OutroDialogue: {fileID: 0}
+  _RequireObject: {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
   _RewardMoney: 100
   _RewardMechs:
   - {fileID: 11400000, guid: 39dd342c9745de74bab3651415a772af, type: 2}

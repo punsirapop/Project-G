@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd4759eb2e644a4d9aa0ae0ac5c9708, type: 3}
   m_Name: MainQuest3
   m_EditorClassIdentifier: 
-  _Name: Can I... pet that?
-  _BriefDescription: Build your first farm for your lovely(?) monster!
-  _FullDescription: Learn a lot. Test a lot. Build the farm. And breed a lot. That's
-    it.
+  _Name: Copper, silver, and gold
+  _BriefDescription: Higher qualification pieces require higher skills.
+  _FullDescription: With more research, your ability improves a lot. The final step
+    before you construct your facility is to prove that you are skilled enough. Getting
+    a higher level of the qualification piece, and you will be allowed to build the
+    things soon.
   _QuestStatus: 0
-  _RequireObject: {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
   _DueDate:
     year: 0
     month: 0
     day: 0
-  _IntroDialogue: {fileID: 0}
-  _OutroDialogue: {fileID: 0}
-  _RewardMoney: 1000
+  _IntroDialogue: {fileID: 11400000, guid: 32454e68fe42a404c916f8e668a89429, type: 2}
+  _OutroDialogue: {fileID: 11400000, guid: a1f0549f56d0f7d4cb34dba4c5aac195, type: 2}
+  _RequireObject: {fileID: 11400000, guid: a46a82a22fb3e764d9d8b566f19efd9f, type: 2}
+  _RewardMoney: 800
   _RewardMechs: []
