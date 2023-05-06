@@ -274,8 +274,8 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 4
-      SentenceContent: 3. What happens if any of the knapsacks in the Multiple Knapsack
-        Problem holds the total weight of items more than its capacity?
+      SentenceContent: 3. How is the second knapsack encoded in the Multiple Knapsack
+        Problem?
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: The total weight of the items in that knapsack will be reduced.
