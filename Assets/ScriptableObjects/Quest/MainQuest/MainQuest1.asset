@@ -15,15 +15,15 @@ MonoBehaviour:
   _Name: Newcomer
   _BriefDescription: The beginning of the hero.
   _FullDescription: You are the chosen one! But not a qualified one... yet. Creating
-    a powerful robotic monster and a mighty weapon requires many skills. You should
-    prove yourself by obtaining your first qualification piece.
-  _QuestStatus: 0
-  _RequireObject: {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}
+    a powerful monster and a mighty weapon requires many skills. You should prove
+    yourself by obtaining your first qualification piece.
+  _QuestStatus: 1
   _DueDate:
     year: 0
     month: 0
     day: 0
   _IntroDialogue: {fileID: 11400000, guid: 40c770a49e2d44f4893a0477a72d7848, type: 2}
   _OutroDialogue: {fileID: 11400000, guid: 9d68baa50d2e53f49937f7c71fead05a, type: 2}
+  _RequireObject: {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}
   _RewardMoney: 100
   _RewardMechs: []

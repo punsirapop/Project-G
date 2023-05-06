@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
-  m_Name: MainQuest1Intro
+  m_Name: MainQuest3Intro
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
@@ -19,8 +19,41 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
+      Speaker: 11
+      SentenceContent: You look somehow more knowledgeable, don't you?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: I guess it's because of your lot of research.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
       Speaker: 12
-      SentenceContent: Oh, is that you, the naive one?
+      SentenceContent: You are doing so well. And you are nearly allowed to build
+        your first facility!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -35,37 +68,9 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
-      SentenceContent: Hello.
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Greeting.
-      ReponseData: []
-      number: 0
-    - SentenceContent: ...
-      ReponseData: []
-      number: 0
-    - SentenceContent: I'm NOT naive!
-      ReponseData:
-      - Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      number: 0
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 11
-      SentenceContent: As you know, you are chosen to be part of <b>Project-G</b>,
-        a global-guardian project.
+      Speaker: 3
+      SentenceContent: The final step before doing that is showing off your upgraded
+        skill.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -81,75 +86,7 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: Project-G is founded for preparing the inter-celestial fighting
-        between our earth and the alien in the next few years.
-      Illustration: {fileID: 0}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 1
-      SentenceContent: But we choose you only because of your potential, not your
-        intelligence. At least, not yet.
-      Illustration: {fileID: 0}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: In this project, you will need to develop your monster and
-        weapon to the point it's good enough. And that requires a lot of skills.
-      Illustration: {fileID: 0}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: You should be qualified before doing anything further.
-      Illustration: {fileID: 0}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 11
-      SentenceContent: This is a qualification piece, proof of your skill. You can
-        think of it like a jigsaw piece.
+      SentenceContent: Remember the qualification piece? A jigsaw thing.
       Illustration: {fileID: 21300000, guid: d044351ed5ecfb342a239b86ef68bc08, type: 3}
     Choices: []
     CheckerAnswer:
@@ -165,23 +102,8 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: You can obtain it whenever you pass a skill-check scenario.
-      Illustration: {fileID: 21300000, guid: d044351ed5ecfb342a239b86ef68bc08, type: 3}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 9
-      SentenceContent: Different levels of skill reward different levels of the piece.
+      SentenceContent: It's time for you to obtain a higher level of that kind of
+        piece, a silver-level one.
       Illustration: {fileID: 21300000, guid: d044351ed5ecfb342a239b86ef68bc08, type: 3}
     Choices: []
     CheckerAnswer:
@@ -197,8 +119,43 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: All these pieces are stored in the <b>Hall of Intelligence</b>,
-        a place all your skills are shown.
+      SentenceContent: To obtain a silver-level piece, you should demonstrate the
+        process of the certain subject.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: This proves that you truly understand the point, not just
+        remember it.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: The highest level, the gold-level piece, it's very similar
+        to the silver-level one but a bit harder cause it proves you can solve the
+        problem.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -214,8 +171,8 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: You can access <b>Hall of Intelligence</b> through the trophy
-        icon at the top-right corner of the <b>Research Lab</b>.
+      SentenceContent: I STRONGLY recommend you give it a try to get a golden piece
+        once you complete the silver.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -230,9 +187,42 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 5
-      SentenceContent: And this is your first mission! Go there and obtain your first
-        copper piece of the basic bio!
+      Speaker: 12
+      SentenceContent: You might already noticed that obtaining a piece also rewards
+        you with some money.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 12
+      SentenceContent: And a higher-level piece gives you even more money!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: Waste no more time. Let's go get the <b>silver-level</b> piece
+        of the <b>Single-point crossover</b>!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

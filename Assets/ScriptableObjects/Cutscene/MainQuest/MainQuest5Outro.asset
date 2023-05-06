@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
-  m_Name: MainQuest1Outro
+  m_Name: MainQuest5Outro
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
@@ -19,8 +19,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 5
-      SentenceContent: It seems my cat sight catch the right person.
+      Speaker: 11
+      SentenceContent: Hi! Your company looks to grow well!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -36,7 +36,8 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: I will come back with a new quest after at least a day passed!
+      SentenceContent: If your weapon seems to not improve anymore, it's always a
+        good idea to add up some <b>mutation</b>.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -51,9 +52,9 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: You can skip to any day by clicking the date at the top-middle
-        of the screen to enter the <b>Calendar</b>.
+      Speaker: 12
+      SentenceContent: By the way, don't forget to visit the <b>Battle Arena</b>!
+        You can access it throught the <b>City</b>.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -68,8 +69,24 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: Good job for today! Keep it up. See you tomorrow!
+      Speaker: 19
+      SentenceContent: Set your monster team, gear them up, and fight!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 18
+      SentenceContent: Wish you all the best!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

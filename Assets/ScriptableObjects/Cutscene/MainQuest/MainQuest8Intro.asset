@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
-  m_Name: MainQuest1Intro
+  m_Name: MainQuest8Intro
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
@@ -19,8 +19,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 12
-      SentenceContent: Oh, is that you, the naive one?
+      Speaker: 7
+      SentenceContent: You made it to the last factory. Really?
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -32,25 +32,19 @@ MonoBehaviour:
         Speaker: 0
         SentenceContent: 
         Illustration: {fileID: 0}
-  - IsChoices: 0
+  - IsChoices: 1
     IsChecker: 0
     SentenceData:
-      Speaker: 0
-      SentenceContent: Hello.
+      Speaker: 10
+      SentenceContent: For the last factory, there is nothing special that much.
       Illustration: {fileID: 0}
     Choices:
-    - SentenceContent: Greeting.
+    - SentenceContent: Maybe It's all easier than I expect.
       ReponseData: []
       number: 0
-    - SentenceContent: ...
+    - SentenceContent: What do you mean by that?
       ReponseData: []
       number: 0
-    - SentenceContent: I'm NOT naive!
-      ReponseData:
-      - Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      number: 0
     CheckerAnswer:
       Pass:
         Speaker: 0
@@ -64,8 +58,8 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: As you know, you are chosen to be part of <b>Project-G</b>,
-        a global-guardian project.
+      SentenceContent: I should tell you that there are only one or two to reach
+        this point.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -80,9 +74,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: Project-G is founded for preparing the inter-celestial fighting
-        between our earth and the alien in the next few years.
+      Speaker: 19
+      SentenceContent: You are way too Awesome! Brilliant!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -97,9 +90,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: But we choose you only because of your potential, not your
-        intelligence. At least, not yet.
+      Speaker: 10
+      SentenceContent: For the last factory, there is nothing special that much.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -114,10 +106,9 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 4
-      SentenceContent: In this project, you will need to develop your monster and
-        weapon to the point it's good enough. And that requires a lot of skills.
-      Illustration: {fileID: 0}
+      Speaker: 8
+      SentenceContent: It's just a powerful grenade.
+      Illustration: {fileID: 21300000, guid: d5410ee390718d1419060c76901cb4f7, type: 3}
     Choices: []
     CheckerAnswer:
       Pass:
@@ -131,9 +122,9 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 4
-      SentenceContent: You should be qualified before doing anything further.
-      Illustration: {fileID: 0}
+      Speaker: 10
+      SentenceContent: You can bomb it to the enemy to deal AOE damage.
+      Illustration: {fileID: 21300000, guid: d5410ee390718d1419060c76901cb4f7, type: 3}
     Choices: []
     CheckerAnswer:
       Pass:
@@ -148,9 +139,8 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 11
-      SentenceContent: This is a qualification piece, proof of your skill. You can
-        think of it like a jigsaw piece.
-      Illustration: {fileID: 21300000, guid: d044351ed5ecfb342a239b86ef68bc08, type: 3}
+      SentenceContent: Or you can even throw it to your troops to heal them all!
+      Illustration: {fileID: 21300000, guid: d5410ee390718d1419060c76901cb4f7, type: 3}
     Choices: []
     CheckerAnswer:
       Pass:
@@ -164,41 +154,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: You can obtain it whenever you pass a skill-check scenario.
-      Illustration: {fileID: 21300000, guid: d044351ed5ecfb342a239b86ef68bc08, type: 3}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 9
-      SentenceContent: Different levels of skill reward different levels of the piece.
-      Illustration: {fileID: 21300000, guid: d044351ed5ecfb342a239b86ef68bc08, type: 3}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 11
-      SentenceContent: All these pieces are stored in the <b>Hall of Intelligence</b>,
-        a place all your skills are shown.
+      Speaker: 7
+      SentenceContent: The technique behind this weapon is so complicated.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -213,9 +170,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: You can access <b>Hall of Intelligence</b> through the trophy
-        icon at the top-right corner of the <b>Research Lab</b>.
+      Speaker: 10
+      SentenceContent: But you know almost all of it.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -230,9 +186,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 5
-      SentenceContent: And this is your first mission! Go there and obtain your first
-        copper piece of the basic bio!
+      Speaker: 19
+      SentenceContent: Research a bit more, and you can literally end the game!
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
