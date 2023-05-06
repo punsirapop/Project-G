@@ -54,6 +54,11 @@ public class MainQuestDatabaseSO : ScriptableObject
 
     public void ValidateAllQuestStatus()
     {
+        // If all quest is completed, do nothing
+        if (_CurrentQuestIndex > _MainQuests.Length - 1)
+        {
+            return;
+        }
         for (int i = 0; i < _MainQuests.Length; i++)
         {
             _MainQuests[i].ValdiateStatus();
@@ -63,5 +68,15 @@ public class MainQuestDatabaseSO : ScriptableObject
         {
             _CurrentQuestIndex++;
         }
+    }
+
+    // tmp method for entering with GM start
+    public void ForceCompleteQuest()
+    {
+        for (int i = 0; i < _MainQuests.Length; i++)
+        {
+            _MainQuests[i].ForceCompleteQuest();
+        }
+        _CurrentQuestIndex = _MainQuests.Length - 1;
     }
 }

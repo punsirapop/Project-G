@@ -93,4 +93,10 @@ public class QuestSO : ScriptableObject
             SceneMng.StaticChangeScene("Cutscene");
         }
     }
+
+    // tmp method for entering with GM start
+    public void ForceCompleteQuest()
+    {
+        _QuestStatus = Status.Completed;
+    }
 }

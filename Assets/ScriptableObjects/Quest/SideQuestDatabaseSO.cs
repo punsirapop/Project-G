@@ -146,4 +146,13 @@ public class SideQuestDatabaseSO : ScriptableObject
         _SideQuests.Add(newQuest);
         _NextSideQuestID++;
     }
+
+    // tmp method for entering with GM start
+    public void ForceCompleteQuest()
+    {
+        foreach (SideQuestSO sideQuest in _SideQuests)
+        {
+            sideQuest.ForceCompleteQuest();
+        }
+    }
 }
