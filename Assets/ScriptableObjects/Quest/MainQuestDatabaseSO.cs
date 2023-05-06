@@ -41,6 +41,9 @@ public class MainQuestDatabaseSO : ScriptableObject
 
     public MainQuestSO GetCurrentQuest()
     {
+        Debug.Log("Get current main quest");
+        Debug.Log("Index exceed = " + (_CurrentQuestIndex > _MainQuests.Length - 1).ToString());
+        Debug.Log("Not _IsDayPassed = " + (!_IsDayPassed).ToString());
         if ((_CurrentQuestIndex > _MainQuests.Length - 1) ||
             (!_IsDayPassed))
         {

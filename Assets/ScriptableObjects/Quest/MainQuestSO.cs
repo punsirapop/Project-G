@@ -32,6 +32,7 @@ public class MainQuestSO : QuestSO
 
         if (_RequireObject.LockStatus == LockableStatus.Unlock)
         {
+            Debug.Log(Name + " is now completable");
             _QuestStatus = Status.Completable;
         }
         else

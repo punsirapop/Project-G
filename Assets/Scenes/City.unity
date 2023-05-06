@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 378036511}
   - component: {fileID: 378036510}
   - component: {fileID: 378036509}
+  - component: {fileID: 378036512}
   m_Layer: 0
   m_Name: ShopButton
   m_TagString: Untagged
@@ -607,6 +608,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378036507}
   m_CullTransparentMesh: 1
+--- !u!114 &378036512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378036507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 370df5f0246b6a34fbe7134e1e166d82, type: 2}
+  _RequiredStatus: 4
 --- !u!1 &565235545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1053,7 @@ GameObject:
   - component: {fileID: 1510575926}
   - component: {fileID: 1510575925}
   - component: {fileID: 1510575924}
+  - component: {fileID: 1510575927}
   m_Layer: 0
   m_Name: Image (3)
   m_TagString: Untagged
@@ -1159,6 +1175,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510575922}
   m_CullTransparentMesh: 1
+--- !u!114 &1510575927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510575922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 181d2f290405691429c193ce98e89981, type: 2}
+  _RequiredStatus: 4
 --- !u!1 &1769876378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1201,7 @@ GameObject:
   - component: {fileID: 1769876382}
   - component: {fileID: 1769876381}
   - component: {fileID: 1769876380}
+  - component: {fileID: 1769876383}
   m_Layer: 0
   m_Name: QuestBoardButton
   m_TagString: Untagged
@@ -1293,6 +1324,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769876378}
   m_CullTransparentMesh: 1
+--- !u!114 &1769876383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769876378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db22a73ab799a13409008e073664b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredMainQuest: {fileID: 11400000, guid: 370df5f0246b6a34fbe7134e1e166d82, type: 2}
+  _RequiredStatus: 4
 --- !u!1 &1927601119
 GameObject:
   m_ObjectHideFlags: 0
