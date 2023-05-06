@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static BattleManager;
+using UnityEngine.UI;
 
 public class Announcer : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class Announcer : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] _Texts;
     [SerializeField] GameObject[] _Lights;
     [SerializeField] Sprite[] _Sprites;
+    [SerializeField] Image _Flag;
+    [SerializeField] GameObject _BackButton;
 
     Coroutine _Countdown;
+    float _MaxTime;
 
     private void Awake()
     {
         PhaseChange += OnPhaseChange;
+    }
+
+    private void OnDisable()
+    {
+        Reset();
     }
 
     private void OnDestroy()
@@ -24,11 +33,50 @@ public class Announcer : MonoBehaviour
         PhaseChange -= OnPhaseChange;
     }
 
-    private void OnPhaseChange(Phase p)
+    private void Reset()
     {
-        if (p != Phase.End && p != Phase.Transition)
+        _Texts[0].text = "";
+        _Texts[0].color = Color.green;
+        _Texts[1].text = "";
+        _Texts[1].color = Color.green;
+        _Flag.sprite = _Sprites[0];
+        Timer = 0f;
+        _MaxTime = 0f;
+    }
+
+    private void OnPhaseChange(Phases p)
+    {
+        if (p != Phases.End && p != Phases.Transition)
             StartCoroutine(StartCountdown(p));
-        else if (p == Phase.End) StopAllCoroutines();
+        else if (p == Phases.End)
+        { 
+            StopAllCoroutines();
+            StartCoroutine(Ending());
+        }
+    }
+
+    private IEnumerator Ending()
+    {
+        yield return new WaitForSeconds(4f);
+        switch (WinningStatus)
+        {
+            case 0:
+                _Texts[0].color = Color.green;
+                _Texts[0].text = "Win";
+                _Flag.sprite = _Sprites[1];
+                break;
+            case 1:
+                _Texts[0].color = Color.red;
+                _Texts[0].text = "Lose";
+                _Flag.sprite = _Sprites[2];
+                break;
+            case 2:
+                _Texts[0].color = Color.white;
+                _Texts[0].text = "Tie";
+                break;
+        }
+        _Texts[1].text = "";
+        _BackButton.SetActive(true);
     }
 
     /*
@@ -37,32 +85,29 @@ public class Announcer : MonoBehaviour
      * 2 - sudden death
      */
 
-    public IEnumerator StartCountdown(Phase p)
+    public IEnumerator StartCountdown(Phases p)
     {
-        Timer = 0f;
-        float maxTime = 0f;
-
         switch (p)
         {
-            case Phase.Countdown:
-                maxTime = 3f;
+            case Phases.Countdown:
+                _MaxTime += 3f;
                 break;
-            case Phase.Battle:
-                maxTime = 20f;
+            case Phases.Battle:
+                _MaxTime += 20f;
                 break;
-            case Phase.SuddenDeath:
-                maxTime = 10f;
+            case Phases.SuddenDeath:
+                _MaxTime += 10f;
                 break;
         }
 
         Debug.Log("Start Timer");
         
-        while (Timer <= maxTime)
+        while (Timer <= _MaxTime)
         {
-            _Texts[1].text = string.Concat("00:", string.Format("{0:00}", Mathf.Ceil(maxTime - Timer)));
+            _Texts[1].text = string.Concat("00:", string.Format("{0:00}", Mathf.Ceil(_MaxTime - Timer)));
             Timer += Time.deltaTime;
             // Display Light
-            if (p == Phase.Countdown && Timer % 1 == 0)
+            if (p == Phases.Countdown && Timer % 1 == 0)
             {
                 foreach (var item in _Lights)
                 {
@@ -96,7 +141,7 @@ public class Announcer : MonoBehaviour
         }
         */
 
-        ChangePhase(Phase.Transition);
+        ChangePhase(Phases.Transition);
 
         foreach (var item in _Lights)
         {
@@ -106,15 +151,15 @@ public class Announcer : MonoBehaviour
 
         switch (p)
         {
-            case Phase.Countdown:
+            case Phases.Countdown:
                 _Texts[0].text = "Fight";
                 break;
-            case Phase.Battle:
+            case Phases.Battle:
                 _Texts[0].color = Color.red;
                 _Texts[1].color = Color.red;
                 _Texts[0].text = "Sudden Death";
                 break;
-            case Phase.SuddenDeath:
+            case Phases.SuddenDeath:
                 _Texts[0].text = "End";
                 break;
         }
@@ -123,14 +168,14 @@ public class Announcer : MonoBehaviour
 
         switch (p)
         {
-            case Phase.Countdown:
-                ChangePhase(Phase.Battle);
+            case Phases.Countdown:
+                ChangePhase(Phases.Battle);
                 break;
-            case Phase.Battle:
-                ChangePhase(Phase.SuddenDeath);
+            case Phases.Battle:
+                ChangePhase(Phases.SuddenDeath);
                 break;
-            case Phase.SuddenDeath:
-                ChangePhase(Phase.End);
+            case Phases.SuddenDeath:
+                ChangePhase(Phases.End);
                 break;
         }
     }

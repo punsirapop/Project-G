@@ -8,27 +8,36 @@ public class Bar : MonoBehaviour
     [SerializeField] Image _Color;
 
     public float Max {get ; protected set;}
-    public float CurrentFIll {get ; protected set; }
+    public float CurrentFill {get ; protected set; }
+    
+    protected BattleMechManager _MyMech;
 
-    private void Update()
+    protected virtual void Update()
     {
         GetCurrentFill();
     }
 
     private void GetCurrentFill()
     {
-        float fillAmount = CurrentFIll / Max;
+        float fillAmount = CurrentFill / Max;
         _Color.fillAmount = fillAmount;
     }
 
     public virtual void ChangeCurrent(float f)
     {
-        CurrentFIll = f;
+        CurrentFill = f;
     }
 
-    public virtual void InitVal(float f)
+    public virtual void InitVal(float f, BattleMechManager m)
     {
         Max = f;
-        CurrentFIll = f;
+        CurrentFill = f;
+        _MyMech = m;
+    }
+
+    public virtual void Dead()
+    {
+        CurrentFill = 0f;
+        // StopAllCoroutines();
     }
 }

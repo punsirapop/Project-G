@@ -1804,12 +1804,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f478a4de09b813469d9571126ee1933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MySO: {fileID: 0}
+  MyMechSO: {fileID: 0}
   myRenderer:
   - {fileID: 7625654832081747376}
   - {fileID: 2961593554871164212}
   - {fileID: 3162962045865433233}
   - {fileID: 4110882713917083378}
+  _BgColor: {fileID: 6821142391298940770}
   _Indicators:
   - {fileID: 1997649805244796421}
   - {fileID: 3522782428984955973}

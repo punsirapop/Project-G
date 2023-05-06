@@ -16,10 +16,10 @@ public class AllySelectionManager : MonoBehaviour
     [SerializeField] AMechButtonDisplay[] _Buttons;
     public AMechButtonDisplay[] Buttons => _Buttons;
     [SerializeField] ArenaMechDisplay[] _MechDisplays;
-    [SerializeField] Transform _MechHolder;
+    [SerializeField] Transform[] _Holders;
 
-    MechChromoSO[] _AllyTeam => _Buttons.Select(x => x.MySO).ToArray();
-    public MechChromoSO[] AllyTeam => _AllyTeam;
+    public MechChromoSO[] AllyMech => _Buttons.Select(x => x.MyMechSO).ToArray();
+    public WeaponChromosome[] AllyWeapon => _Buttons.Select(x => x.MyWeaponSO).ToArray();
 
     private void Start()
     {
@@ -37,17 +37,29 @@ public class AllySelectionManager : MonoBehaviour
             item.SetButton(true);
         }
         _Buttons[index].SetButton(false);
-        _MechHolder.BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
+        _Holders[0].BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
+        _Holders[1].BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
     }
 
-    public void Selecting(MechChromoSO m)
+    public void SelectingMech(MechChromoSO m)
     {
-        if (!AllyTeam.Contains(m) || m == AllyTeam[CurrentSelection])
+        if (!AllyMech.Contains(m) || m == AllyMech[CurrentSelection])
         {
             _Buttons[CurrentSelection].SetChromo(m);
             _MechDisplays[CurrentSelection].SetChromo(m);
             // AdjustTeamList(m);
-            _MechHolder.BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
+            _Holders[0].BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+    public void SelectingWeapon(WeaponChromosome w)
+    {
+        if (!AllyWeapon.Contains(w) || w == AllyWeapon[CurrentSelection])
+        {
+            _Buttons[CurrentSelection].SetWeapon(w);
+            _MechDisplays[CurrentSelection].SetWeapon(w);
+            // AdjustTeamList(m);
+            _Holders[1].BroadcastMessage("AdjustingTeam", SendMessageOptions.DontRequireReceiver);
         }
     }
 
@@ -64,11 +76,20 @@ public class AllySelectionManager : MonoBehaviour
     {
         foreach (var item in _Buttons)
         {
-            item.SetChromo(item.MySO);
+            item.SetChromo(item.MyMechSO);
+            item.SetWeapon(item.MyWeaponSO);
         }
         foreach (var item in _MechDisplays)
         {
             item.SetChromo(item.MySO);
+        }
+    }
+
+    public void BackToSelection()
+    {
+        foreach (var item in _MechDisplays)
+        {
+            item.gameObject.SetActive(true);
         }
     }
 

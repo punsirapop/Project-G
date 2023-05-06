@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Simple class that hold information of each weapon chromosome
+[Serializable]
 public class WeaponChromosome
 {
     // Note: use auto-implemented property like { get; private set; } to shorten the declaration code

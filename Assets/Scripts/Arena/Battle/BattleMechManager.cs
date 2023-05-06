@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static BattleManager;
+using static MechChromoSO;
 
 public class BattleMechManager : MonoBehaviour
 {
@@ -17,15 +15,27 @@ public class BattleMechManager : MonoBehaviour
         Dead
     }
 
-    bool _IsAlly;
-    ArenaMechDisplay _MyMech;
+    public bool IsAlly { get; private set; }
+    public int Index { get; private set; }
+    public List<EffectDisplay> Effects { get; private set; }
 
+    ArenaMechDisplay _MyMech;
+    WeaponChromosome _MyWeapon;
+
+    [SerializeField] SkillButton _WeaponHolder;
     [SerializeField] DelayedBar _HPBar;
     [SerializeField] Bar _SPBar;
+    [SerializeField] Transform _EffectHolder;
+    [SerializeField] GameObject _Effect, _DamageDisplay;
 
-    float _HpMax, _HpCurrent;
+    float _HpMax;
+    float _HpCurrent;
     public float HpCurrent => _HpCurrent;
-    float _SpMax, _SpCurrent, _SpFallBehind, _SpPause, _SpMarker;
+    float _SpMax;
+    float _SpCurrent, _SpFallBehind, _SpPause, _SpMarker;
+    float _SkillCooldown;
+
+    Coroutine _ChangingStateAction;
 
     /*
     float[] _Sp;
@@ -42,43 +52,13 @@ public class BattleMechManager : MonoBehaviour
     private void Awake()
     {
         PhaseChange += OnChangePhase;
-        ChangeState(State.Standby);
+        // ChangeState(State.Standby);
     }
 
     private void OnDestroy()
     {
         PhaseChange -= OnChangePhase;
     }
-
-    /*
-    private void Update()
-    {
-        switch (_CurrentState)
-        {
-            case State.Standby:
-                break;
-            case State.Charging:
-                if (_Sp[1] < _Sp[0])
-                {
-                    _Sp[1] += _SpRefill;
-                }
-                else
-                {
-                    _Sp[1] = 0;
-                    Debug.Log("Filled");
-                    // _BasicStatus = BasicStatus.Firing;
-                }
-                _SPBar.ChangeCurrent(_Sp[1]);
-                break;
-            case State.Firing:
-                break;
-            case State.Dead:
-                break;
-            default:
-                break;
-        }
-    }
-    */
 
     private IEnumerator ChargeAttack()
     {
@@ -96,6 +76,17 @@ public class BattleMechManager : MonoBehaviour
                     _SpFallBehind += _SpMax;
                     _SpMarker = Announcer.Timer;
                     ChangeState(State.Firing);
+
+                    if (Effects.Any(x => x.Type == SelfEffects.Poison))
+                    {
+                        foreach (var item in Effects.Where(x => x.Type == SelfEffects.Poison))
+                        {
+                            WeaponChromosome giverW = BattleManager.Instance.Identify(item.Giver, 1);
+                            MechChromoSO giver = BattleManager.Instance.Identify(item.Giver, 2);
+                            float dmg = giver.Atk.Sum() / 5f + giverW.Efficiency * giver.Atk.Sum() / 2f;
+                            ReduceHP(dmg, DamageMode.Poison);
+                        }
+                    }
                 }
             }
 
@@ -104,6 +95,35 @@ public class BattleMechManager : MonoBehaviour
             yield return null;
         }
     }
+ 
+    private IEnumerator Cooldown()
+    {
+        _WeaponHolder.ChangeCurrent(_WeaponHolder.Max / 3f);
+        while (CurrentState != State.Dead)
+        {
+            if (_WeaponHolder.isActiveAndEnabled && _WeaponHolder.CurrentFill > 0 &&
+                !Effects.Any(x => x.Type == SelfEffects.Sleep))
+            {
+                _WeaponHolder.ChangeCurrent(_WeaponHolder.CurrentFill - Time.deltaTime);
+            }
+            yield return null;
+        }
+    }
+
+    /*
+    private IEnumerator Countdown()
+    {
+        _SkillCooldown = -_WeaponHolder.Max * 2 / 3;
+        while (CurrentState != State.Dead)
+        {
+            if (_WeaponHolder.isActiveAndEnabled && _WeaponHolder.CurrentFill > 0)
+            {
+                _WeaponHolder.ChangeCurrent(_WeaponHolder.Max - (Announcer.Timer - _SkillCooldown));
+            }
+            yield return null;
+        }
+    }
+    */
 
     /*
     private IEnumerator ChargeAttack()
@@ -141,89 +161,224 @@ public class BattleMechManager : MonoBehaviour
     }
     */
 
-    private void OnChangePhase(Phase p)
+    private void OnChangePhase(Phases p)
     {
         Debug.Log("CHANGING PHASE to " + p);
         switch (p)
         {
-            case Phase.Countdown:
+            case Phases.Countdown:
+                ChangeState(State.Standby);
                 break;
-            case Phase.Battle:
-                ChangeState(State.Charging);
+            case Phases.Battle:
+                if (CurrentState != State.Dead)
+                {
+                    ChangeState(State.Charging);
+                    StartCoroutine(Cooldown());
+                }
                 break;
-            case Phase.SuddenDeath:
+            case Phases.SuddenDeath:
                 _SpMax /= 1.5f;
-                ChangeState(State.Charging);
+                // if (CurrentState != State.Dead) ChangeState(State.Charging);
                 break;
-            case Phase.End:
+            case Phases.End:
                 StopAllCoroutines();
+                _MyMech.ForceStopAttack(true);
+                _MyMech.ForceStopAttack(false);
                 break;
-            case Phase.Transition:
-                if (_Action != null) StopCoroutine(_Action);
+            case Phases.Transition:
+                // if (_Action != null) StopCoroutine(_Action);
                 break;
             default:
                 break;
         }
     }
 
+    private void InitStuffs()
+    {
+        _HpCurrent = _HpMax;
+        _HPBar.InitVal(_HpMax, this);
+
+        _SPBar.InitVal(1f, this);
+        _SPBar.ChangeCurrent(0f);
+        _SpCurrent = 0f;
+        _SpPause = 0f;
+        _SpFallBehind = 0f;
+        _SpMarker = 0f;
+
+        _MyMech.gameObject.SetActive(true);
+        gameObject.SetActive(true);
+        Effects = new List<EffectDisplay>();
+
+        foreach (Transform item in _EffectHolder)
+        {
+            Destroy(item.gameObject);
+        }
+    }
+
+    private IEnumerator ChangeStateActions(State s)
+    {
+        switch (s)
+        {
+            case State.Standby:
+                InitStuffs();
+                break;
+            case State.Charging:
+                _SpFallBehind += Announcer.Timer - _SpMarker;
+                _Action = StartCoroutine(ChargeAttack());
+                break;
+            case State.Firing:
+                ArenaMechDisplay target = null;
+                target = BattleManager.Instance.RequestAttack(new int[] { IsAlly ? 0 : 1, Index }, false);
+                if (target == null)
+                {
+                    Debug.Log("BLANK!");
+                    break;
+                }
+
+                if (Effects.Any(x => x.Type == SelfEffects.Snipe))
+                {
+                    _MyMech.StartAttacking(target, BulletType.Snipe, true);
+                }
+                else if (Effects.Any(x => x.Type == SelfEffects.Pierce))
+                {
+                    _MyMech.StartAttacking(target, BulletType.Pierce, true);
+                }
+                else
+                {
+                    _MyMech.StartAttacking(target, BulletType.Default, true);
+                }
+                break;
+            case State.Dead:
+                // _MyMech.gameObject.SetActive(false);
+                // gameObject.SetActive(false);
+                _HPBar.Dead();
+                _SPBar.Dead();
+                _WeaponHolder.Dead();
+                _MyMech.Dead();
+                Effects = new List<EffectDisplay>();
+                foreach (Transform item in _EffectHolder)
+                {
+                    Destroy(item.gameObject);
+                }
+                BattleManager.Instance.Dead(new int[] { IsAlly ? 0 : 1, Index });
+                break;
+            default:
+                break;
+        }
+        yield return null;
+    }
+
     public void ChangeState(State s)
     {
-        if (CurrentState != State.Dead)
+        CurrentState = s;
+        Debug.Log("CHANGING STATE to " + CurrentState);
+        if (_ChangingStateAction != null) StopCoroutine(_ChangingStateAction);
+        _ChangingStateAction = StartCoroutine(ChangeStateActions(s));
+    }
+
+    public void ReduceHP(float dmg, DamageMode dm)
+    {
+        _HpCurrent -= Mathf.Min(_HpCurrent, dmg);
+        _HPBar.ChangeCurrent(Mathf.Min(_HpMax, _HpCurrent));
+
+        GameObject dmd = Instantiate(_DamageDisplay,
+            new Vector2(transform.position.x + Random.Range(-.5f, .5f), transform.position.y + 4f),
+            Quaternion.identity, transform);
+        dmd.GetComponent<DamageDisplay>().SetDamage(dmg, dm);
+
+        if (_HpCurrent <= 0) ChangeState(State.Dead);
+    }
+
+    public void UseSkill()
+    {
+        int[] giver = new int[] { IsAlly ? 0 : 1, Index };
+        if (_MyWeapon.FromFactory < 2)
         {
-            CurrentState = s;
-            Debug.Log("CHANGING STATE to " + CurrentState);
-            switch (CurrentState)
+            SelfEffects type = new SelfEffects();
+
+            switch (_MyWeapon.FromFactory)
             {
-                case State.Standby:
+                case 0:
+                    type = _MyWeapon.IsMode1Active ? SelfEffects.Taunt : SelfEffects.Stealth;
                     break;
-                case State.Charging:
-                    _SpFallBehind += Announcer.Timer - _SpMarker;
-                    _Action = StartCoroutine(ChargeAttack());
-                    break;
-                case State.Firing:
-                    _MyMech.StartAttacking(BattleManager.Instance.RequestAttack(_IsAlly));
-                    break;
-                case State.Dead:
-                    _MyMech.gameObject.SetActive(false);
-                    gameObject.SetActive(false);
-                    BattleManager.Instance.Dead(_IsAlly);
+                case 1:
+                    type = _MyWeapon.IsMode1Active ? SelfEffects.Snipe : SelfEffects.Pierce;
                     break;
                 default:
                     break;
             }
 
+            GetNewEffect(type, giver);
+        }
+        else
+        {
+            switch (_MyWeapon.FromFactory)
+            {
+                case 2:
+                    _MyMech.StartAttacking
+                        (BattleManager.Instance.RequestAttack
+                        (new int[] { IsAlly ? 0 : 1, Index }, false),
+                        _MyWeapon.IsMode1Active ? BulletType.Sleep : BulletType.Poison, false);
+                    break;
+                case 3:
+                    _MyMech.StartAttacking
+                        (BattleManager.Instance.RequestAttack
+                        (new int[] { IsAlly ? 0 : 1, Index }, _MyWeapon.IsMode1Active),
+                        _MyWeapon.IsMode1Active ? BulletType.AoEHeal : BulletType.AoEDamage, false);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
-    public void SetChromo(MechChromoSO c, ArenaMechDisplay m, bool b)
+    public void GetNewEffect(SelfEffects type, int[] giver)
     {
-        _IsAlly = b;
+        GameObject effect = Instantiate(_Effect, _EffectHolder);
+        EffectDisplay effectDis = effect.GetComponent<EffectDisplay>();
+        float dur = 3f;
+        // adjust duration for sleep
+        if (type == SelfEffects.Sleep)
+        {
+            dur = 3f + ((WeaponChromosome)BattleManager.Instance.Identify(giver, 1)).Efficiency * 4f;
+            AskPauseCharging(dur);
+        }
+        effectDis.Set(type, giver, this, dur);
+        Effects.Add(effectDis);
+    }
+
+    public void SetChromo(MechChromoSO c, ArenaMechDisplay m, bool b, int i, WeaponChromosome w)
+    {
+        IsAlly = b;
+        Index = i;
+
         _MySO = c;
-
-        _HpMax = _MySO.Hp.Sum();
-        _HpCurrent = _MySO.Hp.Sum();
-        _HPBar.InitVal(_HpMax);
-
-        _SpMax = 7f - 4f * (_MySO.Spd.Sum() / (MechChromoSO.Cap * 3f));
-        _SPBar.InitVal(1f);
-        _SPBar.ChangeCurrent(0f);
-
         _MyMech = m;
-    }
-    public void Attacked(MechChromoSO Attacker)
-    {
-        float atk = Attacker.Atk.Sum() * (CurrentPhase == Phase.SuddenDeath ? 1.5f : 1f);
-        float dmg = Mathf.Max(atk - _MySO.Def.Sum(),
-            atk * (MechChromoSO.Cap * 3 - _MySO.Def.Sum()) / (MechChromoSO.Cap * 3));
-        _HpCurrent -= Mathf.Min(_HpCurrent, dmg);
-        _HPBar.ChangeCurrent(_HpCurrent);
+        _MyWeapon = w;
 
-        if (_HpCurrent == 0) ChangeState(State.Dead);
+        // _WeaponHolder.gameObject.SetActive(_MyWeapon != null);
+        _WeaponHolder.SetWeapon(_MyWeapon, this);
+
+        _HpMax = _MySO.Hp.Sum() + (_MyWeapon != null ? _MyWeapon.BonusStat.Hp : 0);
+        _SpMax = 7f - 4f * ((_MySO.Spd.Sum() + 
+            (_MyWeapon != null ? _MyWeapon.BonusStat.Spd : 0)) / (MechChromoSO.Cap * 3f));
+
+        CurrentState = State.Standby;
+        InitStuffs();
     }
+
+    /*
+    public void ActivateSkill()
+    {
+        Debug.Log("Activated");
+        _SkillCooldown = Announcer.Timer;
+    }
+    */
 
     // ------------ Pauser -------------
     public void AskPauseCharging(float a)
     {
+        Debug.Log($"Pause for {a}");
         StartCoroutine(PauseCharging(a));
     }
 

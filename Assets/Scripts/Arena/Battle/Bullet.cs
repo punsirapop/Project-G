@@ -4,65 +4,72 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    MechChromoSO _Sender;
-    public MechChromoSO Sender => _Sender;
+    // Team (0: ally, 1: enemy), AttackerIndex, BulletMode
+    int[] _BattlePackage;
 
-    List<Vector2> pts = new List<Vector2>();
-    float tParam;
-    Vector2 pos;
-    bool runMe;
+    SpriteRenderer _SpriteRenderer;
+    ArenaMechDisplay _Target;
+    Vector2 _StartPos;
+    Vector2 _TargetPos;
+    float _TimeToTarget = .75f;
 
     private void Awake()
     {
-        tParam = 0;
-        runMe = false;
-    }
-
-    private void Update()
-    {
-        if (runMe) StartCoroutine(Go());
+        _BattlePackage = new int[3];
+        _SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag != "Bullet")
+        if (collision.gameObject.tag != "Bullet")
         {
-            if (collision.gameObject.GetComponent<ArenaMechDisplay>().NotDeadYet())
-                collision.gameObject.SendMessage("Attacked", _Sender);
-            Destroy(gameObject);
+            ArenaMechDisplay col = collision.gameObject.GetComponent<ArenaMechDisplay>();
+            if (col == _Target && col.NotDeadYet())
+            {
+                // Debug.Log("Attack hit!");
+                collision.gameObject.SendMessage("Attacked", _BattlePackage);
+                Destroy(gameObject);
+            }
         }
     }
 
-    public void Set(Vector2 receiver, Color color, MechChromoSO sender)
+    public void Set(ArenaMechDisplay receiver, Color color, bool isAlly, int index, BulletType effect)
     {
-        GetComponent<SpriteRenderer>().color = color;
-        pts.Add(transform.position);
-        pts.Add(new Vector2(transform.position.x, 4f));
-        pts.Add(new Vector2(receiver.x, 4f));
-        pts.Add(receiver);
-        _Sender = sender;
+        _Target = receiver;
+        _StartPos = transform.position;
+        _TargetPos = receiver.transform.position;
+        _SpriteRenderer.sprite = ArenaManager.GetBulletSprite(effect);
+        if ((int)effect < 3) _SpriteRenderer.color = color;
 
-        runMe = true;
+        _BattlePackage[0] = isAlly ? 0 : 1;
+        _BattlePackage[1] = index;
+        _BattlePackage[2] = (int)effect;
+
+        StartCoroutine(Move());
     }
 
-    private IEnumerator Go()
+    private IEnumerator Move()
     {
-        runMe = false;
+        float timeElapsed = 0f;
 
-        while (tParam < 1)
+        while (timeElapsed < _TimeToTarget)
         {
-            tParam += Time.deltaTime * 1.5f;
+            float t = timeElapsed / _TimeToTarget;
+            t = Mathf.Clamp01(t);
+            Vector2 nextPos = Vector2.Lerp(_StartPos, _TargetPos, t);
+            float yOffset = Mathf.Sin(t * Mathf.PI) * 2f;
+            nextPos.y += yOffset;
+            transform.position = nextPos;
 
-            pos = Mathf.Pow(1 - tParam, 3) * pts[0] +
-                3 * Mathf.Pow(1 - tParam, 2) * tParam * pts[1] +
-                3 * (1 - tParam) * Mathf.Pow(tParam, 2) * pts[2] +
-                Mathf.Pow(tParam, 3) * pts[3];
-
-            transform.position = pos;
-            yield return new WaitForEndOfFrame();
+            timeElapsed += Time.deltaTime;
+            yield return null;
         }
 
-        tParam = 0f;
+        if (_Target == BattleManager.Instance.Identify(_BattlePackage, 3))
+        {
+            _Target.SendMessage("Attacked", _BattlePackage);
+        }
+
         Destroy(gameObject);
     }
 }

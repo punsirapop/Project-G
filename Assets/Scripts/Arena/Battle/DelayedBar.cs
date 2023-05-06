@@ -14,12 +14,13 @@ public class DelayedBar : Bar
     {
         base.ChangeCurrent(f);
         if (_Delaying != null) StopCoroutine(_Delaying);
-        _Delaying = StartCoroutine(Delay());
+        if (_MyMech.CurrentState != BattleMechManager.State.Dead) _Delaying = StartCoroutine(Delay());
     }
 
-    public override void InitVal(float f)
+    public override void InitVal(float f, BattleMechManager m)
     {
-        base.InitVal(f);
+        base.InitVal(f, m);
+
         _CurrentWhite = f;
     }
 
@@ -29,7 +30,7 @@ public class DelayedBar : Bar
 
         float startTime = Time.time;
         float startNumber = _CurrentWhite;
-        float endNumber = CurrentFIll;
+        float endNumber = CurrentFill;
 
         while (_CurrentWhite != endNumber) // keep checking until currentNumber matches the new targetNumber
         {

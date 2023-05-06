@@ -14,26 +14,27 @@ public class SelectionPanel : MonoBehaviour
     // [SerializeField] Dropdown _Pref;
 
     protected int _CurrentPanel;
-    protected static ObjectPool<GameObject> _Pool;
+    protected ObjectPool<GameObject> _Pool;
 
     protected virtual void Start()
     {
         _CurrentPanel = 0;
         _Pool = new ObjectPool<GameObject>(
             () => Instantiate(_ItemPrefab, _ContentStorage),
-            mech =>
+            x =>
             {
-                mech.SetActive(true);
-                mech.transform.SetAsLastSibling();
+                x.SetActive(true);
+                x.transform.SetAsLastSibling();
             },
-            mech =>
+            x =>
             {
-                mech.SendMessage("AdjustIndicators", 0, SendMessageOptions.DontRequireReceiver);
-                mech.SetActive(false);
+                x.SendMessage("AdjustIndicators", 0, SendMessageOptions.DontRequireReceiver);
+                x.SetActive(false);
             },
-            mech => Destroy(mech),
+            x => Destroy(x),
             false, 20, 100
             );
+
     }
 
     public virtual void OpenPanel(int index)

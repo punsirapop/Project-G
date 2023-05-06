@@ -28,7 +28,7 @@ public class ChromoDetail : PlayerManager
         Displays[3].text = c.Acc.ToString();
         Displays[4].text = string.Join("\t", "Atk: " + c.Atk.Sum().ToString(),
             "Def: " + c.Def.Sum().ToString(), "Hp: " + c.Hp.Sum().ToString(),
-            "Spd: " + c.Spd.Sum().ToString(), "Rank: " + c.GetRank());
+            "Spd: " + c.Spd.Sum().ToString(), "Rank: " + c.Rank, "Element: " + c.Element);
         Displays[5].text = string.Join("-", c.GetChromosome()[0].Take(5)) + "\n"
             + string.Join("-", c.GetChromosome()[0].Skip(5));
         Icon.SetChromo(c);

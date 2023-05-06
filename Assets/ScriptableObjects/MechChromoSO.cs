@@ -1,3 +1,4 @@
+// using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -14,32 +15,28 @@ using static FitnessMenu;
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Stat")]
 public class MechChromoSO : ScriptableObject
 {
-    public enum Rank { C, B, A, S }
+    public enum Ranks { C, B, A, S }
+    public enum Elements { Fire, Plant, Water, Light, Dark, None }
     public static int IDCounter;
     public int ID;
     // ---- Cosmetic ----
     // Head - 20 pcs
-    [SerializeField] private int head;
-    public int Head => head;
+    public int Head { get; private set; }
     // Color of the body - RGB
-    [SerializeField] private int[] body;
-    public int[] Body => body;
+    public int[] Body { get; private set; }
     // Accessory - 10 pcs
-    [SerializeField] private int acc;
-    public int Acc => acc;
+    public int Acc { get; private set; }
 
     // ---- Combat ----
     // max stat to generate
     public static int Cap;
 
-    [SerializeField] private int[] atk;
-    public int[] Atk => atk;
-    [SerializeField] private int[] def;
-    public int[] Def => def;
-    [SerializeField] private int[] hp;
-    public int[] Hp => hp;
-    [SerializeField] private int[] spd;
-    public int[] Spd => spd;
+    public int[] Atk { get; private set; }
+    public int[] Def { get; private set; }
+    public int[] Hp { get; private set; }
+    public int[] Spd { get; private set; }
+    public Elements Element { get; private set; }
+    public Ranks Rank { get; private set; }
 
     private void Awake()
     {
@@ -49,14 +46,16 @@ public class MechChromoSO : ScriptableObject
         IDCounter++;
 
         // init stuffs
-        head = Random.Range(0, 20);
-        body = new int[3];
-        for (int i = 0; i < 3; i++)  body[i] = Random.Range(0, 256);
-        acc = Random.Range(0, 10);
+        Head = Random.Range(0, 20);
+        Body = new int[3];
+        for (int i = 0; i < 3; i++)  Body[i] = Random.Range(0, 256);
+        Acc = Random.Range(0, 10);
 
         Cap = Cap == 0 ? 4 : Cap;
 
         SetRandomStat(Cap);
+        SetRank();
+        SetElement();
     }
 
     private void OnDestroy()
@@ -66,14 +65,35 @@ public class MechChromoSO : ScriptableObject
 
     public void SetRandomStat(int c)
     {
-        atk = new int[3];
-        def = new int[3];
-        hp = new int[3];
-        spd = new int[3];
-        for (int i = 0; i < atk.Length; i++) atk[i] = Random.Range(1, c);
-        for (int i = 0; i < def.Length; i++) def[i] = Random.Range(1, c);
-        for (int i = 0; i < hp.Length; i++) hp[i] = Random.Range(1, c);
-        for (int i = 0; i < spd.Length; i++) spd[i] = Random.Range(1, c);
+        Atk = new int[3];
+        Def = new int[3];
+        Hp = new int[3];
+        Spd = new int[3];
+        for (int i = 0; i < Atk.Length; i++) Atk[i] = Random.Range(1, c);
+        for (int i = 0; i < Def.Length; i++) Def[i] = Random.Range(1, c);
+        for (int i = 0; i < Hp.Length; i++) Hp[i] = Random.Range(1, c);
+        for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c);
+    }
+
+    public void SetRandomStat2(int cap)
+    {
+        int[] stat = new int[4];
+        int firstDis = Mathf.Max(1, Mathf.CeilToInt(cap / 12));
+        cap -= firstDis * 4;
+        for (int i = 0; i < 4; i++)
+        {
+            stat[i] += firstDis;
+        }
+
+        for (; cap > 0; cap--)
+        {
+            stat[Random.Range(0, 4)]++;
+        }
+
+        Atk = new int[] { stat[0] };
+        Def = new int[] { stat[1] };
+        Hp = new int[] { stat[2] };
+        Spd = new int[] { stat[3] };
     }
 
     // Set properties according to encoded chromosome
@@ -82,14 +102,17 @@ public class MechChromoSO : ScriptableObject
         if(encodedHolder != null)
         {
             List<int> encoded = encodedHolder[0];
-            this.head = encoded[0];
-            for (int i = 0; i < 3; i++) this.body[i] = encoded[1 + i];
-            this.acc = encoded[4];
-            for (int i = 0; i < 3; i++) this.atk[i] = encoded[5 + i];
-            for (int i = 0; i < 3; i++) this.def[i] = encoded[8 + i];
-            for (int i = 0; i < 3; i++) this.hp[i] = encoded[11 + i];
-            for (int i = 0; i < 3; i++) this.spd[i] = encoded[14 + i];
+            this.Head = encoded[0];
+            for (int i = 0; i < 3; i++) this.Body[i] = encoded[1 + i];
+            this.Acc = encoded[4];
+            for (int i = 0; i < 3; i++) this.Atk[i] = encoded[5 + i];
+            for (int i = 0; i < 3; i++) this.Def[i] = encoded[8 + i];
+            for (int i = 0; i < 3; i++) this.Hp[i] = encoded[11 + i];
+            for (int i = 0; i < 3; i++) this.Spd[i] = encoded[14 + i];
         }
+
+        SetRank();
+        SetElement();
     }
 
     // Encode properties into chromosome
@@ -98,26 +121,26 @@ public class MechChromoSO : ScriptableObject
         List<int> c = new List<int>();
         List<List<int>> holder = new List<List<int>>();
 
-        c.Add(head);
-        foreach (int item in body)
+        c.Add(Head);
+        foreach (int item in Body)
         {
             c.Add(item);
         }
-        c.Add(acc);
+        c.Add(Acc);
 
-        foreach (int item in atk)
+        foreach (int item in Atk)
         {
             c.Add(item);
         }
-        foreach (int item in def)
+        foreach (int item in Def)
         {
             c.Add(item);
         }
-        foreach (int item in hp)
+        foreach (int item in Hp)
         {
             c.Add(item);
         }
-        foreach (int item in spd)
+        foreach (int item in Spd)
         {
             c.Add(item);
         }
@@ -146,14 +169,13 @@ public class MechChromoSO : ScriptableObject
         return c;
     }
 
-    public Rank GetRank()
+    private void SetRank()
     {
-        int sum = atk.Sum() + def.Sum() + hp.Sum() + spd.Sum();
+        int sum = Atk.Sum() + Def.Sum() + Hp.Sum() + Spd.Sum();
         int index = Mathf.RoundToInt(sum / (Cap * 4));
-        Rank rank = (Rank)index;
-
-        return rank;
+        Rank = (Ranks)index;
     }
+
     public float GetFitness(List<System.Tuple<Properties, int>> fv)
     {
         float fitness = 0;
@@ -162,51 +184,51 @@ public class MechChromoSO : ScriptableObject
             switch (item.Item1)
             {
                 case Properties.Head:
-                    fitness += (item.Item2 == head) ? 100 : 0;
+                    fitness += (item.Item2 == Head) ? 100 : 0;
                     break;
                 case Properties.Body:
                     switch (item.Item2)
                     {
                         // Red
                         case 0:
-                            fitness += (CalcMe(body[0], 0, 255) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 255, 0)) / 3;
+                            fitness += (CalcMe(Body[0], 0, 255) + CalcMe(Body[1], 255, 0) + CalcMe(Body[2], 255, 0)) / 3;
                             break;
                         // Green
                         case 1:
-                            fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 0, 255) + CalcMe(body[2], 255, 0)) / 3;
+                            fitness += (CalcMe(Body[0], 255, 0) + CalcMe(Body[1], 0, 255) + CalcMe(Body[2], 255, 0)) / 3;
                             break;
                         // Blue
                         case 2:
-                            fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 0, 255)) / 3;
+                            fitness += (CalcMe(Body[0], 255, 0) + CalcMe(Body[1], 255, 0) + CalcMe(Body[2], 0, 255)) / 3;
                             break;
                         // White
                         case 3:
-                            fitness += (CalcMe(body[0], 0, 255) + CalcMe(body[1], 0, 255) + CalcMe(body[2], 0, 255)) / 3;
+                            fitness += (CalcMe(Body[0], 0, 255) + CalcMe(Body[1], 0, 255) + CalcMe(Body[2], 0, 255)) / 3;
                             break;
                         // Black
                         case 4:
-                            fitness += (CalcMe(body[0], 255, 0) + CalcMe(body[1], 255, 0) + CalcMe(body[2], 255, 0)) / 3;
+                            fitness += (CalcMe(Body[0], 255, 0) + CalcMe(Body[1], 255, 0) + CalcMe(Body[2], 255, 0)) / 3;
                             break;
                     }
                     break;
                 case Properties.Acc:
-                    fitness += (item.Item2 == acc) ? 100 : 0;
+                    fitness += (item.Item2 == Acc) ? 100 : 0;
                     break;
                 case Properties.Com:
                     int sum = 0;
                     switch (item.Item2)
                     {
                         case 0:
-                            sum = atk.Sum();
+                            sum = Atk.Sum();
                             break;
                         case 1:
-                            sum = def.Sum();
+                            sum = Def.Sum();
                             break;
                         case 2:
-                            sum = hp.Sum();
+                            sum = Hp.Sum();
                             break;
                         case 3:
-                            sum = spd.Sum();
+                            sum = Spd.Sum();
                             break;
                     }
                     fitness += CalcMe(sum, 0, Cap * 3) / 3;
@@ -290,5 +312,53 @@ public class MechChromoSO : ScriptableObject
     private void ResetMe()
     {
         IDCounter = 0;
+    }
+
+    private void SetElement()
+    {
+        float[] fvTest = new float[5];
+
+        for (int i = 0; i < 5; i++)
+        {
+            List<System.Tuple<Properties, int>> fv = new List<System.Tuple<Properties, int>>();
+            fv.Add(System.Tuple.Create(Properties.Body, i));
+            fvTest[i] = GetFitness(fv);
+        }
+
+        int max = System.Array.IndexOf(fvTest, fvTest.Max());
+        if (fvTest.Distinct().ToArray().SequenceEqual(fvTest))
+        {
+            if (Mathf.Clamp(max, 3, 4) == max &&
+                fvTest[max] > fvTest.Where((item, index) => index != max).Max() * 1.25f)
+            {
+                Element = (Elements)max;
+            }
+            else
+            {
+                Element = (Elements)System.Array.IndexOf
+                    (fvTest.Take(3).ToArray(), fvTest.Take(3).ToArray().Max());
+            }
+        }
+        else
+        {
+            var dupe = fvTest.Select((num, index) => new { num, index }).GroupBy(x => x.num)
+                .Where(x => x.Count() > 1).SelectMany(x => x.Select(y => y.index)).ToList();
+            if (dupe.Contains(max))
+            {
+                if (dupe.Count == 2 && Mathf.Clamp(dupe[0], 0, 2) == dupe[0] &&
+                    Mathf.Clamp(dupe[1], 3, 4) == dupe[1])
+                {
+                    Element = (Elements)dupe[0];
+                }
+                else
+                {
+                    Element = Elements.None;
+                }
+            }
+            else
+            {
+                Element = (Elements)max;
+            }
+        }
     }
 }

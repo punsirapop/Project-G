@@ -18,7 +18,6 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int CurrentFarmIndex = 1;
 
     public static Date CurrentDate;
-    public static int MechStatCap;
 
     public static FactorySO[] FactoryDatabase;
     public static FarmSO[] FarmDatabase;

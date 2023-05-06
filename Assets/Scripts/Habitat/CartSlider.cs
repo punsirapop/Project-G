@@ -31,7 +31,7 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         {
             _CartHandle.sprite = _CartImages[1];
             _CartChromo.AddRange(_Storages[(int)_CartSlider.value].Selected.
-                Select(x => x.GetComponent<MechCanvasDisplay>().MySO));
+                Select(x => x.GetComponent<MechCanvasDisplay>().MyMechSO));
             _WhereDidITakeIt = (int)_CartSlider.value;
             /*
             foreach (var item in _CartChromo)

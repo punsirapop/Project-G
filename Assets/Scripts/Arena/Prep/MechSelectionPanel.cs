@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
-using static ChromoMenu;
 using static FitnessMenu;
 
 public class MechSelectionPanel : SelectionPanel
@@ -76,7 +75,7 @@ public class MechSelectionPanel : SelectionPanel
         for (int i = 0; i < 3; i++)
         {
             AllySelectionManager.Instance.CurrentSelection = i;
-            AllySelectionManager.Instance.Selecting(fvDict.Skip(i).First().Key);
+            AllySelectionManager.Instance.SelectingMech(fvDict.Skip(i).First().Key);
         }
         AllySelectionManager.Instance.CurrentSelection = tmp;
         // _ContentStorage.BroadcastMessage("AdjustingTeam", SendMessageOptions.DontRequireReceiver);

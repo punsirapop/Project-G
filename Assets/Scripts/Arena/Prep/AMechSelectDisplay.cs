@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
 {
+    [SerializeField] Image _BgColor;
     [SerializeField] GameObject[] _Indicators;
     [SerializeField] TextMeshProUGUI[] _Stats;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AllySelectionManager.Instance.Selecting(MySO);
+        AllySelectionManager.Instance.SelectingMech(MyMechSO);
     }
 
     public override void SetChromo(MechChromoSO c)
@@ -23,13 +25,47 @@ public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
         _Stats[1].text = c.Def.Sum().ToString();
         _Stats[2].text = c.Hp.Sum().ToString();
         _Stats[3].text = c.Spd.Sum().ToString();
+
+        Color bg = Color.white;
+        foreach (var item in _Stats)
+        {
+            item.color = Color.black;
+        }
+        switch (c.Element)
+        {
+            case MechChromoSO.Elements.Fire:
+                bg = Color.red;
+                break;
+            case MechChromoSO.Elements.Plant:
+                bg = Color.green;
+                break;
+            case MechChromoSO.Elements.Water:
+                bg = Color.blue;
+                break;
+            case MechChromoSO.Elements.Light:
+                bg = Color.white;
+                break;
+            case MechChromoSO.Elements.Dark:
+                bg = Color.black;
+                foreach (var item in _Stats)
+                {
+                    item.color = Color.white;
+                }
+                break;
+            case MechChromoSO.Elements.None:
+                bg = Color.gray;
+                break;
+        }
+        bg.a = .5f;
+        _BgColor.color = bg;
     }
 
     public void AdjustingTeam()
     {
-        if (AllySelectionManager.Instance.Buttons[AllySelectionManager.Instance.CurrentSelection].MySO == MySO)
+        if (AllySelectionManager.Instance.Buttons[AllySelectionManager.Instance.CurrentSelection]
+            .MyMechSO == MyMechSO)
             AdjustIndicators(2);
-        else if (AllySelectionManager.Instance.AllyTeam.Contains(MySO))
+        else if (AllySelectionManager.Instance.AllyMech.Contains(MyMechSO))
             AdjustIndicators(1);
         else AdjustIndicators(0);
     }
