@@ -2017,6 +2017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421103299}
   - component: {fileID: 1421103298}
+  - component: {fileID: 1421103300}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -2113,90 +2114,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1450626002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1450626003}
-  - component: {fileID: 1450626004}
-  m_Layer: 0
-  m_Name: SoundEffectManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1450626003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450626002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1450626004
+--- !u!114 &1421103300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450626002}
+  m_GameObject: {fileID: 1421103297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95742174ce8c28d4a8d01de1f4c5f34c, type: 3}
+  m_Script: {fileID: 11500000, guid: 62f01771ca4fb8741bfbb881c1b25f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundEffects:
-  - Name: Hover
-    Clip: {fileID: 8300000, guid: 6aa8b4b3c731dd649bb0cafcdb1c929d, type: 3}
-    SceneName: 
-  - Name: Button
-    Clip: {fileID: 8300000, guid: 4fea8b44efdfbf341a46e28740ab4c6d, type: 3}
-    SceneName: 
-  - Name: Button2
-    Clip: {fileID: 8300000, guid: 431f149ec3e293e40b1651acb6a9af44, type: 3}
-    SceneName: 
-  - Name: ButtonTab
-    Clip: {fileID: 8300000, guid: ad728bebc01b186488e257b0d212e5d3, type: 3}
-    SceneName: 
-  - Name: Error
-    Clip: {fileID: 8300000, guid: 07d021d6bf0c18b48bc216f2f98d5cf6, type: 3}
-    SceneName: 
-  - Name: Wrong
-    Clip: {fileID: 8300000, guid: 84b82d942fd8e0b47a13a680408ebc08, type: 3}
-    SceneName: 
-  - Name: ArenaShoot
-    Clip: {fileID: 8300000, guid: 7e36ead27f39a144c99140e8697c840b, type: 3}
-    SceneName: Arena
-  - Name: ArenaExplosion
-    Clip: {fileID: 8300000, guid: 26f194bdbe1f1154ea83ad4925e857a6, type: 3}
-    SceneName: Arena
-  - Name: Pick
-    Clip: {fileID: 8300000, guid: 9e3f7c29f9edf9e4c91dd9721f55aa86, type: 3}
-    SceneName: Puzzle
-  - Name: Drop
-    Clip: {fileID: 8300000, guid: d01de1e6fdc01dd43934b0fbe73d5ada, type: 3}
-    SceneName: Puzzle
-  - Name: ButtonPuzzle
-    Clip: {fileID: 8300000, guid: 7e540c0127fe7114bb93417119bba0f0, type: 3}
-    SceneName: Puzzle
-  - Name: Fail
-    Clip: {fileID: 8300000, guid: 5c9f3eb5519cb84449cd066d5a59649c, type: 3}
-    SceneName: Cutscene
-  - Name: Pass
-    Clip: {fileID: 8300000, guid: b1982fddc9582b5419218cffe9841a71, type: 3}
-    SceneName: Cutscene
 --- !u!1 &1518799276
 GameObject:
   m_ObjectHideFlags: 0

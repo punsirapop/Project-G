@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using static FitnessMenu;
 
@@ -15,6 +16,10 @@ public class MechSelectionPanel : SelectionPanel
     protected override void Start()
     {
         base.Start();
+        for (int i = 0; i < PlayerManager.FarmDatabase.Length; i++)
+        {
+            _Buttons[i].interactable = PlayerManager.FarmDatabase[i].LockStatus == LockableStatus.Unlock;
+        }
         OpenPanel(0);
     }
 

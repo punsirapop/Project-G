@@ -5,12 +5,6 @@ using System.Linq;
 using UnityEngine;
 using static TimeManager;
 
-/*
- * Store various miscellanous functions
- * Still don't know how to categorize them
- * - AddChromo
- * - DelChromo
- */
 public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
     public static PlayerManager Instance;
@@ -18,6 +12,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int CurrentDialogueIndex = 0;
 
     public static Date CurrentDate;
+
+    public static int ResearchLabTabIndex { get; private set; }
 
     // Resources
     public static int Money { get; private set; }
@@ -108,8 +104,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
         else
         {
-            Debug.Log("FOUND DUPE");
-            Destroy(Instance.gameObject);
+            Destroy(gameObject);
         }
 
         FixingFacility = false;
@@ -157,6 +152,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public void ResetDate()
     {
         CurrentDate = new TimeManager.Date();
+    }
+
+    public static void SetResearchLabTabIndex(int newTabIndex)
+    {
+        ResearchLabTabIndex = newTabIndex;
     }
 
     #region Money

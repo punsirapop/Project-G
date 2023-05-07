@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MySO: {fileID: 0}
-  myRenderer:
+  MyRenderer:
   - {fileID: 1064598665829168714}
   - {fileID: 5829213194077392484}
   - {fileID: 5709096461567474196}

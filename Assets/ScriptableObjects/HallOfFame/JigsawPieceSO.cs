@@ -87,6 +87,13 @@ public class JigsawPieceSO : LockableObject
         else if (_Level == JigsawLevel.Gold) multiplier = 30;
         return multiplier * pieceAmount;
     }
+
+    // tmp function for doing tutorial
+    public void ForceGetSuccess()
+    {
+        SuccessCount++;
+        _LockStatus = LockableStatus.Unlock;
+    }
 }
 
 public enum JigsawLevel

@@ -55,9 +55,18 @@ public class EnemySelectionManager : MonoBehaviour
 
         Debug.Log($"{cap1 + 2} - {cap3}");
 
+        _WeaponPool = new List<WeaponChromosome>();
+        foreach (var item in PlayerManager.FactoryDatabase.Where(x => x.LockStatus == LockableStatus.Unlock))
+        {
+            _WeaponPool.AddRange(item.GetAllWeapon().OrderByDescending(x => x.Fitness).Take(5));
+        }
+        foreach (var item in _WeaponPool)
+        {
+            item.SetIsMode1Active(UnityEngine.Random.Range(0, 2) == 0);
+        }
+
         // Generate hard enemies
         _EnemyPool = new List<MechChromoSO>();
-        _WeaponPool = new List<WeaponChromosome>();
         _EnemyParties = new List<List<Tuple<MechChromoSO, WeaponChromosome>>>();
 
         for (int i = 0; i < 10; i++)
@@ -65,16 +74,6 @@ public class EnemySelectionManager : MonoBehaviour
             _EnemyPool.Add(ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO);
             _EnemyPool.Last().SetRandomStat2(cap1);
             MechChromoSO.IDCounter--;
-        }
-
-        for (int i = 0; i < 4; i++)
-        {
-            _WeaponPool.AddRange(PlayerManager.FactoryDatabase[i].GetAllWeapon()
-                .OrderByDescending(x => x.Fitness).Take(5));
-        }
-        foreach (var item in _WeaponPool)
-        {
-            item.SetIsMode1Active(UnityEngine.Random.Range(0, 2) == 0);
         }
 
         List<MechChromoSO> list = new List<MechChromoSO>();
@@ -145,6 +144,7 @@ public class EnemySelectionManager : MonoBehaviour
             _MechBars[i].SetChromo(_EnemyParties[m][i].Item1);
             _MechBars[i].SetWeapon(_EnemyParties[m][i].Item2);
         }
+        ArenaManager.EnemyLevel = m == 0 ? 2 : 1;
     }
 
     public void CloseLineUp()
@@ -156,6 +156,7 @@ public class EnemySelectionManager : MonoBehaviour
             _MechBars[i].SetWeapon(_MechBars[i].MyWeaponSO);
             _MechBars[i].SetChromo(_MechBars[i].MyMechSO);
         }
+        ArenaManager.EnemyLevel = 0;
     }
 
     /*
