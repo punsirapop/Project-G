@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 79307694335491948}
   - component: {fileID: 79307694335491949}
   - component: {fileID: 1137085455569490410}
+  - component: {fileID: -7336710250765717588}
   m_Layer: 5
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -123,7 +124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 79307694335491947}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7336710250765717588}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &79307694335491949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +170,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ChoiceText: {fileID: 79307695619757319}
+--- !u!114 &-7336710250765717588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79307694335491951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &79307695619757337
 GameObject:
   m_ObjectHideFlags: 0

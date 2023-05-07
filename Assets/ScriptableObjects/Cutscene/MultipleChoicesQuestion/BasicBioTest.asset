@@ -169,19 +169,19 @@ MonoBehaviour:
     - SentenceContent: Evolution
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Natural Selection
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Crossover
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -228,19 +228,19 @@ MonoBehaviour:
     - SentenceContent: A process in which living things gradually change over time
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A sudden change in the genetics of a living thing
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A process in which the environment changes over time
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -296,21 +296,21 @@ MonoBehaviour:
     - SentenceContent: A process by which living things randomly change over time
       ReponseData:
       - Speaker: 9
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A process by which living things change to fit their environment
         over time
       ReponseData:
       - Speaker: 9
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A process by which living things change in response to human
         intervention
       ReponseData:
       - Speaker: 9
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -368,19 +368,19 @@ MonoBehaviour:
     - SentenceContent: Random mutation
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Environmental pressure
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Human intervention
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -437,20 +437,20 @@ MonoBehaviour:
         appearance
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Phenotype is the physical appearance and genotype is the genetic
         information
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Phenotype and genotype are the same thing
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -509,21 +509,21 @@ MonoBehaviour:
         from their parents
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: The process by which genetic information is transferred from
         one chromosome to another
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The process by which a pair of parent's chromosomes exchange
         genetic information
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -582,20 +582,20 @@ MonoBehaviour:
     - SentenceContent: A physical characteristic of an organism
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A segment of DNA that determines a single characteristic of
         an organism
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A type of chromosome
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:

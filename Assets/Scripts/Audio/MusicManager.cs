@@ -84,4 +84,11 @@ public class MusicManager : MonoBehaviour
             _AudioSource.Play();
         }
     }
+    public void PlaySpecificMusicOnce(int index)
+    {
+        if (index >= 0 && index < MusicClips.Length)
+        {
+            _AudioSource.PlayOneShot(MusicClips[index].Clip);
+        }
+    }
 }

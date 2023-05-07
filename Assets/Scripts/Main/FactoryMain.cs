@@ -27,6 +27,9 @@ public class FactoryMain : MonoBehaviour
     private int _FactoryIndex;
     public FactorySO FactoryDatabase => PlayerManager.FactoryDatabase[_FactoryIndex];
 
+    // Sound Effect When Change scene
+    public string _SoundEffectName = "Button"; // Name of the sound effect to play
+
     void Start()
     {
         _MainBackground.GetComponent<Image>().sprite = _MainNormal;
@@ -69,6 +72,7 @@ public class FactoryMain : MonoBehaviour
     }
     public void EnterFactory()
     {
+        SoundEffectManager.Instance.PlaySoundEffect(_SoundEffectName);
         PlayerManager.CurrentFactoryIndex = _FactoryIndex;
         this.GetComponent<SceneMng>().ChangeScene("Factory");
     }

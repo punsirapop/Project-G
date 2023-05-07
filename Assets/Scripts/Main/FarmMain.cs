@@ -27,6 +27,9 @@ public class FarmMain : FarmMngFunc
     private int _FarmIndex;
     public FarmSO FarmDatabase => PlayerManager.FarmDatabase[_FarmIndex];
 
+    // Sound Effect When Change scene
+    public string _SoundEffectName = "Button"; // Name of the sound effect to play
+
     void Start()
     {
         _MainBackground.GetComponent<Image>().sprite = _MainNormal;
@@ -80,6 +83,7 @@ public class FarmMain : FarmMngFunc
 
     public void EnterFarm()
     {
+        SoundEffectManager.Instance.PlaySoundEffect(_SoundEffectName);
         PlayerManager.CurrentFarmIndex = _FarmIndex;
         this.GetComponent<SceneMng>().ChangeScene("Farm");
     }

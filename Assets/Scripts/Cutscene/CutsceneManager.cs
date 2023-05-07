@@ -37,6 +37,7 @@ public class CutsceneManager : MonoBehaviour
     private DialogueElement.Sentence _Temp;
     public GameObject Holder;
     private SceneMng _SceneManager;
+    private SoundEffectHolder _SoundEffctManager;
     private int _CharacterIndex;
 
     void Awake()
@@ -53,6 +54,7 @@ public class CutsceneManager : MonoBehaviour
         _Score= 0;
         _CurrentAnswerIndex = 0;
         _SceneManager = Holder.GetComponent<SceneMng>();
+        _SoundEffctManager = Holder.GetComponent<SoundEffectHolder>();
     }
 
     public void DisplaySentence(DialogueElement.Sentence currentSentence)
@@ -314,12 +316,14 @@ public class CutsceneManager : MonoBehaviour
                 //DisplaySentence(_Temp);
                 //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
                 sentenceToDisplay = _CurrentDialogueElement.CheckerAnswer.Pass.Copy();
+                _SoundEffctManager.PlaySoundEffect("Pass");
             } else {
                 //_Temp = _CurrentDialogueElement.CheckerAnswer.Fail;
                 //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Fail.SentenceContent.Replace(("[score]"),_Score.ToString()));
                 //DisplaySentence(_Temp);
                 //_Temp.SentenceContent = string.Copy(_CurrentDialogueElement.CheckerAnswer.Pass.SentenceContent.Replace(_Score.ToString(),("[score]")));
                 sentenceToDisplay = _CurrentDialogueElement.CheckerAnswer.Fail.Copy();
+                _SoundEffctManager.PlaySoundEffect("Fail");
             }
             sentenceToDisplay.SentenceContent = sentenceToDisplay.SentenceContent.Replace("[score]", _Score.ToString());
             DisplaySentence(sentenceToDisplay);

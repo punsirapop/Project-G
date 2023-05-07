@@ -168,21 +168,21 @@ MonoBehaviour:
         the weight of the bag.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A problem that deals with packing items in a bag while maximizing
         the value of the bag.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A problem that deals with unpacking items from a bag while
         minimizing the value of the bag.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -241,19 +241,19 @@ MonoBehaviour:
     - SentenceContent: Using real-valued numbers.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Using binary bit string
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Using integer numbers.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -311,19 +311,19 @@ MonoBehaviour:
     - SentenceContent: A summation of the weight of the picked items.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A multiplication of the weight and value of the picked items.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A summation of the value of the picked items.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -380,20 +380,20 @@ MonoBehaviour:
         of the bag.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: The summation of weight must be less than the maximum weight
         of the bag.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The minimum value of the bag must be achieved.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -453,19 +453,19 @@ MonoBehaviour:
     - SentenceContent: The fitness value becomes negative.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: The fitness value becomes zero.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The fitness value becomes undefined.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:

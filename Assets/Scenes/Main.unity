@@ -1743,6 +1743,18 @@ MonoBehaviour:
           m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &154359927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2341,6 +2353,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &316919571
@@ -3174,6 +3198,18 @@ MonoBehaviour:
           m_StringArgument: Habitat
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &381078841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3321,6 +3357,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &397158457
@@ -6273,6 +6321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 782658610}
+  - component: {fileID: 782658611}
   m_Layer: 5
   m_Name: Tabs
   m_TagString: Untagged
@@ -6307,6 +6356,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &782658611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782658609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &811289811
 GameObject:
   m_ObjectHideFlags: 0
@@ -8370,6 +8432,7 @@ GameObject:
   - component: {fileID: 1016694959}
   - component: {fileID: 1016694958}
   - component: {fileID: 1016694957}
+  - component: {fileID: 1016694960}
   m_Layer: 5
   m_Name: Farm3
   m_TagString: Untagged
@@ -8455,6 +8518,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016694955}
   m_CullTransparentMesh: 1
+--- !u!114 &1016694960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016694955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1040913270
 GameObject:
   m_ObjectHideFlags: 0
@@ -8533,6 +8609,7 @@ GameObject:
   - component: {fileID: 1046214079}
   - component: {fileID: 1046214080}
   - component: {fileID: 1046214082}
+  - component: {fileID: 1046214083}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -8601,6 +8678,19 @@ MonoBehaviour:
   _FixChoicesOverlay: {fileID: 1040913270}
   _DateDisplay: {fileID: 1005857031}
   _MoneyDisplay: {fileID: 1852030507}
+--- !u!114 &1046214083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046214077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Button
 --- !u!1 &1049503415
 GameObject:
   m_ObjectHideFlags: 0
@@ -11278,6 +11368,18 @@ MonoBehaviour:
           m_StringArgument: Calendar
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1307528152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13096,6 +13198,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606768991}
     m_Modifications:
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1046214083}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547613867012870336, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3750215406220849268, guid: 75629e87c53beed469e7dc443514c114, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13183,6 +13317,38 @@ PrefabInstance:
     - target: {fileID: 3750215406220849271, guid: 75629e87c53beed469e7dc443514c114, type: 3}
       propertyPath: m_Name
       value: Factory1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1046214083}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Error
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309970110853140018, guid: 75629e87c53beed469e7dc443514c114, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75629e87c53beed469e7dc443514c114, type: 3}
@@ -14375,6 +14541,18 @@ MonoBehaviour:
           m_StringArgument: City
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1568964131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15491,6 +15669,18 @@ MonoBehaviour:
           m_StringArgument: ResearchLab
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1802923184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16266,6 +16456,7 @@ GameObject:
   - component: {fileID: 1890656353}
   - component: {fileID: 1890656352}
   - component: {fileID: 1890656351}
+  - component: {fileID: 1890656354}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -16350,6 +16541,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1890656352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16388,6 +16591,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890656349}
   m_CullTransparentMesh: 1
+--- !u!114 &1890656354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890656349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1910858523
 GameObject:
   m_ObjectHideFlags: 0
@@ -18250,6 +18466,7 @@ GameObject:
   - component: {fileID: 2118554057}
   - component: {fileID: 2118554056}
   - component: {fileID: 2118554055}
+  - component: {fileID: 2118554058}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -18334,6 +18551,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2118554056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18372,6 +18601,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118554053}
   m_CullTransparentMesh: 1
+--- !u!114 &2118554058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118554053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &2137462248
 GameObject:
   m_ObjectHideFlags: 0
@@ -18384,6 +18626,7 @@ GameObject:
   - component: {fileID: 2137462252}
   - component: {fileID: 2137462251}
   - component: {fileID: 2137462250}
+  - component: {fileID: 2137462253}
   m_Layer: 5
   m_Name: ComfirmButton
   m_TagString: Untagged
@@ -18480,6 +18723,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2137462251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18518,6 +18773,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137462248}
   m_CullTransparentMesh: 1
+--- !u!114 &2137462253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137462248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1001 &1845222357391795983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18612,6 +18880,70 @@ PrefabInstance:
     - target: {fileID: 3283400104967738851, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
       propertyPath: m_Name
       value: Farm1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1046214083}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Error
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120721334108144550, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1046214083}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322113140549393284, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10d3cd020b1c2b42a9df4a055fbdc61, type: 3}

@@ -618,8 +618,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450626004}
-        m_TargetAssemblyTypeName: SoundEffectManager, Assembly-CSharp
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 5
         m_Arguments:
@@ -914,6 +914,7 @@ GameObject:
   - component: {fileID: 848963496}
   - component: {fileID: 848963495}
   - component: {fileID: 848963494}
+  - component: {fileID: 848963497}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -967,6 +968,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848963497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848963493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &881898059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,8 +1064,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450626004}
-        m_TargetAssemblyTypeName: SoundEffectManager, Assembly-CSharp
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 5
         m_Arguments:
@@ -1331,6 +1344,7 @@ GameObject:
   - component: {fileID: 989925063}
   - component: {fileID: 989925062}
   - component: {fileID: 989925061}
+  - component: {fileID: 989925064}
   m_Layer: 5
   m_Name: GMStartButton
   m_TagString: Untagged
@@ -1403,6 +1417,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 848963495}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: ResetGame
@@ -1477,6 +1503,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989925059}
   m_CullTransparentMesh: 1
+--- !u!114 &989925064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989925059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1071384711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,9 +2164,39 @@ MonoBehaviour:
   - Name: Button
     Clip: {fileID: 8300000, guid: 4fea8b44efdfbf341a46e28740ab4c6d, type: 3}
     SceneName: 
-  - Name: ButtonTab
-    Clip: {fileID: 8300000, guid: 72696d4a3af2d6a4cb44c584bcf28e5e, type: 3}
+  - Name: Button2
+    Clip: {fileID: 8300000, guid: 431f149ec3e293e40b1651acb6a9af44, type: 3}
     SceneName: 
+  - Name: ButtonTab
+    Clip: {fileID: 8300000, guid: ad728bebc01b186488e257b0d212e5d3, type: 3}
+    SceneName: 
+  - Name: Error
+    Clip: {fileID: 8300000, guid: 07d021d6bf0c18b48bc216f2f98d5cf6, type: 3}
+    SceneName: 
+  - Name: Wrong
+    Clip: {fileID: 8300000, guid: 84b82d942fd8e0b47a13a680408ebc08, type: 3}
+    SceneName: 
+  - Name: ArenaShoot
+    Clip: {fileID: 8300000, guid: 7e36ead27f39a144c99140e8697c840b, type: 3}
+    SceneName: Arena
+  - Name: ArenaExplosion
+    Clip: {fileID: 8300000, guid: 26f194bdbe1f1154ea83ad4925e857a6, type: 3}
+    SceneName: Arena
+  - Name: Pick
+    Clip: {fileID: 8300000, guid: 9e3f7c29f9edf9e4c91dd9721f55aa86, type: 3}
+    SceneName: Puzzle
+  - Name: Drop
+    Clip: {fileID: 8300000, guid: d01de1e6fdc01dd43934b0fbe73d5ada, type: 3}
+    SceneName: Puzzle
+  - Name: ButtonPuzzle
+    Clip: {fileID: 8300000, guid: 7e540c0127fe7114bb93417119bba0f0, type: 3}
+    SceneName: Puzzle
+  - Name: Fail
+    Clip: {fileID: 8300000, guid: 5c9f3eb5519cb84449cd066d5a59649c, type: 3}
+    SceneName: Cutscene
+  - Name: Pass
+    Clip: {fileID: 8300000, guid: b1982fddc9582b5419218cffe9841a71, type: 3}
+    SceneName: Cutscene
 --- !u!1 &1518799276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,8 +2822,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450626004}
-        m_TargetAssemblyTypeName: SoundEffectManager, Assembly-CSharp
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 5
         m_Arguments:
@@ -3093,13 +3162,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicClips:
   - SceneName: Title
-    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Clip: {fileID: 8300000, guid: d1826570d52ae1244a2139d61d2f704e, type: 3}
     Volume: 1
   - SceneName: Main
-    Clip: {fileID: 8300000, guid: 27012913cf920de4a868d07c20ab93ea, type: 3}
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
     Volume: 1
   - SceneName: Farm
     Clip: {fileID: 8300000, guid: 06dcfba001530c047994ccb89182dbee, type: 3}
+    Volume: 1
+  - SceneName: Factory
+    Clip: {fileID: 8300000, guid: 1ed3c3988608b8443b11a473c5aa502d, type: 3}
+    Volume: 1
+  - SceneName: City
+    Clip: {fileID: 8300000, guid: d434086a88ab9f141ae3c7911c05b0e5, type: 3}
+    Volume: 1
+  - SceneName: Arena
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: Calendar
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: CrossoverPuzzle
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: Cutscene
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.25
+  - SceneName: Habitat
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: HallOfFame
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: KnapsackPuzzle
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.5
+  - SceneName: QuestBoard
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: ResearchLab
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.25
+  - SceneName: SelectionPuzzle
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.5
+  - SceneName: Shop
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: SideQuestSubmission
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
     Volume: 1
 --- !u!1 &1999783382
 GameObject:

@@ -168,19 +168,19 @@ MonoBehaviour:
         the value of the bag
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A knapsack with more than one limitation
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A problem that only has a weight limitation for the knapsack
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -239,19 +239,19 @@ MonoBehaviour:
     - SentenceContent: Using real numbers
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Using binary bit string
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Using a combination of letters and numbers
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -309,19 +309,19 @@ MonoBehaviour:
     - SentenceContent: A summation of the weight of the picked items
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A summation of the area of the picked items
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A summation of the value of the picked items
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -380,20 +380,20 @@ MonoBehaviour:
         lower
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: "The solution is invalid, and the fitness value will be zero\r"
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The solution is still valid, and the fitness value will be
         calculated based on the satisfied criteria only
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -453,19 +453,19 @@ MonoBehaviour:
     - SentenceContent: Limited weight only
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Limited value only
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Limited weight and limited area
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
