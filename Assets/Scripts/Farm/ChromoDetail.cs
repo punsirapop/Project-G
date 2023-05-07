@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /*
  * Control Chromosome detail tab
  */
-public class ChromoDetail : PlayerManager
+public class ChromoDetail : MonoBehaviour
 {
     public MechChromoSO currentDisplay;
     // List of textboxes

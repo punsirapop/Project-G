@@ -104,8 +104,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
         else
         {
-            Debug.Log("FOUND DUPE");
-            Destroy(Instance.gameObject);
+            Destroy(gameObject);
         }
 
         FixingFacility = false;
