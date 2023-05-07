@@ -534,6 +534,90 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -13}
   m_SizeDelta: {x: 831, y: 594}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &508172687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508172689}
+  - component: {fileID: 508172688}
+  m_Layer: 0
+  m_Name: SoundEffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &508172688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508172687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95742174ce8c28d4a8d01de1f4c5f34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundEffects:
+  - Name: Hover
+    Clip: {fileID: 8300000, guid: 6aa8b4b3c731dd649bb0cafcdb1c929d, type: 3}
+    SceneName: 
+  - Name: Button
+    Clip: {fileID: 8300000, guid: 4fea8b44efdfbf341a46e28740ab4c6d, type: 3}
+    SceneName: 
+  - Name: Button2
+    Clip: {fileID: 8300000, guid: 431f149ec3e293e40b1651acb6a9af44, type: 3}
+    SceneName: 
+  - Name: ButtonTab
+    Clip: {fileID: 8300000, guid: ad728bebc01b186488e257b0d212e5d3, type: 3}
+    SceneName: 
+  - Name: Error
+    Clip: {fileID: 8300000, guid: 07d021d6bf0c18b48bc216f2f98d5cf6, type: 3}
+    SceneName: 
+  - Name: Wrong
+    Clip: {fileID: 8300000, guid: 84b82d942fd8e0b47a13a680408ebc08, type: 3}
+    SceneName: 
+  - Name: ArenaShoot
+    Clip: {fileID: 8300000, guid: 7e36ead27f39a144c99140e8697c840b, type: 3}
+    SceneName: 
+  - Name: ArenaExplosion
+    Clip: {fileID: 8300000, guid: 26f194bdbe1f1154ea83ad4925e857a6, type: 3}
+    SceneName: 
+  - Name: Pick
+    Clip: {fileID: 8300000, guid: 9e3f7c29f9edf9e4c91dd9721f55aa86, type: 3}
+    SceneName: 
+  - Name: Drop
+    Clip: {fileID: 8300000, guid: d01de1e6fdc01dd43934b0fbe73d5ada, type: 3}
+    SceneName: 
+  - Name: ButtonPuzzle
+    Clip: {fileID: 8300000, guid: 7e540c0127fe7114bb93417119bba0f0, type: 3}
+    SceneName: 
+  - Name: Fail
+    Clip: {fileID: 8300000, guid: 5c9f3eb5519cb84449cd066d5a59649c, type: 3}
+    SceneName: 
+  - Name: Pass
+    Clip: {fileID: 8300000, guid: b1982fddc9582b5419218cffe9841a71, type: 3}
+    SceneName: 
+--- !u!4 &508172689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508172687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8996763, y: -0.35310155, z: -9.99245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584065136
 GameObject:
   m_ObjectHideFlags: 0
