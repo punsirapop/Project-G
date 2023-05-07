@@ -164,6 +164,8 @@ GameObject:
   - component: {fileID: 1876959387714481659}
   - component: {fileID: 1876959387714481639}
   - component: {fileID: 3224680731056781968}
+  - component: {fileID: 6587672331550178196}
+  - component: {fileID: 4717626847407783741}
   m_Layer: 5
   m_Name: HMechIcon
   m_TagString: Untagged
@@ -217,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e063bffefc670064a82a19e1d52dde29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MySO: {fileID: 0}
+  MyMechSO: {fileID: 0}
   myRenderer:
   - {fileID: 4305371286501387283}
   - {fileID: 8896215996369685655}
@@ -252,6 +254,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100.14488, y: 100.14488}
   m_EdgeRadius: 0
+--- !u!114 &6587672331550178196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876959387714481656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4717626847407783741}
+          m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Pick
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &4717626847407783741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876959387714481656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1912595667257583614
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1365527241154503035}
   - component: {fileID: 1365527241154503037}
   - component: {fileID: 7342931716800380614}
+  - component: {fileID: 6597501420839481066}
+  - component: {fileID: 2167981789052149835}
   m_Layer: 5
   m_Name: ChromosomeRodValue
   m_TagString: Untagged
@@ -114,8 +116,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Value: 0
   _Percentage: 0
-  _IsPercentage: 0
   _ValueBox: {fileID: 8197759765987062204}
+--- !u!114 &6597501420839481066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365527241154503033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2167981789052149835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365527241154503033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6597501420839481066}
+          m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Pick
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4634142826234592511
 GameObject:
   m_ObjectHideFlags: 0

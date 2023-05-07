@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 18421248}
   - component: {fileID: 18421247}
   - component: {fileID: 18421246}
+  - component: {fileID: 18421249}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -256,6 +257,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &18421247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +307,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18421244}
   m_CullTransparentMesh: 1
+--- !u!114 &18421249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18421244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &26732251
 GameObject:
   m_ObjectHideFlags: 0
@@ -10386,6 +10412,7 @@ GameObject:
   - component: {fileID: 1160745223}
   - component: {fileID: 1160745222}
   - component: {fileID: 1160745221}
+  - component: {fileID: 1160745225}
   m_Layer: 5
   m_Name: Solving
   m_TagString: Untagged
@@ -10498,6 +10525,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1160745223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10536,6 +10575,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160745219}
   m_CullTransparentMesh: 1
+--- !u!114 &1160745225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160745219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1172553700
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,6 +12969,7 @@ GameObject:
   - component: {fileID: 1418552551}
   - component: {fileID: 1418552550}
   - component: {fileID: 1418552549}
+  - component: {fileID: 1418552552}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -13013,6 +13066,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1418552550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13051,6 +13116,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418552547}
   m_CullTransparentMesh: 1
+--- !u!114 &1418552552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418552547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1001 &1427439024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14047,6 +14125,7 @@ GameObject:
   - component: {fileID: 1523212104}
   - component: {fileID: 1523212103}
   - component: {fileID: 1523212102}
+  - component: {fileID: 1523212106}
   m_Layer: 5
   m_Name: Demonstration
   m_TagString: Untagged
@@ -14159,6 +14238,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1523212104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14197,6 +14288,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523212100}
   m_CullTransparentMesh: 1
+--- !u!114 &1523212106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523212100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1524875545
 GameObject:
   m_ObjectHideFlags: 0
@@ -16187,6 +16291,7 @@ GameObject:
   - component: {fileID: 1878061359}
   - component: {fileID: 1878061361}
   - component: {fileID: 1878061362}
+  - component: {fileID: 1878061363}
   m_Layer: 5
   m_Name: Question
   m_TagString: Untagged
@@ -16323,6 +16428,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1046214083}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1878061362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16337,6 +16454,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _DefaultObject: {fileID: 573008621}
   _OnHoverObject: {fileID: 265388162}
+--- !u!114 &1878061363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878061357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1880713585
 GameObject:
   m_ObjectHideFlags: 0
@@ -18665,6 +18795,7 @@ GameObject:
   - component: {fileID: 2137462251}
   - component: {fileID: 2137462250}
   - component: {fileID: 2137462253}
+  - component: {fileID: 2137462254}
   m_Layer: 5
   m_Name: ComfirmButton
   m_TagString: Untagged
@@ -18812,6 +18943,19 @@ CanvasRenderer:
   m_GameObject: {fileID: 2137462248}
   m_CullTransparentMesh: 1
 --- !u!114 &2137462253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137462248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
+--- !u!114 &2137462254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

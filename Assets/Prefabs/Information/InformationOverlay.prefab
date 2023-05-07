@@ -181,6 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5131962113385572048}
   - component: {fileID: 5131962113385572049}
+  - component: {fileID: 678110794270545127}
   m_Layer: 5
   m_Name: InformationOverlay
   m_TagString: Untagged
@@ -231,6 +232,18 @@ MonoBehaviour:
   _PreviousImageButton: {fileID: 5131962114907789122}
   _NextImageButton: {fileID: 5131962115236710015}
   _ProgressIndicator: {fileID: 5131962114393671233}
+--- !u!114 &678110794270545127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131962113385572051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5131962113746533116
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +924,7 @@ GameObject:
   - component: {fileID: 5131962114907789124}
   - component: {fileID: 5131962114907789123}
   - component: {fileID: 5131962114907789122}
+  - component: {fileID: 1635335245345893680}
   m_Layer: 5
   m_Name: PreviousImageButton
   m_TagString: Untagged
@@ -1036,7 +1050,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5131962114907789124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 678110794270545127}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1635335245345893680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131962114907789129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &5131962115051293224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1165,7 @@ GameObject:
   - component: {fileID: 5131962115236710013}
   - component: {fileID: 5131962115236710012}
   - component: {fileID: 5131962115236710015}
+  - component: {fileID: 4447345051195377145}
   m_Layer: 5
   m_Name: NextImageButton
   m_TagString: Untagged
@@ -1251,7 +1291,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5131962115236710013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 678110794270545127}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4447345051195377145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131962115236709985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &6551485044239419193
 GameObject:
   m_ObjectHideFlags: 0

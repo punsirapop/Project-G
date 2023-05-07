@@ -594,14 +594,17 @@ MonoBehaviour:
   - Name: Drop
     Clip: {fileID: 8300000, guid: d01de1e6fdc01dd43934b0fbe73d5ada, type: 3}
     SceneName: 
-  - Name: ButtonPuzzle
-    Clip: {fileID: 8300000, guid: 7e540c0127fe7114bb93417119bba0f0, type: 3}
-    SceneName: 
   - Name: Fail
     Clip: {fileID: 8300000, guid: 5c9f3eb5519cb84449cd066d5a59649c, type: 3}
     SceneName: 
   - Name: Pass
     Clip: {fileID: 8300000, guid: b1982fddc9582b5419218cffe9841a71, type: 3}
+    SceneName: 
+  - Name: ButtonToggle
+    Clip: {fileID: 8300000, guid: 7e540c0127fe7114bb93417119bba0f0, type: 3}
+    SceneName: 
+  - Name: Spin
+    Clip: {fileID: 8300000, guid: 44b9967be5a04464ca357a9d5cacfbf1, type: 3}
     SceneName: 
 --- !u!4 &508172689
 Transform:
