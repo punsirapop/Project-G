@@ -5,7 +5,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using static MechChromoSO;
-using static UnityEditor.PlayerSettings;
 
 public class BattleManager : MonoBehaviour
 {
@@ -125,7 +124,6 @@ public class BattleManager : MonoBehaviour
                 .First(x => x.CurrentState != BattleMechManager.State.Dead))] = 1;
         }
 
-
         int target = 0;
         float random = UnityEngine.Random.Range(0, chances.Sum());
         float sum = 0;
@@ -159,15 +157,15 @@ public class BattleManager : MonoBehaviour
             case BulletType.Poison:
                 Receiver.GetNewEffect(SelfEffects.Poison, attacker);
                 break;
-            case BulletType.AoEHeal:
+            case BulletType.AOEHeal:
                 foreach (var item in (receiver[0] == 0 ? _AllyBattleStats : _EnemyBattleStats)
                     .Where(x => x.CurrentState != BattleMechManager.State.Dead))
                 {
-                    float heal = AttackerSO.Atk.Sum() / 5f + AttackerW.Efficiency * AttackerSO.Atk.Sum() / 2f;
+                    float heal = AttackerSO.Atk.Sum() * .2f + AttackerW.Efficiency * AttackerSO.Atk.Sum() * .3f;
                     item.ReduceHP(-heal, DamageMode.Heal);
                 }
                 break;
-            case BulletType.AoEDamage:
+            case BulletType.AOEDamage:
                 foreach (var item in (receiver[0] == 0 ? _AllyBattleStats : _EnemyBattleStats)
                     .Where(x => x.isActiveAndEnabled))
                 {

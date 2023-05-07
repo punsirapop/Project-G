@@ -42,7 +42,8 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             _Storages[(int)_CartSlider.value].Selected.Clear();
             _Storages[(int)_CartSlider.value].OnValueChange();
         }
-        else if (_CartChromo.Count > 0)
+        else if (_CartChromo.Count > 0 &&
+            PlayerManager.FarmDatabase[(int)_CartSlider.value].LockStatus != LockableStatus.Lock)
         {
             _CartHandle.sprite = _CartImages[0];
             foreach (var item in _CartChromo)

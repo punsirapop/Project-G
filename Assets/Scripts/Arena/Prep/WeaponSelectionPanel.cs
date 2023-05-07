@@ -13,6 +13,11 @@ public class WeaponSelectionPanel : SelectionPanel
     {
         base.Start();
 
+        for (int i = 0; i < PlayerManager.FactoryDatabase.Length; i++)
+        {
+            _Buttons[i].interactable = PlayerManager.FactoryDatabase[i].LockStatus == LockableStatus.Unlock;
+        }
+
         CreateWeaponStorage();
 
         OpenPanel(0);

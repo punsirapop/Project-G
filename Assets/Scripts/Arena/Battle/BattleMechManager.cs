@@ -83,7 +83,7 @@ public class BattleMechManager : MonoBehaviour
                         {
                             WeaponChromosome giverW = BattleManager.Instance.Identify(item.Giver, 1);
                             MechChromoSO giver = BattleManager.Instance.Identify(item.Giver, 2);
-                            float dmg = giver.Atk.Sum() / 5f + giverW.Efficiency * giver.Atk.Sum() / 2f;
+                            float dmg = giver.Atk.Sum() * .2f + giverW.Efficiency * giver.Atk.Sum() * .3f;
                             ReduceHP(dmg, DamageMode.Poison);
                         }
                     }
@@ -292,43 +292,39 @@ public class BattleMechManager : MonoBehaviour
     public void UseSkill()
     {
         int[] giver = new int[] { IsAlly ? 0 : 1, Index };
-        if (_MyWeapon.FromFactory < 2)
-        {
-            SelfEffects type = new SelfEffects();
 
-            switch (_MyWeapon.FromFactory)
-            {
-                case 0:
-                    type = _MyWeapon.IsMode1Active ? SelfEffects.Taunt : SelfEffects.Stealth;
-                    break;
-                case 1:
-                    type = _MyWeapon.IsMode1Active ? SelfEffects.Snipe : SelfEffects.Pierce;
-                    break;
-                default:
-                    break;
-            }
-
-            GetNewEffect(type, giver);
-        }
-        else
+        switch (_MyWeapon.CurrentMode)
         {
-            switch (_MyWeapon.FromFactory)
-            {
-                case 2:
-                    _MyMech.StartAttacking
-                        (BattleManager.Instance.RequestAttack
-                        (new int[] { IsAlly ? 0 : 1, Index }, false),
-                        _MyWeapon.IsMode1Active ? BulletType.Sleep : BulletType.Poison, false);
-                    break;
-                case 3:
-                    _MyMech.StartAttacking
-                        (BattleManager.Instance.RequestAttack
-                        (new int[] { IsAlly ? 0 : 1, Index }, _MyWeapon.IsMode1Active),
-                        _MyWeapon.IsMode1Active ? BulletType.AoEHeal : BulletType.AoEDamage, false);
-                    break;
-                default:
-                    break;
-            }
+            case WeaponMode.Taunt:
+                GetNewEffect(SelfEffects.Taunt, giver);
+                break;
+            case WeaponMode.Stealth:
+                GetNewEffect(SelfEffects.Stealth, giver);
+                break;
+            case WeaponMode.Snipe:
+                GetNewEffect(SelfEffects.Snipe, giver);
+                break;
+            case WeaponMode.Pierce:
+                GetNewEffect(SelfEffects.Pierce, giver);
+                break;
+            case WeaponMode.Sleep:
+                _MyMech.StartAttacking(BattleManager.Instance.RequestAttack
+                    (new int[] { IsAlly ? 0 : 1, Index }, false), BulletType.Sleep, false);
+                break;
+            case WeaponMode.Poison:
+                _MyMech.StartAttacking(BattleManager.Instance.RequestAttack
+                    (new int[] { IsAlly ? 0 : 1, Index }, false), BulletType.Poison, false);
+                break;
+            case WeaponMode.AOEHeal:
+                _MyMech.StartAttacking(BattleManager.Instance.RequestAttack
+                    (new int[] { IsAlly ? 0 : 1, Index }, true), BulletType.AOEHeal, false);
+                break;
+            case WeaponMode.AOEDamage:
+                _MyMech.StartAttacking(BattleManager.Instance.RequestAttack
+                    (new int[] { IsAlly ? 0 : 1, Index }, false), BulletType.AOEDamage, false);
+                break;
+            default:
+                break;
         }
     }
 
@@ -340,7 +336,7 @@ public class BattleMechManager : MonoBehaviour
         // adjust duration for sleep
         if (type == SelfEffects.Sleep)
         {
-            dur = 3f + ((WeaponChromosome)BattleManager.Instance.Identify(giver, 1)).Efficiency * 4f;
+            dur = 2f + ((WeaponChromosome)BattleManager.Instance.Identify(giver, 1)).Efficiency * 5f;
             AskPauseCharging(dur);
         }
         effectDis.Set(type, giver, this, dur);

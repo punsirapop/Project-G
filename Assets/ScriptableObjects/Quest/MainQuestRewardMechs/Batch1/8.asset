@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28562bba4310f3d40a41a7ed361044dc, type: 3}
-  m_Name: 5
+  m_Script: {fileID: 11500000, guid: 0ff0364e253553443ae8f181fb3207f9, type: 3}
+  m_Name: 8
   m_EditorClassIdentifier: 
-  ID: 4
-  head: 18
-  body: fd000000e60000005b000000
-  acc: 5
-  atk: 010000000200000002000000
-  def: 010000000300000002000000
-  hp: 010000000100000003000000
-  spd: 030000000300000001000000
+  Head: 0
+  Body: 000000000000000000000000
+  Acc: 0
+  Atk: 000000000000000000000000
+  Def: 000000000000000000000000
+  Hp: 000000000000000000000000
+  Spd: 000000000000000000000000
