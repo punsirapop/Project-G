@@ -12766,6 +12766,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ContentStorage: {fileID: 106870549}
+  _Buttons:
+  - {fileID: 655729211}
+  - {fileID: 88364063}
+  - {fileID: 1533366061}
+  - {fileID: 1068549967}
   _Panel: {fileID: 1777117690}
   _Bgs:
   - {fileID: 21300000, guid: c03d72016d22811429f5c017b49e81ec, type: 3}
@@ -12773,7 +12778,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 13aa31820e3b5c1489410b72be45cbdc, type: 3}
   - {fileID: 21300000, guid: 5a8e394bda737a940bd9ec22eb441a9d, type: 3}
   _ItemPrefab: {fileID: 5898995627435543576, guid: 1b81617502a17e64faf763364e1cbde7, type: 3}
-  _Buttons: []
 --- !u!1 &1894365154
 GameObject:
   m_ObjectHideFlags: 0
@@ -13183,6 +13187,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ContentStorage: {fileID: 306134617}
+  _Buttons:
+  - {fileID: 440653135}
+  - {fileID: 1497955754}
+  - {fileID: 1058686434}
+  - {fileID: 1533742965}
   _Panel: {fileID: 2102471625}
   _Bgs:
   - {fileID: 21300000, guid: d5d98a0fcd6aeac42a8a8c89808fb19a, type: 3}
@@ -13190,7 +13199,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 59e1236e70f28f24eb0a67e39db1b066, type: 3}
   - {fileID: 21300000, guid: 023dff7f1cf2b2645aae861b1c7aaf96, type: 3}
   _ItemPrefab: {fileID: 6821142391298940772, guid: 2f0895a292f96f643b59316fc8f42ab6, type: 3}
-  _Buttons: []
   _Pref: {fileID: 1238451001}
 --- !u!1 &1952120194
 GameObject:
