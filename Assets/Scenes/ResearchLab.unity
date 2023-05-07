@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba70eeb34dcf5c469607cf41189fc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Information: {fileID: 11400000, guid: 1808c4cb09eeaeb419d7112fba67639c, type: 2}
+  _Information: {fileID: 11400000, guid: be98bbd97eb369744813a666db6e10a3, type: 2}
   _InformationRendererPrefab: {fileID: 5131962113385572051, guid: 509431805501dea4f8d8293c598e4d3d, type: 3}
   _Canvas: {fileID: 1470661094}
 --- !u!114 &748487052
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap to Unlock
+  m_text: Tap to Research
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
   m_sharedMaterial: {fileID: -8466067231644031343, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}

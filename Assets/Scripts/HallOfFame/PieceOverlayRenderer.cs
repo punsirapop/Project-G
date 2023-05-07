@@ -97,6 +97,7 @@ public class PieceOverlayRenderer : MonoBehaviour
     // Method to invoke when click comfirm on HowToObtain overlay
     public void OnClickConfirmObtain()
     {
-        _CurrentJigsawPiece.GoToObtain();
+        _CurrentJigsawPiece.ForceGetSuccess();
+        //_CurrentJigsawPiece.GoToObtain();
     }
 }
