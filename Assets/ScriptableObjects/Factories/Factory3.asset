@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory3
   m_EditorClassIdentifier: 
-  _LockStatus: 2
+  _LockStatus: 0
   _RequiredMoney: 3000
   _RequiredObjects:
   - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
@@ -26,7 +26,7 @@ MonoBehaviour:
     to making a perfect dart. Balancing two parts like this can be achieved using
     the idea of the Multiple Knapsack Problem.
   _Generation: 0
-  _Status: 1
+  _Status: 0
   _BreedCostPerUnit: 10
   _DiscountRatePerGen: 0.1
   _BrokeChance: 0.2
