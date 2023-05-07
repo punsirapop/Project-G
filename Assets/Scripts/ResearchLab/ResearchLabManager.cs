@@ -9,21 +9,25 @@ public class ResearchLabManager : MonoBehaviour
     public static ResearchLabManager Instance;
 
     // Prefab and holder for chapter button
+    [Header("Prefab and Holder")]
     [SerializeField] private GameObject _ChapterButtonPrefab;
     [SerializeField] private GameObject _ChapterButtonGroupPrefab;
     [SerializeField] private GameObject _ChapterButtonHolder;
     [SerializeField] private GameObject _OverlayForChapterGroup;
     // UI element for displaying page when it's not unlocked yet
+    [Header("Lock and Unlockable Panel")]
     [SerializeField] private GameObject _LockedPage;
     [SerializeField] private Transform _UnlockRequirementsHolder;
     [SerializeField] private GameObject _UnlockRequirementPrefab;
     [SerializeField] private GameObject _UnlockablePage;
     [SerializeField] private Transform _SatisfiedRequirementHolder;
     // UI element for displaying one page of content
+    [Header("Unlocked Panel")]
     [SerializeField] private GameObject _UnlockedPage;      // Parent of all elements in page
     [SerializeField] private TextMeshProUGUI _ContentPageHeader;
     [SerializeField] private Image _ContentPageImage;
     [SerializeField] private TextMeshProUGUI _ContentPageDescription;
+    [SerializeField] private ProgressIndicator _ProgressIndicator;
     // Button object for colorize purpose
     [SerializeField] private GameObject _PreviousPageButton;
     [SerializeField] private GameObject _NextPageButton;
@@ -31,6 +35,7 @@ public class ResearchLabManager : MonoBehaviour
     [SerializeField] private ChapterButton[] _ChapterButtons;
 
     // Hard-code 3 major category of content
+    [Header("Contents")]
     [SerializeField] private ContentChapterGroupSO[] _BasicBioChapters;
     [SerializeField] private ContentChapterGroupSO[] _GeneticAlgoChapters;
     [SerializeField] private ContentChapterGroupSO[] _KnapsackChapters;
@@ -61,6 +66,7 @@ public class ResearchLabManager : MonoBehaviour
             _ContentPageHeader.text = _CurrentChapterSO.Contents[_CurrentPage].Header;
             _ContentPageImage.sprite = _CurrentChapterSO.Contents[_CurrentPage].Image;
             _ContentPageDescription.text = _CurrentChapterSO.Contents[_CurrentPage].Description;
+            _ProgressIndicator.SetIndicator(_CurrentPage, _CurrentChapterSO.Contents.Length - 1);
         }
         // If it's Unlockable, show unlock requirements and unlock button or something else
         else if (_CurrentChapterSO.LockStatus == LockableStatus.Unlockable)

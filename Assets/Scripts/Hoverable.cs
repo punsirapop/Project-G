@@ -9,7 +9,7 @@ public class Hoverable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     [SerializeField] private GameObject _DefaultObject;
     [SerializeField] private GameObject _OnHoverObject;
 
-    private void Start()
+    private void OnEnable()
     {
         _DefaultObject.SetActive(true);
         _OnHoverObject.SetActive(false);
