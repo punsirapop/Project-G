@@ -29,8 +29,13 @@ public class WeaponChromoMenu : MonoBehaviour
     [SerializeField] private GameObject _Hp;
     [SerializeField] private GameObject _Spd;
     [Header("Skill")]
-    [SerializeField] private TextMeshProUGUI _Mode1;
-    [SerializeField] private TextMeshProUGUI _Mode2;
+    [SerializeField] private Sprite[] _WeaponIcons;
+    [SerializeField] private Image _Mode1Icon;
+    [SerializeField] private Image _Mode2Icon;
+    [SerializeField] private TextMeshProUGUI _Mode1Name;
+    [SerializeField] private TextMeshProUGUI _Mode2Name;
+    [SerializeField] private TextMeshProUGUI _Mode1Desc;
+    [SerializeField] private TextMeshProUGUI _Mode2Desc;
     [SerializeField] private TextMeshProUGUI _Cooldown;
     private WeaponChromosome _OverlayChromosome;
 
@@ -139,8 +144,12 @@ public class WeaponChromoMenu : MonoBehaviour
         _Spd.SetActive(chromosome.BonusStat.Spd > 0);
         _Spd.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.BonusStat.Spd.ToString();
         // Assign weapon skill (mode) and cooldown
-        _Mode1.text = DescribeWeapon(chromosome, chromosome.Mode1);
-        _Mode2.text = DescribeWeapon(chromosome, chromosome.Mode2);
+        _Mode1Icon.sprite = _WeaponIcons[(int)chromosome.Mode1];
+        _Mode2Icon.sprite = _WeaponIcons[(int)chromosome.Mode2];
+        _Mode1Name.text = chromosome.Mode1.ToString();
+        _Mode2Name.text = chromosome.Mode2.ToString();
+        _Mode1Desc.text = DescribeWeapon(chromosome, chromosome.Mode1);
+        _Mode2Desc.text = DescribeWeapon(chromosome, chromosome.Mode2);
         _Cooldown.text = chromosome.Cooldown.ToString("F1");
     }
 

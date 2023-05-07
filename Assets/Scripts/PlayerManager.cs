@@ -283,7 +283,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // TEMP function for start the game with the least restriction
     public static void GMStart()
     {
-        Money = 1000000;
+        Money = 3000;
         foreach (ContentChapterSO chapter in ContentChapterDatabase)
         {
             chapter.ForceUnlock();

@@ -14,6 +14,9 @@ public class ArenaManager : MonoBehaviour
 
     [SerializeField] GameObject _EntrancePanel, _DefaultPanel, _NotifBox;
     [SerializeField] TextMeshProUGUI _Text;
+    [SerializeField] TextMeshProUGUI _EntranceFeeText;
+
+    [SerializeField] private int _EntranceFee;
 
     public static int EnemyLevel;
 
@@ -26,6 +29,8 @@ public class ArenaManager : MonoBehaviour
         BulletSprites = _BulletSprites;
 
         EnemyLevel = 0;
+
+        _EntranceFeeText.text = PlayerManager.Money.ToString() + "/" + _EntranceFee.ToString();
     }
 
     public static Sprite GetWeaponImage(int weapon, int mode)
@@ -74,7 +79,7 @@ public class ArenaManager : MonoBehaviour
     {
         string s = null;
         bool pass = true;
-        if (PlayerManager.Money < 1000)
+        if (PlayerManager.Money < _EntranceFee)
         {
             pass = false;
             if (s == null) s = "Not Enough Money";
@@ -98,7 +103,8 @@ public class ArenaManager : MonoBehaviour
             {
                 item.gameObject.SetActive(true);
             }
-            PlayerManager.SpendMoneyIfEnought(1000);
+            PlayerManager.SpendMoneyIfEnought(_EntranceFee);
+            _EntranceFeeText.text = PlayerManager.Money.ToString() + "/" + _EntranceFee.ToString();
             _EntrancePanel.SetActive(false);
             _DefaultPanel.SetActive(true);
         }
