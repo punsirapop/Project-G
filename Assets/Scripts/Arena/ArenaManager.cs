@@ -74,7 +74,7 @@ public class ArenaManager : MonoBehaviour
     {
         string s = null;
         bool pass = true;
-        if (PlayerManager.Money < 500)
+        if (PlayerManager.Money < 1000)
         {
             pass = false;
             if (s == null) s = "Not Enough Money";
@@ -98,7 +98,7 @@ public class ArenaManager : MonoBehaviour
             {
                 item.gameObject.SetActive(true);
             }
-            PlayerManager.SpendMoneyIfEnought(500);
+            PlayerManager.SpendMoneyIfEnought(1000);
             _EntrancePanel.SetActive(false);
             _DefaultPanel.SetActive(true);
         }
