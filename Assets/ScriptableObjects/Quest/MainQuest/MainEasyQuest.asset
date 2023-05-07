@@ -17,22 +17,22 @@ MonoBehaviour:
   _FullDescription: Just place some long long description here. This quest just for
     testing U know.
   _QuestStatus: 4
-  _RequireObject: {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
   _DueDate:
     year: 0
     month: 0
     day: 0
   _IntroDialogue: {fileID: 0}
   _OutroDialogue: {fileID: 0}
+  _RequireObject: {fileID: 11400000, guid: 1c9a89f7af83cab43bda98034fce7807, type: 2}
   _RewardMoney: 100
   _RewardMechs:
-  - {fileID: 11400000, guid: 39dd342c9745de74bab3651415a772af, type: 2}
-  - {fileID: 11400000, guid: d12317c3f2cd3c34da28ed5c1efb1a9b, type: 2}
-  - {fileID: 11400000, guid: 4365df5564bc8a24f9e68e211f36bc16, type: 2}
-  - {fileID: 11400000, guid: ca64bf6e1cba36f4c9020ac875d55f47, type: 2}
-  - {fileID: 11400000, guid: 2242e5cd284e43d488eabfd423665e60, type: 2}
-  - {fileID: 11400000, guid: 6c5a8c427a9867243aaf03a85e8ad79c, type: 2}
-  - {fileID: 11400000, guid: 835acd85ddebae44287d74806929e22b, type: 2}
-  - {fileID: 11400000, guid: 086e9f1eb9d5e854b8670954123154dd, type: 2}
-  - {fileID: 11400000, guid: d4501cfe3686a1948b73f0019486ee6a, type: 2}
-  - {fileID: 11400000, guid: d04ff0ec47ed7e845aa454886c219495, type: 2}
+  - {fileID: 11400000, guid: dbe96b382dfc89e4db2b36bdee14d4e1, type: 2}
+  - {fileID: 11400000, guid: fe4a9604b01efb84f94ba800a88e63cf, type: 2}
+  - {fileID: 11400000, guid: b88fce613e9113e45942d7fa7bf6ced2, type: 2}
+  - {fileID: 11400000, guid: 74f475d4ebd374a4d8008b93372def46, type: 2}
+  - {fileID: 11400000, guid: fd87cb0c42eac6345b29b6e1f05ac2e7, type: 2}
+  - {fileID: 11400000, guid: e299b66288d82ba4494f40da87aeea78, type: 2}
+  - {fileID: 11400000, guid: 775d739bff873bd4c9c51ad8c53ad8fa, type: 2}
+  - {fileID: 11400000, guid: 2d3b6977e72d29f409a7408ab07239f6, type: 2}
+  - {fileID: 11400000, guid: 6c84030ac0518f24e9118e357301cd26, type: 2}
+  - {fileID: 11400000, guid: b0d734897a984e748b312622c9d77405, type: 2}

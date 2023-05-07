@@ -12,7 +12,7 @@ using static FitnessMenu;
  * ***
  * Randomized when generated but can be adjusted later
  */
-[CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Stat")]
+[CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Mech")]
 public class MechChromoSO : ScriptableObject
 {
     public enum Ranks { C, B, A, S }
@@ -113,6 +113,17 @@ public class MechChromoSO : ScriptableObject
 
         SetRank();
         SetElement();
+    }
+
+    public void SetChromosomeFromPreset(MechPresetSO m)
+    {
+        Head = m.Head;
+        Body = m.Body.ToArray();
+        Acc = m.Acc;
+        Atk = m.Atk.ToArray();
+        Def = m.Def.ToArray();
+        Hp = m.Hp.ToArray();
+        Spd = m.Spd.ToArray();
     }
 
     // Encode properties into chromosome

@@ -139,8 +139,33 @@ public class WeaponChromoMenu : MonoBehaviour
         _Spd.SetActive(chromosome.BonusStat.Spd > 0);
         _Spd.GetComponentsInChildren<TextMeshProUGUI>()[1].text = chromosome.BonusStat.Spd.ToString();
         // Assign weapon skill (mode) and cooldown
-        _Mode1.text = chromosome.Mode1.ToString() + " by doing something with the efficiency of " + chromosome.Efficiency.ToString("F2");
-        _Mode2.text = chromosome.Mode2.ToString() + " by doing something with the efficiency of " + chromosome.Efficiency.ToString("F2");
+        _Mode1.text = DescribeWeapon(chromosome, chromosome.Mode1);
+        _Mode2.text = DescribeWeapon(chromosome, chromosome.Mode2);
         _Cooldown.text = chromosome.Cooldown.ToString("F1");
+    }
+
+    public static string DescribeWeapon(WeaponChromosome w, WeaponMode m)
+    {
+        switch (m)
+        {
+            case WeaponMode.Taunt:
+                return $"Increase chances of being targeted by {20f + w.Efficiency * 30f}% for 3 seconds";
+            case WeaponMode.Stealth:
+                return $"Decrease chances of being targeted by {20f + w.Efficiency * 30f}% for 3 seconds";
+            case WeaponMode.Snipe:
+                return $"Increase chances of targeting the furthest opponent by {20f + w.Efficiency * 30f}% for 3 seconds";
+            case WeaponMode.Pierce:
+                return $"Attack ignores {20f + w.Efficiency * 30f}% of an opponent's defense for 3 seconds";
+            case WeaponMode.Sleep:
+                return $"Stop an opponent from charging attacks and using skills for {2f + w.Efficiency * 3f} seconds";
+            case WeaponMode.Poison:
+                return $"Give 'Deal {20f + w.Efficiency * 30f}% of the effect giver's ATK when attacking' to an opponent for 3 seconds";
+            case WeaponMode.AOEHeal:
+                return $"Heal everyone in the team for {20f + w.Efficiency * 30f}% of the user's ATK";
+            case WeaponMode.AOEDamage:
+                return $"Deal {Mathf.Round(((2f / 3f) + w.Efficiency / 3f) * 100)}% of the user's ATK to everyone in the opposing team";
+            default:
+                return "Unknown weapon mode";
+        }
     }
 }

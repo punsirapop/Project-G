@@ -91,6 +91,7 @@ public class AllySelectionManager : MonoBehaviour
         {
             item.gameObject.SetActive(true);
         }
+        if (BattleManager.WinningStatus == 1) ClearSelection();
     }
 
     /*

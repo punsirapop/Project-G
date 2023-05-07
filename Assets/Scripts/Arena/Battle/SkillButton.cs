@@ -63,7 +63,7 @@ public class SkillButton : Bar
     public void Used()
     {
         CurrentFill = Max;
-        transform.parent.SendMessage("UseSkill");
+        transform.parent.SendMessage("UseSkill", _MyChromo.CurrentMode);
     }
 
     public override void Dead()
