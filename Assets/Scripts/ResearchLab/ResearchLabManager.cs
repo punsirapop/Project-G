@@ -50,7 +50,16 @@ public class ResearchLabManager : MonoBehaviour
 
     private void Start()
     {
-        SetCurrentTab(0);
+        int tabIndex = PlayerManager.ResearchLabTabIndex;
+        if ((tabIndex >= 0) &&
+            (tabIndex <= _TabButtons.Length - 1))
+        {
+            SetCurrentTab(tabIndex);
+        }
+        else
+        {
+            SetCurrentTab(0);
+        }
         _RefreshPage();
     }
 
@@ -138,9 +147,11 @@ public class ResearchLabManager : MonoBehaviour
     {
         _ChapterButtonHolder.SetActive(true);
         _OverlayForChapterGroup.SetActive(false);
-        if (newTab >= 0)
+        if ((newTab >= 0) &&
+            (newTab <= _TabButtons.Length - 1))
         {
             _CurrentTab = newTab;
+            PlayerManager.SetResearchLabTabIndex(newTab);
         }        
         _SetTabButtons();
         // Destory all previous child object

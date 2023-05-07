@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
     public static Date CurrentDate;
 
+    public static int ResearchLabTabIndex { get; private set; }
+
     // Resources
     public static int Money { get; private set; }
 
@@ -157,6 +159,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public void ResetDate()
     {
         CurrentDate = new TimeManager.Date();
+    }
+
+    public static void SetResearchLabTabIndex(int newTabIndex)
+    {
+        ResearchLabTabIndex = newTabIndex;
     }
 
     #region Money
