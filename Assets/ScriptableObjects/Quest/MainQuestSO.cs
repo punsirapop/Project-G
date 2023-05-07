@@ -11,8 +11,8 @@ public class MainQuestSO : QuestSO
     // Reward
     [SerializeField] protected int _RewardMoney;
     public int RewardMoney => _RewardMoney;
-    [SerializeField] protected MechChromoSO[] _RewardMechs;
-    public MechChromoSO[] RewardMechs => _RewardMechs;
+    [SerializeField] protected MechPresetSO[] _RewardMechs;
+    public MechPresetSO[] RewardMechs => _RewardMechs;
 
 
     public override void ValdiateStatus()
@@ -51,9 +51,11 @@ public class MainQuestSO : QuestSO
             return;
         }
         // Gain mech reward, send all mech into habitat
-        foreach (MechChromoSO mech in _RewardMechs)
+        foreach (var mech in _RewardMechs)
         {
-            PlayerManager.FarmDatabase[0].AddChromo(mech);
+            MechChromoSO m = CreateInstance(typeof(MechChromoSO)) as MechChromoSO;
+            m.SetChromosomeFromPreset(mech);
+            PlayerManager.FarmDatabase[0].AddChromo(m);
         }
         // Make database wait for day before give new quest
         MainQuestDatabaseSO.WaitForDay();

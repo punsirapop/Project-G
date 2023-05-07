@@ -56,6 +56,6 @@ public enum BulletType
     Pierce,     // attack ignore opponent def
     Sleep,      // give opponent sleep
     Poison,     // give opponent poison
-    AoEHeal,    // aoe heal
-    AoEDamage   // aoe dmg
+    AOEHeal,    // aoe heal
+    AOEDamage   // aoe dmg
 }

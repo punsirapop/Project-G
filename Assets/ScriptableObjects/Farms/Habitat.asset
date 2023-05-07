@@ -12,9 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Habitat
   m_EditorClassIdentifier: 
+  _LockStatus: 2
+  _RequiredMoney: 0
+  _RequiredObjects: []
   _Name: 
   _Generation: 0
   _Status: 0
-  _Floor: {fileID: 0}
-  _Border: {fileID: 0}
-  _MechChromos: []
+  _BreedCostPerUnit: 0
+  _DiscountRatePerGen: 0
+  _BrokeChance: 0
+  _ObtainableJisawGroups: []
+  _BG: {fileID: 0}
+  _MainNormal: {fileID: 0}
+  _MainBroken: {fileID: 0}
+  _Locker: {fileID: 0}
+  _MechChromos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

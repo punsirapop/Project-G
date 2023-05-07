@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SelectionPanel : MonoBehaviour
 {
     [SerializeField] protected Transform _ContentStorage;
+    [SerializeField] protected Button[] _Buttons;
 
     [SerializeField] Image _Panel;
     [SerializeField] Sprite[] _Bgs;

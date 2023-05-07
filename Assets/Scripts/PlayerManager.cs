@@ -5,12 +5,6 @@ using System.Linq;
 using UnityEngine;
 using static TimeManager;
 
-/*
- * Store various miscellanous functions
- * Still don't know how to categorize them
- * - AddChromo
- * - DelChromo
- */
 public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
     public static PlayerManager Instance;
