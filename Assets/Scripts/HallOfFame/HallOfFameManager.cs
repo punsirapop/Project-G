@@ -71,19 +71,19 @@ public class HallOfFameManager : MonoBehaviour
         GetComponentInChildren<JigsawTrayRenderer>().SetJigsawTray(CurrentJigsawTray);
     }
 
-    // Customize back button to have an ability of exiting the one tray mode
-    public void OnClickBackButton(string previousScene)
-    {
-        // If in one tray mode, go back to all tray
-        if (_OneTrayHolder.activeInHierarchy)
-        {
-            _AllTrayHolder.SetActive(true);
-            _OneTrayHolder.SetActive(false);
-        }
-        // Else, go back to research lab
-        else
-        {
-            SceneManager.LoadScene(previousScene);
-        }
-    }
+    //// Customize back button to have an ability of exiting the one tray mode
+    //public void OnClickBackButton(string previousScene)
+    //{
+    //    // If in one tray mode, go back to all tray
+    //    if (_OneTrayHolder.activeInHierarchy)
+    //    {
+    //        _AllTrayHolder.SetActive(true);
+    //        _OneTrayHolder.SetActive(false);
+    //    }
+    //    // Else, go back to research lab
+    //    else
+    //    {
+    //        SceneManager.LoadScene(previousScene);
+    //    }
+    //}
 }

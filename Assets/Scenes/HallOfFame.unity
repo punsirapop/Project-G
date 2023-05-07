@@ -1742,9 +1742,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1470661097}
-        m_TargetAssemblyTypeName: HallOfFameManager, Assembly-CSharp
-        m_MethodName: OnClickBackButton
+      - m_Target: {fileID: 1470661096}
+        m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
