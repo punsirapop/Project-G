@@ -187,6 +187,21 @@ public class MechChromoSO : ScriptableObject
         Rank = (Ranks)index;
     }
 
+    public float CompareMechQuest(MechChromoSO m)
+    {
+        float fitness = 0f;
+        if (m != null)
+        {
+            fitness += Head == m.Head ? 300f : 0f;
+            fitness += Acc == m.Acc ? 200f : 0f;
+            Color c = new Color(Body[0] / 255f, Body[1] / 255f, Body[2] / 255f);
+            Color d = new Color(m.Body[0] / 255f, m.Body[1] / 255f, m.Body[2] / 255f);
+            fitness += 500f - CompareColor(c, d) * 5f;
+        }
+
+        return fitness / 10f;
+    }
+
     public float GetFitness(List<System.Tuple<Properties, int>> fv)
     {
         float fitness = 0;
@@ -198,27 +213,28 @@ public class MechChromoSO : ScriptableObject
                     fitness += (item.Item2 == Head) ? 100 : 0;
                     break;
                 case Properties.Body:
+                    Color c = new Color(Body[0] / 255f, Body[1] / 255f, Body[2] / 255f);
                     switch (item.Item2)
                     {
                         // Red
                         case 0:
-                            fitness += (CalcMe(Body[0], 0, 255) + CalcMe(Body[1], 255, 0) + CalcMe(Body[2], 255, 0)) / 3;
+                            fitness += 100f - CompareColor(c, Color.red);
                             break;
                         // Green
                         case 1:
-                            fitness += (CalcMe(Body[0], 255, 0) + CalcMe(Body[1], 0, 255) + CalcMe(Body[2], 255, 0)) / 3;
+                            fitness += 100f - CompareColor(c, Color.green);
                             break;
                         // Blue
                         case 2:
-                            fitness += (CalcMe(Body[0], 255, 0) + CalcMe(Body[1], 255, 0) + CalcMe(Body[2], 0, 255)) / 3;
+                            fitness += 100f - CompareColor(c, Color.blue);
                             break;
                         // White
                         case 3:
-                            fitness += (CalcMe(Body[0], 0, 255) + CalcMe(Body[1], 0, 255) + CalcMe(Body[2], 0, 255)) / 3;
+                            fitness += 100f - CompareColor(c, Color.white);
                             break;
                         // Black
                         case 4:
-                            fitness += (CalcMe(Body[0], 255, 0) + CalcMe(Body[1], 255, 0) + CalcMe(Body[2], 255, 0)) / 3;
+                            fitness += 100f - CompareColor(c, Color.black);
                             break;
                     }
                     break;
@@ -247,6 +263,18 @@ public class MechChromoSO : ScriptableObject
             }
         }
         return fitness;
+    }
+
+    private float CompareColor(Color A, Color B)
+    {
+        float r = A.r - B.r;
+        float g = A.g - B.g;
+        float b = A.b - B.b;
+
+        float dis = Mathf.Sqrt(r*r + g*g + b*b);
+        float max = Mathf.Sqrt(3f);
+
+        return 100f * dis / max;
     }
 
     /*

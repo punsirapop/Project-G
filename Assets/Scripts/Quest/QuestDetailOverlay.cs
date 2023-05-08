@@ -19,6 +19,8 @@ public class QuestDetailOverlay : MonoBehaviour
     [Header("Side Quest Progress")]
     [SerializeField] private GameObject _SideQuestProgressHolder;
     [SerializeField] private TextMeshProUGUI _RewardMinMaxMoneyText;
+    [SerializeField] private MechCanvasDisplay _MechDisplay;
+    [SerializeField] private TextMeshProUGUI _MechDetails;
 
     public void SetOverlay(QuestSO clickedQuest)
     {
@@ -49,6 +51,10 @@ public class QuestDetailOverlay : MonoBehaviour
             _SideQuestProgressHolder.SetActive(true);
             // Display wanted mech
             // do something with sideQuest.WantedMech; here...
+            _MechDisplay.SetChromo(sideQuest.WantedMech);
+            _MechDetails.text = string.Join("\n\n", $"Head: {sideQuest.WantedMech.Head}",
+                "Body: " + string.Join("/",sideQuest.WantedMech.Body),
+                $"Acc: {sideQuest.WantedMech.Acc}");
             // Display reward
             _RewardMinMaxMoneyText.text = sideQuest.MinRewardMoney.ToString() + " to " + sideQuest.MaxRewardMoney.ToString();
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,26 +9,30 @@ using UnityEngine.UI;
 public class HMechDisplay : MechCanvasDisplay, IPointerDownHandler,
     IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler
 {
-    [SerializeField] GameObject[] _Indicators;
+    [SerializeField] protected GameObject[] _Indicators;
 
-    static int[] _HoldRange;
-    static int _IsHeld;
+    protected static int[] _HoldRange;
+    protected static int _IsHeld;
 
-    int _MyPlace;
+    protected int _MyPlace;
 
-    bool _IsTriggered;
-    bool _IsSelected;
-    Coroutine _HoldCoroutine;
+    protected bool _IsTriggered;
+    protected bool _IsSelected;
+    protected Coroutine _HoldCoroutine;
 
-    private void Start()
+    protected Transform _Manager;
+
+    protected virtual void Start()
     {
+        _Manager = transform.parent.parent;
+
         _IsTriggered = false;
         _IsHeld = -1;
         _HoldRange = new int[2];
-        _MyPlace = transform.parent.parent.GetComponent<HStorageManager>().Index;
+        _MyPlace = _Manager.GetComponent<HStorageManager>().Index;
     }
 
-    private void Update()
+    protected void Update()
     {
         if (Input.GetMouseButtonUp(0) && _HoldCoroutine != null)
         {
@@ -45,7 +50,7 @@ public class HMechDisplay : MechCanvasDisplay, IPointerDownHandler,
         }
     }
 
-    private void _ShuttingDown()
+    protected void _ShuttingDown()
     {
         if (_HoldCoroutine != null)
         {
@@ -55,24 +60,24 @@ public class HMechDisplay : MechCanvasDisplay, IPointerDownHandler,
         if (_IsHeld == -1)
         {
             // StopCoroutine(_HoldCoroutine);
-            transform.parent.parent.SendMessage("SelectMe", gameObject);
+            _Manager.SendMessage("SelectMe", gameObject);
             _HoldCoroutine = null;
         }
         else if (_IsHeld == _MyPlace)
         {
             for (int i = _HoldRange.Min(); i <= _HoldRange.Max(); i++)
             {
-                transform.parent.parent.SendMessage("SelectMe", transform.parent.GetChild(i).gameObject);
+                _Manager.SendMessage("SelectMe", transform.parent.GetChild(i).gameObject);
             }
         }
         _IsHeld = -1;
         _IsTriggered = false;
         _HoldRange = new int[2];
-        transform.parent.parent.SendMessage("ControlRolling", true);
+        _Manager.SendMessage("ControlRolling", true);
         Debug.Log("LIFTED");
     }
 
-    private IEnumerator _Holding()
+    protected IEnumerator _Holding()
     {
         if (_IsTriggered)
         {
@@ -81,7 +86,7 @@ public class HMechDisplay : MechCanvasDisplay, IPointerDownHandler,
             _HoldRange[0] = transform.GetSiblingIndex();
             _HoldRange[1] = transform.GetSiblingIndex();
             Debug.Log("HELD - " + _HoldRange[0]);
-            transform.parent.parent.SendMessage("ControlRolling", false);
+            _Manager.SendMessage("ControlRolling", false);
         }
     }
 

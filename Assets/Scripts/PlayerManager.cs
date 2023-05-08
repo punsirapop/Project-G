@@ -188,11 +188,19 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
 
+    // Deduct Money, just that
+    // DANGER, USE WITH CAUTION
+    public static void ForceSpendMoney(int deductAmount)
+    {
+        Money -= deductAmount;
+    }
+
     // Gain money and return true if success, Otherwise, do nothing and return false
     public static bool GainMoneyIfValid(int gainAmount)
     {
         if (gainAmount >= 0)
         {
+            Debug.Log($"Giving Money {gainAmount}G");
             Money += gainAmount;
             return true;
         }

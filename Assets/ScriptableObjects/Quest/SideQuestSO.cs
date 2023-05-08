@@ -30,7 +30,8 @@ public class SideQuestSO : QuestSO
         _FullDescription = fullDescription;
         _QuestStatus = Status.Unacquired;
         _DueDate = dueDate;
-        // WantedMech
+        WantedMech = ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO;
+        MechChromoSO.Cap--;
         MinRewardMoney = minRewardMoney;
         MaxRewardMoney = maxRewardMoney;
     }
@@ -45,14 +46,15 @@ public class SideQuestSO : QuestSO
             return 0;
         }
         // If there is some selected mech, calculate reward
-        float similarityRate = SideQuestSubmissionManager.Instance.SimilarityRate;
+        // float similarityRate = SideQuestSubmissionManager.Instance.SimilarityRate;
+        float similarityRate = WantedMech.CompareMechQuest(SideQuestSubmissionManager.Instance.SelectedMech.Item1);
         // Hard-code the bound here...
-        float lowerBound = 0.5f;    // Rate at least for starting getting bonus money
-        float upperBound = 0.9f;    // Rate at most for getting max money
+        float lowerBound = 50f;    // Rate at least for starting getting bonus money
+        float upperBound = 90f;    // Rate at most for getting max money
         int rewardMoney;
         if (similarityRate < lowerBound)
         {
-            rewardMoney = MinRewardMoney;
+            rewardMoney = 0;
         }
         else if (similarityRate >= upperBound)
         {
@@ -75,6 +77,7 @@ public class SideQuestSO : QuestSO
         {
             base.CompleteQuest();
             // May give some penalty like losing money around here...
+            PlayerManager.ForceSpendMoney(MinRewardMoney / 2);
             return;
         }
 
