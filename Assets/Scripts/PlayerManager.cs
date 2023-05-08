@@ -142,6 +142,39 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         // Valdiate for checking expiration
         MainQuestDatabase.ValidateAllQuestStatus();
         SideQuestDatabase.ValidateAllQuestStatus();
+
+        // Set stat cap for mechs in case of reaching rank S
+        if (FarmDatabase.Any(x => x.MechChromos.Count > 0))
+        {
+            // Prepare stat caps
+            List<MechChromoSO> topAllies = new List<MechChromoSO>();
+
+            foreach (var item in FarmDatabase)
+            {
+                topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
+                    .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>());
+            }
+
+            MechChromoSO m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
+                .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>().First();
+
+            // Increase cap until it's not S
+            int extraCap = 0;
+            while (m.Rank == MechChromoSO.Ranks.S)
+            {
+                extraCap++;
+                MechChromoSO.Cap++;
+                m.SetRank();
+            }
+            // Set rank for every other mechs
+            if (extraCap > 0)
+            {
+                foreach (var item in topAllies)
+                {
+                    item.SetRank();
+                }
+            }
+        }
     }
 
     public static void SetCurrentDate(TimeManager.Date newDate)

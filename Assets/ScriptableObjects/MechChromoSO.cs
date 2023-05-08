@@ -180,7 +180,7 @@ public class MechChromoSO : ScriptableObject
         return c;
     }
 
-    private void SetRank()
+    public void SetRank()
     {
         int sum = Atk.Sum() + Def.Sum() + Hp.Sum() + Spd.Sum();
         int index = Mathf.RoundToInt(sum / (Cap * 4));
