@@ -9573,6 +9573,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleStatDisplay (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 408154216}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ButtonToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2445829664396863674, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9845,6 +9877,38 @@ PrefabInstance:
     - target: {fileID: 850152120986868709, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
       propertyPath: m_Name
       value: BattleStatDisplay (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 408154216}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ButtonToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2445829664396863674, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12909,6 +12973,7 @@ GameObject:
   - component: {fileID: 1737503588}
   - component: {fileID: 1737503587}
   - component: {fileID: 1737503586}
+  - component: {fileID: 1737503590}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -13007,6 +13072,18 @@ MonoBehaviour:
           m_StringArgument: Main
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 408154216}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1737503588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13045,6 +13122,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737503584}
   m_CullTransparentMesh: 1
+--- !u!114 &1737503590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737503584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1777117687
 GameObject:
   m_ObjectHideFlags: 0
@@ -13840,6 +13930,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 408154216}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1894365157
@@ -15820,6 +15922,42 @@ PrefabInstance:
     - target: {fileID: 850152120986868709, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
       propertyPath: m_Name
       value: BattleStatDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 408154216}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ButtonToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 850152122916691031, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1847173629447160854, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3930014861720845927, guid: e1ac3d7f2e2a2fb419947977c53ba2e1, type: 3}
       propertyPath: m_AnchorMax.y

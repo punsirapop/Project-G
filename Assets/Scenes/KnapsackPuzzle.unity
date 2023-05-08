@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 633758304}
   - component: {fileID: 633758303}
   - component: {fileID: 633758302}
+  - component: {fileID: 633758306}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -930,6 +931,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633758300}
   m_CullTransparentMesh: 1
+--- !u!114 &633758306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633758300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &634027528
 GameObject:
   m_ObjectHideFlags: 0
