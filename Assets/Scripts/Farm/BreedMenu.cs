@@ -185,6 +185,7 @@ public class BreedMenu : MonoBehaviour
         myFarm.SetStatus(Status.BREEDING);
     }
 
+    [Serializable]
     public struct BreedPref
     {
         int elitismRate;
@@ -213,6 +214,7 @@ public class BreedMenu : MonoBehaviour
 
         public BreedPref Copy()
         {
+            Debug.Log("Copying BreedPref");
             return new BreedPref(ElitismRate, TypeParentSelect, KSelect,
                 TypeCrossover, MutationRate, BreedGen);
         }
@@ -228,6 +230,7 @@ public class BreedMenu : MonoBehaviour
         }
     }
 
+    [Serializable]
     public struct BreedInfo
     {
         FarmSO _MyFarm;
@@ -238,11 +241,19 @@ public class BreedMenu : MonoBehaviour
         public BreedInfo (FarmSO ThisFarm, List<Tuple<Properties, int>> ThisCurrentPref)
         {
             _MyFarm = ThisFarm;
-            _CurrentPref = ThisCurrentPref?.ToList();
+            if (ThisCurrentPref != null)
+            {
+                _CurrentPref = ThisCurrentPref.ToList();
+            }
+            else
+            {
+                _CurrentPref = new List<Tuple<Properties, int>>();
+            }
         }
 
         public BreedInfo Copy()
         {
+            Debug.Log("Copying BreedInfo");
             return new BreedInfo(MyFarm, CurrentPref);
         }
 

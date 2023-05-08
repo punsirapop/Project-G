@@ -174,7 +174,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
             // Increase cap until it's not S
             int extraCap = 0;
-            while (m.Rank == MechChromoSO.Ranks.S)
+            Debug.Log($"Highest Rank: {m.Rank}");
+            while (m.Rank >= MechChromoSO.Ranks.S)
             {
                 extraCap++;
                 MechChromoSO.Cap++;

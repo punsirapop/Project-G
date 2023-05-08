@@ -39,7 +39,7 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log($"Save Farms: {_SavedFarms.Length}");
+        // Debug.Log($"Save Farms: {_SavedFarms.Length}");
     }
 
     // check if path is ready to save
