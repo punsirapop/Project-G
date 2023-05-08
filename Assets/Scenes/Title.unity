@@ -735,7 +735,7 @@ MonoBehaviour:
           m_StringArgument: Button
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 848963498}
+      - m_Target: {fileID: 848963495}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: ResetGame
         m_Mode: 1
@@ -1017,9 +1017,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848963496}
+  - component: {fileID: 848963495}
   - component: {fileID: 848963494}
   - component: {fileID: 848963497}
-  - component: {fileID: 848963498}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -1040,6 +1040,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlays: []
+--- !u!114 &848963495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848963493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0005f8492a2e9742be2ed28be51bf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadTargets:
+  - {fileID: 11400000, guid: 876e4b200a9aa874aa5e1be139e3a758, type: 2}
+  - {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
+  - {fileID: 11400000, guid: 4f8d915d5ed36574d8144bc947902028, type: 2}
+  - {fileID: 11400000, guid: dde4abd4c56c85d41a13a1e94df28626, type: 2}
+  LoadBtn: {fileID: 881898061}
 --- !u!4 &848963496
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,23 +1085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &848963498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848963493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8b935c76c708b4798ecd492a22b54d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _SavedFarms:
-  - {fileID: 11400000, guid: fdfff9b3c4eeb2c4c9b12ba34dee5f19, type: 2}
-  - {fileID: 11400000, guid: a7164425b4c938246b9eb79e13d43a1f, type: 2}
-  - {fileID: 11400000, guid: be2e12ef1fffb0043879e2f11c0cb510, type: 2}
-  - {fileID: 11400000, guid: 0ef52e7d99919704baf6aaab136230a5, type: 2}
 --- !u!1 &881898059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1193,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 848963498}
+      - m_Target: {fileID: 848963495}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: LoadFromFile
         m_Mode: 1
@@ -1533,7 +1534,7 @@ MonoBehaviour:
           m_StringArgument: Button
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 848963498}
+      - m_Target: {fileID: 848963495}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: ResetGame
         m_Mode: 1
@@ -2201,10 +2202,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0a469f77fc85e842b42cbd565716c4a, type: 2}
   - {fileID: 11400000, guid: f24fa1eebf2d7794a8ac445d58733c31, type: 2}
   - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
-  InformationDatabaseHelper: []
+  InformationDatabaseHelper:
+  - {fileID: 11400000, guid: 0d987f66267bc634c8920ef24059b790, type: 2}
+  - {fileID: 11400000, guid: e9e63b2831d41cb4d8ca22f3a2c6b5b9, type: 2}
+  - {fileID: 11400000, guid: e8ff43be83aa3aa4d8282d20ed8e0b89, type: 2}
+  - {fileID: 11400000, guid: ba7cd7455c9712740a19621fbbee2ac8, type: 2}
+  - {fileID: 11400000, guid: 9387e492786a5f745bb58318471881c3, type: 2}
+  - {fileID: 11400000, guid: b1e8038d446defd43befa5ecbf4b2c0a, type: 2}
+  - {fileID: 11400000, guid: 0641adf89b688d049abf99069cedbd55, type: 2}
+  - {fileID: 11400000, guid: be98bbd97eb369744813a666db6e10a3, type: 2}
+  - {fileID: 11400000, guid: 2d41cc3be11c4754abd25612207cc6dd, type: 2}
   _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
   _SideQuestDatabaseHelper: {fileID: 11400000, guid: de0e248c7e48b8a489c7b12c66c2694f, type: 2}
-  _ShopHelper: {fileID: 11400000, guid: 61347d1626676fb46a43d207bdfe6014, type: 2}
+  _CapybaraDatabaseHelper: {fileID: 11400000, guid: 3a4c483bca78dcc479b97f9abbe9122b, type: 2}
 --- !u!4 &1421103299
 Transform:
   m_ObjectHideFlags: 0

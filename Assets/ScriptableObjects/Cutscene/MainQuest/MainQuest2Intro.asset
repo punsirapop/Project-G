@@ -16,7 +16,7 @@ MonoBehaviour:
   PassScore: 0
   SpeakerName: CatBot
   IsSkippable: 0
-  SkipNotifyText: The story will be skipped and can not be reviewed.
+  SkipNotifyText: 
   _Elements:
   - IsChoices: 0
     IsChecker: 0

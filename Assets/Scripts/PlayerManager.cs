@@ -65,6 +65,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // Shop
     public static ShopSO Shop;
     [SerializeField] private ShopSO _ShopHelper;
+    // Capybara
+    public static CapybaraDatabaseSO CapybaraDatabase;
+    [SerializeField] private CapybaraDatabaseSO _CapybaraDatabaseHelper;
 
     public enum FacilityType
     {
@@ -85,6 +88,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         SideQuestDatabase = _SideQuestDatabaseHelper;
         InformationDatabase = InformationDatabaseHelper;
         Shop = _ShopHelper;
+        CapybaraDatabase = _CapybaraDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -99,6 +103,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         _MainQuestDatabaseHelper = MainQuestDatabase;
         _SideQuestDatabaseHelper = SideQuestDatabase;
         InformationDatabaseHelper = InformationDatabase;
+        _CapybaraDatabaseHelper = CapybaraDatabase;
     }
 
     private void Awake()
@@ -147,6 +152,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         // Generate new side quest(s) by skipped time
         SideQuestDatabase.GenerateNewQuestByTime(CurrentDate, day);
         MainQuestDatabase.PassDay();
+        // Generate new capybara by skipped time
+        CapybaraDatabase.AddChanceByDays(day);
 
         // Restock shop
         Shop.CheckRestockTime(CurrentDate, day);

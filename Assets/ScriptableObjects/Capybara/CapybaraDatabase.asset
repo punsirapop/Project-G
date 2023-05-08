@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17ae0779090c934b875106c5b7db610, type: 3}
+  m_Name: CapybaraDatabase
+  m_EditorClassIdentifier: 
+  _SpawnChancePerDay: 0.1
+  _Capybaras:
+  - {fileID: 11400000, guid: e6492638e4f148544ae96553700e79aa, type: 2}
+  - {fileID: 11400000, guid: a5e994d0d37fef94bb576f56e2d1d90c, type: 2}
+  - {fileID: 11400000, guid: 3613a81ba5a6072499fe59bf92b318aa, type: 2}
+  - {fileID: 11400000, guid: 104e46ed3fab2e347912b1873d50d28b, type: 2}
+  - {fileID: 11400000, guid: 8f58ef0239e1cd34cad62efa652e1d33, type: 2}
+  - {fileID: 11400000, guid: ff8a1b2c1932dfd4188a028cced249b8, type: 2}
+  - {fileID: 11400000, guid: 2511344c089c2dc41b9795cc48acf3db, type: 2}
+  - {fileID: 11400000, guid: 23d298277b85d554fbf96aed0d960101, type: 2}
+  - {fileID: 11400000, guid: 4fdc1739da12a83449badc40a8d29e25, type: 2}
+  - {fileID: 11400000, guid: 208f01e09aba2c14fb5672b738cf868f, type: 2}
+  - {fileID: 11400000, guid: 5a44cd8dd5690a94ab90f4a94ddff299, type: 2}
+  - {fileID: 11400000, guid: d6014fb9b244ed14281ff9c9281d856c, type: 2}
+  - {fileID: 11400000, guid: df67a6e8e54f1a84cb74cd63fa0cc56c, type: 2}
+  - {fileID: 11400000, guid: 12468ca2546e1ca4392ff40b8d4fcad9, type: 2}
+  - {fileID: 11400000, guid: 85e1cafa886240c41a6be008d807740f, type: 2}
+  _ChanceNormal: 60
+  _ChanceRare: 30
+  _ChanceLegend: 10
