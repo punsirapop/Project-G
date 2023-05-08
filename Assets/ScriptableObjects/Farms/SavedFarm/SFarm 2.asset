@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
-  m_Name: Farm 1
+  m_Name: SFarm 2
   m_EditorClassIdentifier: 
-  _LockStatus: 2
-  _RequiredMoney: 1000
+  _LockStatus: 0
+  _RequiredMoney: 2000
   _RequiredObjects:
-  - {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}
-  - {fileID: 11400000, guid: 0db67a16a156fcd40b6e762f5d19fb17, type: 2}
-  - {fileID: 11400000, guid: b4302d65db2ff734cb8c99d4a96f5780, type: 2}
-  - {fileID: 11400000, guid: cde58f1be08ec6b4f8ad634257541ecb, type: 2}
-  - {fileID: 11400000, guid: a46a82a22fb3e764d9d8b566f19efd9f, type: 2}
-  _Name: Farm1
+  - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
+  _Name: Farm2
   _Generation: 0
   _Status: 0
   _BreedCostPerUnit: 5
@@ -36,8 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb9f9e5dec1da484f9572ab7833a7bf2, type: 2}
   - {fileID: 11400000, guid: bc687239a9458a0498c87560d0ef5247, type: 2}
   - {fileID: 11400000, guid: af51d53de15ecff4494d48ed359e4cce, type: 2}
-  _BG: {fileID: 21300000, guid: 4c7de59fbe19e07419d96307a3e43d1c, type: 3}
-  _MainNormal: {fileID: 21300000, guid: e26270fc5da3ca44bb2b66ef958c5582, type: 3}
-  _MainBroken: {fileID: 21300000, guid: b88dd47aa9ec78945b61b736c8f61c4d, type: 3}
-  _Locker: {fileID: 21300000, guid: fb877ff4c795eb6468e7f3de754f3b80, type: 3}
+  _BG: {fileID: 21300000, guid: 2664c5b7bcf290e43afe661583d9f570, type: 3}
+  _MainNormal: {fileID: 21300000, guid: db5ca562aeeb9824b912b071b9a4602f, type: 3}
+  _MainBroken: {fileID: 21300000, guid: 3618ed30f17fac34083142b4a374d64c, type: 3}
+  _Locker: {fileID: 21300000, guid: 702b4ad46a65da1448f976814a98d87f, type: 3}
   _MechChromos: []

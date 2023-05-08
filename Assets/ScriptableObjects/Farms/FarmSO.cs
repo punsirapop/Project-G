@@ -25,6 +25,7 @@ public class FarmSO : LockableObject
     private int _Condition;
     public int Condition => _Condition;
     [SerializeField] private float _BrokeChance;
+    public float BrokeChance => _BrokeChance;
 
     // Fixing puzzle
     [SerializeField] private JigsawPieceGroupSO[] _ObtainableJisawGroups;
@@ -80,6 +81,7 @@ public class FarmSO : LockableObject
     {
         Debug.Log("RESET FROM FARM");
         base.Reset();
+        if (Name == "Habitat") _LockStatus = LockableStatus.Unlock;
         _Generation = 0;
         _Status = 0;
         _Condition = 4;
@@ -102,27 +104,38 @@ public class FarmSO : LockableObject
         return _Name;
     }
 
-    /*
     // Set farm from value
     public void SetMe(FarmSO f)
     {
+        Debug.Log("FARM SET");
+        /*
+        _LockStatus = f._LockStatus;
+        _RequiredMoney = f.RequiredMoney;
+        _RequiredObjects = f.RequiredObjects.ToArray();
+        */
         _Name = f.Name;
         _Generation = f.Generation;
         _Status = f.Status;
+        _BreedCostPerUnit = f.BreedCostPerUnit;
+        _DiscountRatePerGen = f.DiscountRatePerGen;
         _Condition = f.Condition;
-        _BreedInfo = f.BreedInfo;
+        _BrokeChance = f.BrokeChance;
+        _ObtainableJisawGroups = f.ObtainableJisawGroups.ToArray();
+        _BreedPref = f.BreedPref.Copy();
+        _FitnessPref = f.FitnessPref?.ToList();
+        _BreedInfo = f.BreedInfo.Copy();
         _BreedGuage = f.BreedGuage;
         _GuagePerDay = f.GuagePerDay;
         _BreedGen = f.BreedGen;
-        _GenBeforeBreak = f.GenBeforeBreak;
+        _DaysBeforeBreak = f.DaysBeforeBreak;
+        /*
         _BG = f.BG;
         _MainNormal = f.MainNormal;
         _MainBroken = f.MainBroken;
         _Locker = f.Locker;
-        _MechChromos = new List<MechChromoSO>(f.MechChromos);
-        _BreedInfo = f._BreedInfo;
+        */
+        _MechChromos = f.MechChromos.ToList();
     }
-    */
 
     // Add new random chromosome to the current space
     public void AddChromo(MechChromoSO c)

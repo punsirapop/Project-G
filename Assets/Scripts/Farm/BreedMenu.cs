@@ -230,15 +230,20 @@ public class BreedMenu : MonoBehaviour
 
     public struct BreedInfo
     {
-        FarmSO myFarm;
-        public FarmSO MyFarm => myFarm;
-        List<Tuple<Properties, int>> currentPref;
-        public List<Tuple<Properties, int>> CurrentPref => currentPref;
+        FarmSO _MyFarm;
+        public FarmSO MyFarm => _MyFarm;
+        List<Tuple<Properties, int>> _CurrentPref;
+        public List<Tuple<Properties, int>> CurrentPref => _CurrentPref;
 
         public BreedInfo (FarmSO ThisFarm, List<Tuple<Properties, int>> ThisCurrentPref)
         {
-            myFarm = ThisFarm;
-            currentPref = ThisCurrentPref;
+            _MyFarm = ThisFarm;
+            _CurrentPref = ThisCurrentPref?.ToList();
+        }
+
+        public BreedInfo Copy()
+        {
+            return new BreedInfo(MyFarm, CurrentPref);
         }
 
         /*
@@ -255,13 +260,13 @@ public class BreedMenu : MonoBehaviour
 
             // ------- get fitness -------
             Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
-            foreach (MechChromoSO c in myFarm.MechChromos)
+            foreach (MechChromoSO c in _MyFarm.MechChromos)
             {
-                fv.Add(c, c.GetFitness(currentPref));
+                fv.Add(c, c.GetFitness(_CurrentPref));
             }
 
             // ------- get elites -------
-            for (int i = 0; i < Mathf.RoundToInt(fv.Count * myFarm.BreedPref.ElitismRate / 100); i++)
+            for (int i = 0; i < Mathf.RoundToInt(fv.Count * _MyFarm.BreedPref.ElitismRate / 100); i++)
             {
                 elites.Add(fv.ElementAt(i).Key);
             }
@@ -304,7 +309,7 @@ public class BreedMenu : MonoBehaviour
             // Debug.Log("0 Mechs in farm: " + myFarm.MechChromos.Count);
 
             // ------- clear farm -------
-            List<MechChromoSO> deleteMe = new List<MechChromoSO>(myFarm.MechChromos);
+            List<MechChromoSO> deleteMe = new List<MechChromoSO>(_MyFarm.MechChromos);
             // keep those elites to the next generation
             foreach (var item in elites)
             {
@@ -323,7 +328,7 @@ public class BreedMenu : MonoBehaviour
             foreach (var item in parentsEncoded)
             {
                 FarmManager.Instance.AddChromo(MyFarm, 1);
-                children.Add(myFarm.MechChromos.Last());
+                children.Add(_MyFarm.MechChromos.Last());
                 children.Last().SetChromosome(item);
 
                 // FarmManager.Instance.mechs.Last().GetComponent<MechDisplay>().SetChromo(children.Last());
