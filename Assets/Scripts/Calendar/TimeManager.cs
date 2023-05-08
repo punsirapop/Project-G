@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Pool;
+using System.Linq;
 
 public class TimeManager : MonoBehaviour
 {
@@ -109,8 +110,8 @@ public class TimeManager : MonoBehaviour
     // [SerializeField] TextMeshProUGUI _SkipDayLabel;
     // [SerializeField] Button[] _SkipDayAdjustors;
 
-    [SerializeField] Transform _CellHolder;
-    [SerializeField] GameObject _CellPrefab;
+    [SerializeField] Transform _CellHolder, _NotifHolder;
+    [SerializeField] GameObject _CellPrefab, _NotifPrefab;
     [SerializeField] GameObject[] _SkipButtons;
     [SerializeField] GameObject[] _MonthButtons;
     [SerializeField] TextMeshProUGUI _SkipLabel;
@@ -128,16 +129,16 @@ public class TimeManager : MonoBehaviour
 
         _Pool = new ObjectPool<GameObject>(
             () => Instantiate(_CellPrefab, _CellHolder),
-            mech =>
+            cell =>
             {
-                mech.SetActive(true);
-                mech.transform.SetAsLastSibling();
+                cell.SetActive(true);
+                cell.transform.SetAsLastSibling();
             },
-            mech =>
+            cell =>
             {
-                mech.SetActive(false);
+                cell.SetActive(false);
             },
-            mech => Destroy(mech),
+            cell => Destroy(cell),
             false, 28, 28
             );
 
@@ -183,6 +184,7 @@ public class TimeManager : MonoBehaviour
         {
             item.SetActive(false);
         }
+
         if (d.CompareDate(PlayerManager.CurrentDate) < 1)
         {
             _SkipButtons[0].SetActive(true);
@@ -195,6 +197,20 @@ public class TimeManager : MonoBehaviour
             _SkipLabel.text = String.Join(" ", "Skipping", i, (i > 1) ? "days" : "day");
             _SkipDate = d.DupeDate();
         }
+
+        foreach (Transform item in _NotifHolder)
+        {
+            Destroy(item.gameObject);
+        }
+
+        List<SideQuestSO> l = PlayerManager.SideQuestDatabase.GetAllAcquiredQuest().ToList();
+        if (l.Select(x => x.DueDate).Contains(d))
+        {
+            SideQuestSO sq = l.Find(x => x.DueDate.CompareDate(d) == 0);
+            TextMeshProUGUI[] t = Instantiate(_NotifPrefab, _NotifHolder).GetComponentsInChildren<TextMeshProUGUI>();
+            t[0].text = "Side Quest";
+            t[1].text = sq.Name;
+        } 
     }
 
     public void ResetCalendar()
