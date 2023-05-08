@@ -29,7 +29,14 @@ public class FactoryMain : MonoBehaviour
 
     void Start()
     {
-        _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        if (PlayerManager.FactoryDatabase[_FactoryIndex].Condition > 0)
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        }
+        else
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainBroken;
+        }
         _UnlockableLockerUI.GetComponent<Image>().sprite = _Locker;
         _LockedLockerUI.GetComponent<Image>().sprite = _Locker;
         // _MainLightBoard.GetComponent<Button>().onClick.AddListener(() => EnterKnapsackPuzzle());
