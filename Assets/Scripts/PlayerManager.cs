@@ -27,14 +27,14 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int CurrentFarmIndex = 1;
     public static FactorySO[] FactoryDatabase;
     public static FarmSO[] FarmDatabase;
-    public static DialogueSO[] DialogueDatabase;//New*************************************
+    public static DialogueSO[] DialogueDatabase;
     public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
     public static FarmSO CurrentFarmDatabase => FarmDatabase[CurrentFarmIndex];
     //public static DialogueSO CurrentDialogueDatabase => DialogueDatabase[CurrentDialogueIndex];//New*************************************
     public static DialogueSO CurrentDialogueDatabase;
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
     [SerializeField] private FarmSO[] FarmDatabaseHelper;
-    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;//New*************************************
+    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;
 
     // Facility fixing
     public static bool FixingFacility = false;
@@ -62,6 +62,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static SideQuestDatabaseSO SideQuestDatabase;
     [SerializeField] private SideQuestDatabaseSO _SideQuestDatabaseHelper;
 
+    // Shop
+    public static ShopSO Shop;
+    [SerializeField] private ShopSO _ShopHelper;
+
     public enum FacilityType
     {
         Factory,
@@ -80,6 +84,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         MainQuestDatabase = _MainQuestDatabaseHelper;
         SideQuestDatabase = _SideQuestDatabaseHelper;
         InformationDatabase = InformationDatabaseHelper;
+        Shop = _ShopHelper;
     }
 
     // Reflect the value back into editor
@@ -124,7 +129,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void OnChangeDate(Date d)
     {
         int day = d.CompareDate(CurrentDate);
-        Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
+        // Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
         for (int i = 0; i < day; i++)
         {
             foreach (var item in FarmDatabase)
@@ -142,6 +147,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         // Generate new side quest(s) by skipped time
         SideQuestDatabase.GenerateNewQuestByTime(CurrentDate, day);
         MainQuestDatabase.PassDay();
+
+        // Restock shop
+        Shop.CheckRestockTime(CurrentDate, day);
 
         CurrentDate = d.DupeDate();
 
