@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
   SpeakerName: CatBot
+  IsSkippable: 1
+  SkipNotifyText: The story will be skipped and can not be reviewed.
   _Elements:
   - IsChoices: 0
     IsChecker: 0
@@ -39,7 +40,24 @@ MonoBehaviour:
       Speaker: 0
       SentenceContent: It's nice.
       Illustration: {fileID: 0}
-    Choices: []
+    Choices:
+    - SentenceContent: It's nice
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: Glad to here that!
+        Illustration: {fileID: 0}
+      - Speaker: 10
+        SentenceContent: Don't forget to check out the <b>habitat</b>. All your monsters
+          are there.
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: Where are my monster?
+      ReponseData:
+      - Speaker: 10
+        SentenceContent: The newly received monster is sent to the <b>habitat</b>,
+          a place you can manage all monsters.
+        Illustration: {fileID: 0}
+      number: 0
     CheckerAnswer:
       Pass:
         Speaker: 0
@@ -52,8 +70,9 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 12
-      SentenceContent: Glad to here that.
+      Speaker: 9
+      SentenceContent: It's also a good place if you want to keep the monster away
+        from any breeding.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

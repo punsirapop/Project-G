@@ -2192,6 +2192,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9387e492786a5f745bb58318471881c3, type: 2}
   - {fileID: 11400000, guid: b1e8038d446defd43befa5ecbf4b2c0a, type: 2}
   - {fileID: 11400000, guid: 0641adf89b688d049abf99069cedbd55, type: 2}
+  - {fileID: 11400000, guid: be98bbd97eb369744813a666db6e10a3, type: 2}
+  - {fileID: 11400000, guid: 2d41cc3be11c4754abd25612207cc6dd, type: 2}
   _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
   _SideQuestDatabaseHelper: {fileID: 11400000, guid: de0e248c7e48b8a489c7b12c66c2694f, type: 2}
 --- !u!4 &1421103299
