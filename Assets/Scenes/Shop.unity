@@ -911,16 +911,48 @@ PrefabInstance:
       value: BuyButton (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1319885940}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 684151925}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7142567468227245064, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_Pivot.x
@@ -1681,12 +1713,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7202929342275607823, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
   m_PrefabInstance: {fileID: 1493156483}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1493156486}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdb39aebd2c484d42b3348bf7d9a122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1493156486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7202929342275607812, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
+  m_PrefabInstance: {fileID: 1493156483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1493156487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493156486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1494468655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,7 +1889,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7202929342275607823, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
   m_PrefabInstance: {fileID: 7202929341122835271}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7202929341122835272}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdb39aebd2c484d42b3348bf7d9a122c, type: 3}
@@ -1897,16 +1947,48 @@ PrefabInstance:
       value: BuyButton (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1319885940}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 684151925}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7142567468227245064, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_Pivot.x
@@ -2305,12 +2387,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7202929342275607823, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
   m_PrefabInstance: {fileID: 1652201350}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1652201353}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdb39aebd2c484d42b3348bf7d9a122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1652201353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7202929342275607812, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
+  m_PrefabInstance: {fileID: 1652201350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652201354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652201353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1801342370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,11 +2570,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2485,12 +2589,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1319885935}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 684151925}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SoundEffectHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016514654229691789, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7142567468227245064, guid: 685f49b724748094aad14fe8b36a7e82, type: 3}
       propertyPath: m_Pivot.x
@@ -2880,3 +3008,21 @@ PrefabInstance:
       objectReference: {fileID: 2442303909325343736}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
+--- !u!1 &7202929341122835272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7202929342275607812, guid: 63bbdc02b1e57834fac16ac993247c85, type: 3}
+  m_PrefabInstance: {fileID: 7202929341122835271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7202929341122835273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202929341122835272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
