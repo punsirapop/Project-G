@@ -351,6 +351,7 @@ public class MechChromoSO : ScriptableObject
     private void ResetMe()
     {
         IDCounter = 0;
+        Cap = 0;
     }
 
     private void SetElement()

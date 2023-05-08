@@ -2186,6 +2186,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
   _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
   _SideQuestDatabaseHelper: {fileID: 11400000, guid: de0e248c7e48b8a489c7b12c66c2694f, type: 2}
+  _ShopHelper: {fileID: 11400000, guid: 61347d1626676fb46a43d207bdfe6014, type: 2}
 --- !u!4 &1421103299
 Transform:
   m_ObjectHideFlags: 0
