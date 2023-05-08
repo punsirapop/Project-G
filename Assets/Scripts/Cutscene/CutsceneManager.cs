@@ -399,6 +399,9 @@ public class CutsceneManager : MonoBehaviour
     // Change to previous scene and show notificaion if it's a test
     private void _OnDialogueEnd()
     {
+        // Stop auto
+        _AutoToggle.isOn = false;
+        OnToggleAuto();
         Debug.Log("End of dialogue, trigger OnDialogueEnd of DialogueSO.");
         // Keep index within the array to prevent ArrayIndexOuTOfBound in unexpected situation
         _CurrentSentenceIndex = _CurrentDialogueSO.Elements.Length - 1;
