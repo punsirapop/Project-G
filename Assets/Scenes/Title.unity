@@ -586,7 +586,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 7e36ead27f39a144c99140e8697c840b, type: 3}
     SceneName: 
   - Name: ArenaExplosion
-    Clip: {fileID: 8300000, guid: 26f194bdbe1f1154ea83ad4925e857a6, type: 3}
+    Clip: {fileID: 8300000, guid: a388c475a5d22d24e958b92cdb6f93f0, type: 3}
     SceneName: 
   - Name: Pick
     Clip: {fileID: 8300000, guid: 9e3f7c29f9edf9e4c91dd9721f55aa86, type: 3}
@@ -605,6 +605,24 @@ MonoBehaviour:
     SceneName: 
   - Name: Spin
     Clip: {fileID: 8300000, guid: 44b9967be5a04464ca357a9d5cacfbf1, type: 3}
+    SceneName: 
+  - Name: TimeOut
+    Clip: {fileID: 8300000, guid: 84b82d942fd8e0b47a13a680408ebc08, type: 3}
+    SceneName: 
+  - Name: Win
+    Clip: {fileID: 8300000, guid: 7a86829e75d677c4d9769de7ac3f2cef, type: 3}
+    SceneName: 
+  - Name: Lose
+    Clip: {fileID: 8300000, guid: 5922630dc42361e48aec86728ff46e48, type: 3}
+    SceneName: 
+  - Name: Tie
+    Clip: {fileID: 8300000, guid: aae09ee55b7f74642966f8c5951fc865, type: 3}
+    SceneName: 
+  - Name: ArenaHurt
+    Clip: {fileID: 8300000, guid: 6e34e8919df2f87489929b36f477f6ad, type: 3}
+    SceneName: 
+  - Name: StartTimer
+    Clip: {fileID: 8300000, guid: 9d3ff18a1489b3147b5aef759d1416b2, type: 3}
     SceneName: 
 --- !u!4 &508172689
 Transform:
@@ -3193,7 +3211,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: d434086a88ab9f141ae3c7911c05b0e5, type: 3}
     Volume: 1
   - SceneName: Arena
-    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Clip: {fileID: 8300000, guid: a993953ef55379e4d87674d593035f8c, type: 3}
     Volume: 1
   - SceneName: Calendar
     Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
@@ -3203,7 +3221,7 @@ MonoBehaviour:
     Volume: 1
   - SceneName: Cutscene
     Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
-    Volume: 0.25
+    Volume: 0.5
   - SceneName: Habitat
     Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
     Volume: 1
@@ -3214,8 +3232,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
     Volume: 0.5
   - SceneName: QuestBoard
-    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
-    Volume: 1
+    Clip: {fileID: 8300000, guid: 131a9dfe9ec78e2468d0a9ec889205a5, type: 3}
+    Volume: 0.75
   - SceneName: ResearchLab
     Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
     Volume: 0.25
@@ -3223,11 +3241,11 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
     Volume: 0.5
   - SceneName: Shop
-    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Clip: {fileID: 8300000, guid: 377f53299999edc46b278dc10a58a5ad, type: 3}
     Volume: 1
   - SceneName: SideQuestSubmission
-    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
-    Volume: 1
+    Clip: {fileID: 8300000, guid: 131a9dfe9ec78e2468d0a9ec889205a5, type: 3}
+    Volume: 0.75
 --- !u!1 &1999783382
 GameObject:
   m_ObjectHideFlags: 0

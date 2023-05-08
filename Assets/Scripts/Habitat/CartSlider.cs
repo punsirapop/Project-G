@@ -57,10 +57,12 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             _CartChromo.Clear();
             _Storages[(int)_CartSlider.value].OnValueChange();
         }
+        SoundEffectManager.Instance.PlaySoundEffect("Pick");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         _InitVal = Mathf.Round(_CartSlider.value);
+        SoundEffectManager.Instance.PlaySoundEffect("Drop");
     }
 }
