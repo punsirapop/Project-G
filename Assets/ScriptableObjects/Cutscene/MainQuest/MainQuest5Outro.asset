@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
   SpeakerName: CatBot
+  IsSkippable: 1
+  SkipNotifyText: The story will be skipped and can not be reviewed.
   _Elements:
   - IsChoices: 0
     IsChecker: 0
@@ -38,7 +39,7 @@ MonoBehaviour:
     SentenceData:
       Speaker: 11
       SentenceContent: If your weapon seems to not improve anymore, it's always a
-        good idea to add up some <b>mutation</b>.
+        good idea to pour some <b>mutation</b>.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

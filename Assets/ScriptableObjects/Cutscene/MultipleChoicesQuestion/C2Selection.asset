@@ -167,19 +167,19 @@ MonoBehaviour:
     - SentenceContent: Based on their fitness value
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Based on their phenotype
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Randomly
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -225,19 +225,19 @@ MonoBehaviour:
     - SentenceContent: Yes
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: No
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Fitness Value is not used in any selection
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -293,21 +293,21 @@ MonoBehaviour:
     - SentenceContent: A method where parents are randomly selected
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A method where parents are selected based on their fitness
         value
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A method where K chromosomes are selected and the one with
         the best fitness value becomes a parent
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -368,19 +368,19 @@ MonoBehaviour:
         survival
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: No, fitness value does not affect the chance of survival
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It depends on the value of K
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -438,19 +438,19 @@ MonoBehaviour:
     - SentenceContent: Random selection
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Proportionate randomization
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Tournament-based selection
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -508,21 +508,21 @@ MonoBehaviour:
         value.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: The method of selecting parents by creating groups and choosing
         the best fitness value in that group.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The method of ranking chromosomes according to their fitness
         and assigning a new fitness value based on the rank.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -582,19 +582,19 @@ MonoBehaviour:
     - SentenceContent: It assigns a random fitness value.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: It assigns the same fitness value to all chromosomes.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It assigns a new fitness value based on the rank of each chromosome.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -651,20 +651,20 @@ MonoBehaviour:
     - SentenceContent: When the population size is too small.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: When there is a very high fitness chromosome among the low
         fitness population.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: When the mutation rate is too high.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -722,19 +722,19 @@ MonoBehaviour:
     - SentenceContent: It decreases the diversity of the population.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: It increases the diversity of the population.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It doesn't affect the population diversity.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:

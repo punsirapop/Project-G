@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5455b4b8dd4e8da4cbdfd813f93e3c4a, type: 3}
+  m_Name: Capybara6
+  m_EditorClassIdentifier: 
+  _Name: Furybara
+  _Rank: 1
+  _HeartColor: {r: 0, g: 0, b: 1, a: 1}
+  _RequiredTapCount: 50
+  _MoneyReward: 300
+  _Sprites:
+  - {fileID: 21300000, guid: ba61a78753943a04d9a8f475643702a5, type: 3}
+  - {fileID: 21300000, guid: 658fd06f7f1c5f0438794f87712435bf, type: 3}
+  _StepPerSecond: 2
+  _WalkedPixelPerSeconds: 50

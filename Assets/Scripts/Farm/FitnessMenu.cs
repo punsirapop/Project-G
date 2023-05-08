@@ -77,10 +77,13 @@ public class FitnessMenu : MonoBehaviour
             item.Deactivate();
         }
         var Temp = (myFarm.Status == Status.BREEDING) ? myFarm.BreedInfo.CurrentPref : myFarm.FitnessPref;
-        foreach (var item in Temp.Zip(Selectors, (a, b) => Tuple.Create(a, b)))
+        if (Temp != null)
         {
-            OpenSelector();
-            item.Item2.SetValue(item.Item1);
+            foreach (var item in Temp.Zip(Selectors, (a, b) => Tuple.Create(a, b)))
+            {
+                OpenSelector();
+                item.Item2.SetValue(item.Item1);
+            }
         }
     }
 

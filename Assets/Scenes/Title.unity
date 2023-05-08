@@ -534,6 +534,111 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -13}
   m_SizeDelta: {x: 831, y: 594}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &508172687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508172689}
+  - component: {fileID: 508172688}
+  m_Layer: 0
+  m_Name: SoundEffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &508172688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508172687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95742174ce8c28d4a8d01de1f4c5f34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundEffects:
+  - Name: Hover
+    Clip: {fileID: 8300000, guid: 6aa8b4b3c731dd649bb0cafcdb1c929d, type: 3}
+    SceneName: 
+  - Name: Button
+    Clip: {fileID: 8300000, guid: 4fea8b44efdfbf341a46e28740ab4c6d, type: 3}
+    SceneName: 
+  - Name: Button2
+    Clip: {fileID: 8300000, guid: 431f149ec3e293e40b1651acb6a9af44, type: 3}
+    SceneName: 
+  - Name: ButtonTab
+    Clip: {fileID: 8300000, guid: ad728bebc01b186488e257b0d212e5d3, type: 3}
+    SceneName: 
+  - Name: Error
+    Clip: {fileID: 8300000, guid: 07d021d6bf0c18b48bc216f2f98d5cf6, type: 3}
+    SceneName: 
+  - Name: Wrong
+    Clip: {fileID: 8300000, guid: 84b82d942fd8e0b47a13a680408ebc08, type: 3}
+    SceneName: 
+  - Name: ArenaShoot
+    Clip: {fileID: 8300000, guid: 7e36ead27f39a144c99140e8697c840b, type: 3}
+    SceneName: 
+  - Name: ArenaExplosion
+    Clip: {fileID: 8300000, guid: a388c475a5d22d24e958b92cdb6f93f0, type: 3}
+    SceneName: 
+  - Name: Pick
+    Clip: {fileID: 8300000, guid: 9e3f7c29f9edf9e4c91dd9721f55aa86, type: 3}
+    SceneName: 
+  - Name: Drop
+    Clip: {fileID: 8300000, guid: d01de1e6fdc01dd43934b0fbe73d5ada, type: 3}
+    SceneName: 
+  - Name: Fail
+    Clip: {fileID: 8300000, guid: 5c9f3eb5519cb84449cd066d5a59649c, type: 3}
+    SceneName: 
+  - Name: Pass
+    Clip: {fileID: 8300000, guid: b1982fddc9582b5419218cffe9841a71, type: 3}
+    SceneName: 
+  - Name: ButtonToggle
+    Clip: {fileID: 8300000, guid: 7e540c0127fe7114bb93417119bba0f0, type: 3}
+    SceneName: 
+  - Name: Spin
+    Clip: {fileID: 8300000, guid: 44b9967be5a04464ca357a9d5cacfbf1, type: 3}
+    SceneName: 
+  - Name: TimeOut
+    Clip: {fileID: 8300000, guid: 84b82d942fd8e0b47a13a680408ebc08, type: 3}
+    SceneName: 
+  - Name: Win
+    Clip: {fileID: 8300000, guid: 7a86829e75d677c4d9769de7ac3f2cef, type: 3}
+    SceneName: 
+  - Name: Lose
+    Clip: {fileID: 8300000, guid: 5922630dc42361e48aec86728ff46e48, type: 3}
+    SceneName: 
+  - Name: Tie
+    Clip: {fileID: 8300000, guid: aae09ee55b7f74642966f8c5951fc865, type: 3}
+    SceneName: 
+  - Name: ArenaHurt
+    Clip: {fileID: 8300000, guid: 6e34e8919df2f87489929b36f477f6ad, type: 3}
+    SceneName: 
+  - Name: StartTimer
+    Clip: {fileID: 8300000, guid: 9d3ff18a1489b3147b5aef759d1416b2, type: 3}
+    SceneName: 
+--- !u!4 &508172689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508172687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8996763, y: -0.35310155, z: -9.99245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584065136
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +723,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 848963495}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: ResetGame
@@ -902,6 +1019,7 @@ GameObject:
   - component: {fileID: 848963496}
   - component: {fileID: 848963495}
   - component: {fileID: 848963494}
+  - component: {fileID: 848963497}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -955,6 +1073,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848963497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848963493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &881898059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1169,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 848963494}
         m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -1307,6 +1449,7 @@ GameObject:
   - component: {fileID: 989925063}
   - component: {fileID: 989925062}
   - component: {fileID: 989925061}
+  - component: {fileID: 989925064}
   m_Layer: 5
   m_Name: GMStartButton
   m_TagString: Untagged
@@ -1379,6 +1522,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 848963495}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: ResetGame
@@ -1453,6 +1608,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989925059}
   m_CullTransparentMesh: 1
+--- !u!114 &989925064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989925059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1071384711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,8 +2202,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0a469f77fc85e842b42cbd565716c4a, type: 2}
   - {fileID: 11400000, guid: f24fa1eebf2d7794a8ac445d58733c31, type: 2}
   - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
+  InformationDatabaseHelper:
+  - {fileID: 11400000, guid: 0d987f66267bc634c8920ef24059b790, type: 2}
+  - {fileID: 11400000, guid: e9e63b2831d41cb4d8ca22f3a2c6b5b9, type: 2}
+  - {fileID: 11400000, guid: e8ff43be83aa3aa4d8282d20ed8e0b89, type: 2}
+  - {fileID: 11400000, guid: ba7cd7455c9712740a19621fbbee2ac8, type: 2}
+  - {fileID: 11400000, guid: 9387e492786a5f745bb58318471881c3, type: 2}
+  - {fileID: 11400000, guid: b1e8038d446defd43befa5ecbf4b2c0a, type: 2}
+  - {fileID: 11400000, guid: 0641adf89b688d049abf99069cedbd55, type: 2}
+  - {fileID: 11400000, guid: be98bbd97eb369744813a666db6e10a3, type: 2}
+  - {fileID: 11400000, guid: 2d41cc3be11c4754abd25612207cc6dd, type: 2}
   _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
   _SideQuestDatabaseHelper: {fileID: 11400000, guid: de0e248c7e48b8a489c7b12c66c2694f, type: 2}
+  _CapybaraDatabaseHelper: {fileID: 11400000, guid: 3a4c483bca78dcc479b97f9abbe9122b, type: 2}
 --- !u!4 &1421103299
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,6 +2713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1878417236}
   - component: {fileID: 1878417237}
+  - component: {fileID: 1878417238}
   m_Layer: 5
   m_Name: ButtonLayout
   m_TagString: Untagged
@@ -2590,6 +2770,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1878417238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878417235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1892841043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2867,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 848963497}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 848963494}
         m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
         m_MethodName: ExitGame
@@ -2859,6 +3064,199 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911093259}
   m_CullTransparentMesh: 1
+--- !u!1 &1976513503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976513505}
+  - component: {fileID: 1976513504}
+  - component: {fileID: 1976513506}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1976513504
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976513503}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1976513505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976513503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1976513506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976513503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0867640f58ba9479e5220c767f1712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicClips:
+  - SceneName: Title
+    Clip: {fileID: 8300000, guid: d1826570d52ae1244a2139d61d2f704e, type: 3}
+    Volume: 1
+  - SceneName: Main
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: Farm
+    Clip: {fileID: 8300000, guid: 06dcfba001530c047994ccb89182dbee, type: 3}
+    Volume: 1
+  - SceneName: Factory
+    Clip: {fileID: 8300000, guid: 1ed3c3988608b8443b11a473c5aa502d, type: 3}
+    Volume: 1
+  - SceneName: City
+    Clip: {fileID: 8300000, guid: d434086a88ab9f141ae3c7911c05b0e5, type: 3}
+    Volume: 1
+  - SceneName: Arena
+    Clip: {fileID: 8300000, guid: a993953ef55379e4d87674d593035f8c, type: 3}
+    Volume: 1
+  - SceneName: Calendar
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: CrossoverPuzzle
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: Cutscene
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.5
+  - SceneName: Habitat
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: HallOfFame
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
+  - SceneName: KnapsackPuzzle
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.5
+  - SceneName: QuestBoard
+    Clip: {fileID: 8300000, guid: 131a9dfe9ec78e2468d0a9ec889205a5, type: 3}
+    Volume: 0.75
+  - SceneName: ResearchLab
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.25
+  - SceneName: SelectionPuzzle
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 0.5
+  - SceneName: Shop
+    Clip: {fileID: 8300000, guid: 377f53299999edc46b278dc10a58a5ad, type: 3}
+    Volume: 1
+  - SceneName: SideQuestSubmission
+    Clip: {fileID: 8300000, guid: 131a9dfe9ec78e2468d0a9ec889205a5, type: 3}
+    Volume: 0.75
 --- !u!1 &1999783382
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,9 +27,19 @@ public class FactoryMain : MonoBehaviour
     private int _FactoryIndex;
     public FactorySO FactoryDatabase => PlayerManager.FactoryDatabase[_FactoryIndex];
 
+    // Sound Effect When Change scene
+    public string _SoundEffectName = "Button"; // Name of the sound effect to play
+
     void Start()
     {
-        _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        if (PlayerManager.FactoryDatabase[_FactoryIndex].Condition > 0)
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        }
+        else
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainBroken;
+        }
         _UnlockableLockerUI.GetComponent<Image>().sprite = _Locker;
         _LockedLockerUI.GetComponent<Image>().sprite = _Locker;
         // _MainLightBoard.GetComponent<Button>().onClick.AddListener(() => EnterKnapsackPuzzle());
@@ -69,6 +79,7 @@ public class FactoryMain : MonoBehaviour
     }
     public void EnterFactory()
     {
+        SoundEffectManager.Instance.PlaySoundEffect(_SoundEffectName);
         PlayerManager.CurrentFactoryIndex = _FactoryIndex;
         this.GetComponent<SceneMng>().ChangeScene("Factory");
     }

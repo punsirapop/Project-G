@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
+  m_Name: SFarm 2
+  m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 2000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
+  _Name: Farm2
+  _Generation: 0
+  _Status: 0
+  _BreedCostPerUnit: 5
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.1
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: ae9560d448e7dfe468cfd0b9a9b05515, type: 2}
+  - {fileID: 11400000, guid: 840ac150f75d4494d8c852da179f9fe0, type: 2}
+  - {fileID: 11400000, guid: df4ae9c208576e244b9e68788986f1d8, type: 2}
+  - {fileID: 11400000, guid: 992b470b634349f44ad50d60f19a6b23, type: 2}
+  - {fileID: 11400000, guid: a1870af97bc6fa04bbef34bed12b3939, type: 2}
+  - {fileID: 11400000, guid: 089af8bf11dc80b43943595b414be37d, type: 2}
+  - {fileID: 11400000, guid: fb9f9e5dec1da484f9572ab7833a7bf2, type: 2}
+  - {fileID: 11400000, guid: bc687239a9458a0498c87560d0ef5247, type: 2}
+  - {fileID: 11400000, guid: af51d53de15ecff4494d48ed359e4cce, type: 2}
+  _BG: {fileID: 21300000, guid: 2664c5b7bcf290e43afe661583d9f570, type: 3}
+  _MainNormal: {fileID: 21300000, guid: db5ca562aeeb9824b912b071b9a4602f, type: 3}
+  _MainBroken: {fileID: 21300000, guid: 3618ed30f17fac34083142b4a374d64c, type: 3}
+  _Locker: {fileID: 21300000, guid: 702b4ad46a65da1448f976814a98d87f, type: 3}
+  _MechChromos: []

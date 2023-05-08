@@ -168,20 +168,20 @@ MonoBehaviour:
         the highest fitness across generations without any change.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A technique that randomly selects chromosomes for preservation.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A technique that changes the elite chromosomes with the highest
         fitness across generations.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -243,19 +243,19 @@ MonoBehaviour:
     - SentenceContent: It ensures diversity in the population.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: It helps in random selection of chromosomes.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It preserves the best solutions across generations.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -311,19 +311,19 @@ MonoBehaviour:
     - SentenceContent: A mutation that swaps two random bits within a chromosome.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A mutation that flips a random number of bits within a chromosome.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A mutation that flips every bit within a chromosome randomly.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -381,19 +381,19 @@ MonoBehaviour:
     - SentenceContent: Bit string chromosomes.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Integer chromosomes.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Real-value chromosomes.
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -449,21 +449,21 @@ MonoBehaviour:
     - SentenceContent: Randomly flipping each bit in every chromosome
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Selecting a small number of chromosomes to mutate and flipping
         every bit in them
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Randomly selecting one or a few bits in each chromosome to
         flip
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -521,19 +521,19 @@ MonoBehaviour:
     - SentenceContent: It changes every bit to 1
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: It changes every bit to 0
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It flips each bit, changing 0 to 1 and 1 to 0
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -589,19 +589,19 @@ MonoBehaviour:
     - SentenceContent: Bit string chromosome
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Numeric chromosome
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Permutation chromosome
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -657,19 +657,19 @@ MonoBehaviour:
     - SentenceContent: It randomly changes the values of the selected chromosome
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: It changes the bits of a chromosome randomly
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It uses the old value as a boundary for a random new value
       ReponseData:
       - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:

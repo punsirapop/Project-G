@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,15 +11,19 @@ public class SideQuestSubmissionManager : MonoBehaviour
 
     // Quest information
     private static SideQuestSO _CurrentQuest;
-    public MechChromoSO SelectedMech { get; private set; }
+    public Tuple<MechChromoSO, int> SelectedMech { get; private set; }
     public float SimilarityRate { get; private set; }
     // Actual UI element
     [SerializeField] private GameObject _OneQuestDetailPanel;
     [SerializeField] private GameObject _SelectMechButton;
+    [SerializeField] private GameObject _MechDetailDisplay, _SelectLabel;
+    [SerializeField] private MechCanvasDisplay _MechDisplay;
+    [SerializeField] private TextMeshProUGUI _MechDetails;
     [SerializeField] private GameObject _SimilarityPanel;
     [SerializeField] private TextMeshProUGUI _SimilarityRateText;
     [SerializeField] private TextMeshProUGUI _ExpectedRewardMoneyText;
     [SerializeField] private GameObject _ConfirmButton;
+    [SerializeField] private QMechSelectionManager _SelectionManager;
 
     public void Awake()
     {
@@ -28,6 +33,7 @@ public class SideQuestSubmissionManager : MonoBehaviour
     public void Start()
     {
         _OneQuestDetailPanel.GetComponent<QuestDetailOverlay>().SetOverlay(_CurrentQuest);
+        SelectedMech = Tuple.Create<MechChromoSO, int>(null, -1);
         RenderPanel();
     }
 
@@ -37,10 +43,12 @@ public class SideQuestSubmissionManager : MonoBehaviour
         _CurrentQuest = newSideQuest;
     }
 
+    /*
     public void SetSelectedMech(MechChromoSO newSelectedMech)
     {
         SelectedMech = newSelectedMech;
     }
+    */
 
     public void SetSimilarityRate(float newSimilarityRate)
     {
@@ -69,6 +77,7 @@ public class SideQuestSubmissionManager : MonoBehaviour
             _SimilarityRateText.text = (SimilarityRate * 100).ToString("F2");
             _ExpectedRewardMoneyText.text = _CurrentQuest.CalculateExpectedRewardMoney().ToString();
         }
+        _RenderSelectButton();
         _RenderConfirmButton();
     }
 
@@ -106,11 +115,27 @@ public class SideQuestSubmissionManager : MonoBehaviour
         {
             _ConfirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Submit";
             // The button is interactable only if there is some mech selected
-            _ConfirmButton.GetComponent<Button>().interactable = (SelectedMech != null) ? true : false;
+            _ConfirmButton.GetComponent<Button>().interactable = (SelectedMech.Item1 != null) ? true : false;
+            _ConfirmButton.GetComponent<Button>().onClick.RemoveAllListeners();
             _ConfirmButton.GetComponent<Button>().onClick.AddListener(() => {
                 _CurrentQuest.CompleteQuest();
+                PlayerManager.FarmDatabase[SelectedMech.Item2].DelChromo(SelectedMech.Item1);
                 SceneMng.ReturnToPreviousScene();
             });
+        }
+    }
+
+    // Render mech selection button's appearance accroding to current selected mech
+    private void _RenderSelectButton()
+    {
+        _MechDetailDisplay.SetActive(SelectedMech.Item1 != null);
+        _SelectLabel.SetActive(SelectedMech.Item1 == null);
+        _MechDisplay.SetChromo(SelectedMech.Item1);
+        if (SelectedMech.Item1 != null)
+        {
+            _MechDetails.text = string.Join("\n\n", $"Head: {SelectedMech.Item1.Head}",
+                "Body: " + string.Join("/", SelectedMech.Item1.Body),
+                $"Acc: {SelectedMech.Item1.Acc}");
         }
     }
     #endregion
@@ -119,7 +144,15 @@ public class SideQuestSubmissionManager : MonoBehaviour
     {
         Debug.Log("Selecting mech to submit on side quest");
         // Opend selection panel and set _SelectedMech to something
-        // WIP
+        _SelectionManager.gameObject.SetActive(true);
+        _SelectionManager.Set(_CurrentQuest, SelectedMech);
         // Don't forget to refresh UI by calling RenderPanel() after _SelectedMech is set
+    }
+
+    public void UpdateSelection(Tuple<MechChromoSO, int> m)
+    {
+        SelectedMech = m;
+        SimilarityRate = m.Item2 == -1 ? 0f : m.Item1.CompareMechQuest(_CurrentQuest.WantedMech) / 100f;
+        RenderPanel();
     }
 }

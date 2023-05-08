@@ -15,7 +15,7 @@ MonoBehaviour:
   _LockStatus: 2
   _RequiredMoney: 0
   _RequiredObjects: []
-  _Name: 
+  _Name: Habitat
   _Generation: 0
   _Status: 0
   _BreedCostPerUnit: 0
@@ -26,8 +26,4 @@ MonoBehaviour:
   _MainNormal: {fileID: 0}
   _MainBroken: {fileID: 0}
   _Locker: {fileID: 0}
-  _MechChromos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _MechChromos: []

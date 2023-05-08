@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 2252847820509781476}
   - component: {fileID: 6503059103373382737}
   - component: {fileID: 221880250447026281}
+  - component: {fileID: 1947360499411330588}
   m_Layer: 5
   m_Name: MechButton
   m_TagString: Untagged
@@ -395,7 +396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2252847820509781479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947360499411330588}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6503059103373382737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +444,18 @@ MonoBehaviour:
   _Mech: {fileID: 7320158869122327979}
   _Name: {fileID: 2252847820121152318}
   _Fitness: {fileID: 6385629747923992423}
+--- !u!114 &1947360499411330588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2252847820509781483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6105429425401356716
 PrefabInstance:
   m_ObjectHideFlags: 0

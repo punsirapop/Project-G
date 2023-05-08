@@ -168,21 +168,21 @@ MonoBehaviour:
         its value.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: A problem where we have to choose the knapsack to put an item
         in.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: A problem where we have to pack items into multiple bags while
         maximizing their total value.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -244,21 +244,21 @@ MonoBehaviour:
         item for that knapsack.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Using a set of integers representing the weight and value
         of each item.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Using a set of integers representing the capacity and remaining
         space of the knapsack.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -318,21 +318,21 @@ MonoBehaviour:
         of each item.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Using a binary bit string representing the picking of each
         item for that knapsack.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: Using a set of integers representing the capacity and remaining
         space of the knapsack.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -393,19 +393,19 @@ MonoBehaviour:
     - SentenceContent: The total weight of the items in all knapsacks.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: The total area of the items in all knapsacks.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The total worth of the items in all knapsacks.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:
@@ -463,20 +463,20 @@ MonoBehaviour:
     - SentenceContent: The total weight of the items in that knapsack will be reduced.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: The fitness value of that knapsack will be reduced.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: The whole solution will be invalid and its fitness will be
         zero.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
+        SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 3
     CheckerAnswer:

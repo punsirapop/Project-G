@@ -101,6 +101,7 @@ public class ArenaMechDisplay : MechDisplay
         ArenaMechDisplay a = isAttack ? _DmgReceiver : _DmgReceiverS;
         a = receiver;
         g = Instantiate(_BulletPrefab, _BulletSpawn.position, Quaternion.identity);
+        SoundEffectManager.Instance.PlaySoundEffect("ArenaShoot");
         // Physics2D.IgnoreCollision(g.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         g.GetComponent<Bullet>().Set(receiver, new Color32
             ((byte)MySO.Body[0], (byte)MySO.Body[1], (byte)MySO.Body[2], 255),
@@ -141,6 +142,7 @@ public class ArenaMechDisplay : MechDisplay
     // Team - Index - BulletType
     public void Attacked(int[] attacker)
     {
+        SoundEffectManager.Instance.PlaySoundEffect("ArenaHurt");
         BattleManager.Instance.AttackReport(attacker,
             new int[] {_MyMech.IsAlly ? 0 : 1, _MyMech.Index});
     }
@@ -158,6 +160,7 @@ public class ArenaMechDisplay : MechDisplay
 
     public void Dead()
     {
+        SoundEffectManager.Instance.PlaySoundEffect("ArenaExplosion");
         StopAllCoroutines();
         _MyAnimator.SetBool("IsDead",true);
     }

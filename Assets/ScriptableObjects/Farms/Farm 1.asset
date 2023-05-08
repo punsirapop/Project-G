@@ -40,10 +40,4 @@ MonoBehaviour:
   _MainNormal: {fileID: 21300000, guid: e26270fc5da3ca44bb2b66ef958c5582, type: 3}
   _MainBroken: {fileID: 21300000, guid: b88dd47aa9ec78945b61b736c8f61c4d, type: 3}
   _Locker: {fileID: 21300000, guid: fb877ff4c795eb6468e7f3de754f3b80, type: 3}
-  _MechChromos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _MechChromos: []

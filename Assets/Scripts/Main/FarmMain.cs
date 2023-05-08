@@ -27,9 +27,19 @@ public class FarmMain : FarmMngFunc
     private int _FarmIndex;
     public FarmSO FarmDatabase => PlayerManager.FarmDatabase[_FarmIndex];
 
+    // Sound Effect When Change scene
+    public string _SoundEffectName = "Button"; // Name of the sound effect to play
+
     void Start()
     {
-        _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        if (PlayerManager.FarmDatabase[_FarmIndex].Condition > 0)
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        }
+        else
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainBroken;
+        }
         _UnlockableLockerUI.GetComponent<Image>().sprite = _Locker;
         _LockedLockerUI.GetComponent<Image>().sprite = _Locker;
         //_MainBackground.GetComponent<Button>().onClick.AddListener(() => EnterFarm());
@@ -80,6 +90,7 @@ public class FarmMain : FarmMngFunc
 
     public void EnterFarm()
     {
+        SoundEffectManager.Instance.PlaySoundEffect(_SoundEffectName);
         PlayerManager.CurrentFarmIndex = _FarmIndex;
         this.GetComponent<SceneMng>().ChangeScene("Farm");
     }

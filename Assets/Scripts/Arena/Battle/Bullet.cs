@@ -17,6 +17,21 @@ public class Bullet : MonoBehaviour
     {
         _BattlePackage = new int[3];
         _SpriteRenderer = GetComponent<SpriteRenderer>();
+        BattleManager.PhaseChange += OnPhaseChange;
+    }
+
+    private void OnDestroy()
+    {
+        BattleManager.PhaseChange -= OnPhaseChange;
+    }
+
+    private void OnPhaseChange(BattleManager.Phases p)
+    {
+        if (p == BattleManager.Phases.End)
+        {
+            StopAllCoroutines();
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

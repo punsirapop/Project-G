@@ -27,14 +27,14 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int CurrentFarmIndex = 1;
     public static FactorySO[] FactoryDatabase;
     public static FarmSO[] FarmDatabase;
-    public static DialogueSO[] DialogueDatabase;//New*************************************
+    public static DialogueSO[] DialogueDatabase;
     public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
     public static FarmSO CurrentFarmDatabase => FarmDatabase[CurrentFarmIndex];
     //public static DialogueSO CurrentDialogueDatabase => DialogueDatabase[CurrentDialogueIndex];//New*************************************
     public static DialogueSO CurrentDialogueDatabase;
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
     [SerializeField] private FarmSO[] FarmDatabaseHelper;
-    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;//New*************************************
+    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;
 
     // Facility fixing
     public static bool FixingFacility = false;
@@ -52,11 +52,22 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static JigsawPieceSO CurrentJigsawPiece;
     public static PuzzleType PuzzleToGenerate => CurrentJigsawPiece.HowToObtain;
 
+    // Information (tutorial), for the purpose of resetting
+    public static InformationSO[] InformationDatabase;
+    [SerializeField] private InformationSO[] InformationDatabaseHelper;
+
     // Quest
     public static MainQuestDatabaseSO MainQuestDatabase;
     [SerializeField] private MainQuestDatabaseSO _MainQuestDatabaseHelper;
     public static SideQuestDatabaseSO SideQuestDatabase;
     [SerializeField] private SideQuestDatabaseSO _SideQuestDatabaseHelper;
+
+    // Shop
+    public static ShopSO Shop;
+    [SerializeField] private ShopSO _ShopHelper;
+    // Capybara
+    public static CapybaraDatabaseSO CapybaraDatabase;
+    [SerializeField] private CapybaraDatabaseSO _CapybaraDatabaseHelper;
 
     public enum FacilityType
     {
@@ -75,6 +86,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         DialogueDatabase = DialogueDatabaseHelper;
         MainQuestDatabase = _MainQuestDatabaseHelper;
         SideQuestDatabase = _SideQuestDatabaseHelper;
+        InformationDatabase = InformationDatabaseHelper;
+        Shop = _ShopHelper;
+        CapybaraDatabase = _CapybaraDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -88,6 +102,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         DialogueDatabaseHelper = DialogueDatabase;
         _MainQuestDatabaseHelper = MainQuestDatabase;
         _SideQuestDatabaseHelper = SideQuestDatabase;
+        InformationDatabaseHelper = InformationDatabase;
+        _CapybaraDatabaseHelper = CapybaraDatabase;
     }
 
     private void Awake()
@@ -118,7 +134,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void OnChangeDate(Date d)
     {
         int day = d.CompareDate(CurrentDate);
-        Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
+        // Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
         for (int i = 0; i < day; i++)
         {
             foreach (var item in FarmDatabase)
@@ -136,12 +152,50 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         // Generate new side quest(s) by skipped time
         SideQuestDatabase.GenerateNewQuestByTime(CurrentDate, day);
         MainQuestDatabase.PassDay();
+        // Generate new capybara by skipped time
+        CapybaraDatabase.AddChanceByDays(day);
+
+        // Restock shop
+        Shop.CheckRestockTime(CurrentDate, day);
 
         CurrentDate = d.DupeDate();
 
         // Valdiate for checking expiration
         MainQuestDatabase.ValidateAllQuestStatus();
         SideQuestDatabase.ValidateAllQuestStatus();
+
+        // Set stat cap for mechs in case of reaching rank S
+        if (FarmDatabase.Any(x => x.MechChromos.Count > 0))
+        {
+            // Prepare stat caps
+            List<MechChromoSO> topAllies = new List<MechChromoSO>();
+
+            foreach (var item in FarmDatabase)
+            {
+                topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
+                    .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>());
+            }
+
+            MechChromoSO m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
+                .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>().First();
+
+            // Increase cap until it's not S
+            int extraCap = 0;
+            while (m.Rank == MechChromoSO.Ranks.S)
+            {
+                extraCap++;
+                MechChromoSO.Cap++;
+                m.SetRank();
+            }
+            // Set rank for every other mechs
+            if (extraCap > 0)
+            {
+                foreach (var item in topAllies)
+                {
+                    item.SetRank();
+                }
+            }
+        }
     }
 
     public static void SetCurrentDate(TimeManager.Date newDate)
@@ -188,11 +242,19 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
 
+    // Deduct Money, just that
+    // DANGER, USE WITH CAUTION
+    public static void ForceSpendMoney(int deductAmount)
+    {
+        Money -= deductAmount;
+    }
+
     // Gain money and return true if success, Otherwise, do nothing and return false
     public static bool GainMoneyIfValid(int gainAmount)
     {
         if (gainAmount >= 0)
         {
+            Debug.Log($"Giving Money {gainAmount}G");
             Money += gainAmount;
             return true;
         }

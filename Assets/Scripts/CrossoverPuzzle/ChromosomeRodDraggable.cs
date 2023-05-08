@@ -88,6 +88,7 @@ public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHan
         ChildrenManager.Instance.SetDraggedIndexes(sectionIndexes);
         this.GetComponent<CanvasGroup>().blocksRaycasts = false;    // Make other gameObject capture the raycasts (the mouse pointer)
         this.GetComponent<HorizontalLayoutGroup>().enabled = false;
+        SoundEffectManager.Instance.PlaySoundEffect("Pick");
     }
 
     // While dragging, change position in y axis of the dragged section to the same as the mouse pointer
@@ -116,5 +117,6 @@ public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHan
         }
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
         this.GetComponent<HorizontalLayoutGroup>().enabled = true;
+        SoundEffectManager.Instance.PlaySoundEffect("Drop");
     }
 }

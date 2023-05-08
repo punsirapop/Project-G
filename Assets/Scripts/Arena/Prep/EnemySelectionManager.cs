@@ -39,13 +39,13 @@ public class EnemySelectionManager : MonoBehaviour
 
         foreach (var item in PlayerManager.FarmDatabase)
         {
-            topAllies.AddRange(GetFitnessDict(item.MechChromos, 0)
+            topAllies.AddRange(GetStatFitnessDict(item.MechChromos, 0)
                 .OrderByDescending(x => x.Value[0]).Select(x => x.Key)
                 .Take(Mathf.Min(item.MechChromos.Count, 10)));
         }
 
         Debug.Log("Top Allies Count: " + topAllies.Count);
-        topAllies = GetFitnessDict(topAllies, 0).OrderByDescending(x => x.Value[0])
+        topAllies = GetStatFitnessDict(topAllies, 0).OrderByDescending(x => x.Value[0])
             .Select(x => x.Key).Cast<MechChromoSO>()
             .Take(Mathf.Min(topAllies.Count, 3)).ToList();
         int cap3 = Mathf.CeilToInt
@@ -77,11 +77,11 @@ public class EnemySelectionManager : MonoBehaviour
         }
 
         List<MechChromoSO> list = new List<MechChromoSO>();
-        list.Add(GetFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
+        list.Add(GetStatFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(0, GetFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
+        list.Insert(0, GetStatFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(1, GetFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
+        list.Insert(1, GetStatFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).First().Key);
 
         List<Tuple<MechChromoSO, WeaponChromosome>> a 
@@ -104,11 +104,11 @@ public class EnemySelectionManager : MonoBehaviour
         }
 
         list = new List<MechChromoSO>();
-        list.Add(GetFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
+        list.Add(GetStatFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(0, GetFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
+        list.Insert(0, GetStatFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(1, GetFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
+        list.Insert(1, GetStatFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).First().Key);
 
         a = new List<Tuple<MechChromoSO, WeaponChromosome>>();
@@ -164,7 +164,7 @@ public class EnemySelectionManager : MonoBehaviour
      * 1 - offensive
      * 2 - defensive
      */
-    private Dictionary<dynamic, List<float>> GetFitnessDict(List<MechChromoSO> m, int mode)
+    public static Dictionary<dynamic, List<float>> GetStatFitnessDict(List<MechChromoSO> m, int mode)
     {
         List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
         var dict = new Dictionary<dynamic, List<float>>();
