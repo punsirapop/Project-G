@@ -103,7 +103,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 8
       SentenceContent: '> The Test is starting . . .'
       Illustration: {fileID: 0}
     Choices:
