@@ -10,8 +10,9 @@ public class DialogueSO : ScriptableObject
 {
     [SerializeField] public int[] ChoiceAnswers;
     [SerializeField] public int PassScore;
-    [SerializeField] public string ChangeScene;
     [SerializeField] public string SpeakerName;
+    [SerializeField] public bool IsSkippable;
+    [SerializeField] [TextArea] public string SkipNotifyText;
     [SerializeField] private DialogueElement[] _Elements;
     public DialogueElement[] Elements => _Elements;
 }

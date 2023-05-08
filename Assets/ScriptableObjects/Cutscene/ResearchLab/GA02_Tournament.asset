@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: title
   SpeakerName: CatBot
+  IsSkippable: 1
+  SkipNotifyText: The research result will be kept in the Research Lab.
   _Elements:
   - IsChoices: 0
     IsChecker: 0

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 
   PassScore: 0
-  ChangeScene: 
   SpeakerName: CatBot
+  IsSkippable: 0
+  SkipNotifyText: The story will be skipped and can not be reviewed.
   _Elements:
   - IsChoices: 0
     IsChecker: 0
