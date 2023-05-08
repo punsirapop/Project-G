@@ -52,6 +52,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static JigsawPieceSO CurrentJigsawPiece;
     public static PuzzleType PuzzleToGenerate => CurrentJigsawPiece.HowToObtain;
 
+    // Information (tutorial), for the purpose of resetting
+    public static InformationSO[] InformationDatabase;
+    [SerializeField] private InformationSO[] InformationDatabaseHelper;
+
     // Quest
     public static MainQuestDatabaseSO MainQuestDatabase;
     [SerializeField] private MainQuestDatabaseSO _MainQuestDatabaseHelper;
@@ -75,6 +79,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         DialogueDatabase = DialogueDatabaseHelper;
         MainQuestDatabase = _MainQuestDatabaseHelper;
         SideQuestDatabase = _SideQuestDatabaseHelper;
+        InformationDatabase = InformationDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -88,6 +93,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         DialogueDatabaseHelper = DialogueDatabase;
         _MainQuestDatabaseHelper = MainQuestDatabase;
         _SideQuestDatabaseHelper = SideQuestDatabase;
+        InformationDatabaseHelper = InformationDatabase;
     }
 
     private void Awake()
