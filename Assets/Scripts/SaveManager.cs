@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public static SaveManager Instance;
+    // public static SaveManager Instance;
 
     // call when reset the game
     public static event Action OnReset;
@@ -23,7 +23,7 @@ public class SaveManager : MonoBehaviour
     }
 
     // SOs to save farms info
-    // [SerializeField] protected FarmSO[] savedFarms;
+    [SerializeField] protected FarmSO[] _SavedFarms;
 
     // json save path
     string path = "";
@@ -35,6 +35,12 @@ public class SaveManager : MonoBehaviour
     string mechResourcePath = "Mechs";
     string sideQuestAssetsPath = Path.Combine("Assets", "Resources", "SideQuest");
     string sideQuestResourcePath = "SideQuest";
+
+
+    private void Awake()
+    {
+        Debug.Log($"Save Farms: {_SavedFarms.Length}");
+    }
 
     // check if path is ready to save
     protected bool SaveReady()
@@ -91,12 +97,11 @@ public class SaveManager : MonoBehaviour
         streamWriter.Close();
 
         // ---------- Save scriptable objects ----------
-        /*
-        for (int i = 0; i < savedFarms.Length; i++)
+        for (int i = 0; i < 4; i++)
         {
-            savedFarms[i].SetMe(PlayerManager.FarmDatabase[i]);
+            _SavedFarms[i].SetMe(PlayerManager.FarmDatabase[i]);
         }
-        */
+        
         // ---------- Save objects ----------
         // Mechs
         MechChromoSO[] loaded = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToArray();
@@ -144,13 +149,11 @@ public class SaveManager : MonoBehaviour
         LoadJson(loadData);
 
         // ---------- Load scriptable objects ----------
-        /*
-        for (int i = 0; i < savedFarms.Length; i++)
+        for (int i = 0; i < _SavedFarms.Length; i++)
         {
-            PlayerManager.FarmDatabase[i].SetMe(savedFarms[i]);
+            PlayerManager.FarmDatabase[i].SetMe(_SavedFarms[i]);
         }
-        Debug.Log("Data Loaded");
-        */
+        
     }
 
     // trigger reset event
