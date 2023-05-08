@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd4759eb2e644a4d9aa0ae0ac5c9708, type: 3}
+  m_Name: MainQuest6
+  m_EditorClassIdentifier: 
+  _Name: I've got you in my sights.
+  _BriefDescription: Spotting the enemy's weakness.
+  _FullDescription: Even the strongest warrior has a weak point. Why don't you try
+    spotting that point using the scouter?
+  _QuestStatus: 4
+  _DueDate:
+    year: 0
+    month: 0
+    day: 0
+  _IntroDialogue: {fileID: 11400000, guid: 3867a53c1b263f548a6b54aa001509c0, type: 2}
+  _OutroDialogue: {fileID: 0}
+  _RequireObject: {fileID: 11400000, guid: 4b594bba615eb124899c41614595b652, type: 2}
+  _RewardMoney: 3000
+  _RewardMechs: []

@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 4874059666949711903}
   - component: {fileID: 4874059666949711902}
   - component: {fileID: 4529382428317461241}
+  - component: {fileID: 3564782863667922649}
+  - component: {fileID: 6617157161478361180}
   m_Layer: 5
   m_Name: ChromosomeRodToggle
   m_TagString: Untagged
@@ -235,6 +237,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 145777da9bb490047860917b16d85a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3564782863667922649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874059666949711896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6617157161478361180}
+          m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Button
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6617157161478361180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874059666949711896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2563a7ccb0dd54db2f0c73f495c4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6096653511312570099

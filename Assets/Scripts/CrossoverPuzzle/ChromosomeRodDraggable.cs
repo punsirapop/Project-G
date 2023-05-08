@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
@@ -85,8 +86,8 @@ public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHan
         int[] sectionIndexes = _GetSectionIndexes();
         _DraggedSection = _GetClickedSection(sectionIndexes[0], sectionIndexes[1]);
         ChildrenManager.Instance.SetDraggedIndexes(sectionIndexes);
-        // Make other gameObject capture the raycasts (the mouse pointer)
-        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        this.GetComponent<CanvasGroup>().blocksRaycasts = false;    // Make other gameObject capture the raycasts (the mouse pointer)
+        this.GetComponent<HorizontalLayoutGroup>().enabled = false;
     }
 
     // While dragging, change position in y axis of the dragged section to the same as the mouse pointer
@@ -114,5 +115,6 @@ public class ChromosomeRodDraggable : MonoBehaviour, IBeginDragHandler, IDragHan
             dragged.position = new Vector3(dragged.transform.position.x, _OriginYPosition, 0);
         }
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        this.GetComponent<HorizontalLayoutGroup>().enabled = true;
     }
 }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd4759eb2e644a4d9aa0ae0ac5c9708, type: 3}
+  m_Name: MainQuest5
+  m_EditorClassIdentifier: 
+  _Name: Survival of the Fittest
+  _BriefDescription: To win the fight is to remain alive!
+  _FullDescription: If you want to win the fight, the first thing you need to do
+    is survive. Build a factory and forge the armor. It's what you need.
+  _QuestStatus: 0
+  _DueDate:
+    year: 0
+    month: 0
+    day: 0
+  _IntroDialogue: {fileID: 11400000, guid: dd78e1edfdffe014e82fcaaae6c7e267, type: 2}
+  _OutroDialogue: {fileID: 11400000, guid: 46db3e5df998aa54dab3704b4839269b, type: 2}
+  _RequireObject: {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
+  _RewardMoney: 2000
+  _RewardMechs: []

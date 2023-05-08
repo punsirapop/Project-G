@@ -1,0 +1,366 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: MainQuest2Intro
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Welcome back!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let's test some quick math here. If X + 1 = 2, what is X?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let's test some quick math here. If X + 1 = 2, what is X?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 1
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: Indeed.
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: An alphabet?
+      ReponseData:
+      - Speaker: 14
+        SentenceContent: Ah... That... Umm...
+        Illustration: {fileID: 0}
+      - Speaker: 13
+        SentenceContent: Don't sure you are the right person anymore...
+        Illustration: {fileID: 0}
+      - Speaker: 0
+        SentenceContent: I'm just kidding! It's 1.
+        Illustration: {fileID: 0}
+      - Speaker: 8
+        SentenceContent: Yeah. Finally.
+        Illustration: {fileID: 0}
+      - Speaker: 4
+        SentenceContent: Anyway.
+        Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: What if I tell you that X + Y = 2? Now, what're X and Y?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 1
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: Indeed.
+        Illustration: {fileID: 0}
+      number: 0
+    - SentenceContent: An alphabet?
+      ReponseData:
+      - Speaker: 14
+        SentenceContent: Ah... That... Umm...
+        Illustration: {fileID: 0}
+      - Speaker: 13
+        SentenceContent: Don't sure you are the right person anymore...
+        Illustration: {fileID: 0}
+      - Speaker: 0
+        SentenceContent: I'm just kidding! It's 1.
+        Illustration: {fileID: 0}
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 21
+      SentenceContent: What if I tell you that X + Y = 2? Now, what're X and Y?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 1 and 1 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: 0 and 2 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: 0.5 and 1.5 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: -1 and 3 ?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: The answer is...all correct!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 1 and 1 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: 0 and 2 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: 0.5 and 1.5 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: -1 and 3 ?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Next, If I tell you that A + B + C + D + E + F + G + I + ...
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: 1 and 1 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: 0 and 2 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: 0.5 and 1.5 ?
+      ReponseData: []
+      number: 0
+    - SentenceContent: -1 and 3 ?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Next, If I tell you that A + B + C + D + E + F + G + I + ...
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: WAIT! WHAT? WHY??
+      ReponseData: []
+      number: 0
+    - SentenceContent: Where is the H?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: Get the point?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: WAIT WAIT WAIT
+      ReponseData: []
+      number: 0
+    - SentenceContent: Where is the H?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: Imagine there is an enormous problem that has so many answers
+        like this.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: WAIT WAIT WAIT
+      ReponseData: []
+      number: 0
+    - SentenceContent: Where is the H?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 3
+      SentenceContent: It would be a real pain in the ass to find out all possible
+        answers, especially the good ones.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: WAIT WAIT WAIT
+      ReponseData: []
+      number: 0
+    - SentenceContent: Where is the H?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: And here it comes! The Genetic Algorithm!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: It's a tool for dealing with such problems, making things
+        better, and only your tool for creating powerful monsters.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: So, your next mission is simple, research <b>The Flow of Genetic
+        Algorithm</b>.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Just hold on and try to get into the algorithm. The monster
+        and weapon are awaiting you!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

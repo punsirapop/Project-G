@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Header: Flip Bit Mutation
   _Image: {fileID: 21300000, guid: 5fd2aa3d554ecd94ca029537b559c897, type: 3}
-  _Description: Bit flip mutation will randomly select the small number of chromosomes
+  _Description: Flip bit mutation will randomly select the small number of chromosomes
     to mutate from the population. Every bit in the selected chromosome will be flipped
     just like the way the bit flip mutation does. Change 0 to 1, and change 1 to
     0.

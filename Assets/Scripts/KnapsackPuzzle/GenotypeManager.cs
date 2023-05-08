@@ -20,7 +20,7 @@ public class GenotypeManager : MonoBehaviour
     private FactorySO[] _FactoriesData;
     private int _BitblockPresetIndex;
     private bool _Resettable;
-    private int[] _MapMask = new int[10];
+    private int[] _NotMapMask = new int[10];
 
     void Awake()
     {
@@ -98,17 +98,68 @@ public class GenotypeManager : MonoBehaviour
     #endregion
 
     // Create mask using for auto-generating mapping (item-knapsack) on the bitblock
-    public void CreateMapMask(int mapLenght, float mapRatio)
+    public void CreateNotMapMask(int presetIndex, int blankBitCount)
     {
-        _MapMask = new int[mapLenght];
+        int mapLenght = _FactoriesData[presetIndex].Items.Length;
+        int knapsackCount = _FactoriesData[presetIndex].Knapsacks.Length;
+        _NotMapMask = new int[mapLenght];
         for (int i = 0; i < mapLenght; i++)
         {
-            if (Random.Range(0f, 1f) <= mapRatio)
-            {
-                _MapMask[i] = 1;
-            }
+            // -1 mean create auto-mapping for this BitBlock representing this item
+            _NotMapMask[i] = -1;
+        }
+        // Set position as blank (no auto-mapping)
+        int[] randomIndex = _RandomChoices(_GenerateRandomIndexPool(mapLenght), blankBitCount);
+        foreach (int indexToBlank in randomIndex)
+        {
+            // Calculate which knapsack the BitBlock not create auto-mapping for
+            int kIndex = Random.Range(0, knapsackCount);
+            // The value directly is a kanpsack index from the preset (begin from 0)
+            _NotMapMask[indexToBlank] = kIndex;
         }
     }
+
+    #region Random index for the exact given count, copy from BitChromoDatabase
+    // Return a random pool for the index int bitstring[] for _RandomChoices purpose
+    private int[] _GenerateRandomIndexPool(int poolLenght)
+    {
+        int[] randomPool = new int[poolLenght];
+        for (int i = 0; i < randomPool.Length; i++)
+        {
+            randomPool[i] = i;
+        }
+        return randomPool;
+    }
+
+    // Return a number of random distinct value from the randomPool equal to the number of randomCount
+    private int[] _RandomChoices(int[] randomPool, int randomCount)
+    {
+        if (randomPool.Length < randomCount)
+        {
+            return null;
+        }
+        else if (randomPool.Length == randomCount)
+        {
+            return randomPool;
+        }
+        int[] currentRandomPool = randomPool;
+        int[] resultPool = new int[randomCount];
+        for (int i = 0; i < randomCount; i++)
+        {
+            // Get new random value in pool
+            int newRandomIndex = Random.Range(0, currentRandomPool.Length);
+            resultPool[i] = currentRandomPool[newRandomIndex];
+            // Remove such value from the pool
+            int[] newRandomPool = new int[currentRandomPool.Length - 1];
+            for (int j = 0; j < currentRandomPool.Length - 1; j++)
+            {
+                newRandomPool[j] = (j >= newRandomIndex) ? currentRandomPool[j + 1] : currentRandomPool[j];
+            }
+            currentRandomPool = newRandomPool;
+        }
+        return resultPool;
+    }
+    #endregion
 
     // Instantiate BitBlock according to the preset and given bitstring (if any)
     public void InstantiateBitBlocks(int presetIndex=-1, int[][] bitstring=null)
@@ -131,8 +182,12 @@ public class GenotypeManager : MonoBehaviour
                 // Create actual Bitblock object in the game
                 GameObject newBitBlock = Instantiate(_BitBlockPrefab);
                 newBitBlock.transform.SetParent(_BitHolder);
-                // Set mapping for the bit where map mask is 1
-                if (_MapMask[iIndex] == 1)
+                // Set mapping for the bit where NotMapMask is not equal to kIndex
+                if (_NotMapMask[iIndex] == kIndex)
+                {
+                    // Do nothing
+                }
+                else
                 {
                     newBitBlock.GetComponent<BitBlock>().SetKnapsack(knapsackPreset[kIndex].Name);
                     newBitBlock.GetComponent<BitBlock>().SetItem(itemPreset[iIndex].Name);

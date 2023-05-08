@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ScriptableObjects/Cutscene/TestDialogue.asset.meta
 guid: 61445812af0e30647bc2678901426198
+========
+guid: d79a51485ab8cbf498ee3eb3b128037f
+>>>>>>>> main:Assets/ScriptableObjects/Cutscene/Test3.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

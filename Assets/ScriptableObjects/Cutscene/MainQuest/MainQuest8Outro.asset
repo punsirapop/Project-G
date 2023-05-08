@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: MainQuest8Outro
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: Here it comes the end of the game! Hooray!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 18
+      SentenceContent: You've already researched and built all things.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: With your hard work, our Project-G for defending the world
+        from the alien has come to an end.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 12
+      SentenceContent: Thanks for such a wonderful performance!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: Until we reunite to fight another day. Goodbye!
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

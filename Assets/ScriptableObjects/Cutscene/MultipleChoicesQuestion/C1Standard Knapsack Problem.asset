@@ -1,0 +1,549 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: C1Standard Knapsack Problem
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 0200000002000000030000000200000002000000
+  PassScore: 3
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 12
+      SentenceContent: Hi there! This is a test for gathering Jigsaw Piece
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: The topic for this test is . . .
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 18
+      SentenceContent: <b>Standard Knapsack Problem !!!</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 0
+      SentenceContent: '> The Test is starting . . .'
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: Initiate <b>Test Mode</b> . . .
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 1. What is the Knapsack problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 1. What is the Knapsack problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A problem that deals with packing items in a bag while maximizing
+        the weight of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A problem that deals with packing items in a bag while maximizing
+        the value of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A problem that deals with unpacking items from a bag while
+        minimizing the value of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 2. How is the solution for the Knapsack problem represented?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A problem that deals with packing items in a bag while maximizing
+        the weight of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A problem that deals with packing items in a bag while maximizing
+        the value of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A problem that deals with unpacking items from a bag while
+        minimizing the value of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 2. How is the solution for the Knapsack problem represented?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Using real-valued numbers.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Using binary bit string
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Using integer numbers.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 3. What is the fitness of the chromosome for the Knapsack
+        problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Using real-valued numbers.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Using binary bit string
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Using integer numbers.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 3. What is the fitness of the chromosome for the Knapsack
+        problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A summation of the weight of the picked items.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A multiplication of the weight and value of the picked items.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A summation of the value of the picked items.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 4. What is the constraint of the Knapsack problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A summation of the weight of the picked items.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A multiplication of the weight and value of the picked items.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A summation of the value of the picked items.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 4. What is the constraint of the Knapsack problem?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The summation of value must be less than the maximum value
+        of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The summation of weight must be less than the maximum weight
+        of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The minimum value of the bag must be achieved.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: 5. What happens to the fitness value if the solution exceeds
+        the maximum weight of the bag?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The summation of value must be less than the maximum value
+        of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The summation of weight must be less than the maximum weight
+        of the bag.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The minimum value of the bag must be achieved.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 5. What happens to the fitness value if the solution exceeds
+        the maximum weight of the bag?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The fitness value becomes negative.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value becomes zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The fitness value becomes undefined.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The fitness value becomes negative.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value becomes zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The fitness value becomes undefined.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The fitness value becomes negative.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The fitness value becomes zero.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: The fitness value becomes undefined.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 5... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 5... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}

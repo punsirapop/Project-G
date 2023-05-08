@@ -12,27 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
   m_Name: Factory2
   m_EditorClassIdentifier: 
+  _LockStatus: 1
+  _RequiredMoney: 2000
+  _RequiredObjects:
+  - {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
+  - {fileID: 11400000, guid: 8eadf4947352b8f42b5987af72e436ce, type: 2}
+  - {fileID: 11400000, guid: c26f77e68a6bb864dbe183d5cb91ce09, type: 2}
+  _FactoryIndex: 1
   _Name: Factory 2
-  _Description: This should be a Scouter for Snipe/Pierce
+  _Description: Even the strongest warrior has a weak point. Why don't you try spotting
+    that point using the scouter? A good scouter should be small and lightweight.
+    And making a scouter under so many limitations can be solved using the idea of
+    the Multidimensional Knapsack Problem.
   _Generation: 0
-  _Status: IDLE
-  _WeaponPrefix: SC
-  _WeaponIdFormat: 000
+  _Status: 0
+  _BreedCostPerUnit: 10
+  _DiscountRatePerGen: 0.1
+  _BrokeChance: 0.2
+  _ObtainableJisawGroups:
+  - {fileID: 11400000, guid: 5d489673b0e0bde43ba9d6d894a60813, type: 2}
+  - {fileID: 11400000, guid: a1870af97bc6fa04bbef34bed12b3939, type: 2}
   _Floor: {fileID: 21300000, guid: bd38f85026904654894dc5cf46457abe, type: 3}
   _Conveyor: {fileID: 21300000, guid: 39947b0b6a51059478e7a22418d401a7, type: 3}
   _Border: {fileID: 21300000, guid: 729a22744bd0ba24a97709cc9b110666, type: 3}
-  _WeaponImages:
-  - {fileID: 21300000, guid: 8d0c44954cb8c1f4281a1a2b26a34029, type: 3}
-  - {fileID: 21300000, guid: 987b4eb0d066a7041be9354511934acd, type: 3}
-  - {fileID: 21300000, guid: 8647f436193ce3441b7e65ec62621082, type: 3}
-  - {fileID: 21300000, guid: b676bc3bff945084b8c1975c83135d26, type: 3}
-  - {fileID: 21300000, guid: c0444cfa08034b84091cbc60c8ade62a, type: 3}
-  _WeaponBigImages:
-  - {fileID: 21300000, guid: 96a764c7cb8f115499b9d3d1eec25d6f, type: 3}
-  - {fileID: 21300000, guid: e280751df211b204b92809cb37e51551, type: 3}
-  - {fileID: 21300000, guid: d686839b94b700343afc924126040f37, type: 3}
-  - {fileID: 21300000, guid: 7a9c2136542572f46a658772b0bb0ff4, type: 3}
-  - {fileID: 21300000, guid: 2598bda9e0f696f4f95f6629ea5a352f, type: 3}
   _MainNormal: {fileID: 21300000, guid: 4ca914526a24bde4fb1bea2b44fe5549, type: 3}
   _MainBroken: {fileID: 21300000, guid: 070a9964a2729c94dbbb93522573a62e, type: 3}
   _Locker: {fileID: 21300000, guid: 7caa7eb7505e0c54c918c72e97d5924c, type: 3}
@@ -52,3 +54,50 @@ MonoBehaviour:
   _MaxFitness: 50
   _ChromoDatabase: {fileID: 11400000, guid: e479ac6f760acbd4ab425faeb3c2480f, type: 2}
   _PopulationCount: 100
+  _WeaponPrefix: SC
+  _WeaponIdFormat: 000
+  _ProducedWeaponMode1: 2
+  _ProducedWeaponMode2: 3
+  _MinCooldownSeconds: 5
+  _MaxCooldownSeconds: 10
+  _WeaponRankConfigDesc:
+  - Rank: 0
+    MinFitness: 40
+    Image: {fileID: 21300000, guid: c0444cfa08034b84091cbc60c8ade62a, type: 3}
+    BigImage: {fileID: 21300000, guid: 2598bda9e0f696f4f95f6629ea5a352f, type: 3}
+    BonusAtk: 5
+    BonusDef: 0
+    BonusHp: 0
+    BonusSpd: 5
+  - Rank: 1
+    MinFitness: 30
+    Image: {fileID: 21300000, guid: b676bc3bff945084b8c1975c83135d26, type: 3}
+    BigImage: {fileID: 21300000, guid: 7a9c2136542572f46a658772b0bb0ff4, type: 3}
+    BonusAtk: 4
+    BonusDef: 0
+    BonusHp: 0
+    BonusSpd: 4
+  - Rank: 2
+    MinFitness: 20
+    Image: {fileID: 21300000, guid: 8647f436193ce3441b7e65ec62621082, type: 3}
+    BigImage: {fileID: 21300000, guid: d686839b94b700343afc924126040f37, type: 3}
+    BonusAtk: 3
+    BonusDef: 0
+    BonusHp: 0
+    BonusSpd: 3
+  - Rank: 3
+    MinFitness: 10
+    Image: {fileID: 21300000, guid: 987b4eb0d066a7041be9354511934acd, type: 3}
+    BigImage: {fileID: 21300000, guid: e280751df211b204b92809cb37e51551, type: 3}
+    BonusAtk: 2
+    BonusDef: 0
+    BonusHp: 0
+    BonusSpd: 2
+  - Rank: 4
+    MinFitness: 0
+    Image: {fileID: 21300000, guid: 8d0c44954cb8c1f4281a1a2b26a34029, type: 3}
+    BigImage: {fileID: 21300000, guid: 96a764c7cb8f115499b9d3d1eec25d6f, type: 3}
+    BonusAtk: 1
+    BonusDef: 0
+    BonusHp: 0
+    BonusSpd: 1

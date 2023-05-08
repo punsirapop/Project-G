@@ -42,7 +42,6 @@ public class BreedMenu : MonoBehaviour
     FarmSO myFarm => PlayerManager.CurrentFarmDatabase;
     // List<MechChromoSO> elites;
     int breedGen;
-    int breedPrice = 500;
 
     private void Awake()
     {
@@ -86,7 +85,7 @@ public class BreedMenu : MonoBehaviour
         GenerationDisplay.text = breedGen.ToString();
         MutationDisplay.text = MutationSelect.value.ToString();
         ElitismDisplay.text = ElitismSelect.value.ToString();
-        TotalPrice.text = breedGen * breedPrice + "G";
+        TotalPrice.text = PlayerManager.Money.ToString() + "/" + _CalculateBreedCost().ToString();
         BreedBtn.interactable = (myFarm.Status == Status.IDLE) ? myFarm.MechChromos.Count() > 1 : false;
         if (myFarm.Status != Status.BREEDING)
         {
@@ -146,9 +145,34 @@ public class BreedMenu : MonoBehaviour
         breedGen += i;
     }
 
+    private int _CalculateBreedCost()
+    {
+        if (breedGen < 1)
+        {
+            return 0;
+        }
+        int breedCostPerGen = myFarm.PopulationCount * myFarm.BreedCostPerUnit;
+        int breedCost = breedCostPerGen;    // Cost for first generation (no discount)
+        // Sum cost for all gen (the more gen, the more discount)
+        for (int i = 1; i < breedGen; i++)
+        {
+            // Calculate discount
+            float discountRate = myFarm.DiscountRatePerGen * i;
+            discountRate = (discountRate > 0.9) ? 0.9f : discountRate;       // Hard-code maximum discount to 90%=
+            // Adding breed cost of this generation
+            breedCost += Mathf.RoundToInt(((float)breedCostPerGen * (1f - discountRate)));
+        }
+        return breedCost;
+    }
+
     // Change farm status to breeding
     public void SetBreedRequest()
     {
+        bool isTransactionSuccess = PlayerManager.SpendMoneyIfEnought(_CalculateBreedCost());
+        if (!isTransactionSuccess)
+        {
+            return;
+        }
         Dictionary<dynamic, float> fv = fitnessMenu.GetFitnessDict();
         BreedPref b = new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
             (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen);

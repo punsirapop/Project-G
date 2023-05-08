@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: GA02_Roulette
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: title
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 12
+      SentenceContent: Let start the lesson of <b>"Roulette Wheel Selection"</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: This method is based on proportionate randomization.
+      Illustration: {fileID: 21300000, guid: 9fe4a374e058a2240ba3ae3970a77a71, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: <b>The chance to be selected is calculated directly from the
+        fitness value.</b>
+      Illustration: {fileID: 21300000, guid: 9fe4a374e058a2240ba3ae3970a77a71, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: This work like a Roulette Wheel where each slot represents
+        the chance of an individual chromosome.
+      Illustration: {fileID: 21300000, guid: 9fe4a374e058a2240ba3ae3970a77a71, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: The parent is randomly selected using the wheel until the
+        population size is equal to the previous.
+      Illustration: {fileID: 21300000, guid: 13b16bc437576864893a6e430991b7dc, type: 3}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

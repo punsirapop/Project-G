@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: MainQuest5Intro
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 
+  PassScore: 0
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: Now you have a farm and some monsters.
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: That's enough for doing some battle...
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 1
+      SentenceContent: That's enough for doing some battle.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Did I hear the word BATTLE?!?!
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 7
+      SentenceContent: Oh, yeah. You heard it right.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Did I hear the word BATTLE?!?!
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 7
+      SentenceContent: You can actually do some battle.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Did I hear the word BATTLE?!?!
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: But before doing that, it's a good idea to prepare some weapons
+        first.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Did I hear the word BATTLE?!?!
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: The first weapon I recommend you is ... the armor!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Did I hear the word BATTLE?!?!
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: The first weapon I recommend you is ... the armor!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Does armor is... a weapon?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: The first weapon I recommend you is ... the armor!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 21
+      SentenceContent: Oh...
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 16
+      SentenceContent: Whatever. I guess no one cares what it's called while on the
+        battlefield.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: You can't win if you can't survive.
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: Forging armor requires several metals.
+      Illustration: {fileID: 21300000, guid: 3f59de0d112c95f43ba6720e59a17549, type: 3}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: Using more metal make it stronger, but it might be too heavy.
+      Illustration: {fileID: 21300000, guid: 3f59de0d112c95f43ba6720e59a17549, type: 3}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: So, research necessary concepts and use that to deal with
+        the problem!
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Isn't it some kind of protective equipment?
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}

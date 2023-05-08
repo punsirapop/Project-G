@@ -42,10 +42,10 @@ public class SelectionButtonManager : MonoBehaviour
     }
 
     // Lock unnecessary buttons coresponding to the puzzleType
-    public void LockButtons(int puzzleType)
+    public void LockButtons(PuzzleType puzzleType)
     {
         // Tournament-based
-        if (puzzleType == 0)
+        if (puzzleType == PuzzleType.SelectionTournamentDemon)
         {
             _GroupButtonLock.SetActive(false);
             _ChanceButtonLock.SetActive(true);
@@ -54,7 +54,7 @@ public class SelectionButtonManager : MonoBehaviour
             _InverseFitnessButtonLock.SetActive(true);
         }
         // Roulette wheel
-        else if (puzzleType == 1)
+        else if (puzzleType == PuzzleType.SelectionRouletteDemon)
         {
             _GroupButtonLock.SetActive(true);
             _ChanceButtonLock.SetActive(false);
@@ -63,7 +63,7 @@ public class SelectionButtonManager : MonoBehaviour
             _InverseFitnessButtonLock.SetActive(true);
         }
         // Rank-based
-        else if (puzzleType == 2)
+        else if (puzzleType == PuzzleType.SelectionRankDemon)
         {
             _GroupButtonLock.SetActive(true);
             _ChanceButtonLock.SetActive(false);

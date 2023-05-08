@@ -16,6 +16,8 @@ public class HStorageManager : MonoBehaviour
     [SerializeField] ScrollRect _Scroll;
     [SerializeField] GameObject _AutoScroller;
     [SerializeField] HFitnessMenu _FitnessMenu;
+    [SerializeField] Sprite _Locked;
+    [SerializeField] Button _NamePlate;
 
     FarmSO _MyFarm => PlayerManager.FarmDatabase[Index];
     ObjectPool<GameObject> _Pool;
@@ -42,7 +44,15 @@ public class HStorageManager : MonoBehaviour
             );
         _Selected = new List<GameObject>();
 
-        OnValueChange();
+        if (PlayerManager.FarmDatabase[Index].LockStatus == LockableStatus.Unlock)
+        {
+            OnValueChange();
+        }
+        else
+        {
+            GetComponent<Image>().sprite = _Locked;
+            _NamePlate.interactable = false;
+        }
 
         _FitnessMenu.gameObject.SetActive(false);
     }

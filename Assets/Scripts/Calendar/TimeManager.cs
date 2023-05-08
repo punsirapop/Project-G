@@ -8,6 +8,7 @@ using UnityEngine.Pool;
 
 public class TimeManager : MonoBehaviour
 {
+    [System.Serializable]
     public struct Date
     {
         public int year;
@@ -63,6 +64,17 @@ public class TimeManager : MonoBehaviour
         public int ToDay()
         {
             return day + month * 28 + year * 12 * 28;
+        }
+
+        public static Date FromDay(int days)
+        {
+            Date zeroDate = new Date()
+            {
+                day = 0,
+                month = 0,
+                year = 0
+            };
+            return zeroDate.AddDay(days);
         }
 
         public int CompareDate(Date d)

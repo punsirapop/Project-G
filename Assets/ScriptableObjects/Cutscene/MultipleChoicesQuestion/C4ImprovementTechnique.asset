@@ -1,0 +1,753 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: C4ImprovementTechnique
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 0100000003000000030000000100000002000000030000000200000003000000
+  PassScore: 5
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: Hi there! This is a test for gathering Jigsaw Piece
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: The topic for this test is . . .
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 12
+      SentenceContent: <b>Improvement Technique</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 0
+      SentenceContent: '> The Test is starting . . .'
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: Initiate <b>Test Mode</b> . . .
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 1. What is Elitism?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: What is Elitism?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A technique that helps preserve the elite chromosomes with
+        the highest fitness across generations without any change.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A technique that randomly selects chromosomes for preservation.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A technique that changes the elite chromosomes with the highest
+        fitness across generations.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: '2. Why is Elitism important in genetic algorithms?
+
+'
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A technique that helps preserve the elite chromosomes with
+        the highest fitness across generations without any change.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A technique that randomly selects chromosomes for preservation.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A technique that changes the elite chromosomes with the highest
+        fitness across generations.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: '2. How does Elitism help improve the performance of the algorithm?
+
+'
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It ensures diversity in the population.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It helps in random selection of chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It preserves the best solutions across generations.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 3. What is bit flip mutation?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It ensures diversity in the population.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It helps in random selection of chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It preserves the best solutions across generations.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 3. What is bit flip mutation?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A mutation that swaps two random bits within a chromosome.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A mutation that flips a random number of bits within a chromosome.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A mutation that flips every bit within a chromosome randomly.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 4. Which type of chromosomes is bit flip mutation suitable
+        for?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A mutation that swaps two random bits within a chromosome.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A mutation that flips a random number of bits within a chromosome.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A mutation that flips every bit within a chromosome randomly.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 4. Which type of chromosomes is bit flip mutation suitable
+        for?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Bit string chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Integer chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Real-value chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: 5. What is flip bit mutation?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Bit string chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Integer chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Real-value chromosomes.
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 5. What is flip bit mutation?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Randomly flipping each bit in every chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Selecting a small number of chromosomes to mutate and flipping
+        every bit in them
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Randomly selecting one or a few bits in each chromosome to
+        flip
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 6. How does flip bit mutation change the chromosome?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Randomly flipping each bit in every chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Selecting a small number of chromosomes to mutate and flipping
+        every bit in them
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Randomly selecting one or a few bits in each chromosome to
+        flip
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 6. How does flip bit mutation change the chromosome?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It changes every bit to 1
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It changes every bit to 0
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It flips each bit, changing 0 to 1 and 1 to 0
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 7. Which type of chromosome is suitable for boundary mutation?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It changes every bit to 1
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It changes every bit to 0
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It flips each bit, changing 0 to 1 and 1 to 0
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 21
+      SentenceContent: 7. Which type of chromosome is suitable for boundary mutation?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Bit string chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Numeric chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Permutation chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: 8. What is the reason behind the name "boundary mutation"?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Bit string chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Numeric chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Permutation chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: 8. What is the reason behind the name "boundary mutation"?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It randomly changes the values of the selected chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It changes the bits of a chromosome randomly
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It uses the old value as a boundary for a random new value
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It randomly changes the values of the selected chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It changes the bits of a chromosome randomly
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It uses the old value as a boundary for a random new value
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It randomly changes the values of the selected chromosome
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It changes the bits of a chromosome randomly
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It uses the old value as a boundary for a random new value
+      ReponseData:
+      - Speaker: 12
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 8... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 8... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}

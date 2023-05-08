@@ -15,12 +15,13 @@ MonoBehaviour:
   ChoiceAnswers: 0100000001000000
   PassScore: 2
   ChangeScene: Main
+  SpeakerName: CatBot
   _Elements:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: Hello!
+      Speaker: 18
+      SentenceContent: <b>Hello!</b> No bbbb1
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:
@@ -35,8 +36,8 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: What is this picture?
+      Speaker: 11
+      SentenceContent: What is this picture? <b>Hello!</b> 123
       Illustration: {fileID: 21300000, guid: c722c2f4cd91ed54a92385e05f11ce05, type: 3}
     Choices: []
     CheckerAnswer:
@@ -57,16 +58,16 @@ MonoBehaviour:
     Choices:
     - SentenceContent: Main Game Page
       ReponseData:
-      - Speaker: 3
+      - Speaker: 19
         SentenceContent: Exactly!
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: Capybara?
       ReponseData:
-      - Speaker: 4
+      - Speaker: 6
         SentenceContent: What the...
         Illustration: {fileID: 0}
-      - Speaker: 0
+      - Speaker: 7
         SentenceContent: What?
         Illustration: {fileID: 0}
       - Speaker: 2
@@ -86,7 +87,7 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 1
-      SentenceContent: Anyway what do you wanna do?
+      SentenceContent: Anyway what do you wanna do? <b>Hello!</b>
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Main Game Page
@@ -144,7 +145,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 3
+      Speaker: 5
       SentenceContent: Good Idea!
       Illustration: {fileID: 0}
     Choices:
@@ -169,7 +170,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 1
+      Speaker: 4
       SentenceContent: 'Your Result is . . . . . . . '
       Illustration: {fileID: 0}
     Choices:
@@ -209,12 +210,12 @@ MonoBehaviour:
       number: 0
     CheckerAnswer:
       Pass:
-        Speaker: 3
+        Speaker: 18
         SentenceContent: You Pass, Your score is [score]
         Illustration: {fileID: 0}
       Fail:
-        Speaker: 4
-        SentenceContent: You Pass, Your score is [score]
+        Speaker: 7
+        SentenceContent: You Fail, Your score is [score]
         Illustration: {fileID: 0}
   - IsChoices: 1
     IsChecker: 0
@@ -238,8 +239,10 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 1
-      SentenceContent: Bye~
+      Speaker: 19
+      SentenceContent: Its chromosome will dominate the later population and decrease
+        the diversity of the population which decreases the chance of discovering
+        other good chromosomes.
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Sleep

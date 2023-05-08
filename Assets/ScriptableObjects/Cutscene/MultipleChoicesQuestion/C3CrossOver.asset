@@ -1,0 +1,625 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
+  m_Name: C3CrossOver
+  m_EditorClassIdentifier: 
+  ChoiceAnswers: 020000000100000003000000020000000200000001000000
+  PassScore: 3
+  ChangeScene: 
+  SpeakerName: CatBot
+  _Elements:
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: Hi there! This is a test for gathering Jigsaw Piece
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: The topic for this test is . . .
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 19
+      SentenceContent: <b>Chromosome Crossover</b>
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices: []
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: Let start the test, shall we?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 0
+      SentenceContent: '> The Test is starting . . .'
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: Initiate <b>Test Mode</b> . . .
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 1. What is single-point crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: ' Start the test'
+      ReponseData: []
+      number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 1. What is single-point crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A process of randomly selecting a chromosome in the population
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A process of randomly selecting a point within a parent's
+        chromosome and swapping chromosome information on the right-hand side
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A process of assigning new fitness values to chromosomes based
+        on their ranking
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: 2. What is the simplest method of crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A process of randomly selecting a chromosome in the population
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A process of randomly selecting a point within a parent's
+        chromosome and swapping chromosome information on the right-hand side
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A process of assigning new fitness values to chromosomes based
+        on their ranking
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 9
+      SentenceContent: 2. What is the simplest method of crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Single-point crossover
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Rank-based selection
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Tournament-based selection
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 3. What is Two-point crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Single-point crossover
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Rank-based selection
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Tournament-based selection
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 3. What is Two-point crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: "A process of randomly selecting two different parents.\r"
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A process of swapping the chromosome information on the right-hand
+        side.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A process of swapping the chromosome information in the middle
+        of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 4. How many points are selected in Two-point crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: "A process of randomly selecting two different parents.\r"
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A process of swapping the chromosome information on the right-hand
+        side.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A process of swapping the chromosome information in the middle
+        of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 4. Which of the following is true about Two-point crossover?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: One
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Two
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Three
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 5. What is the Uniform Crossover method?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: One
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: Two
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Three
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 11
+      SentenceContent: 5. What is the Uniform Crossover method?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A method where the offspring inherit all the information from
+        one parent only.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A method where the offspring are created by randomly swapping
+        every piece of information in the parent's chromosome.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A method where the offspring are created by swapping the information
+        in the middle of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 6. Which of the following statements is true about the Uniform
+        Crossover method?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: A method where the offspring inherit all the information from
+        one parent only.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A method where the offspring are created by randomly swapping
+        every piece of information in the parent's chromosome.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: A method where the offspring are created by swapping the information
+        in the middle of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 5. Which of the following statements is true about the Uniform
+        Crossover method?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The chance of switching each point is dependent on another.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The offspring are created by swapping the information in the
+        middle of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It randomly selects two different points within a parent's
+        chromosome.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The chance of switching each point is dependent on another.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The offspring are created by swapping the information in the
+        middle of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It randomly selects two different points within a parent's
+        chromosome.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 1
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: The chance of switching each point is dependent on another.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: The offspring are created by swapping the information in the
+        middle of each parent.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It randomly selects two different points within a parent's
+        chromosome.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 6... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 6... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}

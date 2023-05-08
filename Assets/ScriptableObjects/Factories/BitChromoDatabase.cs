@@ -47,6 +47,41 @@ public class BitChromoDatabase : ScriptableObject
         _ChromoLength = chromoLength;
     }
 
+    public void SetDatabase(int[][][] newBitstringArray, bool isShuffle=true)
+    {
+        if (_Population.Length != newBitstringArray.Length)
+        {
+            Debug.Log("Cannot set new database, length not equal");
+            return;
+        }
+
+        // Use Fisher-Yates shuffle algorithm to shuffle the element
+        if (isShuffle)
+        {
+            int[][] arrayToShuffle = newBitstringArray[0];
+            // Shuffle the last element to any random element
+            System.Random rng = new System.Random();
+            int n = newBitstringArray.Length;
+            // Loop from the last element to first element
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int[][] temp = newBitstringArray[k];
+                newBitstringArray[k] = newBitstringArray[n];
+                newBitstringArray[n] = temp;
+            }
+        }
+
+        for (int i = 0; i < newBitstringArray.Length; i++)
+        {
+            BitChromosome newChromo = new BitChromosome();
+            newChromo.Bitstring1 = newBitstringArray[i][0];
+            newChromo.Bitstring2 = newBitstringArray[i][1];
+            _Population[i] = newChromo;
+        }
+    }
+
     public void Populate(int populationCount)
     {
         // Create empty array of type BitChromosome with size of populactionCount
@@ -102,5 +137,76 @@ public class BitChromoDatabase : ScriptableObject
         int[] bitstring2 = _Population[index].Bitstring2;
         int[][] bitstring = { bitstring1, bitstring2 };
         return bitstring;
+    }
+
+    // Return a random bitstring corresponding to the given bit1 count
+    public int[][] GenerateRandomBitstring(int bit1Count)
+    {
+        int[] bitstring1 = new int[_ChromoLength];
+        int[] bitstring2 = new int[_ChromoLength];
+        // Random the position to be bit1
+        int[] randomIndex = _RandomChoices(_GenerateRandomIndexPool(), bit1Count);
+        foreach (int index in randomIndex)
+        {
+            // Hard-code calculate section only for chromosome with no more thant 2 dimension
+            int bitstringSection = (index > _ChromoLength - 1) ? 1 : 0;
+            int bitstringIndex = index % _ChromoLength;
+            if (bitstringSection == 0)
+            {
+                if (bitstring2[bitstringIndex] != 1)
+                {
+                    bitstring1[bitstringIndex] = 1;
+                }
+            }
+            else
+            {
+                if (bitstring1[bitstringIndex] != 1)
+                {
+                    bitstring2[bitstringIndex] = 1;
+                }
+            }
+        }
+        int[][] bitstring = { bitstring1, bitstring2 };
+        return bitstring;
+    }
+
+    // Return a random pool for the index int bitstring[] for _RandomChoices purpose
+    private int[] _GenerateRandomIndexPool()
+    {
+        int[] randomPool = new int[_ChromoDimension * _ChromoLength];
+        for (int i = 0; i < randomPool.Length; i++)
+        {
+            randomPool[i] = i;
+        }
+        return randomPool;
+    }
+
+    // Return a number of random distinct value from the randomPool equal to the number of randomCount
+    private int[] _RandomChoices(int[] randomPool, int randomCount)
+    {
+        if (randomPool.Length < randomCount)
+        {
+            return null;
+        }
+        else if (randomPool.Length == randomCount)
+        {
+            return randomPool;
+        }
+        int[] currentRandomPool = randomPool;
+        int[] resultPool = new int[randomCount];
+        for (int i = 0; i < randomCount; i++)
+        {
+            // Get new random value in pool
+            int newRandomIndex = Random.Range(0, currentRandomPool.Length);
+            resultPool[i] = currentRandomPool[newRandomIndex];
+            // Remove such value from the pool
+            int[] newRandomPool = new int[currentRandomPool.Length - 1];
+            for (int j = 0; j < currentRandomPool.Length - 1; j++)
+            {
+                newRandomPool[j] = (j >= newRandomIndex) ? currentRandomPool[j + 1] : currentRandomPool[j];
+            }
+            currentRandomPool = newRandomPool;
+        }
+        return resultPool;
     }
 }

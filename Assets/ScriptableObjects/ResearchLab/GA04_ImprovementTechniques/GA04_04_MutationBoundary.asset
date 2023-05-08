@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a50df516e6b09408cff5388a89fc63, type: 3}
   m_Name: GA04_04_MutationBoundary
   m_EditorClassIdentifier: 
+  _LockStatus: 0
+  _RequiredMoney: 100
+  _RequiredObjects:
+  - {fileID: 11400000, guid: 6c54fdf62dbb28f45af6263272683790, type: 2}
   _Header: Boundary Mutation
   _Contents:
   - {fileID: 11400000, guid: 74301249ef451904488c18743f9b93f8, type: 2}
+  _TeachingDialogue: {fileID: 11400000, guid: cdeb560ac5ee2104d8540950d9427c92, type: 2}

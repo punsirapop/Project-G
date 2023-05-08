@@ -13,14 +13,17 @@ public class FactoryManager : MonoBehaviour
     [SerializeField] private SpriteRenderer _ConveyorRenderer;
     [SerializeField] private SpriteRenderer _BorderRenderer;
 
-    #region Panels
     // Panels in factory: Info, Produce, ChromoMenu
     [SerializeField] private Button[] _PanelButtons;
     [SerializeField] private GameObject[] _Panels;
 
-    // Text in each panel
+    // Text in info panel
     [SerializeField] private TextMeshProUGUI[] _InfoTexts;
-    #endregion
+
+    // Status panel
+    [SerializeField] private GameObject[] _StatusDisplays;
+    [SerializeField] private TextMeshProUGUI _BreedingGenDisplay;
+    [SerializeField] private Image _GaugeRenderer;
 
     void Awake()
     {
@@ -31,6 +34,7 @@ public class FactoryManager : MonoBehaviour
     {
         _RenderSprite();
         _ResetPanels();
+        RenderStatusPanel();
     }
 
     // Render the weapon holder sprite for each factory
@@ -68,5 +72,42 @@ public class FactoryManager : MonoBehaviour
     public WeaponChromosome[] GetAllWeapon()
     {
         return PlayerManager.CurrentFactoryDatabase.GetAllWeapon();
+    }
+
+    // Display the information from FactorySO on the status panel
+    public void RenderStatusPanel()
+    {
+        // Hide all the status
+        foreach (var item in _StatusDisplays)
+        {
+            item.SetActive(false);
+        }
+        // Show only status of current factory
+        Status currentFactoryStatus = PlayerManager.CurrentFactoryDatabase.Status;
+        // If the factory is not broken yet, display status
+        if (PlayerManager.CurrentFactoryDatabase.Condition > 0)
+        {
+            _StatusDisplays[(int)currentFactoryStatus].SetActive(true);
+        }
+        // else, display as broken
+        else
+        {
+            _StatusDisplays[2].SetActive(true);
+        }
+        // Change behavior depending on status
+        switch (currentFactoryStatus)
+        {
+            case Status.IDLE:
+                _BreedingGenDisplay.text = "";
+                _GaugeRenderer.fillAmount = 0;
+                break;
+            // Display breeding progress number only if the status is breeding
+            case Status.BREEDING:
+                _BreedingGenDisplay.text = "GEN: " + PlayerManager.CurrentFactoryDatabase.BreedGen + "/" + PlayerManager.CurrentFactoryDatabase.BreedPref.BreedGen;
+                _GaugeRenderer.fillAmount = PlayerManager.CurrentFactoryDatabase.BreedGuage / 100;
+                break;
+            default:
+                break;
+        }
     }
 }
