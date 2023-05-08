@@ -62,6 +62,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static SideQuestDatabaseSO SideQuestDatabase;
     [SerializeField] private SideQuestDatabaseSO _SideQuestDatabaseHelper;
 
+    // Capybara
+    public static CapybaraDatabaseSO CapybaraDatabase;
+    [SerializeField] private CapybaraDatabaseSO _CapybaraDatabaseHelper;
+
     public enum FacilityType
     {
         Factory,
@@ -80,6 +84,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         MainQuestDatabase = _MainQuestDatabaseHelper;
         SideQuestDatabase = _SideQuestDatabaseHelper;
         InformationDatabase = InformationDatabaseHelper;
+        CapybaraDatabase = _CapybaraDatabaseHelper;
     }
 
     // Reflect the value back into editor
@@ -94,6 +99,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         _MainQuestDatabaseHelper = MainQuestDatabase;
         _SideQuestDatabaseHelper = SideQuestDatabase;
         InformationDatabaseHelper = InformationDatabase;
+        _CapybaraDatabaseHelper = CapybaraDatabase;
     }
 
     private void Awake()
@@ -142,6 +148,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         // Generate new side quest(s) by skipped time
         SideQuestDatabase.GenerateNewQuestByTime(CurrentDate, day);
         MainQuestDatabase.PassDay();
+        // Generate new capybara by skipped time
+        CapybaraDatabase.AddChanceByDays(day);
 
         CurrentDate = d.DupeDate();
 

@@ -2202,8 +2202,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0a469f77fc85e842b42cbd565716c4a, type: 2}
   - {fileID: 11400000, guid: f24fa1eebf2d7794a8ac445d58733c31, type: 2}
   - {fileID: 11400000, guid: 1de19ade15fe4c9429ee38409e9ba77c, type: 2}
+  InformationDatabaseHelper:
+  - {fileID: 11400000, guid: 0d987f66267bc634c8920ef24059b790, type: 2}
+  - {fileID: 11400000, guid: e9e63b2831d41cb4d8ca22f3a2c6b5b9, type: 2}
+  - {fileID: 11400000, guid: e8ff43be83aa3aa4d8282d20ed8e0b89, type: 2}
+  - {fileID: 11400000, guid: ba7cd7455c9712740a19621fbbee2ac8, type: 2}
+  - {fileID: 11400000, guid: 9387e492786a5f745bb58318471881c3, type: 2}
+  - {fileID: 11400000, guid: b1e8038d446defd43befa5ecbf4b2c0a, type: 2}
+  - {fileID: 11400000, guid: 0641adf89b688d049abf99069cedbd55, type: 2}
+  - {fileID: 11400000, guid: be98bbd97eb369744813a666db6e10a3, type: 2}
+  - {fileID: 11400000, guid: 2d41cc3be11c4754abd25612207cc6dd, type: 2}
   _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
   _SideQuestDatabaseHelper: {fileID: 11400000, guid: de0e248c7e48b8a489c7b12c66c2694f, type: 2}
+  _CapybaraDatabaseHelper: {fileID: 11400000, guid: 3a4c483bca78dcc479b97f9abbe9122b, type: 2}
 --- !u!4 &1421103299
 Transform:
   m_ObjectHideFlags: 0

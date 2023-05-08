@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5455b4b8dd4e8da4cbdfd813f93e3c4a, type: 3}
+  m_Name: Capybara5
+  m_EditorClassIdentifier: 
+  _Name: Partybara
+  _Rank: 1
+  _HeartColor: {r: 0, g: 0, b: 1, a: 1}
+  _RequiredTapCount: 50
+  _MoneyReward: 300
+  _Sprites:
+  - {fileID: 21300000, guid: dd86352244cf01f4a8628d15120c9407, type: 3}
+  - {fileID: 21300000, guid: fa8f0d59a9cddd944a42abb1c181c5a2, type: 3}
+  _StepPerSecond: 4
+  _WalkedPixelPerSeconds: 50
