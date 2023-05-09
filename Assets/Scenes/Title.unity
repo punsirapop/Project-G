@@ -624,6 +624,12 @@ MonoBehaviour:
   - Name: StartTimer
     Clip: {fileID: 8300000, guid: 9d3ff18a1489b3147b5aef759d1416b2, type: 3}
     SceneName: 
+  - Name: CappyClick
+    Clip: {fileID: 8300000, guid: dffe388b45eb03049aa5c321a6788c02, type: 3}
+    SceneName: 
+  - Name: CappyCaught
+    Clip: {fileID: 8300000, guid: 4440e5bd16664b846bd16586b52a6452, type: 3}
+    SceneName: 
 --- !u!4 &508172689
 Transform:
   m_ObjectHideFlags: 0

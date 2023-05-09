@@ -69,6 +69,7 @@ public class BitBlock : MonoBehaviour
     {
         if (ItemToggle.isOn)
         {
+            SoundEffectManager.Instance.PlaySoundEffect("ButtonToggle");
             _ItemName = itemName;
             ItemToggle.isOn = false;
             UpdateItem();
@@ -84,6 +85,7 @@ public class BitBlock : MonoBehaviour
 
     public void SetKnapsack(string knapsackName)
     {
+        SoundEffectManager.Instance.PlaySoundEffect("ButtonToggle");
         _KnapsackName = knapsackName;
         KnapsackToggle.isOn = false;
         UpdateKnapsack();
