@@ -92,7 +92,7 @@ public class HStorageManager : MonoBehaviour
             {
                 GameObject m = _Pool.Get();
                 m.GetComponent<MechCanvasDisplay>().SetChromo(item.chromo);
-                Debug.Log(item.name + " - " + item.fitness);
+                // Debug.Log(item.name + " - " + item.fitness);
             }
         }
     }
