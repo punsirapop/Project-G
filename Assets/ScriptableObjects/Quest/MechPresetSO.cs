@@ -28,9 +28,9 @@ public class MechPresetSO : ScriptableObject
         Def = new int[3];
         Hp = new int[3];
         Spd = new int[3];
-        for (int i = 0; i < Atk.Length; i++) Atk[i] = Random.Range(1, c);
-        for (int i = 0; i < Def.Length; i++) Def[i] = Random.Range(1, c);
-        for (int i = 0; i < Hp.Length; i++) Hp[i] = Random.Range(1, c);
-        for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c);
+        for (int i = 0; i < Atk.Length; i++) Atk[i] = Random.Range(1, c+1);
+        for (int i = 0; i < Def.Length; i++) Def[i] = Random.Range(1, c+1);
+        for (int i = 0; i < Hp.Length; i++) Hp[i] = Random.Range(1, c+1);
+        for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c+1);
     }
 }

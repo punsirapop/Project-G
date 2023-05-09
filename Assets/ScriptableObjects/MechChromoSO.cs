@@ -69,23 +69,23 @@ public class MechChromoSO : ScriptableObject
         Def = new int[3];
         Hp = new int[3];
         Spd = new int[3];
-        for (int i = 0; i < Atk.Length; i++) Atk[i] = Random.Range(1, c);
-        for (int i = 0; i < Def.Length; i++) Def[i] = Random.Range(1, c);
-        for (int i = 0; i < Hp.Length; i++) Hp[i] = Random.Range(1, c);
-        for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c);
+        for (int i = 0; i < Atk.Length; i++) Atk[i] = Random.Range(1, c+1);
+        for (int i = 0; i < Def.Length; i++) Def[i] = Random.Range(1, c+1);
+        for (int i = 0; i < Hp.Length; i++) Hp[i] = Random.Range(1, c+1);
+        for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c+1);
     }
 
-    public void SetRandomStat2(int cap)
+    public void SetRandomStat2(int statPoints)
     {
         int[] stat = new int[4];
-        int firstDis = Mathf.Max(1, Mathf.CeilToInt(cap / 12));
-        cap -= firstDis * 4;
+        int firstDis = Mathf.Max(1, Mathf.CeilToInt(statPoints / 12));
+        statPoints -= firstDis * 4;
         for (int i = 0; i < 4; i++)
         {
             stat[i] += firstDis;
         }
 
-        for (; cap > 0; cap--)
+        for (; statPoints > 0; statPoints--)
         {
             stat[Random.Range(0, 4)]++;
         }
@@ -183,7 +183,7 @@ public class MechChromoSO : ScriptableObject
     public void SetRank()
     {
         int sum = Atk.Sum() + Def.Sum() + Hp.Sum() + Spd.Sum();
-        int index = Mathf.RoundToInt(sum / (Cap * 4));
+        int index = Mathf.RoundToInt(sum / (Cap * 4f));     // Achieve S rank when got roughly 83% of max stat with current cap
         Rank = (Ranks)index;
     }
 
