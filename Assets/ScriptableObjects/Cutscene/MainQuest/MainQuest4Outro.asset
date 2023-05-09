@@ -34,7 +34,7 @@ MonoBehaviour:
         Speaker: 0
         SentenceContent: 
         Illustration: {fileID: 0}
-  - IsChoices: 0
+  - IsChoices: 1
     IsChecker: 0
     SentenceData:
       Speaker: 0
@@ -58,6 +58,23 @@ MonoBehaviour:
           a place you can manage all monsters.
         Illustration: {fileID: 0}
       number: 0
+    CheckerAnswer:
+      Pass:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 0
+        SentenceContent: 
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 10
+      SentenceContent: You can transfer the monster between facilities through the
+        <b>habitat</b>. And you can breed wanted monster on the farm.
+      Illustration: {fileID: 0}
+    Choices: []
     CheckerAnswer:
       Pass:
         Speaker: 0
@@ -142,23 +159,6 @@ MonoBehaviour:
       Speaker: 10
       SentenceContent: There is a <b>Quest Board</b> there. The people request you
         some monster, and you will get a lot of rewards if you fulfill their desire.
-      Illustration: {fileID: 0}
-    Choices: []
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 10
-      SentenceContent: You can transfer the monster between facilities through the
-        <b>habitat</b>. And you can breed wanted monster on the farm.
       Illustration: {fileID: 0}
     Choices: []
     CheckerAnswer:

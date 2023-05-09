@@ -16,10 +16,10 @@ MonoBehaviour:
   _BriefDescription: Townsmen request you some robotic monster.
   _FullDescription: It seems the townsman requests a specific robotic monster from
     your company. Breed them what they want, give it to them, and get the money!
-  _QuestStatus: 3
+  _QuestStatus: 0
   _DueDate:
     year: 2700
     month: 2
-    day: 1
+    day: 2
   _IntroDialogue: {fileID: 0}
   _OutroDialogue: {fileID: 0}

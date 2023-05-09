@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 0100000003000000030000000100000002000000030000000200000003000000
   PassScore: 5
-  ChangeScene: 
   SpeakerName: CatBot
+  IsSkippable: 0
+  SkipNotifyText: 
   _Elements:
   - IsChoices: 0
     IsChecker: 0
@@ -103,7 +104,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 9
       SentenceContent: '> The Test is starting . . .'
       Illustration: {fileID: 0}
     Choices:

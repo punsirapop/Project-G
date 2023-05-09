@@ -12,14 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 1
   m_EditorClassIdentifier: 
-  _LockStatus: 2
+  _LockStatus: 1
   _RequiredMoney: 1000
-  _RequiredObjects:
-  - {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}
-  - {fileID: 11400000, guid: 0db67a16a156fcd40b6e762f5d19fb17, type: 2}
-  - {fileID: 11400000, guid: b4302d65db2ff734cb8c99d4a96f5780, type: 2}
-  - {fileID: 11400000, guid: cde58f1be08ec6b4f8ad634257541ecb, type: 2}
-  - {fileID: 11400000, guid: a46a82a22fb3e764d9d8b566f19efd9f, type: 2}
+  _RequiredObjects: []
   _Name: Farm1
   _Generation: 0
   _Status: 0
