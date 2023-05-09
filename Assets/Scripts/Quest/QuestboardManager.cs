@@ -44,12 +44,6 @@ public class QuestboardManager : MonoBehaviour
         }
     }
 
-    // TEMP wrapper function to generate new unacquired side quest
-    public void ForceGenerateNewQuest()
-    {
-        PlayerManager.SideQuestDatabase.ForceGenerateNewQuest();
-    }
-
     private void _OnClickQuestButton(SideQuestSO clickedQuest)
     {
         SideQuestSubmissionManager.SetCurrentQuest(clickedQuest);

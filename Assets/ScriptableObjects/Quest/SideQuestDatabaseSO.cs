@@ -30,6 +30,11 @@ public class SideQuestDatabaseSO : ScriptableObject
         _SideQuests = new List<SideQuestSO>();
         _NextSideQuestID = 0;
         _DayLeftBeforeNewQuest = _PeriodDayBeforeNewQuest;
+        // Init the quest for the first time
+        Debug.Log("Generate first side quest");
+        TimeManager.Date firstDate = new TimeManager.Date();
+        firstDate.InitDate();
+        GenerateNewQuest(firstDate.AddDay(_MaxQuestDurationDay), _MinCeilingMoneyReward);
     }
 
     // Return all side quest in database
@@ -131,7 +136,7 @@ public class SideQuestDatabaseSO : ScriptableObject
     }
 
     // Tmp mthod for immediately generate quest in QuestBoard scene
-    public void ForceGenerateNewQuest()
+    public void ForceGenerateNewQuest(TimeManager.Date dueDate, int MaxRewardMoney)
     {
         SideQuestSO newQuest = ScriptableObject.CreateInstance<SideQuestSO>();
         newQuest.SetSideQuest(
@@ -139,9 +144,9 @@ public class SideQuestDatabaseSO : ScriptableObject
             name: "Request For Monster",
             briefDescription: "Townsmen request you some robotic monster.",
             fullDescription: "It seems the townsman requests a specific robotic monster from your company. Breed them what they want, give it to them, and get the money!",
-            dueDate: PlayerManager.CurrentDate.DupeDate().AddMonth(1),
-            minRewardMoney: 100,
-            maxRewardMoney: 500
+            dueDate: dueDate,
+            minRewardMoney: MaxRewardMoney/2,
+            maxRewardMoney: MaxRewardMoney
             );
         _SideQuests.Add(newQuest);
         _NextSideQuestID++;

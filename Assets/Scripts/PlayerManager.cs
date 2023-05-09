@@ -366,7 +366,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             piece.ForceUnlock();
         }
         MainQuestDatabase.ForceCompleteQuest();
-        SideQuestDatabase.ForceCompleteQuest();
+        //SideQuestDatabase.ForceCompleteQuest();
         ValidateUnlocking();
     }
 

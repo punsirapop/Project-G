@@ -45,5 +45,6 @@ public class CapybaraSO : LockableObject
         base.Unlock();
         _FoundCount++;
         PlayerManager.GainMoneyIfValid(_MoneyReward);
+        PlayerManager.ValidateUnlocking();
     }
 }
