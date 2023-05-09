@@ -1052,6 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0005f8492a2e9742be2ed28be51bf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SavedFarms: []
   loadTargets:
   - {fileID: 11400000, guid: 876e4b200a9aa874aa5e1be139e3a758, type: 2}
   - {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
@@ -2212,8 +2213,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0641adf89b688d049abf99069cedbd55, type: 2}
   - {fileID: 11400000, guid: be98bbd97eb369744813a666db6e10a3, type: 2}
   - {fileID: 11400000, guid: 2d41cc3be11c4754abd25612207cc6dd, type: 2}
+  - {fileID: 11400000, guid: a08efdd3783e78648aa006dcaddba0b8, type: 2}
   _MainQuestDatabaseHelper: {fileID: 11400000, guid: 62f8e827291f3284cbc3bfa661fd3d28, type: 2}
   _SideQuestDatabaseHelper: {fileID: 11400000, guid: de0e248c7e48b8a489c7b12c66c2694f, type: 2}
+  _ShopHelper: {fileID: 0}
   _CapybaraDatabaseHelper: {fileID: 11400000, guid: 3a4c483bca78dcc479b97f9abbe9122b, type: 2}
 --- !u!4 &1421103299
 Transform:
