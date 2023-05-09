@@ -31,7 +31,7 @@ public class SideQuestSO : QuestSO
         _QuestStatus = Status.Unacquired;
         _DueDate = dueDate;
         WantedMech = ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO;
-        MechChromoSO.Cap--;
+        MechChromoSO.IDCounter--;
         MinRewardMoney = minRewardMoney;
         MaxRewardMoney = maxRewardMoney;
     }

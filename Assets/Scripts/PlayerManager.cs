@@ -165,8 +165,11 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
             foreach (var item in FarmDatabase)
             {
-                topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
-                    .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>());
+                if (item.MechChromos.Count > 0)
+                {
+                    topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
+                        .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>());
+                }
             }
 
             MechChromoSO m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
@@ -174,13 +177,16 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
             // Increase cap until it's not S
             int extraCap = 0;
-            Debug.Log($"Highest Rank: {m.Rank}");
-            while (m.Rank >= MechChromoSO.Ranks.S)
+            Debug.Log($"-------------Highest Rank: {m.Rank}-------------");
+            while (m.Rank >= MechChromoSO.Ranks.A)
             {
+                Debug.Log($"Current Cap: {MechChromoSO.Cap}");
                 extraCap++;
                 MechChromoSO.Cap++;
                 m.SetRank();
             }
+            Debug.Log($"New Cap: {MechChromoSO.Cap}");
+
             // Set rank for every other mechs
             if (extraCap > 0)
             {

@@ -27,7 +27,7 @@ public class ShopSO : ScriptableObject
         Debug.Log("Restocking...");
         for (int i = 0; i < 3; i++)
         {
-            _ShopItems[i].SetRandom(MechChromoSO.Cap);
+            _ShopItems[i].SetRandom(MechChromoSO.Cap == 0 ? 4 : MechChromoSO.Cap);
         }
         InStock = new bool[] {true, true, true};
         DayLeftBeforeRestock = _RestockPeriod;

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class FitnessMenu : MonoBehaviour
 {
+    [Serializable]
     public enum Properties { Head, Body, Acc, Com }
 
     [SerializeField] Button AddButton;
@@ -76,7 +77,8 @@ public class FitnessMenu : MonoBehaviour
         {
             item.Deactivate();
         }
-        var Temp = (myFarm.Status == Status.BREEDING) ? myFarm.BreedInfo.CurrentPref : myFarm.FitnessPref;
+        List<Tuple<Properties, int>> Temp = (myFarm.Status == Status.BREEDING) ?
+            myFarm.BreedInfo.CurrentPref : myFarm.FitnessPref;
         if (Temp != null)
         {
             foreach (var item in Temp.Zip(Selectors, (a, b) => Tuple.Create(a, b)))
@@ -101,6 +103,7 @@ public class FitnessMenu : MonoBehaviour
             if(item.gameObject.activeSelf)
                 a.Add(Tuple.Create(item.Type, item.Value));
         }
+        Debug.Log($"Fitness Pref Count: {a.Count}");
         return a;
     }
     

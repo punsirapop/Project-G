@@ -11,19 +11,19 @@ public class Hoverable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     private void OnEnable()
     {
-        _DefaultObject.SetActive(true);
-        _OnHoverObject.SetActive(false);
+        if (_DefaultObject != null) _DefaultObject.SetActive(true);
+        if (_OnHoverObject != null) _OnHoverObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _DefaultObject.SetActive(false);
-        _OnHoverObject.SetActive(true);
+        if (_DefaultObject != null) _DefaultObject.SetActive(false);
+        if (_OnHoverObject != null) _OnHoverObject.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _DefaultObject.SetActive(true);
-        _OnHoverObject.SetActive(false);
+        if (_DefaultObject != null) _DefaultObject.SetActive(true);
+        if (_OnHoverObject != null) _OnHoverObject.SetActive(false);
     }
 }

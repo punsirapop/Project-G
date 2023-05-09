@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static FitnessMenu;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Farm")]
-public class FarmSO : LockableObject
+public class FarmSO : LockableObject, ISerializable
 {
     // Invoke when changing state
     public static event Action<FarmSO, Status> OnFarmChangeStatus;
@@ -32,21 +35,21 @@ public class FarmSO : LockableObject
     public JigsawPieceGroupSO[] ObtainableJisawGroups => _ObtainableJisawGroups;
 
     // Prev Farm Display
-    BreedMenu.BreedPref _BreedPref;
-    public BreedMenu.BreedPref BreedPref => _BreedPref;
-    List<Tuple<Properties, int>> _FitnessPref;
+    [SerializeField] BreedPref _BreedPref;
+    public BreedPref BreedPref => _BreedPref;
+    [SerializeField] List<Tuple<Properties, int>> _FitnessPref;
     public List<Tuple<Properties, int>> FitnessPref => _FitnessPref;
 
     // Breeding Request
-    BreedMenu.BreedInfo _BreedInfo;
-    public BreedMenu.BreedInfo BreedInfo => _BreedInfo;
-    private float _BreedGuage;
+    [SerializeField] BreedInfo _BreedInfo;
+    public BreedInfo BreedInfo => _BreedInfo;
+    [SerializeField] private float _BreedGuage;
     public float BreedGuage => _BreedGuage;
-    private float _GuagePerDay;
+    [SerializeField] private float _GuagePerDay;
     public float GuagePerDay => _GuagePerDay;
-    private int _BreedGen;
+    [SerializeField] private int _BreedGen;
     public int BreedGen => _BreedGen;
-    private int _DaysBeforeBreak;
+    [SerializeField] private int _DaysBeforeBreak;
     public int DaysBeforeBreak => _DaysBeforeBreak;
 
     // Interior Sprites
@@ -76,21 +79,37 @@ public class FarmSO : LockableObject
         SaveManager.OnReset -= ResetMe;
     }
 
+    public void GetObjectData(SerializationInfo info, StreamingContext context)
+    {
+        info.AddValue("_Name", _Name);
+        info.AddValue("_Generation", _Generation);
+        info.AddValue("_Status", _Status);
+        info.AddValue("_BreedCostPerUnit", _BreedCostPerUnit);
+        info.AddValue("_DiscountRatePerGen", _DiscountRatePerGen);
+        info.AddValue("_Condition", _Condition);
+        info.AddValue("_BrokeChance", _BrokeChance);
+        info.AddValue("_ObtainableJisawGroups", _ObtainableJisawGroups);
+        info.AddValue("_BreedPref", _BreedPref);
+        info.AddValue("_FitnessPref", _FitnessPref);
+        info.AddValue("_BreedInfo", _BreedInfo);
+        info.AddValue("_BreedGuage", _BreedGuage);
+    }
+
     // Reset this farm
     private void ResetMe()
     {
-        Debug.Log("RESET FROM FARM");
+        // Debug.Log("RESET FROM FARM");
         base.Reset();
         if (Name == "Habitat") _LockStatus = LockableStatus.Unlock;
         _Generation = 0;
         _Status = 0;
         _Condition = 4;
-        _BreedInfo = new BreedMenu.BreedInfo();
+        _BreedInfo = new BreedInfo();
         _BreedGuage = 0;
         _GuagePerDay = 100;
         _BreedGen = 0;
         _DaysBeforeBreak = 0;
-        _BreedPref = new BreedMenu.BreedPref();
+        _BreedPref = new BreedPref();
         _FitnessPref = new List<Tuple<Properties, int>>();
         _MechChromos = new List<MechChromoSO>();
     }
@@ -107,7 +126,7 @@ public class FarmSO : LockableObject
     // Set farm from value
     public void SetMe(FarmSO f)
     {
-        Debug.Log("FARM SET");
+        // Debug.Log("FARM SET");
         /*
         _LockStatus = f._LockStatus;
         _RequiredMoney = f.RequiredMoney;
@@ -121,9 +140,9 @@ public class FarmSO : LockableObject
         _Condition = f.Condition;
         _BrokeChance = f.BrokeChance;
         _ObtainableJisawGroups = f.ObtainableJisawGroups.ToArray();
-        _BreedPref = f.BreedPref.Copy();
-        _FitnessPref = f.FitnessPref?.ToList();
-        _BreedInfo = f.BreedInfo.Copy();
+        SetBreedPref(f.BreedPref);
+        SetFitnessPref(f.FitnessPref);
+        SetBreedRequest(f.BreedInfo);
         _BreedGuage = f.BreedGuage;
         _GuagePerDay = f.GuagePerDay;
         _BreedGen = f.BreedGen;
@@ -135,6 +154,8 @@ public class FarmSO : LockableObject
         _Locker = f.Locker;
         */
         _MechChromos = f.MechChromos.ToList();
+
+        EditorUtility.SetDirty(this);
     }
 
     // Add new random chromosome to the current space
@@ -158,17 +179,22 @@ public class FarmSO : LockableObject
 
     public void SetFitnessPref(List<Tuple<Properties, int>> p)
     {
-        _FitnessPref = p;
+        _FitnessPref = new List<Tuple<Properties, int>>();
+        foreach (var item in p)
+        {
+            _FitnessPref.Add(Tuple.Create(item.Item1, item.Item2));
+        }
     }
 
-    public void SetBreedPref(BreedMenu.BreedPref b)
+    public void SetBreedPref(BreedPref b)
     {
-        _BreedPref = b.Copy();
+        _BreedPref = new BreedPref(b.ElitismRate, b.TypeParentSelect, b.KSelect, b.TypeCrossover,
+            b.MutationRate, b.BreedGen);
     }
 
-    public void SetBreedRequest(BreedMenu.BreedInfo b)
+    public void SetBreedRequest(BreedInfo b)
     {
-        if (!b.Equals(default(BreedMenu.BreedInfo)))
+        if (!b.Equals(default(BreedInfo)))
         {
             TimeManager.Date targetDate = new TimeManager.Date();
             targetDate.AddDay(PlayerManager.CurrentDate.ToDay() + b.MyFarm.BreedPref.BreedGen);
@@ -199,7 +225,7 @@ public class FarmSO : LockableObject
         }
         if (BreedGen >= BreedInfo.MyFarm.BreedPref.BreedGen)
         {
-            SetBreedRequest(new BreedMenu.BreedInfo());
+            SetBreedRequest(new BreedInfo());
             _BreedGen = 0;
             _BreedGuage = 0;
             SetStatus(Status.IDLE);

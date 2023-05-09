@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using static SaveManager;
 
 public class SaveManager : MonoBehaviour
 {
@@ -49,10 +50,10 @@ public class SaveManager : MonoBehaviour
     }
     
     // set path for json
-    protected void SetPaths()
+    protected void SetPaths(string name)
     {
-        path = Path.Combine(Application.dataPath, "Save.json");
-        persistentPath = Path.Combine(Application.persistentDataPath, "Save.json");
+        path = Path.Combine(Application.dataPath, name);
+        persistentPath = Path.Combine(Application.persistentDataPath, name);
 
         currentPath = path;
     }
@@ -85,7 +86,7 @@ public class SaveManager : MonoBehaviour
     public void SaveToFile()
     {
         // ---------- Save json ----------
-        SetPaths();
+        SetPaths("Save.json");
         string savePath = currentPath;
 
         Debug.Log("Saving at " + savePath);
@@ -96,12 +97,25 @@ public class SaveManager : MonoBehaviour
         streamWriter.Write(json);
         streamWriter.Close();
 
+        // ------------------------------------------TEST-------------------------------------------------
+        SetPaths("Fac1.json");
+        savePath = currentPath;
+
+        Debug.Log("Saving at " + savePath);
+        json = JsonUtility.ToJson(PlayerManager.FactoryDatabase[0]);
+
+        using StreamWriter streamWriter2 = new StreamWriter(savePath);
+        streamWriter2.Write(json);
+        streamWriter2.Close();
+
         // ---------- Save scriptable objects ----------
         for (int i = 0; i < 4; i++)
         {
-            _SavedFarms[i].SetMe(PlayerManager.FarmDatabase[i]);
+            // _SavedFarms[i].SetMe(PlayerManager.FarmDatabase[i]);
+            // EditorUtility.SetDirty(_SavedFarms[i]);
+            // Debug.Log($"Saved Farm{i}: {_SavedFarms[i].FitnessPref.Count}");
         }
-        
+
         // ---------- Save objects ----------
         // Mechs
         MechChromoSO[] loaded = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToArray();
@@ -138,7 +152,7 @@ public class SaveManager : MonoBehaviour
     public virtual void LoadFromFile()
     {
         // ---------- Load json ----------
-        SetPaths();
+        SetPaths("Save.json");
         string loadPath = currentPath;
 
         using StreamReader streamReader = new StreamReader(loadPath);
@@ -148,12 +162,27 @@ public class SaveManager : MonoBehaviour
         SaveData loadData = JsonUtility.FromJson<SaveData>(json);
         LoadJson(loadData);
 
+        // ------------------------------------------TEST-------------------------------------------------
+        SetPaths("Fac1.json");
+        loadPath = currentPath;
+
+        using StreamReader streamReader2 = new StreamReader(loadPath);
+        json = streamReader2.ReadToEnd();
+        streamReader2.Close();
+
+        FactorySO facTest = JsonUtility.FromJson<FactorySO>(json);
+
         // ---------- Load scriptable objects ----------
         for (int i = 0; i < _SavedFarms.Length; i++)
         {
+            // Debug.Log($"Saved Farm{i}: {_SavedFarms[i].FitnessPref.Count}");
             PlayerManager.FarmDatabase[i].SetMe(_SavedFarms[i]);
+            EditorUtility.SetDirty(PlayerManager.FarmDatabase[i]);
+            // Debug.Log($"Farm{i}: {PlayerManager.FarmDatabase[i].FitnessPref.Count}");
         }
-        
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
     }
 
     // trigger reset event

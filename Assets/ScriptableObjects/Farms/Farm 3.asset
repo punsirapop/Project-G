@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 3
   m_EditorClassIdentifier: 
-  _LockStatus: 0
+  _LockStatus: 2
   _RequiredMoney: 3000
   _RequiredObjects:
   - {fileID: 11400000, guid: d0de31a427c509144b8ddd97f2a807a0, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: SFarm 1
   m_EditorClassIdentifier: 
-  _LockStatus: 2
+  _LockStatus: 0
   _RequiredMoney: 1000
   _RequiredObjects:
   - {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}

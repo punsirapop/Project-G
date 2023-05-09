@@ -166,37 +166,40 @@ public class EnemySelectionManager : MonoBehaviour
      */
     public static Dictionary<dynamic, List<float>> GetStatFitnessDict(List<MechChromoSO> m, int mode)
     {
-        List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
-        var dict = new Dictionary<dynamic, List<float>>();
-
-        for (int i = 0; i < 4; i++) fv.Add(Tuple.Create(Properties.Com, i));
-
-        foreach (MechChromoSO c in m)
+        if (m.Count > 0)
         {
-            List<float> list = new List<float>();
-            list.Add(c.GetFitness(fv));
-            switch (mode)
+            List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
+            var dict = new Dictionary<dynamic, List<float>>();
+
+            for (int i = 0; i < 4; i++) fv.Add(Tuple.Create(Properties.Com, i));
+
+            foreach (MechChromoSO c in m)
             {
-                case 1:
-                    list.Add(c.GetFitness(new List<Tuple<Properties, int>>()
-                        { Tuple.Create(Properties.Com, 0) }) +
-                        c.GetFitness(new List<Tuple<Properties, int>>()
-                        { Tuple.Create(Properties.Com, 3) }));
-                    break;
-                case 2:
-                    list.Add(c.GetFitness(new List<Tuple<Properties, int>>()
-                        { Tuple.Create(Properties.Com, 1) }) +
-                        c.GetFitness(new List<Tuple<Properties, int>>()
-                        { Tuple.Create(Properties.Com, 2) }));
-                    break;
-                default:
-                    break;
+                List<float> list = new List<float>();
+                list.Add(c.GetFitness(fv));
+                switch (mode)
+                {
+                    case 1:
+                        list.Add(c.GetFitness(new List<Tuple<Properties, int>>()
+                            { Tuple.Create(Properties.Com, 0) }) +
+                            c.GetFitness(new List<Tuple<Properties, int>>()
+                            { Tuple.Create(Properties.Com, 3) }));
+                        break;
+                    case 2:
+                        list.Add(c.GetFitness(new List<Tuple<Properties, int>>()
+                            { Tuple.Create(Properties.Com, 1) }) +
+                            c.GetFitness(new List<Tuple<Properties, int>>()
+                            { Tuple.Create(Properties.Com, 2) }));
+                        break;
+                    default:
+                        break;
+                }
+
+                dict.Add(c, list);
             }
-
-            dict.Add(c, list);
+            return dict;
         }
-
-        return dict;
+        return null;
     }
 
     public void BackToSelection()

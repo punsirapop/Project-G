@@ -13,12 +13,13 @@ public class MechPresetSO : ScriptableObject
 
     private void Awake()
     {
-        int c = MechChromoSO.Cap == 0 ? 4 : MechChromoSO.Cap;
+        int c = MechChromoSO.Cap > 0 ? MechChromoSO.Cap : 4;
         SetRandom(c);
     }
 
     public void SetRandom(int c)
     {
+        // Debug.Log("Resetting Preset: " + c);
         Head = Random.Range(0, 20);
         Body = new int[3];
         for (int i = 0; i < 3; i++) Body[i] = Random.Range(0, 256);

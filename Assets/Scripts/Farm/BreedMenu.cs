@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,8 +50,8 @@ public class BreedMenu : MonoBehaviour
         // elites = new List<MechChromoSO>();
         breedGen = 1;
         if (myFarm.BreedPref.Equals(default(BreedPref)))
-        myFarm.SetBreedPref(new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
-            (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen));
+            myFarm.SetBreedPref(new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
+                (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen));
         OnChangeStatus(myFarm, myFarm.Status);
     }
 
@@ -68,8 +69,8 @@ public class BreedMenu : MonoBehaviour
     {
         BreedPref b = new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
             (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen);
-        b.Print();
-        myFarm.SetBreedPref(b);
+        // b.Print();
+        // myFarm.SetBreedPref(b);
     }
 
     private void Update()
@@ -130,8 +131,8 @@ public class BreedMenu : MonoBehaviour
 
     private void SetDisplay()
     {
-        Debug.Log("Setting display");
-        myFarm.BreedPref.Print();
+        // Debug.Log("Setting display");
+        // myFarm.BreedPref.Print();
         TypeParentSelect.value = myFarm.BreedPref.TypeParentSelect;
         TypeCrossover.value = myFarm.BreedPref.TypeCrossover;
         KSelect.value = myFarm.BreedPref.KSelect;
@@ -176,177 +177,159 @@ public class BreedMenu : MonoBehaviour
         Dictionary<dynamic, float> fv = fitnessMenu.GetFitnessDict();
         BreedPref b = new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
             (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen);
-        b.Print();
+        // b.Print();
         myFarm.SetBreedPref(b);
-        myFarm.BreedPref.Print();
+        // myFarm.BreedPref.Print();
         BreedInfo breedInfo = new BreedInfo(myFarm, fitnessMenu.GetFitnessPref());
         myFarm.SetBreedRequest(breedInfo);
         Debug.Log("Setting breed req for " + breedInfo.MyFarm.Name);
         myFarm.SetStatus(Status.BREEDING);
     }
 
-    [Serializable]
-    public struct BreedPref
+    
+
+}
+
+[Serializable]
+public struct BreedInfo
+{
+    [SerializeField] FarmSO _MyFarm;
+    public FarmSO MyFarm => _MyFarm;
+    [SerializeField] List<Tuple<Properties, int>> _CurrentPref;
+    public List<Tuple<Properties, int>> CurrentPref => _CurrentPref;
+    [SerializeField] Tuple<Properties, int>[] a;
+
+    public BreedInfo (FarmSO ThisFarm, List<Tuple<Properties, int>> ThisCurrentPref)
     {
-        int elitismRate;
-        public int ElitismRate => elitismRate;
-        int typeParentSelect;
-        public int TypeParentSelect => typeParentSelect;
-        int kSelect;
-        public int KSelect => kSelect;
-        int typeCrossover;
-        public int TypeCrossover => typeCrossover;
-        int mutationRate;
-        public int MutationRate => mutationRate;
-        int breedGen;
-        public int BreedGen => breedGen;
-
-        public BreedPref(int ElitismRate, int TypeParentSelect, int KSelect,
-            int TypeCrossover,int MutationRate, int BreedGen)
+        _MyFarm = ThisFarm;
+        if (ThisCurrentPref != null)
         {
-            elitismRate = ElitismRate;
-            typeParentSelect = TypeParentSelect;
-            kSelect = KSelect;
-            typeCrossover = TypeCrossover;
-            mutationRate = MutationRate;
-            breedGen = BreedGen;
+            _CurrentPref = ThisCurrentPref.ToList();
         }
-
-        public BreedPref Copy()
+        else
         {
-            Debug.Log("Copying BreedPref");
-            return new BreedPref(ElitismRate, TypeParentSelect, KSelect,
-                TypeCrossover, MutationRate, BreedGen);
+            _CurrentPref = null;
         }
-
-        public void Print()
-        {
-            Debug.Log("--------------- My breed pref ---------------");
-            Debug.Log("elitismRate = " + elitismRate);
-            Debug.Log("parent = " + typeParentSelect);
-            Debug.Log("crossover = " + typeCrossover);
-            Debug.Log("mutation = " + mutationRate);
-            Debug.Log("breedGen = " + breedGen);
-        }
+        a = _CurrentPref.ToArray();
     }
 
-    [Serializable]
-    public struct BreedInfo
+    public BreedInfo Copy()
     {
-        FarmSO _MyFarm;
-        public FarmSO MyFarm => _MyFarm;
-        List<Tuple<Properties, int>> _CurrentPref;
-        public List<Tuple<Properties, int>> CurrentPref => _CurrentPref;
+        // Debug.Log("Copying BreedInfo");
+        return new BreedInfo(MyFarm, CurrentPref);
+    }
 
-        public BreedInfo (FarmSO ThisFarm, List<Tuple<Properties, int>> ThisCurrentPref)
+    /*
+        * Initiate breeding process
+        * 
+        * Get Fitness
+        * Select Parents
+        * Crossover
+        * Mutate
+        */
+    public void BreedMe()
+    {
+        List<MechChromoSO> elites = new List<MechChromoSO>();
+
+        // ------- get fitness -------
+        Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
+        foreach (MechChromoSO c in _MyFarm.MechChromos)
         {
-            _MyFarm = ThisFarm;
-            if (ThisCurrentPref != null)
-            {
-                _CurrentPref = ThisCurrentPref.ToList();
-            }
-            else
-            {
-                _CurrentPref = new List<Tuple<Properties, int>>();
-            }
+            fv.Add(c, c.GetFitness(_CurrentPref));
         }
 
-        public BreedInfo Copy()
+        // ------- get elites -------
+        for (int i = 0; i < Mathf.RoundToInt(fv.Count * _MyFarm.BreedPref.ElitismRate / 100); i++)
         {
-            Debug.Log("Copying BreedInfo");
-            return new BreedInfo(MyFarm, CurrentPref);
+            elites.Add(fv.ElementAt(i).Key);
+        }
+        if ((fv.Count - elites.Count) % 2 != 0)
+        {
+            if(elites.Count > 0) elites.Remove(elites.Last());
+            else elites.Add(fv.ElementAt(0).Key);
         }
 
-        /*
-         * Initiate breeding process
-         * 
-         * Get Fitness
-         * Select Parents
-         * Crossover
-         * Mutate
-         */
-        public void BreedMe()
+        // ------- select parents according to chosen type -------
+        List<dynamic> parents = new List<dynamic>
+            (GeneticFunc.Instance.SelectParent(fv, elites.Count, MyFarm.BreedPref.TypeParentSelect, MyFarm.BreedPref.KSelect));
+        // Debug.Log("Parents Count: " + parents.Count);
+
+        // ------- crossover according to chosen type -------
+        List<List<List<int>>> parentsEncoded = new List<List<List<int>>>();
+        // encode dem parents and add to list
+        foreach (MechChromoSO c in parents)
         {
-            List<MechChromoSO> elites = new List<MechChromoSO>();
-
-            // ------- get fitness -------
-            Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
-            foreach (MechChromoSO c in _MyFarm.MechChromos)
-            {
-                fv.Add(c, c.GetFitness(_CurrentPref));
-            }
-
-            // ------- get elites -------
-            for (int i = 0; i < Mathf.RoundToInt(fv.Count * _MyFarm.BreedPref.ElitismRate / 100); i++)
-            {
-                elites.Add(fv.ElementAt(i).Key);
-            }
-            if ((fv.Count - elites.Count) % 2 != 0)
-            {
-                if(elites.Count > 0) elites.Remove(elites.Last());
-                else elites.Add(fv.ElementAt(0).Key);
-            }
-
-            // ------- select parents according to chosen type -------
-            List<dynamic> parents = new List<dynamic>
-                (GeneticFunc.Instance.SelectParent(fv, elites.Count, MyFarm.BreedPref.TypeParentSelect, MyFarm.BreedPref.KSelect));
-            // Debug.Log("Parents Count: " + parents.Count);
-
-            // ------- crossover according to chosen type -------
-            List<List<List<int>>> parentsEncoded = new List<List<List<int>>>();
-            // encode dem parents and add to list
-            foreach (MechChromoSO c in parents)
-            {
-                parentsEncoded.Add(c.GetChromosome());
-                // Debug.Log(string.Join("-", parentsEncoded[parentsEncoded.Count-1]));
-            }
-
-            // crossover each pair ex: 0-1, 2-3, ...
-            for (int i = 0; i < parentsEncoded.Count - (parentsEncoded.Count % 2); i += 2)
-            {
-                GeneticFunc.Instance.Crossover(parentsEncoded[i], parentsEncoded[i + 1], MyFarm.BreedPref.TypeCrossover);
-                // Debug.Log(string.Join("-", parentsEncoded[i]));
-            }
-            // Debug.Log("Finished CrossingOver " + parentsEncoded.Count);
-
-            // ------- mutate -------
-            for (int i = 0; i < parents.Count; i++)
-            {
-                if (UnityEngine.Random.Range(0, 100) < MyFarm.BreedPref.MutationRate)
-                    GeneticFunc.Instance.Mutate(parentsEncoded[i], parents[i].GetMutateCap());
-            }
-
-            // Debug.Log("Mechs to add: " + parentsEncoded.Count);
-            // Debug.Log("0 Mechs in farm: " + myFarm.MechChromos.Count);
-
-            // ------- clear farm -------
-            List<MechChromoSO> deleteMe = new List<MechChromoSO>(_MyFarm.MechChromos);
-            // keep those elites to the next generation
-            foreach (var item in elites)
-            {
-                deleteMe.Remove(item);
-            }
-
-            // clear old population
-            foreach (var item in deleteMe)
-            {
-                FarmManager.Instance.DelChromo(MyFarm, item);
-            }
-            // Debug.Log("1 Mechs in farm: " + myFarm.MechChromos.Count);
-
-            // ------- create new chromosomes -------
-            List<MechChromoSO> children = new List<MechChromoSO>();
-            foreach (var item in parentsEncoded)
-            {
-                FarmManager.Instance.AddChromo(MyFarm, 1);
-                children.Add(_MyFarm.MechChromos.Last());
-                children.Last().SetChromosome(item);
-
-                // FarmManager.Instance.mechs.Last().GetComponent<MechDisplay>().SetChromo(children.Last());
-            }
-            // Debug.Log("2 Mechs in farm: " + myFarm.MechChromos.Count);
-
-            // Debug.Log("Children Count: " + children.Count);
+            parentsEncoded.Add(c.GetChromosome());
+            // Debug.Log(string.Join("-", parentsEncoded[parentsEncoded.Count-1]));
         }
+
+        // crossover each pair ex: 0-1, 2-3, ...
+        for (int i = 0; i < parentsEncoded.Count - (parentsEncoded.Count % 2); i += 2)
+        {
+            GeneticFunc.Instance.Crossover(parentsEncoded[i], parentsEncoded[i + 1], MyFarm.BreedPref.TypeCrossover);
+            // Debug.Log(string.Join("-", parentsEncoded[i]));
+        }
+        // Debug.Log("Finished CrossingOver " + parentsEncoded.Count);
+
+        // ------- mutate -------
+        for (int i = 0; i < parents.Count; i++)
+        {
+            if (UnityEngine.Random.Range(0, 100) < MyFarm.BreedPref.MutationRate)
+                GeneticFunc.Instance.Mutate(parentsEncoded[i], parents[i].GetMutateCap());
+        }
+
+        // Debug.Log("Mechs to add: " + parentsEncoded.Count);
+        // Debug.Log("0 Mechs in farm: " + myFarm.MechChromos.Count);
+
+        // ------- clear farm -------
+        List<MechChromoSO> deleteMe = new List<MechChromoSO>(_MyFarm.MechChromos);
+        // keep those elites to the next generation
+        foreach (var item in elites)
+        {
+            deleteMe.Remove(item);
+        }
+
+        // clear old population
+        foreach (var item in deleteMe)
+        {
+            FarmManager.Instance.DelChromo(MyFarm, item);
+        }
+        // Debug.Log("1 Mechs in farm: " + myFarm.MechChromos.Count);
+
+        // ------- create new chromosomes -------
+        List<MechChromoSO> children = new List<MechChromoSO>();
+        foreach (var item in parentsEncoded)
+        {
+            FarmManager.Instance.AddChromo(MyFarm, 1);
+            children.Add(_MyFarm.MechChromos.Last());
+            children.Last().SetChromosome(item);
+
+            // FarmManager.Instance.mechs.Last().GetComponent<MechDisplay>().SetChromo(children.Last());
+        }
+        // Debug.Log("2 Mechs in farm: " + myFarm.MechChromos.Count);
+
+        // Debug.Log("Children Count: " + children.Count);
+    }
+}
+
+[Serializable]
+public struct BreedPref
+{
+    public int ElitismRate;
+    public int TypeParentSelect;
+    public int KSelect;
+    public int TypeCrossover;
+    public int MutationRate;
+    public int BreedGen;
+
+    public  BreedPref (int elitismRate, int typeParentSelect, int kSelect, int typeCrossover,
+            int mutationRate, int breedGen)
+    {
+        ElitismRate = elitismRate;
+        TypeParentSelect = typeParentSelect;
+        KSelect = kSelect;
+        TypeCrossover = typeCrossover;
+        MutationRate = mutationRate;
+        BreedGen = breedGen;
     }
 }
