@@ -2697,6 +2697,7 @@ GameObject:
   - component: {fileID: 381078841}
   - component: {fileID: 381078840}
   - component: {fileID: 381078843}
+  - component: {fileID: 381078844}
   m_Layer: 5
   m_Name: Habitat
   m_TagString: Untagged
@@ -2845,6 +2846,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _RequiredMainQuest: {fileID: 11400000, guid: 370df5f0246b6a34fbe7134e1e166d82, type: 2}
   _RequiredStatus: 4
+--- !u!114 &381078844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381078838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &397158454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,6 +2872,7 @@ GameObject:
   - component: {fileID: 397158457}
   - component: {fileID: 397158456}
   - component: {fileID: 397158459}
+  - component: {fileID: 397158460}
   m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
@@ -3010,6 +3025,19 @@ MonoBehaviour:
   _QuestDetailButtonPrefab: {fileID: 7250922068748355008, guid: 34403a0b912a2dc4d843637019b887d6, type: 3}
   _OneQuestDetailPanel: {fileID: 174202642}
   _ConfirmButton: {fileID: 18421244}
+--- !u!114 &397158460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397158454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &397405696
 GameObject:
   m_ObjectHideFlags: 0
@@ -6114,7 +6142,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 782658610}
-  - component: {fileID: 782658611}
   m_Layer: 5
   m_Name: Tabs
   m_TagString: Untagged
@@ -6149,19 +6176,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &782658611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782658609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _SoundEffectName: Hover
 --- !u!1 &811289811
 GameObject:
   m_ObjectHideFlags: 0
@@ -10538,6 +10552,7 @@ GameObject:
   - component: {fileID: 1307528152}
   - component: {fileID: 1307528151}
   - component: {fileID: 1307528154}
+  - component: {fileID: 1307528155}
   m_Layer: 5
   m_Name: Calendar
   m_TagString: Untagged
@@ -10686,6 +10701,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _RequiredMainQuest: {fileID: 11400000, guid: 910a04a42a4dc5a44afa00e763567cbf, type: 2}
   _RequiredStatus: 4
+--- !u!114 &1307528155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307528149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1328791567
 GameObject:
   m_ObjectHideFlags: 0
@@ -13608,6 +13636,7 @@ GameObject:
   - component: {fileID: 1568964131}
   - component: {fileID: 1568964130}
   - component: {fileID: 1568964133}
+  - component: {fileID: 1568964134}
   m_Layer: 5
   m_Name: City
   m_TagString: Untagged
@@ -13756,6 +13785,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _RequiredMainQuest: {fileID: 11400000, guid: 370df5f0246b6a34fbe7134e1e166d82, type: 2}
   _RequiredStatus: 4
+--- !u!114 &1568964134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568964128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1588809151
 GameObject:
   m_ObjectHideFlags: 0
@@ -14923,6 +14965,7 @@ GameObject:
   - component: {fileID: 1802923184}
   - component: {fileID: 1802923183}
   - component: {fileID: 1802923186}
+  - component: {fileID: 1802923187}
   m_Layer: 5
   m_Name: ResearchLab
   m_TagString: Untagged
@@ -15071,6 +15114,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _RequiredMainQuest: {fileID: 11400000, guid: 910a04a42a4dc5a44afa00e763567cbf, type: 2}
   _RequiredStatus: 1
+--- !u!114 &1802923187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802923181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1804171333
 GameObject:
   m_ObjectHideFlags: 0

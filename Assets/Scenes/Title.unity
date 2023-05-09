@@ -3264,6 +3264,9 @@ MonoBehaviour:
   - SceneName: SideQuestSubmission
     Clip: {fileID: 8300000, guid: 131a9dfe9ec78e2468d0a9ec889205a5, type: 3}
     Volume: 0.75
+  - SceneName: HallOfCapybara
+    Clip: {fileID: 8300000, guid: 0bb520e8bf4053e4386c84fd723eaa29, type: 3}
+    Volume: 1
 --- !u!1 &1999783382
 GameObject:
   m_ObjectHideFlags: 0
