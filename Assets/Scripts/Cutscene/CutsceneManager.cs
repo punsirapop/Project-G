@@ -60,9 +60,9 @@ public class CutsceneManager : MonoBehaviour
         public bool IsSelected { get; private set; }
 
         // Spawn normal sentence
-        public Log(DialogueElement dialogueElement)
+        public Log(DialogueElement.Sentence sentence)
         {
-            if (dialogueElement.SentenceData.Speaker == DialogueElement.Speaker.Player)
+            if (sentence.Speaker == DialogueElement.Speaker.Player)
             {
                 SpeakerName = "Player";
             }
@@ -71,7 +71,7 @@ public class CutsceneManager : MonoBehaviour
                 // NPC name
                 SpeakerName = CutsceneManager.Instance._CurrentDialogueSO.SpeakerName;
             }
-            SentenceContent = dialogueElement.SentenceData.SentenceContent;
+            SentenceContent = sentence.SentenceContent;
             IsSelected = false;     // This's not a choice
         }
 
@@ -111,7 +111,7 @@ public class CutsceneManager : MonoBehaviour
     public void DisplaySentence(DialogueElement.Sentence currentSentence)
     {
         // Add sentence to the log
-        _DialogueLogs.Add(new Log(_CurrentDialogueElement));
+        _DialogueLogs.Add(new Log(currentSentence));
         // Set illustration and character position
         Sprite illustration = currentSentence.Illustration;
         if (illustration != null)
