@@ -81,8 +81,8 @@ public class Capybara : MonoBehaviour
         _Animator.Play("CapybaraHeartPopup");
         if (_TapCount >= _Capybara.RequiredTapCount)
         {
-            SoundEffectManager.Instance.PlaySoundEffect("CappyCaught");
             _Capybara.Found();
+            SoundEffectManager.Instance.PlaySoundEffect("CappyFound");
             CapybaraManager.Instance.OpenOverlay(_Capybara);
             Destroy(gameObject);
         }

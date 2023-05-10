@@ -443,13 +443,13 @@ MonoBehaviour:
       SentenceContent: 'Calculating <b>Result</b> . . . '
       Illustration: {fileID: 0}
     Choices:
-    - SentenceContent: more fitness value should have more chance to be selected.
+    - SentenceContent: More fitness value should have more chance to be selected.
       ReponseData:
       - Speaker: 5
         SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
-    - SentenceContent: a more unique chromosome should have more chance to be selected.
+    - SentenceContent: A more unique chromosome should have more chance to be selected.
       ReponseData:
       - Speaker: 5
         SentenceContent: 'Receiving <b>Answer</b> '

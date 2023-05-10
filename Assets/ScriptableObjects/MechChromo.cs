@@ -50,8 +50,6 @@ public class MechChromo
             Acc = Random.Range(0, 10);
 
             SetRandomStat(PlayerManager.MechCap);
-            SetRank();
-            SetElement();
         }
         else
         {
@@ -64,6 +62,8 @@ public class MechChromo
             Hp = m.Hp.ToArray();
             Spd = m.Spd.ToArray();
         }
+        SetRank();
+        SetElement();
     }
 
     /*
@@ -103,6 +103,8 @@ public class MechChromo
         for (int i = 0; i < Def.Length; i++) Def[i] = Random.Range(1, c+1);
         for (int i = 0; i < Hp.Length; i++) Hp[i] = Random.Range(1, c+1);
         for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c+1);
+        SetRank();
+        SetElement();
     }
 
     public void SetRandomStat2(int cap)
@@ -124,6 +126,8 @@ public class MechChromo
         Def = new int[] { stat[1] };
         Hp = new int[] { stat[2] };
         Spd = new int[] { stat[3] };
+        SetRank();
+        SetElement();
     }
 
     // Set properties according to encoded chromosome
@@ -154,6 +158,9 @@ public class MechChromo
         Def = m.Def.ToArray();
         Hp = m.Hp.ToArray();
         Spd = m.Spd.ToArray();
+
+        SetRank();
+        SetElement();
 
         return this;
     }

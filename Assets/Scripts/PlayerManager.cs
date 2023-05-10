@@ -250,6 +250,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (deductAmount <= Money)
         {
             Money -= deductAmount;
+            if (deductAmount > 0)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+            }
             return true;
         }
         else
@@ -263,6 +267,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void ForceSpendMoney(int deductAmount)
     {
         Money -= deductAmount;
+        if (deductAmount > 0)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+        }
     }
 
     // Gain money and return true if success, Otherwise, do nothing and return false
@@ -272,6 +280,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             Debug.Log($"Giving Money {gainAmount}G");
             Money += gainAmount;
+            if (gainAmount > 0)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("GainMoney");
+            }
             return true;
         }
         else
@@ -379,7 +391,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             piece.ForceUnlock();
         }
         MainQuestDatabase.ForceCompleteQuest();
-        //SideQuestDatabase.ForceCompleteQuest();
+        SideQuestDatabase.ForceCompleteQuest();
         ValidateUnlocking();
     }
 

@@ -38,6 +38,8 @@ public class SideQuestDatabaseSO : ScriptableObject
         TimeManager.Date firstDate = new TimeManager.Date();
         firstDate.InitDate();
         GenerateNewQuest(firstDate.AddDay(_MaxQuestDurationDay), _MinCeilingMoneyReward);
+        firstDate.InitDate();
+        GenerateNewQuest(firstDate.AddDay(_MinQuestDurationDay), _MaxCeilingMoneyReward);
     }
 
     // Return all side quest in database
@@ -70,6 +72,24 @@ public class SideQuestDatabaseSO : ScriptableObject
         return acquiredQuests;
     }
 
+    // Return all unacquired side quest
+    public List<SideQuestSO> GetAllUnacquiredQuest(bool sortByDate = true)
+    {
+        List<SideQuestSO> unacquiredQuests = new List<SideQuestSO>();
+        foreach (SideQuestSO quest in _SideQuests)
+        {
+            if (quest.QuestStatus == QuestSO.Status.Unacquired)
+            {
+                unacquiredQuests.Add(quest);
+            }
+        }
+        if (sortByDate)
+        {
+            unacquiredQuests.Sort((a, b) => (a.DueDate.CompareDate(b.DueDate)));
+        }
+        return unacquiredQuests;
+    }
+
     public void ValidateAllQuestStatus()
     {
         // Validate all side quests
@@ -97,16 +117,83 @@ public class SideQuestDatabaseSO : ScriptableObject
         {
             _SideQuests.Remove(questToDelete);
         }
+        // Make sure there is only at most 4 unacquired quests at a time
+        List<SideQuestSO> unacquiredQuests = GetAllUnacquiredQuest();
+        if (unacquiredQuests.Count <= 4)
+        {
+            return;
+        }
+        // If there are more than 4 unacquired quest, delete the exceeding quest
+        // Generate random index pool
+        int[] poolIndex = new int[unacquiredQuests.Count];
+        for (int i = 0; i < unacquiredQuests.Count; i++)
+        {
+            poolIndex[i] = i;
+        }
+        // Random picking random distinct quest to delete
+        List<SideQuestSO> exceedingQuests = new List<SideQuestSO>();
+        foreach (int index in _RandomChoices(poolIndex, poolIndex.Length - 4))
+        {
+            exceedingQuests.Add(_SideQuests[index]);
+        }
+        // Remove all exceeding quest from the database
+        foreach (SideQuestSO exceedindQuest in exceedingQuests)
+        {
+            _SideQuests.Remove(exceedindQuest);
+        }
     }
-    
+
+    // Return a number of random distinct value from the randomPool equal to the number of randomCount
+    private int[] _RandomChoices(int[] randomPool, int randomCount)
+    {
+        if (randomPool.Length < randomCount)
+        {
+            return null;
+        }
+        else if (randomPool.Length == randomCount)
+        {
+            return randomPool;
+        }
+        int[] currentRandomPool = randomPool;
+        int[] resultPool = new int[randomCount];
+        for (int i = 0; i < randomCount; i++)
+        {
+            // Get new random value in pool
+            int newRandomIndex = Random.Range(0, currentRandomPool.Length);
+            resultPool[i] = currentRandomPool[newRandomIndex];
+            // Remove such value from the pool
+            int[] newRandomPool = new int[currentRandomPool.Length - 1];
+            for (int j = 0; j < currentRandomPool.Length - 1; j++)
+            {
+                newRandomPool[j] = (j >= newRandomIndex) ? currentRandomPool[j + 1] : currentRandomPool[j];
+            }
+            currentRandomPool = newRandomPool;
+        }
+        return resultPool;
+    }
+
     // Overload method for auto-generate quest
     public void GenerateNewQuestByTime(TimeManager.Date dateBeforeSkip, int skipAmount)
     {
         for (int i = 1; i <= skipAmount; i++)
         {
             _DayLeftBeforeNewQuest--;
-            // Generate new quest
-            if (_DayLeftBeforeNewQuest <= 0)
+            // Calculate the number of quest to be generated
+            int unacquiredQuestCount = 0;
+            foreach (SideQuestSO sideQuest in _SideQuests)
+            {
+                if (sideQuest.QuestStatus == QuestSO.Status.Unacquired)
+                {
+                    unacquiredQuestCount++;
+                }
+            }
+            // If the time's hasn't come, skip to next day
+            if (_DayLeftBeforeNewQuest > 0)
+            {
+                continue;
+            }
+            // Spawn 2 quests at a time
+            for (int j = 0; j < 2; j++)
             {
                 // Calculate duration
                 int newQuestDuration = Random.Range(_MinQuestDurationDay, _MaxQuestDurationDay);
@@ -115,10 +202,14 @@ public class SideQuestDatabaseSO : ScriptableObject
                 int maxRewardMoney = _MinCeilingMoneyReward + (int)(bonusRatio * (_MaxCeilingMoneyReward - _MinCeilingMoneyReward));
                 // Generate new quest
                 GenerateNewQuest(
-                    dateBeforeSkip.DupeDate().AddDay(i + newQuestDuration), 
+                    dateBeforeSkip.DupeDate().AddDay(i + newQuestDuration),
                     maxRewardMoney);
                 _DayLeftBeforeNewQuest = _PeriodDayBeforeNewQuest;
             }
+        }
+        if (_DayLeftBeforeNewQuest < 0)
+        {
+            _DayLeftBeforeNewQuest = 0;
         }
     }
 

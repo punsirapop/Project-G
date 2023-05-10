@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777d81d5009f9bb46a2c3cb0ced954a2, type: 3}
   m_Name: Farm 1
   m_EditorClassIdentifier: 
-  _LockStatus: 1
+  _LockStatus: 2
   _RequiredMoney: 1000
-  _RequiredObjects: []
+  _RequiredObjects:
+  - {fileID: 11400000, guid: b4026e1f11927b54781ce9a1cdcd8193, type: 2}
+  - {fileID: 11400000, guid: 0db67a16a156fcd40b6e762f5d19fb17, type: 2}
+  - {fileID: 11400000, guid: b4302d65db2ff734cb8c99d4a96f5780, type: 2}
+  - {fileID: 11400000, guid: cde58f1be08ec6b4f8ad634257541ecb, type: 2}
+  - {fileID: 11400000, guid: a46a82a22fb3e764d9d8b566f19efd9f, type: 2}
   _Name: Farm1
-  _Generation: 0
-  _Status: 0
   _BreedCostPerUnit: 5
   _DiscountRatePerGen: 0.1
   _BrokeChance: 0.1
@@ -35,4 +38,6 @@ MonoBehaviour:
   _MainNormal: {fileID: 21300000, guid: e26270fc5da3ca44bb2b66ef958c5582, type: 3}
   _MainBroken: {fileID: 21300000, guid: b88dd47aa9ec78945b61b736c8f61c4d, type: 3}
   _Locker: {fileID: 21300000, guid: fb877ff4c795eb6468e7f3de754f3b80, type: 3}
-  _MechChromos: []
+  _Generation: 0
+  _Status: 0
+  _Condition: 4

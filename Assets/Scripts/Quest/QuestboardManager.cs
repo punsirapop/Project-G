@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class QuestboardManager : MonoBehaviour
 {
     [SerializeField] private GameObject _QuestDetailButtonPrefab;
+    [SerializeField] private TextMeshProUGUI _RemainingTimeText;
     [SerializeField] private Transform _UnacquiredQuestHolder;
     [SerializeField] private Transform _AcquiredQuestHolder;
 
@@ -16,6 +18,10 @@ public class QuestboardManager : MonoBehaviour
 
     public void RefreshQuestboard()
     {
+        // Refresh remaining time
+        int remainingDay = PlayerManager.SideQuestDatabase.DayLeftBeforeNewQuest;
+        string suffix = (remainingDay > 1) ? " Days" : " Day";
+        _RemainingTimeText.text = remainingDay.ToString() + suffix;
         // Destroy all previous quest button object
         foreach (Transform child in _UnacquiredQuestHolder)
         {
