@@ -636,6 +636,9 @@ MonoBehaviour:
   - Name: CappyClick
     Clip: {fileID: 8300000, guid: dffe388b45eb03049aa5c321a6788c02, type: 3}
     SceneName: 
+  - Name: BuildSuccess
+    Clip: {fileID: 8300000, guid: a11f8e8fb2cf7f44cb4044ab380721c6, type: 3}
+    SceneName: 
 --- !u!4 &508172689
 Transform:
   m_ObjectHideFlags: 0

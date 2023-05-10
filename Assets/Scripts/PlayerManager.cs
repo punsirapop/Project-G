@@ -251,6 +251,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void ForceSpendMoney(int deductAmount)
     {
         Money -= deductAmount;
+        if (deductAmount > 0)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+        }
     }
 
     // Gain money and return true if success, Otherwise, do nothing and return false
