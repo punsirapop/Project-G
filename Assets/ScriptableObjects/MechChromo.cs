@@ -213,8 +213,8 @@ public class MechChromo
     public void SetRank()
     {
         int sum = Atk.Sum() + Def.Sum() + Hp.Sum() + Spd.Sum();
-        int d = Mathf.Max(PlayerManager.MechCap, 4);
-        int index = Mathf.RoundToInt(sum / (d * 4));
+        // int d = Mathf.Max(PlayerManager.MechCap, 4);
+        int index = Mathf.RoundToInt(sum / (PlayerManager.MechCap * 4f));
         Rank = (Ranks)index;
     }
 

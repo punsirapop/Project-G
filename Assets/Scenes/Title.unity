@@ -1085,11 +1085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8b935c76c708b4798ecd492a22b54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SavedFarms:
-  - {fileID: 11400000, guid: fdfff9b3c4eeb2c4c9b12ba34dee5f19, type: 2}
-  - {fileID: 11400000, guid: a7164425b4c938246b9eb79e13d43a1f, type: 2}
-  - {fileID: 11400000, guid: be2e12ef1fffb0043879e2f11c0cb510, type: 2}
-  - {fileID: 11400000, guid: 0ef52e7d99919704baf6aaab136230a5, type: 2}
 --- !u!1 &881898059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1097,7 @@ GameObject:
   - component: {fileID: 881898063}
   - component: {fileID: 881898062}
   - component: {fileID: 881898061}
+  - component: {fileID: 881898064}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -1248,6 +1244,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881898059}
   m_CullTransparentMesh: 1
+--- !u!114 &881898064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881898059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05c6bd071334f742ae5ac514fe081f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &882581368
 GameObject:
   m_ObjectHideFlags: 0

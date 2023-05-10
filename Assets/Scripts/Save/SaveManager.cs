@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using static SaveManager;
 
 public class SaveManager : MonoBehaviour
 {
@@ -19,16 +18,6 @@ public class SaveManager : MonoBehaviour
     string persistentPath = "";
     protected string currentPath;
 
-    // object save path
-    string sideQuestAssetsPath = Path.Combine("Assets", "Resources", "SideQuest");
-    string sideQuestResourcePath = "SideQuest";
-
-
-    private void Awake()
-    {
-        // Debug.Log($"Save Farms: {_SavedFarms.Length}");
-    }
-
     // check if path is ready to save
     protected bool SaveReady()
     {
@@ -41,7 +30,7 @@ public class SaveManager : MonoBehaviour
         path = Path.Combine(Application.dataPath, "Save", name);
         persistentPath = Path.Combine(Application.persistentDataPath, "Save", name);
 
-        currentPath = path;
+        currentPath = persistentPath;
     }
 
     // generate struct to save
@@ -174,57 +163,6 @@ public class SaveManager : MonoBehaviour
         json = JsonUtility.ToJson(q);
         streamWriter.Write(json);
         streamWriter.Close();
-
-        // ---------- Save scriptable objects ----------
-        /*
-        for (int i = 0; i < 4; i++)
-        {
-            _SavedFarms[i].SetMe(PlayerManager.FarmDatabase[i]);
-        }
-        */
-
-        // ---------- Save objects ----------
-        // Mechs
-        /*
-        MechChromo[] loaded = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToArray();
-        MechChromo[] saved = Resources.LoadAll<MechChromo>(mechResourcePath);
-        Debug.Log("LOADED: " + loaded.Count() + " SAVED: " + saved.Length);
-        Debug.Log("UNSAVED: " + loaded.Except(saved).Count() + " UNLOADED: " + saved.Except(loaded).Count());
-        */
-        // Side quest
-        /*
-        SideQuestSO[] loadedSideQuest = PlayerManager.SideQuestDatabase.GetAllQuest().ToArray();
-        SideQuestSO[] savedSideQuest = Resources.LoadAll<SideQuestSO>(sideQuestResourcePath);
-        */
-        // Save new items
-        /*
-        foreach (var item in loaded.Except(saved))
-        {
-            AssetDatabase.CreateAsset(item, Path.Combine(mechAssetsPath, item.ID.ToString() + ".asset"));
-        }
-        */
-        /*
-        foreach (var currentQuest in loadedSideQuest.Except(savedSideQuest))
-        {
-            AssetDatabase.CreateAsset(currentQuest, Path.Combine(sideQuestAssetsPath, currentQuest.ID.ToString() + ".asset"));
-        }
-        */
-        // Delete unused items
-        /*
-        foreach (var item in saved.Except(loaded))
-        {
-            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(item));
-        }
-        */
-        /*
-        foreach (var oldQuest in savedSideQuest.Except(loadedSideQuest))
-        {
-            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(oldQuest));
-        }
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        */
-        // Debug.Log(json);
     }
 
     // load file
@@ -283,32 +221,12 @@ public class SaveManager : MonoBehaviour
 
         PlayerManager.MainQuestDatabase.Load(q.CurrentQuestIndex, q.IsDayPassed, q.QuestStatus);
 
-        // ---------- Load scriptable objects ----------
-        /*
-        for (int i = 0; i < _SavedFarms.Length; i++)
-        {
-            PlayerManager.FarmDatabase[i].SetMe(_SavedFarms[i]);
-        }
-        */
-
     }
 
     // trigger reset event
     public void ResetGame()
     {
         Debug.Log("PLS RESET");
-        // delete mech chromos
-        /*
-        MechChromo[] deleteMe = Resources.LoadAll<MechChromo>("Mechs");
-        foreach (MechChromo mechChromoSO in deleteMe)
-            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(mechChromoSO));
-        */
-        // Delete side quests
-        /*
-        SideQuestSO[] oldSideQuests = Resources.LoadAll<SideQuestSO>(sideQuestResourcePath);
-        foreach (SideQuestSO quest in oldSideQuests)
-            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(quest));
-        */
         OnReset?.Invoke();
     }
 }

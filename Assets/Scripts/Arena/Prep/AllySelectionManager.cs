@@ -8,7 +8,6 @@ using UnityEngine;
 public class AllySelectionManager : MonoBehaviour
 {
     public static AllySelectionManager Instance;
-    public static event Action OnTeamChange;
 
     public int CurrentSelection;
 
