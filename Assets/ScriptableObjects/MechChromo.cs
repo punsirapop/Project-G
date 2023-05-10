@@ -4,7 +4,6 @@ using System.Dynamic;
 using System.Linq;
 using UnityEngine;
 using static FitnessMenu;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 /* 
  * Scriptable object for a chromosome
@@ -13,10 +12,12 @@ using static Unity.Burst.Intrinsics.X86.Avx;
  * ***
  * Randomized when generated but can be adjusted later
  */
-public class MechChromo
+[CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/Mech")]
+public class MechChromoSO : ScriptableObject
 {
     public enum Ranks { C, B, A, S }
     public enum Elements { Fire, Plant, Water, Light, Dark, None }
+    public static int IDCounter;
     public int ID;
     // ---- Cosmetic ----
     // Head - 20 pcs
@@ -28,6 +29,7 @@ public class MechChromo
 
     // ---- Combat ----
     // max stat to generate
+    public static int Cap;
 
     public int[] Atk { get; private set; }
     public int[] Def { get; private set; }
@@ -36,37 +38,6 @@ public class MechChromo
     public Elements Element { get; private set; }
     public Ranks Rank { get; private set; }
 
-    public MechChromo(MechSaver m)
-    {
-        if (m == null)
-        {
-            ID = PlayerManager.MechIDCounter;
-            PlayerManager.MechIDCounter++;
-
-            // init stuffs
-            Head = Random.Range(0, 20);
-            Body = new int[3];
-            for (int i = 0; i < 3; i++) Body[i] = Random.Range(0, 256);
-            Acc = Random.Range(0, 10);
-
-            SetRandomStat(PlayerManager.MechCap);
-            SetRank();
-            SetElement();
-        }
-        else
-        {
-            ID = m.ID;
-            Head = m.Head;
-            Body = m.Body.ToArray();
-            Acc = m.Acc;
-            Atk = m.Atk.ToArray();
-            Def = m.Def.ToArray();
-            Hp = m.Hp.ToArray();
-            Spd = m.Spd.ToArray();
-        }
-    }
-
-    /*
     private void Awake()
     {
         SaveManager.OnReset += ResetMe;
@@ -91,7 +62,6 @@ public class MechChromo
     {
         SaveManager.OnReset -= ResetMe;
     }
-    */
 
     public void SetRandomStat(int c)
     {
@@ -105,17 +75,17 @@ public class MechChromo
         for (int i = 0; i < Spd.Length; i++) Spd[i] = Random.Range(1, c+1);
     }
 
-    public void SetRandomStat2(int cap)
+    public void SetRandomStat2(int statPoints)
     {
         int[] stat = new int[4];
-        int firstDis = Mathf.Max(1, Mathf.CeilToInt(cap / 12));
-        cap -= firstDis * 4;
+        int firstDis = Mathf.Max(1, Mathf.CeilToInt(statPoints / 12));
+        statPoints -= firstDis * 4;
         for (int i = 0; i < 4; i++)
         {
             stat[i] += firstDis;
         }
 
-        for (; cap > 0; cap--)
+        for (; statPoints > 0; statPoints--)
         {
             stat[Random.Range(0, 4)]++;
         }
@@ -204,7 +174,7 @@ public class MechChromo
 
         for (int i = 0; i < 12; i++)
         {
-            c.Add(PlayerManager.MechCap);
+            c.Add(Cap);
         }
 
         return c;
@@ -213,12 +183,11 @@ public class MechChromo
     public void SetRank()
     {
         int sum = Atk.Sum() + Def.Sum() + Hp.Sum() + Spd.Sum();
-        int d = Mathf.Max(PlayerManager.MechCap, 4);
-        int index = Mathf.RoundToInt(sum / (d * 4));
+        int index = Mathf.RoundToInt(sum / (Cap * 4f));     // Achieve S rank when got roughly 83% of max stat with current cap
         Rank = (Ranks)index;
     }
 
-    public float CompareMechQuest(MechChromo m)
+    public float CompareMechQuest(MechChromoSO m)
     {
         float fitness = 0f;
         if (m != null)
@@ -289,7 +258,7 @@ public class MechChromo
                             sum = Spd.Sum();
                             break;
                     }
-                    fitness += CalcMe(sum, 0, PlayerManager.MechCap * 3) / 3;
+                    fitness += CalcMe(sum, 0, Cap * 3) / 3;
                     break;
             }
         }
@@ -379,13 +348,11 @@ public class MechChromo
         return result;
     }
 
-    /*
     private void ResetMe()
     {
-        MechIDCounter = 0;
-        MechCap = 0;
+        IDCounter = 0;
+        Cap = 0;
     }
-    */
 
     private void SetElement()
     {
@@ -433,21 +400,5 @@ public class MechChromo
                 Element = (Elements)max;
             }
         }
-    }
-
-    public MechSaver Save()
-    {
-        MechSaver m = new MechSaver();
-
-        m.ID = ID;
-        m.Head = Head;
-        m.Body = Body.ToArray();
-        m.Acc = Acc;
-        m.Atk = Atk.ToArray();
-        m.Def = Def.ToArray();
-        m.Hp = Hp.ToArray();
-        m.Spd = Spd.ToArray();
-
-        return m;
     }
 }

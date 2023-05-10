@@ -9,6 +9,8 @@ using UnityEngine.UI;
 [Serializable]
 public class ArenaManager : MonoBehaviour
 {
+    public static ArenaManager Instance;
+
     [SerializeField] private Sprite[] _EffectSprites, _WeaponSprites, _WeaponRanks, _BulletSprites;
     public static Sprite[] EffectSprites, WeaponSprites, WeaponRanks, BulletSprites;
 
@@ -17,12 +19,16 @@ public class ArenaManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _EntranceFeeText;
 
     [SerializeField] private int _EntranceFee;
+    [SerializeField] private int _RewardMoneyPerLevel;
+    public int RewardMoneyPerLevel => _RewardMoneyPerLevel;
 
     public static int EnemyLevel;
 
     // Assign sprites from serialized field on editor to the static variable
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+
         EffectSprites = _EffectSprites;
         WeaponSprites = _WeaponSprites;
         WeaponRanks = _WeaponRanks;
@@ -58,7 +64,7 @@ public class ArenaManager : MonoBehaviour
         switch (BattleManager.WinningStatus)
         {
             case 0:
-                PlayerManager.GainMoneyIfValid(500 * EnemyLevel);
+                PlayerManager.GainMoneyIfValid(_RewardMoneyPerLevel * EnemyLevel);
                 _DefaultPanel.SetActive(true);
                 break;
             case 1:
