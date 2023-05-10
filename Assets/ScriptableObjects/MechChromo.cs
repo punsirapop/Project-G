@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 using static FitnessMenu;
 using static Unity.Burst.Intrinsics.X86.Avx;
@@ -15,7 +16,7 @@ using static Unity.Burst.Intrinsics.X86.Avx;
  */
 public class MechChromo
 {
-    public enum Ranks { C, B, A, S }
+    public enum Ranks { D, C, B, A, S }
     public enum Elements { Fire, Plant, Water, Light, Dark, None }
     public int ID;
     // ---- Cosmetic ----
@@ -223,8 +224,29 @@ public class MechChromo
     {
         int sum = Atk.Sum() + Def.Sum() + Hp.Sum() + Spd.Sum();
         // int d = Mathf.Max(PlayerManager.MechCap, 4);
-        int index = Mathf.RoundToInt(sum / (PlayerManager.MechCap * 4f));
-        Rank = (Ranks)index;
+        // int index = Mathf.RoundToInt(sum / (PlayerManager.MechCap * 4f));
+        float f = sum / (PlayerManager.MechCap * 12f);
+        switch (f)
+        {
+            case < .5f:
+                Rank = Ranks.D;
+                break;
+            case < .6f:
+                Rank = Ranks.C;
+                break;
+            case < .7f:
+                Rank = Ranks.B;
+                break;
+            case < .8f:
+                Rank = Ranks.A;
+                break;
+            case >= .8f:
+                Rank = Ranks.S;
+                break;
+            default:
+                Rank = Ranks.D;
+                break;
+        }
     }
 
     public float CompareMechQuest(MechChromo m)

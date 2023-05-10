@@ -72,7 +72,7 @@ public class ArenaManager : MonoBehaviour
                 PlayerManager.GainMoneyIfValid(RewardMoneyPerLevel * EnemyLevel);
                 break;
             case WinType.Lose:
-                PlayerManager.SpendMoneyIfEnought(RewardMoneyPerLevel / 2);
+                PlayerManager.SpendMoneyIfEnought(Mathf.Min(RewardMoneyPerLevel / 2, PlayerManager.Money));
                 break;
             default:
                 break;
