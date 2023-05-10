@@ -46,9 +46,9 @@ public class ShopSO : ScriptableObject
         }
     }
 
-    public bool Purchase(int index)
+    public bool Purchase(int index, int price)
     {
-        if (PlayerManager.SpendMoneyIfEnought(500))
+        if (PlayerManager.SpendMoneyIfEnought(price))
         {
             InStock[index] = false;
             return true;

@@ -12,6 +12,11 @@ public class ShopItemDisplay : MonoBehaviour
     [SerializeField] GameObject _OutOfStock;
     [SerializeField] Button _Purchase;
 
+    private void Start()
+    {
+        _Purchase.GetComponentInChildren<TextMeshProUGUI>().text = ShopManager.Instance.MechPricePerUnit.ToString();
+    }
+
     public void UpdateChromo(MechPresetSO m, bool b)
     {
         if (b)
