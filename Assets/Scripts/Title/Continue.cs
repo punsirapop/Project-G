@@ -21,7 +21,10 @@ public class Continue : MonoBehaviour
         persistentPath = Path.Combine(Application.persistentDataPath, "Save", "Save.json");
 
         currentPath = persistentPath;
+    }
 
-        _Continue.interactable = File.Exists(path);
+    private void Update()
+    {
+        _Continue.interactable = File.Exists(currentPath);
     }
 }

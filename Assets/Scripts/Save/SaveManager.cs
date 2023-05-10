@@ -18,6 +18,19 @@ public class SaveManager : MonoBehaviour
     string persistentPath = "";
     protected string currentPath;
 
+    private void Awake()
+    {
+        path = Path.Combine(Application.dataPath, "Save", name);
+        persistentPath = Path.Combine(Application.persistentDataPath, "Save", name);
+
+        currentPath = persistentPath;
+
+        if (!Directory.Exists(currentPath))
+        {
+            Directory.CreateDirectory(currentPath);
+        }
+    }
+
     // check if path is ready to save
     protected bool SaveReady()
     {
@@ -228,5 +241,22 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("PLS RESET");
         OnReset?.Invoke();
+    }
+
+    // Delete all save files if possible
+    public void Delete()
+    {
+        SetPaths("Save.json");
+        string savePath = currentPath;
+        if (File.Exists(savePath)) File.Delete(savePath);
+        SetPaths("Farms.json");
+        savePath = currentPath;
+        if (File.Exists(savePath)) File.Delete(savePath);
+        SetPaths("Factories.json");
+        savePath = currentPath;
+        if (File.Exists(savePath)) File.Delete(savePath);
+        SetPaths("Quests.json");
+        savePath = currentPath;
+        if (File.Exists(savePath)) File.Delete(savePath);
     }
 }
