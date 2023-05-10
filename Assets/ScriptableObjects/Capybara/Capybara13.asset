@@ -12,19 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5455b4b8dd4e8da4cbdfd813f93e3c4a, type: 3}
   m_Name: Capybara13
   m_EditorClassIdentifier: 
-  _LockStatus: 0
-  _RequiredMoney: 0
-  _RequiredObjects: []
   _Name: 2.5
   _Rank: 2
   _HeartColor: {r: 0, g: 0, b: 0, a: 1}
   _RequiredTapCount: 75
   _MoneyReward: 1000
-  _FoundCount: 0
   _Sprites:
-  - {fileID: 21300000, guid: bf7413ca1181f034db08ebbe57c5133d, type: 3}
-  - {fileID: 21300000, guid: 3417eebb675bb1e4eba24b1321f93dfc, type: 3}
-  - {fileID: 21300000, guid: f6502244d4f742d40be65dde42381b7b, type: 3}
-  - {fileID: 21300000, guid: abe601f0e7230ff4fb5a4390ec4eaa0f, type: 3}
+  - {fileID: 21300000, guid: 85e342a5a34ff814d8a53fb8a70a463d, type: 3}
+  - {fileID: 21300000, guid: af7b5f74a1f1a564c9453332be0b7cec, type: 3}
   _StepPerSecond: 4
   _WalkedPixelPerSeconds: 100

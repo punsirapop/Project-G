@@ -16,7 +16,7 @@ MonoBehaviour:
   _BriefDescription: Build your first farm for your lovely(?) monster!
   _FullDescription: Research a lot. Qualify a lot. Build the farm. And breed a lot.
     That's it.
-  _QuestStatus: 4
+  _QuestStatus: 0
   _DueDate:
     year: 0
     month: 0
@@ -25,24 +25,4 @@ MonoBehaviour:
   _OutroDialogue: {fileID: 11400000, guid: c917de179e9526d41aa8eb1d56bf729b, type: 2}
   _RequireObject: {fileID: 11400000, guid: 29710e0c8f9731d44a4b525441110be5, type: 2}
   _RewardMoney: 1000
-  _RewardMechs:
-  - {fileID: 11400000, guid: dbe96b382dfc89e4db2b36bdee14d4e1, type: 2}
-  - {fileID: 11400000, guid: 4de3088b1af3eca449d40c89322d8eb6, type: 2}
-  - {fileID: 11400000, guid: 38a22f5d2b3168e459329cd3e4fc2c79, type: 2}
-  - {fileID: 11400000, guid: 74f475d4ebd374a4d8008b93372def46, type: 2}
-  - {fileID: 11400000, guid: fd87cb0c42eac6345b29b6e1f05ac2e7, type: 2}
-  - {fileID: 11400000, guid: e299b66288d82ba4494f40da87aeea78, type: 2}
-  - {fileID: 11400000, guid: 775d739bff873bd4c9c51ad8c53ad8fa, type: 2}
-  - {fileID: 11400000, guid: 2d3b6977e72d29f409a7408ab07239f6, type: 2}
-  - {fileID: 11400000, guid: 6c84030ac0518f24e9118e357301cd26, type: 2}
-  - {fileID: 11400000, guid: b0d734897a984e748b312622c9d77405, type: 2}
-  - {fileID: 11400000, guid: 42d7a79dc4a4aa148a34073a7e2c9712, type: 2}
-  - {fileID: 11400000, guid: cd00bf5e99daaec4b9e6b79201ddf6e2, type: 2}
-  - {fileID: 11400000, guid: 0d0c816ddfe5b7644b364568d515511d, type: 2}
-  - {fileID: 11400000, guid: 71dffb8c32ba6734e98a2428d7c6cb9a, type: 2}
-  - {fileID: 11400000, guid: 5fddae50631fe084abfb4a7554c46915, type: 2}
-  - {fileID: 11400000, guid: f40d3d8e0257ea04f8d9a07ef8d14690, type: 2}
-  - {fileID: 11400000, guid: 6d365f2af26030b4eb6666982833b01c, type: 2}
-  - {fileID: 11400000, guid: e645315d43208f74d8b875ed4a738848, type: 2}
-  - {fileID: 11400000, guid: 373e8b0b89b49b64c9cbb1aedf1fbcea, type: 2}
-  - {fileID: 11400000, guid: c39ee302ed6ac6e4aa44a5fd1870cae9, type: 2}
+  _RewardMechs: []

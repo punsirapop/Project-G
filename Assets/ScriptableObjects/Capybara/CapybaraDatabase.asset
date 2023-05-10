@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17ae0779090c934b875106c5b7db610, type: 3}
   m_Name: CapybaraDatabase
   m_EditorClassIdentifier: 
-  _SpawnChancePerDay: 0.2
+  _SpawnChancePerDay: 0.1
   _Capybaras:
   - {fileID: 11400000, guid: e6492638e4f148544ae96553700e79aa, type: 2}
   - {fileID: 11400000, guid: a5e994d0d37fef94bb576f56e2d1d90c, type: 2}

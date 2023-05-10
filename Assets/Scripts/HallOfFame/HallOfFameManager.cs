@@ -19,10 +19,9 @@ public class HallOfFameManager : MonoBehaviour
     public Color GoldPieceColor => _GoldPieceColor;
 
     // JigsawTray
-    [SerializeField] private GameObject _AllTrayPanel;
-    [SerializeField] private GameObject _OneTrayPanel;
+    [SerializeField] private GameObject _AllTrayHolder;
+    [SerializeField] private GameObject _OneTrayHolder;
     [SerializeField] private JigsawTraySO[] _AllJigsawTray;
-    public JigsawTraySO[] AllJigsawTray => _AllJigsawTray;
     private int _CurrentJigsawTrayIndex;
     public JigsawTraySO CurrentJigsawTray => _AllJigsawTray[_CurrentJigsawTrayIndex];
 
@@ -34,9 +33,8 @@ public class HallOfFameManager : MonoBehaviour
 
     private void Start()
     {
-        _AllTrayPanel.SetActive(true);
-        _OneTrayPanel.SetActive(false);
-        _AllTrayPanel.GetComponent<ProgressRenderer>().RenderProgressPanel();
+        _AllTrayHolder.SetActive(true);
+        _OneTrayHolder.SetActive(false);
     }
 
     // Enter one tray mode
@@ -46,8 +44,8 @@ public class HallOfFameManager : MonoBehaviour
         {
             return;
         }
-        _AllTrayPanel.SetActive(false);
-        _OneTrayPanel.SetActive(true);
+        _AllTrayHolder.SetActive(false);
+        _OneTrayHolder.SetActive(true);
         _CurrentJigsawTrayIndex = index;
         GetComponentInChildren<JigsawTrayRenderer>().SetJigsawTray(CurrentJigsawTray);
     }
@@ -77,10 +75,10 @@ public class HallOfFameManager : MonoBehaviour
     //public void OnClickBackButton(string previousScene)
     //{
     //    // If in one tray mode, go back to all tray
-    //    if (_OneTrayPanel.activeInHierarchy)
+    //    if (_OneTrayHolder.activeInHierarchy)
     //    {
-    //        _AllTrayPanel.SetActive(true);
-    //        _OneTrayPanel.SetActive(false);
+    //        _AllTrayHolder.SetActive(true);
+    //        _OneTrayHolder.SetActive(false);
     //    }
     //    // Else, go back to research lab
     //    else

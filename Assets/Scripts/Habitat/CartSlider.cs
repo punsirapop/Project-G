@@ -27,7 +27,6 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         if (_InitVal != _CartSlider.value) _CartSlider.value = Mathf.Round(_CartSlider.value);
-        // Add mech into the cart
         else if (_CartChromo.Count == 0 && _Storages[(int)_CartSlider.value].Selected.Count > 0)
         {
             _CartHandle.sprite = _CartImages[1];
@@ -43,10 +42,8 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             _Storages[(int)_CartSlider.value].Selected.Clear();
             _Storages[(int)_CartSlider.value].OnValueChange();
         }
-        // Release mech into the panel
         else if (_CartChromo.Count > 0 &&
-            PlayerManager.FarmDatabase[(int)_CartSlider.value].LockStatus != LockableStatus.Lock &&
-            PlayerManager.FarmDatabase[(int)_CartSlider.value].Status != Status.BREEDING)
+            PlayerManager.FarmDatabase[(int)_CartSlider.value].LockStatus != LockableStatus.Lock)
         {
             _CartHandle.sprite = _CartImages[0];
             foreach (var item in _CartChromo)

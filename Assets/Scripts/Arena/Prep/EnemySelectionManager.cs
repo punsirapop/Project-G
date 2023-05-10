@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +15,6 @@ public class EnemySelectionManager : MonoBehaviour
     [SerializeField] Image[] _WeaponIcons;
     [SerializeField] AMechDisplay[] _MechBars;
     [SerializeField] ArenaMechDisplay[] _MechLineUp;
-    [SerializeField] TextMeshProUGUI _RewardMoneyText;
 
     List<MechChromo> _EnemyPool;
     List<WeaponChromosome> _WeaponPool;
@@ -55,11 +53,7 @@ public class EnemySelectionManager : MonoBehaviour
         int cap1 = topAllies.First().Atk.Sum() + topAllies.First().Def.Sum()
             + topAllies.First().Hp.Sum() + topAllies.First().Spd.Sum();
 
-        // Increase a cap for hard team and decrease for easy team
-        cap1 = cap1 + 1;    // More hard
-        cap3 = cap3 - 1;     // More easy
-
-        Debug.Log($"Hard: {cap1} - Easy:{cap3}");
+        Debug.Log($"{cap1 + 2} - {cap3}");
 
         _WeaponPool = new List<WeaponChromosome>();
         foreach (var item in PlayerManager.FactoryDatabase.Where(x => x.LockStatus == LockableStatus.Unlock))
@@ -143,7 +137,6 @@ public class EnemySelectionManager : MonoBehaviour
      */
     public void SetLineUp(int m)
     {
-        // Set team
         for (int i = 0; i < 3; i++)
         {
             _MechLineUp[i].SetChromo(_EnemyParties[m][i].Item1);
@@ -152,8 +145,6 @@ public class EnemySelectionManager : MonoBehaviour
             _MechBars[i].SetWeapon(_EnemyParties[m][i].Item2);
         }
         ArenaManager.EnemyLevel = m == 0 ? 2 : 1;
-        // Set reward text
-        _RewardMoneyText.text = "+" + (ArenaManager.EnemyLevel * ArenaManager.Instance.RewardMoneyPerLevel).ToString();
     }
 
     public void CloseLineUp()

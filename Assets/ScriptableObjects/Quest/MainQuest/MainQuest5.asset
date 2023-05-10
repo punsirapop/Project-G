@@ -16,7 +16,7 @@ MonoBehaviour:
   _BriefDescription: To win the fight is to remain alive!
   _FullDescription: If you want to win the fight, the first thing you need to do
     is survive. Build a factory and forge the armor. It's what you need.
-  _QuestStatus: 4
+  _QuestStatus: 0
   _DueDate:
     year: 0
     month: 0
@@ -25,14 +25,4 @@ MonoBehaviour:
   _OutroDialogue: {fileID: 11400000, guid: 46db3e5df998aa54dab3704b4839269b, type: 2}
   _RequireObject: {fileID: 11400000, guid: b18e1e91cc10dfa4a9dcd7b74bbbde87, type: 2}
   _RewardMoney: 2000
-  _RewardMechs:
-  - {fileID: 11400000, guid: f1aab83f6239f1c45a87affd20d530e5, type: 2}
-  - {fileID: 11400000, guid: 53ddf5fd0a63d7e4a808efc48d4b5a90, type: 2}
-  - {fileID: 11400000, guid: 5da768da0f9b24a498297179b4d4fa8e, type: 2}
-  - {fileID: 11400000, guid: b18c93ef81382c747b8217ac4c3e3eda, type: 2}
-  - {fileID: 11400000, guid: b8a328d8c23c4ab4c84e10b20cc00747, type: 2}
-  - {fileID: 11400000, guid: 60490822de23c9c4ebea1ccbf01b2163, type: 2}
-  - {fileID: 11400000, guid: 5500fbad0b847254f9fcdc982f92fc05, type: 2}
-  - {fileID: 11400000, guid: a624a6409a0783048bb619b4a13d1fcb, type: 2}
-  - {fileID: 11400000, guid: f02fb9bd5f26ed74d81fa28a3342d615, type: 2}
-  - {fileID: 11400000, guid: c233d340d173da845bcfdc91bba1aee5, type: 2}
+  _RewardMechs: []

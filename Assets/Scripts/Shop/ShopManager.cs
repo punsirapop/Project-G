@@ -6,19 +6,12 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
-    public static ShopManager Instance;
-
     [SerializeField] ShopSO _Shop;
     [SerializeField] ShopItemDisplay[] _ShopDisplays;
     [SerializeField] TextMeshProUGUI _RemainingDays, _Money;
-    [SerializeField] int _MechPricePerUnit;
-    public int MechPricePerUnit => _MechPricePerUnit;
-
 
     private void Start()
     {
-        if (Instance == null) Instance = this;
-
         Rendering();
     }
 
@@ -34,7 +27,7 @@ public class ShopManager : MonoBehaviour
 
     public void Purchase(int index)
     {
-        if (_Shop.Purchase(index, _MechPricePerUnit))
+        if (_Shop.Purchase(index))
         {
             MechChromo m = new MechChromo(null);
             m.SetChromosomeFromPreset(_Shop.ShopItems[index]);

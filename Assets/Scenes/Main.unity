@@ -16360,9 +16360,7 @@ MonoBehaviour:
   m_text: '- Having interaction with them would be a great deal.
 
     - The new access
-    is unlocked in the Research Lab.
-
-    - The more time passed, the more visitors!'
+    is unlocked in the Research Lab.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
   m_sharedMaterial: {fileID: -8466067231644031343, guid: d14d9610099d2c64a8478fda99e2f707, type: 2}
