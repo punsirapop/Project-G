@@ -74,6 +74,7 @@ public class CapybaraManager : MonoBehaviour
             _FirstTimeOverlay.SetActive(true);
             PlayerManager.CapybaraDatabase.SetIsFirstSpawn(false);
         }
+        SoundEffectManager.Instance.PlaySoundEffect("CappySpawn");
     }
 
     // Open overlay when successfully tap capybara

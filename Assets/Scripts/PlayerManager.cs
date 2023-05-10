@@ -237,6 +237,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (deductAmount <= Money)
         {
             Money -= deductAmount;
+            SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
             return true;
         }
         else
@@ -259,6 +260,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             Debug.Log($"Giving Money {gainAmount}G");
             Money += gainAmount;
+            if (gainAmount > 0)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("GainMoney");
+            }
             return true;
         }
         else

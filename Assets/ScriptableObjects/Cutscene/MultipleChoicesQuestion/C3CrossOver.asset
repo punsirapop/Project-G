@@ -521,7 +521,7 @@ MonoBehaviour:
         Crossover method?
       Illustration: {fileID: 0}
     Choices:
-    - SentenceContent: The chance of switching each point is dependent on another.
+    - SentenceContent: The chance of switching each point is independent on another.
       ReponseData:
       - Speaker: 5
         SentenceContent: 'Receiving <b>Answer</b> '
