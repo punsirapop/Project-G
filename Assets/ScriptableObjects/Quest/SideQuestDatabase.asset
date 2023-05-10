@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498c58cd4a77fe143840568ace713612, type: 3}
   m_Name: SideQuestDatabase
   m_EditorClassIdentifier: 
-  _SideQuests: []
+  _SideQuests:
+  - {fileID: 11400000, guid: 63c3e5bc8c5f8464d987b782d2f4db76, type: 2}
+  - {fileID: 0}
   _PeriodDayBeforeNewQuest: 7
   _MinQuestDurationDay: 14
   _MaxQuestDurationDay: 28

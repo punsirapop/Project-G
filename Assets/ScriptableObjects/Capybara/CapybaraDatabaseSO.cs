@@ -47,14 +47,10 @@ public class CapybaraDatabaseSO : ScriptableObject
         Debug.Log("Capybara spawn chance = " + CumulativeSpawnChance.ToString());
     }
 
-    // Reduce the cumulative chance when spawn
+    // Reset the cumulative chance when spawn
     public void OnSpawnCapybara()
     {
-        CumulativeSpawnChance -= 1;
-        if (CumulativeSpawnChance < 0)
-        {
-            CumulativeSpawnChance = 0;
-        }
+        CumulativeSpawnChance = 0;
     }
 
     // Return random capybara with the given rank

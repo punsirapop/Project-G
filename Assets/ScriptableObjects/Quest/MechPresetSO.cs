@@ -14,7 +14,7 @@ public class MechPresetSO : ScriptableObject
 
     private void Awake()
     {
-        SetRandom(PlayerManager.MechCap);
+        //SetRandom(PlayerManager.MechCap);
     }
 
     public void SetRandom(int c)

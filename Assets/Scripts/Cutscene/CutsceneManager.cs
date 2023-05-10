@@ -526,6 +526,12 @@ public class CutsceneManager : MonoBehaviour
             newLogDisplay.GetComponent<LogDisplayElement>().SetLog(log);
         }
         // Set scrollbar to the bottom
-        _LogScrollbar.value = 0;
+        StartCoroutine(DelayedSetScrollbar());
+    }
+
+    IEnumerator DelayedSetScrollbar()
+    {
+        yield return new WaitForEndOfFrame();
+        _LogScrollbar.value = -0.1f;
     }
 }

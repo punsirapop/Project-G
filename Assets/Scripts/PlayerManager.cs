@@ -241,7 +241,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (deductAmount <= Money)
         {
             Money -= deductAmount;
-            SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+            if (deductAmount > 0)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+            }
             return true;
         }
         else
@@ -379,7 +382,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
             piece.ForceUnlock();
         }
         MainQuestDatabase.ForceCompleteQuest();
-        //SideQuestDatabase.ForceCompleteQuest();
+        SideQuestDatabase.ForceCompleteQuest();
         ValidateUnlocking();
     }
 
