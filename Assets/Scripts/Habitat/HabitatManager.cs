@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class HabitatManager : MonoBehaviour
 {
-    List<MechChromoSO> _CartList;
+    List<MechChromo> _CartList;
 
     private void Awake()
     {
-        _CartList = new List<MechChromoSO>();
+        _CartList = new List<MechChromo>();
     }
 }

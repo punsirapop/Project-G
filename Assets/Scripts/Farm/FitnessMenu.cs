@@ -76,7 +76,7 @@ public class FitnessMenu : MonoBehaviour
         {
             item.Deactivate();
         }
-        var Temp = (myFarm.Status == Status.BREEDING) ? myFarm.BreedInfo.CurrentPref : myFarm.FitnessPref;
+        var Temp = (myFarm.Status == Status.BREEDING) ? myFarm.BreedInfo?.CurrentPref : myFarm.FitnessPref;
         if (Temp != null)
         {
             foreach (var item in Temp.Zip(Selectors, (a, b) => Tuple.Create(a, b)))
@@ -111,7 +111,7 @@ public class FitnessMenu : MonoBehaviour
     public Dictionary<dynamic, float> GetFitnessDict()
     {
         Dictionary<dynamic, float> dict = new Dictionary<dynamic, float>();
-        foreach (MechChromoSO c in myFarm.MechChromos)
+        foreach (MechChromo c in myFarm.MechChromos)
         {
             dict.Add(c, c.GetFitness(GetFitnessPref()));
         }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shop
   m_EditorClassIdentifier: 
   _RestockPeriod: 7
-  _ShopItems:
+  ShopItems:
   - {fileID: 11400000, guid: f668454deadef1d40a6ce2335180bd1e, type: 2}
   - {fileID: 11400000, guid: 55648c4841b64ac40b1f226232573496, type: 2}
   - {fileID: 11400000, guid: 0ed1d763401012e4c9b31ecd3072a333, type: 2}

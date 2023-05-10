@@ -78,7 +78,7 @@ public class HStorageManager : MonoBehaviour
             List<OrderFormat> fv = new List<OrderFormat>();
             foreach (var item in fvDict)
             {
-                MechChromoSO c = item.Key;
+                MechChromo c = item.Key;
                 OrderFormat of = new OrderFormat();
                 of.name = c.ID;
                 of.chromo = c;

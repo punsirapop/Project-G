@@ -19,7 +19,7 @@ public class ShopManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            _ShopDisplays[i].UpdateChromo(_Shop._ShopItems[i], _Shop.InStock[i]);
+            _ShopDisplays[i].UpdateChromo(_Shop.ShopItems[i], _Shop.InStock[i]);
         }
         _RemainingDays.text = $"Restock in {_Shop.DayLeftBeforeRestock} {(_Shop.DayLeftBeforeRestock > 1 ? "days" : "day")}";
         _Money.text = PlayerManager.Money.ToString();
@@ -29,8 +29,8 @@ public class ShopManager : MonoBehaviour
     {
         if (_Shop.Purchase(index))
         {
-            MechChromoSO m = ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO;
-            m.SetChromosomeFromPreset(_Shop._ShopItems[index]);
+            MechChromo m = new MechChromo(null);
+            m.SetChromosomeFromPreset(_Shop.ShopItems[index]);
             PlayerManager.FarmDatabase[0].AddChromo(m);
             Rendering();
         }

@@ -33,7 +33,7 @@ public class ArenaMechDisplay : MechDisplay
         PhaseChange -= OnChangePhase;
     }
 
-    public override void SetChromo(MechChromoSO c)
+    public override void SetChromo(MechChromo c)
     {
         if (MySO != c)
         {

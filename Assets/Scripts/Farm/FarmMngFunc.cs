@@ -15,7 +15,7 @@ public class FarmMngFunc : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            MechChromoSO c = (MechChromoSO)ScriptableObject.CreateInstance("MechChromoSO");
+            MechChromo c = new MechChromo(null);
             f.AddChromo(c);
             // AddMech(c);
             OnEditChromo?.Invoke();
@@ -23,7 +23,7 @@ public class FarmMngFunc : MonoBehaviour
     }
 
     // Delete a chromosome from the current space
-    public void DelChromo(FarmSO f, MechChromoSO c)
+    public void DelChromo(FarmSO f, MechChromo c)
     {
         f.DelChromo(c);
         // DelMech(c);

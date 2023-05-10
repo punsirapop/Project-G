@@ -12,14 +12,14 @@ using UnityEngine.UI;
 public class MechCanvasDisplay : MonoBehaviour
 {
     // Chromosome of this mech
-    public MechChromoSO MyMechSO;
+    public MechChromo MyMechSO;
     public MechPresetSO MyPresetSO;
 
     // head, body-line, body-color, acc
     [SerializeField] public Image[] myRenderer;
 
     // Set sprites to match chromo
-    public virtual void SetChromo(MechChromoSO c)
+    public virtual void SetChromo(MechChromo c)
     {
         if (c == null)
         {

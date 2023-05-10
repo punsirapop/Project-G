@@ -8,7 +8,7 @@ public class SideQuestSO : QuestSO
     // ID for saving asset purpose
     public int ID { get; private set; }
     // Complete condition
-    public MechChromoSO WantedMech { get; private set; }
+    public MechChromo WantedMech { get; private set; }
     // Reward
     public int MinRewardMoney { get; private set; }
     public int MaxRewardMoney { get; private set; }
@@ -30,8 +30,8 @@ public class SideQuestSO : QuestSO
         _FullDescription = fullDescription;
         _QuestStatus = Status.Unacquired;
         _DueDate = dueDate;
-        WantedMech = ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO;
-        MechChromoSO.Cap--;
+        WantedMech = new MechChromo(null);
+        PlayerManager.MechIDCounter--;
         MinRewardMoney = minRewardMoney;
         MaxRewardMoney = maxRewardMoney;
     }
@@ -93,5 +93,37 @@ public class SideQuestSO : QuestSO
         // WIP
 
         base.CompleteQuest();
+    }
+
+    // Save - Load
+    public SideQuestSaver Save()
+    {
+        SideQuestSaver s = new SideQuestSaver();
+
+        s.QuestStatus = QuestStatus;
+        s.ID = ID;
+        s.WantedMech = WantedMech.Save();
+        s.Name = Name;
+        s.BriefDesc = BriefDescription;
+        s.FullDesc = FullDescription;
+        s.DueDate = DueDate.ToDay();
+        s.MinReward = MinRewardMoney;
+        s.MaxReward = MaxRewardMoney;
+
+        return s;
+    }
+
+    public void Load(SideQuestSaver s)
+    {
+        _QuestStatus = s.QuestStatus;
+        ID = s.ID;
+        WantedMech = new MechChromo(s.WantedMech);
+        PlayerManager.MechIDCounter--;
+        _Name = s.Name;
+        _BriefDescription = s.BriefDesc;
+        _FullDescription = s.FullDesc;
+        _DueDate = new TimeManager.Date().AddDay(s.DueDate);
+        MinRewardMoney = s.MinReward;
+        MaxRewardMoney = s.MaxReward;
     }
 }

@@ -11,6 +11,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
     public static int CurrentDialogueIndex = 0;
 
+    public static int MechIDCounter;
+    public static int MechCap;
+
     public static Date CurrentDate;
 
     public static int ResearchLabTabIndex { get; private set; }
@@ -42,7 +45,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int FacilityToFixIndex;
     // Special case of fixing the last factory,
     // which is the only puzzle that involve more than one JigsawPieceSO
-    public static bool IsFixingLastFactory => (PlayerManager.FixingFacility && (PlayerManager.FacilityToFixIndex == 3));
+    public static bool IsFixingLastFactory => (FixingFacility && (FacilityToFixIndex == 3));
     public static JigsawPieceSO[] JigsawPieceForLastFactory;
     [SerializeField] private JigsawPieceSO[] JigsawPieceForLastFactoryHelper;
 
@@ -124,6 +127,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
 
         FixingFacility = false;
+        if (MechCap == 0) MechCap = 4;
     }
 
     private void OnDestroy()
@@ -168,26 +172,26 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (FarmDatabase.Any(x => x.MechChromos.Count > 0))
         {
             // Prepare stat caps
-            List<MechChromoSO> topAllies = new List<MechChromoSO>();
+            List<MechChromo> topAllies = new List<MechChromo>();
 
             foreach (var item in FarmDatabase)
             {
                 if (item.MechChromos.Count > 0)
                 {
                     topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
-                        .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>());
+                        .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromo>());
                 }
             }
 
-            MechChromoSO m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
-                .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>().First();
+            MechChromo m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
+                .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromo>().First();
 
             // Increase cap until it's not S
             int extraCap = 0;
-            while (m.Rank == MechChromoSO.Ranks.S)
+            while (m.Rank == MechChromo.Ranks.S)
             {
                 extraCap++;
-                MechChromoSO.Cap++;
+                MechCap++;
                 m.SetRank();
             }
             // Set rank for every other mechs

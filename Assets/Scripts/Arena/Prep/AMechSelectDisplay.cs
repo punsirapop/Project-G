@@ -17,7 +17,7 @@ public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
         AllySelectionManager.Instance.SelectingMech(MyMechSO);
     }
 
-    public override void SetChromo(MechChromoSO c)
+    public override void SetChromo(MechChromo c)
     {
         base.SetChromo(c);
 
@@ -33,26 +33,26 @@ public class AMechSelectDisplay : MechCanvasDisplay, IPointerClickHandler
         }
         switch (c.Element)
         {
-            case MechChromoSO.Elements.Fire:
+            case MechChromo.Elements.Fire:
                 bg = Color.red;
                 break;
-            case MechChromoSO.Elements.Plant:
+            case MechChromo.Elements.Plant:
                 bg = Color.green;
                 break;
-            case MechChromoSO.Elements.Water:
+            case MechChromo.Elements.Water:
                 bg = Color.blue;
                 break;
-            case MechChromoSO.Elements.Light:
+            case MechChromo.Elements.Light:
                 bg = Color.white;
                 break;
-            case MechChromoSO.Elements.Dark:
+            case MechChromo.Elements.Dark:
                 bg = Color.black;
                 foreach (var item in _Stats)
                 {
                     item.color = Color.white;
                 }
                 break;
-            case MechChromoSO.Elements.None:
+            case MechChromo.Elements.None:
                 bg = Color.gray;
                 break;
         }

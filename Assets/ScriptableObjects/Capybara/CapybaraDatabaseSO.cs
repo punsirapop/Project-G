@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/CapybaraDatabase")]
 public class CapybaraDatabaseSO : ScriptableObject
 {
-
     [SerializeField] private float _SpawnChancePerDay;
     [SerializeField] private CapybaraSO[] _Capybaras;
     public CapybaraSO[] Capybaras => _Capybaras;
@@ -14,8 +13,7 @@ public class CapybaraDatabaseSO : ScriptableObject
     [SerializeField] private int _ChanceLegend;
     private int _AllChance => _ChanceNormal + _ChanceRare + _ChanceLegend;
     public float CumulativeSpawnChance { get; private set; }
-    private bool _IsFirstSpawn;
-    public bool IsFirstSpawn => _IsFirstSpawn;
+    public bool IsFirstSpawn { get; private set; }
 
     private void OnEnable()
     {
@@ -29,7 +27,7 @@ public class CapybaraDatabaseSO : ScriptableObject
 
     public void Reset()
     {
-        _IsFirstSpawn = true;
+        IsFirstSpawn = true;
         CumulativeSpawnChance = 0;
         foreach (CapybaraSO bara in _Capybaras)
         {
@@ -39,7 +37,7 @@ public class CapybaraDatabaseSO : ScriptableObject
 
     public void SetIsFirstSpawn(bool isFirst)
     {
-        _IsFirstSpawn = isFirst;
+        IsFirstSpawn = isFirst;
     }
 
     // Increase the cumulative chance when day passed
@@ -77,7 +75,7 @@ public class CapybaraDatabaseSO : ScriptableObject
     public CapybaraSO GetRandomCapybara()
     {
         // If request for the first time, return the typical capybara
-        if (_IsFirstSpawn)
+        if (IsFirstSpawn)
         {
             return _Capybaras[0];
         }
@@ -107,5 +105,16 @@ public class CapybaraDatabaseSO : ScriptableObject
             capybaraList.Sort((a, b) => b.Rank.CompareTo(a.Rank));
         }
         return capybaraList;
+    }
+
+    // Save - Load
+    public void Load(float c, bool b, LockableStatus[] l, int[] f)
+    {
+        CumulativeSpawnChance = c;
+        IsFirstSpawn = b;
+        for (int i = 0; i < Capybaras.Length; i++)
+        {
+            Capybaras[i].Load(l[i], f[i]);
+        }
     }
 }
