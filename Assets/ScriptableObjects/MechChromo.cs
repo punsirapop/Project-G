@@ -145,7 +145,7 @@ public class MechChromo
         SetElement();
     }
 
-    public void SetChromosomeFromPreset(MechPresetSO m)
+    public MechChromo SetChromosomeFromPreset(MechPresetSO m)
     {
         Head = m.Head;
         Body = m.Body.ToArray();
@@ -154,6 +154,8 @@ public class MechChromo
         Def = m.Def.ToArray();
         Hp = m.Hp.ToArray();
         Spd = m.Spd.ToArray();
+
+        return this;
     }
 
     // Encode properties into chromosome

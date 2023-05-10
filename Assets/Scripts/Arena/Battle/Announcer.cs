@@ -67,24 +67,28 @@ public class Announcer : MonoBehaviour
         yield return new WaitForSeconds(4f);
         switch (WinningStatus)
         {
-            case 0:
+            case ArenaManager.WinType.WinHard:
+            case ArenaManager.WinType.WinEasy:
                 _Texts[0].color = Color.green;
                 _Texts[0].text = "Win";
                 _Flag.sprite = _Sprites[1];
                 SoundEffectManager.Instance.PlaySoundEffect("Win");
                 break;
-            case 1:
+            case ArenaManager.WinType.Tie:
+                _Texts[0].color = Color.white;
+                _Texts[0].text = "Tie";
+                SoundEffectManager.Instance.PlaySoundEffect("Tie");
+                break;
+            case ArenaManager.WinType.Lose:
                 _Texts[0].color = Color.red;
                 _Texts[0].text = "Lose";
                 _Flag.sprite = _Sprites[2];
                 SoundEffectManager.Instance.PlaySoundEffect("Lose");
                 break;
-            case 2:
-                _Texts[0].color = Color.white;
-                _Texts[0].text = "Tie";
-                SoundEffectManager.Instance.PlaySoundEffect("Tie");
+            default:
                 break;
         }
+
         _Texts[1].text = "";
         _BackButton.SetActive(true);
     }

@@ -11,6 +11,8 @@ public class Saver
     public int Days;
     public int Money;
 
+    public List<ArenaManager.WinType> BattleRecord;
+
     // ContentChapSO
     public LockableStatus[] CCLockStatus;
 

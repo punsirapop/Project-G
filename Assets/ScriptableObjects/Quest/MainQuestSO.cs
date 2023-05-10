@@ -53,8 +53,7 @@ public class MainQuestSO : QuestSO
         // Gain mech reward, send all mech into habitat
         foreach (var mech in _RewardMechs)
         {
-            MechChromo m = new MechChromo(null);
-            m.SetChromosomeFromPreset(mech);
+            MechChromo m = new MechChromo(null).SetChromosomeFromPreset(mech);
             PlayerManager.FarmDatabase[0].AddChromo(m);
         }
         // Make database wait for day before give new quest

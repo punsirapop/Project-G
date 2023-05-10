@@ -55,6 +55,7 @@ public class SaveManager : MonoBehaviour
         saveData.Money = PlayerManager.Money;
         saveData.MechIDCounter = PlayerManager.MechIDCounter;
         saveData.MechCap = PlayerManager.MechCap;
+        saveData.BattleRecord = PlayerManager.BattleRecord.ToList();
 
         // ContentChapSO
         saveData.CCLockStatus = PlayerManager.ContentChapterDatabase.Select(x => x.LockStatus).ToArray();
@@ -88,6 +89,7 @@ public class SaveManager : MonoBehaviour
         PlayerManager.SetMoney(s.Money);
         PlayerManager.MechIDCounter = s.MechIDCounter;
         PlayerManager.MechCap = s.MechCap;
+        PlayerManager.BattleRecord = s.BattleRecord.ToList();
 
         // ContentChapSO
         for (int i = 0; i < PlayerManager.ContentChapterDatabase.Length; i++)

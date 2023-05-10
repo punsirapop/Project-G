@@ -21,6 +21,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     // Resources
     public static int Money { get; private set; }
 
+    // Arena
+    public static List<ArenaManager.WinType> BattleRecord;
+
     // ChapterSO for validation purpose
     public static ContentChapterSO[] ContentChapterDatabase;
     [SerializeField] private ContentChapterSO[] ContentChapterDatabaseHelper;
@@ -128,6 +131,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
         FixingFacility = false;
         if (MechCap == 0) MechCap = 4;
+
+        // Clear Arena Record
+        BattleRecord = new List<ArenaManager.WinType>();
     }
 
     private void OnDestroy()
@@ -161,6 +167,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
         // Restock shop
         Shop.CheckRestockTime(CurrentDate, day);
+
+        // Clear Arena Record
+        BattleRecord = new List<ArenaManager.WinType>();
 
         CurrentDate = d.DupeDate();
 

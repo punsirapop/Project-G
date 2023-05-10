@@ -52,14 +52,18 @@ public class EnemySelectionManager : MonoBehaviour
             .Take(Mathf.Min(topAllies.Count, 3)).ToList();
         int cap3 = Mathf.CeilToInt
             (topAllies.Sum(x => x.Atk.Sum() + x.Def.Sum() + x.Hp.Sum() + x.Spd.Sum()) / 3);
+        /*
         int cap1 = topAllies.First().Atk.Sum() + topAllies.First().Def.Sum()
             + topAllies.First().Hp.Sum() + topAllies.First().Spd.Sum();
+        */
 
         // Increase a cap for hard team and decrease for easy team
-        cap1 = cap1 + 1;    // More hard
-        cap3 = cap3 - 1;     // More easy
+        int win = PlayerManager.BattleRecord.Where(x => x == ArenaManager.WinType.WinHard).Count() +
+            Mathf.FloorToInt(PlayerManager.BattleRecord.Where(x => x == ArenaManager.WinType.WinEasy).Count() / 2);
+        int hard = cap3 + win;    // More hard
+        int easy = cap3 - 4 + win;    // More easy
 
-        Debug.Log($"Hard: {cap1} - Easy:{cap3}");
+        Debug.Log($"Hard: {hard} - Easy:{easy}");
 
         _WeaponPool = new List<WeaponChromosome>();
         foreach (var item in PlayerManager.FactoryDatabase.Where(x => x.LockStatus == LockableStatus.Unlock))
@@ -78,7 +82,7 @@ public class EnemySelectionManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             _EnemyPool.Add(new MechChromo(null));
-            _EnemyPool.Last().SetRandomStat2(cap1);
+            _EnemyPool.Last().SetRandomStat2(hard);
             PlayerManager.MechIDCounter--;
         }
 
@@ -105,7 +109,7 @@ public class EnemySelectionManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             _EnemyPool.Add(new MechChromo(null));
-            _EnemyPool.Last().SetRandomStat2(cap3);
+            _EnemyPool.Last().SetRandomStat2(easy);
             PlayerManager.MechIDCounter--;
         }
 

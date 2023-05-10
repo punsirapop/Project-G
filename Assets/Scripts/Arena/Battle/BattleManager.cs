@@ -21,7 +21,7 @@ public class BattleManager : MonoBehaviour
     public static BattleManager Instance;
     public static Phases CurrentPhase;
     // 0: win, 1: lose, 2: tie
-    public static int WinningStatus;
+    public static ArenaManager.WinType WinningStatus;
 
     [SerializeField] BattleMechManager[] _AllyBattleStats, _EnemyBattleStats;
     [SerializeField] ArenaMechDisplay[] _AllyBattleLineUp, _EnemyBattleLineUp;
@@ -71,7 +71,8 @@ public class BattleManager : MonoBehaviour
     public void CheckStartFight()
     {
         _FightButton.interactable = !_AllyTeam.Any(x => x == null) && !_EnemyTeam.Any(x => x == null) &&
-            !_AllyWeapon.Any(x => x == null) && !_EnemyWeapon.Any(x => x == null);
+            !_AllyWeapon.Any(x => x == null) && !_EnemyWeapon.Any(x => x == null) &&
+            PlayerManager.BattleRecord.Count() < 5;
     }
 
     // Randomly choose attack target
@@ -312,9 +313,10 @@ public class BattleManager : MonoBehaviour
         float allyHp = _AllyBattleStats.Select(x => x.HpCurrent).Sum();
         float enemyHp = _EnemyBattleStats.Select(x => x.HpCurrent).Sum();
 
-        if (allyHp > enemyHp) WinningStatus = 0;
-        else if (allyHp < enemyHp) WinningStatus = 1;
-        else WinningStatus = 2;
+        if (allyHp > enemyHp) WinningStatus = ArenaManager.EnemyLevel == 2 ?
+                ArenaManager.WinType.WinHard : ArenaManager.WinType.WinEasy;
+        else if (allyHp < enemyHp) WinningStatus = ArenaManager.WinType.Lose;
+        else WinningStatus = ArenaManager.WinType.Tie;
 
         yield return new WaitForSeconds(1f);
         _StatPanel.SetActive(false);
