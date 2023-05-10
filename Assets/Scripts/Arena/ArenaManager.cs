@@ -20,6 +20,7 @@ public class ArenaManager : MonoBehaviour
 
     [SerializeField] GameObject _DefaultPanel;
     [SerializeField] Image[] _Medals;
+    [SerializeField] TextMeshProUGUI _Money;
 
     // Assign sprites from serialized field on editor to the static variable
     private void Awake()
@@ -88,6 +89,7 @@ public class ArenaManager : MonoBehaviour
             _Medals[i].color = Color.white;
             _Medals[i].sprite = GetMedalSprite(PlayerManager.BattleRecord[i]);
         }
+        _Money.text = PlayerManager.Money.ToString();
     }
 
     /*
