@@ -51,6 +51,8 @@ public class SaveManager : MonoBehaviour
     {
         Saver saveData = new Saver();
 
+        saveData.Name = PlayerManager.Name;
+
         saveData.Days = PlayerManager.CurrentDate.ToDay();
         saveData.Money = PlayerManager.Money;
         saveData.MechIDCounter = PlayerManager.MechIDCounter;
@@ -85,6 +87,8 @@ public class SaveManager : MonoBehaviour
     // set data from saved json to game
     public void LoadJson(Saver s)
     {
+        PlayerManager.Name = s.Name;
+
         PlayerManager.SetCurrentDate(TimeManager.Date.FromDay(s.Days));
         PlayerManager.SetMoney(s.Money);
         PlayerManager.MechIDCounter = s.MechIDCounter;

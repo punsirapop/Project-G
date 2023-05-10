@@ -8,6 +8,7 @@ public class ProgressRenderer : MonoBehaviour
 {
     [SerializeField] private HorizontalLayoutGroup _DateLayoutGroup;
     [SerializeField] private HorizontalLayoutGroup _JigsawLayoutGroup;
+    [SerializeField] private TextMeshProUGUI _NameTest;
     [SerializeField] private TextMeshProUGUI _DateText;
     [SerializeField] private TextMeshProUGUI _QuestText;
     [SerializeField] private TextMeshProUGUI _BronzeJigsawText;
@@ -17,6 +18,7 @@ public class ProgressRenderer : MonoBehaviour
     public void RenderProgressPanel()
     {
         // Show date and time passed since the beginning
+        _NameTest.text = "Player Name: " + PlayerManager.Name;
         TimeManager.Date startDate = new TimeManager.Date();
         startDate.InitDate();
         int dayPassed = PlayerManager.CurrentDate.CompareDate(startDate);

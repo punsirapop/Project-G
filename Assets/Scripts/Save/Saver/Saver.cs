@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Saver
 {
+    public string Name;
     public int MechIDCounter;
     public int MechCap;
     public int Days;

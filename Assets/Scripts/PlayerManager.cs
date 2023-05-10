@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
     public static PlayerManager Instance;
 
+    public static string Name;
+
     public static int CurrentDialogueIndex = 0;
 
     public static int MechIDCounter;
