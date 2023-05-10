@@ -171,7 +171,14 @@ public class SaveManager : MonoBehaviour
 
         q.NextSideQuestID = PlayerManager.SideQuestDatabase.NextSideQuestID;
         q.DayLeftBeforeNewQuest = PlayerManager.SideQuestDatabase.DayLeftBeforeNewQuest;
-        q.SideQuestSavers = PlayerManager.SideQuestDatabase.SideQuests.Select(x => x.Save()).ToArray();
+        if (PlayerManager.SideQuestDatabase.SideQuests.Count > 0)
+        {
+            q.SideQuestSavers = PlayerManager.SideQuestDatabase.SideQuests.Select(x => x.Save()).ToArray();
+        }
+        else
+        {
+            q.SideQuestSavers = null;
+        }
 
         json = JsonUtility.ToJson(q);
         streamWriter.Write(json);
@@ -233,7 +240,7 @@ public class SaveManager : MonoBehaviour
         QuestSaver q = JsonUtility.FromJson<QuestSaver>(json);
 
         PlayerManager.MainQuestDatabase.Load(q.CurrentQuestIndex, q.IsDayPassed, q.QuestStatus);
-
+        PlayerManager.SideQuestDatabase.Load(q.NextSideQuestID, q.DayLeftBeforeNewQuest, q.SideQuestSavers);
     }
 
     // trigger reset event
