@@ -32,4 +32,9 @@ public class ContentChapterSO : LockableObject
     {
         return _Header;
     }
+
+    public void Load(LockableStatus l)
+    {
+        _LockStatus = l;
+    }
 }

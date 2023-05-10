@@ -54,4 +54,5 @@ public class CapybaraSO : LockableObject
         _LockStatus = l;
         _FoundCount = f;
     }
+
 }

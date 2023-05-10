@@ -56,6 +56,9 @@ public class SaveManager : MonoBehaviour
         saveData.MechIDCounter = PlayerManager.MechIDCounter;
         saveData.MechCap = PlayerManager.MechCap;
 
+        // ContentChapSO
+        saveData.CCLockStatus = PlayerManager.ContentChapterDatabase.Select(x => x.LockStatus).ToArray();
+
         // JigsawSO
         saveData.JigsawLockStatus = PlayerManager.JigsawPieceDatabase.Select(x => x.LockStatus).ToArray();
         saveData.SuccessCounts = PlayerManager.JigsawPieceDatabase.Select(x => x.SuccessCount).ToArray();
@@ -85,6 +88,12 @@ public class SaveManager : MonoBehaviour
         PlayerManager.SetMoney(s.Money);
         PlayerManager.MechIDCounter = s.MechIDCounter;
         PlayerManager.MechCap = s.MechCap;
+
+        // ContentChapSO
+        for (int i = 0; i < PlayerManager.ContentChapterDatabase.Length; i++)
+        {
+            PlayerManager.ContentChapterDatabase[i].Load(s.CCLockStatus[i]);
+        }
 
         // JigsawSO
         for (int i = 0; i < PlayerManager.JigsawPieceDatabase.Length; i++)

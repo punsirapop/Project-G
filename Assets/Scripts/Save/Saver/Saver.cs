@@ -11,6 +11,9 @@ public class Saver
     public int Days;
     public int Money;
 
+    // ContentChapSO
+    public LockableStatus[] CCLockStatus;
+
     // JigsawSO
     public LockableStatus[] JigsawLockStatus;
     public int[] SuccessCounts;
