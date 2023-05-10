@@ -15,7 +15,7 @@ public class AMechDisplay : MechCanvasDisplay
     [SerializeField] Image _WeaponIcon;
 
     [SerializeField] TextMeshProUGUI[] _Stats;
-    public override void SetChromo(MechChromoSO c)
+    public override void SetChromo(MechChromo c)
     {
         if (MyMechSO != c)
         {

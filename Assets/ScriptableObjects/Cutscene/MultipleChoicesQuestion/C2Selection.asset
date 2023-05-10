@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
   m_Name: C2Selection
   m_EditorClassIdentifier: 
-  ChoiceAnswers: 030000000200000003000000010000000200000003000000030000000200000001000000
-  PassScore: 6
+  ChoiceAnswers: 0300000002000000030000000300000001000000
+  PassScore: 3
   SpeakerName: CatBot
   IsSkippable: 0
   SkipNotifyText: 
@@ -253,486 +253,62 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 11
-      SentenceContent: 3. What is the Tournament-based Selection method?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Yes
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: No
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: Fitness Value is not used to any selection
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 11
-      SentenceContent: 3. What is the Tournament-based Selection method?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: A method where parents are randomly selected
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: A method where parents are selected based on their fitness
-        value
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: A method where K chromosomes are selected and the one with
-        the best fitness value becomes a parent
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 11
-      SentenceContent: 4. Does fitness value affect the chance of survival in Tournament-based
-        Selection?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: A method where parents are randomly selected
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: A method where parents are selected based on their fitness
-        value
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: Fitness Value is not used to any selection
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: A method where K chromosomes are selected and the one with
-          the best fitness value becomes a parent
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 11
-      SentenceContent: 4. Does fitness value affect the chance of survival in Tournament-based
-        Selection?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Yes, the higher the fitness value, the higher the chance of
-        survival
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: No, fitness value does not affect the chance of survival
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: It depends on the value of K
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
       Speaker: 4
-      SentenceContent: 5. What is the basis of Roulette Wheel Selection?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Yes, the higher the fitness value, the higher the chance of
-        survival
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: No, fitness value does not affect the chance of survival
-      ReponseData:
-      - Speaker: 12
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: It depends on the value of K
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: A method where K chromosomes are selected and the one with
-          the best fitness value becomes a parent
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 5. What is the basis of Roulette Wheel Selection?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Random selection
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: Proportionate randomization
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: Tournament-based selection
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 6. What is the Rank-based Selection method?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: Random selection
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: Proportionate randomization
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: Tournament-based selection
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: A method where K chromosomes are selected and the one with
-          the best fitness value becomes a parent
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 6. What is the Rank-based Selection method?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: The method of randomly selecting parents based on their fitness
-        value.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: The method of selecting parents by creating groups and choosing
-        the best fitness value in that group.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: The method of ranking chromosomes according to their fitness
-        and assigning a new fitness value based on the rank.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 7. How does Rank-based Selection assign a new fitness value?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: The method of randomly selecting parents based on their fitness
-        value.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: The method of selecting parents by creating groups and choosing
-        the best fitness value in that group.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: The method of ranking chromosomes according to their fitness
-        and assigning a new fitness value based on the rank.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: A method where K chromosomes are selected and the one with
-          the best fitness value becomes a parent
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 7. How does Rank-based Selection assign a new fitness value?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: It assigns a random fitness value.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: It assigns the same fitness value to all chromosomes.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: It assigns a new fitness value based on the rank of each chromosome.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 8. What is premature convergence?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: It assigns a random fitness value.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: It assigns the same fitness value to all chromosomes.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: It assigns a new fitness value based on the rank of each chromosome.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: A method where K chromosomes are selected and the one with
-          the best fitness value becomes a parent
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 8. What is premature convergence?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: When the population size is too small.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: When there is a very high fitness chromosome among the low
-        fitness population.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: When the mutation rate is too high.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 0
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 9. What is the problem with premature convergence?
-      Illustration: {fileID: 0}
-    Choices:
-    - SentenceContent: When the population size is too small.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 1
-    - SentenceContent: When there is a very high fitness chromosome among the low
-        fitness population.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: 'Recieving <b>Answer</b> '
-        Illustration: {fileID: 0}
-      number: 2
-    - SentenceContent: When the mutation rate is too high.
-      ReponseData:
-      - Speaker: 5
-        SentenceContent: A method where K chromosomes are selected and the one with
-          the best fitness value becomes a parent
-        Illustration: {fileID: 0}
-      number: 3
-    CheckerAnswer:
-      Pass:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-      Fail:
-        Speaker: 0
-        SentenceContent: 
-        Illustration: {fileID: 0}
-  - IsChoices: 1
-    IsChecker: 0
-    SentenceData:
-      Speaker: 4
-      SentenceContent: 9. What is the problem with premature convergence?
+      SentenceContent: 3. What is the main characteristic of the random selection
+        method?
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: It decreases the diversity of the population.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
+        SentenceContent: 'Recieving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
     - SentenceContent: It increases the diversity of the population.
       ReponseData:
       - Speaker: 5
-        SentenceContent: 'Receiving <b>Answer</b> '
+        SentenceContent: 'Recieving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 2
     - SentenceContent: It doesn't affect the population diversity.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: A method where K chromosomes are selected and the one with
+          the best fitness value becomes a parent
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It favors individuals with higher fitness values.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It ensures that the fittest individuals are always selected.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It is a purely random process without considering fitness
+        values.
       ReponseData:
       - Speaker: 5
         SentenceContent: 'Receiving <b>Answer</b> '
@@ -740,12 +316,161 @@ MonoBehaviour:
       number: 3
     CheckerAnswer:
       Pass:
-        Speaker: 0
-        SentenceContent: 
+        Speaker: 19
+        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
         Illustration: {fileID: 0}
       Fail:
-        Speaker: 0
-        SentenceContent: 
+        Speaker: 7
+        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 4. How many pair of parents are selected in the random selection
+        method?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It decreases the diversity of the population.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It increases the diversity of the population.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It doesn't affect the population diversity.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: A method where K chromosomes are selected and the one with
+          the best fitness value becomes a parent
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: Only one parent is selected.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: A pair of parents is selected.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It depends on the number of chromosomes in the current population.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}
+  - IsChoices: 0
+    IsChecker: 0
+    SentenceData:
+      Speaker: 4
+      SentenceContent: 5. Generally, how is the chance of each chromosome to be selected?
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: It decreases the diversity of the population.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: It increases the diversity of the population.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Recieving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: It doesn't affect the population diversity.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: A method where K chromosomes are selected and the one with
+          the best fitness value becomes a parent
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+          luck next time?
+        Illustration: {fileID: 0}
+  - IsChoices: 1
+    IsChecker: 0
+    SentenceData:
+      Speaker: 2
+      SentenceContent: 'Calculating <b>Result</b> . . . '
+      Illustration: {fileID: 0}
+    Choices:
+    - SentenceContent: more fitness value should have more chance to be selected.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 1
+    - SentenceContent: a more unique chromosome should have more chance to be selected.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 2
+    - SentenceContent: Each chromosome has the same chance.
+      ReponseData:
+      - Speaker: 5
+        SentenceContent: 'Receiving <b>Answer</b> '
+        Illustration: {fileID: 0}
+      number: 3
+    CheckerAnswer:
+      Pass:
+        Speaker: 19
+        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+          Congratulation </b>
+        Illustration: {fileID: 0}
+      Fail:
+        Speaker: 7
+        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+          luck next time?
         Illustration: {fileID: 0}
   - IsChoices: 0
     IsChecker: 0
@@ -811,11 +536,11 @@ MonoBehaviour:
     CheckerAnswer:
       Pass:
         Speaker: 19
-        SentenceContent: You got [score] out of 9... and that's <b>PASS!!</b>  <b>
+        SentenceContent: You got [score] out of 5... and that's <b>PASS!!</b>  <b>
           Congratulation </b>
         Illustration: {fileID: 0}
       Fail:
         Speaker: 7
-        SentenceContent: You got [score] out of 9... and that's <b>Fail!!</b>  Better
+        SentenceContent: You got [score] out of 5... and that's <b>Fail!!</b>  Better
           luck next time?
         Illustration: {fileID: 0}

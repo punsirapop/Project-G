@@ -632,18 +632,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1616148004}
-        m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Main
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1616148005}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: SaveToFile
@@ -654,6 +642,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1616148004}
+        m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2113931675}
@@ -2132,18 +2132,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1616148004}
-        m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Main
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1616148005}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: SaveToFile
@@ -2154,6 +2142,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1616148004}
+        m_TargetAssemblyTypeName: SceneMng, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2113931675}
@@ -2861,11 +2861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8b935c76c708b4798ecd492a22b54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SavedFarms:
-  - {fileID: 11400000, guid: fdfff9b3c4eeb2c4c9b12ba34dee5f19, type: 2}
-  - {fileID: 11400000, guid: a7164425b4c938246b9eb79e13d43a1f, type: 2}
-  - {fileID: 11400000, guid: be2e12ef1fffb0043879e2f11c0cb510, type: 2}
-  - {fileID: 11400000, guid: 0ef52e7d99919704baf6aaab136230a5, type: 2}
 --- !u!1 &1629416704
 GameObject:
   m_ObjectHideFlags: 0

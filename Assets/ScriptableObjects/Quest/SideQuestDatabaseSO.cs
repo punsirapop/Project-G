@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/QuestSideDatabase")]
 public class SideQuestDatabaseSO : ScriptableObject
 {
     [SerializeField] private List<SideQuestSO> _SideQuests;
+    public List<SideQuestSO> SideQuests => _SideQuests;
     private int _NextSideQuestID;
     public int NextSideQuestID => _NextSideQuestID;
     private int _DayLeftBeforeNewQuest;
@@ -213,7 +215,7 @@ public class SideQuestDatabaseSO : ScriptableObject
 
     public void GenerateNewQuest(TimeManager.Date dueDate, int maxRewardMoney)
     {
-        SideQuestSO newQuest = ScriptableObject.CreateInstance<SideQuestSO>();
+        SideQuestSO newQuest = new SideQuestSO();
         newQuest.SetSideQuest(
             id: _NextSideQuestID,
             name: "Request For Monster",
@@ -230,7 +232,7 @@ public class SideQuestDatabaseSO : ScriptableObject
     // Tmp mthod for immediately generate quest in QuestBoard scene
     public void ForceGenerateNewQuest(TimeManager.Date dueDate, int MaxRewardMoney)
     {
-        SideQuestSO newQuest = ScriptableObject.CreateInstance<SideQuestSO>();
+        SideQuestSO newQuest = new SideQuestSO();
         newQuest.SetSideQuest(
             id: _NextSideQuestID,
             name: "Request For Monster",
@@ -250,6 +252,19 @@ public class SideQuestDatabaseSO : ScriptableObject
         foreach (SideQuestSO sideQuest in _SideQuests)
         {
             sideQuest.ForceCompleteQuest();
+        }
+    }
+
+    // Save - Load
+    public void Load(int a, int b, SideQuestSaver[] sqs)
+    {
+        _NextSideQuestID = a;
+        _DayLeftBeforeNewQuest = b;
+        _SideQuests = new List<SideQuestSO>();
+        for (int i = 0; i < sqs.Length; i++)
+        {
+            _SideQuests.Add(new SideQuestSO());
+            _SideQuests.Last().Load(sqs[i]);
         }
     }
 }

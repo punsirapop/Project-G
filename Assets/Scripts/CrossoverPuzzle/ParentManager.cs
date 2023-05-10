@@ -136,12 +136,12 @@ public class ParentManager : MonoBehaviour
     private void _InstantiateMechChromo(int crossoverType=0)
     {
         // Create wanted child
-        _WantedChild = ScriptableObject.CreateInstance<MechChromoSO>().GetChromosome()[0].ToArray()[..5];
+        _WantedChild = new MechChromo(null).GetChromosome()[0].ToArray()[..5];
         int[][] parents = new int[4][];
         for (int parentCount = 0; parentCount < parents.Length; parentCount += 2)
         {
             // Create new random child with difference head and accessory
-            int[] randomChild = ScriptableObject.CreateInstance<MechChromoSO>().GetChromosome()[0].ToArray()[..5];
+            int[] randomChild = new MechChromo(null).GetChromosome()[0].ToArray()[..5];
             if (_WantedChild[0] == randomChild[0])
             {
                 randomChild[0] += (randomChild[0] == 0) ? 1 : -1;

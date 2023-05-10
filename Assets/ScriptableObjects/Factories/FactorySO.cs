@@ -21,10 +21,10 @@ public class FactorySO : LockableObject
     public int BreedCostPerUnit => _BreedCostPerUnit;
     [SerializeField] private float _DiscountRatePerGen;
     public float DiscountRatePerGen => _DiscountRatePerGen;
-    private int _Condition; // If Condition remain 0, the facility completely broken
+    [SerializeField] private int _Condition; // If Condition remain 0, the facility completely broken
     public int Condition => _Condition;
     [SerializeField] private float _BrokeChance;
-    private bool _isEncode = false;  // Variable to help switching generate puzzle between decode and encode
+    [SerializeField] private bool _isEncode = false;  // Variable to help switching generate puzzle between decode and encode
 
     // Fixing puzzle
     [SerializeField] private JigsawPieceGroupSO[] _ObtainableJisawGroups;
@@ -35,10 +35,10 @@ public class FactorySO : LockableObject
     public FactoryProduction.BreedPref BreedPref => _BreedPref;
     FactoryProduction.BreedInfo _BreedInfo;
     public FactoryProduction.BreedInfo BreedInfo => _BreedInfo;
-    private float _BreedGuage;
-    public float BreedGuage => _BreedGuage;
-    private float _GuagePerDay;
-    public float GuagePerDay => _GuagePerDay;
+    private float _BreedGauge;
+    public float BreedGauge => _BreedGauge;
+    private float _GaugePerDay;
+    public float GaugePerDay => _GaugePerDay;
     private int _BreedGen;
     public int BreedGen => _BreedGen;
 
@@ -158,8 +158,8 @@ public class FactorySO : LockableObject
         _Status = Status.IDLE;
         _Condition = 4;
         _isEncode = false;
-        _BreedGuage = 0;
-        _GuagePerDay = 100;
+        _BreedGauge = 0;
+        _GaugePerDay = 100;
         _BreedGen = 0;
         _PopulateDatabaseIfNot(forcePopulate: true);
     }
@@ -315,14 +315,14 @@ public class FactorySO : LockableObject
     #region Breeding
     public void FillBreedGuage()
     {
-        _BreedGuage += _GuagePerDay * _Condition / 4;
+        _BreedGauge += _GaugePerDay * _Condition / 4;
 
-        while (_BreedGuage >= 100 && _BreedInfo.MyFactory.BreedPref.BreedGen > 0)
+        while (_BreedGauge >= 100 && _BreedInfo.MyFactory.BreedPref.BreedGen > 0)
         {
             BreedInfo.Produce();
             _BreedGen++;
             _Generation++;
-            _BreedGuage -= 100;
+            _BreedGauge -= 100;
         }
         if (Random.Range(0f, 1f) < _BrokeChance)
         {
@@ -332,7 +332,7 @@ public class FactorySO : LockableObject
         {
             SetBreedRequest(new FactoryProduction.BreedInfo());
             _BreedGen = 0;
-            _BreedGuage = 0;
+            _BreedGauge = 0;
             SetStatus(Status.IDLE);
         }
     }
@@ -351,6 +351,42 @@ public class FactorySO : LockableObject
     {
         if (_Condition < 4) _Condition++;
         // SetStatus(BreedInfo.Equals(default(BreedMenu.BreedInfo)) ? Status.IDLE : Status.BREEDING);
+    }
+    #endregion
+
+    #region Save
+    public FactorySaver Save()
+    {
+        FactorySaver f = new FactorySaver();
+
+        f.LockStatus = LockStatus;
+        f.Generation = Generation;
+        f.Status = Status;
+        f.Condition = Condition;
+        f.IsEncode = _isEncode;
+        f.BreedPref = BreedPref.Copy();
+        f.BreedGauge = BreedGauge;
+        f.GaugePerDay = GaugePerDay;
+        f.BreedGen = BreedGen;
+        f.PopulationCount = PopulationCount;
+        f.Population = _ChromoDatabase.GetAll();
+
+        return f;
+    }
+
+    public void Load(FactorySaver f)
+    {
+        _LockStatus = f.LockStatus;
+        _Generation = f.Generation;
+        _Status = f.Status;
+        _Condition = f.Condition;
+        _isEncode = f.IsEncode;
+        _BreedPref = f.BreedPref.Copy();
+        _BreedGauge = f.BreedGauge;
+        _GaugePerDay = f.GaugePerDay;
+        _BreedGen = f.BreedGen;
+        _PopulationCount = f.PopulationCount;
+        _ChromoDatabase.SetAll(f.Population);
     }
     #endregion
 }

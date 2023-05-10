@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -94,8 +95,17 @@ public class JigsawPieceSO : LockableObject
         SuccessCount++;
         _LockStatus = LockableStatus.Unlock;
     }
+
+    // Save - Load
+    public void Load(LockableStatus l, int success, int fail)
+    {
+        _LockStatus = l;
+        SuccessCount = success;
+        FailCount = fail;
+    }
 }
 
+[Serializable]
 public enum JigsawLevel
 {
     None,       // Place holder used as null for the Level

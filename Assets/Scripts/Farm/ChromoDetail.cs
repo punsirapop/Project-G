@@ -10,7 +10,7 @@ using UnityEngine.UI;
  */
 public class ChromoDetail : MonoBehaviour
 {
-    public MechChromoSO currentDisplay;
+    public MechChromo currentDisplay;
     // List of textboxes
     [SerializeField] TextMeshProUGUI[] Displays;
     [SerializeField] MechCanvasDisplay Icon;
@@ -19,7 +19,7 @@ public class ChromoDetail : MonoBehaviour
     // ***** For debug purposes *****
     // [SerializeField] Button DeleteButton;
 
-    public void SetDisplay(MechChromoSO c)
+    public void SetDisplay(MechChromo c)
     {
         currentDisplay = c;
         Displays[0].text = "ID: " + c.ID.ToString();

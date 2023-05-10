@@ -8,7 +8,7 @@ public class ShopSO : ScriptableObject
 {
     [SerializeField] int _RestockPeriod;
 
-    public MechPresetSO[] _ShopItems;
+    public MechPresetSO[] ShopItems;
     public bool[] InStock;
     public int DayLeftBeforeRestock;
 
@@ -27,7 +27,7 @@ public class ShopSO : ScriptableObject
         Debug.Log("Restocking...");
         for (int i = 0; i < 3; i++)
         {
-            _ShopItems[i].SetRandom(MechChromoSO.Cap == 0 ? 4 : MechChromoSO.Cap);
+            ShopItems[i].SetRandom(PlayerManager.MechCap);
         }
         InStock = new bool[] {true, true, true};
         DayLeftBeforeRestock = _RestockPeriod;

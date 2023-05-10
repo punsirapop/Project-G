@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using static MechChromoSO;
+using static MechChromo;
 
 public class BattleManager : MonoBehaviour
 {
@@ -29,8 +29,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] GameObject _StatPanel;
     [SerializeField] EndResult _EndResult;
 
-    MechChromoSO[] _AllyTeam => AllySelectionManager.Instance.AllyMech;
-    MechChromoSO[] _EnemyTeam => EnemySelectionManager.Instance.EnemyTeam;
+    MechChromo[] _AllyTeam => AllySelectionManager.Instance.AllyMech;
+    MechChromo[] _EnemyTeam => EnemySelectionManager.Instance.EnemyTeam;
     WeaponChromosome[] _AllyWeapon => AllySelectionManager.Instance.AllyWeapon;
     WeaponChromosome[] _EnemyWeapon => EnemySelectionManager.Instance.EnemyWeapon;
 
@@ -144,10 +144,10 @@ public class BattleManager : MonoBehaviour
     {
         BattleMechManager Attacker = Identify(attacker, 0);
         WeaponChromosome AttackerW = Identify(attacker, 1);
-        MechChromoSO AttackerSO = Identify(attacker, 2);
+        MechChromo AttackerSO = Identify(attacker, 2);
         BattleMechManager Receiver = Identify(receiver, 0);
         WeaponChromosome ReceiverW = Identify(receiver, 1);
-        MechChromoSO ReceiverSO = Identify(receiver, 2);
+        MechChromo ReceiverSO = Identify(receiver, 2);
 
         switch ((BulletType)attacker[2])
         {

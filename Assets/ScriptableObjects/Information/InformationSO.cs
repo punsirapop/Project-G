@@ -29,4 +29,10 @@ public class InformationSO : ScriptableObject
     {
         IsNeverShow = false;
     }
+    
+    // Save - Load
+    public void Load(bool b)
+    {
+        IsNeverShow = b;
+    }
 }

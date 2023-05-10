@@ -15,12 +15,12 @@ public class CartSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     int _WhereDidITakeIt;
     float _InitVal;
 
-    static List<MechChromoSO> _CartChromo;
-    public static List<MechChromoSO> CartChromo => _CartChromo;
+    static List<MechChromo> _CartChromo;
+    public static List<MechChromo> CartChromo => _CartChromo;
 
     private void Awake()
     {
-        _CartChromo = new List<MechChromoSO>();
+        _CartChromo = new List<MechChromo>();
         _WhereDidITakeIt = -1;
     }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318ca81cd107214897995e1b2003e3f, type: 3}
   m_Name: C4ImprovementTechnique
   m_EditorClassIdentifier: 
-  ChoiceAnswers: 0100000003000000030000000100000002000000030000000200000003000000
+  ChoiceAnswers: 0100000003000000020000000100000002000000030000000200000003000000
   PassScore: 5
   SpeakerName: CatBot
   IsSkippable: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
         SentenceContent: 'Receiving <b>Answer</b> '
         Illustration: {fileID: 0}
       number: 1
-    - SentenceContent: A mutation that flips a random number of bits within a chromosome.
+    - SentenceContent: A mutation that flips a bit within a chromosome.
       ReponseData:
       - Speaker: 12
         SentenceContent: 'Receiving <b>Answer</b> '

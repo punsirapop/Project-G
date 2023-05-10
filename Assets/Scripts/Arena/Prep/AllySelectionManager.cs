@@ -8,7 +8,6 @@ using UnityEngine;
 public class AllySelectionManager : MonoBehaviour
 {
     public static AllySelectionManager Instance;
-    public static event Action OnTeamChange;
 
     public int CurrentSelection;
 
@@ -18,7 +17,7 @@ public class AllySelectionManager : MonoBehaviour
     [SerializeField] ArenaMechDisplay[] _MechDisplays;
     [SerializeField] Transform[] _Holders;
 
-    public MechChromoSO[] AllyMech => _Buttons.Select(x => x.MyMechSO).ToArray();
+    public MechChromo[] AllyMech => _Buttons.Select(x => x.MyMechSO).ToArray();
     public WeaponChromosome[] AllyWeapon => _Buttons.Select(x => x.MyWeaponSO).ToArray();
 
     private void Start()
@@ -41,7 +40,7 @@ public class AllySelectionManager : MonoBehaviour
         _Holders[1].BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
     }
 
-    public void SelectingMech(MechChromoSO m)
+    public void SelectingMech(MechChromo m)
     {
         if (!AllyMech.Contains(m) || m == AllyMech[CurrentSelection])
         {
