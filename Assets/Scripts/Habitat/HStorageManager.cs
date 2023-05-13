@@ -42,7 +42,9 @@ public class HStorageManager : MonoBehaviour
             );
         _Selected = new List<GameObject>();
 
-        if (PlayerManager.FarmDatabase[Index].LockStatus == LockableStatus.Unlock)
+        _FitnessMenu.gameObject.SetActive(true);
+
+        if (PlayerManager.FarmDatabase[Index].LockStatus != LockableStatus.Lock)
         {
             OnValueChange();
         }
