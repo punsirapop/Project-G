@@ -211,14 +211,21 @@ public class BitChromoDatabase : ScriptableObject
         return resultPool;
     }
 
-    #region Save
-    public BitChromosome[] GetAll()
+    #region Save - Load
+    public BitChromosome[] GetChromo()
     {
         return _Population.ToArray();
     }
 
-    public void SetAll(BitChromosome[] b)
+    public int[] GetInfo()
     {
+        return new int[] { _ChromoDimension, _ChromoLength };
+    }
+
+    public void SetAll(BitChromosome[] b, int[] info)
+    {
+        _ChromoDimension = info[0];
+        _ChromoLength = info[1];
         _Population = b.ToArray();
     }
     #endregion

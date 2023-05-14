@@ -369,7 +369,8 @@ public class FactorySO : LockableObject
         f.GaugePerDay = GaugePerDay;
         f.BreedGen = BreedGen;
         f.PopulationCount = PopulationCount;
-        f.Population = _ChromoDatabase.GetAll();
+        f.Population = _ChromoDatabase.GetChromo();
+        f.BitChromoInfo = _ChromoDatabase.GetInfo();
 
         return f;
     }
@@ -386,7 +387,7 @@ public class FactorySO : LockableObject
         _GaugePerDay = f.GaugePerDay;
         _BreedGen = f.BreedGen;
         _PopulationCount = f.PopulationCount;
-        _ChromoDatabase.SetAll(f.Population);
+        _ChromoDatabase.SetAll(f.Population, f.BitChromoInfo);
     }
     #endregion
 }

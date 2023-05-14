@@ -30,4 +30,5 @@ public class FactorySaver
     public int PopulationCount;
 
     public BitChromoDatabase.BitChromosome[] Population;
+    public int[] BitChromoInfo;
 }
