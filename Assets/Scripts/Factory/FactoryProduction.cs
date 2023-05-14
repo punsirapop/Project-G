@@ -243,13 +243,13 @@ public class FactoryProduction : MonoBehaviour
             }
 
             // Parent Selection
-            Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
+            Dictionary<WeaponChromosome, float> fv = new Dictionary<WeaponChromosome, float>();
             foreach (WeaponChromosome c in currentPopulation)
             {
                 fv.Add(c, c.Fitness);
             }
-            List<dynamic> parents = new List<dynamic>
-                (GeneticFunc.Instance.SelectParent(fv, eliteCount, _MyFactory.BreedPref.TypeParentSelect, 3));
+            List<WeaponChromosome> parents = new List<WeaponChromosome>
+                (GeneticFunc.Instance.SelectParentW(fv, eliteCount, _MyFactory.BreedPref.TypeParentSelect, 3));
             
             // Crossvoer, code in this section is duplicated and modified from BreedMenu.cs
             List<List<List<int>>> parentsEncoded = new List<List<List<int>>>();

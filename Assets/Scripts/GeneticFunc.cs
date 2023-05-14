@@ -35,9 +35,9 @@ public class GeneticFunc : MonoBehaviour
      * Output
      *      list of parents' indexes
      */
-    public List<dynamic> SelectParent(Dictionary<dynamic, float> fv, int eliteCount, int mode, int k)
+    public List<MechChromo> SelectParentM(Dictionary<MechChromo, float> fv, int eliteCount, int mode, int k)
     {
-        List<dynamic> result = new List<dynamic>();
+        List<MechChromo> result = new List<MechChromo>();
         while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
         {
             switch (mode)
@@ -49,7 +49,7 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // tournament-based
                 case 1:
-                    Dictionary<dynamic, float> tmp1 = new Dictionary<dynamic, float>();
+                    Dictionary<MechChromo, float> tmp1 = new Dictionary<MechChromo, float>();
                     for (int i = 0; i < k; i++)
                     {
                         int r2 = 0;
@@ -61,7 +61,7 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // roulette
                 case 2:
-                    Dictionary<float, List<dynamic>> fvNew = fv.GroupBy(kv => kv.Value)
+                    Dictionary<float, List<MechChromo>> fvNew = fv.GroupBy(kv => kv.Value)
                         .ToDictionary(g => g.Key, g => g.Select(kv => kv.Key).ToList());
                     List<float> f = new List<float>();
                     foreach (var item in fvNew)
@@ -92,7 +92,100 @@ public class GeneticFunc : MonoBehaviour
                     break;
                 // rank-based
                 case 3:
-                    Dictionary<dynamic, float> tmp2 = new Dictionary<dynamic, float>
+                    Dictionary<MechChromo, float> tmp2 = new Dictionary<MechChromo, float>
+                        (fv.OrderBy(x => x.Value));
+                    for (int i = 0; i < tmp2.Count; i++)
+                    {
+                        tmp2[tmp2.ElementAt(i).Key] = i;
+                    }
+                    float r5 = Random.Range(0, tmp2.Values.Sum());
+                    int index2 = 0;
+                    float u2 = 0;
+                    while (u2 < r5)
+                    {
+                        index2++;
+                        u2 += tmp2.ElementAt(index2).Value;
+                    }
+                    result.Add(tmp2.ElementAt(index2).Key);
+                    break;
+            }
+        }
+        return result;
+    }
+
+    /*
+     * Create list of parents
+     * 
+     * Input
+     *      fv: population fitness val
+     *      eliteCount: amount of elites
+     *      mode: selection mode
+     *          0 - Random
+     *          1 - Tournament-based
+     *          2 - Roulette Wheel
+     *          3 - Rank-based
+     *      
+     * Output
+     *      list of parents' indexes
+     */
+    public List<WeaponChromosome> SelectParentW(Dictionary<WeaponChromosome, float> fv, int eliteCount, int mode, int k)
+    {
+        List<WeaponChromosome> result = new List<WeaponChromosome>();
+        while (result.Count < fv.Count - eliteCount - (fv.Count - eliteCount) % 2)
+        {
+            switch (mode)
+            {
+                // random
+                case 0:
+                    int r1 = Random.Range(0, fv.Count);
+                    result.Add(fv.ElementAt(r1).Key);
+                    break;
+                // tournament-based
+                case 1:
+                    Dictionary<WeaponChromosome, float> tmp1 = new Dictionary<WeaponChromosome, float>();
+                    for (int i = 0; i < k; i++)
+                    {
+                        int r2 = 0;
+                        do r2 = Random.Range(0, fv.Count);
+                        while (tmp1.ContainsKey(fv.ElementAt(r2).Key));
+                        tmp1.Add(fv.ElementAt(r2).Key, fv.ElementAt(r2).Value);
+                    }
+                    result.Add(tmp1.OrderBy(x => x.Value).First().Key);
+                    break;
+                // roulette
+                case 2:
+                    Dictionary<float, List<WeaponChromosome>> fvNew = fv.GroupBy(kv => kv.Value)
+                        .ToDictionary(g => g.Key, g => g.Select(kv => kv.Key).ToList());
+                    List<float> f = new List<float>();
+                    foreach (var item in fvNew)
+                    {
+                        f.Add(item.Key * item.Value.Count);
+                    }
+                    float r3 = Random.Range(0, f.Sum());
+                    int index = 0;
+                    float u = f[index];
+                    while (u < r3)
+                    {
+                        index++;
+                        u += f[index];
+                    }
+                    int r4 = Random.Range(0, fvNew.ElementAt(index).Value.Count);
+                    result.Add(fvNew.ElementAt(index).Value[r4]);
+                    /*
+                    float r3 = Random.Range(0, fv.Values.Sum());
+                    int index = 0;
+                    float u = fv.First().Value;
+                    while (u < r3)
+                    {
+                        index++;
+                        u += fv.ElementAt(index).Value;
+                    }
+                    result.Add(fv.ElementAt(index).Key);
+                    */
+                    break;
+                // rank-based
+                case 3:
+                    Dictionary<WeaponChromosome, float> tmp2 = new Dictionary<WeaponChromosome, float>
                         (fv.OrderBy(x => x.Value));
                     for (int i = 0; i < tmp2.Count; i++)
                     {

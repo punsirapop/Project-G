@@ -81,8 +81,8 @@ public class BattleManager : MonoBehaviour
         float[] chances = new float[] { 50f, 30f, 20f };
         BattleMechManager[] targetList = sender[0] == (reqSameSide ? 1 : 0) ? _EnemyBattleStats : _AllyBattleStats;
         WeaponChromosome[] weaponList = sender[0] == (reqSameSide ? 1 : 0) ? _EnemyWeapon : _AllyWeapon;
-        BattleMechManager senderMech = Identify(sender, 0);
-        WeaponChromosome senderWeapon = Identify(sender, 1);
+        BattleMechManager senderMech = Identify0(sender);
+        WeaponChromosome senderWeapon = Identify1(sender);
 
         // check if dead
         for (int i = 0; i < chances.Length; i++)
@@ -138,17 +138,17 @@ public class BattleManager : MonoBehaviour
         int[] encodedTarget = new int[] { sender[0] == (reqSameSide ? 1 : 0) ? 1 : 0, target };
         Debug.Log(string.Join("/", chances) + $" Target: {target}");
 
-        return Identify(encodedTarget, 3);
+        return Identify3(encodedTarget);
     }
 
     public void AttackReport(int[] attacker, int[] receiver)
     {
-        BattleMechManager Attacker = Identify(attacker, 0);
-        WeaponChromosome AttackerW = Identify(attacker, 1);
-        MechChromo AttackerSO = Identify(attacker, 2);
-        BattleMechManager Receiver = Identify(receiver, 0);
-        WeaponChromosome ReceiverW = Identify(receiver, 1);
-        MechChromo ReceiverSO = Identify(receiver, 2);
+        BattleMechManager Attacker = Identify0(attacker);
+        WeaponChromosome AttackerW = Identify1(attacker);
+        MechChromo AttackerSO = Identify2(attacker);
+        BattleMechManager Receiver = Identify0(receiver);
+        WeaponChromosome ReceiverW = Identify1(receiver);
+        MechChromo ReceiverSO = Identify2(receiver);
 
         switch ((BulletType)attacker[2])
         {
@@ -253,7 +253,7 @@ public class BattleManager : MonoBehaviour
     {
         foreach (var item in _AllyBattleLineUp)
         {
-            item.StopTBag(Identify(dead, 3));
+            item.StopTBag(Identify3(dead));
         }
         if ((dead[0] == 0 ? _AllyBattleStats : _EnemyBattleStats).
             All(x => x.CurrentState == BattleMechManager.State.Dead))
@@ -275,27 +275,27 @@ public class BattleManager : MonoBehaviour
     }
 
     // Team - Index, 0: BMM - 1: WeaponChromo - 2: MechChromo  - 3: AMD
-    public dynamic Identify(int[] me, int mode)
+    public BattleMechManager Identify0(int[] me)
     {
-        dynamic[] arrayToCheck;
-        switch (mode)
-        {
-            case 0:
-                arrayToCheck = (me[0] == 0 ? _AllyBattleStats : _EnemyBattleStats);
-                break;
-            case 1:
-                arrayToCheck = (me[0] == 0 ? _AllyWeapon : _EnemyWeapon);
-                break;
-            case 2:
-                arrayToCheck = (me[0] == 0 ? _AllyTeam : _EnemyTeam);
-                break;
-            case 3:
-                arrayToCheck = (me[0] == 0 ? _AllyBattleLineUp : _EnemyBattleLineUp);
-                break;
-            default:
-                arrayToCheck = null;
-                break;
-        }
+        BattleMechManager[] arrayToCheck = me[0] == 0 ? _AllyBattleStats : _EnemyBattleStats;
+        if (arrayToCheck.Length > me[1]) return arrayToCheck[me[1]];
+        else return null;
+    }
+    public WeaponChromosome Identify1(int[] me)
+    {
+        WeaponChromosome[] arrayToCheck = me[0] == 0 ? _AllyWeapon : _EnemyWeapon;
+        if (arrayToCheck.Length > me[1]) return arrayToCheck[me[1]];
+        else return null;
+    }
+    public MechChromo Identify2(int[] me)
+    {
+        MechChromo[] arrayToCheck = me[0] == 0 ? _AllyTeam : _EnemyTeam;
+        if (arrayToCheck.Length > me[1]) return arrayToCheck[me[1]];
+        else return null;
+    }
+    public ArenaMechDisplay Identify3(int[] me)
+    {
+        ArenaMechDisplay[] arrayToCheck = me[0] == 0 ? _AllyBattleLineUp : _EnemyBattleLineUp;
         if (arrayToCheck.Length > me[1]) return arrayToCheck[me[1]];
         else return null;
     }

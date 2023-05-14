@@ -177,10 +177,10 @@ public class EnemySelectionManager : MonoBehaviour
      * 1 - offensive
      * 2 - defensive
      */
-    public static Dictionary<dynamic, List<float>> GetStatFitnessDict(List<MechChromo> m, int mode)
+    public static Dictionary<MechChromo, List<float>> GetStatFitnessDict(List<MechChromo> m, int mode)
     {
         List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
-        var dict = new Dictionary<dynamic, List<float>>();
+        var dict = new Dictionary<MechChromo, List<float>>();
 
         for (int i = 0; i < 4; i++) fv.Add(Tuple.Create(Properties.Com, i));
 

@@ -1,11 +1,8 @@
 // using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 using static FitnessMenu;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 /* 
  * Scriptable object for a chromosome

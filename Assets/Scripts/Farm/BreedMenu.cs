@@ -173,7 +173,7 @@ public class BreedMenu : MonoBehaviour
         {
             return;
         }
-        Dictionary<dynamic, float> fv = fitnessMenu.GetFitnessDict();
+        Dictionary<MechChromo, float> fv = fitnessMenu.GetFitnessDict();
         BreedPref b = new BreedPref((int)ElitismSelect.value, TypeParentSelect.value,
             (int)KSelect.value, TypeCrossover.value, (int)MutationSelect.value, breedGen);
         b.Print();
@@ -274,7 +274,7 @@ public class BreedMenu : MonoBehaviour
             List<MechChromo> elites = new List<MechChromo>();
 
             // ------- get fitness -------
-            Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
+            Dictionary<MechChromo, float> fv = new Dictionary<MechChromo, float>();
             foreach (MechChromo c in _MyFarm.MechChromos)
             {
                 fv.Add(c, c.GetFitness(_CurrentPref));
@@ -292,8 +292,8 @@ public class BreedMenu : MonoBehaviour
             }
 
             // ------- select parents according to chosen type -------
-            List<dynamic> parents = new List<dynamic>
-                (GeneticFunc.Instance.SelectParent(fv, elites.Count, MyFarm.BreedPref.TypeParentSelect, MyFarm.BreedPref.KSelect));
+            List<MechChromo> parents = new List<MechChromo>
+                (GeneticFunc.Instance.SelectParentM(fv, elites.Count, MyFarm.BreedPref.TypeParentSelect, MyFarm.BreedPref.KSelect));
             // Debug.Log("Parents Count: " + parents.Count);
 
             // ------- crossover according to chosen type -------

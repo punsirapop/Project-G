@@ -3360,7 +3360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c87ece001391f4e801aa91e12f53f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDisplay: {fileID: 0}
   Displays:
   - {fileID: 83654298}
   - {fileID: 18382381}

@@ -108,9 +108,9 @@ public class FitnessMenu : MonoBehaviour
      * Output
      *      Dictionary of MechChromo and their respective fitness value
      */
-    public Dictionary<dynamic, float> GetFitnessDict()
+    public Dictionary<MechChromo, float> GetFitnessDict()
     {
-        Dictionary<dynamic, float> dict = new Dictionary<dynamic, float>();
+        Dictionary<MechChromo, float> dict = new Dictionary<MechChromo, float>();
         foreach (MechChromo c in myFarm.MechChromos)
         {
             dict.Add(c, c.GetFitness(GetFitnessPref()));

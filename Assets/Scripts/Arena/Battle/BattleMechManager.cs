@@ -81,8 +81,8 @@ public class BattleMechManager : MonoBehaviour
                     {
                         foreach (var item in Effects.Where(x => x.Type == SelfEffects.Poison))
                         {
-                            WeaponChromosome giverW = BattleManager.Instance.Identify(item.Giver, 1);
-                            MechChromo giver = BattleManager.Instance.Identify(item.Giver, 2);
+                            WeaponChromosome giverW = BattleManager.Instance.Identify1(item.Giver);
+                            MechChromo giver = BattleManager.Instance.Identify2(item.Giver);
                             float dmg = giver.Atk.Sum() * .2f + giverW.Efficiency * giver.Atk.Sum() * .3f;
                             ReduceHP(dmg, DamageMode.Poison);
                         }
@@ -336,7 +336,7 @@ public class BattleMechManager : MonoBehaviour
         // adjust duration for sleep
         if (type == SelfEffects.Sleep)
         {
-            dur = 2f + ((WeaponChromosome)BattleManager.Instance.Identify(giver, 1)).Efficiency * 5f;
+            dur = 2f + ((WeaponChromosome)BattleManager.Instance.Identify1(giver)).Efficiency * 5f;
             AskPauseCharging(dur);
         }
         effectDis.Set(type, giver, this, dur);

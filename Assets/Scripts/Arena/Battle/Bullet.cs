@@ -80,7 +80,7 @@ public class Bullet : MonoBehaviour
             yield return null;
         }
 
-        if (_Target == BattleManager.Instance.Identify(_BattlePackage, 3))
+        if (_Target == BattleManager.Instance.Identify3(_BattlePackage))
         {
             _Target.SendMessage("Attacked", _BattlePackage);
         }

@@ -72,7 +72,7 @@ public class HStorageManager : MonoBehaviour
         */
         if (_MyFarm.MechChromos.Except(CartSlider.CartChromo).Count() > 0)
         {
-            Dictionary<dynamic, float> fvDict = _FitnessMenu.GetFitnessDict();
+            Dictionary<MechChromo, float> fvDict = _FitnessMenu.GetFitnessDict();
             fvDict = fvDict.Where(x => !CartSlider.CartChromo.Contains(x.Key)).
                 ToDictionary(x => x.Key, x => x.Value);
             List<OrderFormat> fv = new List<OrderFormat>();

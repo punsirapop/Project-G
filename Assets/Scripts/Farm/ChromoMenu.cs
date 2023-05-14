@@ -61,7 +61,7 @@ public class ChromoMenu : MonoBehaviour
         // ------- get fitness -------
         if (_MyFarm.MechChromos.Count > 0)
         {
-            Dictionary<dynamic, float> fvDict = fitnessMenu.GetFitnessDict();
+            Dictionary<MechChromo, float> fvDict = fitnessMenu.GetFitnessDict();
             List<OrderFormat> fv = new List<OrderFormat>();
             foreach (var item in fvDict)
             {
