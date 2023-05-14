@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
+    public static float Volume = .5f;
+
     [System.Serializable]
     public struct MusicClip
     {
@@ -37,6 +39,11 @@ public class MusicManager : MonoBehaviour
         _CurrentSceneName = SceneManager.GetActiveScene().name;
         PlayMusic(_CurrentSceneName);
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void Update()
+    {
+        _AudioSource.volume = Volume;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SoundEffectManager : MonoBehaviour
 {
+    public static float Volume = .5f;
+
     [System.Serializable]
     public struct SoundEffect
     {
@@ -61,6 +63,7 @@ public class SoundEffectManager : MonoBehaviour
             AudioSource audioSource = GetAvailableAudioSource(soundEffect);
 
             // Play the sound effect using the AudioSource
+            audioSource.volume = Volume;
             audioSource.PlayOneShot(soundEffect.Clip);
         }
     }
