@@ -33,7 +33,6 @@ public class BattleMechManager : MonoBehaviour
     public float HpCurrent => _HpCurrent;
     float _SpMax;
     float _SpCurrent, _SpFallBehind, _SpPause, _SpMarker;
-    float _SkillCooldown;
 
     Coroutine _ChangingStateAction;
 
@@ -204,6 +203,17 @@ public class BattleMechManager : MonoBehaviour
         _SpPause = 0f;
         _SpFallBehind = 0f;
         _SpMarker = 0f;
+        _Pause = false;
+        if (_Action != null)
+        {
+            StopCoroutine(_Action);
+            _Action = null;
+        }
+        if (_ChangingStateAction != null)
+        {
+            StopCoroutine(_ChangingStateAction);
+            _ChangingStateAction = null;
+        }
 
         _MyMech.gameObject.SetActive(true);
         gameObject.SetActive(true);
