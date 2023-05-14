@@ -13,45 +13,45 @@ Warning--empty year in reginelo
 Warning--empty year in isfetaddie
 Warning--empty year in michiganpilot
 Warning--empty year in mobygamesomega
-You've used 27 entries,
+You've used 30 entries,
             2177 wiz_defined-function locations,
-            909 strings with 11947 characters,
-and the built_in function-call counts, 7216 in all, are:
-= -- 737
-> -- 277
-< -- 4
-+ -- 116
-- -- 86
-* -- 473
-:= -- 1233
-add.period$ -- 28
-call.type$ -- 27
-change.case$ -- 96
+            926 strings with 12475 characters,
+and the built_in function-call counts, 8321 in all, are:
+= -- 847
+> -- 320
+< -- 5
++ -- 133
+- -- 100
+* -- 563
+:= -- 1409
+add.period$ -- 31
+call.type$ -- 30
+change.case$ -- 109
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 257
-empty$ -- 628
-format.name$ -- 86
-if$ -- 1533
+cite$ -- 36
+duplicate$ -- 303
+empty$ -- 722
+format.name$ -- 100
+if$ -- 1775
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 9
-newline$ -- 138
-num.names$ -- 55
-pop$ -- 189
+int.to.str$ -- 30
+missing$ -- 12
+newline$ -- 153
+num.names$ -- 61
+pop$ -- 204
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 109
 quote$ -- 0
-skip$ -- 205
+skip$ -- 236
 stack$ -- 0
-substring$ -- 299
-swap$ -- 50
-text.length$ -- 4
+substring$ -- 373
+swap$ -- 63
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
+type$ -- 118
 warning$ -- 6
-while$ -- 69
-width$ -- 29
-write$ -- 319
+while$ -- 80
+width$ -- 32
+write$ -- 355
 (There were 6 warnings)

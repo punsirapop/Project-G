@@ -28,28 +28,23 @@
 \contentsline {section}{\numberline {2.4}Usability Testing}{19}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Languages and Technologies}{19}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Related Works}{20}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Similar Games Example}{20}{subsection.2.6.1}%
-\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {3.}\hskip -0.5em Methodology and Design}}}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Analysis}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Problem Statement}{24}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Target Audience}{24}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Design}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Outcome-based Education (OBE) Design}{24}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Game Design Theory Application}{27}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Game Overview}{28}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Gameplay and Mechanics}{36}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Development}{38}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Learning material}{38}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Puzzle structure}{38}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Prototyping and usability testing}{41}{subsection.3.3.3}%
-\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {4.}\hskip -0.5em Implementation Results}}}{42}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Usability Testing Result}{42}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Implementation Result}{42}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Problems and Solution}{46}{section.4.3}%
-\contentsline {chapter}{\mdseries \bf \MakeUppercase {References}}{48}{figure.4.8}%
-\contentsline {chapter}{\mdseries \bf \MakeUppercase {Appendix}}{50}{figure.4.8}%
-\contentsline {apdx}{A\hskip 1em Storyboard}{51}{figure.4.8}%
-\contentsline {apdx}{B\hskip 1em Learning Material}{56}{figure.caption.12}%
-\contentsline {apdx}{C\hskip 1em Puzzles }{68}{figure.2.30}%
-\contentsline {apdx}{D\hskip 1em Character Sprites }{83}{figure.3.39}%
-\contentsline {apdx}{E\hskip 1em Usability Test Responses }{87}{Item.125}%
+\contentsline {subsection}{\numberline {2.6.1}Similar Games Genres}{20}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Similar Games Example}{20}{subsection.2.6.2}%
+\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {3.}\hskip -0.5em Methodology and Design}}}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Analysis}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Problem Statement}{25}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Target Audience}{25}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Design}{25}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Outcome-based Education (OBE) Design}{25}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Game Design Theory Application}{28}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Game Overview}{29}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Gameplay and Mechanics}{32}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Development}{40}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Learning material}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Puzzle structure}{40}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Prototyping and usability testing}{42}{subsection.3.3.3}%
+\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {4.}\hskip -0.5em Implementation Results}}}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Usability Testing Result}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Implementation Result}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Problems and Solution}{48}{section.4.3}%
+\contentsline {chapter}{\mdseries \bf \MakeUppercase {References}}{50}{figure.4.8}%
