@@ -126,6 +126,7 @@ public class FitnessMenu : MonoBehaviour
             if (!item.gameObject.activeSelf)
             {
                 item.gameObject.SetActive(true);
+                item.SetInteractable(myFarm.Status != Status.BREEDING);
                 break;
             }
         }

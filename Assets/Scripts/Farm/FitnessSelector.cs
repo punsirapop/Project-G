@@ -86,26 +86,26 @@ public class FitnessSelector : MonoBehaviour
             {
                 case Status.IDLE:
                     // Activate interactables
-                    Selector.interactable = true;
-                    HeadAdjustor.interactable = true;
-                    BodyAdjustor.interactable = true;
-                    AccAdjustor.interactable = true;
-                    CombatAdjustor.interactable = true;
-                    DeleteButton.interactable = true;
+                    SetInteractable(true);
                     break;
                 case Status.BREEDING:
                     // Deactivate interactables
-                    Selector.interactable = false;
-                    HeadAdjustor.interactable = false;
-                    BodyAdjustor.interactable = false;
-                    AccAdjustor.interactable = false;
-                    CombatAdjustor.interactable = false;
-                    DeleteButton.interactable = false;
+                    SetInteractable(false);
                     break;
                 default:
                     break;
             }
         }
+    }
+
+    public void SetInteractable(bool b)
+    {
+        Selector.interactable = b;
+        HeadAdjustor.interactable = b;
+        BodyAdjustor.interactable = b;
+        AccAdjustor.interactable = b;
+        CombatAdjustor.interactable = b;
+        DeleteButton.interactable = b;
     }
 
     // Close this selector

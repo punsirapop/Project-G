@@ -55,7 +55,7 @@ public class MainQuestSO : QuestSO
         {
             Debug.Log("Give mech to Habitat");
             MechChromo m = new MechChromo(null).SetChromosomeFromPreset(mech);
-            PlayerManager.FarmDatabase[1].AddChromo(m);
+            PlayerManager.FarmDatabase[0].AddChromo(m);
         }
         // Make database wait for day before give new quest
         MainQuestDatabaseSO.WaitForDay();
