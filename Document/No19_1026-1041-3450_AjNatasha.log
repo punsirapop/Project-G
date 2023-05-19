@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2022.11.5)  14 MAY 2023 19:35
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2022.11.5)  19 MAY 2023 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -776,6 +776,13 @@ LaTeX Info: Redefining \ttfamily on input line 16.
 
 LaTeX Warning: Label `tbl:rubric' multiply defined.
 
+
+LaTeX Warning: Label `tbl:satisfactory-test-summary-response' multiply defined.
+
+
+
+LaTeX Warning: Label `fig:usability-test-response-4' multiply defined.
+
 )
 \openout1 = `No19_1026-1041-3450_AjNatasha.aux'.
 
@@ -927,27 +934,93 @@ Underfull \hbox (badness 10000) in alignment at lines 141--141
  []
 
 [2]
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 191.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 191.
-
 
 Package hyperref Warning: bookmark level for unknown chapterx defaults to 0.
 
-(No19_1026-1041-3450_AjNatasha.toc
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 146.
+
+Underfull \hbox (badness 10000) in alignment at lines 154--156
+[][]
+ []
+
+[2]
+LaTeX Font Info:    Font shape `TU/THSarabunNew(0)/m/n' will be
+(Font)              scaled to size 12.29996pt on input line 167.
+\thai@year=\count340
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count341
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count342
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count343
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count344
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count345
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count346
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count347
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count348
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count349
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count350
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+\thai@year=\count351
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+LaTeX Font Info:    Font shape `TU/THSarabunNew(0)/b/n' will be
+(Font)              scaled to size 12.29996pt on input line 179.
+
+Overfull \hbox (334.22383pt too wide) in alignment at lines 176--180
+[][] 
+ []
+
+[3]
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 189.
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 189.
+ [4
+
+] (No19_1026-1041-3450_AjNatasha.toc
 LaTeX Info: Redefining \rmfamily on input line 1.
 LaTeX Info: Redefining \sffamily on input line 1.
 LaTeX Info: Redefining \ttfamily on input line 1.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 2.
- [3
+ [5
 
 ])
 \tf@toc=\write4
 \openout4 = `No19_1026-1041-3450_AjNatasha.toc'.
 
- [4] (No19_1026-1041-3450_AjNatasha.lot
+ [6]
+(No19_1026-1041-3450_AjNatasha.lot
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
 LaTeX Info: Redefining \ttfamily on input line 2.
@@ -1077,9 +1150,6 @@ LaTeX Info: Redefining \ttfamily on input line 51.
 LaTeX Info: Redefining \rmfamily on input line 52.
 LaTeX Info: Redefining \sffamily on input line 52.
 LaTeX Info: Redefining \ttfamily on input line 52.
-LaTeX Info: Redefining \rmfamily on input line 57.
-LaTeX Info: Redefining \sffamily on input line 57.
-LaTeX Info: Redefining \ttfamily on input line 57.
 LaTeX Info: Redefining \rmfamily on input line 58.
 LaTeX Info: Redefining \sffamily on input line 58.
 LaTeX Info: Redefining \ttfamily on input line 58.
@@ -1101,11 +1171,488 @@ LaTeX Info: Redefining \ttfamily on input line 63.
 LaTeX Info: Redefining \rmfamily on input line 64.
 LaTeX Info: Redefining \sffamily on input line 64.
 LaTeX Info: Redefining \ttfamily on input line 64.
+LaTeX Info: Redefining \rmfamily on input line 65.
+LaTeX Info: Redefining \sffamily on input line 65.
+LaTeX Info: Redefining \ttfamily on input line 65.
+LaTeX Info: Redefining \rmfamily on input line 66.
+LaTeX Info: Redefining \sffamily on input line 66.
+LaTeX Info: Redefining \ttfamily on input line 66.
+LaTeX Info: Redefining \rmfamily on input line 67.
+LaTeX Info: Redefining \sffamily on input line 67.
+LaTeX Info: Redefining \ttfamily on input line 67.
+LaTeX Info: Redefining \rmfamily on input line 68.
+LaTeX Info: Redefining \sffamily on input line 68.
+LaTeX Info: Redefining \ttfamily on input line 68.
+LaTeX Info: Redefining \rmfamily on input line 69.
+LaTeX Info: Redefining \sffamily on input line 69.
+LaTeX Info: Redefining \ttfamily on input line 69.
+LaTeX Info: Redefining \rmfamily on input line 70.
+LaTeX Info: Redefining \sffamily on input line 70.
+LaTeX Info: Redefining \ttfamily on input line 70.
+LaTeX Info: Redefining \rmfamily on input line 71.
+LaTeX Info: Redefining \sffamily on input line 71.
+LaTeX Info: Redefining \ttfamily on input line 71.
+LaTeX Info: Redefining \rmfamily on input line 72.
+LaTeX Info: Redefining \sffamily on input line 72.
+LaTeX Info: Redefining \ttfamily on input line 72.
+LaTeX Info: Redefining \rmfamily on input line 73.
+LaTeX Info: Redefining \sffamily on input line 73.
+LaTeX Info: Redefining \ttfamily on input line 73.
+LaTeX Info: Redefining \rmfamily on input line 74.
+LaTeX Info: Redefining \sffamily on input line 74.
+LaTeX Info: Redefining \ttfamily on input line 74.
+LaTeX Info: Redefining \rmfamily on input line 75.
+LaTeX Info: Redefining \sffamily on input line 75.
+LaTeX Info: Redefining \ttfamily on input line 75.
+LaTeX Info: Redefining \rmfamily on input line 76.
+LaTeX Info: Redefining \sffamily on input line 76.
+LaTeX Info: Redefining \ttfamily on input line 76.
+LaTeX Info: Redefining \rmfamily on input line 77.
+LaTeX Info: Redefining \sffamily on input line 77.
+LaTeX Info: Redefining \ttfamily on input line 77.
+LaTeX Info: Redefining \rmfamily on input line 78.
+LaTeX Info: Redefining \sffamily on input line 78.
+LaTeX Info: Redefining \ttfamily on input line 78.
+LaTeX Info: Redefining \rmfamily on input line 79.
+LaTeX Info: Redefining \sffamily on input line 79.
+LaTeX Info: Redefining \ttfamily on input line 79.
+LaTeX Info: Redefining \rmfamily on input line 80.
+LaTeX Info: Redefining \sffamily on input line 80.
+LaTeX Info: Redefining \ttfamily on input line 80.
+LaTeX Info: Redefining \rmfamily on input line 83.
+LaTeX Info: Redefining \sffamily on input line 83.
+LaTeX Info: Redefining \ttfamily on input line 83.
+LaTeX Info: Redefining \rmfamily on input line 84.
+LaTeX Info: Redefining \sffamily on input line 84.
+LaTeX Info: Redefining \ttfamily on input line 84.
+LaTeX Info: Redefining \rmfamily on input line 86.
+LaTeX Info: Redefining \sffamily on input line 86.
+LaTeX Info: Redefining \ttfamily on input line 86.
+LaTeX Info: Redefining \rmfamily on input line 87.
+LaTeX Info: Redefining \sffamily on input line 87.
+LaTeX Info: Redefining \ttfamily on input line 87.
+LaTeX Info: Redefining \rmfamily on input line 88.
+LaTeX Info: Redefining \sffamily on input line 88.
+LaTeX Info: Redefining \ttfamily on input line 88.
+LaTeX Info: Redefining \rmfamily on input line 89.
+LaTeX Info: Redefining \sffamily on input line 89.
+LaTeX Info: Redefining \ttfamily on input line 89.
+LaTeX Info: Redefining \rmfamily on input line 90.
+LaTeX Info: Redefining \sffamily on input line 90.
+LaTeX Info: Redefining \ttfamily on input line 90.
+LaTeX Info: Redefining \rmfamily on input line 91.
+LaTeX Info: Redefining \sffamily on input line 91.
+LaTeX Info: Redefining \ttfamily on input line 91.
+LaTeX Info: Redefining \rmfamily on input line 92.
+LaTeX Info: Redefining \sffamily on input line 92.
+LaTeX Info: Redefining \ttfamily on input line 92.
+LaTeX Info: Redefining \rmfamily on input line 93.
+LaTeX Info: Redefining \sffamily on input line 93.
+LaTeX Info: Redefining \ttfamily on input line 93.
+LaTeX Info: Redefining \rmfamily on input line 94.
+LaTeX Info: Redefining \sffamily on input line 94.
+LaTeX Info: Redefining \ttfamily on input line 94.
+LaTeX Info: Redefining \rmfamily on input line 95.
+LaTeX Info: Redefining \sffamily on input line 95.
+LaTeX Info: Redefining \ttfamily on input line 95.
+LaTeX Info: Redefining \rmfamily on input line 96.
+LaTeX Info: Redefining \sffamily on input line 96.
+LaTeX Info: Redefining \ttfamily on input line 96.
+LaTeX Info: Redefining \rmfamily on input line 97.
+LaTeX Info: Redefining \sffamily on input line 97.
+LaTeX Info: Redefining \ttfamily on input line 97.
+LaTeX Info: Redefining \rmfamily on input line 98.
+LaTeX Info: Redefining \sffamily on input line 98.
+LaTeX Info: Redefining \ttfamily on input line 98.
+LaTeX Info: Redefining \rmfamily on input line 99.
+LaTeX Info: Redefining \sffamily on input line 99.
+LaTeX Info: Redefining \ttfamily on input line 99.
+LaTeX Info: Redefining \rmfamily on input line 100.
+LaTeX Info: Redefining \sffamily on input line 100.
+LaTeX Info: Redefining \ttfamily on input line 100.
+LaTeX Info: Redefining \rmfamily on input line 101.
+LaTeX Info: Redefining \sffamily on input line 101.
+LaTeX Info: Redefining \ttfamily on input line 101.
+LaTeX Info: Redefining \rmfamily on input line 102.
+LaTeX Info: Redefining \sffamily on input line 102.
+LaTeX Info: Redefining \ttfamily on input line 102.
+LaTeX Info: Redefining \rmfamily on input line 103.
+LaTeX Info: Redefining \sffamily on input line 103.
+LaTeX Info: Redefining \ttfamily on input line 103.
+LaTeX Info: Redefining \rmfamily on input line 104.
+LaTeX Info: Redefining \sffamily on input line 104.
+LaTeX Info: Redefining \ttfamily on input line 104.
+LaTeX Info: Redefining \rmfamily on input line 105.
+LaTeX Info: Redefining \sffamily on input line 105.
+LaTeX Info: Redefining \ttfamily on input line 105.
+LaTeX Info: Redefining \rmfamily on input line 106.
+LaTeX Info: Redefining \sffamily on input line 106.
+LaTeX Info: Redefining \ttfamily on input line 106.
+LaTeX Info: Redefining \rmfamily on input line 107.
+LaTeX Info: Redefining \sffamily on input line 107.
+LaTeX Info: Redefining \ttfamily on input line 107.
+LaTeX Info: Redefining \rmfamily on input line 108.
+LaTeX Info: Redefining \sffamily on input line 108.
+LaTeX Info: Redefining \ttfamily on input line 108.
+LaTeX Info: Redefining \rmfamily on input line 109.
+LaTeX Info: Redefining \sffamily on input line 109.
+LaTeX Info: Redefining \ttfamily on input line 109.
+LaTeX Info: Redefining \rmfamily on input line 110.
+LaTeX Info: Redefining \sffamily on input line 110.
+LaTeX Info: Redefining \ttfamily on input line 110.
+LaTeX Info: Redefining \rmfamily on input line 111.
+LaTeX Info: Redefining \sffamily on input line 111.
+LaTeX Info: Redefining \ttfamily on input line 111.
+LaTeX Info: Redefining \rmfamily on input line 112.
+LaTeX Info: Redefining \sffamily on input line 112.
+LaTeX Info: Redefining \ttfamily on input line 112.
+LaTeX Info: Redefining \rmfamily on input line 113.
+LaTeX Info: Redefining \sffamily on input line 113.
+LaTeX Info: Redefining \ttfamily on input line 113.
+LaTeX Info: Redefining \rmfamily on input line 114.
+LaTeX Info: Redefining \sffamily on input line 114.
+LaTeX Info: Redefining \ttfamily on input line 114.
+LaTeX Info: Redefining \rmfamily on input line 115.
+LaTeX Info: Redefining \sffamily on input line 115.
+LaTeX Info: Redefining \ttfamily on input line 115.
+LaTeX Info: Redefining \rmfamily on input line 116.
+LaTeX Info: Redefining \sffamily on input line 116.
+LaTeX Info: Redefining \ttfamily on input line 116.
+LaTeX Info: Redefining \rmfamily on input line 117.
+LaTeX Info: Redefining \sffamily on input line 117.
+LaTeX Info: Redefining \ttfamily on input line 117.
+LaTeX Info: Redefining \rmfamily on input line 118.
+LaTeX Info: Redefining \sffamily on input line 118.
+LaTeX Info: Redefining \ttfamily on input line 118.
+LaTeX Info: Redefining \rmfamily on input line 119.
+LaTeX Info: Redefining \sffamily on input line 119.
+LaTeX Info: Redefining \ttfamily on input line 119.
+LaTeX Info: Redefining \rmfamily on input line 120.
+LaTeX Info: Redefining \sffamily on input line 120.
+LaTeX Info: Redefining \ttfamily on input line 120.
+LaTeX Info: Redefining \rmfamily on input line 121.
+LaTeX Info: Redefining \sffamily on input line 121.
+LaTeX Info: Redefining \ttfamily on input line 121.
+LaTeX Info: Redefining \rmfamily on input line 122.
+LaTeX Info: Redefining \sffamily on input line 122.
+LaTeX Info: Redefining \ttfamily on input line 122.
+LaTeX Info: Redefining \rmfamily on input line 123.
+LaTeX Info: Redefining \sffamily on input line 123.
+LaTeX Info: Redefining \ttfamily on input line 123.
+LaTeX Info: Redefining \rmfamily on input line 124.
+LaTeX Info: Redefining \sffamily on input line 124.
+LaTeX Info: Redefining \ttfamily on input line 124.
+LaTeX Info: Redefining \rmfamily on input line 125.
+LaTeX Info: Redefining \sffamily on input line 125.
+LaTeX Info: Redefining \ttfamily on input line 125.
+LaTeX Info: Redefining \rmfamily on input line 126.
+LaTeX Info: Redefining \sffamily on input line 126.
+LaTeX Info: Redefining \ttfamily on input line 126.
+LaTeX Info: Redefining \rmfamily on input line 127.
+LaTeX Info: Redefining \sffamily on input line 127.
+LaTeX Info: Redefining \ttfamily on input line 127.
+LaTeX Info: Redefining \rmfamily on input line 128.
+LaTeX Info: Redefining \sffamily on input line 128.
+LaTeX Info: Redefining \ttfamily on input line 128.
+LaTeX Info: Redefining \rmfamily on input line 129.
+LaTeX Info: Redefining \sffamily on input line 129.
+LaTeX Info: Redefining \ttfamily on input line 129.
+LaTeX Info: Redefining \rmfamily on input line 130.
+LaTeX Info: Redefining \sffamily on input line 130.
+LaTeX Info: Redefining \ttfamily on input line 130.
+LaTeX Info: Redefining \rmfamily on input line 131.
+LaTeX Info: Redefining \sffamily on input line 131.
+LaTeX Info: Redefining \ttfamily on input line 131.
+LaTeX Info: Redefining \rmfamily on input line 132.
+LaTeX Info: Redefining \sffamily on input line 132.
+LaTeX Info: Redefining \ttfamily on input line 132.
+LaTeX Info: Redefining \rmfamily on input line 133.
+LaTeX Info: Redefining \sffamily on input line 133.
+LaTeX Info: Redefining \ttfamily on input line 133.
+LaTeX Info: Redefining \rmfamily on input line 134.
+LaTeX Info: Redefining \sffamily on input line 134.
+LaTeX Info: Redefining \ttfamily on input line 134.
+LaTeX Info: Redefining \rmfamily on input line 135.
+LaTeX Info: Redefining \sffamily on input line 135.
+LaTeX Info: Redefining \ttfamily on input line 135.
+LaTeX Info: Redefining \rmfamily on input line 136.
+LaTeX Info: Redefining \sffamily on input line 136.
+LaTeX Info: Redefining \ttfamily on input line 136.
+LaTeX Info: Redefining \rmfamily on input line 137.
+LaTeX Info: Redefining \sffamily on input line 137.
+LaTeX Info: Redefining \ttfamily on input line 137.
+LaTeX Info: Redefining \rmfamily on input line 138.
+LaTeX Info: Redefining \sffamily on input line 138.
+LaTeX Info: Redefining \ttfamily on input line 138.
+LaTeX Info: Redefining \rmfamily on input line 139.
+LaTeX Info: Redefining \sffamily on input line 139.
+LaTeX Info: Redefining \ttfamily on input line 139.
+LaTeX Info: Redefining \rmfamily on input line 140.
+LaTeX Info: Redefining \sffamily on input line 140.
+LaTeX Info: Redefining \ttfamily on input line 140.
+LaTeX Info: Redefining \rmfamily on input line 141.
+LaTeX Info: Redefining \sffamily on input line 141.
+LaTeX Info: Redefining \ttfamily on input line 141.
+LaTeX Info: Redefining \rmfamily on input line 142.
+LaTeX Info: Redefining \sffamily on input line 142.
+LaTeX Info: Redefining \ttfamily on input line 142.
+LaTeX Info: Redefining \rmfamily on input line 143.
+LaTeX Info: Redefining \sffamily on input line 143.
+LaTeX Info: Redefining \ttfamily on input line 143.
+LaTeX Info: Redefining \rmfamily on input line 144.
+LaTeX Info: Redefining \sffamily on input line 144.
+LaTeX Info: Redefining \ttfamily on input line 144.
+LaTeX Info: Redefining \rmfamily on input line 145.
+LaTeX Info: Redefining \sffamily on input line 145.
+LaTeX Info: Redefining \ttfamily on input line 145.
+LaTeX Info: Redefining \rmfamily on input line 146.
+LaTeX Info: Redefining \sffamily on input line 146.
+LaTeX Info: Redefining \ttfamily on input line 146.
+LaTeX Info: Redefining \rmfamily on input line 147.
+LaTeX Info: Redefining \sffamily on input line 147.
+LaTeX Info: Redefining \ttfamily on input line 147.
+LaTeX Info: Redefining \rmfamily on input line 148.
+LaTeX Info: Redefining \sffamily on input line 148.
+LaTeX Info: Redefining \ttfamily on input line 148.
+LaTeX Info: Redefining \rmfamily on input line 149.
+LaTeX Info: Redefining \sffamily on input line 149.
+LaTeX Info: Redefining \ttfamily on input line 149.
+LaTeX Info: Redefining \rmfamily on input line 150.
+LaTeX Info: Redefining \sffamily on input line 150.
+LaTeX Info: Redefining \ttfamily on input line 150.
+LaTeX Info: Redefining \rmfamily on input line 151.
+LaTeX Info: Redefining \sffamily on input line 151.
+LaTeX Info: Redefining \ttfamily on input line 151.
+LaTeX Info: Redefining \rmfamily on input line 152.
+LaTeX Info: Redefining \sffamily on input line 152.
+LaTeX Info: Redefining \ttfamily on input line 152.
+LaTeX Info: Redefining \rmfamily on input line 153.
+LaTeX Info: Redefining \sffamily on input line 153.
+LaTeX Info: Redefining \ttfamily on input line 153.
+LaTeX Info: Redefining \rmfamily on input line 154.
+LaTeX Info: Redefining \sffamily on input line 154.
+LaTeX Info: Redefining \ttfamily on input line 154.
+LaTeX Info: Redefining \rmfamily on input line 155.
+LaTeX Info: Redefining \sffamily on input line 155.
+LaTeX Info: Redefining \ttfamily on input line 155.
+LaTeX Info: Redefining \rmfamily on input line 156.
+LaTeX Info: Redefining \sffamily on input line 156.
+LaTeX Info: Redefining \ttfamily on input line 156.
+LaTeX Info: Redefining \rmfamily on input line 157.
+LaTeX Info: Redefining \sffamily on input line 157.
+LaTeX Info: Redefining \ttfamily on input line 157.
+LaTeX Info: Redefining \rmfamily on input line 158.
+LaTeX Info: Redefining \sffamily on input line 158.
+LaTeX Info: Redefining \ttfamily on input line 158.
+LaTeX Info: Redefining \rmfamily on input line 159.
+LaTeX Info: Redefining \sffamily on input line 159.
+LaTeX Info: Redefining \ttfamily on input line 159.
+LaTeX Info: Redefining \rmfamily on input line 160.
+LaTeX Info: Redefining \sffamily on input line 160.
+LaTeX Info: Redefining \ttfamily on input line 160.
+LaTeX Info: Redefining \rmfamily on input line 161.
+LaTeX Info: Redefining \sffamily on input line 161.
+LaTeX Info: Redefining \ttfamily on input line 161.
+LaTeX Info: Redefining \rmfamily on input line 162.
+LaTeX Info: Redefining \sffamily on input line 162.
+LaTeX Info: Redefining \ttfamily on input line 162.
+LaTeX Info: Redefining \rmfamily on input line 163.
+LaTeX Info: Redefining \sffamily on input line 163.
+LaTeX Info: Redefining \ttfamily on input line 163.
+LaTeX Info: Redefining \rmfamily on input line 164.
+LaTeX Info: Redefining \sffamily on input line 164.
+LaTeX Info: Redefining \ttfamily on input line 164.
+LaTeX Info: Redefining \rmfamily on input line 165.
+LaTeX Info: Redefining \sffamily on input line 165.
+LaTeX Info: Redefining \ttfamily on input line 165.
+LaTeX Info: Redefining \rmfamily on input line 166.
+LaTeX Info: Redefining \sffamily on input line 166.
+LaTeX Info: Redefining \ttfamily on input line 166.
+LaTeX Info: Redefining \rmfamily on input line 167.
+LaTeX Info: Redefining \sffamily on input line 167.
+LaTeX Info: Redefining \ttfamily on input line 167.
+LaTeX Info: Redefining \rmfamily on input line 168.
+LaTeX Info: Redefining \sffamily on input line 168.
+LaTeX Info: Redefining \ttfamily on input line 168.
+LaTeX Info: Redefining \rmfamily on input line 169.
+LaTeX Info: Redefining \sffamily on input line 169.
+LaTeX Info: Redefining \ttfamily on input line 169.
+LaTeX Info: Redefining \rmfamily on input line 170.
+LaTeX Info: Redefining \sffamily on input line 170.
+LaTeX Info: Redefining \ttfamily on input line 170.
+LaTeX Info: Redefining \rmfamily on input line 171.
+LaTeX Info: Redefining \sffamily on input line 171.
+LaTeX Info: Redefining \ttfamily on input line 171.
+LaTeX Info: Redefining \rmfamily on input line 172.
+LaTeX Info: Redefining \sffamily on input line 172.
+LaTeX Info: Redefining \ttfamily on input line 172.
+LaTeX Info: Redefining \rmfamily on input line 173.
+LaTeX Info: Redefining \sffamily on input line 173.
+LaTeX Info: Redefining \ttfamily on input line 173.
+LaTeX Info: Redefining \rmfamily on input line 174.
+LaTeX Info: Redefining \sffamily on input line 174.
+LaTeX Info: Redefining \ttfamily on input line 174.
+LaTeX Info: Redefining \rmfamily on input line 175.
+LaTeX Info: Redefining \sffamily on input line 175.
+LaTeX Info: Redefining \ttfamily on input line 175.
+LaTeX Info: Redefining \rmfamily on input line 176.
+LaTeX Info: Redefining \sffamily on input line 176.
+LaTeX Info: Redefining \ttfamily on input line 176.
+LaTeX Info: Redefining \rmfamily on input line 177.
+LaTeX Info: Redefining \sffamily on input line 177.
+LaTeX Info: Redefining \ttfamily on input line 177.
+LaTeX Info: Redefining \rmfamily on input line 178.
+LaTeX Info: Redefining \sffamily on input line 178.
+LaTeX Info: Redefining \ttfamily on input line 178.
+LaTeX Info: Redefining \rmfamily on input line 179.
+LaTeX Info: Redefining \sffamily on input line 179.
+LaTeX Info: Redefining \ttfamily on input line 179.
+LaTeX Info: Redefining \rmfamily on input line 180.
+LaTeX Info: Redefining \sffamily on input line 180.
+LaTeX Info: Redefining \ttfamily on input line 180.
+LaTeX Info: Redefining \rmfamily on input line 181.
+LaTeX Info: Redefining \sffamily on input line 181.
+LaTeX Info: Redefining \ttfamily on input line 181.
+LaTeX Info: Redefining \rmfamily on input line 182.
+LaTeX Info: Redefining \sffamily on input line 182.
+LaTeX Info: Redefining \ttfamily on input line 182.
+LaTeX Info: Redefining \rmfamily on input line 183.
+LaTeX Info: Redefining \sffamily on input line 183.
+LaTeX Info: Redefining \ttfamily on input line 183.
+LaTeX Info: Redefining \rmfamily on input line 184.
+LaTeX Info: Redefining \sffamily on input line 184.
+LaTeX Info: Redefining \ttfamily on input line 184.
+LaTeX Info: Redefining \rmfamily on input line 187.
+LaTeX Info: Redefining \sffamily on input line 187.
+LaTeX Info: Redefining \ttfamily on input line 187.
+LaTeX Info: Redefining \rmfamily on input line 188.
+LaTeX Info: Redefining \sffamily on input line 188.
+LaTeX Info: Redefining \ttfamily on input line 188.
+LaTeX Info: Redefining \rmfamily on input line 189.
+LaTeX Info: Redefining \sffamily on input line 189.
+LaTeX Info: Redefining \ttfamily on input line 189.
+LaTeX Info: Redefining \rmfamily on input line 190.
+LaTeX Info: Redefining \sffamily on input line 190.
+LaTeX Info: Redefining \ttfamily on input line 190.
+LaTeX Info: Redefining \rmfamily on input line 191.
+LaTeX Info: Redefining \sffamily on input line 191.
+LaTeX Info: Redefining \ttfamily on input line 191.
+LaTeX Info: Redefining \rmfamily on input line 192.
+LaTeX Info: Redefining \sffamily on input line 192.
+LaTeX Info: Redefining \ttfamily on input line 192.
+LaTeX Info: Redefining \rmfamily on input line 193.
+LaTeX Info: Redefining \sffamily on input line 193.
+LaTeX Info: Redefining \ttfamily on input line 193.
+LaTeX Info: Redefining \rmfamily on input line 194.
+LaTeX Info: Redefining \sffamily on input line 194.
+LaTeX Info: Redefining \ttfamily on input line 194.
+LaTeX Info: Redefining \rmfamily on input line 195.
+LaTeX Info: Redefining \sffamily on input line 195.
+LaTeX Info: Redefining \ttfamily on input line 195.
+LaTeX Info: Redefining \rmfamily on input line 196.
+LaTeX Info: Redefining \sffamily on input line 196.
+LaTeX Info: Redefining \ttfamily on input line 196.
+LaTeX Info: Redefining \rmfamily on input line 197.
+LaTeX Info: Redefining \sffamily on input line 197.
+LaTeX Info: Redefining \ttfamily on input line 197.
+LaTeX Info: Redefining \rmfamily on input line 198.
+LaTeX Info: Redefining \sffamily on input line 198.
+LaTeX Info: Redefining \ttfamily on input line 198.
+LaTeX Info: Redefining \rmfamily on input line 199.
+LaTeX Info: Redefining \sffamily on input line 199.
+LaTeX Info: Redefining \ttfamily on input line 199.
+LaTeX Info: Redefining \rmfamily on input line 200.
+LaTeX Info: Redefining \sffamily on input line 200.
+LaTeX Info: Redefining \ttfamily on input line 200.
+LaTeX Info: Redefining \rmfamily on input line 201.
+LaTeX Info: Redefining \sffamily on input line 201.
+LaTeX Info: Redefining \ttfamily on input line 201.
+LaTeX Info: Redefining \rmfamily on input line 202.
+LaTeX Info: Redefining \sffamily on input line 202.
+LaTeX Info: Redefining \ttfamily on input line 202.
+LaTeX Info: Redefining \rmfamily on input line 203.
+LaTeX Info: Redefining \sffamily on input line 203.
+LaTeX Info: Redefining \ttfamily on input line 203.
+LaTeX Info: Redefining \rmfamily on input line 204.
+LaTeX Info: Redefining \sffamily on input line 204.
+LaTeX Info: Redefining \ttfamily on input line 204.
+LaTeX Info: Redefining \rmfamily on input line 205.
+LaTeX Info: Redefining \sffamily on input line 205.
+LaTeX Info: Redefining \ttfamily on input line 205.
+LaTeX Info: Redefining \rmfamily on input line 206.
+LaTeX Info: Redefining \sffamily on input line 206.
+LaTeX Info: Redefining \ttfamily on input line 206.
+LaTeX Info: Redefining \rmfamily on input line 207.
+LaTeX Info: Redefining \sffamily on input line 207.
+LaTeX Info: Redefining \ttfamily on input line 207.
+LaTeX Info: Redefining \rmfamily on input line 208.
+LaTeX Info: Redefining \sffamily on input line 208.
+LaTeX Info: Redefining \ttfamily on input line 208.
+LaTeX Info: Redefining \rmfamily on input line 209.
+LaTeX Info: Redefining \sffamily on input line 209.
+LaTeX Info: Redefining \ttfamily on input line 209.
+LaTeX Info: Redefining \rmfamily on input line 210.
+LaTeX Info: Redefining \sffamily on input line 210.
+LaTeX Info: Redefining \ttfamily on input line 210.
+LaTeX Info: Redefining \rmfamily on input line 211.
+LaTeX Info: Redefining \sffamily on input line 211.
+LaTeX Info: Redefining \ttfamily on input line 211.
+LaTeX Info: Redefining \rmfamily on input line 212.
+LaTeX Info: Redefining \sffamily on input line 212.
+LaTeX Info: Redefining \ttfamily on input line 212.
+LaTeX Info: Redefining \rmfamily on input line 213.
+LaTeX Info: Redefining \sffamily on input line 213.
+LaTeX Info: Redefining \ttfamily on input line 213.
+LaTeX Info: Redefining \rmfamily on input line 214.
+LaTeX Info: Redefining \sffamily on input line 214.
+LaTeX Info: Redefining \ttfamily on input line 214.
+LaTeX Info: Redefining \rmfamily on input line 215.
+LaTeX Info: Redefining \sffamily on input line 215.
+LaTeX Info: Redefining \ttfamily on input line 215.
+LaTeX Info: Redefining \rmfamily on input line 216.
+LaTeX Info: Redefining \sffamily on input line 216.
+LaTeX Info: Redefining \ttfamily on input line 216.
+LaTeX Info: Redefining \rmfamily on input line 217.
+LaTeX Info: Redefining \sffamily on input line 217.
+LaTeX Info: Redefining \ttfamily on input line 217.
+LaTeX Info: Redefining \rmfamily on input line 218.
+LaTeX Info: Redefining \sffamily on input line 218.
+LaTeX Info: Redefining \ttfamily on input line 218.
+LaTeX Info: Redefining \rmfamily on input line 219.
+LaTeX Info: Redefining \sffamily on input line 219.
+LaTeX Info: Redefining \ttfamily on input line 219.
+LaTeX Info: Redefining \rmfamily on input line 220.
+LaTeX Info: Redefining \sffamily on input line 220.
+LaTeX Info: Redefining \ttfamily on input line 220.
+LaTeX Info: Redefining \rmfamily on input line 221.
+LaTeX Info: Redefining \sffamily on input line 221.
+LaTeX Info: Redefining \ttfamily on input line 221.
+LaTeX Info: Redefining \rmfamily on input line 222.
+LaTeX Info: Redefining \sffamily on input line 222.
+LaTeX Info: Redefining \ttfamily on input line 222.
+LaTeX Info: Redefining \rmfamily on input line 223.
+LaTeX Info: Redefining \sffamily on input line 223.
+LaTeX Info: Redefining \ttfamily on input line 223.
+LaTeX Info: Redefining \rmfamily on input line 224.
+LaTeX Info: Redefining \sffamily on input line 224.
+LaTeX Info: Redefining \ttfamily on input line 224.
+LaTeX Info: Redefining \rmfamily on input line 225.
+LaTeX Info: Redefining \sffamily on input line 225.
+LaTeX Info: Redefining \ttfamily on input line 225.
+LaTeX Info: Redefining \rmfamily on input line 226.
+LaTeX Info: Redefining \sffamily on input line 226.
+LaTeX Info: Redefining \ttfamily on input line 226.
+LaTeX Info: Redefining \rmfamily on input line 227.
+LaTeX Info: Redefining \sffamily on input line 227.
+LaTeX Info: Redefining \ttfamily on input line 227.
+LaTeX Info: Redefining \rmfamily on input line 228.
+LaTeX Info: Redefining \sffamily on input line 228.
+LaTeX Info: Redefining \ttfamily on input line 228.
 )
 \tf@lot=\write5
 \openout5 = `No19_1026-1041-3450_AjNatasha.lot'.
 
-[5
+ [7
 
 ] (No19_1026-1041-3450_AjNatasha.lof
 LaTeX Info: Redefining \rmfamily on input line 2.
@@ -1255,7 +1802,8 @@ LaTeX Info: Redefining \ttfamily on input line 98.
 LaTeX Info: Redefining \rmfamily on input line 100.
 LaTeX Info: Redefining \sffamily on input line 100.
 LaTeX Info: Redefining \ttfamily on input line 100.
- [6
+
+[8
 
 ]
 LaTeX Info: Redefining \rmfamily on input line 102.
@@ -1264,11 +1812,488 @@ LaTeX Info: Redefining \ttfamily on input line 102.
 LaTeX Info: Redefining \rmfamily on input line 104.
 LaTeX Info: Redefining \sffamily on input line 104.
 LaTeX Info: Redefining \ttfamily on input line 104.
+LaTeX Info: Redefining \rmfamily on input line 106.
+LaTeX Info: Redefining \sffamily on input line 106.
+LaTeX Info: Redefining \ttfamily on input line 106.
+LaTeX Info: Redefining \rmfamily on input line 108.
+LaTeX Info: Redefining \sffamily on input line 108.
+LaTeX Info: Redefining \ttfamily on input line 108.
+LaTeX Info: Redefining \rmfamily on input line 110.
+LaTeX Info: Redefining \sffamily on input line 110.
+LaTeX Info: Redefining \ttfamily on input line 110.
+LaTeX Info: Redefining \rmfamily on input line 112.
+LaTeX Info: Redefining \sffamily on input line 112.
+LaTeX Info: Redefining \ttfamily on input line 112.
+LaTeX Info: Redefining \rmfamily on input line 114.
+LaTeX Info: Redefining \sffamily on input line 114.
+LaTeX Info: Redefining \ttfamily on input line 114.
+LaTeX Info: Redefining \rmfamily on input line 116.
+LaTeX Info: Redefining \sffamily on input line 116.
+LaTeX Info: Redefining \ttfamily on input line 116.
+LaTeX Info: Redefining \rmfamily on input line 118.
+LaTeX Info: Redefining \sffamily on input line 118.
+LaTeX Info: Redefining \ttfamily on input line 118.
+LaTeX Info: Redefining \rmfamily on input line 120.
+LaTeX Info: Redefining \sffamily on input line 120.
+LaTeX Info: Redefining \ttfamily on input line 120.
+LaTeX Info: Redefining \rmfamily on input line 122.
+LaTeX Info: Redefining \sffamily on input line 122.
+LaTeX Info: Redefining \ttfamily on input line 122.
+LaTeX Info: Redefining \rmfamily on input line 124.
+LaTeX Info: Redefining \sffamily on input line 124.
+LaTeX Info: Redefining \ttfamily on input line 124.
+LaTeX Info: Redefining \rmfamily on input line 126.
+LaTeX Info: Redefining \sffamily on input line 126.
+LaTeX Info: Redefining \ttfamily on input line 126.
+LaTeX Info: Redefining \rmfamily on input line 128.
+LaTeX Info: Redefining \sffamily on input line 128.
+LaTeX Info: Redefining \ttfamily on input line 128.
+LaTeX Info: Redefining \rmfamily on input line 130.
+LaTeX Info: Redefining \sffamily on input line 130.
+LaTeX Info: Redefining \ttfamily on input line 130.
+LaTeX Info: Redefining \rmfamily on input line 132.
+LaTeX Info: Redefining \sffamily on input line 132.
+LaTeX Info: Redefining \ttfamily on input line 132.
+LaTeX Info: Redefining \rmfamily on input line 134.
+LaTeX Info: Redefining \sffamily on input line 134.
+LaTeX Info: Redefining \ttfamily on input line 134.
+LaTeX Info: Redefining \rmfamily on input line 136.
+LaTeX Info: Redefining \sffamily on input line 136.
+LaTeX Info: Redefining \ttfamily on input line 136.
+LaTeX Info: Redefining \rmfamily on input line 138.
+LaTeX Info: Redefining \sffamily on input line 138.
+LaTeX Info: Redefining \ttfamily on input line 138.
+LaTeX Info: Redefining \rmfamily on input line 141.
+LaTeX Info: Redefining \sffamily on input line 141.
+LaTeX Info: Redefining \ttfamily on input line 141.
+LaTeX Info: Redefining \rmfamily on input line 143.
+LaTeX Info: Redefining \sffamily on input line 143.
+LaTeX Info: Redefining \ttfamily on input line 143.
+LaTeX Info: Redefining \rmfamily on input line 145.
+LaTeX Info: Redefining \sffamily on input line 145.
+LaTeX Info: Redefining \ttfamily on input line 145.
+LaTeX Info: Redefining \rmfamily on input line 147.
+LaTeX Info: Redefining \sffamily on input line 147.
+LaTeX Info: Redefining \ttfamily on input line 147.
+LaTeX Info: Redefining \rmfamily on input line 149.
+LaTeX Info: Redefining \sffamily on input line 149.
+LaTeX Info: Redefining \ttfamily on input line 149.
+LaTeX Info: Redefining \rmfamily on input line 151.
+LaTeX Info: Redefining \sffamily on input line 151.
+LaTeX Info: Redefining \ttfamily on input line 151.
+LaTeX Info: Redefining \rmfamily on input line 153.
+LaTeX Info: Redefining \sffamily on input line 153.
+LaTeX Info: Redefining \ttfamily on input line 153.
+LaTeX Info: Redefining \rmfamily on input line 155.
+LaTeX Info: Redefining \sffamily on input line 155.
+LaTeX Info: Redefining \ttfamily on input line 155.
+LaTeX Info: Redefining \rmfamily on input line 157.
+LaTeX Info: Redefining \sffamily on input line 157.
+LaTeX Info: Redefining \ttfamily on input line 157.
+LaTeX Info: Redefining \rmfamily on input line 159.
+LaTeX Info: Redefining \sffamily on input line 159.
+LaTeX Info: Redefining \ttfamily on input line 159.
+LaTeX Info: Redefining \rmfamily on input line 161.
+LaTeX Info: Redefining \sffamily on input line 161.
+LaTeX Info: Redefining \ttfamily on input line 161.
+LaTeX Info: Redefining \rmfamily on input line 163.
+LaTeX Info: Redefining \sffamily on input line 163.
+LaTeX Info: Redefining \ttfamily on input line 163.
+LaTeX Info: Redefining \rmfamily on input line 165.
+LaTeX Info: Redefining \sffamily on input line 165.
+LaTeX Info: Redefining \ttfamily on input line 165.
+LaTeX Info: Redefining \rmfamily on input line 167.
+LaTeX Info: Redefining \sffamily on input line 167.
+LaTeX Info: Redefining \ttfamily on input line 167.
+LaTeX Info: Redefining \rmfamily on input line 169.
+LaTeX Info: Redefining \sffamily on input line 169.
+LaTeX Info: Redefining \ttfamily on input line 169.
+LaTeX Info: Redefining \rmfamily on input line 171.
+LaTeX Info: Redefining \sffamily on input line 171.
+LaTeX Info: Redefining \ttfamily on input line 171.
+LaTeX Info: Redefining \rmfamily on input line 173.
+LaTeX Info: Redefining \sffamily on input line 173.
+LaTeX Info: Redefining \ttfamily on input line 173.
+LaTeX Info: Redefining \rmfamily on input line 175.
+LaTeX Info: Redefining \sffamily on input line 175.
+LaTeX Info: Redefining \ttfamily on input line 175.
+LaTeX Info: Redefining \rmfamily on input line 177.
+LaTeX Info: Redefining \sffamily on input line 177.
+LaTeX Info: Redefining \ttfamily on input line 177.
+LaTeX Info: Redefining \rmfamily on input line 179.
+LaTeX Info: Redefining \sffamily on input line 179.
+LaTeX Info: Redefining \ttfamily on input line 179.
+LaTeX Info: Redefining \rmfamily on input line 181.
+LaTeX Info: Redefining \sffamily on input line 181.
+LaTeX Info: Redefining \ttfamily on input line 181.
+LaTeX Info: Redefining \rmfamily on input line 183.
+LaTeX Info: Redefining \sffamily on input line 183.
+LaTeX Info: Redefining \ttfamily on input line 183.
+LaTeX Info: Redefining \rmfamily on input line 185.
+LaTeX Info: Redefining \sffamily on input line 185.
+LaTeX Info: Redefining \ttfamily on input line 185.
+LaTeX Info: Redefining \rmfamily on input line 187.
+LaTeX Info: Redefining \sffamily on input line 187.
+LaTeX Info: Redefining \ttfamily on input line 187.
+LaTeX Info: Redefining \rmfamily on input line 189.
+LaTeX Info: Redefining \sffamily on input line 189.
+LaTeX Info: Redefining \ttfamily on input line 189.
+LaTeX Info: Redefining \rmfamily on input line 191.
+LaTeX Info: Redefining \sffamily on input line 191.
+LaTeX Info: Redefining \ttfamily on input line 191.
+LaTeX Info: Redefining \rmfamily on input line 193.
+LaTeX Info: Redefining \sffamily on input line 193.
+LaTeX Info: Redefining \ttfamily on input line 193.
+LaTeX Info: Redefining \rmfamily on input line 195.
+LaTeX Info: Redefining \sffamily on input line 195.
+LaTeX Info: Redefining \ttfamily on input line 195.
+LaTeX Info: Redefining \rmfamily on input line 197.
+LaTeX Info: Redefining \sffamily on input line 197.
+LaTeX Info: Redefining \ttfamily on input line 197.
+LaTeX Info: Redefining \rmfamily on input line 199.
+LaTeX Info: Redefining \sffamily on input line 199.
+LaTeX Info: Redefining \ttfamily on input line 199.
+LaTeX Info: Redefining \rmfamily on input line 201.
+LaTeX Info: Redefining \sffamily on input line 201.
+LaTeX Info: Redefining \ttfamily on input line 201.
+LaTeX Info: Redefining \rmfamily on input line 203.
+LaTeX Info: Redefining \sffamily on input line 203.
+LaTeX Info: Redefining \ttfamily on input line 203.
+ [9]
+LaTeX Info: Redefining \rmfamily on input line 205.
+LaTeX Info: Redefining \sffamily on input line 205.
+LaTeX Info: Redefining \ttfamily on input line 205.
+LaTeX Info: Redefining \rmfamily on input line 207.
+LaTeX Info: Redefining \sffamily on input line 207.
+LaTeX Info: Redefining \ttfamily on input line 207.
+LaTeX Info: Redefining \rmfamily on input line 209.
+LaTeX Info: Redefining \sffamily on input line 209.
+LaTeX Info: Redefining \ttfamily on input line 209.
+LaTeX Info: Redefining \rmfamily on input line 211.
+LaTeX Info: Redefining \sffamily on input line 211.
+LaTeX Info: Redefining \ttfamily on input line 211.
+LaTeX Info: Redefining \rmfamily on input line 213.
+LaTeX Info: Redefining \sffamily on input line 213.
+LaTeX Info: Redefining \ttfamily on input line 213.
+LaTeX Info: Redefining \rmfamily on input line 215.
+LaTeX Info: Redefining \sffamily on input line 215.
+LaTeX Info: Redefining \ttfamily on input line 215.
+LaTeX Info: Redefining \rmfamily on input line 217.
+LaTeX Info: Redefining \sffamily on input line 217.
+LaTeX Info: Redefining \ttfamily on input line 217.
+LaTeX Info: Redefining \rmfamily on input line 219.
+LaTeX Info: Redefining \sffamily on input line 219.
+LaTeX Info: Redefining \ttfamily on input line 219.
+LaTeX Info: Redefining \rmfamily on input line 221.
+LaTeX Info: Redefining \sffamily on input line 221.
+LaTeX Info: Redefining \ttfamily on input line 221.
+LaTeX Info: Redefining \rmfamily on input line 223.
+LaTeX Info: Redefining \sffamily on input line 223.
+LaTeX Info: Redefining \ttfamily on input line 223.
+LaTeX Info: Redefining \rmfamily on input line 225.
+LaTeX Info: Redefining \sffamily on input line 225.
+LaTeX Info: Redefining \ttfamily on input line 225.
+LaTeX Info: Redefining \rmfamily on input line 227.
+LaTeX Info: Redefining \sffamily on input line 227.
+LaTeX Info: Redefining \ttfamily on input line 227.
+LaTeX Info: Redefining \rmfamily on input line 229.
+LaTeX Info: Redefining \sffamily on input line 229.
+LaTeX Info: Redefining \ttfamily on input line 229.
+LaTeX Info: Redefining \rmfamily on input line 231.
+LaTeX Info: Redefining \sffamily on input line 231.
+LaTeX Info: Redefining \ttfamily on input line 231.
+LaTeX Info: Redefining \rmfamily on input line 233.
+LaTeX Info: Redefining \sffamily on input line 233.
+LaTeX Info: Redefining \ttfamily on input line 233.
+LaTeX Info: Redefining \rmfamily on input line 235.
+LaTeX Info: Redefining \sffamily on input line 235.
+LaTeX Info: Redefining \ttfamily on input line 235.
+LaTeX Info: Redefining \rmfamily on input line 237.
+LaTeX Info: Redefining \sffamily on input line 237.
+LaTeX Info: Redefining \ttfamily on input line 237.
+LaTeX Info: Redefining \rmfamily on input line 239.
+LaTeX Info: Redefining \sffamily on input line 239.
+LaTeX Info: Redefining \ttfamily on input line 239.
+LaTeX Info: Redefining \rmfamily on input line 241.
+LaTeX Info: Redefining \sffamily on input line 241.
+LaTeX Info: Redefining \ttfamily on input line 241.
+LaTeX Info: Redefining \rmfamily on input line 243.
+LaTeX Info: Redefining \sffamily on input line 243.
+LaTeX Info: Redefining \ttfamily on input line 243.
+LaTeX Info: Redefining \rmfamily on input line 245.
+LaTeX Info: Redefining \sffamily on input line 245.
+LaTeX Info: Redefining \ttfamily on input line 245.
+LaTeX Info: Redefining \rmfamily on input line 247.
+LaTeX Info: Redefining \sffamily on input line 247.
+LaTeX Info: Redefining \ttfamily on input line 247.
+LaTeX Info: Redefining \rmfamily on input line 249.
+LaTeX Info: Redefining \sffamily on input line 249.
+LaTeX Info: Redefining \ttfamily on input line 249.
+LaTeX Info: Redefining \rmfamily on input line 251.
+LaTeX Info: Redefining \sffamily on input line 251.
+LaTeX Info: Redefining \ttfamily on input line 251.
+LaTeX Info: Redefining \rmfamily on input line 253.
+LaTeX Info: Redefining \sffamily on input line 253.
+LaTeX Info: Redefining \ttfamily on input line 253.
+LaTeX Info: Redefining \rmfamily on input line 255.
+LaTeX Info: Redefining \sffamily on input line 255.
+LaTeX Info: Redefining \ttfamily on input line 255.
+LaTeX Info: Redefining \rmfamily on input line 257.
+LaTeX Info: Redefining \sffamily on input line 257.
+LaTeX Info: Redefining \ttfamily on input line 257.
+LaTeX Info: Redefining \rmfamily on input line 259.
+LaTeX Info: Redefining \sffamily on input line 259.
+LaTeX Info: Redefining \ttfamily on input line 259.
+LaTeX Info: Redefining \rmfamily on input line 261.
+LaTeX Info: Redefining \sffamily on input line 261.
+LaTeX Info: Redefining \ttfamily on input line 261.
+LaTeX Info: Redefining \rmfamily on input line 263.
+LaTeX Info: Redefining \sffamily on input line 263.
+LaTeX Info: Redefining \ttfamily on input line 263.
+LaTeX Info: Redefining \rmfamily on input line 265.
+LaTeX Info: Redefining \sffamily on input line 265.
+LaTeX Info: Redefining \ttfamily on input line 265.
+LaTeX Info: Redefining \rmfamily on input line 267.
+LaTeX Info: Redefining \sffamily on input line 267.
+LaTeX Info: Redefining \ttfamily on input line 267.
+LaTeX Info: Redefining \rmfamily on input line 269.
+LaTeX Info: Redefining \sffamily on input line 269.
+LaTeX Info: Redefining \ttfamily on input line 269.
+LaTeX Info: Redefining \rmfamily on input line 271.
+LaTeX Info: Redefining \sffamily on input line 271.
+LaTeX Info: Redefining \ttfamily on input line 271.
+LaTeX Info: Redefining \rmfamily on input line 273.
+LaTeX Info: Redefining \sffamily on input line 273.
+LaTeX Info: Redefining \ttfamily on input line 273.
+LaTeX Info: Redefining \rmfamily on input line 275.
+LaTeX Info: Redefining \sffamily on input line 275.
+LaTeX Info: Redefining \ttfamily on input line 275.
+LaTeX Info: Redefining \rmfamily on input line 277.
+LaTeX Info: Redefining \sffamily on input line 277.
+LaTeX Info: Redefining \ttfamily on input line 277.
+LaTeX Info: Redefining \rmfamily on input line 279.
+LaTeX Info: Redefining \sffamily on input line 279.
+LaTeX Info: Redefining \ttfamily on input line 279.
+LaTeX Info: Redefining \rmfamily on input line 281.
+LaTeX Info: Redefining \sffamily on input line 281.
+LaTeX Info: Redefining \ttfamily on input line 281.
+LaTeX Info: Redefining \rmfamily on input line 283.
+LaTeX Info: Redefining \sffamily on input line 283.
+LaTeX Info: Redefining \ttfamily on input line 283.
+LaTeX Info: Redefining \rmfamily on input line 285.
+LaTeX Info: Redefining \sffamily on input line 285.
+LaTeX Info: Redefining \ttfamily on input line 285.
+LaTeX Info: Redefining \rmfamily on input line 287.
+LaTeX Info: Redefining \sffamily on input line 287.
+LaTeX Info: Redefining \ttfamily on input line 287.
+LaTeX Info: Redefining \rmfamily on input line 289.
+LaTeX Info: Redefining \sffamily on input line 289.
+LaTeX Info: Redefining \ttfamily on input line 289.
+LaTeX Info: Redefining \rmfamily on input line 291.
+LaTeX Info: Redefining \sffamily on input line 291.
+LaTeX Info: Redefining \ttfamily on input line 291.
+LaTeX Info: Redefining \rmfamily on input line 293.
+LaTeX Info: Redefining \sffamily on input line 293.
+LaTeX Info: Redefining \ttfamily on input line 293.
+LaTeX Info: Redefining \rmfamily on input line 295.
+LaTeX Info: Redefining \sffamily on input line 295.
+LaTeX Info: Redefining \ttfamily on input line 295.
+LaTeX Info: Redefining \rmfamily on input line 297.
+LaTeX Info: Redefining \sffamily on input line 297.
+LaTeX Info: Redefining \ttfamily on input line 297.
+LaTeX Info: Redefining \rmfamily on input line 299.
+LaTeX Info: Redefining \sffamily on input line 299.
+LaTeX Info: Redefining \ttfamily on input line 299.
+LaTeX Info: Redefining \rmfamily on input line 301.
+LaTeX Info: Redefining \sffamily on input line 301.
+LaTeX Info: Redefining \ttfamily on input line 301.
+LaTeX Info: Redefining \rmfamily on input line 303.
+LaTeX Info: Redefining \sffamily on input line 303.
+LaTeX Info: Redefining \ttfamily on input line 303.
+LaTeX Info: Redefining \rmfamily on input line 305.
+LaTeX Info: Redefining \sffamily on input line 305.
+LaTeX Info: Redefining \ttfamily on input line 305.
+ [10]
+LaTeX Info: Redefining \rmfamily on input line 307.
+LaTeX Info: Redefining \sffamily on input line 307.
+LaTeX Info: Redefining \ttfamily on input line 307.
+LaTeX Info: Redefining \rmfamily on input line 309.
+LaTeX Info: Redefining \sffamily on input line 309.
+LaTeX Info: Redefining \ttfamily on input line 309.
+LaTeX Info: Redefining \rmfamily on input line 311.
+LaTeX Info: Redefining \sffamily on input line 311.
+LaTeX Info: Redefining \ttfamily on input line 311.
+LaTeX Info: Redefining \rmfamily on input line 313.
+LaTeX Info: Redefining \sffamily on input line 313.
+LaTeX Info: Redefining \ttfamily on input line 313.
+LaTeX Info: Redefining \rmfamily on input line 315.
+LaTeX Info: Redefining \sffamily on input line 315.
+LaTeX Info: Redefining \ttfamily on input line 315.
+LaTeX Info: Redefining \rmfamily on input line 317.
+LaTeX Info: Redefining \sffamily on input line 317.
+LaTeX Info: Redefining \ttfamily on input line 317.
+LaTeX Info: Redefining \rmfamily on input line 319.
+LaTeX Info: Redefining \sffamily on input line 319.
+LaTeX Info: Redefining \ttfamily on input line 319.
+LaTeX Info: Redefining \rmfamily on input line 321.
+LaTeX Info: Redefining \sffamily on input line 321.
+LaTeX Info: Redefining \ttfamily on input line 321.
+LaTeX Info: Redefining \rmfamily on input line 323.
+LaTeX Info: Redefining \sffamily on input line 323.
+LaTeX Info: Redefining \ttfamily on input line 323.
+LaTeX Info: Redefining \rmfamily on input line 325.
+LaTeX Info: Redefining \sffamily on input line 325.
+LaTeX Info: Redefining \ttfamily on input line 325.
+LaTeX Info: Redefining \rmfamily on input line 327.
+LaTeX Info: Redefining \sffamily on input line 327.
+LaTeX Info: Redefining \ttfamily on input line 327.
+LaTeX Info: Redefining \rmfamily on input line 329.
+LaTeX Info: Redefining \sffamily on input line 329.
+LaTeX Info: Redefining \ttfamily on input line 329.
+LaTeX Info: Redefining \rmfamily on input line 331.
+LaTeX Info: Redefining \sffamily on input line 331.
+LaTeX Info: Redefining \ttfamily on input line 331.
+LaTeX Info: Redefining \rmfamily on input line 333.
+LaTeX Info: Redefining \sffamily on input line 333.
+LaTeX Info: Redefining \ttfamily on input line 333.
+LaTeX Info: Redefining \rmfamily on input line 335.
+LaTeX Info: Redefining \sffamily on input line 335.
+LaTeX Info: Redefining \ttfamily on input line 335.
+LaTeX Info: Redefining \rmfamily on input line 337.
+LaTeX Info: Redefining \sffamily on input line 337.
+LaTeX Info: Redefining \ttfamily on input line 337.
+LaTeX Info: Redefining \rmfamily on input line 339.
+LaTeX Info: Redefining \sffamily on input line 339.
+LaTeX Info: Redefining \ttfamily on input line 339.
+LaTeX Info: Redefining \rmfamily on input line 341.
+LaTeX Info: Redefining \sffamily on input line 341.
+LaTeX Info: Redefining \ttfamily on input line 341.
+LaTeX Info: Redefining \rmfamily on input line 343.
+LaTeX Info: Redefining \sffamily on input line 343.
+LaTeX Info: Redefining \ttfamily on input line 343.
+LaTeX Info: Redefining \rmfamily on input line 345.
+LaTeX Info: Redefining \sffamily on input line 345.
+LaTeX Info: Redefining \ttfamily on input line 345.
+LaTeX Info: Redefining \rmfamily on input line 347.
+LaTeX Info: Redefining \sffamily on input line 347.
+LaTeX Info: Redefining \ttfamily on input line 347.
+LaTeX Info: Redefining \rmfamily on input line 349.
+LaTeX Info: Redefining \sffamily on input line 349.
+LaTeX Info: Redefining \ttfamily on input line 349.
+LaTeX Info: Redefining \rmfamily on input line 351.
+LaTeX Info: Redefining \sffamily on input line 351.
+LaTeX Info: Redefining \ttfamily on input line 351.
+LaTeX Info: Redefining \rmfamily on input line 353.
+LaTeX Info: Redefining \sffamily on input line 353.
+LaTeX Info: Redefining \ttfamily on input line 353.
+LaTeX Info: Redefining \rmfamily on input line 355.
+LaTeX Info: Redefining \sffamily on input line 355.
+LaTeX Info: Redefining \ttfamily on input line 355.
+LaTeX Info: Redefining \rmfamily on input line 357.
+LaTeX Info: Redefining \sffamily on input line 357.
+LaTeX Info: Redefining \ttfamily on input line 357.
+LaTeX Info: Redefining \rmfamily on input line 359.
+LaTeX Info: Redefining \sffamily on input line 359.
+LaTeX Info: Redefining \ttfamily on input line 359.
+LaTeX Info: Redefining \rmfamily on input line 361.
+LaTeX Info: Redefining \sffamily on input line 361.
+LaTeX Info: Redefining \ttfamily on input line 361.
+LaTeX Info: Redefining \rmfamily on input line 363.
+LaTeX Info: Redefining \sffamily on input line 363.
+LaTeX Info: Redefining \ttfamily on input line 363.
+LaTeX Info: Redefining \rmfamily on input line 365.
+LaTeX Info: Redefining \sffamily on input line 365.
+LaTeX Info: Redefining \ttfamily on input line 365.
+LaTeX Info: Redefining \rmfamily on input line 367.
+LaTeX Info: Redefining \sffamily on input line 367.
+LaTeX Info: Redefining \ttfamily on input line 367.
+LaTeX Info: Redefining \rmfamily on input line 369.
+LaTeX Info: Redefining \sffamily on input line 369.
+LaTeX Info: Redefining \ttfamily on input line 369.
+LaTeX Info: Redefining \rmfamily on input line 371.
+LaTeX Info: Redefining \sffamily on input line 371.
+LaTeX Info: Redefining \ttfamily on input line 371.
+LaTeX Info: Redefining \rmfamily on input line 373.
+LaTeX Info: Redefining \sffamily on input line 373.
+LaTeX Info: Redefining \ttfamily on input line 373.
+LaTeX Info: Redefining \rmfamily on input line 375.
+LaTeX Info: Redefining \sffamily on input line 375.
+LaTeX Info: Redefining \ttfamily on input line 375.
+LaTeX Info: Redefining \rmfamily on input line 377.
+LaTeX Info: Redefining \sffamily on input line 377.
+LaTeX Info: Redefining \ttfamily on input line 377.
+LaTeX Info: Redefining \rmfamily on input line 379.
+LaTeX Info: Redefining \sffamily on input line 379.
+LaTeX Info: Redefining \ttfamily on input line 379.
+LaTeX Info: Redefining \rmfamily on input line 381.
+LaTeX Info: Redefining \sffamily on input line 381.
+LaTeX Info: Redefining \ttfamily on input line 381.
+LaTeX Info: Redefining \rmfamily on input line 383.
+LaTeX Info: Redefining \sffamily on input line 383.
+LaTeX Info: Redefining \ttfamily on input line 383.
+LaTeX Info: Redefining \rmfamily on input line 385.
+LaTeX Info: Redefining \sffamily on input line 385.
+LaTeX Info: Redefining \ttfamily on input line 385.
+LaTeX Info: Redefining \rmfamily on input line 387.
+LaTeX Info: Redefining \sffamily on input line 387.
+LaTeX Info: Redefining \ttfamily on input line 387.
+LaTeX Info: Redefining \rmfamily on input line 389.
+LaTeX Info: Redefining \sffamily on input line 389.
+LaTeX Info: Redefining \ttfamily on input line 389.
+LaTeX Info: Redefining \rmfamily on input line 391.
+LaTeX Info: Redefining \sffamily on input line 391.
+LaTeX Info: Redefining \ttfamily on input line 391.
+LaTeX Info: Redefining \rmfamily on input line 393.
+LaTeX Info: Redefining \sffamily on input line 393.
+LaTeX Info: Redefining \ttfamily on input line 393.
+LaTeX Info: Redefining \rmfamily on input line 395.
+LaTeX Info: Redefining \sffamily on input line 395.
+LaTeX Info: Redefining \ttfamily on input line 395.
+LaTeX Info: Redefining \rmfamily on input line 397.
+LaTeX Info: Redefining \sffamily on input line 397.
+LaTeX Info: Redefining \ttfamily on input line 397.
+LaTeX Info: Redefining \rmfamily on input line 399.
+LaTeX Info: Redefining \sffamily on input line 399.
+LaTeX Info: Redefining \ttfamily on input line 399.
+LaTeX Info: Redefining \rmfamily on input line 401.
+LaTeX Info: Redefining \sffamily on input line 401.
+LaTeX Info: Redefining \ttfamily on input line 401.
+LaTeX Info: Redefining \rmfamily on input line 403.
+LaTeX Info: Redefining \sffamily on input line 403.
+LaTeX Info: Redefining \ttfamily on input line 403.
+LaTeX Info: Redefining \rmfamily on input line 405.
+LaTeX Info: Redefining \sffamily on input line 405.
+LaTeX Info: Redefining \ttfamily on input line 405.
+LaTeX Info: Redefining \rmfamily on input line 407.
+LaTeX Info: Redefining \sffamily on input line 407.
+LaTeX Info: Redefining \ttfamily on input line 407.
+ [11]
+LaTeX Info: Redefining \rmfamily on input line 409.
+LaTeX Info: Redefining \sffamily on input line 409.
+LaTeX Info: Redefining \ttfamily on input line 409.
+LaTeX Info: Redefining \rmfamily on input line 411.
+LaTeX Info: Redefining \sffamily on input line 411.
+LaTeX Info: Redefining \ttfamily on input line 411.
+LaTeX Info: Redefining \rmfamily on input line 413.
+LaTeX Info: Redefining \sffamily on input line 413.
+LaTeX Info: Redefining \ttfamily on input line 413.
+LaTeX Info: Redefining \rmfamily on input line 415.
+LaTeX Info: Redefining \sffamily on input line 415.
+LaTeX Info: Redefining \ttfamily on input line 415.
+LaTeX Info: Redefining \rmfamily on input line 417.
+LaTeX Info: Redefining \sffamily on input line 417.
+LaTeX Info: Redefining \ttfamily on input line 417.
+LaTeX Info: Redefining \rmfamily on input line 419.
+LaTeX Info: Redefining \sffamily on input line 419.
+LaTeX Info: Redefining \ttfamily on input line 419.
+LaTeX Info: Redefining \rmfamily on input line 421.
+LaTeX Info: Redefining \sffamily on input line 421.
+LaTeX Info: Redefining \ttfamily on input line 421.
 )
 \tf@lof=\write6
 \openout6 = `No19_1026-1041-3450_AjNatasha.lof'.
 
- [7]
+ [12]
 Chapter 1.
 
 Package hyperref Warning: bookmark level for unknown chapterxx defaults to 0.
@@ -1276,38 +2301,40 @@ Package hyperref Warning: bookmark level for unknown chapterxx defaults to 0.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -5.0pt
-(hyperref)                removed on input line 227.
+(hyperref)                removed on input line 239.
 
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 14.0pt on input line 233.
+(Font)              scaled to size 14.0pt on input line 245.
 [1
 
 ] [2]
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 13.0pt on input line 348.
+(Font)              scaled to size 13.0pt on input line 361.
 
-Overfull \hbox (25.70615pt too wide) in paragraph at lines 372--387
+Overfull \hbox (25.70615pt too wide) in paragraph at lines 385--400
  [][] 
  []
 
+[3]
 File: figure/intro-gantt-chart.png Graphic file (type bmp)
 <figure/intro-gantt-chart.png>
 
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 395.
+(caption)                particular \caption on input line 408.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 394--395
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 407--408
  [][] 
  []
 
-[3] [4]
+[4]
 Chapter 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -5.0pt
-(hyperref)                removed on input line 406.
+(hyperref)                removed on input line 419.
 
 File: figure/theory-maslow-needs.png Graphic file (type bmp)
 <figure/theory-maslow-needs.png>
@@ -1333,11 +2360,11 @@ File: figure/theory-GA-TBS.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 605.
+(caption)                particular \caption on input line 618.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 603--608
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 616--621
 []$[]$ 
  []
 
@@ -1345,16 +2372,16 @@ File: figure/theory-GA-RWS.png Graphic file (type bmp)
 <figure/theory-GA-RWS.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 614.
+(caption)                particular \caption on input line 627.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 612--617
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 625--630
 []$[]$ 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 620--622
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
 
  []
 
@@ -1364,11 +2391,11 @@ File: figure/theory-GA-SPC.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 663.
+(caption)                particular \caption on input line 676.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 661--666
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 674--679
 []$[]$ 
  []
 
@@ -1376,11 +2403,11 @@ File: figure/theory-GA-TPC.png Graphic file (type bmp)
 <figure/theory-GA-TPC.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 672.
+(caption)                particular \caption on input line 685.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 670--675
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 683--688
 []$[]$ 
  []
 
@@ -1390,11 +2417,11 @@ File: figure/theory-GA-UC.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 683.
+(caption)                particular \caption on input line 696.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 681--686
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 694--699
 []$[]$ 
  []
 
@@ -1402,11 +2429,11 @@ File: figure/theory-GA-PMX1.png Graphic file (type bmp)
 <figure/theory-GA-PMX1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 692.
+(caption)                particular \caption on input line 705.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 690--695
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 703--708
 []$[]$ 
  []
 
@@ -1414,11 +2441,11 @@ File: figure/theory-GA-PMX2.png Graphic file (type bmp)
 <figure/theory-GA-PMX2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 700.
+(caption)                particular \caption on input line 713.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 698--703
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 711--716
 []$[]$ 
  []
 
@@ -1426,18 +2453,6 @@ Overfull \hbox (46.99997pt too wide) in paragraph at lines 698--703
 File: figure/theory-GA-PMX3.png Graphic file (type bmp)
 <figure/theory-GA-PMX3.png>
 
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 708.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 706--711
-[]$[]$ 
- []
-
-File: figure/theory-GA-bitflip.png Graphic file (type bmp)
-<figure/theory-GA-bitflip.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 721.
@@ -1448,8 +2463,20 @@ Overfull \hbox (46.99997pt too wide) in paragraph at lines 719--724
 []$[]$ 
  []
 
+File: figure/theory-GA-bitflip.png Graphic file (type bmp)
+<figure/theory-GA-bitflip.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 734.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 732--737
+[]$[]$ 
+ []
+
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 757--759
+Underfull \hbox (badness 10000) in paragraph at lines 770--772
 
  []
 
@@ -1457,16 +2484,16 @@ File: figure/theory-knapsack-setting.png Graphic file (type bmp)
 <figure/theory-knapsack-setting.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 762.
+(caption)                particular \caption on input line 775.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 760--766
+Overfull \hbox (25.0pt too wide) in paragraph at lines 773--779
 []$[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--766
+Underfull \hbox (badness 10000) in paragraph at lines 773--779
 
  []
 
@@ -1476,16 +2503,16 @@ File: figure/theory-knapsack-chromosome.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 769.
+(caption)                particular \caption on input line 782.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 767--773
+Overfull \hbox (25.0pt too wide) in paragraph at lines 780--786
 []$[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--773
+Underfull \hbox (badness 10000) in paragraph at lines 780--786
 
  []
 
@@ -1495,38 +2522,41 @@ File: figure/related-work-dragon-city.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 879.
+(caption)                particular \caption on input line 892.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 873--882
+Overfull \hbox (25.0pt too wide) in paragraph at lines 886--895
 []$ 
  []
 
 [20]
+Underfull \hbox (badness 10000) in paragraph at lines 896--905
+
+ []
+
 File: figure/related-work-princon-story.png Graphic file (type bmp)
 <figure/related-work-princon-story.png>
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 894.
+(caption)                particular \caption on input line 910.
 See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 907--913
+[]$[]$ 
+ []
 
 File: figure/related-work-princon-arena.png Graphic file (type bmp)
 <figure/related-work-princon-arena.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 899.
+(caption)                particular \caption on input line 917.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 883--902
-[]$
- []
-
-
-Overfull \hbox (25.0pt too wide) in paragraph at lines 883--902
-[]$ 
+Overfull \hbox (25.0pt too wide) in paragraph at lines 914--920
+[]$[]$ 
  []
 
 [21]
@@ -1535,96 +2565,94 @@ File: figure/related-work-omega-code.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 907.
+(caption)                particular \caption on input line 925.
 See the caption package documentation for explanation.
 
 File: figure/related-work-omega-sim.png Graphic file (type bmp)
 <figure/related-work-omega-sim.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 912.
+(caption)                particular \caption on input line 930.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 903--915
+Overfull \hbox (25.0pt too wide) in paragraph at lines 921--933
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 903--915
+Overfull \hbox (25.0pt too wide) in paragraph at lines 921--933
 []$ 
  []
 
-[22]
 File: figure/related-work-sap1.png Graphic file (type bmp)
 <figure/related-work-sap1.png>
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 922.
+(caption)                particular \caption on input line 940.
 See the caption package documentation for explanation.
 
 File: figure/related-work-sap2.png Graphic file (type bmp)
 <figure/related-work-sap2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 928.
+(caption)                particular \caption on input line 946.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 916--931
+Overfull \hbox (25.0pt too wide) in paragraph at lines 934--949
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 916--931
+Overfull \hbox (25.0pt too wide) in paragraph at lines 934--949
 []$ 
  []
 
-[23] [24]
+[22] [23]
 Chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -5.0pt
-(hyperref)                removed on input line 938.
+(hyperref)                removed on input line 956.
 
-[25
+[24
 
 ]
-Overfull \hbox (43.07938pt too wide) in alignment at lines 981--993
+Overfull \hbox (43.07938pt too wide) in alignment at lines 999--1011
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (43.07938pt too wide) in alignment at lines 993--1019
+Overfull \hbox (43.07938pt too wide) in alignment at lines 1011--1037
  [] [] [] [] [] [] 
  []
 
-[26] [27]
+[25] [26]
 File: figure/design-learnmat-natselect1.png Graphic file (type bmp)
 <figure/design-learnmat-natselect1.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1033.
+(caption)                particular \caption on input line 1051.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1031--1036
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1049--1054
 []$[]$ 
  []
 
-[28] [29]
+[27] [28]
 File: figure/design-gameflow.png Graphic file (type bmp)
 <figure/design-gameflow.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1149.
+(caption)                particular \caption on input line 1167.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1147--1152
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1165--1170
 []$[]$ 
  []
 
@@ -1632,25 +2660,25 @@ File: figure/design-main-game-page.png Graphic file (type bmp)
 <figure/design-main-game-page.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1157.
+(caption)                particular \caption on input line 1175.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1155--1160
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1173--1178
 []$[]$ 
  []
 
-[30]
+[29]
 File: figure/design-puzzle-crossover.png Graphic file (type bmp)
 <figure/design-puzzle-crossover.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1168.
+(caption)                particular \caption on input line 1186.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1166--1171
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1184--1189
 []$[]$ 
  []
 
@@ -1658,101 +2686,101 @@ File: figure/design-city.png Graphic file (type bmp)
 <figure/design-city.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1178.
+(caption)                particular \caption on input line 1196.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1176--1181
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1194--1199
 []$[]$ 
  []
 
-[31] [32]
+[30] [31]
 File: figure/design-state-diagram.png Graphic file (type bmp)
 <figure/design-state-diagram.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1214.
+(caption)                particular \caption on input line 1231.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1212--1217
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1229--1234
 []$[]$ 
  []
 
+[32]
+Overfull \hbox (11.15283pt too wide) in alignment at lines 1252--1259
+ [] [] [] 
+ []
+
+
+Overfull \hbox (11.15283pt too wide) in alignment at lines 1259--1288
+ [] [] [] 
+ []
+
 [33]
-Overfull \hbox (11.15283pt too wide) in alignment at lines 1235--1242
- [] [] [] 
- []
-
-
-Overfull \hbox (11.15283pt too wide) in alignment at lines 1242--1271
- [] [] [] 
- []
-
-[34]
 File: figure/design-monster-chromosome.png Graphic file (type bmp)
 <figure/design-monster-chromosome.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1290.
+(caption)                particular \caption on input line 1307.
 See the caption package documentation for explanation.
 
 File: figure/design-farm-interface.png Graphic file (type bmp)
 <figure/design-farm-interface.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1296.
+(caption)                particular \caption on input line 1313.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1286--1299
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1303--1316
 []$
  []
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1286--1299
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1303--1316
 []$ 
  []
 
-[35]
+[34]
 File: figure/design-arena-battle.png Graphic file (type bmp)
 <figure/design-arena-battle.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1312.
+(caption)                particular \caption on input line 1329.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1308--1316
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1325--1333
 []$
  []
 
-[36]
+[35]
 File: figure/design-questboard-interface-accept.png Graphic file (type bmp)
 <figure/design-questboard-interface-accept.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1321.
+(caption)                particular \caption on input line 1338.
 See the caption package documentation for explanation.
 
 File: figure/design-questboard-interface-submit.png Graphic file (type bmp)
 <figure/design-questboard-interface-submit.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1326.
+(caption)                particular \caption on input line 1343.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1317--1330
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1334--1347
 []$
  []
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1317--1330
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1334--1347
 []$
  []
 
@@ -1760,47 +2788,47 @@ File: figure/design-shop-monster.png Graphic file (type bmp)
 <figure/design-shop-monster.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1345.
+(caption)                particular \caption on input line 1362.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1331--1348
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1348--1365
 []$ 
  []
 
-[37]
+[36]
 File: figure/design-calendar.png Graphic file (type bmp)
 <figure/design-calendar.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1356.
+(caption)                particular \caption on input line 1373.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1352--1359
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1369--1376
 []$ 
  []
 
-[38]
+[37]
 File: figure/design-usecase-diagram.png Graphic file (type bmp)
 <figure/design-usecase-diagram.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1417.
+(caption)                particular \caption on input line 1434.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 1414--1421
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 1431--1438
 []$
  []
 
-[39]
+[38]
 File: figure/develop-learning-material-SPC.png Graphic file (type bmp)
 <figure/develop-learning-material-SPC.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1448--1451
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1468
 
  []
 
@@ -1808,25 +2836,25 @@ File: figure/design-puzzle-question.png Graphic file (type bmp)
 <figure/design-puzzle-question.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1455.
+(caption)                particular \caption on input line 1472.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1452--1459
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1469--1476
 []$
  []
 
-[40]
+[39]
 File: figure/design-puzzle-demonstration.png Graphic file (type bmp)
 <figure/design-puzzle-demonstration.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1463.
+(caption)                particular \caption on input line 1480.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1460--1467
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1477--1484
 []$
  []
 
@@ -1834,12 +2862,27 @@ File: figure/design-puzzle-problem-solving.png Graphic file (type bmp)
 <figure/design-puzzle-problem-solving.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1471.
+(caption)                particular \caption on input line 1488.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1468--1475
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1485--1492
 []$
+ []
+
+[40]
+
+LaTeX Warning: Reference `tbl:assessment-of-activity' on page 41 undefined on i
+nput line 1519.
+
+
+Overfull \hbox (4.8909pt too wide) in alignment at lines 1527--1539
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.8909pt too wide) in alignment at lines 1539--1565
+ [] [] [] [] [] [] 
  []
 
 [41] [42] [43]
@@ -1847,81 +2890,353 @@ Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -5.0pt
-(hyperref)                removed on input line 1609.
+(hyperref)                removed on input line 1674.
+
+File: figure/screenshot/screenshot-title.png Graphic file (type bmp)
+<figure/screenshot/screenshot-title.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1720.
+See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
-
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1717--1724
+[]$
  []
-
-File: figure/implement-puzzle-knapsack.png Graphic file (type bmp)
-<figure/implement-puzzle-knapsack.png>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1654.
-See the caption package documentation for explanation.
-
-File: figure/implement-puzzle-selection.png Graphic file (type bmp)
-<figure/implement-puzzle-selection.png>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1659.
-See the caption package documentation for explanation.
 
 [44
 
-] [45]
-File: figure/implement-puzzle-crossover.png Graphic file (type bmp)
-<figure/implement-puzzle-crossover.png>
+]
+File: figure/screenshot/screenshot-hub-main.png Graphic file (type bmp)
+<figure/screenshot/screenshot-hub-main.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1666.
+(caption)                particular \caption on input line 1728.
 See the caption package documentation for explanation.
 
-File: figure/implement-mainpage.png Graphic file (type bmp)
-<figure/implement-mainpage.png>
+File: figure/screenshot/screenshot-hub-fix.png Graphic file (type bmp)
+<figure/screenshot/screenshot-hub-fix.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1675.
+(caption)                particular \caption on input line 1732.
 See the caption package documentation for explanation.
 
-File: figure/implement-factory.png Graphic file (type bmp)
-<figure/implement-factory.png>
+File: figure/screenshot/screenshot-hub-quest.png Graphic file (type bmp)
+<figure/screenshot/screenshot-hub-quest.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1680.
+(caption)                particular \caption on input line 1736.
 See the caption package documentation for explanation.
 
-File: figure/implement-farm.png Graphic file (type bmp)
-<figure/implement-farm.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1725--1740
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1725--1740
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1725--1740
+[]$
+ []
+
+[45]
+File: figure/screenshot/screenshot-farm.png Graphic file (type bmp)
+<figure/screenshot/screenshot-farm.png>
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1685.
+(caption)                particular \caption on input line 1744.
 See the caption package documentation for explanation.
 
-File: figure/implement-calendar.png Graphic file (type bmp)
-<figure/implement-calendar.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1741--1747
+[]$
+ []
+
+[46]
+File: figure/screenshot/screenshot-factory.png Graphic file (type bmp)
+<figure/screenshot/screenshot-factory.png>
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1690.
+(caption)                particular \caption on input line 1751.
 See the caption package documentation for explanation.
 
-[46] [47] [48]
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1748--1754
+[]$
+ []
+
+[47]
+File: figure/screenshot/screenshot-habitat.png Graphic file (type bmp)
+<figure/screenshot/screenshot-habitat.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1758.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1755--1761
+[]$
+ []
+
+File: figure/screenshot/screenshot-researchLab.png Graphic file (type bmp)
+<figure/screenshot/screenshot-researchLab.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1765.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1762--1768
+[]$
+ []
+
+File: figure/screenshot/screenshot-cutscene-dialogue.png Graphic file (type bmp
+)
+<figure/screenshot/screenshot-cutscene-dialogue.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1772.
+See the caption package documentation for explanation.
+
+File: figure/screenshot/screenshot-cutscene-choice.png Graphic file (type bmp)
+<figure/screenshot/screenshot-cutscene-choice.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1776.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1769--1779
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1769--1779
+[]$
+ []
+
+[48]
+File: figure/screenshot/screenshot-HoI.png Graphic file (type bmp)
+<figure/screenshot/screenshot-HoI.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1783.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1780--1786
+[]$
+ []
+
+[49]
+File: figure/screenshot/screenshot-puzzle-selection.png Graphic file (type bmp)
+
+<figure/screenshot/screenshot-puzzle-selection.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1790.
+See the caption package documentation for explanation.
+
+File: figure/screenshot/screenshot-puzzle-crossover.png Graphic file (type bmp)
+
+<figure/screenshot/screenshot-puzzle-crossover.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1794.
+See the caption package documentation for explanation.
+
+File: figure/screenshot/screenshot-puzzle-knapsack.png Graphic file (type bmp)
+<figure/screenshot/screenshot-puzzle-knapsack.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1798.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1787--1801
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1787--1801
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1787--1801
+[]$
+ []
+
+[50]
+File: figure/screenshot/screenshot-HoC.png Graphic file (type bmp)
+<figure/screenshot/screenshot-HoC.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1805.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1802--1808
+[]$
+ []
+
+[51]
+File: figure/screenshot/screenshot-calendar.png Graphic file (type bmp)
+<figure/screenshot/screenshot-calendar.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1812.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1809--1815
+[]$
+ []
+
+File: figure/screenshot/screenshot-city.png Graphic file (type bmp)
+<figure/screenshot/screenshot-city.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1819.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1816--1822
+[]$
+ []
+
+[52]
+File: figure/screenshot/screenshot-quest-overview.png Graphic file (type bmp)
+<figure/screenshot/screenshot-quest-overview.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1826.
+See the caption package documentation for explanation.
+
+File: figure/screenshot/screenshot-quest-detail.png Graphic file (type bmp)
+<figure/screenshot/screenshot-quest-detail.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1830.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1823--1833
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1823--1833
+[]$
+ []
+
+[53]
+File: figure/screenshot/screenshot-shop.png Graphic file (type bmp)
+<figure/screenshot/screenshot-shop.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1837.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1834--1840
+[]$
+ []
+
+File: figure/screenshot/screenshot-arena-prep.png Graphic file (type bmp)
+<figure/screenshot/screenshot-arena-prep.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1844.
+See the caption package documentation for explanation.
+
+File: figure/screenshot/screenshot-arena-battle.png Graphic file (type bmp)
+<figure/screenshot/screenshot-arena-battle.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1848.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1841--1851
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1841--1851
+[]$
+ []
+
+[54]
+File: figure/result-example-hoi-screenshot.png Graphic file (type bmp)
+<figure/result-example-hoi-screenshot.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1911.
+See the caption package documentation for explanation.
+
+[55] [56]
+File: appendix-g-figure/question41.png Graphic file (type bmp)
+<appendix-g-figure/question41.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1954.
+See the caption package documentation for explanation.
+
+File: appendix-g-figure/question42.png Graphic file (type bmp)
+<appendix-g-figure/question42.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1958.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1950--1962
+[]$
+ []
+
+[57] [58] [59]
+Chapter 5.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -5.0pt
+(hyperref)                removed on input line 2023.
+
+
+LaTeX Warning: Reference `result-burndown-project' on page 60 undefined on inpu
+t line 2052.
+
 File: figure/result-burndown-project.png Graphic file (type bmp)
 <figure/result-burndown-project.png>
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1708.
+(caption)                particular \caption on input line 2055.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1703--1711
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2049--2058
 []$ 
  []
 
-(No19_1026-1041-3450_AjNatasha.bbl [49]
+[60
+
+] [61] [62] (No19_1026-1041-3450_AjNatasha.bbl [63]
 Underfull \hbox (badness 4168) in paragraph at lines 26--30
 []\TU/TimesNewRoman(0)/m/n/10 Saul McLeod, 2022,  “Maslow’s Hierarchy of Needs,
 ” [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][] []
@@ -1968,9 +3283,1794 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--130
 [] [] [][] [] [][][][][][][] []
  []
 
-[50
+[64
 
-])
+]) [65] [66]
+
+Package hyperref Warning: bookmark level for unknown apdx defaults to 0.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2107.
+
+File: appendix-a-figure/storyboard1.png Graphic file (type bmp)
+<appendix-a-figure/storyboard1.png>
+[67]
+File: appendix-a-figure/storyboard2.png Graphic file (type bmp)
+<appendix-a-figure/storyboard2.png>
+ [68]
+File: appendix-a-figure/storyboard3.png Graphic file (type bmp)
+<appendix-a-figure/storyboard3.png>
+ [69]
+File: appendix-a-figure/storyboard4.png Graphic file (type bmp)
+<appendix-a-figure/storyboard4.png>
+ [70] [71]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2122.
+
+File: appendix-b-figure/origin-of-species1.png Graphic file (type bmp)
+<appendix-b-figure/origin-of-species1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2131.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/origin-of-species2.png Graphic file (type bmp)
+<appendix-b-figure/origin-of-species2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2132.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/origin-of-species3.png Graphic file (type bmp)
+<appendix-b-figure/origin-of-species3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2133.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/origin-of-species4.png Graphic file (type bmp)
+<appendix-b-figure/origin-of-species4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2134.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/origin-of-species5.png Graphic file (type bmp)
+<appendix-b-figure/origin-of-species5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2135.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/origin-of-species6.png Graphic file (type bmp)
+<appendix-b-figure/origin-of-species6.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2136.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+[]$ 
+ []
+
+[72] [73]
+File: appendix-b-figure/genetic1.png Graphic file (type bmp)
+<appendix-b-figure/genetic1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2138.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/genetic2.png Graphic file (type bmp)
+<appendix-b-figure/genetic2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2139.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/genetic3.png Graphic file (type bmp)
+<appendix-b-figure/genetic3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2140.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/genetic4.png Graphic file (type bmp)
+<appendix-b-figure/genetic4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2141.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+[]$ 
+ []
+
+[74]
+File: appendix-b-figure/flow-of-GA1.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2147.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA2.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2148.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA3.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2149.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA4.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2150.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA5.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2151.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA6.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA6.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2152.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA7.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA7.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2153.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA8.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA8.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2154.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/flow-of-GA9.png Graphic file (type bmp)
+<appendix-b-figure/flow-of-GA9.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2155.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+[]$ 
+ []
+
+[75] [76] [77]
+File: appendix-b-figure/parent-selection-random.png Graphic file (type bmp)
+<appendix-b-figure/parent-selection-random.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2157.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/parent-selection-tournament1.png Graphic file (type bmp
+)
+<appendix-b-figure/parent-selection-tournament1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2158.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/parent-selection-tournament2.png Graphic file (type bmp
+)
+<appendix-b-figure/parent-selection-tournament2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2159.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/parent-selection-roulette1.png Graphic file (type bmp)
+<appendix-b-figure/parent-selection-roulette1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2160.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/parent-selection-roulette2.png Graphic file (type bmp)
+<appendix-b-figure/parent-selection-roulette2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2161.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/premature-convergence.png Graphic file (type bmp)
+<appendix-b-figure/premature-convergence.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2162.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/parent-selection-rank.png Graphic file (type bmp)
+<appendix-b-figure/parent-selection-rank.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2163.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+[]$ 
+ []
+
+[78] [79] [80]
+File: appendix-b-figure/crossover-single.png Graphic file (type bmp)
+<appendix-b-figure/crossover-single.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2165.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/crossover-two.png Graphic file (type bmp)
+<appendix-b-figure/crossover-two.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2166.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/crossover-uniform.png Graphic file (type bmp)
+<appendix-b-figure/crossover-uniform.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2167.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2164--2168
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2164--2168
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2164--2168
+[]$ 
+ []
+
+[81]
+File: appendix-b-figure/elitism.png Graphic file (type bmp)
+<appendix-b-figure/elitism.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2169.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/mutation-bitflip.png Graphic file (type bmp)
+<appendix-b-figure/mutation-bitflip.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2170.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/mutation-flipbit.png Graphic file (type bmp)
+<appendix-b-figure/mutation-flipbit.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2171.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/mutation-boundary.png Graphic file (type bmp)
+<appendix-b-figure/mutation-boundary.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2172.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+[]$ 
+ []
+
+[82]
+File: appendix-b-figure/knapsack/Standard Knapsack 1.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Standard Knapsack 1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2178.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Standard Knapsack 2.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Standard Knapsack 2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2179.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Standard Knapsack 3.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Standard Knapsack 3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2180.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Standard Knapsack 4.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Standard Knapsack 4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2181.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Standard Knapsack 5.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Standard Knapsack 5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2182.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+[]$ 
+ []
+
+[83] [84]
+File: appendix-b-figure/knapsack/Multidimensional Knapsack 1.png Graphic file (
+type bmp)
+<appendix-b-figure/knapsack/Multidimensional Knapsack 1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2184.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multidimensional Knapsack 2.png Graphic file (
+type bmp)
+<appendix-b-figure/knapsack/Multidimensional Knapsack 2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2185.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multidimensional Knapsack 3.png Graphic file (
+type bmp)
+<appendix-b-figure/knapsack/Multidimensional Knapsack 3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2186.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multidimensional Knapsack 4.png Graphic file (
+type bmp)
+<appendix-b-figure/knapsack/Multidimensional Knapsack 4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2187.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multidimensional Knapsack 5.png Graphic file (
+type bmp)
+<appendix-b-figure/knapsack/Multidimensional Knapsack 5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2188.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+[]$ 
+ []
+
+[85] [86]
+File: appendix-b-figure/knapsack/Multiple Knapsack 1.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Multiple Knapsack 1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2190.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multiple Knapsack 2.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Multiple Knapsack 2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2191.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multiple Knapsack 3.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Multiple Knapsack 3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2192.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multiple Knapsack 4.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Multiple Knapsack 4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2193.
+See the caption package documentation for explanation.
+
+File: appendix-b-figure/knapsack/Multiple Knapsack 5.png Graphic file (type bmp
+)
+<appendix-b-figure/knapsack/Multiple Knapsack 5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2194.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+[]$ 
+ []
+
+[87] [88] [89] [90]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2202.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2208--2209
+
+ []
+
+File: appendix-c-figure/puzzledemon-select-roulette1.png Graphic file (type bmp
+)
+<appendix-c-figure/puzzledemon-select-roulette1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2211.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-roulette2.png Graphic file (type bmp
+)
+<appendix-c-figure/puzzledemon-select-roulette2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2213.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-roulette3.png Graphic file (type bmp
+)
+<appendix-c-figure/puzzledemon-select-roulette3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2215.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-roulette4.png Graphic file (type bmp
+)
+<appendix-c-figure/puzzledemon-select-roulette4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2217.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-roulette5.png Graphic file (type bmp
+)
+<appendix-c-figure/puzzledemon-select-roulette5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2219.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-roulette6.png Graphic file (type bmp
+)
+<appendix-c-figure/puzzledemon-select-roulette6.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2221.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2210--2223
+
+ []
+
+[91] [92]
+File: appendix-c-figure/puzzledemon-select-tournament1.png Graphic file (type b
+mp)
+<appendix-c-figure/puzzledemon-select-tournament1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2225.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-tournament2.png Graphic file (type b
+mp)
+<appendix-c-figure/puzzledemon-select-tournament2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2227.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-tournament3.png Graphic file (type b
+mp)
+<appendix-c-figure/puzzledemon-select-tournament3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2229.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-tournament4.png Graphic file (type b
+mp)
+<appendix-c-figure/puzzledemon-select-tournament4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2231.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2224--2233
+
+ []
+
+[93]
+File: appendix-c-figure/puzzledemon-select-rank1.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2235.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank2.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2237.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank3.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2239.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank4.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2241.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank5.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2243.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank6.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank6.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2245.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank7.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank7.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2247.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank8.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank8.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2249.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank9.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank9.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2251.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank10.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank10.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2253.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-select-rank11.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-select-rank11.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2255.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2234--2257
+
+ []
+
+[94] [95] [96] [97]
+File: appendix-c-figure/puzzledemon-crossover-single1.png Graphic file (type bm
+p)
+<appendix-c-figure/puzzledemon-crossover-single1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2262.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-single2.png Graphic file (type bm
+p)
+<appendix-c-figure/puzzledemon-crossover-single2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2264.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-single3.png Graphic file (type bm
+p)
+<appendix-c-figure/puzzledemon-crossover-single3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2266.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-single4.png Graphic file (type bm
+p)
+<appendix-c-figure/puzzledemon-crossover-single4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2268.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-single5.png Graphic file (type bm
+p)
+<appendix-c-figure/puzzledemon-crossover-single5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2270.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2261--2272
+
+ []
+
+[98]
+File: appendix-c-figure/puzzledemon-crossover-two1.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-crossover-two1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2274.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-two2.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-crossover-two2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2276.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-two3.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-crossover-two3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2278.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-two4.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-crossover-two4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2280.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-two5.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-crossover-two5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2282.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzledemon-crossover-two6.png Graphic file (type bmp)
+<appendix-c-figure/puzzledemon-crossover-two6.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2284.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+[]$
+ []
+
+
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2273--2286
+
+ []
+
+[99] [100]
+File: appendix-c-figure/puzzlesolve-selection-roulette.png Graphic file (type b
+mp)
+<appendix-c-figure/puzzlesolve-selection-roulette.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2289.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzlesolve-selection-tournament.png Graphic file (type
+ bmp)
+<appendix-c-figure/puzzlesolve-selection-tournament.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2290.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzlesolve-selection-rank.png Graphic file (type bmp)
+<appendix-c-figure/puzzlesolve-selection-rank.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2291.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2288--2292
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2288--2292
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2288--2292
+[]$ 
+ []
+
+[101]
+File: appendix-c-figure/puzzlesolve-crossover1.png Graphic file (type bmp)
+<appendix-c-figure/puzzlesolve-crossover1.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2294.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzlesolve-crossover2.png Graphic file (type bmp)
+<appendix-c-figure/puzzlesolve-crossover2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2296.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzlesolve-crossover3.png Graphic file (type bmp)
+<appendix-c-figure/puzzlesolve-crossover3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2298.
+See the caption package documentation for explanation.
+
+File: appendix-c-figure/puzzlesolve-crossover4.png Graphic file (type bmp)
+<appendix-c-figure/puzzlesolve-crossover4.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2300.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2293--2302
+
+ []
+
+[102] [103] [104] [105]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2308.
+
+File: appendix-d-figure/Mech/Head/Head1.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head1.png>
+File: appendix-d-figure/Mech/Head/Head2.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head2.png>
+File: appendix-d-figure/Mech/Head/Head3.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head3.png>
+File: appendix-d-figure/Mech/Head/Head4.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head4.png>
+File: appendix-d-figure/Mech/Head/Head5.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head5.png>
+File: appendix-d-figure/Mech/Head/Head6.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head6.png>
+File: appendix-d-figure/Mech/Head/Head7.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head7.png>
+File: appendix-d-figure/Mech/Head/Head8.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head8.png>
+File: appendix-d-figure/Mech/Head/Head9.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head9.png>
+File: appendix-d-figure/Mech/Head/Head10.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head10.png>
+File: appendix-d-figure/Mech/Head/Head11.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head11.png>
+File: appendix-d-figure/Mech/Head/Head12.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head12.png>
+File: appendix-d-figure/Mech/Head/Head13.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head13.png>
+File: appendix-d-figure/Mech/Head/Head14.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head14.png>
+File: appendix-d-figure/Mech/Head/Head15.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head15.png>
+File: appendix-d-figure/Mech/Head/Head16.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head16.png>
+File: appendix-d-figure/Mech/Head/Head17.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head17.png>
+File: appendix-d-figure/Mech/Head/Head18.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head18.png>
+File: appendix-d-figure/Mech/Head/Head19.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head19.png>
+File: appendix-d-figure/Mech/Head/Head20.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Head/Head20.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+[]$ 
+ []
+
+[106]
+File: appendix-d-figure/Mech/Plus/Plus1.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus1.png>
+File: appendix-d-figure/Mech/Plus/Plus2.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus2.png>
+File: appendix-d-figure/Mech/Plus/Plus3.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus3.png>
+File: appendix-d-figure/Mech/Plus/Plus4.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus4.png>
+File: appendix-d-figure/Mech/Plus/Plus5.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus5.png>
+File: appendix-d-figure/Mech/Plus/Plus6.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus6.png>
+File: appendix-d-figure/Mech/Plus/Plus7.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus7.png>
+File: appendix-d-figure/Mech/Plus/Plus8.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus8.png>
+File: appendix-d-figure/Mech/Plus/Plus9.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus9.png>
+File: appendix-d-figure/Mech/Plus/Plus10.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Plus/Plus10.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+[]$ 
+ []
+
+[107]
+File: appendix-d-figure/Mech/Body/walk1.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Body/walk1.png>
+File: appendix-d-figure/Mech/Body/walk2.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Body/walk2.png>
+File: appendix-d-figure/Mech/Body/walk3.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Body/walk3.png>
+File: appendix-d-figure/Mech/Body/walk4.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Body/walk4.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2369--2376
+[]$ 
+ []
+
+File: appendix-d-figure/Mech/Arena/ArenaBattleWeapon1_Demo.png Graphic file (ty
+pe bmp)
+<appendix-d-figure/Mech/Arena/ArenaBattleWeapon1_Demo.png>
+File: appendix-d-figure/Mech/Arena/ArenaBattleWeapon2_Demo.png Graphic file (ty
+pe bmp)
+<appendix-d-figure/Mech/Arena/ArenaBattleWeapon2_Demo.png>
+File: appendix-d-figure/Mech/Arena/ArenaBattleWeapon3_Demo.png Graphic file (ty
+pe bmp)
+<appendix-d-figure/Mech/Arena/ArenaBattleWeapon3_Demo.png>
+File: appendix-d-figure/Mech/Arena/ArenaBattleWeapon4_Demo.png Graphic file (ty
+pe bmp)
+<appendix-d-figure/Mech/Arena/ArenaBattleWeapon4_Demo.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2377--2384
+[]$ 
+ []
+
+File: appendix-d-figure/Mech/Assembling/Sample1.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Assembling/Sample1.png>
+File: appendix-d-figure/Mech/Assembling/Sample2.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Assembling/Sample2.png>
+File: appendix-d-figure/Mech/Assembling/Sample3.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Assembling/Sample3.png>
+File: appendix-d-figure/Mech/Assembling/Sample4.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Assembling/Sample4.png>
+File: appendix-d-figure/Mech/Assembling/Sample5.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Assembling/Sample5.png>
+File: appendix-d-figure/Mech/Assembling/Sample6.png Graphic file (type bmp)
+<appendix-d-figure/Mech/Assembling/Sample6.png>
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2385--2399
+[]$
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2385--2399
+[]$ 
+ []
+
+[108] [109]
+File: appendix-d-figure/CatBot/CutsceneCharacter2EyeClose-MouthClose.png Graphi
+c file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter2EyeClose-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter2EyeClose-MouthOpen.png Graphic
+ file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter2EyeClose-MouthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter2EyeOpen-MounthClose.png Graphi
+c file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter2EyeOpen-MounthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter2EyeOpen-MounthOpen.png Graphic
+ file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter2EyeOpen-MounthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter2Happy.png Graphic file (type b
+mp)
+<appendix-d-figure/CatBot/CutsceneCharacter2Happy.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter2Sad-MouthClose.png Graphic fil
+e (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter2Sad-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter2Sad-MouthOpen.png Graphic file
+ (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter2Sad-MouthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3EyeClose-MouthClose.png Graphi
+c file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter3EyeClose-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3EyeClose-MouthOpen.png Graphic
+ file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter3EyeClose-MouthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3EyeOpen-MounthOpen.png Graphic
+ file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter3EyeOpen-MounthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3EyeOpen-MouthClose.png Graphic
+ file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter3EyeOpen-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3Happy.png Graphic file (type b
+mp)
+<appendix-d-figure/CatBot/CutsceneCharacter3Happy.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3Sad-MouthClose.png Graphic fil
+e (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter3Sad-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacter3Sad-MouthOpen.png Graphic file
+ (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacter3Sad-MouthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterEyeClose-MouthClose.png Graphic
+ file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacterEyeClose-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterEyeClose-MouthOpen.png Graphic 
+file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacterEyeClose-MouthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterEyeOpen-MounthOpen.png Graphic 
+file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacterEyeOpen-MounthOpen.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterEyeOpen-MouthClose.png Graphic 
+file (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacterEyeOpen-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterHappy.png Graphic file (type bm
+p)
+<appendix-d-figure/CatBot/CutsceneCharacterHappy.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterSad-MouthClose.png Graphic file
+ (type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacterSad-MouthClose.png>
+File: appendix-d-figure/CatBot/CutsceneCharacterSad-MouthOpen.png Graphic file 
+(type bmp)
+<appendix-d-figure/CatBot/CutsceneCharacterSad-MouthOpen.png>
+ [110]
+File: appendix-d-figure/Capybara/NewMainMenuCappy2-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy2-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy2-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy2-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy4-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy4-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy4-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy4-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy5-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy5-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy5-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy5-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy6-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy6-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy6-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy6-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy7-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy7-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy7-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy7-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy8-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy8-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy8-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy8-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy9-1.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy9-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy9-2.png Graphic file (type bmp
+)
+<appendix-d-figure/Capybara/NewMainMenuCappy9-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy10-1.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy10-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy10-2.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy10-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy11-1.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy11-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy11-2.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy11-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy12-1.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy12-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy12-2.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy12-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy14-1.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy14-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy14-2.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy14-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy15-1.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy15-1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappy15-2.png Graphic file (type bm
+p)
+<appendix-d-figure/Capybara/NewMainMenuCappy15-2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyDusty1.png Graphic file (type 
+bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyDusty1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyDusty2.png Graphic file (type 
+bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyDusty2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyDusty3.png Graphic file (type 
+bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyDusty3.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyDusty4.png Graphic file (type 
+bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyDusty4.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyGhost1.png Graphic file (type 
+bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyGhost1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyGhost2.png Graphic file (type 
+bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyGhost2.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyOrange1.png Graphic file (type
+ bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyOrange1.png>
+File: appendix-d-figure/Capybara/NewMainMenuCappyOrange2.png Graphic file (type
+ bmp)
+<appendix-d-figure/Capybara/NewMainMenuCappyOrange2.png>
+ [111] [112]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2490.
+
+File: appendix-e-figure/usability_test_response1.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2495.
+See the caption package documentation for explanation.
+
+File: appendix-e-figure/usability_test_response2.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2496.
+See the caption package documentation for explanation.
+
+File: appendix-e-figure/usability_test_response3.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2497.
+See the caption package documentation for explanation.
+
+File: appendix-e-figure/usability_test_response4_1.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response4_1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2498.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:usability-test-response-4-rearranged' on page 113
+ undefined on input line 2503.
+
+[113]
+File: appendix-e-figure/usability_test_response4_2.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response4_2.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2505.
+See the caption package documentation for explanation.
+
+File: appendix-e-figure/usability_test_response5.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response5.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2506.
+See the caption package documentation for explanation.
+
+File: appendix-e-figure/usability_test_response6.png Graphic file (type bmp)
+<appendix-e-figure/usability_test_response6.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 2507.
+See the caption package documentation for explanation.
+
+[114] [115] [116]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2515.
+
+[117] [118]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.0pt
+(hyperref)                replaced by space on input line 2553.
+
+File: appendix-g-figure/question2.png Graphic file (type bmp)
+<appendix-g-figure/question2.png>
+File: appendix-g-figure/question4.png Graphic file (type bmp)
+<appendix-g-figure/question4.png>
+File: appendix-g-figure/question5.png Graphic file (type bmp)
+<appendix-g-figure/question5.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question7.png Graphic file (type bmp)
+<appendix-g-figure/question7.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question8.png Graphic file (type bmp)
+<appendix-g-figure/question8.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question9x.png Graphic file (type bmp)
+<appendix-g-figure/question9x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question10.png Graphic file (type bmp)
+<appendix-g-figure/question10.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question11.png Graphic file (type bmp)
+<appendix-g-figure/question11.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question12.png Graphic file (type bmp)
+<appendix-g-figure/question12.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question13.png Graphic file (type bmp)
+<appendix-g-figure/question13.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question14.png Graphic file (type bmp)
+<appendix-g-figure/question14.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question15.png Graphic file (type bmp)
+<appendix-g-figure/question15.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question16x.png Graphic file (type bmp)
+<appendix-g-figure/question16x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question17.png Graphic file (type bmp)
+<appendix-g-figure/question17.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question18x.png Graphic file (type bmp)
+<appendix-g-figure/question18x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question19.png Graphic file (type bmp)
+<appendix-g-figure/question19.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question20.png Graphic file (type bmp)
+<appendix-g-figure/question20.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question21.png Graphic file (type bmp)
+<appendix-g-figure/question21.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question22.png Graphic file (type bmp)
+<appendix-g-figure/question22.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question23.png Graphic file (type bmp)
+<appendix-g-figure/question23.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question24x.png Graphic file (type bmp)
+<appendix-g-figure/question24x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question25.png Graphic file (type bmp)
+<appendix-g-figure/question25.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question26.png Graphic file (type bmp)
+<appendix-g-figure/question26.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question27.png Graphic file (type bmp)
+<appendix-g-figure/question27.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question28.png Graphic file (type bmp)
+<appendix-g-figure/question28.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question29.png Graphic file (type bmp)
+<appendix-g-figure/question29.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question30.png Graphic file (type bmp)
+<appendix-g-figure/question30.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question31.png Graphic file (type bmp)
+<appendix-g-figure/question31.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question32.png Graphic file (type bmp)
+<appendix-g-figure/question32.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question33.png Graphic file (type bmp)
+<appendix-g-figure/question33.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question34x.png Graphic file (type bmp)
+<appendix-g-figure/question34x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question35.png Graphic file (type bmp)
+<appendix-g-figure/question35.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question36.png Graphic file (type bmp)
+<appendix-g-figure/question36.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question37.png Graphic file (type bmp)
+<appendix-g-figure/question37.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question38.png Graphic file (type bmp)
+<appendix-g-figure/question38.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question39.png Graphic file (type bmp)
+<appendix-g-figure/question39.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question40x.png Graphic file (type bmp)
+<appendix-g-figure/question40x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question41.png Graphic file (type bmp)
+<appendix-g-figure/question41.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question42.png Graphic file (type bmp)
+<appendix-g-figure/question42.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question43.png Graphic file (type bmp)
+<appendix-g-figure/question43.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question44x.png Graphic file (type bmp)
+<appendix-g-figure/question44x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: appendix-g-figure/question45x.png Graphic file (type bmp)
+<appendix-g-figure/question45x.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2060,25 +5160,29 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {newzealand/options}  =>  {variant=newzealand}
 >  {thai/target}  =>  {thai}
 >  {th/target}  =>  {thai}.
- [51] (No19_1026-1041-3450_AjNatasha.aux
+[119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130]
+[131] [132] [133] [134] (No19_1026-1041-3450_AjNatasha.aux
 LaTeX Info: Redefining \rmfamily on input line 16.
 LaTeX Info: Redefining \sffamily on input line 16.
 LaTeX Info: Redefining \ttfamily on input line 16.
 )
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `No19_1026-1041-3450_AjNatasha.out' has not c
 hanged.
-(rerunfilecheck)             Checksum: 574DCB7F1989419B111968E8062B345B;7368.
+(rerunfilecheck)             Checksum: 930131D1C66607D2AE7B7AB9D39CBEFA;9644.
  ) 
 Here is how much of TeX's memory you used:
- 20425 strings out of 410527
- 393944 string characters out of 2813164
- 902668 words of memory out of 3000000
- 41279 multiletter control sequences out of 15000+600000
- 471900 words of font info for 73 fonts, out of 8000000 for 9000
+ 22497 strings out of 410527
+ 487822 string characters out of 2813164
+ 913871 words of memory out of 3000000
+ 43067 multiletter control sequences out of 15000+600000
+ 471916 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,16n,117p,1501b,715s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 101i,16n,117p,1501b,1633s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on No19_1026-1041-3450_AjNatasha.pdf (58 pages).
+Output written on No19_1026-1041-3450_AjNatasha.pdf (147 pages).
