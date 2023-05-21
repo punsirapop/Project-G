@@ -100,6 +100,9 @@ public class AllySelectionManager : MonoBehaviour
     {
         foreach (var item in _MechDisplays)
         {
+            MechChromo m = item.MySO;
+            item.SetChromo(m);
+            item.SetChromo(m);
             item.gameObject.SetActive(true);
         }
     }

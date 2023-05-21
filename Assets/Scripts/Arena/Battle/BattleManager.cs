@@ -84,14 +84,6 @@ public class BattleManager : MonoBehaviour
         BattleMechManager senderMech = Identify0(sender);
         WeaponChromosome senderWeapon = Identify1(sender);
 
-        // check if dead
-        for (int i = 0; i < chances.Length; i++)
-        {
-            if (targetList[i].CurrentState == BattleMechManager.State.Dead)
-            {
-                chances[i] = 0;
-            }
-        }
         // check for receiver ongoing effects
         for (int i = 0; i < chances.Length; i++)
         {
@@ -118,6 +110,24 @@ public class BattleManager : MonoBehaviour
                 EditChance(chances, 2, senderWeapon.Efficiency, 1);
             }
         }
+        // check if dead
+        for (int i = 0; i < chances.Length; i++)
+        {
+            if (targetList[i].CurrentState == BattleMechManager.State.Dead)
+            {
+                chances[i] = 0;
+            }
+        }
+
+        // check if NaN
+        for (int i = 0; i < chances.Length; i++)
+        {
+            if (chances[i] == float.NaN)
+            {
+                chances[i] = 0;
+            }
+        }
+
         // check if someone is alive but 0 chance of attacking
         if (targetList.Any(x => x.CurrentState != BattleMechManager.State.Dead) && chances.Sum() <= 0)
         {
@@ -362,7 +372,7 @@ public class BattleManager : MonoBehaviour
             if (j != i)
             {
                 chances[j] -= offset * chances[j] / s;
-                if (chances[j] < 0) chances[j] = 0;
+                if (chances[j] < 0 || s == 0) chances[j] = 0;
             }
         }
     }
