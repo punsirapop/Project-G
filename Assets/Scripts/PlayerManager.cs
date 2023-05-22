@@ -252,6 +252,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (deductAmount <= Money)
         {
             Money -= deductAmount;
+            ValidateUnlocking();
             if (deductAmount > 0)
             {
                 SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
@@ -269,6 +270,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void ForceSpendMoney(int deductAmount)
     {
         Money -= deductAmount;
+        ValidateUnlocking();
         if (deductAmount > 0)
         {
             SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
@@ -281,6 +283,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (gainAmount >= 0)
         {
             Debug.Log($"Giving Money {gainAmount}G");
+            ValidateUnlocking();
             Money += gainAmount;
             if (gainAmount > 0)
             {
