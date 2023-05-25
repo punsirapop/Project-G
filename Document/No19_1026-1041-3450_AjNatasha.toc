@@ -1,7 +1,10 @@
 \selectlanguage *{english}
-\contentsline {chapterx}{\mdseries CONTENTS}{iii}{Doc-Start}%
-\contentsline {chapterx}{\mdseries LIST OF TABLES}{v}{Doc-Start}%
-\contentsline {chapterx}{\mdseries LIST OF FIGURES}{vi}{Doc-Start}%
+\contentsline {chapterx}{\mdseries ABSTRACT}{ii}{Doc-Start}%
+\contentsline {chapterx}{\mdseries THAI ABSTRACT}{iii}{Doc-Start}%
+\contentsline {chapterx}{\mdseries ACKNOWLEDGMENTS}{iv}{Doc-Start}%
+\contentsline {chapterx}{\mdseries CONTENTS}{v}{Doc-Start}%
+\contentsline {chapterx}{\mdseries LIST OF TABLES}{vii}{Doc-Start}%
+\contentsline {chapterx}{\mdseries LIST OF FIGURES}{viii}{Doc-Start}%
 \contentsline {chapterxx}{\mdseries \bf CHAPTER}{1}{chapter.1}%
 \contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {1.}\hskip -0.5em Introduction}}}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
@@ -10,7 +13,7 @@
 \contentsline {section}{\numberline {1.4}Project Schedule}{3}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Development Activities}{3}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Product Backlog}{3}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Draft Schedule}{3}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.3}Draft Schedule}{4}{subsection.1.4.3}%
 \contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {2.}\hskip -0.5em Background Theory and Related Work}}}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Game Design Theory}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Natural Funativity}{5}{subsection.2.1.1}%
@@ -25,23 +28,39 @@
 \contentsline {subsection}{\numberline {2.3.2}Fitness Evaluation}{11}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Genetic Operations}{11}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Knapsack Problem}{17}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Languages and Technologies}{19}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Related Works}{19}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Similar Games Example}{20}{subsection.2.5.1}%
-\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {3.}\hskip -0.5em Methodology and Design}}}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Analysis}{23}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Problem Statement}{23}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Target Audience}{23}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Design}{23}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Outcome-based Education (OBE) Design}{23}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Game Design Theory Application}{26}{subsection.3.2.2}%
+\contentsline {section}{\numberline {2.4}Usability Testing}{19}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Languages and Technologies}{19}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Related Works}{20}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Similar Games Genres}{20}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Similar Games Example}{20}{subsection.2.6.2}%
+\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {3.}\hskip -0.5em Methodology and Design}}}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Analysis}{24}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Problem Statement}{24}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Target Audience}{24}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Design}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Outcome-based Education (OBE) Design}{24}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Game Design Theory Application}{27}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Game Overview}{28}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Gameplay and Mechanics}{37}{subsection.3.2.4}%
-\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {4.}\hskip -0.5em Preliminary Results}}}{41}{chapter.4}%
-\contentsline {section}{\numberline {4.1} Problems and Solution in Term 1}{41}{section.4.1}%
-\contentsline {chapter}{\mdseries \bf \MakeUppercase {References}}{44}{Item.132}%
-\contentsline {chapter}{\mdseries \bf \MakeUppercase {Appendix}}{46}{Item.132}%
-\contentsline {apdx}{A\hskip 1em Storyboard}{47}{Item.132}%
-\contentsline {apdx}{B\hskip 1em Learning Material}{52}{figure.caption.12}%
-\contentsline {apdx}{C\hskip 1em Puzzles }{64}{figure.2.30}%
-\contentsline {apdx}{D\hskip 1em Character Sprites }{79}{figure.3.39}%
+\contentsline {subsection}{\numberline {3.2.4}Gameplay and Mechanics}{31}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Development}{39}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Learning material}{39}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Puzzle structure}{39}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Prototyping and usability testing}{43}{subsection.3.3.3}%
+\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {4.}\hskip -0.5em Implementation Results}}}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Usability Testing Result}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Implementation Result}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}User Satisfaction Evaluation Result}{55}{section.4.3}%
+\contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {5.}\hskip -0.5em Conclusions}}}{60}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Work Process}{60}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Problems and Solution}{60}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Future Works}{62}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Conclusion}{62}{section.5.4}%
+\contentsline {chapter}{\mdseries \bf \MakeUppercase {References}}{64}{section.5.4}%
+\contentsline {chapter}{\mdseries \bf \MakeUppercase {Appendix}}{66}{section.5.4}%
+\contentsline {apdx}{A\hskip 1em Storyboard}{67}{section.5.4}%
+\contentsline {apdx}{B\hskip 1em Learning Material}{72}{figure.caption.11}%
+\contentsline {apdx}{C\hskip 1em Puzzles }{91}{figure.2.48}%
+\contentsline {apdx}{D\hskip 1em Character Sprites }{106}{figure.3.39}%
+\contentsline {apdx}{E\hskip 1em Usability Test Responses }{113}{Item.157}%
+\contentsline {apdx}{F\hskip 1em Farm and Factory Unlock Requirements}{117}{figure.5.7}%
+\contentsline {apdx}{G\hskip 1em User Satisfaction Survey Responses}{119}{table.6.2}%
