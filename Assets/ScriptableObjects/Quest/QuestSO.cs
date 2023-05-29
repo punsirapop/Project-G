@@ -96,7 +96,7 @@ public class QuestSO : ScriptableObject
     }
 
     // tmp method for entering with GM start
-    public void ForceCompleteQuest()
+    public virtual void ForceCompleteQuest()
     {
         _QuestStatus = Status.Completed;
     }

@@ -61,4 +61,17 @@ public class MainQuestSO : QuestSO
         MainQuestDatabaseSO.WaitForDay();
         base.CompleteQuest();
     }
+
+    public override void ForceCompleteQuest()
+    {
+        base.ForceCompleteQuest();
+
+        // Gain mech reward, send all mech into habitat
+        foreach (var mech in _RewardMechs)
+        {
+            Debug.Log("Give mech to Habitat");
+            MechChromo m = new MechChromo(null).SetChromosomeFromPreset(mech);
+            PlayerManager.FarmDatabase[0].AddChromo(m);
+        }
+    }
 }
