@@ -3,4 +3,4 @@ Project G is an educational game created for people who are interested in the Ge
 
 The game trailer is [here](https://www.youtube.com/watch?v=V0baJzuEUR0).  
 You can download the game to play it locally on Windows PC or play it online [here](https://pnwhyistillhere.itch.io/project-g-educational-game-for-learning-genetic-algorithm).  
-For more information, please visit the [document](Document/Rendered).
+For more information, please visit the [document](Document).
