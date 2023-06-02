@@ -1136,6 +1136,8 @@ Applying the OBE concept, the education module is designed according to the tria
 %\end{itemize}
 \hspace{2em}The game we design aims to provide different kinds of fun that cater to the players' preferences. The first kind of fun is Sensation, where the game's sci-fi and fantasy theme aesthetic stimulates the senses through visuals, character design, music, and sound effects from the players' interactions. The second kind of fun is Fantasy, where the game's story, world, and characters help the players feel immersed in the game and give them a role to play with objectives to accomplish in the story. The third kind of fun is Challenge, where players must complete quests and battle opponents in the arena to obtain the resources to upgrade their farms and factories. As the game progresses, the quests and opponents become more difficult, providing a sense of accomplishment upon completion. Lastly, the game design provides Expression, where the players can freely manage their money and resources, and choose the combination of weapons and monsters for the battle arena that suits their playstyle. The game design's various kinds of fun make the game engaging and enjoyable for all types of players.
 
+\hspace{2em}The details of the education and other activity in the game will be described in the next section. And the alignment between the learning outcome and the game activity used to assess such outcome will be explained further in Table~\ref{tbl:activity-to-achieve-puzzle} in the next chapter.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Game Overview}
 	As we mentioned, we decided to develop the game using an approach in which Computer Assisted Instruction (CAI) is designed first, then adding the game systems to transform it into Digital Educational Games (DEG). The main reason for adding the game systems is to increase the external learning motivation of the player so that the player has more will for playing and learning in the game. The game overview will describe how we will create the CAI and what kind of game systems we will add.
@@ -1451,7 +1453,7 @@ According to the calendar system, the game will save when players end the day an
 This phase of work aims to develop the learning materials and the learning activities. Such activities in the context of the educational game are precisely the puzzle gameplay that we will use as learning and assessment activities. The following content will describe the learning material, the structure of the puzzle, and prototyping and usability testing.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Learning material}
+\subsection{Learning Material}
 From the expected outcome, we break it down and list the topic of the learning content as we mentioned in the research lab system. For each topic, the image and description text is created. Figure~\ref{fig:develop-learning-material-SPC} is an example of the learning material we created for the single-point crossover. Please note that the material will be adapted to suit the game dialogue later, and all the learning materials are provided in the Appendix. %~\ref{appendix:learning-material}.
 
 \begin{figure}[!h]\centering
@@ -1461,7 +1463,7 @@ From the expected outcome, we break it down and list the topic of the learning c
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Puzzle structure}
+\subsection{Puzzle Structure}
 The puzzle will be used as an assessment activity for the demonstration and solving level of learning of the criteria in the rubric Table~\ref{tbl:rubric}. These puzzles not only will be used as an assessment but also will be used as an exercise that helps the player maintain and verify their knowledge. \\
 The players will encounter puzzles in 2 different situations. The first situation is right after the players finish learning the lesson from the research lab. The players are required to solve the puzzle to complete the lesson and unlock the new corresponding facility. This will be treated as the first assessment. Another situation is when the farms or factories break down. Players will have to solve the puzzle to fix and continue to use it. This can be interpreted as an exercise and also be calculated as a re-assessment. \\
 The puzzle the player will encounter can be classified into 3 types as follows: \\
@@ -1526,7 +1528,7 @@ From the described in-game assessment activities we will use in the game, the as
 % Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 \begin{longtable}{|l|lllll|}
 \caption{Assessment of the Activity for Criteria}
-\label{tab:assessment-of-activity}\\
+\label{tbl:assessment-of-activity}\\
 \hline
 \multicolumn{1}{|c|}{} &
   \multicolumn{5}{c|}{Performance descriptors} \\ \cline{2-6} 
@@ -1641,7 +1643,7 @@ Note: *Orange highlighted = Copper Jigsaw piece, **Gray highlighted  = Silver Ji
 %\section{GUI Design}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prototyping and usability testing}
+\subsection{Prototyping and Usability Testing}
 For typical education design using the ADDIE model, the developed contents may be used in the education simulation to test the feasibility of the project. As an educational game, we decide to conduct usability testing instead since it's more suitable for the game and we can't directly perform the learning simulation. \\
 Since we haven't developed the actual working software yet in this phase, we choose to develop the simple wireframe prototype, a series of mock-up screens simulating the working software, for testing purposes. Then we record the prototype as a video together with the narration of how things work. \\
 After the prototyping is done, we decide to conduct the test on a small group of the target user which is the student that currently studies in the field of computer engineering. The data we want from this test is mainly opinions about our current design. So, we sent the video of the prototype to the tester and request them to answer the post-test question about their opinion on the design. The six questions in total with the possible answer will be shown in Table~\ref{tbl:usability-test-questionaire}.
@@ -1797,7 +1799,8 @@ The following section will feature game interfaces and their functionalities.
 	\includegraphics[width=14cm]{figure/screenshot/screenshot-puzzle-knapsack.png}
 	\captionof{figure}{Puzzle Screenshot (Knapsack)}
 	\end{minipage}
-	Players will solve a puzzle when taking tests to increase a jigsaw rank or fix a facility. There are multiple types of puzzles depending on types of knowledge; knapsack puzzles and genetic algorithm-related puzzles, and level of assessment, such as question, demonstration, and solving.
+	Players will solve a puzzle when taking tests to increase a jigsaw rank or fix a facility. There are multiple types of puzzles depending on types of knowledge; knapsack puzzles and genetic algorithm-related puzzles, and level of assessment, such as question, demonstration, and solving. The full gameplay of all the puzzle material can be found in Appendix.
+
 
 	\item Hall of Capybara \\
 	\begin{minipage}[c]{\textwidth}\centering

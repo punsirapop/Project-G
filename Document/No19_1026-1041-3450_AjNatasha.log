@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2022.11.5)  19 MAY 2023 17:21
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2022.11.5)  30 MAY 2023 21:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2648,11 +2648,11 @@ File: figure/design-gameflow.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1167.
+(caption)                particular \caption on input line 1169.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1165--1170
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1167--1172
 []$[]$ 
  []
 
@@ -2660,11 +2660,11 @@ File: figure/design-main-game-page.png Graphic file (type bmp)
 <figure/design-main-game-page.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1175.
+(caption)                particular \caption on input line 1177.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1173--1178
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1175--1180
 []$[]$ 
  []
 
@@ -2674,11 +2674,11 @@ File: figure/design-puzzle-crossover.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1186.
+(caption)                particular \caption on input line 1188.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1184--1189
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1186--1191
 []$[]$ 
  []
 
@@ -2686,11 +2686,11 @@ File: figure/design-city.png Graphic file (type bmp)
 <figure/design-city.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1196.
+(caption)                particular \caption on input line 1198.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1194--1199
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1196--1201
 []$[]$ 
  []
 
@@ -2700,21 +2700,21 @@ File: figure/design-state-diagram.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1231.
+(caption)                particular \caption on input line 1233.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1229--1234
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1231--1236
 []$[]$ 
  []
 
 [32]
-Overfull \hbox (11.15283pt too wide) in alignment at lines 1252--1259
+Overfull \hbox (11.15283pt too wide) in alignment at lines 1254--1261
  [] [] [] 
  []
 
 
-Overfull \hbox (11.15283pt too wide) in alignment at lines 1259--1288
+Overfull \hbox (11.15283pt too wide) in alignment at lines 1261--1290
  [] [] [] 
  []
 
@@ -2724,23 +2724,23 @@ File: figure/design-monster-chromosome.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1307.
+(caption)                particular \caption on input line 1309.
 See the caption package documentation for explanation.
 
 File: figure/design-farm-interface.png Graphic file (type bmp)
 <figure/design-farm-interface.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1313.
+(caption)                particular \caption on input line 1315.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1303--1316
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1305--1318
 []$
  []
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1303--1316
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1305--1318
 []$ 
  []
 
@@ -2750,11 +2750,11 @@ File: figure/design-arena-battle.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1329.
+(caption)                particular \caption on input line 1331.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1325--1333
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1327--1335
 []$
  []
 
@@ -2764,23 +2764,23 @@ File: figure/design-questboard-interface-accept.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1338.
+(caption)                particular \caption on input line 1340.
 See the caption package documentation for explanation.
 
 File: figure/design-questboard-interface-submit.png Graphic file (type bmp)
 <figure/design-questboard-interface-submit.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1343.
+(caption)                particular \caption on input line 1345.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1334--1347
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1336--1349
 []$
  []
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1334--1347
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1336--1349
 []$
  []
 
@@ -2788,11 +2788,11 @@ File: figure/design-shop-monster.png Graphic file (type bmp)
 <figure/design-shop-monster.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1362.
+(caption)                particular \caption on input line 1364.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1348--1365
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1350--1367
 []$ 
  []
 
@@ -2802,11 +2802,11 @@ File: figure/design-calendar.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1373.
+(caption)                particular \caption on input line 1375.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (65.69992pt too wide) in paragraph at lines 1369--1376
+Overfull \hbox (65.69992pt too wide) in paragraph at lines 1371--1378
 []$ 
  []
 
@@ -2816,11 +2816,11 @@ File: figure/design-usecase-diagram.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1434.
+(caption)                particular \caption on input line 1436.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 1431--1438
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 1433--1440
 []$
  []
 
@@ -2828,7 +2828,7 @@ Overfull \hbox (46.99997pt too wide) in paragraph at lines 1431--1438
 File: figure/develop-learning-material-SPC.png Graphic file (type bmp)
 <figure/develop-learning-material-SPC.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1465--1468
+Underfull \hbox (badness 10000) in paragraph at lines 1467--1470
 
  []
 
@@ -2836,11 +2836,11 @@ File: figure/design-puzzle-question.png Graphic file (type bmp)
 <figure/design-puzzle-question.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1472.
+(caption)                particular \caption on input line 1474.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1469--1476
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1471--1478
 []$
  []
 
@@ -2850,11 +2850,11 @@ File: figure/design-puzzle-demonstration.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1480.
+(caption)                particular \caption on input line 1482.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1477--1484
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1479--1486
 []$
  []
 
@@ -2862,26 +2862,21 @@ File: figure/design-puzzle-problem-solving.png Graphic file (type bmp)
 <figure/design-puzzle-problem-solving.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1488.
+(caption)                particular \caption on input line 1490.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1485--1492
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1487--1494
 []$
  []
 
 [40]
-
-LaTeX Warning: Reference `tbl:assessment-of-activity' on page 41 undefined on i
-nput line 1519.
-
-
-Overfull \hbox (4.8909pt too wide) in alignment at lines 1527--1539
+Overfull \hbox (4.8909pt too wide) in alignment at lines 1529--1541
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (4.8909pt too wide) in alignment at lines 1539--1565
+Overfull \hbox (4.8909pt too wide) in alignment at lines 1541--1567
  [] [] [] [] [] [] 
  []
 
@@ -2890,17 +2885,17 @@ Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -5.0pt
-(hyperref)                removed on input line 1674.
+(hyperref)                removed on input line 1676.
 
 File: figure/screenshot/screenshot-title.png Graphic file (type bmp)
 <figure/screenshot/screenshot-title.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1720.
+(caption)                particular \caption on input line 1722.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1717--1724
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1719--1726
 []$
  []
 
@@ -2912,35 +2907,35 @@ File: figure/screenshot/screenshot-hub-main.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1728.
+(caption)                particular \caption on input line 1730.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-hub-fix.png Graphic file (type bmp)
 <figure/screenshot/screenshot-hub-fix.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1732.
+(caption)                particular \caption on input line 1734.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-hub-quest.png Graphic file (type bmp)
 <figure/screenshot/screenshot-hub-quest.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1736.
+(caption)                particular \caption on input line 1738.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1725--1740
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1727--1742
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1725--1740
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1727--1742
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1725--1740
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1727--1742
 []$
  []
 
@@ -2950,11 +2945,11 @@ File: figure/screenshot/screenshot-farm.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1744.
+(caption)                particular \caption on input line 1746.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1741--1747
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1743--1749
 []$
  []
 
@@ -2964,11 +2959,11 @@ File: figure/screenshot/screenshot-factory.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1751.
+(caption)                particular \caption on input line 1753.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1748--1754
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1750--1756
 []$
  []
 
@@ -2978,11 +2973,11 @@ File: figure/screenshot/screenshot-habitat.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1758.
+(caption)                particular \caption on input line 1760.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1755--1761
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1757--1763
 []$
  []
 
@@ -2990,11 +2985,11 @@ File: figure/screenshot/screenshot-researchLab.png Graphic file (type bmp)
 <figure/screenshot/screenshot-researchLab.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1765.
+(caption)                particular \caption on input line 1767.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1762--1768
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1764--1770
 []$
  []
 
@@ -3003,23 +2998,23 @@ File: figure/screenshot/screenshot-cutscene-dialogue.png Graphic file (type bmp
 <figure/screenshot/screenshot-cutscene-dialogue.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1772.
+(caption)                particular \caption on input line 1774.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-cutscene-choice.png Graphic file (type bmp)
 <figure/screenshot/screenshot-cutscene-choice.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1776.
+(caption)                particular \caption on input line 1778.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1769--1779
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1771--1781
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1769--1779
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1771--1781
 []$
  []
 
@@ -3029,11 +3024,11 @@ File: figure/screenshot/screenshot-HoI.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1783.
+(caption)                particular \caption on input line 1785.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1780--1786
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1782--1788
 []$
  []
 
@@ -3044,7 +3039,7 @@ File: figure/screenshot/screenshot-puzzle-selection.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1790.
+(caption)                particular \caption on input line 1792.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-puzzle-crossover.png Graphic file (type bmp)
@@ -3052,28 +3047,28 @@ File: figure/screenshot/screenshot-puzzle-crossover.png Graphic file (type bmp)
 <figure/screenshot/screenshot-puzzle-crossover.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1794.
+(caption)                particular \caption on input line 1796.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-puzzle-knapsack.png Graphic file (type bmp)
 <figure/screenshot/screenshot-puzzle-knapsack.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1798.
+(caption)                particular \caption on input line 1800.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1787--1801
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1789--1803
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1787--1801
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1789--1803
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1787--1801
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1789--1803
 []$
  []
 
@@ -3083,11 +3078,11 @@ File: figure/screenshot/screenshot-HoC.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1805.
+(caption)                particular \caption on input line 1808.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1802--1808
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1805--1811
 []$
  []
 
@@ -3097,11 +3092,11 @@ File: figure/screenshot/screenshot-calendar.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1812.
+(caption)                particular \caption on input line 1815.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1809--1815
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1812--1818
 []$
  []
 
@@ -3109,11 +3104,11 @@ File: figure/screenshot/screenshot-city.png Graphic file (type bmp)
 <figure/screenshot/screenshot-city.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1819.
+(caption)                particular \caption on input line 1822.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1816--1822
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1819--1825
 []$
  []
 
@@ -3123,23 +3118,23 @@ File: figure/screenshot/screenshot-quest-overview.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1826.
+(caption)                particular \caption on input line 1829.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-quest-detail.png Graphic file (type bmp)
 <figure/screenshot/screenshot-quest-detail.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1830.
+(caption)                particular \caption on input line 1833.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1823--1833
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1826--1836
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1823--1833
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1826--1836
 []$
  []
 
@@ -3149,11 +3144,11 @@ File: figure/screenshot/screenshot-shop.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1837.
+(caption)                particular \caption on input line 1840.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1834--1840
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1837--1843
 []$
  []
 
@@ -3161,23 +3156,23 @@ File: figure/screenshot/screenshot-arena-prep.png Graphic file (type bmp)
 <figure/screenshot/screenshot-arena-prep.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1844.
+(caption)                particular \caption on input line 1847.
 See the caption package documentation for explanation.
 
 File: figure/screenshot/screenshot-arena-battle.png Graphic file (type bmp)
 <figure/screenshot/screenshot-arena-battle.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1848.
+(caption)                particular \caption on input line 1851.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1841--1851
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1844--1854
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1841--1851
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1844--1854
 []$
  []
 
@@ -3187,7 +3182,7 @@ File: figure/result-example-hoi-screenshot.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1911.
+(caption)                particular \caption on input line 1914.
 See the caption package documentation for explanation.
 
 [55] [56]
@@ -3196,18 +3191,18 @@ File: appendix-g-figure/question41.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1954.
+(caption)                particular \caption on input line 1957.
 See the caption package documentation for explanation.
 
 File: appendix-g-figure/question42.png Graphic file (type bmp)
 <appendix-g-figure/question42.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1958.
+(caption)                particular \caption on input line 1961.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 1950--1962
+Overfull \hbox (25.0pt too wide) in paragraph at lines 1953--1965
 []$
  []
 
@@ -3216,21 +3211,21 @@ Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -5.0pt
-(hyperref)                removed on input line 2023.
+(hyperref)                removed on input line 2026.
 
 
 LaTeX Warning: Reference `result-burndown-project' on page 60 undefined on inpu
-t line 2052.
+t line 2055.
 
 File: figure/result-burndown-project.png Graphic file (type bmp)
 <figure/result-burndown-project.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2055.
+(caption)                particular \caption on input line 2058.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2049--2058
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2052--2061
 []$ 
  []
 
@@ -3292,7 +3287,7 @@ Package hyperref Warning: bookmark level for unknown apdx defaults to 0.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2107.
+(hyperref)                replaced by space on input line 2110.
 
 File: appendix-a-figure/storyboard1.png Graphic file (type bmp)
 <appendix-a-figure/storyboard1.png>
@@ -3309,77 +3304,77 @@ File: appendix-a-figure/storyboard4.png Graphic file (type bmp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2122.
+(hyperref)                replaced by space on input line 2125.
 
 File: appendix-b-figure/origin-of-species1.png Graphic file (type bmp)
 <appendix-b-figure/origin-of-species1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2131.
+(caption)                particular \caption on input line 2134.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/origin-of-species2.png Graphic file (type bmp)
 <appendix-b-figure/origin-of-species2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2132.
+(caption)                particular \caption on input line 2135.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/origin-of-species3.png Graphic file (type bmp)
 <appendix-b-figure/origin-of-species3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2133.
+(caption)                particular \caption on input line 2136.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/origin-of-species4.png Graphic file (type bmp)
 <appendix-b-figure/origin-of-species4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2134.
+(caption)                particular \caption on input line 2137.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/origin-of-species5.png Graphic file (type bmp)
 <appendix-b-figure/origin-of-species5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2135.
+(caption)                particular \caption on input line 2138.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/origin-of-species6.png Graphic file (type bmp)
 <appendix-b-figure/origin-of-species6.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2136.
+(caption)                particular \caption on input line 2139.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2133--2140
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2133--2140
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2133--2140
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2133--2140
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2133--2140
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2130--2137
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2133--2140
 []$ 
  []
 
@@ -3389,47 +3384,47 @@ File: appendix-b-figure/genetic1.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2138.
+(caption)                particular \caption on input line 2141.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/genetic2.png Graphic file (type bmp)
 <appendix-b-figure/genetic2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2139.
+(caption)                particular \caption on input line 2142.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/genetic3.png Graphic file (type bmp)
 <appendix-b-figure/genetic3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2140.
+(caption)                particular \caption on input line 2143.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/genetic4.png Graphic file (type bmp)
 <appendix-b-figure/genetic4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2141.
+(caption)                particular \caption on input line 2144.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2140--2145
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2140--2145
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2140--2145
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2137--2142
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2140--2145
 []$ 
  []
 
@@ -3439,107 +3434,107 @@ File: appendix-b-figure/flow-of-GA1.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2147.
+(caption)                particular \caption on input line 2150.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA2.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2148.
+(caption)                particular \caption on input line 2151.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA3.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2149.
+(caption)                particular \caption on input line 2152.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA4.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2150.
+(caption)                particular \caption on input line 2153.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA5.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2151.
+(caption)                particular \caption on input line 2154.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA6.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA6.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2152.
+(caption)                particular \caption on input line 2155.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA7.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA7.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2153.
+(caption)                particular \caption on input line 2156.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA8.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA8.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2154.
+(caption)                particular \caption on input line 2157.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/flow-of-GA9.png Graphic file (type bmp)
 <appendix-b-figure/flow-of-GA9.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2155.
+(caption)                particular \caption on input line 2158.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2146--2156
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2149--2159
 []$ 
  []
 
@@ -3549,7 +3544,7 @@ File: appendix-b-figure/parent-selection-random.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2157.
+(caption)                particular \caption on input line 2160.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/parent-selection-tournament1.png Graphic file (type bmp
@@ -3557,7 +3552,7 @@ File: appendix-b-figure/parent-selection-tournament1.png Graphic file (type bmp
 <appendix-b-figure/parent-selection-tournament1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2158.
+(caption)                particular \caption on input line 2161.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/parent-selection-tournament2.png Graphic file (type bmp
@@ -3565,69 +3560,69 @@ File: appendix-b-figure/parent-selection-tournament2.png Graphic file (type bmp
 <appendix-b-figure/parent-selection-tournament2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2159.
+(caption)                particular \caption on input line 2162.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/parent-selection-roulette1.png Graphic file (type bmp)
 <appendix-b-figure/parent-selection-roulette1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2160.
+(caption)                particular \caption on input line 2163.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/parent-selection-roulette2.png Graphic file (type bmp)
 <appendix-b-figure/parent-selection-roulette2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2161.
+(caption)                particular \caption on input line 2164.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/premature-convergence.png Graphic file (type bmp)
 <appendix-b-figure/premature-convergence.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2162.
+(caption)                particular \caption on input line 2165.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/parent-selection-rank.png Graphic file (type bmp)
 <appendix-b-figure/parent-selection-rank.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2163.
+(caption)                particular \caption on input line 2166.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2156--2164
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2159--2167
 []$ 
  []
 
@@ -3637,35 +3632,35 @@ File: appendix-b-figure/crossover-single.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2165.
+(caption)                particular \caption on input line 2168.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/crossover-two.png Graphic file (type bmp)
 <appendix-b-figure/crossover-two.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2166.
+(caption)                particular \caption on input line 2169.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/crossover-uniform.png Graphic file (type bmp)
 <appendix-b-figure/crossover-uniform.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2167.
+(caption)                particular \caption on input line 2170.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2164--2168
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2167--2171
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2164--2168
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2167--2171
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2164--2168
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2167--2171
 []$ 
  []
 
@@ -3675,47 +3670,47 @@ File: appendix-b-figure/elitism.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2169.
+(caption)                particular \caption on input line 2172.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/mutation-bitflip.png Graphic file (type bmp)
 <appendix-b-figure/mutation-bitflip.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2170.
+(caption)                particular \caption on input line 2173.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/mutation-flipbit.png Graphic file (type bmp)
 <appendix-b-figure/mutation-flipbit.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2171.
+(caption)                particular \caption on input line 2174.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/mutation-boundary.png Graphic file (type bmp)
 <appendix-b-figure/mutation-boundary.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2172.
+(caption)                particular \caption on input line 2175.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2171--2176
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2171--2176
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2171--2176
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2168--2173
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2171--2176
 []$ 
  []
 
@@ -3726,7 +3721,7 @@ File: appendix-b-figure/knapsack/Standard Knapsack 1.png Graphic file (type bmp
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2178.
+(caption)                particular \caption on input line 2181.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Standard Knapsack 2.png Graphic file (type bmp
@@ -3734,7 +3729,7 @@ File: appendix-b-figure/knapsack/Standard Knapsack 2.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Standard Knapsack 2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2179.
+(caption)                particular \caption on input line 2182.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Standard Knapsack 3.png Graphic file (type bmp
@@ -3742,7 +3737,7 @@ File: appendix-b-figure/knapsack/Standard Knapsack 3.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Standard Knapsack 3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2180.
+(caption)                particular \caption on input line 2183.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Standard Knapsack 4.png Graphic file (type bmp
@@ -3750,7 +3745,7 @@ File: appendix-b-figure/knapsack/Standard Knapsack 4.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Standard Knapsack 4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2181.
+(caption)                particular \caption on input line 2184.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Standard Knapsack 5.png Graphic file (type bmp
@@ -3758,31 +3753,31 @@ File: appendix-b-figure/knapsack/Standard Knapsack 5.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Standard Knapsack 5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2182.
+(caption)                particular \caption on input line 2185.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2180--2186
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2180--2186
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2180--2186
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2180--2186
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2177--2183
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2180--2186
 []$ 
  []
 
@@ -3793,7 +3788,7 @@ type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2184.
+(caption)                particular \caption on input line 2187.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multidimensional Knapsack 2.png Graphic file (
@@ -3801,7 +3796,7 @@ type bmp)
 <appendix-b-figure/knapsack/Multidimensional Knapsack 2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2185.
+(caption)                particular \caption on input line 2188.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multidimensional Knapsack 3.png Graphic file (
@@ -3809,7 +3804,7 @@ type bmp)
 <appendix-b-figure/knapsack/Multidimensional Knapsack 3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2186.
+(caption)                particular \caption on input line 2189.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multidimensional Knapsack 4.png Graphic file (
@@ -3817,7 +3812,7 @@ type bmp)
 <appendix-b-figure/knapsack/Multidimensional Knapsack 4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2187.
+(caption)                particular \caption on input line 2190.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multidimensional Knapsack 5.png Graphic file (
@@ -3825,31 +3820,31 @@ type bmp)
 <appendix-b-figure/knapsack/Multidimensional Knapsack 5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2188.
+(caption)                particular \caption on input line 2191.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2186--2192
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2186--2192
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2186--2192
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2186--2192
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2183--2189
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2186--2192
 []$ 
  []
 
@@ -3860,7 +3855,7 @@ File: appendix-b-figure/knapsack/Multiple Knapsack 1.png Graphic file (type bmp
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2190.
+(caption)                particular \caption on input line 2193.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multiple Knapsack 2.png Graphic file (type bmp
@@ -3868,7 +3863,7 @@ File: appendix-b-figure/knapsack/Multiple Knapsack 2.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Multiple Knapsack 2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2191.
+(caption)                particular \caption on input line 2194.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multiple Knapsack 3.png Graphic file (type bmp
@@ -3876,7 +3871,7 @@ File: appendix-b-figure/knapsack/Multiple Knapsack 3.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Multiple Knapsack 3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2192.
+(caption)                particular \caption on input line 2195.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multiple Knapsack 4.png Graphic file (type bmp
@@ -3884,7 +3879,7 @@ File: appendix-b-figure/knapsack/Multiple Knapsack 4.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Multiple Knapsack 4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2193.
+(caption)                particular \caption on input line 2196.
 See the caption package documentation for explanation.
 
 File: appendix-b-figure/knapsack/Multiple Knapsack 5.png Graphic file (type bmp
@@ -3892,31 +3887,31 @@ File: appendix-b-figure/knapsack/Multiple Knapsack 5.png Graphic file (type bmp
 <appendix-b-figure/knapsack/Multiple Knapsack 5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2194.
+(caption)                particular \caption on input line 2197.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2192--2198
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2192--2198
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2192--2198
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2192--2198
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2192--2198
 []$ 
  []
 
@@ -3924,10 +3919,10 @@ Overfull \hbox (46.99997pt too wide) in paragraph at lines 2189--2195
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2202.
+(hyperref)                replaced by space on input line 2205.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2208--2209
+Underfull \hbox (badness 10000) in paragraph at lines 2211--2212
 
  []
 
@@ -3936,7 +3931,7 @@ File: appendix-c-figure/puzzledemon-select-roulette1.png Graphic file (type bmp
 <appendix-c-figure/puzzledemon-select-roulette1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2211.
+(caption)                particular \caption on input line 2214.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-roulette2.png Graphic file (type bmp
@@ -3944,7 +3939,7 @@ File: appendix-c-figure/puzzledemon-select-roulette2.png Graphic file (type bmp
 <appendix-c-figure/puzzledemon-select-roulette2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2213.
+(caption)                particular \caption on input line 2216.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-roulette3.png Graphic file (type bmp
@@ -3952,7 +3947,7 @@ File: appendix-c-figure/puzzledemon-select-roulette3.png Graphic file (type bmp
 <appendix-c-figure/puzzledemon-select-roulette3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2215.
+(caption)                particular \caption on input line 2218.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-roulette4.png Graphic file (type bmp
@@ -3960,7 +3955,7 @@ File: appendix-c-figure/puzzledemon-select-roulette4.png Graphic file (type bmp
 <appendix-c-figure/puzzledemon-select-roulette4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2217.
+(caption)                particular \caption on input line 2220.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-roulette5.png Graphic file (type bmp
@@ -3968,7 +3963,7 @@ File: appendix-c-figure/puzzledemon-select-roulette5.png Graphic file (type bmp
 <appendix-c-figure/puzzledemon-select-roulette5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2219.
+(caption)                particular \caption on input line 2222.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-roulette6.png Graphic file (type bmp
@@ -3976,41 +3971,41 @@ File: appendix-c-figure/puzzledemon-select-roulette6.png Graphic file (type bmp
 <appendix-c-figure/puzzledemon-select-roulette6.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2221.
+(caption)                particular \caption on input line 2224.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2213--2226
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2213--2226
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2213--2226
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2213--2226
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2213--2226
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2210--2223
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2213--2226
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2210--2223
+Underfull \hbox (badness 10000) in paragraph at lines 2213--2226
 
  []
 
@@ -4021,7 +4016,7 @@ mp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2225.
+(caption)                particular \caption on input line 2228.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-tournament2.png Graphic file (type b
@@ -4029,7 +4024,7 @@ mp)
 <appendix-c-figure/puzzledemon-select-tournament2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2227.
+(caption)                particular \caption on input line 2230.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-tournament3.png Graphic file (type b
@@ -4037,7 +4032,7 @@ mp)
 <appendix-c-figure/puzzledemon-select-tournament3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2229.
+(caption)                particular \caption on input line 2232.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-tournament4.png Graphic file (type b
@@ -4045,31 +4040,31 @@ mp)
 <appendix-c-figure/puzzledemon-select-tournament4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2231.
+(caption)                particular \caption on input line 2234.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2227--2236
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2227--2236
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2227--2236
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2224--2233
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2227--2236
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2224--2233
+Underfull \hbox (badness 10000) in paragraph at lines 2227--2236
 
  []
 
@@ -4079,136 +4074,136 @@ File: appendix-c-figure/puzzledemon-select-rank1.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2235.
+(caption)                particular \caption on input line 2238.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank2.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2237.
+(caption)                particular \caption on input line 2240.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank3.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2239.
+(caption)                particular \caption on input line 2242.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank4.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2241.
+(caption)                particular \caption on input line 2244.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank5.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2243.
+(caption)                particular \caption on input line 2246.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank6.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank6.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2245.
+(caption)                particular \caption on input line 2248.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank7.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank7.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2247.
+(caption)                particular \caption on input line 2250.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank8.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank8.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2249.
+(caption)                particular \caption on input line 2252.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank9.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank9.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2251.
+(caption)                particular \caption on input line 2254.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank10.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank10.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2253.
+(caption)                particular \caption on input line 2256.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-select-rank11.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-select-rank11.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2255.
+(caption)                particular \caption on input line 2258.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2234--2257
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2237--2260
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2234--2257
+Underfull \hbox (badness 10000) in paragraph at lines 2237--2260
 
  []
 
@@ -4219,7 +4214,7 @@ p)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2262.
+(caption)                particular \caption on input line 2265.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-single2.png Graphic file (type bm
@@ -4227,7 +4222,7 @@ p)
 <appendix-c-figure/puzzledemon-crossover-single2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2264.
+(caption)                particular \caption on input line 2267.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-single3.png Graphic file (type bm
@@ -4235,7 +4230,7 @@ p)
 <appendix-c-figure/puzzledemon-crossover-single3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2266.
+(caption)                particular \caption on input line 2269.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-single4.png Graphic file (type bm
@@ -4243,7 +4238,7 @@ p)
 <appendix-c-figure/puzzledemon-crossover-single4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2268.
+(caption)                particular \caption on input line 2271.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-single5.png Graphic file (type bm
@@ -4251,36 +4246,36 @@ p)
 <appendix-c-figure/puzzledemon-crossover-single5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2270.
+(caption)                particular \caption on input line 2273.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2264--2275
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2264--2275
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2264--2275
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2264--2275
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2261--2272
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2264--2275
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2261--2272
+Underfull \hbox (badness 10000) in paragraph at lines 2264--2275
 
  []
 
@@ -4290,76 +4285,76 @@ File: appendix-c-figure/puzzledemon-crossover-two1.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2274.
+(caption)                particular \caption on input line 2277.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-two2.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-crossover-two2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2276.
+(caption)                particular \caption on input line 2279.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-two3.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-crossover-two3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2278.
+(caption)                particular \caption on input line 2281.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-two4.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-crossover-two4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2280.
+(caption)                particular \caption on input line 2283.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-two5.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-crossover-two5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2282.
+(caption)                particular \caption on input line 2285.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzledemon-crossover-two6.png Graphic file (type bmp)
 <appendix-c-figure/puzzledemon-crossover-two6.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2284.
+(caption)                particular \caption on input line 2287.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2276--2289
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2276--2289
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2276--2289
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2276--2289
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2276--2289
 []$
  []
 
 
-Overfull \hbox (46.99997pt too wide) in paragraph at lines 2273--2286
+Overfull \hbox (46.99997pt too wide) in paragraph at lines 2276--2289
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2273--2286
+Underfull \hbox (badness 10000) in paragraph at lines 2276--2289
 
  []
 
@@ -4370,7 +4365,7 @@ mp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2289.
+(caption)                particular \caption on input line 2292.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzlesolve-selection-tournament.png Graphic file (type
@@ -4378,28 +4373,28 @@ File: appendix-c-figure/puzzlesolve-selection-tournament.png Graphic file (type
 <appendix-c-figure/puzzlesolve-selection-tournament.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2290.
+(caption)                particular \caption on input line 2293.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzlesolve-selection-rank.png Graphic file (type bmp)
 <appendix-c-figure/puzzlesolve-selection-rank.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2291.
+(caption)                particular \caption on input line 2294.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2288--2292
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2291--2295
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2288--2292
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2291--2295
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2288--2292
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2291--2295
 []$ 
  []
 
@@ -4409,52 +4404,52 @@ File: appendix-c-figure/puzzlesolve-crossover1.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2294.
+(caption)                particular \caption on input line 2297.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzlesolve-crossover2.png Graphic file (type bmp)
 <appendix-c-figure/puzzlesolve-crossover2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2296.
+(caption)                particular \caption on input line 2299.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzlesolve-crossover3.png Graphic file (type bmp)
 <appendix-c-figure/puzzlesolve-crossover3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2298.
+(caption)                particular \caption on input line 2301.
 See the caption package documentation for explanation.
 
 File: appendix-c-figure/puzzlesolve-crossover4.png Graphic file (type bmp)
 <appendix-c-figure/puzzlesolve-crossover4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2300.
+(caption)                particular \caption on input line 2303.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2296--2305
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2296--2305
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2296--2305
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2293--2302
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2296--2305
 []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2293--2302
+Underfull \hbox (badness 10000) in paragraph at lines 2296--2305
 
  []
 
@@ -4462,7 +4457,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2293--2302
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2308.
+(hyperref)                replaced by space on input line 2311.
 
 File: appendix-d-figure/Mech/Head/Head1.png Graphic file (type bmp)
 <appendix-d-figure/Mech/Head/Head1.png>
@@ -4505,37 +4500,37 @@ File: appendix-d-figure/Mech/Head/Head19.png Graphic file (type bmp)
 File: appendix-d-figure/Mech/Head/Head20.png Graphic file (type bmp)
 <appendix-d-figure/Mech/Head/Head20.png>
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2313--2348
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2316--2351
 []$ 
  []
 
@@ -4561,22 +4556,22 @@ File: appendix-d-figure/Mech/Plus/Plus9.png Graphic file (type bmp)
 File: appendix-d-figure/Mech/Plus/Plus10.png Graphic file (type bmp)
 <appendix-d-figure/Mech/Plus/Plus10.png>
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2352--2371
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2352--2371
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2352--2371
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2349--2368
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2352--2371
 []$ 
  []
 
@@ -4590,7 +4585,7 @@ File: appendix-d-figure/Mech/Body/walk3.png Graphic file (type bmp)
 File: appendix-d-figure/Mech/Body/walk4.png Graphic file (type bmp)
 <appendix-d-figure/Mech/Body/walk4.png>
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2369--2376
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2372--2379
 []$ 
  []
 
@@ -4607,7 +4602,7 @@ File: appendix-d-figure/Mech/Arena/ArenaBattleWeapon4_Demo.png Graphic file (ty
 pe bmp)
 <appendix-d-figure/Mech/Arena/ArenaBattleWeapon4_Demo.png>
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2377--2384
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2380--2387
 []$ 
  []
 
@@ -4624,12 +4619,12 @@ File: appendix-d-figure/Mech/Assembling/Sample5.png Graphic file (type bmp)
 File: appendix-d-figure/Mech/Assembling/Sample6.png Graphic file (type bmp)
 <appendix-d-figure/Mech/Assembling/Sample6.png>
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2385--2399
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2388--2402
 []$
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 2385--2399
+Overfull \hbox (25.0pt too wide) in paragraph at lines 2388--2402
 []$ 
  []
 
@@ -4798,39 +4793,39 @@ File: appendix-d-figure/Capybara/NewMainMenuCappyOrange2.png Graphic file (type
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2490.
+(hyperref)                replaced by space on input line 2493.
 
 File: appendix-e-figure/usability_test_response1.png Graphic file (type bmp)
 <appendix-e-figure/usability_test_response1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2495.
+(caption)                particular \caption on input line 2498.
 See the caption package documentation for explanation.
 
 File: appendix-e-figure/usability_test_response2.png Graphic file (type bmp)
 <appendix-e-figure/usability_test_response2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2496.
+(caption)                particular \caption on input line 2499.
 See the caption package documentation for explanation.
 
 File: appendix-e-figure/usability_test_response3.png Graphic file (type bmp)
 <appendix-e-figure/usability_test_response3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2497.
+(caption)                particular \caption on input line 2500.
 See the caption package documentation for explanation.
 
 File: appendix-e-figure/usability_test_response4_1.png Graphic file (type bmp)
 <appendix-e-figure/usability_test_response4_1.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2498.
+(caption)                particular \caption on input line 2501.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:usability-test-response-4-rearranged' on page 113
- undefined on input line 2503.
+ undefined on input line 2506.
 
 [113]
 File: appendix-e-figure/usability_test_response4_2.png Graphic file (type bmp)
@@ -4838,34 +4833,34 @@ File: appendix-e-figure/usability_test_response4_2.png Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2505.
+(caption)                particular \caption on input line 2508.
 See the caption package documentation for explanation.
 
 File: appendix-e-figure/usability_test_response5.png Graphic file (type bmp)
 <appendix-e-figure/usability_test_response5.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2506.
+(caption)                particular \caption on input line 2509.
 See the caption package documentation for explanation.
 
 File: appendix-e-figure/usability_test_response6.png Graphic file (type bmp)
 <appendix-e-figure/usability_test_response6.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2507.
+(caption)                particular \caption on input line 2510.
 See the caption package documentation for explanation.
 
 [114] [115] [116]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2515.
+(hyperref)                replaced by space on input line 2518.
 
 [117] [118]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 2553.
+(hyperref)                replaced by space on input line 2556.
 
 File: appendix-g-figure/question2.png Graphic file (type bmp)
 <appendix-g-figure/question2.png>
@@ -5174,13 +5169,13 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `No19_1026-1041-3450_AjNatasha.out' has not c
 hanged.
-(rerunfilecheck)             Checksum: 930131D1C66607D2AE7B7AB9D39CBEFA;9644.
+(rerunfilecheck)             Checksum: ECC33826512766AD68EA81D794950EF6;9644.
  ) 
 Here is how much of TeX's memory you used:
- 22497 strings out of 410527
- 487822 string characters out of 2813164
+ 22496 strings out of 410527
+ 487794 string characters out of 2813164
  913871 words of memory out of 3000000
- 43067 multiletter control sequences out of 15000+600000
+ 43066 multiletter control sequences out of 15000+600000
  471916 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,16n,117p,1501b,1633s stack positions out of 10000i,1000n,20000p,200000b,80000s

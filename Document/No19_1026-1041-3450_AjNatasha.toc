@@ -43,9 +43,9 @@
 \contentsline {subsection}{\numberline {3.2.3}Game Overview}{28}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Gameplay and Mechanics}{31}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}Development}{39}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Learning material}{39}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Puzzle structure}{39}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Prototyping and usability testing}{43}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Learning Material}{39}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Puzzle Structure}{39}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Prototyping and Usability Testing}{43}{subsection.3.3.3}%
 \contentsline {chapter}{\normalsize \bf \MakeUppercase {{\numberline {4.}\hskip -0.5em Implementation Results}}}{44}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Usability Testing Result}{44}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Implementation Result}{44}{section.4.2}%
