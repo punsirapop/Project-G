@@ -8,18 +8,12 @@ public class KnapsackPuzzleManager : MonoBehaviour
     public static KnapsackPuzzleManager Instance;
 
     // Data of all factory
-    [SerializeField] private FactorySO[] _FactoriesData;
-    public FactorySO[] FactoriesData => _FactoriesData;
-    [SerializeField] private GameObject _Overlay;
+    public FactorySO[] FactoriesData => PlayerManager.FactoryDatabase;
+    [SerializeField] private GameObject _OverlayPrefab;
 
-    private void Awake()
+    void Awake()
     {
         if (Instance == null) Instance = this;
-    }
-
-    private void Start()
-    {
-        _Overlay.SetActive(false);
     }
 
     // Set Pheonotype and Genotype managers to suit the type of puzzle
@@ -31,7 +25,7 @@ public class KnapsackPuzzleManager : MonoBehaviour
         // Get random chromosome from factory to generate puzzle
         // Temp forced it to use bitstring from the first factory /////////////////////////////////
         int factoryIndex = 0;
-        int[][] bitstring = _FactoriesData[factoryIndex].GetRandomBitstring();
+        int[][] bitstring = FactoriesData[factoryIndex].GetRandomBitstring();
         string logText = "Generate puzzle using bitstring: ";
         foreach (int bit in bitstring[0])
         {
@@ -49,14 +43,14 @@ public class KnapsackPuzzleManager : MonoBehaviour
             // Solve
             if (isSolve)
             {
-                GenotypeManager.Instance.CreateMapMask(_FactoriesData[factoryIndex].Items.Length, 0.7f);
+                GenotypeManager.Instance.CreateMapMask(FactoriesData[factoryIndex].Items.Length, 0.7f);
                 GenotypeManager.Instance.InstantiateBitBlocks();
                 GenotypeManager.Instance.SetPresetChangable(true);
             }
             // Demonstrate
             else
             {
-                GenotypeManager.Instance.CreateMapMask(_FactoriesData[factoryIndex].Items.Length, 1f);
+                GenotypeManager.Instance.CreateMapMask(FactoriesData[factoryIndex].Items.Length, 1f);
                 GenotypeManager.Instance.InstantiateBitBlocks(factoryIndex);
                 GenotypeManager.Instance.SetPresetChangable(false);
             }
@@ -65,7 +59,7 @@ public class KnapsackPuzzleManager : MonoBehaviour
         // Decoding puzzle, set Genotype, player interact with Phenotype
         else
         {
-            GenotypeManager.Instance.CreateMapMask(_FactoriesData[factoryIndex].Items.Length, 1f);
+            GenotypeManager.Instance.CreateMapMask(FactoriesData[factoryIndex].Items.Length, 1f);
             GenotypeManager.Instance.InstantiateBitBlocks(factoryIndex, bitstring);
             GenotypeManager.Instance.SetPresetChangable(false);
             GenotypeManager.Instance.SetResettable(false);
@@ -118,7 +112,8 @@ public class KnapsackPuzzleManager : MonoBehaviour
         string genoAnswer = GenotypeManager.Instance.ToString();
         string phenoAnswer = PhenotypeManager.Instance.ToString();
         bool isCorrect = (genoAnswer == phenoAnswer);
-        _Overlay.GetComponentInChildren<TextMeshProUGUI>().text = isCorrect ? "Correct" : "Wrong";
-        _Overlay.SetActive(true);
+        string feedbackText = isCorrect ? "Correct" : "Wrong";
+        GameObject overlay = Instantiate(_OverlayPrefab, this.transform);
+        overlay.GetComponent<PuzzleFeedbackOverlay>().SetFeedBack(isCorrect, feedbackText);
     }
 }
