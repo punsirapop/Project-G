@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
+  m_Name: Factory2
+  m_EditorClassIdentifier: 
+  _Name: Factory 2
+  _Description: This should be a Scouter for Snipe/Pierce
+  _Generation: 0
+  _Status: IDLE
+  _WeaponPrefix: SC
+  _WeaponIdFormat: 000
+  _Floor: {fileID: 21300000, guid: bd38f85026904654894dc5cf46457abe, type: 3}
+  _Conveyor: {fileID: 21300000, guid: 39947b0b6a51059478e7a22418d401a7, type: 3}
+  _Border: {fileID: 21300000, guid: 729a22744bd0ba24a97709cc9b110666, type: 3}
+  _WeaponImages:
+  - {fileID: 21300000, guid: 8d0c44954cb8c1f4281a1a2b26a34029, type: 3}
+  - {fileID: 21300000, guid: 987b4eb0d066a7041be9354511934acd, type: 3}
+  - {fileID: 21300000, guid: 8647f436193ce3441b7e65ec62621082, type: 3}
+  - {fileID: 21300000, guid: b676bc3bff945084b8c1975c83135d26, type: 3}
+  - {fileID: 21300000, guid: c0444cfa08034b84091cbc60c8ade62a, type: 3}
+  _WeaponBigImages:
+  - {fileID: 21300000, guid: 96a764c7cb8f115499b9d3d1eec25d6f, type: 3}
+  - {fileID: 21300000, guid: e280751df211b204b92809cb37e51551, type: 3}
+  - {fileID: 21300000, guid: d686839b94b700343afc924126040f37, type: 3}
+  - {fileID: 21300000, guid: 7a9c2136542572f46a658772b0bb0ff4, type: 3}
+  - {fileID: 21300000, guid: 2598bda9e0f696f4f95f6629ea5a352f, type: 3}
+  _MainNormal: {fileID: 21300000, guid: 4ca914526a24bde4fb1bea2b44fe5549, type: 3}
+  _MainBroken: {fileID: 21300000, guid: 070a9964a2729c94dbbb93522573a62e, type: 3}
+  _Locker: {fileID: 21300000, guid: 7caa7eb7505e0c54c918c72e97d5924c, type: 3}
+  _Knapsacks:
+  - {fileID: 11400000, guid: 9d8143eaf46b47641a08e7d9831572de, type: 2}
+  _Items:
+  - {fileID: 11400000, guid: fb9b07a49dac8bd4d8c9a487a4ed73f2, type: 2}
+  - {fileID: 11400000, guid: c0275aabdefce254fbf3310124becf61, type: 2}
+  - {fileID: 11400000, guid: b5ef1e7d9a0996a459bc01fac68106c4, type: 2}
+  - {fileID: 11400000, guid: e9de4ff04f33e71468b964265ecc0257, type: 2}
+  - {fileID: 11400000, guid: c89f8c3cb31c3764ebb023b534c7a9bf, type: 2}
+  - {fileID: 11400000, guid: a8eb60d19f9be504a82a0891de6435f9, type: 2}
+  - {fileID: 11400000, guid: 83027f9be05fdc44583b9df3ef174cca, type: 2}
+  - {fileID: 11400000, guid: e24fdd0705516e348999ecc8892c7262, type: 2}
+  - {fileID: 11400000, guid: af8e347f3831e044795478d6d858de1c, type: 2}
+  - {fileID: 11400000, guid: 0ac9df2688b0f2f4cb140db9af2fb924, type: 2}
+  _MaxFitness: 50
+  _ChromoDatabase: {fileID: 11400000, guid: e479ac6f760acbd4ab425faeb3c2480f, type: 2}
+  _PopulationCount: 100

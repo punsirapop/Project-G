@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e2b8e8c35adc04495a70293115b6db, type: 3}
+  m_Name: Factory4
+  m_EditorClassIdentifier: 
+  _Name: Factory 4
+  _Description: This should be a Grenade Launcher for AOE heal/ AOE damage
+  _Generation: 0
+  _Status: IDLE
+  _WeaponPrefix: GL
+  _WeaponIdFormat: 000
+  _Floor: {fileID: 21300000, guid: 14977638b0939ac4491a61928676a6ca, type: 3}
+  _Conveyor: {fileID: 21300000, guid: d363c177a3790ec43b4baf7895277756, type: 3}
+  _Border: {fileID: 21300000, guid: d60282bc9dda9ea429714317b60c7ac2, type: 3}
+  _WeaponImages:
+  - {fileID: 21300000, guid: 7b3cc3921fd88f44282c17c17b83cb3f, type: 3}
+  - {fileID: 21300000, guid: 1cac04597d4aa764c85e046df068c936, type: 3}
+  - {fileID: 21300000, guid: 18b618ea50320c346863450e07c119be, type: 3}
+  - {fileID: 21300000, guid: 62dcd47ccccb8164f8c4509aeaa1793d, type: 3}
+  - {fileID: 21300000, guid: 510e8c1fa4a8aa04484b2ecd9b709895, type: 3}
+  _WeaponBigImages:
+  - {fileID: 21300000, guid: 9e6410a2d5a3cc848b7ed1e203006d6e, type: 3}
+  - {fileID: 21300000, guid: 72b9155ec26de364eac6656d205e3757, type: 3}
+  - {fileID: 21300000, guid: 8c105dbdc9451bc4590b45c997ea094e, type: 3}
+  - {fileID: 21300000, guid: b272df7d31eda4847b8d83573801dbc7, type: 3}
+  - {fileID: 21300000, guid: b7e10f0adda8e374aab9fc778b7ab6dd, type: 3}
+  _MainNormal: {fileID: 21300000, guid: ba61822b3210bc94aa09266792f13ac5, type: 3}
+  _MainBroken: {fileID: 21300000, guid: 7afd6021af2bab24588fe48e0489fee1, type: 3}
+  _Locker: {fileID: 21300000, guid: bdfe880390322144ca89cfeb99d56b2e, type: 3}
+  _Knapsacks:
+  - {fileID: 11400000, guid: efd27eb5ceb6e924e98e1a0ccd1b7b42, type: 2}
+  - {fileID: 11400000, guid: d45f8ff6abb1acf4bad08edf90bb0d5d, type: 2}
+  _Items:
+  - {fileID: 11400000, guid: fb9b07a49dac8bd4d8c9a487a4ed73f2, type: 2}
+  - {fileID: 11400000, guid: c0275aabdefce254fbf3310124becf61, type: 2}
+  - {fileID: 11400000, guid: b5ef1e7d9a0996a459bc01fac68106c4, type: 2}
+  - {fileID: 11400000, guid: e9de4ff04f33e71468b964265ecc0257, type: 2}
+  - {fileID: 11400000, guid: c89f8c3cb31c3764ebb023b534c7a9bf, type: 2}
+  - {fileID: 11400000, guid: a8eb60d19f9be504a82a0891de6435f9, type: 2}
+  - {fileID: 11400000, guid: 83027f9be05fdc44583b9df3ef174cca, type: 2}
+  - {fileID: 11400000, guid: e24fdd0705516e348999ecc8892c7262, type: 2}
+  - {fileID: 11400000, guid: af8e347f3831e044795478d6d858de1c, type: 2}
+  - {fileID: 11400000, guid: 0ac9df2688b0f2f4cb140db9af2fb924, type: 2}
+  _MaxFitness: 50
+  _ChromoDatabase: {fileID: 11400000, guid: 7e3db59a14e5dad428dcf9742e3bcc2e, type: 2}
+  _PopulationCount: 100
