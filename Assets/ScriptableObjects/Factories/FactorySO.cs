@@ -17,7 +17,7 @@ public class FactorySO : ScriptableObject
     [SerializeField] private string _WeaponPrefix;
     [SerializeField] private string _WeaponIdFormat;
 
-    // Sprites
+    // Interior Sprites
     [SerializeField] private Sprite _Floor;
     public Sprite Floor => _Floor;
     [SerializeField] private Sprite _Conveyor;
@@ -28,6 +28,13 @@ public class FactorySO : ScriptableObject
 
     [SerializeField] private Sprite[] _WeaponBigImages;
 
+    // Exterior Sprites
+    [SerializeField] private Sprite _MainNormal;
+    public Sprite MainNormal => _MainNormal;
+    [SerializeField] private Sprite _MainBroken;
+    public Sprite MainBroken => _MainBroken;
+    [SerializeField] private Sprite _Locker;
+    public Sprite Locker => _Locker;
 
     // Knapsack and items preset
     [SerializeField] private KnapsackSO[] _Knapsacks;
