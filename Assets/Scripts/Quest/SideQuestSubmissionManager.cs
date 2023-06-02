@@ -11,7 +11,7 @@ public class SideQuestSubmissionManager : MonoBehaviour
 
     // Quest information
     private static SideQuestSO _CurrentQuest;
-    public Tuple<MechChromoSO, int> SelectedMech { get; private set; }
+    public Tuple<MechChromo, int> SelectedMech { get; private set; }
     public float SimilarityRate { get; private set; }
     // Actual UI element
     [SerializeField] private GameObject _OneQuestDetailPanel;
@@ -33,7 +33,7 @@ public class SideQuestSubmissionManager : MonoBehaviour
     public void Start()
     {
         _OneQuestDetailPanel.GetComponent<QuestDetailOverlay>().SetOverlay(_CurrentQuest);
-        SelectedMech = Tuple.Create<MechChromoSO, int>(null, -1);
+        SelectedMech = Tuple.Create<MechChromo, int>(null, -1);
         RenderPanel();
     }
 
@@ -149,7 +149,7 @@ public class SideQuestSubmissionManager : MonoBehaviour
         // Don't forget to refresh UI by calling RenderPanel() after _SelectedMech is set
     }
 
-    public void UpdateSelection(Tuple<MechChromoSO, int> m)
+    public void UpdateSelection(Tuple<MechChromo, int> m)
     {
         SelectedMech = m;
         SimilarityRate = m.Item2 == -1 ? 0f : m.Item1.CompareMechQuest(_CurrentQuest.WantedMech) / 100f;

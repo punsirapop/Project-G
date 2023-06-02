@@ -9,28 +9,33 @@ using UnityEngine.UI;
 [Serializable]
 public class ArenaManager : MonoBehaviour
 {
-    [SerializeField] private Sprite[] _EffectSprites, _WeaponSprites, _WeaponRanks, _BulletSprites;
-    public static Sprite[] EffectSprites, WeaponSprites, WeaponRanks, BulletSprites;
+    public static ArenaManager Instance;
 
-    [SerializeField] GameObject _EntrancePanel, _DefaultPanel, _NotifBox;
-    [SerializeField] TextMeshProUGUI _Text;
-    [SerializeField] TextMeshProUGUI _EntranceFeeText;
-
-    [SerializeField] private int _EntranceFee;
+    [SerializeField] private Sprite[] _EffectSprites, _WeaponSprites, _WeaponRanks,
+        _BulletSprites, _MedalSprites;
+    public static Sprite[] EffectSprites, WeaponSprites, WeaponRanks, BulletSprites, MedalSprites;
 
     public static int EnemyLevel;
+    public int RewardMoneyPerLevel;
+
+    [SerializeField] GameObject _DefaultPanel;
+    [SerializeField] Image[] _Medals;
+    [SerializeField] TextMeshProUGUI _Money;
 
     // Assign sprites from serialized field on editor to the static variable
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+
         EffectSprites = _EffectSprites;
         WeaponSprites = _WeaponSprites;
         WeaponRanks = _WeaponRanks;
         BulletSprites = _BulletSprites;
+        MedalSprites = _MedalSprites;
 
         EnemyLevel = 0;
 
-        _EntranceFeeText.text = PlayerManager.Money.ToString() + "/" + _EntranceFee.ToString();
+        RenderMedal();
     }
 
     public static Sprite GetWeaponImage(int weapon, int mode)
@@ -53,12 +58,47 @@ public class ArenaManager : MonoBehaviour
         return BulletSprites[Mathf.Max((int)b - 2, 0)];
     }
 
+    public static Sprite GetMedalSprite(WinType w)
+    {
+        return MedalSprites[(int)w];
+    }
+
+    public void BackToStart()
+    {
+        PlayerManager.BattleRecord.Add(BattleManager.WinningStatus);
+        switch (BattleManager.WinningStatus)
+        {
+            case WinType.WinHard:
+            case WinType.WinEasy:
+                PlayerManager.GainMoneyIfValid(RewardMoneyPerLevel * EnemyLevel);
+                break;
+            case WinType.Lose:
+                PlayerManager.SpendMoneyIfEnought(Mathf.Min(RewardMoneyPerLevel / 2, PlayerManager.Money));
+                break;
+            default:
+                break;
+        }
+        RenderMedal();
+        // _DefaultPanel.SetActive(true);
+    }
+
+    private void RenderMedal()
+    {
+        for (int i = 0; i < PlayerManager.BattleRecord.Count(); i++)
+        {
+            _Medals[i].color = Color.white;
+            _Medals[i].sprite = GetMedalSprite(PlayerManager.BattleRecord[i]);
+        }
+        _Money.text = PlayerManager.Money.ToString();
+    }
+
+    /*
     public void BackToStart()
     {
         switch (BattleManager.WinningStatus)
         {
             case 0:
-                PlayerManager.GainMoneyIfValid(500 * EnemyLevel);
+                PlayerManager.GainMoneyIfValid(_RewardMoneyPerLevel * EnemyLevel);
                 _DefaultPanel.SetActive(true);
                 break;
             case 1:
@@ -74,7 +114,9 @@ public class ArenaManager : MonoBehaviour
         }
         EnemyLevel = 0;
     }
+    */
 
+    /*
     public void ClickStart()
     {
         string s = null;
@@ -113,5 +155,15 @@ public class ArenaManager : MonoBehaviour
             _Text.text = s;
             _NotifBox.SetActive(true);
         }
+    }
+    */
+
+    [Serializable]
+    public enum WinType
+    {
+        WinHard,
+        WinEasy,
+        Tie,
+        Lose
     }
 }

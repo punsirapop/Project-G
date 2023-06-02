@@ -104,7 +104,7 @@ public class GeneticFunc : MonoBehaviour
                     while (u2 < r5)
                     {
                         index2++;
-                        u2 += tmp2.ElementAt(index2).Key;
+                        u2 += tmp2.ElementAt(index2).Value;
                     }
                     result.Add(tmp2.ElementAt(index2).Key);
                     break;

@@ -8,17 +8,22 @@ using UnityEngine;
 public class AllySelectionManager : MonoBehaviour
 {
     public static AllySelectionManager Instance;
-    public static event Action OnTeamChange;
 
+    // Current farm & mech index
     public int CurrentSelection;
 
     [SerializeField] GameObject _SelectionPanel;
+
+    // Team Detail setup displays
     [SerializeField] AMechButtonDisplay[] _Buttons;
     public AMechButtonDisplay[] Buttons => _Buttons;
+    // Mech line-up
     [SerializeField] ArenaMechDisplay[] _MechDisplays;
+
+    // Mech & weapon selection holders
     [SerializeField] Transform[] _Holders;
 
-    public MechChromoSO[] AllyMech => _Buttons.Select(x => x.MyMechSO).ToArray();
+    public MechChromo[] AllyMech => _Buttons.Select(x => x.MyMechSO).ToArray();
     public WeaponChromosome[] AllyWeapon => _Buttons.Select(x => x.MyWeaponSO).ToArray();
 
     private void Start()
@@ -28,6 +33,7 @@ public class AllySelectionManager : MonoBehaviour
         CurrentSelection = -1;
     }
 
+    // Select which position to edit
     public void OpenSelector(int index)
     {
         CurrentSelection = index;
@@ -41,7 +47,8 @@ public class AllySelectionManager : MonoBehaviour
         _Holders[1].BroadcastMessage("AdjustingTeam",SendMessageOptions.DontRequireReceiver);
     }
 
-    public void SelectingMech(MechChromoSO m)
+    // Message Sent from mech selection panel
+    public void SelectingMech(MechChromo m)
     {
         if (!AllyMech.Contains(m) || m == AllyMech[CurrentSelection])
         {
@@ -52,6 +59,7 @@ public class AllySelectionManager : MonoBehaviour
         }
     }
 
+    // Message Sent from weapon selection panel
     public void SelectingWeapon(WeaponChromosome w)
     {
         if (!AllyWeapon.Contains(w) || w == AllyWeapon[CurrentSelection])
@@ -63,6 +71,7 @@ public class AllySelectionManager : MonoBehaviour
         }
     }
 
+    // Close selector
     public void CloseSelector()
     {
         _SelectionPanel.SetActive(false);
@@ -72,6 +81,7 @@ public class AllySelectionManager : MonoBehaviour
         }
     }
 
+    // Remove all selected mech and weapon
     public void ClearSelection()
     {
         foreach (var item in _Buttons)
@@ -85,13 +95,13 @@ public class AllySelectionManager : MonoBehaviour
         }
     }
 
+    // Return from battle - turn on mechs
     public void BackToSelection()
     {
         foreach (var item in _MechDisplays)
         {
             item.gameObject.SetActive(true);
         }
-        if (BattleManager.WinningStatus == 1) ClearSelection();
     }
 
     /*

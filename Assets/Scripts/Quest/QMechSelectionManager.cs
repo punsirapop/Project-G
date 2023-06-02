@@ -40,7 +40,7 @@ public class QMechSelectionManager : MonoBehaviour
         Selected = null;
     }
 
-    public void Set(SideQuestSO sq, Tuple<MechChromoSO, int> selected)
+    public void Set(SideQuestSO sq, Tuple<MechChromo, int> selected)
     {
         foreach (Transform item in _MechHolder)
         {
@@ -53,7 +53,7 @@ public class QMechSelectionManager : MonoBehaviour
             m.GetComponent<MechCanvasDisplay>().SetChromo(item);
         }
         */
-        List<Tuple<MechChromoSO, int>> list = new List<Tuple<MechChromoSO, int>>();
+        List<Tuple<MechChromo, int>> list = new List<Tuple<MechChromo, int>>();
         for (int i = 0; i < PlayerManager.FarmDatabase.Length; i++)
         {
             if (PlayerManager.FarmDatabase[i].Status != Status.BREEDING &&
@@ -136,7 +136,7 @@ public class QMechSelectionManager : MonoBehaviour
         }
         else
         {
-            transform.parent.SendMessage("UpdateSelection", Tuple.Create<MechChromoSO, int>(null, -1));
+            transform.parent.SendMessage("UpdateSelection", Tuple.Create<MechChromo, int>(null, -1));
         }
     }
 }

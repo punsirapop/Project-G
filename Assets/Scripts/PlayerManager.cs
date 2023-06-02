@@ -9,7 +9,12 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 {
     public static PlayerManager Instance;
 
+    public static string Name;
+
     public static int CurrentDialogueIndex = 0;
+
+    public static int MechIDCounter;
+    public static int MechCap;
 
     public static Date CurrentDate;
 
@@ -17,6 +22,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
 
     // Resources
     public static int Money { get; private set; }
+
+    // Arena
+    public static List<ArenaManager.WinType> BattleRecord;
 
     // ChapterSO for validation purpose
     public static ContentChapterSO[] ContentChapterDatabase;
@@ -27,14 +35,14 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int CurrentFarmIndex = 1;
     public static FactorySO[] FactoryDatabase;
     public static FarmSO[] FarmDatabase;
-    public static DialogueSO[] DialogueDatabase;//New*************************************
+    public static DialogueSO[] DialogueDatabase;
     public static FactorySO CurrentFactoryDatabase => FactoryDatabase[CurrentFactoryIndex];
     public static FarmSO CurrentFarmDatabase => FarmDatabase[CurrentFarmIndex];
     //public static DialogueSO CurrentDialogueDatabase => DialogueDatabase[CurrentDialogueIndex];//New*************************************
     public static DialogueSO CurrentDialogueDatabase;
     [SerializeField] private FactorySO[] FactoryDatabaseHelper;
     [SerializeField] private FarmSO[] FarmDatabaseHelper;
-    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;//New*************************************
+    [SerializeField] private DialogueSO[] DialogueDatabaseHelper;
 
     // Facility fixing
     public static bool FixingFacility = false;
@@ -42,7 +50,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static int FacilityToFixIndex;
     // Special case of fixing the last factory,
     // which is the only puzzle that involve more than one JigsawPieceSO
-    public static bool IsFixingLastFactory => (PlayerManager.FixingFacility && (PlayerManager.FacilityToFixIndex == 3));
+    public static bool IsFixingLastFactory => (FixingFacility && (FacilityToFixIndex == 3));
     public static JigsawPieceSO[] JigsawPieceForLastFactory;
     [SerializeField] private JigsawPieceSO[] JigsawPieceForLastFactoryHelper;
 
@@ -62,6 +70,9 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static SideQuestDatabaseSO SideQuestDatabase;
     [SerializeField] private SideQuestDatabaseSO _SideQuestDatabaseHelper;
 
+    // Shop
+    public static ShopSO Shop;
+    [SerializeField] private ShopSO _ShopHelper;
     // Capybara
     public static CapybaraDatabaseSO CapybaraDatabase;
     [SerializeField] private CapybaraDatabaseSO _CapybaraDatabaseHelper;
@@ -84,6 +95,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         MainQuestDatabase = _MainQuestDatabaseHelper;
         SideQuestDatabase = _SideQuestDatabaseHelper;
         InformationDatabase = InformationDatabaseHelper;
+        Shop = _ShopHelper;
         CapybaraDatabase = _CapybaraDatabaseHelper;
     }
 
@@ -120,6 +132,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         }
 
         FixingFacility = false;
+        if (MechCap == 0) MechCap = 4;
+
+        // Clear Arena Record
+        BattleRecord = new List<ArenaManager.WinType>();
     }
 
     private void OnDestroy()
@@ -130,7 +146,7 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void OnChangeDate(Date d)
     {
         int day = d.CompareDate(CurrentDate);
-        Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
+        // Debug.Log("ASK TO BREED FOR " + day + " FROM PM");
         for (int i = 0; i < day; i++)
         {
             foreach (var item in FarmDatabase)
@@ -151,6 +167,12 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         // Generate new capybara by skipped time
         CapybaraDatabase.AddChanceByDays(day);
 
+        // Restock shop
+        Shop.CheckRestockTime(CurrentDate, day);
+
+        // Clear Arena Record
+        BattleRecord = new List<ArenaManager.WinType>();
+
         CurrentDate = d.DupeDate();
 
         // Valdiate for checking expiration
@@ -161,23 +183,26 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (FarmDatabase.Any(x => x.MechChromos.Count > 0))
         {
             // Prepare stat caps
-            List<MechChromoSO> topAllies = new List<MechChromoSO>();
+            List<MechChromo> topAllies = new List<MechChromo>();
 
             foreach (var item in FarmDatabase)
             {
-                topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
-                    .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>());
+                if (item.MechChromos.Count > 0)
+                {
+                    topAllies.AddRange(EnemySelectionManager.GetStatFitnessDict(item.MechChromos, 0)
+                        .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromo>());
+                }
             }
 
-            MechChromoSO m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
-                .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromoSO>().First();
+            MechChromo m = EnemySelectionManager.GetStatFitnessDict(topAllies, 0)
+                .OrderByDescending(x => x.Value[0]).Select(x => x.Key).Cast<MechChromo>().First();
 
             // Increase cap until it's not S
             int extraCap = 0;
-            while (m.Rank == MechChromoSO.Ranks.S)
+            while (m.Rank == MechChromo.Ranks.S)
             {
                 extraCap++;
-                MechChromoSO.Cap++;
+                MechCap++;
                 m.SetRank();
             }
             // Set rank for every other mechs
@@ -227,6 +252,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         if (deductAmount <= Money)
         {
             Money -= deductAmount;
+            if (deductAmount > 0)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+            }
             return true;
         }
         else
@@ -240,6 +269,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
     public static void ForceSpendMoney(int deductAmount)
     {
         Money -= deductAmount;
+        if (deductAmount > 0)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect("SpendMoney");
+        }
     }
 
     // Gain money and return true if success, Otherwise, do nothing and return false
@@ -249,6 +282,10 @@ public class PlayerManager : MonoBehaviour, ISerializationCallbackReceiver
         {
             Debug.Log($"Giving Money {gainAmount}G");
             Money += gainAmount;
+            if (gainAmount > 0)
+            {
+                SoundEffectManager.Instance.PlaySoundEffect("GainMoney");
+            }
             return true;
         }
         else

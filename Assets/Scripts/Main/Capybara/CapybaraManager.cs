@@ -31,20 +31,11 @@ public class CapybaraManager : MonoBehaviour
         _Overlay.SetActive(false);
         _FirstTimeOverlay.SetActive(false);
         float spawnChance = PlayerManager.CapybaraDatabase.CumulativeSpawnChance;
-        // Immediately spawn if the chance surpass 100%
-        if (spawnChance >= 1)
+        // Random whether the capybara is spawned
+        if (Random.Range(0f, 1f) < spawnChance)
         {
             _SpawnCapybara();
             PlayerManager.CapybaraDatabase.OnSpawnCapybara();
-        }
-        // Random whether the capybara is spawned
-        else
-        {
-            if (Random.Range(0f, 1f) < spawnChance)
-            {
-                _SpawnCapybara();
-                PlayerManager.CapybaraDatabase.OnSpawnCapybara();
-            }
         }
     }
 
@@ -74,6 +65,7 @@ public class CapybaraManager : MonoBehaviour
             _FirstTimeOverlay.SetActive(true);
             PlayerManager.CapybaraDatabase.SetIsFirstSpawn(false);
         }
+        SoundEffectManager.Instance.PlaySoundEffect("CappySpawn");
     }
 
     // Open overlay when successfully tap capybara

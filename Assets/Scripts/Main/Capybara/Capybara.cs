@@ -82,6 +82,7 @@ public class Capybara : MonoBehaviour
         if (_TapCount >= _Capybara.RequiredTapCount)
         {
             _Capybara.Found();
+            SoundEffectManager.Instance.PlaySoundEffect("CappyFound");
             CapybaraManager.Instance.OpenOverlay(_Capybara);
             Destroy(gameObject);
         }

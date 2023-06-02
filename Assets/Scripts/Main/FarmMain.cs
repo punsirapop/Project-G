@@ -115,6 +115,7 @@ public class FarmMain : FarmMngFunc
         GetComponent<Animator>().enabled = false;
         PlayerManager.ValidateUnlocking();
         MainPageManager.Instance.RenderFacilities();
+        GetComponent<Animator>().Play("BuildSuccess");
     }
     #endregion
 

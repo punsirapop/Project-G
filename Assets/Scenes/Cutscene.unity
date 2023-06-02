@@ -275,7 +275,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 940}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &191444470
 MonoBehaviour:
@@ -394,11 +394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 327063014}
   - component: {fileID: 327063013}
   - component: {fileID: 327063016}
+  - component: {fileID: 327063017}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -783,6 +784,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &327063014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,6 +854,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &327063017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327063011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &331254483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,11 +1079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -610
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1559,11 +1585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2018,11 +2044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2280,6 +2306,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &950634688
@@ -2672,11 +2710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -890
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2791,6 +2829,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1132388732
@@ -3101,11 +3151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -750
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3325,6 +3375,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!114 &1293626700
 MonoBehaviour:
@@ -3397,6 +3459,7 @@ GameObject:
   - component: {fileID: 1331693914}
   - component: {fileID: 1331693913}
   - component: {fileID: 1331693916}
+  - component: {fileID: 1331693917}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -3481,6 +3544,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1331693914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,6 +3614,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1331693917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331693911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1352103878
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,9 +3798,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1389639801
 MonoBehaviour:
@@ -4233,7 +4321,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4519,11 +4607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -470
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4987,6 +5075,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1956437851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5040,7 +5140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2005137912
 RectTransform:
   m_ObjectHideFlags: 0

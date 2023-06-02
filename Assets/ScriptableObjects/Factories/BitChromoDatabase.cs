@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ScriptableObject", menuName = "ScriptableObject/BitChromoDatabase")]
@@ -9,8 +10,8 @@ public class BitChromoDatabase : ScriptableObject
     [System.Serializable]
     public class BitChromosome
     {
-        public int[] Bitstring1;
-        public int[] Bitstring2;
+        [SerializeField] public int[] Bitstring1;
+        [SerializeField] public int[] Bitstring2;
     }
 
     // Number of chromosome dimension
@@ -209,4 +210,16 @@ public class BitChromoDatabase : ScriptableObject
         }
         return resultPool;
     }
+
+    #region Save
+    public BitChromosome[] GetAll()
+    {
+        return _Population.ToArray();
+    }
+
+    public void SetAll(BitChromosome[] b)
+    {
+        _Population = b.ToArray();
+    }
+    #endregion
 }

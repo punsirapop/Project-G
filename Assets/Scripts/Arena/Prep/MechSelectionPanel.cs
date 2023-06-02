@@ -23,14 +23,14 @@ public class MechSelectionPanel : SelectionPanel
         OpenPanel(0);
     }
 
-    private Dictionary<dynamic, List<float>> GetFitnessDict(List<MechChromoSO> m)
+    private Dictionary<dynamic, List<float>> GetFitnessDict(List<MechChromo> m)
     {
         List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
         var dict = new Dictionary<dynamic, List<float>>();
 
         for (int i = 0; i < 4; i++) fv.Add(Tuple.Create(Properties.Com, i));
 
-        foreach (MechChromoSO c in m)
+        foreach (MechChromo c in m)
         {
             List<float> list = new List<float>();
             list.Add(c.GetFitness(fv));
@@ -73,7 +73,7 @@ public class MechSelectionPanel : SelectionPanel
 
     public void AutoSelect()
     {
-        List<MechChromoSO> list = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToList();
+        List<MechChromo> list = PlayerManager.FarmDatabase.SelectMany(x => x.MechChromos).ToList();
         Dictionary<dynamic, List<float>> fvDict = GetFitnessDict(list);
         fvDict = fvDict.OrderByDescending(x => x.Value[0]).ToDictionary(x => x.Key, x => x.Value);
         int tmp = AllySelectionManager.Instance.CurrentSelection;

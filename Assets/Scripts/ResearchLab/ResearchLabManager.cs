@@ -184,7 +184,9 @@ public class ResearchLabManager : MonoBehaviour
                 // So if we use said method it will trigger the first button in the previous tab instead
                 if (!firstButtonInvoked)
                 {
-                    newChapterButton.GetComponent<ChapterButton>().GetComponent<Button>().onClick.Invoke();
+                    //newChapterButton.GetComponent<ChapterButton>().GetComponent<Button>().onClick.Invoke();
+                    SetCurrentChapter(contentChapterGroup.ContentChapters[0]);
+                    newChapterButton.GetComponent<ChapterButton>().SetIsSelected(true);
                     firstButtonInvoked = true;
                 }
             }
