@@ -39,6 +39,15 @@ public class CalendarCell : MonoBehaviour
             default:
                 break;
         }
+        foreach (Transform item in _EventHolder)
+        {
+            Destroy(item.gameObject);
+        }
+
+        List<TimeManager.Date> l = PlayerManager.SideQuestDatabase.GetAllAcquiredQuest()
+            .Select(x => x.DueDate).ToList();
+        if (l.Contains(MyDate))
+            Instantiate(_EventPrefab, _EventHolder).GetComponent<Image>().color = Color.red;
     }
 
     public void ShowDate()

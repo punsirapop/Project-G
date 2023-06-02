@@ -275,7 +275,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 940}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &191444470
 MonoBehaviour:
@@ -394,11 +394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -434,7 +434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &248127129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ RectTransform:
   - {fileID: 751880184}
   - {fileID: 974159181}
   m_Father: {fileID: 1637827023}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -483,7 +483,7 @@ RectTransform:
   m_GameObject: {fileID: 296854836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 327063012}
@@ -491,10 +491,10 @@ RectTransform:
   m_Father: {fileID: 974159181}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 7.5248, y: 270.41974}
-  m_SizeDelta: {x: 927.2747, y: 137.33}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 92}
+  m_SizeDelta: {x: 0, y: 137.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &296854838
 MonoBehaviour:
@@ -514,7 +514,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 80
+  m_Spacing: 60
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 327063014}
   - component: {fileID: 327063013}
   - component: {fileID: 327063016}
+  - component: {fileID: 327063017}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -703,16 +704,16 @@ RectTransform:
   m_GameObject: {fileID: 327063011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1708719106}
   m_Father: {fileID: 296854837}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 258.63736, y: -106.165}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 330, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &327063013
@@ -783,6 +784,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &327063014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,6 +854,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &327063017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327063011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &331254483
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,10 +900,10 @@ RectTransform:
   m_Father: {fileID: 974159181}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.4921, y: -17.4821}
-  m_SizeDelta: {x: 1095.7454, y: 325.6736}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: -120, y: -220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331254485
 MonoBehaviour:
@@ -926,8 +952,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1053,11 +1079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -610
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1559,11 +1585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2018,11 +2044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2282,6 +2308,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &950634688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,7 +2444,7 @@ RectTransform:
   m_GameObject: {fileID: 974159180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 331254484}
@@ -2416,8 +2454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 117}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 882.1917, y: 495.4492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974159182
 MonoBehaviour:
@@ -2439,7 +2477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f73776e485732445bd98f9d100b2e39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5be672727cc97b439a3782b90e2ed4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2490,7 +2528,7 @@ RectTransform:
   m_Children:
   - {fileID: 2118900852}
   m_Father: {fileID: 1637827023}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2672,11 +2710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -890
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2730,7 +2768,7 @@ RectTransform:
   m_Children:
   - {fileID: 1352103879}
   m_Father: {fileID: 1637827023}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2791,6 +2829,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1132388732
@@ -3101,11 +3151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -750
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3259,7 +3309,7 @@ RectTransform:
   - {fileID: 1448588574}
   - {fileID: 574209284}
   m_Father: {fileID: 1637827023}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3323,6 +3373,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
@@ -3397,6 +3459,7 @@ GameObject:
   - component: {fileID: 1331693914}
   - component: {fileID: 1331693913}
   - component: {fileID: 1331693916}
+  - component: {fileID: 1331693917}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -3413,16 +3476,16 @@ RectTransform:
   m_GameObject: {fileID: 1331693911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1570336434}
   m_Father: {fileID: 296854837}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 668.6373, y: -106.165}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 330, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1331693913
@@ -3479,6 +3542,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1331693914
@@ -3539,6 +3614,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1331693917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331693911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614165d42eb65d443997506ae64efa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectName: Hover
 --- !u!1 &1352103878
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,9 +3798,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1389639801
 MonoBehaviour:
@@ -4233,7 +4321,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4375,10 +4463,10 @@ RectTransform:
   - {fileID: 2116388599}
   - {fileID: 1782990878}
   - {fileID: 1956437849}
-  - {fileID: 248127129}
   - {fileID: 1293626698}
   - {fileID: 994358912}
   - {fileID: 1132388730}
+  - {fileID: 248127129}
   - {fileID: 2005137912}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -4519,11 +4607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 676.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -470
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047561632480754630, guid: 6be36b99204665649a5712bd632dbee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4987,6 +5075,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202416121}
+        m_TargetAssemblyTypeName: SoundEffectHolder, Assembly-CSharp
+        m_MethodName: PlaySoundEffect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1956437851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5040,7 +5140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2005137912
 RectTransform:
   m_ObjectHideFlags: 0

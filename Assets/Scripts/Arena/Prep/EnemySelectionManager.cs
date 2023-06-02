@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,13 +16,14 @@ public class EnemySelectionManager : MonoBehaviour
     [SerializeField] Image[] _WeaponIcons;
     [SerializeField] AMechDisplay[] _MechBars;
     [SerializeField] ArenaMechDisplay[] _MechLineUp;
+    [SerializeField] TextMeshProUGUI _RewardMoneyText;
 
-    List<MechChromoSO> _EnemyPool;
+    List<MechChromo> _EnemyPool;
     List<WeaponChromosome> _WeaponPool;
-    List<List<Tuple<MechChromoSO, WeaponChromosome>>> _EnemyParties;
+    List<List<Tuple<MechChromo, WeaponChromosome>>> _EnemyParties;
 
-    MechChromoSO[] _EnemyTeam => _MechBars.Select(x => x.MyMechSO).ToArray();
-    public MechChromoSO[] EnemyTeam => _EnemyTeam;
+    MechChromo[] _EnemyTeam => _MechBars.Select(x => x.MyMechSO).ToArray();
+    public MechChromo[] EnemyTeam => _EnemyTeam;
     WeaponChromosome[] _EnemyWeapon => _MechBars.Select(x => x.MyWeaponSO).ToArray();
     public WeaponChromosome[] EnemyWeapon => _EnemyWeapon;
 
@@ -35,25 +37,33 @@ public class EnemySelectionManager : MonoBehaviour
     public void CreateNewEnemies()
     {
         // Prepare stat caps
-        List<MechChromoSO> topAllies = new List<MechChromoSO>();
+        List<MechChromo> topAllies = new List<MechChromo>();
 
         foreach (var item in PlayerManager.FarmDatabase)
         {
-            topAllies.AddRange(GetFitnessDict(item.MechChromos, 0)
+            topAllies.AddRange(GetStatFitnessDict(item.MechChromos, 0)
                 .OrderByDescending(x => x.Value[0]).Select(x => x.Key)
                 .Take(Mathf.Min(item.MechChromos.Count, 10)));
         }
 
         Debug.Log("Top Allies Count: " + topAllies.Count);
-        topAllies = GetFitnessDict(topAllies, 0).OrderByDescending(x => x.Value[0])
-            .Select(x => x.Key).Cast<MechChromoSO>()
+        topAllies = GetStatFitnessDict(topAllies, 0).OrderByDescending(x => x.Value[0])
+            .Select(x => x.Key).Cast<MechChromo>()
             .Take(Mathf.Min(topAllies.Count, 3)).ToList();
         int cap3 = Mathf.CeilToInt
             (topAllies.Sum(x => x.Atk.Sum() + x.Def.Sum() + x.Hp.Sum() + x.Spd.Sum()) / 3);
+        /*
         int cap1 = topAllies.First().Atk.Sum() + topAllies.First().Def.Sum()
             + topAllies.First().Hp.Sum() + topAllies.First().Spd.Sum();
+        */
 
-        Debug.Log($"{cap1 + 2} - {cap3}");
+        // Increase a cap for hard team and decrease for easy team
+        int win = PlayerManager.BattleRecord.Where(x => x == ArenaManager.WinType.WinHard).Count() +
+            Mathf.FloorToInt(PlayerManager.BattleRecord.Where(x => x == ArenaManager.WinType.WinEasy).Count() / 2);
+        int hard = cap3 + win;    // More hard
+        int easy = cap3 - 4 + win;    // More easy
+
+        Debug.Log($"Hard: {hard} - Easy:{easy}");
 
         _WeaponPool = new List<WeaponChromosome>();
         foreach (var item in PlayerManager.FactoryDatabase.Where(x => x.LockStatus == LockableStatus.Unlock))
@@ -66,26 +76,26 @@ public class EnemySelectionManager : MonoBehaviour
         }
 
         // Generate hard enemies
-        _EnemyPool = new List<MechChromoSO>();
-        _EnemyParties = new List<List<Tuple<MechChromoSO, WeaponChromosome>>>();
+        _EnemyPool = new List<MechChromo>();
+        _EnemyParties = new List<List<Tuple<MechChromo, WeaponChromosome>>>();
 
         for (int i = 0; i < 10; i++)
         {
-            _EnemyPool.Add(ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO);
-            _EnemyPool.Last().SetRandomStat2(cap1);
-            MechChromoSO.IDCounter--;
+            _EnemyPool.Add(new MechChromo(null));
+            _EnemyPool.Last().SetRandomStat2(hard);
+            PlayerManager.MechIDCounter--;
         }
 
-        List<MechChromoSO> list = new List<MechChromoSO>();
-        list.Add(GetFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
+        List<MechChromo> list = new List<MechChromo>();
+        list.Add(GetStatFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(0, GetFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
+        list.Insert(0, GetStatFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(1, GetFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
+        list.Insert(1, GetStatFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).First().Key);
 
-        List<Tuple<MechChromoSO, WeaponChromosome>> a 
-            = new List<Tuple<MechChromoSO, WeaponChromosome>>();
+        List<Tuple<MechChromo, WeaponChromosome>> a 
+            = new List<Tuple<MechChromo, WeaponChromosome>>();
         foreach (var item in list)
         {
             a.Add(Tuple.Create(item, _WeaponPool[UnityEngine.Random.Range(0, _WeaponPool.Count)]));
@@ -94,24 +104,24 @@ public class EnemySelectionManager : MonoBehaviour
         _EnemyParties.Add(a);
 
         // Generate easy enemies
-        _EnemyPool = new List<MechChromoSO>();
+        _EnemyPool = new List<MechChromo>();
 
         for (int i = 0; i < 10; i++)
         {
-            _EnemyPool.Add(ScriptableObject.CreateInstance(typeof(MechChromoSO)) as MechChromoSO);
-            _EnemyPool.Last().SetRandomStat2(cap3);
-            MechChromoSO.IDCounter--;
+            _EnemyPool.Add(new MechChromo(null));
+            _EnemyPool.Last().SetRandomStat2(easy);
+            PlayerManager.MechIDCounter--;
         }
 
-        list = new List<MechChromoSO>();
-        list.Add(GetFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
+        list = new List<MechChromo>();
+        list.Add(GetStatFitnessDict(_EnemyPool, 1).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(0, GetFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
+        list.Insert(0, GetStatFitnessDict(_EnemyPool, 2).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).ThenByDescending(x => x.Value[1]).First().Key);
-        list.Insert(1, GetFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
+        list.Insert(1, GetStatFitnessDict(_EnemyPool, 0).Where(x => !list.Contains(x.Key)).
             OrderByDescending(x => x.Value[0]).First().Key);
 
-        a = new List<Tuple<MechChromoSO, WeaponChromosome>>();
+        a = new List<Tuple<MechChromo, WeaponChromosome>>();
         foreach (var item in list)
         {
             a.Add(Tuple.Create(item, _WeaponPool[UnityEngine.Random.Range(0, _WeaponPool.Count)]));
@@ -137,6 +147,7 @@ public class EnemySelectionManager : MonoBehaviour
      */
     public void SetLineUp(int m)
     {
+        // Set team
         for (int i = 0; i < 3; i++)
         {
             _MechLineUp[i].SetChromo(_EnemyParties[m][i].Item1);
@@ -145,6 +156,8 @@ public class EnemySelectionManager : MonoBehaviour
             _MechBars[i].SetWeapon(_EnemyParties[m][i].Item2);
         }
         ArenaManager.EnemyLevel = m == 0 ? 2 : 1;
+        // Set reward text
+        _RewardMoneyText.text = "+" + (ArenaManager.EnemyLevel * ArenaManager.Instance.RewardMoneyPerLevel).ToString();
     }
 
     public void CloseLineUp()
@@ -164,14 +177,14 @@ public class EnemySelectionManager : MonoBehaviour
      * 1 - offensive
      * 2 - defensive
      */
-    private Dictionary<dynamic, List<float>> GetFitnessDict(List<MechChromoSO> m, int mode)
+    public static Dictionary<dynamic, List<float>> GetStatFitnessDict(List<MechChromo> m, int mode)
     {
         List<Tuple<Properties, int>> fv = new List<Tuple<Properties, int>>();
         var dict = new Dictionary<dynamic, List<float>>();
 
         for (int i = 0; i < 4; i++) fv.Add(Tuple.Create(Properties.Com, i));
 
-        foreach (MechChromoSO c in m)
+        foreach (MechChromo c in m)
         {
             List<float> list = new List<float>();
             list.Add(c.GetFitness(fv));

@@ -59,7 +59,7 @@ public class FarmManager : FarmMngFunc
             }
         }
         _BGRenderer.sprite = PlayerManager.CurrentFarmDatabase.BG;
-        _GaugeRenderer.fillAmount = PlayerManager.CurrentFarmDatabase.BreedGuage / 100;
+        _GaugeRenderer.fillAmount = PlayerManager.CurrentFarmDatabase.BreedGauge / 100;
 
         OpenPanel(0);
         OnChangeStatus(PlayerManager.CurrentFarmDatabase, PlayerManager.CurrentFarmDatabase.Status);
@@ -121,7 +121,7 @@ public class FarmManager : FarmMngFunc
      * Input
      *      c: chromosome scriptable object
      */
-    private void AddMech(MechChromoSO c)
+    private void AddMech(MechChromo c)
     {
         Vector2 spawnPoint = new Vector2(UnityEngine.Random.Range(border[0].position.x, border[1].position.x),
             UnityEngine.Random.Range(border[0].position.y, border[1].position.y));
@@ -137,7 +137,7 @@ public class FarmManager : FarmMngFunc
      * Input
      *      c: chromosome scriptable object
      */
-    private void DelMech(MechChromoSO c)
+    private void DelMech(MechChromo c)
     {
         GameObject m = mechs.Find(x => x.GetComponent<MechDisplay>().MySO == c);
         mechs.Remove(m);

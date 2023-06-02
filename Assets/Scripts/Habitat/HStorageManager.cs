@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UI;
@@ -78,7 +76,7 @@ public class HStorageManager : MonoBehaviour
             List<OrderFormat> fv = new List<OrderFormat>();
             foreach (var item in fvDict)
             {
-                MechChromoSO c = item.Key;
+                MechChromo c = item.Key;
                 OrderFormat of = new OrderFormat();
                 of.name = c.ID;
                 of.chromo = c;
@@ -92,7 +90,7 @@ public class HStorageManager : MonoBehaviour
             {
                 GameObject m = _Pool.Get();
                 m.GetComponent<MechCanvasDisplay>().SetChromo(item.chromo);
-                Debug.Log(item.name + " - " + item.fitness);
+                // Debug.Log(item.name + " - " + item.fitness);
             }
         }
     }

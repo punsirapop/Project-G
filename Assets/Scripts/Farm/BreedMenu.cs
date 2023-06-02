@@ -185,19 +185,20 @@ public class BreedMenu : MonoBehaviour
         myFarm.SetStatus(Status.BREEDING);
     }
 
+    [Serializable]
     public struct BreedPref
     {
-        int elitismRate;
+        [SerializeField] int elitismRate;
         public int ElitismRate => elitismRate;
-        int typeParentSelect;
+        [SerializeField] int typeParentSelect;
         public int TypeParentSelect => typeParentSelect;
-        int kSelect;
+        [SerializeField] int kSelect;
         public int KSelect => kSelect;
-        int typeCrossover;
+        [SerializeField] int typeCrossover;
         public int TypeCrossover => typeCrossover;
-        int mutationRate;
+        [SerializeField] int mutationRate;
         public int MutationRate => mutationRate;
-        int breedGen;
+        [SerializeField] int breedGen;
         public int BreedGen => breedGen;
 
         public BreedPref(int ElitismRate, int TypeParentSelect, int KSelect,
@@ -213,6 +214,7 @@ public class BreedMenu : MonoBehaviour
 
         public BreedPref Copy()
         {
+            // Debug.Log("Copying BreedPref");
             return new BreedPref(ElitismRate, TypeParentSelect, KSelect,
                 TypeCrossover, MutationRate, BreedGen);
         }
@@ -228,17 +230,35 @@ public class BreedMenu : MonoBehaviour
         }
     }
 
+    [Serializable]
     public struct BreedInfo
     {
-        FarmSO myFarm;
-        public FarmSO MyFarm => myFarm;
-        List<Tuple<Properties, int>> currentPref;
-        public List<Tuple<Properties, int>> CurrentPref => currentPref;
+        [SerializeField] FarmSO _MyFarm;
+        public FarmSO MyFarm => _MyFarm;
+        [SerializeField] List<Tuple<Properties, int>> _CurrentPref;
+        public List<Tuple<Properties, int>> CurrentPref => _CurrentPref;
 
         public BreedInfo (FarmSO ThisFarm, List<Tuple<Properties, int>> ThisCurrentPref)
         {
-            myFarm = ThisFarm;
-            currentPref = ThisCurrentPref;
+            _MyFarm = ThisFarm;
+            if (ThisCurrentPref != null)
+            {
+                _CurrentPref = new List<Tuple<Properties, int>>();
+                foreach (var item in ThisCurrentPref)
+                {
+                    _CurrentPref.Add(Tuple.Create(item.Item1, item.Item2));
+                }
+            }
+            else
+            {
+                _CurrentPref = new List<Tuple<Properties, int>>();
+            }
+        }
+
+        public BreedInfo Copy()
+        {
+            // Debug.Log("Copying BreedInfo");
+            return new BreedInfo(MyFarm, CurrentPref);
         }
 
         /*
@@ -251,17 +271,17 @@ public class BreedMenu : MonoBehaviour
          */
         public void BreedMe()
         {
-            List<MechChromoSO> elites = new List<MechChromoSO>();
+            List<MechChromo> elites = new List<MechChromo>();
 
             // ------- get fitness -------
             Dictionary<dynamic, float> fv = new Dictionary<dynamic, float>();
-            foreach (MechChromoSO c in myFarm.MechChromos)
+            foreach (MechChromo c in _MyFarm.MechChromos)
             {
-                fv.Add(c, c.GetFitness(currentPref));
+                fv.Add(c, c.GetFitness(_CurrentPref));
             }
 
             // ------- get elites -------
-            for (int i = 0; i < Mathf.RoundToInt(fv.Count * myFarm.BreedPref.ElitismRate / 100); i++)
+            for (int i = 0; i < Mathf.RoundToInt(fv.Count * _MyFarm.BreedPref.ElitismRate / 100); i++)
             {
                 elites.Add(fv.ElementAt(i).Key);
             }
@@ -279,7 +299,7 @@ public class BreedMenu : MonoBehaviour
             // ------- crossover according to chosen type -------
             List<List<List<int>>> parentsEncoded = new List<List<List<int>>>();
             // encode dem parents and add to list
-            foreach (MechChromoSO c in parents)
+            foreach (MechChromo c in parents)
             {
                 parentsEncoded.Add(c.GetChromosome());
                 // Debug.Log(string.Join("-", parentsEncoded[parentsEncoded.Count-1]));
@@ -304,7 +324,7 @@ public class BreedMenu : MonoBehaviour
             // Debug.Log("0 Mechs in farm: " + myFarm.MechChromos.Count);
 
             // ------- clear farm -------
-            List<MechChromoSO> deleteMe = new List<MechChromoSO>(myFarm.MechChromos);
+            List<MechChromo> deleteMe = new List<MechChromo>(_MyFarm.MechChromos);
             // keep those elites to the next generation
             foreach (var item in elites)
             {
@@ -319,11 +339,11 @@ public class BreedMenu : MonoBehaviour
             // Debug.Log("1 Mechs in farm: " + myFarm.MechChromos.Count);
 
             // ------- create new chromosomes -------
-            List<MechChromoSO> children = new List<MechChromoSO>();
+            List<MechChromo> children = new List<MechChromo>();
             foreach (var item in parentsEncoded)
             {
                 FarmManager.Instance.AddChromo(MyFarm, 1);
-                children.Add(myFarm.MechChromos.Last());
+                children.Add(_MyFarm.MechChromos.Last());
                 children.Last().SetChromosome(item);
 
                 // FarmManager.Instance.mechs.Last().GetComponent<MechDisplay>().SetChromo(children.Last());

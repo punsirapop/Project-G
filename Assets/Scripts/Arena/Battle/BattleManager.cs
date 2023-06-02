@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using static MechChromoSO;
+using static MechChromo;
 
 public class BattleManager : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class BattleManager : MonoBehaviour
     public static BattleManager Instance;
     public static Phases CurrentPhase;
     // 0: win, 1: lose, 2: tie
-    public static int WinningStatus;
+    public static ArenaManager.WinType WinningStatus;
 
     [SerializeField] BattleMechManager[] _AllyBattleStats, _EnemyBattleStats;
     [SerializeField] ArenaMechDisplay[] _AllyBattleLineUp, _EnemyBattleLineUp;
@@ -29,8 +29,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] GameObject _StatPanel;
     [SerializeField] EndResult _EndResult;
 
-    MechChromoSO[] _AllyTeam => AllySelectionManager.Instance.AllyMech;
-    MechChromoSO[] _EnemyTeam => EnemySelectionManager.Instance.EnemyTeam;
+    MechChromo[] _AllyTeam => AllySelectionManager.Instance.AllyMech;
+    MechChromo[] _EnemyTeam => EnemySelectionManager.Instance.EnemyTeam;
     WeaponChromosome[] _AllyWeapon => AllySelectionManager.Instance.AllyWeapon;
     WeaponChromosome[] _EnemyWeapon => EnemySelectionManager.Instance.EnemyWeapon;
 
@@ -71,7 +71,8 @@ public class BattleManager : MonoBehaviour
     public void CheckStartFight()
     {
         _FightButton.interactable = !_AllyTeam.Any(x => x == null) && !_EnemyTeam.Any(x => x == null) &&
-            !_AllyWeapon.Any(x => x == null) && !_EnemyWeapon.Any(x => x == null);
+            !_AllyWeapon.Any(x => x == null) && !_EnemyWeapon.Any(x => x == null) &&
+            PlayerManager.BattleRecord.Count() < 5;
     }
 
     // Randomly choose attack target
@@ -144,10 +145,10 @@ public class BattleManager : MonoBehaviour
     {
         BattleMechManager Attacker = Identify(attacker, 0);
         WeaponChromosome AttackerW = Identify(attacker, 1);
-        MechChromoSO AttackerSO = Identify(attacker, 2);
+        MechChromo AttackerSO = Identify(attacker, 2);
         BattleMechManager Receiver = Identify(receiver, 0);
         WeaponChromosome ReceiverW = Identify(receiver, 1);
-        MechChromoSO ReceiverSO = Identify(receiver, 2);
+        MechChromo ReceiverSO = Identify(receiver, 2);
 
         switch ((BulletType)attacker[2])
         {
@@ -312,9 +313,10 @@ public class BattleManager : MonoBehaviour
         float allyHp = _AllyBattleStats.Select(x => x.HpCurrent).Sum();
         float enemyHp = _EnemyBattleStats.Select(x => x.HpCurrent).Sum();
 
-        if (allyHp > enemyHp) WinningStatus = 0;
-        else if (allyHp < enemyHp) WinningStatus = 1;
-        else WinningStatus = 2;
+        if (allyHp > enemyHp) WinningStatus = ArenaManager.EnemyLevel == 2 ?
+                ArenaManager.WinType.WinHard : ArenaManager.WinType.WinEasy;
+        else if (allyHp < enemyHp) WinningStatus = ArenaManager.WinType.Lose;
+        else WinningStatus = ArenaManager.WinType.Tie;
 
         yield return new WaitForSeconds(1f);
         _StatPanel.SetActive(false);

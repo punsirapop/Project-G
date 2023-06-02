@@ -10,7 +10,7 @@ using UnityEngine;
 public class MechDisplay : MonoBehaviour
 {
     // Chromosome of this mech
-    public MechChromoSO MySO;
+    public MechChromo MySO;
 
     // head, body-line, body-color, acc
     [SerializeField] public SpriteRenderer[] MyRenderer;
@@ -21,7 +21,7 @@ public class MechDisplay : MonoBehaviour
      * Input:
      *      c: chromosome scriptable object
      */
-    public virtual void SetChromo(MechChromoSO c)
+    public virtual void SetChromo(MechChromo c)
     {
         MySO = c;
         MyRenderer[0].sprite = Resources.Load<Sprite>

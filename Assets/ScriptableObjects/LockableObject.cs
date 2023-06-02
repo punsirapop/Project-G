@@ -9,7 +9,9 @@ public class LockableObject : ScriptableObject
     [SerializeField] protected LockableStatus _LockStatus;
     public LockableStatus LockStatus => _LockStatus;
     [SerializeField] protected int _RequiredMoney;
+    public int RequiredMoney => _RequiredMoney;
     [SerializeField] protected LockableObject[] _RequiredObjects;
+    public LockableObject[] RequiredObjects => _RequiredObjects;
 
     public virtual string GetRequirementPrefix()
     {

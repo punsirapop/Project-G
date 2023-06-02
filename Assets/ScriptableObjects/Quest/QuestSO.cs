@@ -21,6 +21,7 @@ public class QuestSO : ScriptableObject
     [SerializeField] protected DialogueSO _OutroDialogue;
     public DialogueSO OutroDialogue => _OutroDialogue;
 
+    [System.Serializable]
     public enum Status
     {
         Unacquired,     // Unacquired quest
@@ -98,5 +99,11 @@ public class QuestSO : ScriptableObject
     public void ForceCompleteQuest()
     {
         _QuestStatus = Status.Completed;
+    }
+
+    // Save - Load
+    public void Load(Status s)
+    {
+        _QuestStatus = s;
     }
 }

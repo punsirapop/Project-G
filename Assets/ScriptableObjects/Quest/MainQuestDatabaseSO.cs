@@ -6,8 +6,11 @@ using UnityEngine;
 public class MainQuestDatabaseSO : ScriptableObject
 {
     [SerializeField] private MainQuestSO[] _MainQuests;
+    public MainQuestSO[] MainQuests => _MainQuests;
     private int _CurrentQuestIndex;
+    public int CurrentQuestIndex => _CurrentQuestIndex;
     private static bool _IsDayPassed;   // Boolean to control the quest refreshing, new quest available after the day pass
+    public static bool IsDayPassed => _IsDayPassed;
 
     private void OnEnable()
     {
@@ -41,15 +44,34 @@ public class MainQuestDatabaseSO : ScriptableObject
 
     public MainQuestSO GetCurrentQuest()
     {
-        Debug.Log("Get current main quest");
-        Debug.Log("Index exceed = " + (_CurrentQuestIndex > _MainQuests.Length - 1).ToString());
-        Debug.Log("Not _IsDayPassed = " + (!_IsDayPassed).ToString());
-        if ((_CurrentQuestIndex > _MainQuests.Length - 1) ||
-            (!_IsDayPassed))
+        // If a day didn't since last quest complete, don't give any quest yet
+        if (!_IsDayPassed)
+        {
+            return null;
+        }
+        // If ran out of quest, return nothing
+        if (_CurrentQuestIndex > _MainQuests.Length - 1)
         {
             return null;
         }
         return _MainQuests[_CurrentQuestIndex];
+    }
+
+    public MainQuestSO GetQuestProgress()
+    {
+        // All quest ran out, return last quest
+        if (_CurrentQuestIndex > _MainQuests.Length - 1)
+        {
+            return _MainQuests[_MainQuests.Length - 1];
+        }
+        // Don't skip day yet, return last completed quest
+        if (!_IsDayPassed)
+        {
+            return _MainQuests[_CurrentQuestIndex - 1];
+        }
+        // Skip day already and there is some quest, return current quest
+        return GetCurrentQuest();
+
     }
 
     public void ValidateAllQuestStatus()
@@ -78,5 +100,16 @@ public class MainQuestDatabaseSO : ScriptableObject
             _MainQuests[i].ForceCompleteQuest();
         }
         _CurrentQuestIndex = _MainQuests.Length - 1;
+    }
+
+    // Save - Load
+    public void Load(int c, bool b, QuestSO.Status[] s)
+    {
+        _CurrentQuestIndex = c;
+        _IsDayPassed = b;
+        for (int i = 0; i < MainQuests.Length; i++)
+        {
+            MainQuests[i].Load(s[i]);
+        }
     }
 }

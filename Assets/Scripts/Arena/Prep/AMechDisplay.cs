@@ -15,7 +15,8 @@ public class AMechDisplay : MechCanvasDisplay
     [SerializeField] Image _WeaponIcon;
 
     [SerializeField] TextMeshProUGUI[] _Stats;
-    public override void SetChromo(MechChromoSO c)
+
+    public override void SetChromo(MechChromo c)
     {
         if (MyMechSO != c)
         {
@@ -48,6 +49,11 @@ public class AMechDisplay : MechCanvasDisplay
             _WeaponIcon.sprite = w.Image;
             _Stats[4].text = w.IsMode1Active ? "1" : "2";
             _Stats[5].text = (w.Efficiency * 100).ToString();
+
+            foreach (var item in _Stats)
+            {
+                item.color = Color.black;
+            }
 
             switch (w.FromFactory)
             {

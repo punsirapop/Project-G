@@ -34,7 +34,7 @@ MonoBehaviour:
         Speaker: 0
         SentenceContent: 
         Illustration: {fileID: 0}
-  - IsChoices: 0
+  - IsChoices: 1
     IsChecker: 0
     SentenceData:
       Speaker: 11
@@ -112,7 +112,7 @@ MonoBehaviour:
     IsChecker: 0
     SentenceData:
       Speaker: 0
-      SentenceContent: Just one step?!?!
+      SentenceContent: Just one?!?!
       Illustration: {fileID: 0}
     Choices:
     - SentenceContent: Very well.

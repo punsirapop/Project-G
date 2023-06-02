@@ -32,7 +32,14 @@ public class FarmMain : FarmMngFunc
 
     void Start()
     {
-        _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        if (PlayerManager.FarmDatabase[_FarmIndex].Condition > 0)
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainNormal;
+        }
+        else
+        {
+            _MainBackground.GetComponent<Image>().sprite = _MainBroken;
+        }
         _UnlockableLockerUI.GetComponent<Image>().sprite = _Locker;
         _LockedLockerUI.GetComponent<Image>().sprite = _Locker;
         //_MainBackground.GetComponent<Button>().onClick.AddListener(() => EnterFarm());
@@ -108,6 +115,7 @@ public class FarmMain : FarmMngFunc
         GetComponent<Animator>().enabled = false;
         PlayerManager.ValidateUnlocking();
         MainPageManager.Instance.RenderFacilities();
+        GetComponent<Animator>().Play("BuildSuccess");
     }
     #endregion
 

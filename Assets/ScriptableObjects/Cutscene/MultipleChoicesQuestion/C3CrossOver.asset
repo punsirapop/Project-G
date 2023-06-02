@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceAnswers: 020000000100000003000000020000000200000001000000
   PassScore: 3
-  ChangeScene: 
   SpeakerName: CatBot
+  IsSkippable: 0
+  SkipNotifyText: 
   _Elements:
   - IsChoices: 0
     IsChecker: 0
@@ -103,7 +104,7 @@ MonoBehaviour:
   - IsChoices: 0
     IsChecker: 0
     SentenceData:
-      Speaker: 0
+      Speaker: 4
       SentenceContent: '> The Test is starting . . .'
       Illustration: {fileID: 0}
     Choices:
@@ -520,7 +521,7 @@ MonoBehaviour:
         Crossover method?
       Illustration: {fileID: 0}
     Choices:
-    - SentenceContent: The chance of switching each point is dependent on another.
+    - SentenceContent: The chance of switching each point is independent on another.
       ReponseData:
       - Speaker: 5
         SentenceContent: 'Receiving <b>Answer</b> '

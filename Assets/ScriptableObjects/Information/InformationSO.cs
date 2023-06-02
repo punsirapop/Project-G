@@ -22,12 +22,17 @@ public class InformationSO : ScriptableObject
 
     public void Reset()
     {
-        Debug.Log("Reset Information: " + name);
         IsNeverShow = true;
     }
 
     public void Shown()
     {
         IsNeverShow = false;
+    }
+    
+    // Save - Load
+    public void Load(bool b)
+    {
+        IsNeverShow = b;
     }
 }

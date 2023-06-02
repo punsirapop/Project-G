@@ -8,7 +8,7 @@ public class SideQuestSO : QuestSO
     // ID for saving asset purpose
     public int ID { get; private set; }
     // Complete condition
-    public MechChromoSO WantedMech { get; private set; }
+    public MechChromo WantedMech { get; private set; }
     // Reward
     public int MinRewardMoney { get; private set; }
     public int MaxRewardMoney { get; private set; }
@@ -30,7 +30,8 @@ public class SideQuestSO : QuestSO
         _FullDescription = fullDescription;
         _QuestStatus = Status.Unacquired;
         _DueDate = dueDate;
-        // WantedMech
+        WantedMech = new MechChromo(null);
+        PlayerManager.MechIDCounter--;
         MinRewardMoney = minRewardMoney;
         MaxRewardMoney = maxRewardMoney;
     }
@@ -45,14 +46,15 @@ public class SideQuestSO : QuestSO
             return 0;
         }
         // If there is some selected mech, calculate reward
-        float similarityRate = SideQuestSubmissionManager.Instance.SimilarityRate;
+        // float similarityRate = SideQuestSubmissionManager.Instance.SimilarityRate;
+        float similarityRate = WantedMech.CompareMechQuest(SideQuestSubmissionManager.Instance.SelectedMech.Item1);
         // Hard-code the bound here...
-        float lowerBound = 0.5f;    // Rate at least for starting getting bonus money
-        float upperBound = 0.9f;    // Rate at most for getting max money
+        float lowerBound = 50f;    // Rate at least for starting getting bonus money
+        float upperBound = 90f;    // Rate at most for getting max money
         int rewardMoney;
         if (similarityRate < lowerBound)
         {
-            rewardMoney = MinRewardMoney;
+            rewardMoney = 0;
         }
         else if (similarityRate >= upperBound)
         {
@@ -75,6 +77,7 @@ public class SideQuestSO : QuestSO
         {
             base.CompleteQuest();
             // May give some penalty like losing money around here...
+            PlayerManager.ForceSpendMoney(MinRewardMoney / 2);
             return;
         }
 
@@ -90,5 +93,37 @@ public class SideQuestSO : QuestSO
         // WIP
 
         base.CompleteQuest();
+    }
+
+    // Save - Load
+    public SideQuestSaver Save()
+    {
+        SideQuestSaver s = new SideQuestSaver();
+
+        s.QuestStatus = QuestStatus;
+        s.ID = ID;
+        s.WantedMech = WantedMech.Save();
+        s.Name = Name;
+        s.BriefDesc = BriefDescription;
+        s.FullDesc = FullDescription;
+        s.DueDate = DueDate.ToDay();
+        s.MinReward = MinRewardMoney;
+        s.MaxReward = MaxRewardMoney;
+
+        return s;
+    }
+
+    public void Load(SideQuestSaver s)
+    {
+        _QuestStatus = s.QuestStatus;
+        ID = s.ID;
+        WantedMech = new MechChromo(s.WantedMech);
+        PlayerManager.MechIDCounter--;
+        _Name = s.Name;
+        _BriefDescription = s.BriefDesc;
+        _FullDescription = s.FullDesc;
+        _DueDate = new TimeManager.Date().AddDay(s.DueDate);
+        MinRewardMoney = s.MinReward;
+        MaxRewardMoney = s.MaxReward;
     }
 }

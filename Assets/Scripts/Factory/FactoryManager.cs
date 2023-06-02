@@ -104,7 +104,7 @@ public class FactoryManager : MonoBehaviour
             // Display breeding progress number only if the status is breeding
             case Status.BREEDING:
                 _BreedingGenDisplay.text = "GEN: " + PlayerManager.CurrentFactoryDatabase.BreedGen + "/" + PlayerManager.CurrentFactoryDatabase.BreedPref.BreedGen;
-                _GaugeRenderer.fillAmount = PlayerManager.CurrentFactoryDatabase.BreedGuage / 100;
+                _GaugeRenderer.fillAmount = PlayerManager.CurrentFactoryDatabase.BreedGauge / 100;
                 break;
             default:
                 break;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static BattleManager;
-using static MechChromoSO;
+using static MechChromo;
 
 public class BattleMechManager : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class BattleMechManager : MonoBehaviour
     float _SpRefill;
     */
 
-    MechChromoSO _MySO;
+    MechChromo _MySO;
     Coroutine _Action;
 
     bool _Pause;
@@ -82,7 +82,7 @@ public class BattleMechManager : MonoBehaviour
                         foreach (var item in Effects.Where(x => x.Type == SelfEffects.Poison))
                         {
                             WeaponChromosome giverW = BattleManager.Instance.Identify(item.Giver, 1);
-                            MechChromoSO giver = BattleManager.Instance.Identify(item.Giver, 2);
+                            MechChromo giver = BattleManager.Instance.Identify(item.Giver, 2);
                             float dmg = giver.Atk.Sum() * .2f + giverW.Efficiency * giver.Atk.Sum() * .3f;
                             ReduceHP(dmg, DamageMode.Poison);
                         }
@@ -343,7 +343,7 @@ public class BattleMechManager : MonoBehaviour
         Effects.Add(effectDis);
     }
 
-    public void SetChromo(MechChromoSO c, ArenaMechDisplay m, bool b, int i, WeaponChromosome w)
+    public void SetChromo(MechChromo c, ArenaMechDisplay m, bool b, int i, WeaponChromosome w)
     {
         IsAlly = b;
         Index = i;
@@ -357,7 +357,7 @@ public class BattleMechManager : MonoBehaviour
 
         _HpMax = _MySO.Hp.Sum() + (_MyWeapon != null ? _MyWeapon.BonusStat.Hp : 0);
         _SpMax = 7f - 4f * ((_MySO.Spd.Sum() + 
-            (_MyWeapon != null ? _MyWeapon.BonusStat.Spd : 0)) / (MechChromoSO.Cap * 3f));
+            (_MyWeapon != null ? _MyWeapon.BonusStat.Spd : 0)) / (PlayerManager.MechCap * 3f));
 
         CurrentState = State.Standby;
         InitStuffs();
